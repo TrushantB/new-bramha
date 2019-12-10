@@ -27,6 +27,15 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+
+    {
+      resolve: `gatsby-source-prismic`,
+      options: {
+        repositoryName: `Bramhacorp`,
+        accessToken: `MC5YVG1lQlJFQUFDTUF4Tjd5.77-9Tu-_vUlBICVMQ07vv70LMGhG77-977-977-9du-_vQLvv73vv73vv71da--_vVcaIjrvv70`,
+        linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
