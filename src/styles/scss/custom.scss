@@ -1,0 +1,135 @@
+$theme-colors: (
+  "primary": #b82831,
+  "secondary": #fbfbfb,
+  "tertiary":#b2a585,
+  "footer-bg": #333333,
+  "danger": #ff4136, 
+  "heading-primary":#333333,
+  "headig-secondary":#958c65,
+  "text-primary":#343434,
+  "text-secondary":#5b5b5b,
+  "text-tertiary":#7f7f7f
+);
+$font-sizes:(
+  "heading-primary-size": 4rem,
+  "heading-secondary-size":3rem,
+  "heading-tertiary-size":2rem,
+  "default": 1rem
+);
+@font-face {
+    font-family: 'georgia-regular';
+    src: url(../fonts/georgia.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'georgia-bold';
+    src: url(../fonts/georgiab.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'georgia-italic';
+    src: url(../fonts/georgiai.ttf) format('truetype');
+}
+
+@import "./node_modules/bootstrap/scss/bootstrap";
+.list-style-none{
+    list-style: none;
+}
+.header{
+    box-shadow: 1px 0px 6px rgba(00,00,00,0.2);
+}
+.logo-img{
+    width:60%;
+}
+.banner-section{
+  width:100%;
+  height: 81vh;
+    .banner-img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+.navbar-collapse{
+  position: absolute;
+  background: theme-color("secondary");
+  top: 56px;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.navbar-nav{ 
+  .nav-item{
+      padding: 10px 0;
+      font-family: 'georgia-bold' , sans-serif;
+      font-size: font-size("default");
+  }
+}
+.navbar-light .navbar-nav .nav-link{
+    color: theme-color("text-primary");
+    padding:0.4rem 1rem 0.4rem 1.4rem;
+    border-left:0.5rem solid theme-color("secondary");
+}
+.navbar-nav .nav-link:hover{
+        border-left:0.5rem solid theme-color("primary");
+}
+.navbar-nav{
+    .active{
+        a{
+            border-left:0.5rem solid theme-color("primary") !important  ;
+        }
+    }
+}
+.our-verticals-tabs{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    .nav-item{
+        padding:15px 10px;
+        flex-basis: 24%;
+    }
+    li{
+        border-bottom: 4px solid transparent;
+    }
+    .tab{
+        color: theme-color("text-tertiary");
+        span{
+            padding-left:10px;
+        }
+    }
+    .active{
+        .tab{
+            color: theme-color("primary");
+        }
+        border-bottom: 4px solid theme-color("primary");
+    }
+}
+
+
+// ------------- Media Query Start Here ----------------
+@media (max-width:768px){
+    .our-verticals-tabs .nav-item{
+        padding:15px 9px;
+    }
+}
+@media (max-width:580px){
+    .navbar-collapse{
+        width:96%;
+    }
+    .our-verticals-tabs{
+      .nav-item{
+          padding:15px 0;
+      }
+    }
+    .tab{
+        font-size: 12px;
+        i{
+            display: none;
+        }
+    &::before{
+        content: '\f111';
+    }
+    }
+}
+@media (max-width:420px){
+    .navbar-collapse{
+        width:95%;
+    }
+}
