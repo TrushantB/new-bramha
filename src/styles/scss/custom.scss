@@ -8,8 +8,10 @@ $theme-colors: (
   "headig-secondary":#958c65,
   "text-primary":#343434,
   "text-secondary":#5b5b5b,
-  "text-tertiary":#7f7f7f
+  "text-tertiary":#7f7f7f,
+  "icon-color":#b0a683
 );
+
 $font-sizes:(
   "heading-primary-size": 4rem,
   "heading-secondary-size":3rem,
@@ -29,7 +31,7 @@ $font-sizes:(
     src: url(../fonts/georgiai.ttf) format('truetype');
 }
 
-@import "./node_modules/bootstrap/scss/bootstrap";
+@import "../../../node_modules/bootstrap/scss/bootstrap";
 .list-style-none{
     list-style: none;
 }
@@ -102,11 +104,204 @@ $font-sizes:(
     }
 }
 
+// ------------- Contact Start Here ----------------
+hr{
+    width: 30%;
+    height: 2px;
+    background: theme-color("primary");
+    margin:  10px 0 15px 0;
+}
+.contact-section{
+    .sub-heading {
+        display: flex;
+    }
+    .contact-form{
+        margin: 60px 0 0 0;
+    }
+    h3{
+        color: #b0a683;
+        font-weight: 400;
+        font-size: 24px;
+    }
+    .contact-heading{
+        .title{
+            h2{
+                border-left: 10px solid #b0a683;
+                padding-left: 10px;
+                font-weight: 400;
+            }
+        }
+    }
+    .contact-details{
+        i{
+            font-size: 30px;
+            color:theme-color("icon-color");
+        }   
 
+    }
+    form{
+        .bg-color{
+            background: #b2a585;
+            padding: 15px 0;
+        }
+        .customer{
+            select{
+                flex-basis: 30%;
+                background: transparent;
+                color: #fff;
+                border-color: #fff;
+                border-radius: 0;
+                option{
+                    color: #929292;
+                }
+                    &:focus{
+                    box-shadow: none;
+                    outline: none;
+                    border-color: #fff;
+                }
+            }
+        }
+    }
+    .contact-form-bg {
+        background: #fafafa;
+        .form-row{
+            input,textarea,select{
+                background: transparent;
+                border-color: #999999;
+                border-radius: 0;
+                color: #929292;
+                    &::placeholder{
+                        color: #929292;
+                    }
+            }
+            .form-control:focus{
+                box-shadow: none;
+                outline: none;
+                border-color: #999999;
+            }
+            .form-group{
+                margin-bottom: 30px;
+                padding: 0 20px 0 20px;
+            }
+        }
+        button{
+            padding: 15px 130px;
+            border-radius: 0;
+            background: theme-color("tertiary");
+            border-color:theme-color("tertiary") ;
+            &:focus{
+                border-color:theme-color("tertiary");
+                box-shadow: none;
+            }
+        }
+    }
+    .locate-us{
+        margin: 100px 0 100px 0;
+    }
+}
+
+// ------------- Footer Start Here ----------------
+footer{
+
+    .copyright{
+        p,a{
+            color: #a7a7a7;
+            font-size: 14px;
+        }
+        a:hover{
+                color: theme-color("primary");
+                text-decoration: none;
+                transition: .5s ease-in-out;  
+           }
+    }
+    background: theme-color("footer-bg");
+    .footer-menu{
+        ul{
+            li{
+                padding: 0 30px 0 0;
+                border-right: 1px solid #fff;
+                margin-left: 30px;
+                a{
+                    color: #fff;
+                    &:hover{
+                        color: theme-color("primary");
+                        text-decoration: none;
+                        transition: .5s ease-in-out;
+                    
+                }
+}
+                &:last-child{
+                    border-right: none;
+                }
+            }
+        }
+    }
+    .footer-social-icon{
+        ul{
+            li{
+                a{
+                    i{
+                        color: #333;
+                    }
+                }
+            }
+        }
+    }
+}
+.background-circle{
+    border-radius: 50%;
+    background: #c1c1c1;
+    width: 25px;
+    text-align: center;
+    margin-right: 20px;
+    &:hover{
+        background:  theme-color("primary");
+        cursor: pointer;
+        transition: .5s ease-in-out;
+    }
+}
+.bottom-border{
+    border-bottom: 1px solid #525252;
+}
+.description{
+    color: #929292;
+}
 // ------------- Media Query Start Here ----------------
 @media (max-width:768px){
     .our-verticals-tabs .nav-item{
         padding:15px 9px;
+    }
+
+    .contact-section {
+        .locate-us{
+            margin-bottom: 50px;
+        }
+        hr{
+            margin: 0 auto;
+            width: 18%;;
+        }
+        form{
+            .customer {
+                select{
+                    flex-basis: 84%;
+                }
+            }
+        } 
+        .contact-details{
+            text-align: center;
+            .sub-heading {
+                display: block;
+                margin-bottom: 15px ;
+            }
+            .description{
+                margin: 15px 0  40px 0;
+            }
+        }
+    }
+    footer{
+        .copyright{
+            margin-top: 10px;
+        }
     }
 }
 @media (max-width:580px){
@@ -127,9 +322,64 @@ $font-sizes:(
         content: '\f111';
     }
     }
+    .contact-section{
+        .bg-color {
+            .form-control{
+                flex: 75%;
+            }
+          
+        }
+        .contact-form-bg{
+            button{
+                width: 100%;
+                padding: 15px 0;
+            }
+            .form-row{
+                .form-group{
+                    padding: 0;
+                }
+            }
+           
+        }
+        .contact-heading{
+            margin-top: 0;
+            padding-bottom: 20px;
+            background: #fafafa;
+            .title{
+                h2{
+                    font-size: 20px;
+                    padding: 10px 10px;
+                    color: #9b9b9b;
+                    font-weight: 400;
+                }
+            }
+            .container{
+                padding: 0;
+            }
+        }
+        .description{
+            padding: 0 15px  0 15px ;
+        }
+    }
+    footer{
+        .footer-menu,.footer-social-icon{
+            display: none;
+            .copyright{
+                margin-top: 10px;
+            }
+        }
+    }
 }
 @media (max-width:420px){
     .navbar-collapse{
         width:95%;
+    }
+    .contact-section{
+        .bg-color {
+            select{
+                flex: 100%;
+            }
+           
+        }
     }
 }

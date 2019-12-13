@@ -28,16 +28,64 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <div>
         <main>{children}</main>
-        <footer style={{ bottom: 30, textAlign: "center" }}>
-          <Link style={{paddingRight: 10}} to="/real-estate"> Real Estate</Link>
-          <Link style={{paddingRight: 10}} to="/blog">Blog</Link>
-          <Link style={{paddingRight: 10}} to="/careers">Careers</Link>
-          <Link style={{paddingRight: 10}} to="/channel-partners">Channel Partners</Link>
-          <Link style={{paddingRight: 10}} to="/site-map">Site Map</Link>
-          <Link style={{paddingRight: 10}} to="/privacy-policy">Privacy Policy</Link>
-          <Link style={{paddingRight: 10}} to="/desclaimer">Desclaimer</Link>
-        </footer>
       </div>
+      <footer >
+        <div className="container"> 
+          <div className="row">
+            <div className="col-md-12"> 
+              <div className="footer-menu mt-5">
+                <ul className="d-flex list-unstyled justify-content-center bottom-border flex-wrap ">
+                  <li className="nav-item mb-4 ">
+                    <a href="#"> Real Estate</a>
+                  </li>
+                  <li className="nav-item mb-4">
+                    <a  href="#"> Blog</a>
+                  </li>
+                  <li className="nav-item mb-4">
+                    <a href="#"> channel Partner</a>
+                  </li>
+                  <li className="nav-item mb-4">
+                    <a href="#"> Career</a>
+                  </li>
+                  <li className="nav-item mb-4">
+                    <a href="#"> Site map</a>
+                  </li>
+                  <li className="nav-item mb-4">
+                    <a className=" " href="#">Private Privacy</a>
+                  </li>
+                  <li className="nav-item mb-4">
+                    <a href="#">Disclaimer</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-md-12">
+              <div className="footer-social-icon mb-5">
+                <ul className="d-flex list-unstyled justify-content-center ">
+                  <li className="background-circle">
+                    <a href=""><i className="fab fa-facebook-f"></i></a>
+                  </li>
+                  <li className="background-circle">
+                    <a href=""><i className="fab fa-twitter"></i></a>
+                  </li>
+                  <li className="background-circle">
+                    <a href=""><i className="fab fa-instagram"></i></a>
+                  </li >
+                  <li className="background-circle" >
+                    <a href=""><i className="fab fa-linkedin-in"></i></a>
+                  </li>
+                  <li className="background-circle" >
+                    <a href=""><i className="fas fa-caret-right"></i></a>
+                  </li>
+                </ul>        
+              </div>
+              <div className="text-center text-white copyright">
+                <p><a href="">Bramhacorp Ltd</a> ©2019. All reserved.</p>
+              </div>
+            </div>
+          </div>
+        </div>  
+      </footer>
     </>
   )
 }
