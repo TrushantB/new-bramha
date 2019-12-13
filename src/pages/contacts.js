@@ -82,22 +82,22 @@ class Contacts extends React.Component {
                   <div className="form-row">
                    <input type="hidden" name="form-name" value="customer" />
                     <div className="col-md-6 form-group  ">
-                        <input type="text" className="form-control" id="email" placeholder="Your Name*" name="email" required/>
+                        <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" required/>
                     </div>
                     <div className="col-md-6 form-group  ">
-                        <input type="" className="form-control" placeholder="Your Phone Number*" name="pswd" required/>
+                        <input type="" className="form-control" id="phone-number" placeholder="Your Phone Number*" name="phone-number" required/>
                     </div>
                     <div className="col-md-6 form-group  ">
                         <input type="text" className="form-control" id="email" placeholder="Your Email*" name="email" required/>
                     </div>
                     <div className="col-md-6 form-group  ">
-                        <input type="" className="form-control" placeholder="City" name="pswd" required/>
+                        <input type="" className="form-control" id="city" placeholder="City" name="city" required/>
                     </div>
                     <div className="col-md-6 form-group  ">
-                        <input type="text" className="form-control" id="email" placeholder="Budget" name="email" required/>
+                        <input type="text" className="form-control" id="budget" placeholder="Budget" name="budget" required/>
                     </div>
                     <div className="col-md-6 form-group ">
-                      <select className="form-control" placeholder="Budget" required >
+                      <select className="form-control" id="aboutus" placeholder="Budget" name="aboutus" required >
                         <option>Where did you here about us?</option>
                         <option>2</option>
                         <option>3</option>
@@ -105,7 +105,7 @@ class Contacts extends React.Component {
                       </select>
                     </div>  
                     <div className="form-group col-md-12">
-                      <textarea className="form-control" rows="5" id="comment" placeholder="Additional Message" required></textarea>
+                      <textarea className="form-control" rows="5" id="message" placeholder="Additional Message" name="message" required></textarea>
                     </div>
                   </div>
                   <div className="sumbit text-center mt-sm-0 mt-4">
