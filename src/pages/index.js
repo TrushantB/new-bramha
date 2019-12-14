@@ -1,25 +1,23 @@
 import React from "react"
-import { Link } from "gatsby"
-
 import Layout from "../components/layout"
-// import Image from "../components/image"
 import SEO from "../components/seo"
 import img2 from '../styles/images/banner.jpg'
+import { Link } from "gatsby"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <div>
     <section className="banner-section">
-      <img src={img2} alt="banner image here" className="banner-img"/>
+      <img src={img2} alt="banner here" className="bannerImg"/>
     </section>
     <section className="our-verticals-tabs container">
       <ul className="p-0 d-flex w-100 justify-content-around list-style-none text-uppercase nav nav-tabs border-0" id="myTab" role="tablist">
         <li className="nav-item active" id="residencial-tab" data-toggle="tab" href="#residencial" role="tab" aria-controls="residencial" aria-selected="true">
-          <a href="#" className="tab">            
+          <Link to='/' className="tab">            
               <i className="far fa-building"></i>
             <span> residencial </span>
-          </a>
+          </Link>
         </li>
         <li className="nav-item"  id="commercial-tab" data-toggle="tab" href="#commercial" role="tab" aria-controls="commercial" aria-selected="true">
           <a href="#" className="tab">            

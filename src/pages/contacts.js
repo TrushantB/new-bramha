@@ -1,23 +1,23 @@
 import React from 'react'
 import Layout from '../components/layout'
-
-import contactImage from '../styles/images/contact-page.jpg'
-import mapImage from '../styles/images/map.jpg'
+import { graphql } from 'gatsby'
 
 class Contacts extends React.Component {
   render(){
+    const contactData = this.props.data.prismicCompanyDetails.data;
+    console.log('ccontact data from contact page', contactData);
     return(
       <Layout>
         <section className="contact-section">
           <div className="contact-page-image">
-            <img src={contactImage} alt="" width="100%"/>
+            <img src={contactData.banner.url} alt="" width="100%"/>
           </div>
           <div className="contact-heading mb-5 mt-0 mt-sm-5" >
             <div className="container container-sm-fluid">
               <div className="title mb-4 mb-sm-5"> 
-                <h2>Contact Us</h2>
+                <h2>{contactData.contactus.text}</h2>
               </div>
-              <p className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
+              <p className="description">{contactData.description.text}</p>
             </div>
           </div>
           <section className="contact-details">
@@ -30,7 +30,13 @@ class Contacts extends React.Component {
                       <h3 className="ml-2">Postal Address</h3>          
                     </div>
                     <hr/>
-                    <p className="description">Recendacy Club 3, Quuen Gardern Road, Pune India. 411030</p>
+                    {
+                      contactData.address.map((item,value)=>{
+                        return(
+                          <p key={value} className="description">{item.contact_address.text}</p>
+                        )
+                      })
+                    }
                   </div>
                 </div>
                 <div className="col-md-4">
@@ -40,8 +46,13 @@ class Contacts extends React.Component {
                       <h3 className="ml-2">Email Address</h3>          
                     </div>
                     <hr/>
-                    <p className="description mb-0">presale@bramhacorp.in</p>
-                    <p className="description mt-0">crp@bramhacorm.in</p>
+                    {
+                      contactData.email_address.map((item,value)=>{
+                        return(
+                          <p key={value} className="description mb-0">{item.email_add.text}</p>
+                        )
+                      })
+                    }
                   </div>
                 </div>
                 <div className="col-md-4">
@@ -51,9 +62,13 @@ class Contacts extends React.Component {
                       <h3 className="ml-2">Contact Info</h3>          
                     </div>
                     <hr/>
-                    <p className="description mb-0">Project Inquiry: +9120200300</p>
-                    <p className="description m-0">Head Office: +9120200300</p>
-                    <p className="description mt-0">Fax Number: +9120200300</p>
+                    {
+                      contactData.contact_info.map((item,value)=>{
+                      return(
+                        <p key={value} className="description mb-0">{item.title1.text}{" "}{item.number}</p>
+                      )
+                    })
+                    }
                   </div>
                 </div>
               </div>
@@ -69,7 +84,7 @@ class Contacts extends React.Component {
                   <div className="d-flex customer justify-content-center align-items-center">
                     <label className="mr-3 text-white mb-0">I Am A</label>
                     <select className="form-control">
-                      <option>Customer</option>
+                      <option name="customer">Customer</option>
                       <option>2</option>
                       <option>3</option>
                       <option>4</option>
@@ -116,12 +131,12 @@ class Contacts extends React.Component {
             </form>
           </section>
           <section className="locate-us"> 
-            <div className="container">
-              <h3 className="text-center text-uppercase mb-4 ">Locate Us</h3>
-              <div className="map-image">
-                <img src={mapImage} alt="" width="100%"/>
-              </div>
-            </div>
+          <div className="container">
+        <h3 className="text-center text-uppercase mb-4 sub-title ">Locate Us</h3>
+        <div className="map-image">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.9979896405875!2d73.87803231420851!3d18.52899298740413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c056fa4d8413%3A0xe2b3bd637ed792be!2sResidency%20Club!5e0!3m2!1sen!2sin!4v1576302776373!5m2!1sen!2sin" style={{width:'100%', height:'450px', frameborder:'0', border:'0', allowfullscreen:''}}></iframe>
+        </div>
+    </div>
           </section>
         </section>  
       </Layout>
@@ -130,3 +145,48 @@ class Contacts extends React.Component {
 }
 
 export default Contacts;
+
+export const contactPage = graphql`{
+  prismicCompanyDetails {
+    data {
+      title {
+        text
+      }
+      description {
+        text
+      }
+      banner {
+        url
+      }
+      contactus {
+        text
+      }
+      address {
+        contact_address {
+          text
+        }
+        location {
+          latitude
+          longitude
+        }
+      }
+      email {
+        text
+      }
+      email_address {
+        email1 {
+          text
+        }
+        email_add {
+          text
+        }
+      }
+      contact_info {
+        title1 {
+          text
+        }
+        number
+      }
+    }
+  }
+}`

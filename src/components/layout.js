@@ -1,10 +1,3 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql, Link } from "gatsby"
@@ -36,25 +29,25 @@ const Layout = ({ children }) => {
               <div className="footer-menu mt-5">
                 <ul className="d-flex list-unstyled justify-content-center bottom-border flex-wrap ">
                   <li className="nav-item mb-4 ">
-                    <a href="#"> Real Estate</a>
+                    <Link to='/'> Real Estate</Link>
                   </li>
                   <li className="nav-item mb-4">
-                    <a  href="#"> Blog</a>
+                    <Link  to='/'> Blog</Link>
                   </li>
                   <li className="nav-item mb-4">
-                    <a href="#"> channel Partner</a>
+                    <Link to='/'> channel Partner</Link>
                   </li>
                   <li className="nav-item mb-4">
-                    <a href="#"> Career</a>
+                    <Link to='/'> Career</Link>
                   </li>
                   <li className="nav-item mb-4">
-                    <a href="#"> Site map</a>
+                    <Link to='/'> Site map</Link>
                   </li>
                   <li className="nav-item mb-4">
-                    <a className=" " href="#">Private Privacy</a>
+                    <Link className=" " to='/'>Private Privacy</Link>
                   </li>
                   <li className="nav-item mb-4">
-                    <a href="#">Disclaimer</a>
+                    <Link to='/'>Disclaimer</Link>
                   </li>
                 </ul>
               </div>
@@ -63,24 +56,24 @@ const Layout = ({ children }) => {
               <div className="footer-social-icon mb-5">
                 <ul className="d-flex list-unstyled justify-content-center ">
                   <li className="background-circle">
-                    <a href=""><i className="fab fa-facebook-f"></i></a>
+                    <Link to='/'><i className="fab fa-facebook-f"></i></Link>
                   </li>
                   <li className="background-circle">
-                    <a href=""><i className="fab fa-twitter"></i></a>
+                    <Link to='/'><i className="fab fa-twitter"></i></Link>
                   </li>
                   <li className="background-circle">
-                    <a href=""><i className="fab fa-instagram"></i></a>
+                    <Link to='/'><i className="fab fa-instagram"></i></Link>
                   </li >
                   <li className="background-circle" >
-                    <a href=""><i className="fab fa-linkedin-in"></i></a>
+                    <Link to='/'><i className="fab fa-linkedin-in"></i></Link>
                   </li>
                   <li className="background-circle" >
-                    <a href=""><i className="fas fa-caret-right"></i></a>
+                    <Link to='/'><i className="fas fa-caret-right"></i></Link>
                   </li>
                 </ul>        
               </div>
               <div className="text-center text-white copyright">
-                <p><a href="">Bramhacorp Ltd</a> ©2019. All reserved.</p>
+                <p><Link to='/'>Bramhacorp Ltd</Link> ©2019. All reserved.</p>
               </div>
             </div>
           </div>

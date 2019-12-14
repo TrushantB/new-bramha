@@ -6,9 +6,9 @@ import img1 from '../styles/images/logo.png';
 const Header = ({ siteTitle }) => (
   <header className="header">
     <nav className="navbar navbar-light container" >
-      <a className="navbar-brand" href="#">
+      <Link className="navbar-brand" to='/'>
         <img src={img1} alt="BramhaCorp Logo" className="logo-img"/>
-      </a>
+      </Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -23,29 +23,29 @@ const Header = ({ siteTitle }) => (
             </Link>
             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
               <Link className="dropdown-item" to="/about-us">Our Legacy</Link>
-              <a className="dropdown-item" href="#">Management Team</a>
+              <Link className="dropdown-item" to='/'>Management Team</Link>
             </div>
           </li>
           <li className="nav-item dropdown">
-            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <Link className="nav-link dropdown-toggle" to='/' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Our Verticals
-            </a>
+            </Link>
             <div className="dropdown-menu  border-0" aria-labelledby="navbarDropdown">
-              <a className="dropdown-item" href="#">Residencial</a>
-              <a className="dropdown-item" href="#">Commercial</a>
-              <a className="dropdown-item" href="#">Hospitality</a>
-              <a className="dropdown-item" href="#">Leisure</a>
+              <Link className="dropdown-item" to='/'>Residencial</Link>
+              <Link className="dropdown-item" to='/'>Commercial</Link>
+              <Link className="dropdown-item" to='/'>Hospitality</Link>
+              <Link className="dropdown-item" to='/'>Leisure</Link>
             </div>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/partners">Partners</Link>
           </li>
           <li className="nav-item dropdown">
-            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <Link className="nav-link dropdown-toggle" to='/' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Our Verticals
-            </a>
+            </Link>
             <div className="dropdown-menu border-0" aria-labelledby="navbarDropdown">
-              <a className="dropdown-item" href="#">Inner</a>
+              <Link className="dropdown-item" to='/'>Inner</Link>
             </div>
           </li>
           <li className="nav-item">
