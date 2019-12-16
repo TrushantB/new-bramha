@@ -38,9 +38,9 @@ class MediaAndEvents extends React.Component {
                 <div className="event-heading">
                     <div className="container container-sm">
                         <div className="title mb-4"> 
-                            <h2>Events</h2>
+                            <h2>{eventData.event_heading.text}</h2>
                         </div>
-                        <p className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
+                        <p className="description">{eventData.description.text}</p>
                     </div>
                 </div>
                 <div>
@@ -77,9 +77,15 @@ export default MediaAndEvents;
 
 export const eventPage = graphql`{
   prismicMediaAndEvent{
-    data{
-      event{
-        image{
+    data {
+      event_heading{
+        text
+      }
+      description{
+        text
+      }
+      event {
+        image {
           url
         }
         heading{
