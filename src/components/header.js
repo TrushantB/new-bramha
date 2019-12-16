@@ -23,7 +23,7 @@ const Header = ({ siteTitle }) => (
             </Link>
             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
               <Link className="dropdown-item" to="/about-us">Our Legacy</Link>
-              <Link className="dropdown-item" to='/'>Management Team</Link>
+              <Link className="dropdown-item" to='/management-team'>Management Team</Link>
             </div>
           </li>
           <li className="nav-item dropdown">
@@ -41,13 +41,13 @@ const Header = ({ siteTitle }) => (
             <Link className="nav-link" to="/partners">Partners</Link>
           </li>
           <li className="nav-item dropdown">
-            <Link className="nav-link dropdown-toggle" to='/' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Our Verticals
+            <Link className="nav-link dropdown-toggle" to='/knoweldge-hub' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Knoweldge Hub
             </Link>
             <div className="dropdown-menu border-0" aria-labelledby="navbarDropdown">
-              <Link className="dropdown-item" to='/'>Inner</Link>
+              <Link className="dropdown-item" to='/knoweldge-hub'>Inner</Link>
             </div>
-          </li>
+          </li> 
           <li className="nav-item">
             <Link className="nav-link" to="/careers">Careers</Link>
           </li>

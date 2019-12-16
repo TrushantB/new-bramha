@@ -1,17 +1,17 @@
 $theme-colors: (
   "primary": #b82831,
   "secondary": #fbfbfb,
-  "tertiary":#b2a585,
+  "tertiary":#b1a585,
   "footer-bg": #333333,
+  "bg-secondary":#f9fafa,
   "danger": #ff4136, 
   "heading-primary":#333333,
   "headig-secondary":#958c65,
   "text-primary":#343434,
   "text-secondary":#5b5b5b,
-  "text-tertiary":#7f7f7f,
-  "icon-color":#b0a683,
-  "bg-color":#f9fafa
-
+  "text-tertiary":rgba(00,00,00,0.5),
+  "text-white":#ffffff,
+  "text-black": #000000
 );
 .mt-25{
     margin-top: 25px;
@@ -50,6 +50,86 @@ $font-sizes:(
 }
 
 @import "../../../node_modules/bootstrap/scss/bootstrap";
+
+/*================================
+-------- Common Basic css start
+================================*/ 
+
+.padding-block-60{
+    padding: 60px 0;
+}
+.page-heading{
+    border-left: 10px solid theme-color("tertiary");
+    font-family: 'Poppins', sans-serif;
+    padding:5px 25px;
+    font-size:30px;
+    color: theme-color("text-black");
+}
+.text{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    line-height: 1.86;
+    letter-spacing: -0.31px;
+    color: theme-color("text-tertiary");
+}
+.section-title{
+    font-family: georgia;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -0.44px;
+    color: theme-color("tertiary");
+    text-align:left;
+    text-transform: uppercase;
+}
+.inner-section-title{
+    font-family: georgia;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -0.44px;
+    color: theme-color("heading-primary");
+    text-align:left;
+    text-transform: capitalize;
+}
+.black-text{
+    color:theme-color("text-black");
+}
+.text-white{
+    color:theme-color("text-white");
+}
+.link-text{
+    font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  letter-spacing: -0.23px;
+  color: theme-color("tertiary");
+  &:hover{
+      text-decoration: none;
+  }
+}
+.hr-primary{
+    width:85px;
+    height:3px;
+    background: theme-color("primary");
+}
+.btn-primary{
+    padding:17px 22px;
+    border:1px solid theme-color("secondary");
+    color: theme-color("secondary");
+    width:169px;
+}
+.btn-secondary{
+    padding: 16px;
+    background:theme-color("secondary");
+    color:theme-color("text-white");
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    letter-spacing: -0.4px;
+    text-align: center;
+    width: 320px;
+}
+img{
+    object-fit: cover;
+}
+
 .list-style-none{
     list-style: none;
 }
@@ -98,6 +178,8 @@ $font-sizes:(
         }
     }
 }
+// -------- Home page bottom tabs Css start Here ----------
+
 .our-verticals-tabs{
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
@@ -107,6 +189,13 @@ $font-sizes:(
     }
     li{
         border-bottom: 4px solid transparent;
+        cursor: pointer;
+        &:hover{
+            border-bottom: 4px solid theme-color("primary");
+            .tab{
+                color: theme-color("primary");
+            }
+        }
     }
     .tab{
         color: theme-color("text-tertiary");
@@ -121,6 +210,7 @@ $font-sizes:(
         border-bottom: 4px solid theme-color("primary");
     }
 }
+// -------- Home page bottom tabs Css end Here ----------
 // ------------- Award Start Here ----------------
 .award-recogniation{
   .title{
@@ -269,6 +359,61 @@ hr{
 }
 
 
+
+/*==============================
+ -----About us page css start
+==============================*/
+// --------- Our Legacy css start here ----------
+.our-legacy{
+    .slider-wrapper{
+        background-color: theme-color("bg-secondary");
+        padding:40px;
+        .legacy-slide{
+            width:100%;
+            position: relative;
+            .legacy-slider-image{
+                width:100%;
+                object-fit: cover;
+            }
+            .slide-caption{
+                position: absolute;
+                bottom:100px;
+                left:0;
+                background:rgba(00,00,00,0.7);
+                padding:30px;
+            }
+        }
+    }
+}
+// ------------- our vertical css start here ----------------
+.vertical-card{
+    height:210px;
+    background-color: theme-color("bg-secondary");
+    overflow: hidden;
+    .vertical-img-wrapper{
+        height: 100%;
+        flex-basis: 50%;
+    }
+    .vertical-card-body{
+      padding:30px;
+      flex-basis: 50%;
+    }
+}
+.management-card{
+    height:320px;
+    background-color: theme-color("bg-secondary");
+    overflow: hidden;
+    .management-img-wrapper{
+        height: 100%;
+        flex-basis: 50%;
+    }
+    .management-card-body{
+      padding:30px;
+      flex-basis: 50%;
+      padding: 40px 80px;
+    }
+}
+
 // ------------- Footer Start Here ----------------
 footer{
     .copyright{
@@ -334,6 +479,20 @@ footer{
 .description{
     color: #929292;
 }
+
+// ------------- Event Start Here ----------------
+.event{
+    .event-heading{
+        .title{
+            h2{
+              @include border-left;
+              font-weight: 400;
+            }
+        }
+    }
+  }
+
+  
 // ------------- Media Query Start Here ----------------
 @media (max-width:768px){
     .our-verticals-tabs .nav-item{

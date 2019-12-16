@@ -12,6 +12,10 @@
   font-family: "georgia-italic";
   src: url(../fonts/georgiai.ttf) format("truetype");
 }
+
+@import "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css";
+
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors

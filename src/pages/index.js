@@ -7,7 +7,7 @@ import { Link } from "gatsby"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <div>
+    <div id="home">
     <section className="banner-section">
       <img src={img2} alt="banner here" className="bannerImg"/>
     </section>

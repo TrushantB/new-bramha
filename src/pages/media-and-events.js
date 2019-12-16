@@ -1,14 +1,97 @@
 import React from 'react'
 import Layout from '../components/layout'
+import Slider from "react-slick";
+import { graphql } from 'gatsby';
+
 class MediaAndEvents extends React.Component {
     render(){
+      const eventData = this.props.data.prismicMediaAndEvent.data;
+      console.log("event data from media and event page",eventData);
+      var settings = {
+        centerMode: true,
+        centerPadding: '300px',
+        slidesToShow: 1,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '100px',
+              slidesToShow: 1
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '100px',
+              slidesToShow: 1
+            }
+          }
+        ]
+      };
         return(
             <Layout>
-                <h3>
-                    Hello, This Is Media And Events Page...
-                </h3>
+               <section className="event mb-5 mt-0 mt-sm-5">
+                <div className="event-heading">
+                    <div className="container container-sm">
+                        <div className="title mb-4"> 
+                            <h2>Events</h2>
+                        </div>
+                        <p className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
+                    </div>
+                </div>
+                <div>
+                  <Slider {...settings}>
+                    {
+                      eventData.event.map((item,value)=>{
+                        return(
+                          <div key={value}>
+                            <div  className="mx-3">
+                              {/* <h5>{item.heading.text}</h5>
+                              <p>{item.date.text}</p>
+                              <p>{item.location.text}</p> */}
+                              <img src={item.image.url}/>
+                            </div>
+                          </div>
+                        )
+                      })
+                    }
+                  </Slider>
+                </div>
+                <div className="">
+                  <div className="container">
+                    <div className="">
+                      <h3 className="text-center text-uppercase mb-4 ">Enquiry Now</h3>
+                    </div>
+                  </div>
+                </div>
+            </section>
             </Layout>
         )
     }
 }
 export default MediaAndEvents;
+
+export const eventPage = graphql`{
+  prismicMediaAndEvent{
+    data{
+      event{
+        image{
+          url
+        }
+        heading{
+          text
+        }
+        date{
+          text
+        }
+         location{
+          text
+        }
+      }
+    }
+  }
+}`
