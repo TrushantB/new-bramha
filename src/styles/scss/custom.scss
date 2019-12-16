@@ -11,7 +11,9 @@ $theme-colors: (
   "text-secondary":#5b5b5b,
   "text-tertiary":rgba(00,00,00,0.5),
   "text-white":#ffffff,
-  "text-black": #000000
+  "text-black": #000000,
+  "icon-color":#b0a683,
+  "bg-color":#f9fafa
 );
 .mt-25{
     margin-top: 25px;
@@ -493,7 +495,111 @@ footer{
   }
 
   
+
+// ------------- Knowledge Hub Start Here ----------------
+.knowledge-hub{
+    margin-bottom: 100px;
+    .buyer-tips-banner{
+        .buyer-tips-image{
+            margin-top: 30px;
+        }
+        .buyer-tips-box{
+            width: 656px;
+            height: 209px;
+            bottom: 45px;
+            left: 77px;
+            background: #000000a3;
+            padding: 20px 40px;
+            hr{
+                width: 96%;
+                background: #fff;
+                opacity: 0.43;
+               
+            }
+            p{
+                opacity: 0.8;
+            }
+        }
+    }
+    .about-loan,
+    .important-notices,
+    .maha-rera{
+        .description{
+           height: 100%;
+            padding: 45px 25px;
+        }
+    }
+    .maha-rera,
+    .important-notices{
+        .sub-heading{
+            margin-top: 80px;
+        }
+    }
+    .bg-light-gray{
+        background-color: theme-color("bg-color");
+    }
+    .guidelines-nris {
+        .guidelines-nris-info{
+            width: 247px;
+            padding: 14px 23px;
+            bottom: 42px;
+            opacity: 0.68;
+            background-color: #000000;
+        }
+    }
+    .know-more{
+        a{
+         color: #b1a585;
+        }
+     }
+    //  .maha-rera,
+    //  .important-notices,
+    //  .guidelines-nris,
+    //  .about-loan{
+    //      margin: 0 10px;
+    //  }
+}
+
 // ------------- Media Query Start Here ----------------
+@media (max-width:992px){
+    .knowledge-hub{
+        .buyer-tips-banner-img{
+            .buyer-tips-box{
+                width: 535px;
+                height: 180px;
+                bottom: 40px;
+                left: 48px;
+                padding: 15px 30px;
+                
+            }
+        }
+        .about-loan,
+        .maha-rera,
+        .important-notices{
+            .description {
+                padding: 25px;
+            }
+            .about-loan-img,
+            .maha-rera-img,
+            .important-notices-img{
+                img{
+                    height: 200px;
+                    object-fit: cover;
+                }
+            }
+        }
+        .guidelines-nris {
+            .guidelines-nris-img{
+                img{
+                    height: 329px;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+
+}
 @media (max-width:768px){
     .our-verticals-tabs .nav-item{
         padding:15px 9px;
@@ -530,6 +636,53 @@ footer{
             margin-top: 10px;
         }
     }
+    .knowledge-hub{
+        .sub-heading{
+            margin-top: 60px;
+        }
+        .about-loan{
+            .sub-heading{
+                margin-top: 0;
+            }
+        }
+        .knowledge-hub-heading{
+            .title{
+                padding-top: 25px;
+            }
+        }
+       .buyer-tips-banner{
+           margin-bottom: 80px;
+           .container{
+               padding: 0;
+           }
+           .buyer-tips-box{
+               width: 100%;
+               height: auto;
+               left: 0;
+               bottom: 0;
+               padding: 20px 20px;
+               .sub-title,
+               hr{
+                   display: none;
+               }
+               .know-more{
+                   align-self: flex-end;
+                   position: absolute;
+                   bottom: -34px;
+                  
+               }
+           }
+       }
+       .guidelines-nris {
+            .guidelines-nris-img{
+            img{
+                height: auto;
+                object-fit: cover;
+                }
+           }
+        }
+   } 
+
 }
 @media (max-width:580px){
     .navbar-collapse{
@@ -601,6 +754,67 @@ footer{
             }
         }
     }
+ .knowledge-hub{
+     margin-bottom: 60px;
+     .knowledge-hub-heading{
+         .title{
+             padding-top: 25px;
+         }
+     }
+    .buyer-tips-banner{
+        .sub-heading{
+            margin-top: 60px;
+        }
+        margin-bottom: 80px;
+        .container{
+            padding: 0;
+        }
+    }
+    .about-loan,
+    .maha-rera,
+    .important-notices{
+        margin: 0;
+        .description{
+            padding: 14px 25px;
+        }
+        .sub-heading{
+            margin-top: 0;
+           h3{
+            text-align: center;
+           }
+           hr{
+               width:30px;
+               margin: 0 auto;
+           }
+        }
+    }
+    .guidelines-nris {
+        margin: 60px 0 80px 0;  
+        .sub-heading{
+            display: none;       
+        }
+        .guidelines-nris-info{
+            width: 100%;
+            height: auto;
+            bottom: 0;
+            position: unset!important;
+            opacity: 0.78;
+            .know-more{
+                position: absolute;
+                right: 18px;
+                bottom: -33px;
+            }
+
+        }
+    }
+    .maha-rera{
+        margin: 0 0 60px 0;  
+        .sub-heading {
+            margin-top: 0;
+        }
+    }
+ }
+
 }
 @media (max-width:420px){
     .navbar-collapse{
