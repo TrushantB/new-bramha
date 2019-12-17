@@ -92,6 +92,16 @@ $font-sizes:(
     text-align:left;
     text-transform: capitalize;
 }
+.section-title-secondary{
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: -0.31px;
+  color: theme-color("text-black");
+}
 .black-text{
     color:theme-color("text-black");
 }
@@ -120,13 +130,23 @@ $font-sizes:(
 }
 .btn-secondary{
     padding: 16px;
-    background:theme-color("secondary");
+    background:theme-color("tertiary");
     color:theme-color("text-white");
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
     letter-spacing: -0.4px;
     text-align: center;
     width: 320px;
+}
+.btn-tertiary{
+    padding: 16px;
+    color:theme-color("text-tertiary");
+    border:1px solid theme-color("text-tertiary");
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    letter-spacing: -0.4px;
+    text-align: center;
+    background:transparent;
 }
 img{
     object-fit: cover;
@@ -560,6 +580,59 @@ footer{
     //  }
 }
 
+/*======================================
+    Career page css start
+========================================*/
+.life-at-bramha{
+    .slider-wrapper{
+        background-color: theme-color("bg-secondary");
+        padding:40px;
+        .life-at-bramha-slide{
+            width:100%;
+            .life-at-bramha-slider-image{
+                width:100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+.search-bar{
+    position: relative;
+    padding-left:35px;
+    border-radius: 0;
+}
+.search-btn{
+    position: absolute;
+    top: 8px;
+    background: transparent;
+    border: 0;
+    left: 20px;
+}
+.career-tabs{
+    height:183px;
+    .btn-wraper{
+        flex-basis: 23%;
+    }
+    .btn-wraper-big{
+        flex-basis: 29%;
+    }
+    .avtive{
+        background-color: theme-color("heading-primary");
+    }
+}
+// ------ accordian css ------
+.accordions-sect{
+    .card{
+        border-bottom: 1px solid rgba(0, 0, 0, 0.125) !important;
+    }
+    .card-head{
+        height:90px;
+    }
+    .accordion{
+        border-top: 1px solid rgba(0, 0, 0, 0.125);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    }
+}
 // ------------- Media Query Start Here ----------------
 @media (max-width:992px){
     .knowledge-hub{

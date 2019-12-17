@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
       <div>
         <main>{children}</main>
       </div>
-      <footer >
+      <footer>
         <div className="container"> 
           <div className="row">
             <div className="col-md-12"> 

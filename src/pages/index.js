@@ -7,9 +7,9 @@ import { Link } from "gatsby"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <div id="home">
+    <div>
     <section className="banner-section">
-      <img src={img2} alt="banner here" className="bannerImg"/>
+      <img src={img2} alt="banner here" className="bannerImg" style={{width:'100%'}}/>
     </section>
     <section className="our-verticals-tabs container">
       <ul className="p-0 d-flex w-100 justify-content-around list-style-none text-uppercase nav nav-tabs border-0" id="myTab" role="tablist">
