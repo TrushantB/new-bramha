@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import { graphql } from 'gatsby';
 import Slider from "react-slick";
+import Img from "gatsby-image"
 
 class Careers extends React.Component {
   constructor(){
@@ -106,7 +107,6 @@ class Careers extends React.Component {
               </div>
               <div className="col-12 accordions-sect">
                 <div className="accordion" id="accordionExample">
-                  {}
                   {
                     careerData.job_opening.map((item,value)=>{
                       return(

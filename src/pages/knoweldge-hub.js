@@ -3,6 +3,7 @@ import Layout from '../components/layout'
 import hero1 from '../styles/images/hero1.png';
 import aboutLoan from '../styles/images/about-loan.jpg';
 import guidelines1 from '../styles/images/guidelines1.jpg';
+import { Link } from '@reach/router';
 class KnoweldgeHub extends React.Component {
   render(){
     return(
@@ -83,10 +84,10 @@ class KnoweldgeHub extends React.Component {
                                 <div className="guidelines-nris-info position-absolute">
                                 <p className="mb-0 mb-sm-2 text-white">Guidelines For NRIs</p>
                                 <div className="know-more">
-                                    <a href="#">
+                                    <Link to='/nri'>
                                       <span className="mr-sm-5 mr-3">Know More</span>
                                       <i className="fas fa-arrow-right"></i>
-                                    </a>
+                                    </Link>
                                 </div>
                                 </div>
                             </div>
