@@ -3,6 +3,7 @@ import Layout from '../components/layout'
 import { graphql } from 'gatsby';
 import Slider from "react-slick";
 import Img from "gatsby-image"
+import Footer from '../components/footer';
 
 class Careers extends React.Component {
   constructor(){
@@ -155,6 +156,7 @@ class Careers extends React.Component {
             </button>
           </section>
         </div>
+        <Footer />
       </Layout>
     )
   }

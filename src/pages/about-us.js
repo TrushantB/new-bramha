@@ -3,6 +3,7 @@ import Layout from '../components/layout'
 import { graphql } from 'gatsby'
 import Slider from "react-slick";
 import { Link } from "gatsby"
+import Footer from '../components/footer';
 
 class AboutUs extends React.Component {
   render(){
@@ -188,6 +189,7 @@ class AboutUs extends React.Component {
             </div>
           </section>
         </div>
+        <Footer />
       </Layout>
     )
   }

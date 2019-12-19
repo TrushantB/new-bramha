@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import Slider from "react-slick";
 import { graphql } from 'gatsby';
+import Footer from '../components/footer';
 
 class MediaAndEvents extends React.Component {
     render(){
@@ -69,6 +70,7 @@ class MediaAndEvents extends React.Component {
                   </div>
                 </div>
             </section>
+            <Footer />
             </Layout>
         )
     }

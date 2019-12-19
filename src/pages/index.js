@@ -9,7 +9,7 @@ const IndexPage = () => (
     <SEO title="Home" />
     <div>
     <section className="banner-section">
-      <img src={img2} alt="banner here" className="bannerImg" style={{width:'100%'}}/>
+      <img src={img2} alt="banner here" className="banner-img" style={{width:'100%'}}/>
     </section>
     <section className="our-verticals-tabs container">
       <ul className="p-0 d-flex w-100 justify-content-around list-style-none text-uppercase nav nav-tabs border-0" id="myTab" role="tablist">
@@ -40,7 +40,6 @@ const IndexPage = () => (
       </ul>
     </section>
     </div>
-
   </Layout>
 )
 

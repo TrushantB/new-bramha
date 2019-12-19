@@ -4,6 +4,7 @@ import hero1 from '../styles/images/hero1.png';
 import aboutLoan from '../styles/images/about-loan.jpg';
 import guidelines1 from '../styles/images/guidelines1.jpg';
 import { Link } from '@reach/router';
+import Footer from '../components/footer';
 class KnoweldgeHub extends React.Component {
   render(){
     return(
@@ -151,6 +152,8 @@ class KnoweldgeHub extends React.Component {
                 </div>
             </div>
         </section>
+        <Footer />
+
       </Layout>
     )
   }

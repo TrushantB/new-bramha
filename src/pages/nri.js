@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import aboutUs from '../styles/images/about-us-banner.jpg';
 import { graphql } from 'gatsby';
+import Footer from '../components/footer';
 class NRI extends React.Component {
   render(){
     const nriData = this.props.data.prismicNri.data;
@@ -94,6 +95,7 @@ class NRI extends React.Component {
             </div>
           </section>  
         </div>
+        <Footer />
       </Layout>
     )
   }
