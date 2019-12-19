@@ -57,6 +57,15 @@ $font-sizes:(
 -------- Common Basic css start
 ================================*/ 
 
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.86;
+    letter-spacing: -0.31px;
+    color: theme-color("text-tertiary");
+}
+
 .padding-block-60{
     padding: 60px 0;
 }

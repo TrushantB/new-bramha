@@ -2,7 +2,6 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import '../styles/css/custom.css';
-// import img1 from '../styles/images/logo.png';
 const Footer = ({ siteTitle }) => (
     <footer>
     <div className="container"> 

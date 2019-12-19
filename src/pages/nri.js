@@ -51,45 +51,20 @@ class NRI extends React.Component {
                           </div>
                       
                           <div id={`collapseOne${value}`} className="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                            <div className="card-body text">
-                              {item.description1.text}
-                            </div>
+                            <div className="card-body" dangerouslySetInnerHTML={{__html: item.description1.html}} />
                             {
-                              item.description2 ? 
-                                <div className="card-body text">
-                                  {item.description2.text}
-                                </div>: null
+                              item.description2.html && 
+                                <div className="card-body" dangerouslySetInnerHTML={{__html: item.description2.html}}/>
                             }
                             {
-                              item.description3 ?  
-                                <div className="card-body text">
-                                  {item.description3.text}
-                                </div>: null
+                              item.description3.html &&  
+                                <div className="card-body" dangerouslySetInnerHTML={{__html: item.description3.html}} />
                             }
                           </div>
                         </div>
                       )
                     })
                   }
-                  {/* <div className="card border-0">
-                    <div className="card-header" id="headingTwo">
-                      <h5 className="mb-0 d-flex justify-content-between align-items-center section-title-secondary">
-                        Customer Relationship Manager
-                        <button className="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                          <i className="fas fa-chevron-down"></i>
-                        </button>
-                      </h5>
-                    </div>
-                    <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                      <div className="card-body text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                        nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      </div>
-                    </div>
-                  </div> */}
                 </div>
               </div>
             </div>
@@ -122,13 +97,13 @@ export const nriPage = graphql`{
           text
         }
         description1 {
-          text
+          html
         }
         description2 {
-          text
+          html
         }
         description3 {
-          text
+          html
         }
       }
     }  
