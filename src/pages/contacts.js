@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
 import { graphql } from 'gatsby'
+import Footer from '../components/footer';
 
 class Contacts extends React.Component {
   render(){
@@ -139,6 +140,7 @@ class Contacts extends React.Component {
     </div>
           </section>
         </section>  
+        <Footer />
       </Layout>
     )
   }
