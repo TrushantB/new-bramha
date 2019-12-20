@@ -50,13 +50,54 @@ $font-sizes:(
     font-family: 'georgia-italic';
     src: url(../fonts/georgiai.ttf) format('truetype');
 }
-
+@font-face {
+    font-family: 'Graphik';
+    font-weight: 100;
+    src: url(../fonts/Graphik-Thin.otf) format('Opentype');
+}
+@font-face {
+    font-family: 'Graphik';
+    font-weight: 200;
+    src: url(../fonts/Graphik-Extralight.otf) format('Opentype');
+}
+@font-face {
+    font-family: 'Graphik';
+    font-weight: 300;
+    src: url(../fonts/Graphik-Light.otf) format('Opentype');
+}
+@font-face {
+    font-family: 'Graphik';
+    font-weight: 400;
+    src: url(../fonts/Graphik-Regular.otf) format('Opentype');
+}
+@font-face {
+    font-family: 'Graphik';
+    font-weight: 500;
+    src: url(../fonts/Graphik-Medium.otf) format('Opentype');
+}
+@font-face {
+    font-family: 'Graphik';
+    font-weight: 600;
+    src: url(../fonts/Graphik-Semibold.otf) format('Opentype');
+}
+@font-face {
+    font-family: 'Graphik';
+    font-weight: 700;
+    src: url(../fonts/Graphik-Bold.otf) format('Opentype');
+}
 @import "../../../node_modules/bootstrap/scss/bootstrap";
 
+body{
+    font-family: 'Graphik', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.86;
+    letter-spacing: -0.31px;
+    color: theme-color("text-tertiary");
+}
 /*================================
 -------- Common Basic css start
 ================================*/ 
-
 .padding-block-60{
     padding: 60px 0;
 }
@@ -66,13 +107,6 @@ $font-sizes:(
     padding:5px 25px;
     font-size:30px;
     color: theme-color("text-black");
-}
-.text{
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    line-height: 1.86;
-    letter-spacing: -0.31px;
-    color: theme-color("text-tertiary");
 }
 .section-title{
     font-family: georgia;
@@ -103,6 +137,7 @@ $font-sizes:(
   font-size: 14px;
   letter-spacing: -0.23px;
   color: theme-color("tertiary");
+  cursor: pointer;
   &:hover{
       text-decoration: none;
   }
@@ -128,7 +163,8 @@ $font-sizes:(
     text-align: center;
     width: 320px;
 }
-img{
+.responsive-img{
+    height: 100%;
     object-fit: cover;
 }
 
@@ -371,10 +407,11 @@ hr{
         background-color: theme-color("bg-secondary");
         padding:40px;
         .legacy-slide{
-            width:100%;
+            height:80vh;
             position: relative;
             .legacy-slider-image{
                 width:100%;
+                height:100%;
                 object-fit: cover;
             }
             .slide-caption{
@@ -384,6 +421,21 @@ hr{
                 background:rgba(00,00,00,0.7);
                 padding:30px;
             }
+        }
+        .slick-dots{
+          top:-20px;
+          bottom:0;
+          border-top:1px dotted theme-color("text-secondary");
+          li{
+            top:-16px;
+            margin:0 12px;
+            padding:0;
+            button:before{
+                font-size: 12px;
+                color:red;
+                opacity: 1;
+            }
+          }
         }
     }
 }
@@ -597,7 +649,15 @@ footer{
             }
         }
     }
-
+    .section-title{
+        font-size:20px;
+    }
+    .vertical-card .vertical-card-body{
+        padding:20px;
+    }
+    .management-card .management-card-body{
+        padding:20px;
+    }
 
 }
 @media (max-width:768px){
@@ -688,6 +748,20 @@ footer{
     .navbar-collapse{
         width:96%;
     }
+    .bg-color {
+        margin-top: 0;
+        padding:0 0 20px 0;
+        background: theme-color("bg-color");
+            .padding-block-60{
+                padding: 25px 0 25px 0;
+            }
+            .page-heading{
+                font-size: 24px;  
+            }
+            .text{
+                padding: 0 15px;
+            }
+        }
     .our-verticals-tabs{
       .nav-item{
           padding:15px 0;
