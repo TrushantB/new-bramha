@@ -41,7 +41,7 @@ module.exports = {
     {
       resolve: `gatsby-remark-images`,
     },
-    `gatsby-remark-lazy-load`,
+    // `gatsby-remark-lazy-load`,
     {
       resolve: `gatsby-source-prismic`,
       options: {
