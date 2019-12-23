@@ -98,16 +98,6 @@ body{
 /*================================
 -------- Common Basic css start
 ================================*/ 
-
-body {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.86;
-    letter-spacing: -0.31px;
-    color: theme-color("text-tertiary");
-}
-
 .padding-block-60{
     padding: 60px 0;
 }
@@ -120,12 +110,18 @@ body {
 }
 .section-title{
     font-family: georgia;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 500;
     letter-spacing: -0.44px;
     color: theme-color("tertiary");
     text-align:left;
-    text-transform: uppercase;
+    &::after{
+        content: "";
+        border-bottom: 2px solid theme-color("primary");
+        padding: 10px 0;
+        width: 85px;
+        display: block;
+    }
 }
 .inner-section-title{
     font-family: georgia;
@@ -184,8 +180,7 @@ body {
     width: 320px;
 }
 .responsive-img{
-    height: 100%;
-}
+    height: 100%;}
 .btn-tertiary{
     padding: 16px;
     color:theme-color("text-tertiary");
@@ -196,6 +191,9 @@ body {
     text-align: center;
     background:transparent;
 }
+.bg-white{
+    background-color: theme-color("text-white");
+}
 img{
     object-fit: cover;
 }
@@ -203,6 +201,7 @@ img{
 .list-style-none{
     list-style: none;
 }
+// ------------------ Header Css Start ----------------
 .header{
     box-shadow: 1px 0px 6px rgba(00,00,00,0.2);
 }
@@ -482,6 +481,11 @@ hr{
 ==============================*/
 // --------- Our Legacy css start here ----------
 .our-legacy{
+    .section-title{
+        &::after{
+            margin:0 auto;
+        }
+    }
     .slider-wrapper{
         background-color: theme-color("bg-secondary");
         padding:40px;
@@ -519,6 +523,13 @@ hr{
     }
 }
 // ------------- our vertical css start here ----------------
+.our-vertivcal-sect{
+    .section-title{
+        &::after{
+            margin:0 auto;
+        }
+    }  
+}
 .vertical-card{
     height:210px;
     background-color: theme-color("bg-secondary");
@@ -531,6 +542,13 @@ hr{
       padding:30px;
       flex-basis: 50%;
     }
+}
+.management-team-sect{
+    .section-title{
+        &::after{
+            margin:0 auto;
+        }
+    }  
 }
 .management-card{
     height:320px;
@@ -874,7 +892,12 @@ footer{
            }
         }
    } 
-
+   .about-sect-4{
+       height:auto !important;
+   }
+   .management-card{
+       height: 200px;
+   }
 }
 @media (max-width:580px){
     .navbar-collapse{
@@ -908,7 +931,6 @@ footer{
         content: '\f111';
     }
     }
-    
     .contact-section{
         .bg-color {
             .form-control{
@@ -1020,7 +1042,16 @@ footer{
         }
     }
  }
-
+ .year-img-wrap{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:12px 0;
+    img{
+        width:50% !important;
+    }
+ }
 }
 @media (max-width:420px){
     .navbar-collapse{
@@ -1033,5 +1064,9 @@ footer{
             }
            
         }
+    }
+    .vertical-card,
+    .management-card{
+        height:150px;
     }
 }

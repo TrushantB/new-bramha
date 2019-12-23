@@ -6,6 +6,9 @@ import { Link } from "gatsby"
 import Footer from '../components/footer';
 
 class AboutUs extends React.Component {
+  state= {
+    styleData:{height: 160, overflow: 'hidden'}
+  }
   render(){
     var settings = {
       dots: true,
@@ -31,31 +34,38 @@ class AboutUs extends React.Component {
                   <h2 className="page-heading">{data.sub_title.text} </h2> 
               </div>
               <div className="row d-flex align-items-center padding-block-60 pt-0">
-                <div className="col-sm-3">
+                  <div className="col-sm-3 year-img-wrap">
                   <img src={data.banner.url} alt="35 Years image" className="w-100"/>
                 </div>
                 <div className="col-sm-9">
                   <div className="text mb-4" dangerouslySetInnerHTML={{__html: data.description.html}} />
                 </div>
               </div>
-              <div className="row padding-block-60">
+              <div className="row padding-block-60 bg-white">
               {data.aboutus_content.map((item,value)=>{
                 return(
-                  <div key={value} className="col-sm-4">
-                    <div className="about-sect-4">
+                  <div key={value} className="col-md-4 mt-2 mt-sm-2 mt-md-2">
+                    <div className="about-sect-4"  style={this.state.styleData}>
                       <h3 className="section-title">
                       {item.sub_title.text}
                       </h3>
-                      <hr className="hr-primary ml-0" />
-                      <p className="text">
+                      <p>
                         {item.description1.text}
                       </p>
                     </div>
                   </div>
                   )
                 })}
-                <div className="d-flex justify-content-center align-items-center w-100">
-                <a href="#" className="link-text"> Show More ></a>
+                <div className="d-none d-sm-flex justify-content-center align-items-center p-3 w-100">
+                  {
+                    this.state.styleData ? 
+                    <div className="link-text" onClick={() => {
+                      this.setState({styleData:null})
+                      }}>Show More <i className="fas fa-chevron-down"></i></div> :
+                    <div className="link-text" onClick={() => {
+                      this.setState({styleData:{height: 160, overflow: 'hidden'}})
+                      }}>Show Less <i className="fas fa-chevron-up"></i> </div>
+                  }
                 </div>
               </div>
           </section>
@@ -64,7 +74,6 @@ class AboutUs extends React.Component {
                 <h3 className="section-title text-center">
                     Our Legacy
                 </h3>
-                <hr className="hr-primary ml-0"/>
               </div>
               <div className="slider-wrapper">
                 <Slider  {...settings}>
@@ -89,12 +98,11 @@ class AboutUs extends React.Component {
               </div>
           </section>
           <section className="container">
-            <div className="row">
-                <div className="padding-block-60 d-flex justify-content-center flex-column w-100 ">
+            <div className="row our-vertivcal-sect">
+                <div className="padding-block-60 d-flex justify-content-center align-items-center flex-column w-100 ">
                   <h3 className="section-title text-center">
                       {verticalsData.title.text}
                   </h3>
-                  <hr className="hr-primary"/>
                 </div>
                 <div className="col-sm-6">
                   <div className="vertical-card d-flex">
@@ -112,8 +120,8 @@ class AboutUs extends React.Component {
                     </div> 
                   </div>
                 </div>
-                <div className="col-sm-6">
-                  <div className="vertical-card d-flex">
+                <div className="col-md-6 mt-5 mt-md-0">
+                  <div className="vertical-card d-flex flex-row-reverse flex-md-row">
                     <div className="vertical-img-wrapper w-100">
                       <img src={verticalsData.vertical2.document[0].data.banner.url} alt="verticals image" className="w-100"/>
                     </div>
@@ -128,8 +136,8 @@ class AboutUs extends React.Component {
                     </div> 
                   </div>
                 </div>
-                <div className="col-sm-6 mt-5">
-                <div className="vertical-card d-flex">
+                <div className="col-md-6 mt-5">
+                <div className="vertical-card d-flex flex-row-reverse flex-md-row">
                     <div className="vertical-card-body d-flex flex-column justify-content-around"> 
                     <h2 className="inner-section-title">
                       {verticalsData.vertical3.document[0].data.title.text}
@@ -144,7 +152,7 @@ class AboutUs extends React.Component {
                     </div>
                 </div>
                 </div>
-                <div className="col-sm-6 mt-5">
+                <div className="col-md-6 mt-5">
                 <div className="vertical-card d-flex">
                     <div className="vertical-card-body d-flex flex-column justify-content-around"> 
                     <h2 className="inner-section-title">
@@ -161,12 +169,11 @@ class AboutUs extends React.Component {
                 </div>
                 </div>
             </div>
-            <div className="row padding-block-60">
-              <div className="padding-block-60 d-flex justify-content-center flex-column w-100 ">
+            <div className="row padding-block-60 management-team-sect">
+              <div className="padding-block-60 d-flex justify-content-center align-items-center flex-column w-100 ">
                 <h3 className="section-title text-center">
                     {data.management_team.document[0].data.sub_title.text}
                 </h3>
-                <hr className="hr-primary"/>
               </div>
               <div className="col-12">
                 <div className="management-card d-flex">
@@ -174,7 +181,7 @@ class AboutUs extends React.Component {
                     <img src={data.management_team.document[0].data.banner.url} alt="verticals image" className="w-100"/>
                   </div>
                   <div className="management-card-body d-flex flex-column justify-content-around"> 
-                    <p className="text">
+                    <p className="d-none d-md-block">
                       {data.management_team.document[0].data.description.text}
                     </p>
                     <Link to={data.management_team.uid} className="link-text vertical-card-link d-flex justify-content-around align-items-center">
