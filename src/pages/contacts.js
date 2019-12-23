@@ -84,11 +84,11 @@ class Contacts extends React.Component {
                 <div className="container">
                   <div className="d-flex customer justify-content-center align-items-center">
                     <label className="mr-3 text-white mb-0">I Am A</label>
-                    <select className="form-control">
-                      <option name="customer">Customer</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
+                    <select name="IAMA" className="form-control">
+                      <option value="Customer">Customer</option>
+                      <option value="Developer">Developer</option>
+                      <option value="Designer">Designer</option>
+                      <option value="Tester">Tester</option>
                     </select>
                   </div>
                 </div>
@@ -133,11 +133,11 @@ class Contacts extends React.Component {
           </section>
           <section className="locate-us"> 
           <div className="container">
-        <h3 className="text-center text-uppercase mb-4 sub-title ">Locate Us</h3>
-        <div className="map-image">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.9979896405875!2d73.87803231420851!3d18.52899298740413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c056fa4d8413%3A0xe2b3bd637ed792be!2sResidency%20Club!5e0!3m2!1sen!2sin!4v1576302776373!5m2!1sen!2sin" style={{width:'100%', height:'450px', frameborder:'0', border:'0', allowfullscreen:''}}></iframe>
-        </div>
-    </div>
+            <h3 className="text-center text-uppercase mb-4 sub-title ">Locate Us</h3>
+            <div className="map-image">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.9979896405875!2d73.87803231420851!3d18.52899298740413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c056fa4d8413%3A0xe2b3bd637ed792be!2sResidency%20Club!5e0!3m2!1sen!2sin!4v1576302776373!5m2!1sen!2sin" style={{width:'100%', height:'450px', frameborder:'0', border:'0', allowfullscreen:''}}></iframe>
+            </div>
+          </div>
           </section>
         </section>  
         <Footer />

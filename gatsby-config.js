@@ -8,6 +8,7 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
+    `gatsby-prismic-lazy-load`,
     // {
     //   resolve: `gatsby-plugin-sharp`,
     //   options: {
@@ -37,7 +38,10 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-
+    {
+      resolve: `gatsby-remark-images`,
+    },
+    `gatsby-remark-lazy-load`,
     {
       resolve: `gatsby-source-prismic`,
       options: {

@@ -290,25 +290,72 @@ img{
       }
   }
 }
+
 // ------------- Knowledge Hub Start Here ----------------
+
 .knowledge-hub{
-    .knowledge-hub-heading{
-        .title{
-            h2{
-              @include border-left;
-              font-weight: 400;
+    margin-bottom: 100px;
+        .important-notices{
+            .inner-section-title{
+                display: none;
+            }   
+        }
+        .buyer-tips-banner{
+            .section-title::after{
+                content: "";
+                margin: 0 auto;
+            }
+            .buyer-tips-image{
+            margin-top: 30px;
+         }
+        .buyer-tips-box{
+            width: 541px;
+            height: 172px;
+            bottom: 45px;
+            left: 77px;
+            background: #000000a3;
+            padding: 20px 40px;
+                .section-title::after{
+                    content: "";
+                    width: auto;
+                    padding: 5px 0;
+                    border-bottom: 1px solid #fff;
+                    opacity: 0.43;
+                }
+            p{
+                opacity: 0.8;
             }
         }
     }
-  }
-.sub-heading{
-    margin-top: 100px;
-    hr{
-        margin: 0 auto;
-        width: 85px;
-        height: 1px;
+    .bg-light-gray{
+        height: 100%;
+        padding: 45px 25px;
+    }
+    .bg-light-gray{
+        background-color: theme-color("bg-color");
+    }
+    .guidelines-nris {
+        .guidelines-nris-info{
+            width: 247px;
+            padding: 14px 23px;
+            bottom: 42px;
+            background-color: #000000a3;
+            p{
+                opacity: 0.85;
+                font-size: 16px;
+                font-weight: 300;
+                letter-spacing: 0.36px;
+            }
+        }
+    }
+    .know-more{
+        a{
+         color: #b1a585;
+        }
     }
 }
+// ------------- Knowledge Hub End Here ----------------
+
 // ------------- Buyes Tips Start Here ----------------
 .knowledge-hub{
     .buyer-tips-banner{
