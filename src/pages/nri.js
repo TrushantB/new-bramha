@@ -1,12 +1,23 @@
 import React from 'react'
 import Layout from '../components/layout'
-import aboutUs from '../styles/images/about-us-banner.jpg';
 import { graphql } from 'gatsby';
 import Footer from '../components/footer';
+
 class NRI extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      collapseDescription: null
+    }
+  }
+
+  componentWillMount() {
+    const nriData = this.props.data.prismicNri.data;
+    this.setState({collapseDescription: nriData.group})
+  }
+  
   render(){
     const nriData = this.props.data.prismicNri.data;
-    console.log('nri data from nri page', nriData);
     return(
       <Layout>
         <div>
@@ -31,14 +42,20 @@ class NRI extends React.Component {
             <div className="row">
               <div className="col-sm-6 my-5">
                 <form action="">
-                  <input type="search" placeholder="Search using Key Word, FAQs, Title" className="form-control search-bar"/>
+                 <input type="search" onChange={(e)=>{
+                   let data =  nriData.group.filter(res => {
+                      return res.heading1.text.toLocaleLowerCase().match(e.target.value.toLocaleLowerCase())
+                    })
+                    this.setState({collapseDescription : data })
+                    }}
+                   placeholder="Search by title or Department" className="form-control search-bar"/>
                   <button className="search-btn"><i className="fas fa-search"></i></button>
                 </form>
               </div>
               <div className="col-12 accordions-sect padding-block-60 pt-0">
                 <div className="accordion" id="accordionExample">
                   {
-                    nriData.group.map((item,value)=>{
+                    this.state.collapseDescription && this.state.collapseDescription.map((item,value)=>{
                       return(
                         <div key={value} className="card border-0">
                           <div className="card-header" id="headingOne">

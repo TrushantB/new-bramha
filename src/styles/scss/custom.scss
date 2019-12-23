@@ -142,7 +142,7 @@ body{
     text-transform: capitalize;
 }
 .section-title-secondary{
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Graphik', sans-serif;
   font-size: 14px;
   font-weight: 500;
   font-stretch: normal;
@@ -158,7 +158,8 @@ body{
     color:theme-color("text-white");
 }
 .link-text{
-    font-family: 'Poppins', sans-serif;
+  font-family: 'Graphik', sans-serif;
+  font-weight: 300;
   font-size: 14px;
   letter-spacing: -0.23px;
   color: theme-color("tertiary");
@@ -182,8 +183,9 @@ body{
     padding: 16px;
     background:theme-color("tertiary");
     color:theme-color("text-white");
-    font-family: 'Poppins', sans-serif;
-    font-size: 18px;
+    font-family: 'Graphik', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
     letter-spacing: -0.4px;
     text-align: center;
     width: 320px;
@@ -194,7 +196,8 @@ body{
     padding: 16px;
     color:theme-color("text-tertiary");
     border:1px solid theme-color("text-tertiary");
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Graphik', sans-serif;
+    font-weight: 300;
     font-size: 14px;
     letter-spacing: -0.4px;
     text-align: center;
@@ -266,7 +269,7 @@ img{
 // -------- Home page bottom tabs Css start Here ----------
 
 .our-verticals-tabs{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Graphik', sans-serif;
     font-weight: 500;
     .nav-item{
         padding:15px 10px;
@@ -305,25 +308,72 @@ img{
       }
   }
 }
+
 // ------------- Knowledge Hub Start Here ----------------
+
 .knowledge-hub{
-    .knowledge-hub-heading{
-        .title{
-            h2{
-              @include border-left;
-              font-weight: 400;
+    margin-bottom: 100px;
+        .important-notices{
+            .inner-section-title{
+                display: none;
+            }   
+        }
+        .buyer-tips-banner{
+            .section-title::after{
+                content: "";
+                margin: 0 auto;
+            }
+            .buyer-tips-image{
+            margin-top: 30px;
+         }
+        .buyer-tips-box{
+            width: 541px;
+            height: 172px;
+            bottom: 45px;
+            left: 77px;
+            background: #000000a3;
+            padding: 20px 40px;
+                .section-title::after{
+                    content: "";
+                    width: auto;
+                    padding: 5px 0;
+                    border-bottom: 1px solid #fff;
+                    opacity: 0.43;
+                }
+            p{
+                opacity: 0.8;
             }
         }
     }
-  }
-.sub-heading{
-    margin-top: 100px;
-    hr{
-        margin: 0 auto;
-        width: 85px;
-        height: 1px;
+    .bg-light-gray{
+        height: 100%;
+        padding: 45px 25px;
+    }
+    .bg-light-gray{
+        background-color: theme-color("bg-color");
+    }
+    .guidelines-nris {
+        .guidelines-nris-info{
+            width: 247px;
+            padding: 14px 23px;
+            bottom: 42px;
+            background-color: #000000a3;
+            p{
+                opacity: 0.85;
+                font-size: 16px;
+                font-weight: 300;
+                letter-spacing: 0.36px;
+            }
+        }
+    }
+    .know-more{
+        a{
+         color: #b1a585;
+        }
     }
 }
+// ------------- Knowledge Hub End Here ----------------
+
 // ------------- Buyes Tips Start Here ----------------
 .knowledge-hub{
     .buyer-tips-banner{
@@ -748,6 +798,35 @@ footer{
         border-bottom: 1px solid rgba(0, 0, 0, 0.125);
     }
 }
+.input-file-btn{
+    color:transparent;
+}
+.input-file-btn::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+.input-file-btn::before {
+    content: 'Upload Your CV';
+    display: block;
+    padding: 16px;
+    background:theme-color("tertiary");
+    color:theme-color("text-white");
+    font-size: 14px;
+    font-family: 'Graphik', sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.4px;
+    text-align: center;
+    outline: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+    width:302px;
+    border:1px solid transparent;
+  }
+  .input-file-btn:hover::before {
+    background-color: transparent;
+    border:1px solid theme-color("tertiary");
+    color:theme-color("tertiary");
+  }
+
 // ------------- Media Query Start Here ----------------
 @media (max-width:1200px){
     .career-tabs{
