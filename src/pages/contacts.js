@@ -84,7 +84,7 @@ class Contacts extends React.Component {
                 <div className="container">
                   <div className="d-flex customer justify-content-center align-items-center">
                     <label className="mr-3 text-white mb-0">I Am A</label>
-                    <select name="IAMA" className="form-control">
+                    <select name="I am :" className="form-control">
                       <option value="Customer">Customer</option>
                       <option value="Developer">Developer</option>
                       <option value="Designer">Designer</option>
