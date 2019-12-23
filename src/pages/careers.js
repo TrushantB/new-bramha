@@ -97,8 +97,6 @@ class Careers extends React.Component {
                       return res.position.text.toLocaleLowerCase().match(e.target.value.toLocaleLowerCase())
                     })
                     this.setState({collapseDescription : data })
-                    console.log('this.state.collapseDescription', this.state.collapseDescription);
-                    
                     }}
                    placeholder="Search by title or Department" className="form-control search-bar"/>
                   <button className="search-btn"><i className="fas fa-search"></i></button>
