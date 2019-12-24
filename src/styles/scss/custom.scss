@@ -150,6 +150,9 @@ body{
         display: block;
     }
 }
+.section-title-wrapper{
+    padding-bottom:48px;
+}
 .inner-section-title{
     font-family: georgia;
     font-size: 20px;
@@ -161,7 +164,7 @@ body{
     text-transform: capitalize;
 }
 .section-title-secondary{
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Graphik', sans-serif;
   font-size: 14px;
   font-weight: 500;
   font-stretch: normal;
@@ -177,7 +180,8 @@ body{
     color:theme-color("text-white");
 }
 .link-text{
-    font-family: 'Poppins', sans-serif;
+  font-family: 'Graphik', sans-serif;
+  font-weight: 300;
   font-size: 14px;
   letter-spacing: -0.23px;
   color: theme-color("tertiary");
@@ -200,8 +204,9 @@ body{
     padding: 16px;
     background:theme-color("tertiary");
     color:theme-color("text-white");
-    font-family: 'Poppins', sans-serif;
-    font-size: 18px;
+    font-family: 'Graphik', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
     letter-spacing: -0.4px;
     text-align: center;
     width: 320px;
@@ -210,7 +215,8 @@ body{
     padding: 16px;
     color:theme-color("text-tertiary");
     border:1px solid theme-color("text-tertiary");
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Graphik', sans-serif;
+    font-weight: 300;
     font-size: 14px;
     letter-spacing: -0.4px;
     text-align: center;
@@ -223,6 +229,14 @@ img{
 .list-style-none{
     list-style: none;
 }
+//Page heading
+.page-heading-section{
+    .main-description{
+        padding: 0 16px 32px;
+    }
+}
+
+// ------------------ Header Css Start ----------------
 .header{
     box-shadow: 1px 0px 6px rgba(00,00,00,0.2);
 }
@@ -272,7 +286,7 @@ img{
 // -------- Home page bottom tabs Css start Here ----------
 
 .our-verticals-tabs{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Graphik', sans-serif;
     font-weight: 500;
     .nav-item{
         padding:15px 10px;
@@ -574,6 +588,9 @@ hr{
 /*==============================
  -----About us page css start
 ==============================*/
+.about-sections{
+    padding:68px 0;
+}
 // --------- Our Legacy css start here ----------
 .our-legacy{
     .section-title{
@@ -626,16 +643,21 @@ hr{
     }  
 }
 .vertical-card{
-    height:210px;
     background-color: theme-color("bg-secondary");
     overflow: hidden;
     .vertical-img-wrapper{
-        height: 100%;
+        max-height: 150px;
         flex-basis: 50%;
+        img{
+            height: 100%;
+        }
     }
     .vertical-card-body{
-      padding:30px;
+      padding:24px;
       flex-basis: 50%;
+      .vertical-card-link{
+          padding-left:28px;
+      }
     }
 }
 .management-team-sect{
@@ -646,17 +668,18 @@ hr{
     }  
 }
 .management-card{
-    height:320px;
     background-color: theme-color("bg-secondary");
     overflow: hidden;
     .management-img-wrapper{
-        height: 100%;
+        max-height: 308px;
         flex-basis: 50%;
+        img{
+            height: 100%;
+        }
     }
     .management-card-body{
-      padding:30px;
       flex-basis: 50%;
-      padding: 40px 80px;
+      padding: 40px 98px;
     }
 }
 
@@ -807,15 +830,23 @@ footer{
 /*======================================
     Career page css start
 ========================================*/
+.career-page{
+    .section-title{
+        &::after{
+            margin:0 auto;
+        }
+    }
+}
 .life-at-bramha{
     .slider-wrapper{
         background-color: theme-color("bg-secondary");
         padding:40px;
         .life-at-bramha-slide{
-            width:100%;
+            height:80vh;
             .life-at-bramha-slider-image{
                 width:100%;
-                object-fit: cover;
+                height:100%;
+                object-fit: cover;  
             }
         }
     }
@@ -857,6 +888,35 @@ footer{
         border-bottom: 1px solid rgba(0, 0, 0, 0.125);
     }
 }
+.input-file-btn{
+    color:transparent;
+}
+.input-file-btn::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+.input-file-btn::before {
+    content: 'Upload Your CV';
+    display: block;
+    padding: 16px;
+    background:theme-color("tertiary");
+    color:theme-color("text-white");
+    font-size: 14px;
+    font-family: 'Graphik', sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.4px;
+    text-align: center;
+    outline: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+    width:302px;
+    border:1px solid transparent;
+  }
+  .input-file-btn:hover::before {
+    background-color: transparent;
+    border:1px solid theme-color("tertiary");
+    color:theme-color("tertiary");
+  }
+
 // ------------- Media Query Start Here ----------------
 @media (max-width:1200px){
 // Hospitality project
@@ -870,6 +930,11 @@ footer{
         width: 250px
     }
  }
+    .career-tabs{
+        .btn-tertiary{
+            padding:16px 8px;
+        }
+    }
 }
 @media (max-width:992px){
     // Card Primary
@@ -1022,11 +1087,41 @@ footer{
              left: 10px;
     }
  }
+   .career-tabs{
+    .btn-wraper{
+        flex-basis: 23%;
+    }
+    .btn-wraper-big{
+        flex-basis: 30%;
+    }
+    .btn-tertiary{
+        padding:16px 0;
+    }
+}
+   .about-sect-4{
+       height:auto !important;
+   }
+   .management-card{
+       height: 200px;
+   }
 }
 @media (max-width:580px){
     .navbar-collapse{
         width:96%;
     }
+    .bg-color {
+        margin-top: 0;
+        background: theme-color("bg-color");
+            .padding-block-60{
+                padding: 25px 0 25px 0;
+            }
+            .page-heading{
+                font-size: 24px;  
+            }
+            .text{
+                padding: 0 15px;
+            }
+        }
     .our-verticals-tabs{
       .nav-item{
           padding:15px 0;

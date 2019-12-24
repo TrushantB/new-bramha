@@ -41,11 +41,11 @@ class Careers extends React.Component {
     
     return(
       <Layout>
-        <div>
+        <div className="career-page">   
           <section className="banner-section">
             <img src={careerData.banner.url} alt="banner image here" className="banner-img" />
           </section>
-          <section className="career-info container">
+          <section className="career-info container-md bg-color">
             <div className="padding-block-60">
               <h2 className="page-heading">{careerData.title.text}</h2> 
             </div>
@@ -54,13 +54,6 @@ class Careers extends React.Component {
                 <p className="text mb-4">
                  {careerData.description.text} 
                 </p>
-                {/* <p className="text"> 
-                  BramhaCorp is in an active growth mode. Our ongoing investments in resources will see us becoming one 
-                  of the finest real estate companies in India. We remain committed to our values that have made us what 
-                  we are today. Currently we are constructing more than 2000 residential homes and would be rolling out 4 
-                  new hotels. Also on the anvil are mixed use development, integrated townships, commercial real estate 
-                  and upscale residences. 
-                </p> */}
               </div>
             </div>
           </section>
@@ -88,7 +81,6 @@ class Careers extends React.Component {
                 <h3 className="section-title text-center">
                   {careerData.looking_for_a_job_opening.text}
                 </h3>
-                <hr className="hr-primary"/>
               </div>
               <div className="col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
                 <form action="">
@@ -98,7 +90,7 @@ class Careers extends React.Component {
                     })
                     this.setState({collapseDescription : data })
                     }}
-                   placeholder="Search by title or Department" className="form-control search-bar"/>
+                   placeholder="Search by title or Department" className="form-control search-bar pl-3"/>
                   <button className="search-btn"><i className="fas fa-search"></i></button>
                 </form>
                 <div className="career-tabs py-4 d-flex flex-wrap justify-content-between align-content-between">
@@ -157,12 +149,10 @@ class Careers extends React.Component {
               Cant find what you are looking for?
             </h2>
             <p className="text py-3">
-              Upload your CV to our portal. <br />
-              We will get back to you once suitable position is open
+              <span className="d-block">Upload your CV to our portal.</span>
+              <span className="d-block">We will get back to you once suitable position is open</span>
             </p>
-            <button className="btn-secondary border-0">
-              Upload your CV
-            </button>
+              <input type="file" className="input-file-btn border-0" placeholder="Upload your CV"/>
           </section>
         </div>
         <Footer />

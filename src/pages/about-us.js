@@ -29,19 +29,19 @@ class AboutUs extends React.Component {
           <section className="banner-section">
               <img src={data.image.url} alt="banner image here" className="banner-img" />
           </section>
-          <section className="container">
-              <div className="padding-block-60">
+          <section className="about-sections pb-0 page-heading-section container container-sm-fluid bg-color">
+              <div className="">
                   <h2 className="page-heading">{data.sub_title.text} </h2> 
               </div>
-              <div className="row d-flex align-items-center padding-block-60 pt-0">
+              <div className="row padding-block-60 d-flex align-items-center">
                   <div className="col-sm-3 year-img-wrap">
                   <img src={data.banner.url} alt="35 Years image" className="w-100"/>
                 </div>
-                <div className="col-sm-9">
-                  <div className="text mb-4" dangerouslySetInnerHTML={{__html: data.description.html}} />
+                <div className="col-sm-9 main-description">
+                  <div className="mb-4" dangerouslySetInnerHTML={{__html: data.description.html}} />
                 </div>
               </div>
-              <div className="row padding-block-60 bg-white">
+              <div className="row bg-white padding-block-60 pt-0">
               {data.aboutus_content.map((item,value)=>{
                 return(
                   <div key={value} className="col-md-4 mt-2 mt-sm-2 mt-md-2">
@@ -56,7 +56,7 @@ class AboutUs extends React.Component {
                   </div>
                   )
                 })}
-                <div className="d-none d-sm-flex justify-content-center align-items-center p-3 w-100">
+                <div className="d-none d-md-flex justify-content-center align-items-center p-3 w-100">
                   {
                     this.state.styleData ? 
                     <div className="link-text" onClick={() => {
@@ -69,8 +69,8 @@ class AboutUs extends React.Component {
                 </div>
               </div>
           </section>
-          <section className="our-legacy">
-              <div className="padding-block-60 d-flex justify-content-center flex-column w-100 ">
+          <section className="our-legacy about-sections">
+              <div className="d-flex justify-content-center flex-column section-title-wrapper w-100 ">
                 <h3 className="section-title text-center">
                     Our Legacy
                 </h3>
@@ -98,13 +98,13 @@ class AboutUs extends React.Component {
               </div>
           </section>
           <section className="container">
-            <div className="row our-vertivcal-sect">
-                <div className="padding-block-60 d-flex justify-content-center align-items-center flex-column w-100 ">
+            <div className="row our-vertivcal-sect about-sections">
+                <div className="d-flex justify-content-center align-items-center flex-column section-title-wrapper w-100 ">
                   <h3 className="section-title text-center">
                       {verticalsData.title.text}
                   </h3>
                 </div>
-                <div className="col-sm-6">
+                <div className="col-md-6">
                   <div className="vertical-card d-flex">
                     <div className="vertical-img-wrapper w-100">
                       <img src={verticalsData.vertical1.document[0].data.banner.url} alt="verticals image" className="w-100"/>
@@ -113,9 +113,9 @@ class AboutUs extends React.Component {
                       <h2 className="inner-section-title">
                         {verticalsData.vertical1.document[0].data.title.text}
                       </h2>
-                      <Link to='/our-verticals' className="link-text vertical-card-link d-flex justify-content-around align-items-center">
-                        <span> View Projects </span> 
-                        <i className="fas fa-arrow-right"></i>
+                      <Link to='/our-verticals' className="link-text vertical-card-link d-flex justify-content-between align-items-center">
+                          <span> View Projects </span> 
+                          <i className="fas fa-arrow-right"></i>
                       </Link>
                     </div> 
                   </div>
@@ -129,7 +129,7 @@ class AboutUs extends React.Component {
                       <h2 className="inner-section-title">
                         {verticalsData.vertical2.document[0].data.title.text}
                       </h2>
-                      <Link to='/our-verticals' className="link-text vertical-card-link d-flex justify-content-around align-items-center">
+                      <Link to='/our-verticals' className="link-text vertical-card-link d-flex justify-content-between align-items-center">
                           <span> View Projects </span> 
                           <i className="fas fa-arrow-right"></i>
                       </Link>
@@ -142,7 +142,7 @@ class AboutUs extends React.Component {
                     <h2 className="inner-section-title">
                       {verticalsData.vertical3.document[0].data.title.text}
                     </h2>
-                    <Link to='/our-verticals' className="link-text vertical-card-link d-flex justify-content-around align-items-center">
+                    <Link to='/our-verticals' className="link-text vertical-card-link d-flex justify-content-between align-items-center">
                         <span> View Projects </span> 
                         <i className="fas fa-arrow-right"></i>
                     </Link>
@@ -158,7 +158,7 @@ class AboutUs extends React.Component {
                     <h2 className="inner-section-title">
                       {verticalsData.vertical4.document[0].data.title.text}
                     </h2>
-                    <Link to='/our-verticals' className="link-text vertical-card-link d-flex justify-content-around align-items-center">
+                    <Link to='/our-verticals' className="link-text vertical-card-link d-flex justify-content-between align-items-center">
                         <span> View Projects </span> 
                         <i className="fas fa-arrow-right"></i>
                     </Link>
@@ -169,8 +169,8 @@ class AboutUs extends React.Component {
                 </div>
                 </div>
             </div>
-            <div className="row padding-block-60 management-team-sect">
-              <div className="padding-block-60 d-flex justify-content-center align-items-center flex-column w-100 ">
+            <div className="row management-team-sect about-sections">
+              <div className="d-flex justify-content-center align-items-center flex-column section-title-wrapper w-100 ">
                 <h3 className="section-title text-center">
                     {data.management_team.document[0].data.sub_title.text}
                 </h3>
@@ -184,8 +184,8 @@ class AboutUs extends React.Component {
                     <p className="d-none d-md-block">
                       {data.management_team.document[0].data.description.text}
                     </p>
-                    <Link to={data.management_team.uid} className="link-text vertical-card-link d-flex justify-content-around align-items-center">
-                      <span> View Projects </span> 
+                    <Link to={data.management_team.uid} className="link-text management-card-link d-flex justify-content-between align-items-center">
+                      <span> Our Team </span> 
                       <i className="fas fa-arrow-right"></i>
                     </Link>
                   </div> 
