@@ -1,20 +1,21 @@
 $theme-colors: (
   "primary": #b82831,
   "secondary": #fbfbfb,
-  "tertiary":#b1a585,
+  "tertiary":#b2a585,
   "footer-bg": #333333,
-  "bg-secondary":#f9fafa,
   "danger": #ff4136, 
   "heading-primary":#333333,
   "headig-secondary":#958c65,
   "text-primary":#343434,
   "text-secondary":#5b5b5b,
-  "text-tertiary":rgba(00,00,00,0.5),
-  "text-white":#ffffff,
-  "text-black": #000000,
+  "text-tertiary":#7f7f7f,
   "icon-color":#b0a683,
-  "bg-color":#f9fafa
+  "bg-color":#f9fafa,
+  "sub-title-color":#988a63,
+  "text-black":#000,
+  "border-color":#eeeeee
 );
+
 .mt-25{
     margin-top: 25px;
 }
@@ -98,15 +99,41 @@ body{
 /*================================
 -------- Common Basic css start
 ================================*/ 
+body{
+    font-family: 'Graphik', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.86;
+    letter-spacing: -0.31px;
+    color: theme-color("text-tertiary");
+}
 .padding-block-60{
-    padding: 60px 0;
+    padding: 52px 0 24px;
+}
+.mt-25{
+    margin-top: 25px;
+}
+.mb-100 {
+    margin-bottom: 100px;
+}
+.mt-140{
+    margin-top: 140px;
+}
+.mt-92{
+    margin-top:92px;
 }
 .page-heading{
     border-left: 10px solid theme-color("tertiary");
-    font-family: 'Poppins', sans-serif;
-    padding:5px 25px;
+    font-family: 'Graphik', sans-serif;
+    font-weight: 400;
+    padding:0px 8px;
+    height: 40px;
+    opacity: 0.8;
     font-size:30px;
     color: theme-color("text-black");
+    align-items: center;
+    display: flex;
+    margin: 0;
 }
 .section-title{
     font-family: georgia;
@@ -118,7 +145,7 @@ body{
     &::after{
         content: "";
         border-bottom: 2px solid theme-color("primary");
-        padding: 10px 0;
+        padding: 8px 0;
         width: 85px;
         display: block;
     }
@@ -127,9 +154,10 @@ body{
     font-family: georgia;
     font-size: 20px;
     font-weight: 500;
-    letter-spacing: -0.44px;
-    color: theme-color("heading-primary");
+    letter-spacing: -0.4px;
+    color: theme-color("headig-primary");
     text-align:left;
+    color: #333;
     text-transform: capitalize;
 }
 .section-title-secondary{
@@ -153,7 +181,6 @@ body{
   font-size: 14px;
   letter-spacing: -0.23px;
   color: theme-color("tertiary");
-  cursor: pointer;
   &:hover{
       text-decoration: none;
   }
@@ -164,7 +191,7 @@ body{
     background: theme-color("primary");
 }
 .btn-primary{
-    padding:17px 22px;
+    padding:16px 24px;
     border:1px solid theme-color("secondary");
     color: theme-color("secondary");
     width:169px;
@@ -179,8 +206,6 @@ body{
     text-align: center;
     width: 320px;
 }
-.responsive-img{
-    height: 100%;}
 .btn-tertiary{
     padding: 16px;
     color:theme-color("text-tertiary");
@@ -191,9 +216,6 @@ body{
     text-align: center;
     background:transparent;
 }
-.bg-white{
-    background-color: theme-color("text-white");
-}
 img{
     object-fit: cover;
 }
@@ -201,7 +223,6 @@ img{
 .list-style-none{
     list-style: none;
 }
-// ------------------ Header Css Start ----------------
 .header{
     box-shadow: 1px 0px 6px rgba(00,00,00,0.2);
 }
@@ -224,6 +245,7 @@ img{
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
+  z-index: 99;
 }
 .navbar-nav{ 
   .nav-item{
@@ -277,6 +299,11 @@ img{
             color: theme-color("primary");
         }
         border-bottom: 4px solid theme-color("primary");
+    }
+}
+.home-slider{
+    .slick-arrow{
+        display: none !important;
     }
 }
 // -------- Home page bottom tabs Css end Here ----------
@@ -353,25 +380,93 @@ img{
         }
     }
 }
-// ------------- Knowledge Hub End Here ----------------
 
-// ------------- Buyes Tips Start Here ----------------
+// ------------- Knowledge Hub Start Here ----------------
+
 .knowledge-hub{
-    .buyer-tips-banner{
-        .buyer-tips-image{
+    margin-bottom: 124px;
+        .important-notices{
+            .inner-section-title{
+                display: none;
+            }   
+        }
+        .buyer-tips-banner{
+            margin-top: 108px;
+            .section-title::after{
+                content: "";
+                margin: 0 auto;
+            }
+            .buyer-tips-image{
             margin-top: 30px;
+         }
+        .buyer-tips-box{
+            width: 541px;
+            height: 172px;
+            bottom: 45px;
+            left: 77px;
+            background: #000000a3;
+            padding: 20px 40px;
+                .section-title::after{
+                    content: "";
+                    width: auto;
+                    padding: 4px 0;
+                    border-bottom: 1px solid #fff;
+                    opacity: 0.43;
+                }
+            p{
+                opacity: 0.8;
+            }
         }
     }
-    .about-loan{
-        .description{
-           height: 100%;
-            padding: 45px 25px;
-        }
+    .bg-light-gray{
+        height: 100%;
+        padding: 44px 36px;
     }
     .bg-light-gray{
         background-color: theme-color("bg-color");
     }
-}
+    .guidelines-nris {
+        .guidelines-nris-info{
+            width: 247px;
+            padding: 16px 24px;
+            bottom: 42px;
+            background-color: #000000a3;
+            p{
+                opacity: 0.85;
+                font-size: 16px;
+                font-weight: 300;
+                letter-spacing: 0.36px;
+            }
+        }
+    }
+    .know-more{
+        a{
+         color: #b1a585;
+         letter-spacing: -0.23px;
+        }
+     }
+     .maha-rera-mb{
+         border-bottom: 1px solid theme-color("border-color"); 
+         border-top: 1px solid theme-color("border-color");
+         padding: 12px 0;
+         box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.06);
+         .know-more{
+            right: 18px;
+            bottom: 12px;
+        }
+     }
+  }
+  .card-primary{
+      .card-primary-img{
+          height: 100%;
+          img{
+              height: 100%;
+          }
+      }
+  }
+  // ------------- Knowledge Hub End Here ----------------
+  
+  
 // ------------- Event Start Here ----------------
 .event{
     .event-heading{
@@ -763,65 +858,79 @@ footer{
     }
 }
 // ------------- Media Query Start Here ----------------
+@media (max-width:1200px){
+// Hospitality project
+.hospitality-projects{
+    margin-bottom: 0;
+ }
+
+// Residence Card
+.residences-card {
+    .rectangle{
+        width: 250px
+    }
+ }
+}
 @media (max-width:992px){
+    // Card Primary
+    .card-primary{
+        .card-primary-img{
+           img{
+            height: 210px;
+            object-fit: cover;
+           }
+       }
+    }  
     .knowledge-hub{
+        .mt-100{
+            margin-top: 0;
+        }
+        .heading{
+            margin-top: 80px;
+        }
         .buyer-tips-banner-img{
             .buyer-tips-box{
                 width: 535px;
                 height: 180px;
                 bottom: 40px;
                 left: 48px;
-                padding: 15px 30px;
-                
+                padding: 15px 30px;    
             }
         }
-        .about-loan,
-        .maha-rera,
-        .important-notices{
-            .description {
-                padding: 25px;
-            }
-            .about-loan-img,
-            .maha-rera-img,
-            .important-notices-img{
-                img{
-                    height: 200px;
-                    object-fit: cover;
-                }
-            }
-        }
+
+     }
         .guidelines-nris {
             .guidelines-nris-img{
                 img{
-                    height: 329px;
+                    height: 390px;
                     object-fit: cover;
                 }
             }
         }
-    }
-    .section-title{
-        font-size:20px;
-    }
-    .vertical-card .vertical-card-body{
-        padding:20px;
-    }
-    .management-card .management-card-body{
-        padding:20px;
-    }
+// Hospitality project
+.hospitality-projects{
+    margin-bottom: 0;
+ }
 
+// Residence Card
+.residences-card {
+    .rectangle{
+        width: 100%;
+        left: 0;
+    }
+  }
 }
 @media (max-width:768px){
     .our-verticals-tabs .nav-item{
-        padding:15px 9px;
+        padding:16px 8px;
     }
-
     .contact-section {
         .locate-us{
             margin-bottom: 50px;
         }
         hr{
             margin: 0 auto;
-            width: 18%;;
+            width: 25%;;
         }
         form{
             .customer {
@@ -834,34 +943,36 @@ footer{
             text-align: center;
             .sub-heading {
                 display: block;
-                margin-bottom: 15px ;
+                margin-bottom: 16px ;
             }
             .description{
-                margin: 15px 0  40px 0;
+                margin: 16px 0  40px 0;
             }
         }
     }
     footer{
         .copyright{
-            margin-top: 10px;
+            margin-top: 12px;
         }
     }
+    // Knowledge Hub
     .knowledge-hub{
-        .sub-heading{
+        .mt-92{
+            margin-top: 0;
+        }
+        .heading{
             margin-top: 60px;
         }
-        .about-loan{
-            .sub-heading{
-                margin-top: 0;
-            }
+        .section-title{
+            margin-top: 0;
         }
         .knowledge-hub-heading{
             .title{
-                padding-top: 25px;
+                padding-top: 24px;
             }
         }
        .buyer-tips-banner{
-           margin-bottom: 80px;
+           margin-bottom: 32px;
            .container{
                padding: 0;
            }
@@ -871,7 +982,7 @@ footer{
                left: 0;
                bottom: 0;
                padding: 20px 20px;
-               .sub-title,
+               .section-title,
                hr{
                    display: none;
                }
@@ -879,11 +990,11 @@ footer{
                    align-self: flex-end;
                    position: absolute;
                    bottom: -34px;
-                  
                }
            }
        }
        .guidelines-nris {
+           margin-top: 0;
             .guidelines-nris-img{
             img{
                 height: auto;
@@ -891,32 +1002,31 @@ footer{
                 }
            }
         }
+        .buyer-tips-info{
+            .about-loan{
+                margin-top: 24px;
+            }
+          }
    } 
-   .about-sect-4{
-       height:auto !important;
-   }
-   .management-card{
-       height: 200px;
-   }
+// Hospitality Project
+   .hospitality-projects{
+    .residences{
+        padding-bottom: 0;}
+    }
+
+ // Residence Card
+   .residences-card {
+        margin-bottom: 150px;
+        .rectangle{
+             width: 300px;
+             left: 10px;
+    }
+ }
 }
 @media (max-width:580px){
     .navbar-collapse{
         width:96%;
     }
-    .bg-color {
-        margin-top: 0;
-        padding:0 0 20px 0;
-        background: theme-color("bg-color");
-            .padding-block-60{
-                padding: 25px 0 25px 0;
-            }
-            .page-heading{
-                font-size: 24px;  
-            }
-            .text{
-                padding: 0 15px;
-            }
-        }
     .our-verticals-tabs{
       .nav-item{
           padding:15px 0;
@@ -930,7 +1040,7 @@ footer{
     &::before{
         content: '\f111';
     }
-    }
+    }   
     .contact-section{
         .bg-color {
             .form-control{
@@ -950,75 +1060,58 @@ footer{
             }
            
         }
-    }
-    .contact-heading, 
-    .award-recogniation-heading,
-    .event-heading,
-    .knowledge-hub-heading{
-        margin-top: 0;
-        padding-bottom: 20px;
-        background: #fafafa;
-        .title{
-            h2{
-                font-size: 20px;
-                padding: 10px 10px;
-                color: #9b9b9b;
-                font-weight: 400;
+        .contact-details{
+            .section-title::after{
+                content: "";
+                margin: 0 auto;
             }
-        }
-        .container{
-            padding: 0;
-        }
-        .description{
-            padding: 0 15px  0 15px ;
-        }
-    }
-   
-    footer{
-        .footer-menu,.footer-social-icon{
-            display: none;
-            .copyright{
-                margin-top: 10px;
+            i{
+                display: block;
+                margin-bottom: 12px;
             }
         }
     }
+//Knowledge Hub
  .knowledge-hub{
-     margin-bottom: 60px;
-     .knowledge-hub-heading{
-         .title{
-             padding-top: 25px;
-         }
-     }
-    .buyer-tips-banner{
-        .sub-heading{
-            margin-top: 60px;
-        }
-        margin-bottom: 80px;
-        .container{
+     margin-bottom: 124px;
+     .section-title::after{
+        content: "";
+        margin: 0 auto;
+        width:40px;
+        padding: 4px 0;
+    }
+        .col-6{
             padding: 0;
         }
-    }
-    .about-loan,
-    .maha-rera,
-    .important-notices{
-        margin: 0;
-        .description{
-            padding: 14px 25px;
+        .important-notices{
+            margin-top: 60px;
+            .section-title,p{
+                display: none;
+            }   
+            .inner-section-title{
+                display: block;
+            }
+            .card-primary-img{
+               img{
+                height: 115px;
+               }
+            }
+            .bg-light-gray{
+                padding: 24px 24px;
+                .know-more{
+                    align-self: flex-end;
+                }
+            }
         }
-        .sub-heading{
-            margin-top: 0;
-           h3{
-            text-align: center;
-           }
-           hr{
-               width:30px;
-               margin: 0 auto;
-           }
+    .buyer-tips-banner{
+        margin:80px 0 80px 0;
+        .container{
+            padding: 0;
         }
     }
     .guidelines-nris {
-        margin: 60px 0 80px 0;  
-        .sub-heading{
+        margin: 92px 0 80px 0;  
+        .heading{
             display: none;       
         }
         .guidelines-nris-info{
@@ -1026,33 +1119,65 @@ footer{
             height: auto;
             bottom: 0;
             position: unset!important;
-            opacity: 0.78;
+            background: #333;
+            
             .know-more{
                 position: absolute;
                 right: 18px;
                 bottom: -33px;
             }
-
         }
     }
     .maha-rera{
-        margin: 0 0 60px 0;  
-        .sub-heading {
-            margin-top: 0;
+        margin: 0;  
+    }
+    .maha-rera-mb{
+        img{
+            height: 115px;
         }
     }
  }
- .year-img-wrap{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding:12px 0;
-    img{
-        width:50% !important;
+ //card-primary
+ .card-primary{
+    .bg-light-gray{
+        padding: 16px 26px;
     }
- }
+    .section-title{
+        margin-top: 0;
+        text-align: center;
+  
+    }
+    .heading {
+        margin-top: 0;
+    }
 }
+//Hospitality Project
+   .hospitality-projects{
+        margin-bottom: 0;
+        .residences{
+            background-color: #fff;
+            padding: 0;
+         }
+    }   
+    .bg-color {
+        margin-top: 0;
+        padding:0;
+        background: theme-color("bg-color");
+            .padding-block-60{
+                padding: 24px 0 24px 0;
+            }
+            .page-heading{
+                font-size: 24px;  
+            }
+    }
+    //Page heading
+    .page-heading-section{
+        .main-paragraph{
+            padding: 0 16px 32px;
+        }
+    }
+}
+
 @media (max-width:420px){
     .navbar-collapse{
         width:95%;
@@ -1065,8 +1190,21 @@ footer{
            
         }
     }
-    .vertical-card,
-    .management-card{
-        height:150px;
+//knowledge Hub
+    .knowledge-hub{
+        .important-notices{
+            .bg-light-gray{
+                padding: 16px 26px;
+            }
+        }
+    }  
+//Card Primary
+   .card-primary{
+     .card-primary-img{
+        height: 100%;
+        img{
+          height: 100%;
+        }
     }
+   }     
 }
