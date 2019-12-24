@@ -5,8 +5,9 @@ class Commerical extends React.Component {
   constructor(props){
     super(props);
   }
+
   render(){
-    const data = this.props.gallery;
+    var data = this.props.gallery;
     var settings = {
       dots: false,
       infinite: true,
