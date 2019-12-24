@@ -7,7 +7,9 @@ class Commerical extends React.Component {
   }
 
   render(){
-    var data = this.props.gallery;
+    var data = this.props.galleryData;
+    console.log('this.props.galleryData',data.gallery);
+    
     var settings = {
       dots: false,
       infinite: true,
@@ -17,7 +19,6 @@ class Commerical extends React.Component {
       autoplay : true,
       // adaptiveHeight : true,
     };
-    
     return(
       <Slider {...settings} className="home-slider">
       {
