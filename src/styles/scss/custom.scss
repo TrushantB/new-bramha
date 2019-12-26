@@ -633,7 +633,7 @@ img{
     }  
 }
 .vertical-card{
-    background-color: theme-color("bg-secondary");
+    background-color: theme-color("bg-color");
     overflow: hidden;
     .vertical-img-wrapper{
         max-height: 150px;
@@ -658,7 +658,7 @@ img{
     }  
 }
 .management-card{
-    background-color: theme-color("bg-secondary");
+    background-color: theme-color("bg-color");
     overflow: hidden;
     .management-img-wrapper{
         max-height: 308px;
@@ -1103,6 +1103,7 @@ footer{
 }
 .input-file-btn{
     color:transparent;
+    outline: 0;
 }
 .input-file-btn::-webkit-file-upload-button {
     visibility: hidden;
@@ -1112,7 +1113,7 @@ footer{
     display: block;
     padding: 16px;
     background:theme-color("tertiary");
-    color:theme-color("text-white");
+    color:theme-color("text-white");    
     font-size: 14px;
     font-family: 'Graphik', sans-serif;
     font-weight: 400;
@@ -1291,15 +1292,44 @@ footer{
         .residences{
             padding-bottom: 0;}
         }
-    
-     // Residence Card
-       .residences-card {
-            margin-bottom: 150px;
-            .rectangle{
-                 width: 300px;
-                 left: 10px;
+   .career-tabs{
+    .btn-wraper{
+        flex-basis: 23%;
+    }
+    .btn-wraper-big{
+        flex-basis: 30%;
+    }
+    .btn-tertiary{
+        padding:16px 0;
+    }
+}
+   .about-sect-4{
+       height:auto !important;
+   }
+   .management-card{
+       height: 200px;
+   }
+}
+@media (max-width:580px){
+    .padding-sm-0{
+        padding:0 !important;
+    }
+    .navbar-collapse{
+        width:96%;
+    }
+    .bg-color {
+        margin-top: 0;
+        background: theme-color("bg-color");
+            .padding-block-60{
+                padding: 25px 0 25px 0;
+            }
+            .page-heading{
+                font-size: 24px;  
+            }
+            .text{
+                padding: 0 15px;
+            }
         }
-     }
        .career-tabs{
         .btn-wraper{
             flex-basis: 23%;
@@ -1318,6 +1348,7 @@ footer{
            height: 200px;
        }
     }
+
     @media (max-width:580px){
         .navbar-collapse{
             width:96%;
@@ -1484,18 +1515,24 @@ footer{
                 padding: 0 16px 32px;
             }
         }
+        .year-img-wrap {
+            width: 60% !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 12px 0;
+            margin: 0 auto 28px;
+            }
     }
-    
-    @media (max-width:420px){
-        .navbar-collapse{
-            width:95%;
-        }
-        .contact-section{
-            .bg-color {
-                select{
-                    flex: 100%;
-                }
-               
+
+@media (max-width:420px){
+    .navbar-collapse{
+        width:95%;
+    }
+    .contact-section{
+        .bg-color {
+            select{
+                flex: 100%;
             }
         }
     //knowledge Hub
@@ -1516,3 +1553,4 @@ footer{
         }
        }     
     }
+}
