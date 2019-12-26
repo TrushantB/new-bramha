@@ -22,45 +22,45 @@ class IndexPage extends React.Component {
   componentWillMount() {
     const residentialData = this.props.data.prismicResidential;
     this.setState({residential: residentialData})
-    this.setState({selectedVertical : < Residential galleryData = {residentialData}/>})
+    // this.setState({selectedVertical : < Residential galleryData = {residentialData}/>})
 
     const commercialData = this.props.data.prismicCommercial.data;
     this.setState({commercial: commercialData})
-    this.setState({selectedVertical : < Commerical galleryData = { commercialData } />})
+    // this.setState({selectedVertical : < Commerical galleryData = { commercialData } />})
 
     const hospitalityData = this.props.data.prismicHospitality.data;
     this.setState({hospitality: hospitalityData})
-    this.setState({selectedVertical : < Hospitality gallery = { hospitalityData } />})
+    // this.setState({selectedVertical : < Hospitality gallery = { hospitalityData } />})
 
     const leisureData  = this.props.data.prismicLeisureClub.data;
     this.setState({leisure: leisureData});
-    this.setState({selectedVertical : < Leisure gallery = { leisureData } />})
+    // this.setState({selectedVertical : < Leisure gallery = { leisureData } />})
   }
   
-  handleVerticals(event){
-    switch(event){
-      case 'residencial': {
-        this.setState({selectedVertical : < Residential gallery = {this.state.residential}/>})
-      }
-      break;
+  // handleVerticals(event){
+  //   switch(event){
+  //     case 'residencial': {
+  //       this.setState({selectedVertical : < Residential gallery = {this.state.residential}/>})
+  //     }
+  //     break;
       
-      case 'commercial': {
-        this.setState({selectedVertical : < Commerical galleryData = { this.state.commercial}/>})
-      }
-      break;
+  //     case 'commercial': {
+  //       this.setState({selectedVertical : < Commerical galleryData = { this.state.commercial}/>})
+  //     }
+  //     break;
       
-      case 'hospitality': {
-        this.setState({selectedVertical : < Hospitality gallery = { this.state.hospitality}/>})
-      }
-      break;
+  //     case 'hospitality': {
+  //       this.setState({selectedVertical : < Hospitality gallery = { this.state.hospitality}/>})
+  //     }
+  //     break;
       
-      case 'leisure': {
-        this.setState({selectedVertical : < Leisure gallery = {this.state.leisure} />})
-      }
-      break;
-    }
+  //     case 'leisure': {
+  //       this.setState({selectedVertical : < Leisure gallery = {this.state.leisure} />})
+  //     }
+  //     break;
+  //   }
     
-  }
+  // }
 
   render(){
     return(
@@ -73,25 +73,29 @@ class IndexPage extends React.Component {
           <li className="nav-item active" id="residencial-tab" data-toggle="tab" href="#residencial" role="tab" aria-controls="residencial" aria-selected="true">
             <Link to='/' className="tab">            
                 <i className="far fa-building"></i>
-              <span onClick={()=> {this.handleVerticals('residencial')}}> residencial </span>
+              <span > residencial </span>
+              {/* onClick={()=> {this.handleVerticals('residencial')}} */}
             </Link>
           </li>
           <li className="nav-item"  id="commercial-tab" data-toggle="tab" href="#commercial" role="tab" aria-controls="commercial" aria-selected="true">
             <a href="#" className="tab">            
               <i className="fas fa-hotel"></i>
-              <span onClick={()=> {this.handleVerticals('commercial')}}>commercial</span>
+              <span >commercial</span>
+              {/* onClick={()=> {this.handleVerticals('commercial')}} */}
             </a>
           </li>
           <li className="nav-item"  id="hospitality-tab" data-toggle="tab" href="#hospitality" role="tab" aria-controls="hospitality" aria-selected="true">
             <a href="#" className="tab">            
                 <i className="far fa-hospital"></i>
-              <span onClick={()=> {this.handleVerticals('hospitality')}}>hospitality</span>
+              <span >hospitality</span>
+              {/* onClick={()=> {this.handleVerticals('hospitality')}} */}
             </a>
           </li>
           <li className="nav-item"  id="leisure-tab" data-toggle="tab" href="#leisure" role="tab" aria-controls="leisure" aria-selected="true">
             <a href="#" className="tab">            
                 <i className="fas fa-hot-tub"></i>
-              <span onClick={()=> {this.handleVerticals('leisure')}}>leisure</span>
+              <span >leisure</span>
+              {/* onClick={()=> {this.handleVerticals('leisure')}} */}
             </a>
           </li>
         </ul>

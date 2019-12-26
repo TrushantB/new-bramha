@@ -493,47 +493,47 @@ img{
     }
   }
 // ------------- Contact Start Here ----------------
-hr{
-    width: 30%;
-    height: 1px;
-    background: theme-color("primary");
-    margin:  10px 0 15px 0;
-}
 .contact-section{
-    .sub-heading {
-        display: flex;
-    }
     .contact-form{
-        margin: 60px 0 0 0;
-    }
-
-    .contact-heading{
-        .title{
-            h2{
-                @include border-left;
-                font-weight: 400;
-            }
-        }
+        margin: 106px 0 0 0;
     }
     .contact-details{
+        margin-top: 60px;
+        p,address{
+            opacity: 0.5;
+            font-family: Graphik;
+            font-size: 14px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.71;
+            letter-spacing: -0.31px;
+            color: #000000;
+        }
         i{
-            font-size: 30px;
+            font-size: 26px;
             color:theme-color("icon-color");
         }   
-
     }
     form{
-        .bg-color{
+        .form-bg-color{
             background: #b2a585;
-            padding: 15px 0;
+            padding: 16px 0;
+             label{
+                 margin-right: 8px;
+             }
         }
         .customer{
             select{
-                flex-basis: 30%;
+                flex-basis: 23%;
                 background: transparent;
                 color: #fff;
-                border-color: #fff;
+                border: solid 0.5px #ffffff;
                 border-radius: 0;
+                padding: 4px;
+                font-weight: 300;
+                font-size: 14px;
+                height: 30px;
                 option{
                     color: #929292;
                 }
@@ -547,15 +547,31 @@ hr{
     }
     .contact-form-bg {
         background: #fafafa;
+        padding: 40px 0 40px 0;
+        .container{
+            max-width: 700px;
+        }
         .form-row{
+            select{
+                font-weight: 300;
+                font-size: 14px; 
+            }
             input,textarea,select{
+                font-weight: 300;
+                padding-left: 8px;
+                font-size: 14px;
                 background: transparent;
-                border-color: #999999;
+                border: solid 0.5px #999999;
                 border-radius: 0;
                 color: #929292;
                     &::placeholder{
                         color: #929292;
+                        font-weight: 300;
+                        font-size: 14px;
                     }
+            }
+            input,select{
+                height: 30px;
             }
             .form-control:focus{
                 box-shadow: none;
@@ -563,13 +579,15 @@ hr{
                 border-color: #999999;
             }
             .form-group{
-                margin-bottom: 30px;
+                margin-bottom: 32px;
                 padding: 0 20px 0 20px;
             }
         }
         button{
-            padding: 15px 130px;
+            padding: 16px 0;
+            width: 320px;
             border-radius: 0;
+            font-weight: 300;
             background: theme-color("tertiary");
             border-color:theme-color("tertiary") ;
             &:focus{
@@ -579,10 +597,26 @@ hr{
         }
     }
     .locate-us{
-        margin: 100px 0 100px 0;
+        margin: 130px 0 116px 0;
+    } 
+    .locate-us,
+    .contact-form{
+        .section-title{
+            margin-bottom: 26px;
+            &::after{
+                display: none;
+            }
+        }
+
+    }
+    .map {
+        -webkit-filter: grayscale(100%);
+           -moz-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+             -o-filter: grayscale(100%);
+                filter: grayscale(100%);
     }
 }
-
 
 
 /*==============================
@@ -919,387 +953,387 @@ footer{
 
 // ------------- Media Query Start Here ----------------
 @media (max-width:1200px){
-// Hospitality project
-.hospitality-projects{
-    margin-bottom: 0;
- }
-
-// Residence Card
-.residences-card {
-    .rectangle{
-        width: 250px
+    // Hospitality project
+    .hospitality-projects{
+        margin-bottom: 0;
+     }
+    
+    // Residence Card
+    .residences-card {
+        .rectangle{
+            width: 250px
+        }
+     }
+        .career-tabs{
+            .btn-tertiary{
+                padding:16px 8px;
+            }
+        }
     }
- }
-    .career-tabs{
-        .btn-tertiary{
+    @media (max-width:992px){
+        // Card Primary
+        .card-primary{
+            .card-primary-img{
+               img{
+                height: 210px;
+                object-fit: cover;
+               }
+           }
+        }  
+        .knowledge-hub{
+            .mt-100{
+                margin-top: 0;
+            }
+            .heading{
+                margin-top: 80px;
+            }
+            .buyer-tips-banner-img{
+                .buyer-tips-box{
+                    width: 535px;
+                    height: 180px;
+                    bottom: 40px;
+                    left: 48px;
+                    padding: 15px 30px;    
+                }
+            }
+    
+         }
+            .guidelines-nris {
+                .guidelines-nris-img{
+                    img{
+                        height: 390px;
+                        object-fit: cover;
+                    }
+                }
+            }
+    // Hospitality project
+    .hospitality-projects{
+        margin-bottom: 0;
+     }
+    
+    // Residence Card
+    .residences-card {
+        .rectangle{
+            width: 100%;
+            left: 0;
+        }
+      }
+    }
+    @media (max-width:768px){
+        .our-verticals-tabs .nav-item{
             padding:16px 8px;
         }
-    }
-}
-@media (max-width:992px){
-    // Card Primary
-    .card-primary{
-        .card-primary-img{
-           img{
-            height: 210px;
-            object-fit: cover;
+        .contact-section {
+            .locate-us{
+                margin-bottom: 50px;
+            }
+            hr{
+                margin: 0 auto;
+                width: 25%;;
+            }
+            form{
+                .customer {
+                    select{
+                        flex-basis: 84%;
+                    }
+                }
+            } 
+            .contact-details{
+                text-align: center;
+                .sub-heading {
+                    display: block;
+                    margin-bottom: 16px ;
+                }
+                .description{
+                    margin: 16px 0  40px 0;
+                }
+            }
+        }
+        footer{
+            .copyright{
+                margin-top: 12px;
+            }
+        }
+        // Knowledge Hub
+        .knowledge-hub{
+            .mt-92{
+                margin-top: 0;
+            }
+            .heading{
+                margin-top: 60px;
+            }
+            .section-title{
+                margin-top: 0;
+            }
+            .knowledge-hub-heading{
+                .title{
+                    padding-top: 24px;
+                }
+            }
+           .buyer-tips-banner{
+               margin-bottom: 32px;
+               .container{
+                   padding: 0;
+               }
+               .buyer-tips-box{
+                   width: 100%;
+                   height: auto;
+                   left: 0;
+                   bottom: 0;
+                   padding: 20px 20px;
+                   .section-title,
+                   hr{
+                       display: none;
+                   }
+                   .know-more{
+                       align-self: flex-end;
+                       position: absolute;
+                       bottom: -34px;
+                   }
+               }
            }
-       }
-    }  
-    .knowledge-hub{
-        .mt-100{
-            margin-top: 0;
-        }
-        .heading{
-            margin-top: 80px;
-        }
-        .buyer-tips-banner-img{
-            .buyer-tips-box{
-                width: 535px;
-                height: 180px;
-                bottom: 40px;
-                left: 48px;
-                padding: 15px 30px;    
-            }
-        }
-
-     }
-        .guidelines-nris {
-            .guidelines-nris-img{
+           .guidelines-nris {
+               margin-top: 0;
+                .guidelines-nris-img{
                 img{
-                    height: 390px;
+                    height: auto;
                     object-fit: cover;
+                    }
+               }
+            }
+            .buyer-tips-info{
+                .about-loan{
+                    margin-top: 24px;
                 }
-            }
+              }
+       } 
+    // Hospitality Project
+       .hospitality-projects{
+        .residences{
+            padding-bottom: 0;}
         }
-// Hospitality project
-.hospitality-projects{
-    margin-bottom: 0;
- }
-
-// Residence Card
-.residences-card {
-    .rectangle{
-        width: 100%;
-        left: 0;
-    }
-  }
-}
-@media (max-width:768px){
-    .our-verticals-tabs .nav-item{
-        padding:16px 8px;
-    }
-    .contact-section {
-        .locate-us{
-            margin-bottom: 50px;
+    
+     // Residence Card
+       .residences-card {
+            margin-bottom: 150px;
+            .rectangle{
+                 width: 300px;
+                 left: 10px;
         }
-        hr{
-            margin: 0 auto;
-            width: 25%;;
+     }
+       .career-tabs{
+        .btn-wraper{
+            flex-basis: 23%;
         }
-        form{
-            .customer {
-                select{
-                    flex-basis: 84%;
-                }
-            }
-        } 
-        .contact-details{
-            text-align: center;
-            .sub-heading {
-                display: block;
-                margin-bottom: 16px ;
-            }
-            .description{
-                margin: 16px 0  40px 0;
-            }
+        .btn-wraper-big{
+            flex-basis: 30%;
+        }
+        .btn-tertiary{
+            padding:16px 0;
         }
     }
-    footer{
-        .copyright{
-            margin-top: 12px;
-        }
+       .about-sect-4{
+           height:auto !important;
+       }
+       .management-card{
+           height: 200px;
+       }
     }
-    // Knowledge Hub
-    .knowledge-hub{
-        .mt-92{
+    @media (max-width:580px){
+        .navbar-collapse{
+            width:96%;
+        }
+        .bg-color {
             margin-top: 0;
+            background: theme-color("bg-color");
+                .padding-block-60{
+                    padding: 25px 0 25px 0;
+                }
+                .page-heading{
+                    font-size: 24px;  
+                }
+                .text{
+                    padding: 0 15px;
+                }
+            }
+        .our-verticals-tabs{
+          .nav-item{
+              padding:15px 0;
+          }
         }
-        .heading{
-            margin-top: 60px;
+        .tab{
+            font-size: 12px;
+            i{
+                display: none;
+            }
+        &::before{
+            content: '\f111';
+        }
+        }   
+        .contact-section{
+            .bg-color {
+                .form-control{
+                    flex: 75%;
+                }
+              
+            }
+            .contact-form-bg{
+                button{
+                    width: 100%;
+                    padding: 15px 0;
+                }
+                .form-row{
+                    .form-group{
+                        padding: 0;
+                    }
+                }
+               
+            }
+            .contact-details{
+                .section-title::after{
+                    content: "";
+                    margin: 0 auto;
+                }
+                i{
+                    display: block;
+                    margin-bottom: 12px;
+                }
+            }
+        }
+    //Knowledge Hub
+     .knowledge-hub{
+         margin-bottom: 124px;
+         .section-title::after{
+            content: "";
+            margin: 0 auto;
+            width:40px;
+            padding: 4px 0;
+        }
+            .col-6{
+                padding: 0;
+            }
+            .important-notices{
+                margin-top: 60px;
+                .section-title,p{
+                    display: none;
+                }   
+                .inner-section-title{
+                    display: block;
+                }
+                .card-primary-img{
+                   img{
+                    height: 115px;
+                   }
+                }
+                .bg-light-gray{
+                    padding: 24px 24px;
+                    .know-more{
+                        align-self: flex-end;
+                    }
+                }
+            }
+        .buyer-tips-banner{
+            margin:80px 0 80px 0;
+            .container{
+                padding: 0;
+            }
+        }
+        .guidelines-nris {
+            margin: 92px 0 80px 0;  
+            .heading{
+                display: none;       
+            }
+            .guidelines-nris-info{
+                width: 100%;
+                height: auto;
+                bottom: 0;
+                position: unset!important;
+                background: #333;
+                
+                .know-more{
+                    position: absolute;
+                    right: 18px;
+                    bottom: -33px;
+                }
+            }
+        }
+        .maha-rera{
+            margin: 0;  
+        }
+        .maha-rera-mb{
+            img{
+                height: 115px;
+            }
+        }
+     }
+     //card-primary
+     .card-primary{
+        .bg-light-gray{
+            padding: 16px 26px;
         }
         .section-title{
             margin-top: 0;
+            text-align: center;
+      
         }
-        .knowledge-hub-heading{
-            .title{
-                padding-top: 24px;
+        .heading {
+            margin-top: 0;
+        }
+    }
+    //Hospitality Project
+       .hospitality-projects{
+            margin-bottom: 0;
+            .residences{
+                background-color: #fff;
+                padding: 0;
+             }
+        }   
+        .bg-color {
+            margin-top: 0;
+            padding:0;
+            background: theme-color("bg-color");
+                .padding-block-60{
+                    padding: 24px 0 24px 0;
+                }
+                .page-heading{
+                    font-size: 24px;  
+                }
+        }
+        //Page heading
+        .page-heading-section{
+            .main-paragraph{
+                padding: 0 16px 32px;
             }
         }
-       .buyer-tips-banner{
-           margin-bottom: 32px;
-           .container{
-               padding: 0;
-           }
-           .buyer-tips-box{
-               width: 100%;
-               height: auto;
-               left: 0;
-               bottom: 0;
-               padding: 20px 20px;
-               .section-title,
-               hr{
-                   display: none;
-               }
-               .know-more{
-                   align-self: flex-end;
-                   position: absolute;
-                   bottom: -34px;
-               }
-           }
-       }
-       .guidelines-nris {
-           margin-top: 0;
-            .guidelines-nris-img{
+    }
+    
+    @media (max-width:420px){
+        .navbar-collapse{
+            width:95%;
+        }
+        .contact-section{
+            .bg-color {
+                select{
+                    flex: 100%;
+                }
+               
+            }
+        }
+    //knowledge Hub
+        .knowledge-hub{
+            .important-notices{
+                .bg-light-gray{
+                    padding: 16px 26px;
+                }
+            }
+        }  
+    //Card Primary
+       .card-primary{
+         .card-primary-img{
+            height: 100%;
             img{
-                height: auto;
-                object-fit: cover;
-                }
-           }
-        }
-        .buyer-tips-info{
-            .about-loan{
-                margin-top: 24px;
-            }
-          }
-   } 
-// Hospitality Project
-   .hospitality-projects{
-    .residences{
-        padding-bottom: 0;}
-    }
-
- // Residence Card
-   .residences-card {
-        margin-bottom: 150px;
-        .rectangle{
-             width: 300px;
-             left: 10px;
-    }
- }
-   .career-tabs{
-    .btn-wraper{
-        flex-basis: 23%;
-    }
-    .btn-wraper-big{
-        flex-basis: 30%;
-    }
-    .btn-tertiary{
-        padding:16px 0;
-    }
-}
-   .about-sect-4{
-       height:auto !important;
-   }
-   .management-card{
-       height: 200px;
-   }
-}
-@media (max-width:580px){
-    .navbar-collapse{
-        width:96%;
-    }
-    .bg-color {
-        margin-top: 0;
-        background: theme-color("bg-color");
-            .padding-block-60{
-                padding: 25px 0 25px 0;
-            }
-            .page-heading{
-                font-size: 24px;  
-            }
-            .text{
-                padding: 0 15px;
+              height: 100%;
             }
         }
-    .our-verticals-tabs{
-      .nav-item{
-          padding:15px 0;
-      }
+       }     
     }
-    .tab{
-        font-size: 12px;
-        i{
-            display: none;
-        }
-    &::before{
-        content: '\f111';
-    }
-    }   
-    .contact-section{
-        .bg-color {
-            .form-control{
-                flex: 75%;
-            }
-          
-        }
-        .contact-form-bg{
-            button{
-                width: 100%;
-                padding: 15px 0;
-            }
-            .form-row{
-                .form-group{
-                    padding: 0;
-                }
-            }
-           
-        }
-        .contact-details{
-            .section-title::after{
-                content: "";
-                margin: 0 auto;
-            }
-            i{
-                display: block;
-                margin-bottom: 12px;
-            }
-        }
-    }
-//Knowledge Hub
- .knowledge-hub{
-     margin-bottom: 124px;
-     .section-title::after{
-        content: "";
-        margin: 0 auto;
-        width:40px;
-        padding: 4px 0;
-    }
-        .col-6{
-            padding: 0;
-        }
-        .important-notices{
-            margin-top: 60px;
-            .section-title,p{
-                display: none;
-            }   
-            .inner-section-title{
-                display: block;
-            }
-            .card-primary-img{
-               img{
-                height: 115px;
-               }
-            }
-            .bg-light-gray{
-                padding: 24px 24px;
-                .know-more{
-                    align-self: flex-end;
-                }
-            }
-        }
-    .buyer-tips-banner{
-        margin:80px 0 80px 0;
-        .container{
-            padding: 0;
-        }
-    }
-    .guidelines-nris {
-        margin: 92px 0 80px 0;  
-        .heading{
-            display: none;       
-        }
-        .guidelines-nris-info{
-            width: 100%;
-            height: auto;
-            bottom: 0;
-            position: unset!important;
-            background: #333;
-            
-            .know-more{
-                position: absolute;
-                right: 18px;
-                bottom: -33px;
-            }
-        }
-    }
-    .maha-rera{
-        margin: 0;  
-    }
-    .maha-rera-mb{
-        img{
-            height: 115px;
-        }
-    }
- }
- //card-primary
- .card-primary{
-    .bg-light-gray{
-        padding: 16px 26px;
-    }
-    .section-title{
-        margin-top: 0;
-        text-align: center;
-  
-    }
-    .heading {
-        margin-top: 0;
-    }
-}
-//Hospitality Project
-   .hospitality-projects{
-        margin-bottom: 0;
-        .residences{
-            background-color: #fff;
-            padding: 0;
-         }
-    }   
-    .bg-color {
-        margin-top: 0;
-        padding:0;
-        background: theme-color("bg-color");
-            .padding-block-60{
-                padding: 24px 0 24px 0;
-            }
-            .page-heading{
-                font-size: 24px;  
-            }
-    }
-    //Page heading
-    .page-heading-section{
-        .main-paragraph{
-            padding: 0 16px 32px;
-        }
-    }
-}
-
-@media (max-width:420px){
-    .navbar-collapse{
-        width:95%;
-    }
-    .contact-section{
-        .bg-color {
-            select{
-                flex: 100%;
-            }
-           
-        }
-    }
-//knowledge Hub
-    .knowledge-hub{
-        .important-notices{
-            .bg-light-gray{
-                padding: 16px 26px;
-            }
-        }
-    }  
-//Card Primary
-   .card-primary{
-     .card-primary-img{
-        height: 100%;
-        img{
-          height: 100%;
-        }
-    }
-   }     
-}
