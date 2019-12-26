@@ -137,53 +137,7 @@ export default class Residential extends React.Component {
                     )
                   })
                   }
-                  </Slider>
-
-                  {/* <div className="col-md-4">
-                    <div className="secondary-card position-relative">
-                      <div className="secondary-card-img">
-                        <img src={project} alt="" width="100%"/>
-                      </div>
-                      <div className="secondary-card-rectangle position-absolute d-flex flex-column justify-content-around">
-                        <div className="title">
-                            <h4 className="text-uppercase m-0 inner-section-title">Bramha Majestic</h4>
-                        </div>
-                        <div className="apartment-size d-flex justify-content-between align-items-center">
-                            <span className="text-uppercase">3 & 3.5 bhk</span>
-                            <a href="#">
-                              <i className="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                        <div className="project-location">
-                            <i className="fas fa-map-marker-alt"></i>
-                            <span>New Kalyani Nagar</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-4">
-                    <div className="secondary-card position-relative">
-                      <div className="secondary-card-img">
-                        <img src={project} alt="" width="100%"/>
-                      </div>
-                      <div className="secondary-card-rectangle position-absolute d-flex flex-column justify-content-around">
-                        <div className="title">
-                            <h4 className="text-uppercase m-0 inner-section-title">Bramha Majestic</h4>
-                        </div>
-                        <div className="apartment-size d-flex justify-content-between align-items-center">
-                            <span className="text-uppercase">3 & 3.5 bhk</span>
-                            <a href="#">
-                              <i className="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                        <div className="project-location">
-                            <i className="fas fa-map-marker-alt"></i>
-                            <span>New Kalyani Nagar</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div> */}
-                 
+                </Slider>
               </div>
             </section>
           </section>
