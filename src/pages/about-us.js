@@ -29,9 +29,11 @@ class AboutUs extends React.Component {
           <section className="banner-section">
               <img src={data.image.url} alt="banner image here" className="banner-img" />
           </section>
-          <section className="about-sections pb-0 page-heading-section container container-sm-fluid bg-color">
-              <div className="">
-                  <h2 className="page-heading">{data.sub_title.text} </h2> 
+          <section className="about-sections pb-0 pt-sm-0 page-heading-section container container-sm-fluid bg-color">
+              <div className="row">
+                <div className="col-12 padding-sm-0">
+                  <h2 className="page-heading">{data.sub_title.text} </h2>
+                </div> 
               </div>
               <div className="row padding-block-60 d-flex align-items-center">
                   <div className="col-sm-3 year-img-wrap">
@@ -41,7 +43,7 @@ class AboutUs extends React.Component {
                   <div className="mb-4" dangerouslySetInnerHTML={{__html: data.description.html}} />
                 </div>
               </div>
-              <div className="row bg-white padding-block-60 pt-0">
+              <div className="row bg-white padding-block-60">
               {data.aboutus_content.map((item,value)=>{
                 return(
                   <div key={value} className="col-md-4 mt-2 mt-sm-2 mt-md-2">
@@ -104,7 +106,7 @@ class AboutUs extends React.Component {
                       {verticalsData.title.text}
                   </h3>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-6 padding-sm-0">
                   <div className="vertical-card d-flex">
                     <div className="vertical-img-wrapper w-100">
                       <img src={verticalsData.vertical1.document[0].data.banner.url} alt="verticals image" className="w-100"/>
@@ -120,7 +122,7 @@ class AboutUs extends React.Component {
                     </div> 
                   </div>
                 </div>
-                <div className="col-md-6 mt-5 mt-md-0">
+                <div className="col-md-6 mt-5 mt-md-0 padding-sm-0">
                   <div className="vertical-card d-flex flex-row-reverse flex-md-row">
                     <div className="vertical-img-wrapper w-100">
                       <img src={verticalsData.vertical2.document[0].data.banner.url} alt="verticals image" className="w-100"/>
@@ -136,7 +138,7 @@ class AboutUs extends React.Component {
                     </div> 
                   </div>
                 </div>
-                <div className="col-md-6 mt-5">
+                <div className="col-md-6 mt-5 padding-sm-0 ">
                 <div className="vertical-card d-flex flex-row-reverse flex-md-row">
                     <div className="vertical-card-body d-flex flex-column justify-content-around"> 
                     <h2 className="inner-section-title">
@@ -152,7 +154,7 @@ class AboutUs extends React.Component {
                     </div>
                 </div>
                 </div>
-                <div className="col-md-6 mt-5">
+                <div className="col-md-6 mt-5 padding-sm-0">
                 <div className="vertical-card d-flex">
                     <div className="vertical-card-body d-flex flex-column justify-content-around"> 
                     <h2 className="inner-section-title">
@@ -175,7 +177,7 @@ class AboutUs extends React.Component {
                     {data.management_team.document[0].data.sub_title.text}
                 </h3>
               </div>
-              <div className="col-12">
+              <div className="col-12 padding-sm-0">
                 <div className="management-card d-flex">
                   <div className="management-img-wrapper w-100">
                     <img src={data.management_team.document[0].data.banner.url} alt="verticals image" className="w-100"/>

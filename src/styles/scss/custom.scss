@@ -800,6 +800,7 @@ footer{
 }
 .input-file-btn{
     color:transparent;
+    outline: 0;
 }
 .input-file-btn::-webkit-file-upload-button {
     visibility: hidden;
@@ -809,7 +810,7 @@ footer{
     display: block;
     padding: 16px;
     background:theme-color("tertiary");
-    color:theme-color("text-white");
+    color:theme-color("text-white");    
     font-size: 14px;
     font-family: 'Graphik', sans-serif;
     font-weight: 400;
@@ -983,6 +984,9 @@ footer{
    }
 }
 @media (max-width:580px){
+    .padding-sm-0{
+        padding:0 !important;
+    }
     .navbar-collapse{
         width:96%;
     }
@@ -1124,16 +1128,14 @@ footer{
         }
     }
  }
- .year-img-wrap{
-    width: 100%;
+ .year-img-wrap {
+    width: 60% !important;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding:12px 0;
-    img{
-        width:50% !important;
+    padding: 12px 0;
+    margin: 0 auto 28px;
     }
- }
 }
 @media (max-width:420px){
     .navbar-collapse{
