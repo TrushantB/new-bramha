@@ -682,7 +682,7 @@ img{
     }  
 }
 .vertical-card{
-    background-color: theme-color("bg-secondary");
+    background-color: theme-color("bg-color");
     overflow: hidden;
     .vertical-img-wrapper{
         max-height: 150px;
@@ -707,7 +707,7 @@ img{
     }  
 }
 .management-card{
-    background-color: theme-color("bg-secondary");
+    background-color: theme-color("bg-color");
     overflow: hidden;
     .management-img-wrapper{
         max-height: 308px;
