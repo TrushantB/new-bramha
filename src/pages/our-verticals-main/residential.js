@@ -8,13 +8,41 @@ import Footer from '../../components/footer'
 export default class Residential extends React.Component {
   render(){
     var settings = {
-      dots: true,
-      infinite: true,
-      speed: 1000,
+      dots: false,
+      infinite: false,
+      speed: 500,
       slidesToShow: 3,
-      slidesToScroll: 3,
-      autoplay : false,
-      adaptiveHeight : true,
+      slidesToScroll: 1,
+      initialSlide: 0,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: false
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            className: "center",
+            centerMode: true,
+            infinite: true,
+            centerPadding: "60px",
+            slidesToShow: 1,
+            speed: 500
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
     };
     const residentialData = this.props.data.allPrismicResidential.edges;
     console.log('residentialData', residentialData);
@@ -113,7 +141,8 @@ export default class Residential extends React.Component {
                     return(
                       <div className="row"> 
                         <div key={value}>
-                          <div className="secondary-card position-relative ml-3 mr-3">
+                        
+                          <div className="secondary-card position-relative ">
                             <div className="secondary-card-img">
                               <Img fluid={item.completed_links.document[0].data.banner[0].image.localFile.childImageSharp.fluid} alt="" width="100%"/>
                             </div>
@@ -133,6 +162,7 @@ export default class Residential extends React.Component {
                               </div>
                             </div>
                           </div>
+        
                         </div>
                       </div>
                     )

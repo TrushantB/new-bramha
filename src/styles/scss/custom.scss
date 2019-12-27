@@ -799,7 +799,28 @@ footer{
             margin-top: -23px;
         }
     }
+    .slick-list{
+        padding-bottom: 46px;
+    }
+    .slick-prev {
+        left: -50px;
+        &:before{
+            content: "";
+            background: url('../images/left-arrow-1.png') no-repeat center center;
+            padding: 12px 0px 16px 38px;
+    }
   }
+  .slick-next {
+      transform: rotate(180deg);
+      right: -50px;
+      &:before{
+        content: "";
+        background: url('../images/left-arrow-1.png') no-repeat center center;
+        padding: 12px 0px 16px 38px;
+      }
+    }
+}
+
 //   .secondary-card{
 //       .secondary-card-rectangle{
 //           width: 252px;
@@ -875,7 +896,6 @@ footer{
                 height: 100%;
             }
           }
-
     }
     .rectangle{
         width: 300px;
@@ -1142,12 +1162,12 @@ footer{
     border:1px solid theme-color("tertiary");
     color:theme-color("tertiary");
   }
-// slick arrow
-.slick-prev:before{
-    content: "\f054";
-    font: 40px/1 'FontAwesome';
-    background: black;
-}
+// // slick arrow
+// .slick-prev:before{
+//     content: "\f054";
+//     font: 40px/1 'FontAwesome';
+//     background: black;
+// }
 // ------------- Media Query Start Here ----------------
 @media (max-width:1200px){
     // Hospitality project
@@ -1249,7 +1269,15 @@ footer{
                     margin: 16px 0  40px 0;
                 }
             }
+            .contact-details{
+                text-align: center;
+                .section-title::after{
+                    content: "";
+                    margin: 0 auto;
+                }
+            }   
         }
+
         footer{
             .copyright{
                 margin-top: 12px;
