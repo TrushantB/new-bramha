@@ -43,7 +43,7 @@ class Careers extends React.Component {
       <Layout>
         <div className="career-page">   
           <section className="banner-section">
-            <img src={careerData.banner.url} alt="banner image here" className="banner-img" />
+            <Img fluid={careerData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
           </section>
           <section className="career-info container-md bg-color">
             <div className="padding-block-60">
@@ -68,7 +68,7 @@ class Careers extends React.Component {
                 {careerData.showcase.map((item,value)=>{
                   return(
                     <div key={value} className="life-at-bramha-slide">
-                      <img src={item.image.url} alt="slider image" className="life-at-bramha-slider-image" />
+                      <Img fluid={item.image.localFile.childImageSharp.fluid} alt="slider image" className="life-at-bramha-slider-image" />
                     </div>
                   )
                 })}
@@ -172,14 +172,26 @@ export const careerPage = graphql`{
         text
       }
 			banner{
-        url
+        localFile {
+          childImageSharp {
+            fluid(maxWidth: 1150, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
       life_at_bramha{
         text
       }
       showcase{
         image{
-          url
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1150, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
       looking_for_a_job_opening{
@@ -199,7 +211,13 @@ export const careerPage = graphql`{
           text
         }
         image{
-          url
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1150, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
         location{
           text
@@ -208,10 +226,6 @@ export const careerPage = graphql`{
           text
         }
       }
-    
-      
-      
-      
     }
   }
 }`

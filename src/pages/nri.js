@@ -1,6 +1,7 @@
-import React from 'react'
-import Layout from '../components/layout'
+import React from 'react';
 import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
+import Layout from '../components/layout';
 import Footer from '../components/footer';
 
 class NRI extends React.Component {
@@ -22,7 +23,7 @@ class NRI extends React.Component {
       <Layout>
         <div>
           <section className="banner-section">
-            <img src={nriData.banner.url} alt="banner image here" className="banner-img" />
+            <Img fluid={nriData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
           </section>
 
           <section className="career-info container">
@@ -107,7 +108,13 @@ export const nriPage = graphql`{
         text
       }
       banner {
-      	url
+        localFile {
+          childImageSharp {
+            fluid(maxWidth: 1150, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
       group {
         heading1 {

@@ -1,7 +1,8 @@
 import React from 'react'
+import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import Layout from '../../components/layout'
 import Footer from '../../components/footer'
-import { graphql } from 'gatsby';
 
 class Hospitality extends React.Component {
   render(){
@@ -16,8 +17,8 @@ class Hospitality extends React.Component {
           <div className="row  mr-0">
             <div className="col-12">
               <div className="main-paragraph"> 
-                <p >
-                    {data.description.text}
+                <p>
+                  {data.description.text}
                 </p>
               </div>  
             </div>
@@ -37,7 +38,7 @@ class Hospitality extends React.Component {
                               console.log('datas', datas),
                                 <div className="residences-card position-relative" key={value}>
                                   <div className="residences-img ">
-                                    <img src={datas.data.banner[0].image.url} alt="" width="100%"/>
+                                    <Img fluid={datas.data.banner[0].image.localFile.childImageSharp.fluid} alt="" width="100%"/>
                                   </div>
                                   <div className="rectangle position-absolute d-flex flex-column justify-content-around">
                                     <div className="rectangle-title">
@@ -95,7 +96,13 @@ export const hospitalityPage = graphql`{
                   }
                   banner{
                     image{
-                      url
+                      localFile {
+                        childImageSharp {
+                          fluid(maxWidth: 1150, quality: 100) {
+                            ...GatsbyImageSharpFluid
+                          }
+                        }
+                      }
                     }
                   }
                   flat_bhk{
