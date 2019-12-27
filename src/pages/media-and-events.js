@@ -45,7 +45,8 @@ class MediaAndEvents extends React.Component {
                     </div>
                 </div>
                 <div>
-                  <Slider {...settings}>
+                <div className="container">
+                <Slider {...settings}>
                     {
                       eventData.event.map((item,value)=>{
                         return(
@@ -61,6 +62,7 @@ class MediaAndEvents extends React.Component {
                       })
                     }
                   </Slider>
+                </div>
                 </div>
                 <div className="">
                   <div className="container">

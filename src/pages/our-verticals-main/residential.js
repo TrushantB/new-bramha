@@ -9,7 +9,7 @@ export default class Residential extends React.Component {
     var settings = {
       dots: true,
       infinite: true,
-      speed: 2000,
+      speed: 1000,
       slidesToShow: 3,
       slidesToScroll: 3,
       autoplay : true,
@@ -22,7 +22,7 @@ export default class Residential extends React.Component {
         {
           residentialData.map((item,value)=>{
             return(
-              <section key={value} className=" page-heading-section container container-sm-fluid bg-color">
+              <section key={value} className="residential-section page-heading-section container container-sm-fluid bg-color">
                 <div className="padding-block-60">
                     <h2 className="page-heading">{item.node.data.title.text}</h2> 
                 </div>
