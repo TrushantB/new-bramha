@@ -13,7 +13,7 @@ export default class Residential extends React.Component {
       speed: 1000,
       slidesToShow: 3,
       slidesToScroll: 3,
-      autoplay : true,
+      autoplay : false,
       adaptiveHeight : true,
     };
     const residentialData = this.props.data.allPrismicResidential.edges;
@@ -113,7 +113,7 @@ export default class Residential extends React.Component {
                     return(
                       <div className="row"> 
                         <div key={value}>
-                          <div className="secondary-card position-relative">
+                          <div className="secondary-card position-relative ml-3 mr-3">
                             <div className="secondary-card-img">
                               <Img fluid={item.completed_links.document[0].data.banner[0].image.localFile.childImageSharp.fluid} alt="" width="100%"/>
                             </div>
