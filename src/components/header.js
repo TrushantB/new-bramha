@@ -31,9 +31,9 @@ const Header = ({ siteTitle }) => (
               Our Verticals
             </Link>
             <div className="dropdown-menu  border-0" aria-labelledby="navbarDropdown">
-              <Link className="dropdown-item" to='our-verticals-main/residential'>Residencial</Link>
+              <Link className="dropdown-item" to='/residential'>Residencial</Link>
               <Link className="dropdown-item" to='/'>Commercial</Link>
-              <Link className="dropdown-item" to='our-verticals-main/hospitality'>Hospitality</Link>
+              <Link className="dropdown-item" to='/hospitality'>Hospitality</Link>
               <Link className="dropdown-item" to='/'>Leisure</Link>
             </div>
           </li>

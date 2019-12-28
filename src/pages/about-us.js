@@ -1,27 +1,54 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Slider from "react-slick";
-import { Link } from "gatsby";
 import Img from 'gatsby-image';
 import Layout from '../components/layout'
 import Footer from '../components/footer';
 
 class AboutUs extends React.Component {
   state = {
-    styleData:{height: 160, overflow: 'hidden'}
+    styleData:{height: 160, overflow: 'hidden'},
+    activeSlide: 0,
+    activeSlide2: 0,
   }
+  
   render(){
+    let index = 0;
     var settings = {
       dots: true,
+      dotsClass: "slick-dots slick-thumb",
       infinite: true,
       speed: 1000,
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay : true,
+      customPaging: i => (
+        <div>
+          {
+            data.our_legacy.document[0].data.our_legacy.map((item,value)=>{
+              if(value == index){
+                return(
+                  <div key={value}> {item.year}</div>
+                )
+              }
+              if(data.our_legacy.document[0].data.our_legacy.length-1 === value ){
+                index = index +1;
+              }
+            })
+          }
+          {/* {i + 1} */}
+        </div>
+      ),
+      beforeChange: (current, next) => this.setState({ activeSlide: next }),
+      afterChange: current => this.setState({ activeSlide2: current }),
       adaptiveHeight : true,
+
     };
     const data = this.props.data.prismicAboutus.data;
     const verticalsData = this.props.data.prismicOurVerticals.data;
+    // const ourLegacy = this.props.data.allPrismicOurLegacy.edges;
+    // console.log('ourLegacy', ourLegacy);
+    console.log('data from about us page', data);
     return(
       <Layout>
         <div>
@@ -29,7 +56,7 @@ class AboutUs extends React.Component {
               <Img fluid={data.image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
           </section>
           <section className="about-sections pb-0 pt-sm-0 page-heading-section container container-sm-fluid bg-color">
-              <div className="row">
+              <div className="row padding-block-60 pb-0">
                 <div className="col-12 padding-sm-0">
                   <h2 className="page-heading">{data.sub_title.text} </h2>
                 </div> 
@@ -77,7 +104,30 @@ class AboutUs extends React.Component {
                 </h3>
               </div>
               <div className="slider-wrapper">
-                <Slider  {...settings}>
+                {/* <Slider  {...settings}>
+                  {
+                    ourLegacy.map((item,value)=>{
+                      return(
+                        item.node.data.our_legacy.map((item,value)=>{
+                          return(
+                            <div key={value} className="legacy-slide">
+                            <img src={item.image.url} alt="slider image" className="legacy-slider-image" />
+                            <div className="slide-caption">
+                              <h3 className="section-title text-white">
+                                {item.title.text}
+                              </h3>
+                              <p className="text text-white"> 
+                                {item.description.text}
+                              </p>
+                            </div>
+                          </div>
+                          )
+                        })
+                      )
+                    })
+                  }
+                </Slider> */}
+                <Slider {...settings}>
                   {
                     data.our_legacy.document[0].data.our_legacy.map((item,value)=>{
                       return(
@@ -237,6 +287,7 @@ export const AboutPage = graphql`{
           text
         }
       }
+
       our_legacy {
         slug
         document {
@@ -279,7 +330,7 @@ export const AboutPage = graphql`{
           
         }
       }
-
+      
       management_team {
         uid
         document {
@@ -304,6 +355,7 @@ export const AboutPage = graphql`{
       }
     }
   }
+
   prismicOurVerticals {
     data {
       title {
@@ -383,5 +435,6 @@ export const AboutPage = graphql`{
       }
     }
   }
+  
 }
 `
