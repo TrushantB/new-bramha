@@ -639,14 +639,6 @@ export const verticalViewData = graphql`
             text
           }
         }
-        proximites{
-          title1{
-            text
-          }
-          description1{
-            text
-          }
-        }
       }
     }
 }`
