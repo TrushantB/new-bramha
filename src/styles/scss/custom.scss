@@ -148,7 +148,7 @@ input,textarea,select{
     border-left: 10px solid theme-color("tertiary");
     font-family: 'Graphik', sans-serif;
     font-weight: 400;
-    padding:0px 8px;
+    padding:0px 12px;
     height: 40px;
     opacity: 0.8;
     font-size:30px;
@@ -386,12 +386,15 @@ img{
                 .section-title::after{
                     content: "";
                     width: auto;
-                    padding: 4px 0;
+                    padding: 6px 0;
                     border-bottom: 1px solid #fff;
                     opacity: 0.43;
                 }
             p{
                 opacity: 0.8;
+                line-height: 24px;
+                // letter-spacing: 0.31px;
+                margin-top: 16px;
             }
         }
     }
@@ -1020,7 +1023,16 @@ footer{
         }
     }
     .complete-project{
-        margin-bottom: 200px;
+        margin-bottom: 148px;
+        .container{
+            text-align: center;
+        }
+        .secondary-card{
+            margin: 0 15px;
+            .secondary-card-rectangle{
+                text-align: left;
+            }
+        }
         p{
           opacity: 0.5;
           font-weight: normal;
@@ -1054,6 +1066,10 @@ footer{
         background: url('../images/left-arrow-1.png') no-repeat center center;
         padding: 12px 0px 16px 38px;
       }
+    }
+    .slick-next,
+    .slick-prev{
+        top: 100px;
     }
 }
 
@@ -1093,11 +1109,7 @@ footer{
 //           }
 //       }
 //     }
-    
-    .residences{
-        background-color:theme-color("bg-color"); 
-        padding: 72px 0 172px;
-    }
+
   // -------------   Hospitality Projects Start Here ----------------
   .hospitality-projects {
     margin: 56px 0 80px 0;
@@ -1113,7 +1125,7 @@ footer{
 }
 .residences{
     background-color:theme-color("bg-color"); 
-    padding: 72px 0 172px;
+    padding: 72px 0 148px;
 }
 //Residences Card 
 .residences-card{
@@ -1134,11 +1146,11 @@ footer{
           }
     }
     .rectangle{
-        width: 300px;
+        width: 96%;
         // height: 110px;
         box-shadow: 6px 6px 13px 0 rgba(227, 227, 227, 0.76);
         background: #fff;
-        padding: 20px 20px 16px 20px;
+        padding: 20px   ;
         bottom: -70px;
         left: 10px;
     .rectangle-title{
@@ -1190,7 +1202,7 @@ footer{
         
     }
     .secondary-card-rectangle{
-        width: 252px;
+        width:90%;
         // height: 75px;
         box-shadow: 3px 3px 13px 0 rgba(227, 227, 227, 0.65);
         background-color: #FFFFFF;
@@ -1241,72 +1253,6 @@ footer{
         }
     }
   }
-
-  
-
-// ------------- Knowledge Hub Start Here ----------------
-.knowledge-hub{
-    margin-bottom: 100px;
-    .buyer-tips-banner{
-        .buyer-tips-image{
-            margin-top: 30px;
-        }
-        .buyer-tips-box{
-            width: 656px;
-            height: 209px;
-            bottom: 45px;
-            left: 77px;
-            background: #000000a3;
-            padding: 20px 40px;
-            hr{
-                width: 96%;
-                background: #fff;
-                opacity: 0.43;
-               
-            }
-            p{
-                opacity: 0.8;
-            }
-        }
-    }
-    .about-loan,
-    .important-notices,
-    .maha-rera{
-        .description{
-           height: 100%;
-            padding: 45px 25px;
-        }
-    }
-    .maha-rera,
-    .important-notices{
-        .sub-heading{
-            margin-top: 80px;
-        }
-    }
-    .bg-light-gray{
-        background-color: theme-color("bg-color");
-    }
-    .guidelines-nris {
-        .guidelines-nris-info{
-            width: 247px;
-            padding: 14px 23px;
-            bottom: 42px;
-            opacity: 0.68;
-            background-color: #000000;
-        }
-    }
-    .know-more{
-        a{
-         color: #b1a585;
-        }
-     }
-    //  .maha-rera,
-    //  .important-notices,
-    //  .guidelines-nris,
-    //  .about-loan{
-    //      margin: 0 10px;
-    //  }
-}
 
 /*======================================
     Career page css start
@@ -1414,7 +1360,7 @@ footer{
     // Residence Card
     .residences-card {
         .rectangle{
-            width: 250px
+            width: 90%
         }
      }
      .residential-projects{
@@ -1427,6 +1373,17 @@ footer{
         .career-tabs{
             .btn-tertiary{
                 padding:16px 8px;
+            }
+        }
+        .residential-projects{
+            .complete-project{
+                margin-bottom:100px ;
+            }
+            .slick-prev {
+                left: -31px;
+            }
+            .slick-next {
+                right: -31px;
             }
         }
     }
@@ -1475,8 +1432,7 @@ footer{
     // Residence Card
     .residences-card {
         .rectangle{
-            width: 100%;
-            left: 0;
+            width: 90%;   
         }
       }
       //------------- Residencial detail page ---------------
@@ -1499,6 +1455,7 @@ footer{
             width:160%;
         }
     }
+
     @media (max-width:768px){
         .our-verticals-tabs .nav-item{
             padding:16px 8px;
@@ -1593,6 +1550,9 @@ footer{
        .hospitality-projects{
         .residences{
             padding-bottom: 0;}
+            .residences-card{
+                margin-bottom: 140px;
+            }
         }
    .career-tabs{
     .btn-wraper{
@@ -1614,7 +1574,7 @@ footer{
        // Residence Card
        .residences-card {
         .rectangle{
-            width: 350px;
+            width: 90%;
             left: 10px;
         }
       }
@@ -1636,6 +1596,26 @@ footer{
         flex: 1 140px;
         margin: 8px 4px;
     }
+      .residential-projects{
+        .complete-project {
+            .secondary-card {
+                margin: 0 15px;
+                .secondary-card-rectangle{
+                    width: 90%;
+                }
+                .secondary-card-img{
+                    .gatsby-image-wrapper{
+                        padding-bottom: 133.33%;
+                    }
+                }
+            }
+             .slick-next,
+             .slick-prev{
+                 top: 180px;
+             }
+        }
+      }
+    
 }
 @media (max-width:580px){
     .padding-sm-0{
@@ -1673,7 +1653,7 @@ footer{
        }
        .management-card{
            height: 200px;
-       }
+       }  
     }
 
     @media (max-width:580px){
@@ -1823,6 +1803,7 @@ footer{
             .residences{
                 background-color: #fff;
                 padding: 0;
+        
              }
         }   
         .bg-color {
@@ -1862,6 +1843,51 @@ footer{
         }
         .residences{
             background: #fff;
+        }
+        .complete-project {
+            .container{
+                background-color:theme-color("bg-color"); 
+            }
+            .listing-heading {
+                transform: translate(10px,-18px);
+            }
+            .secondary-card {
+                margin: 0 24px;
+                .secondary-card-img{
+                    .gatsby-image-wrapper{
+                        padding-bottom: 133.33%;
+                    }
+                }
+            }
+            .slick-list{
+                padding-bottom: 124px!important;
+            }
+         .slick-next{
+            bottom: -35px;
+            right: 0;
+            top: auto;
+            &:before{
+                background: url('../images/left.jpg') no-repeat center center;
+                padding: 0 0 0 36px;
+              }
+          }
+          .slick-prev{
+              top: auto;
+              bottom: -45px;
+              right: 90px;
+              left: auto;
+              &:before{
+                background: url('../images/left.jpg') no-repeat center center;
+                padding: 0 0 0 36px;
+              }
+          }
+          .pagination{
+              bottom: -40px;
+              left: 70px;
+          }
+        }
+        .slick-center{
+            transform: scale(1.2);
         }
     }
 
@@ -1943,10 +1969,25 @@ footer{
        }     
     }
         // Residence Card
-        .residences-card {
-            .rectangle{
-                width: 280px;
-                left: 10px;
+        // .residences-card {
+        //     .rectangle{
+        //         width: 280px;
+        //         left: 10px;
+        //     }
+        //   }
+    .residential-projects {
+        .complete-project {
+            .secondary-card{
+                margin: 0 16px;
             }
-          }
+        }
+        .listing-heading{
+            width: 100%;
+        }
+        .residences{
+            .residences-card{
+                margin: 44px 0 72px;
+            }
+        } 
+    }
 }
