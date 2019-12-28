@@ -6,26 +6,35 @@ import Layout from '../../components/layout'
 import Footer from '../../components/footer'
 
 export default class Residential extends React.Component {
+  state = {
+    activeSlide: 1,
+    activeSlide2: 0
+  };
+
   render(){
     var settings = {
+      className: "center",
+      centerPadding: "60px",
       dots: false,
       infinite: false,
       speed: 500,
       slidesToShow: 3,
       slidesToScroll: 1,
       initialSlide: 0,
+      beforeChange: (current, next) => this.setState({ activeSlide: next }),
+      afterChange: current => this.setState({ activeSlide2: current }),
       responsive: [
         {
           breakpoint: 1024,
           settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
+            slidesToShow: 2,
+            slidesToScroll: 2,
             infinite: true,
             dots: false
           }
         },
         {
-          breakpoint: 600,
+          breakpoint: 580,
           settings: {
             className: "center",
             centerMode: true,
@@ -38,8 +47,13 @@ export default class Residential extends React.Component {
         {
           breakpoint: 480,
           settings: {
+            className: "center",
+            centerMode: true,
+            infinite: true,
+            centerPadding: "60px",
             slidesToShow: 1,
-            slidesToScroll: 1
+            speed: 500
+            
           }
         }
       ]
@@ -128,12 +142,12 @@ export default class Residential extends React.Component {
                 </div>
               </div>
             </section>
-            <section className="complete-project">
+            <section className="complete-project position-relative">
               <div className="container">
                 <div className="listing-heading d-flex align-items-center">
                   <h4 className="text-uppercase heading mb-0">Completed Projects</h4>
                 </div>
-                  <p>{residentialData[0].node.data.completed_description.text}
+                  <p className="text-left">{residentialData[0].node.data.completed_description.text}
                   </p>
                   <Slider  {...settings}>
                   {
@@ -169,6 +183,9 @@ export default class Residential extends React.Component {
                   })
                   }
                 </Slider>
+                <span className="d-inline-block d-sm-none position-absolute pagination">
+                   {this.state.activeSlide} of 4
+                </span>
               </div>
             </section>
           </section>
