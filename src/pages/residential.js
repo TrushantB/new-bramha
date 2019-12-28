@@ -2,8 +2,8 @@ import React from 'react'
 import Slider from "react-slick";
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image';
-import Layout from '../../components/layout'
-import Footer from '../../components/footer'
+import Layout from '../components/layout'
+import Footer from '../components/footer'
 
 export default class Residential extends React.Component {
   render(){
@@ -73,7 +73,7 @@ export default class Residential extends React.Component {
                           return(
                             <div key={value} className="col-md-6 col-lg-4 col-sm-12 p-0 pl-sm-3 pr-sm-3">
                               <div className="residences-card position-relative">
-                                <div className="residences-img ">
+                                <div className="residences-img">
                                   <Img fluid={item.residential_links.document[0].data.banner[0].image.localFile.childImageSharp.fluid} alt="" width="100%"/>
                                 </div>
                                 <div className="rectangle position-absolute d-flex flex-column justify-content-around">
