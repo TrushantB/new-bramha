@@ -99,6 +99,8 @@ body{
 /*================================
 -------- Common Basic css start
 ================================*/ 
+
+
 body{
     font-family: 'Graphik', sans-serif;
     font-size: 14px;
@@ -106,6 +108,26 @@ body{
     line-height: 1.86;
     letter-spacing: -0.31px;
     color: theme-color("text-tertiary");
+}
+// -------- Input Box Css start Here ----------
+input,textarea,select{
+    font-weight: 300;
+    padding-left: 8px;
+    font-size: 14px;
+    background: transparent;
+    border: solid 0.5px #999999;
+    border-radius: 0;
+    color: #929292;
+        &::placeholder{
+            color: #929292;
+            font-weight: 300;
+            font-size: 14px;
+     }
+     &:focus{
+        box-shadow: none;
+        outline: none;
+        border-color: #999999;
+    }
 }
 .padding-block-60{
     padding: 52px 0 24px;
@@ -339,70 +361,6 @@ img{
 // ------------- Knowledge Hub Start Here ----------------
 
 .knowledge-hub{
-    margin-bottom: 100px;
-        .important-notices{
-            .inner-section-title{
-                display: none;
-            }   
-        }
-        .buyer-tips-banner{
-            .section-title::after{
-                content: "";
-                margin: 0 auto;
-            }
-            .buyer-tips-image{
-            margin-top: 30px;
-         }
-        .buyer-tips-box{
-            width: 541px;
-            height: 172px;
-            bottom: 45px;
-            left: 77px;
-            background: #000000a3;
-            padding: 20px 40px;
-                .section-title::after{
-                    content: "";
-                    width: auto;
-                    padding: 5px 0;
-                    border-bottom: 1px solid #fff;
-                    opacity: 0.43;
-                }
-            p{
-                opacity: 0.8;
-            }
-        }
-    }
-    .bg-light-gray{
-        height: 100%;
-        padding: 45px 25px;
-    }
-    .bg-light-gray{
-        background-color: theme-color("bg-color");
-    }
-    .guidelines-nris {
-        .guidelines-nris-info{
-            width: 247px;
-            padding: 14px 23px;
-            bottom: 42px;
-            background-color: #000000a3;
-            p{
-                opacity: 0.85;
-                font-size: 16px;
-                font-weight: 300;
-                letter-spacing: 0.36px;
-            }
-        }
-    }
-    .know-more{
-        a{
-         color: #b1a585;
-        }
-    }
-}
-
-// ------------- Knowledge Hub Start Here ----------------
-
-.knowledge-hub{
     margin-bottom: 124px;
         .important-notices{
             .inner-section-title{
@@ -475,14 +433,7 @@ img{
         }
      }
   }
-  .card-primary{
-      .card-primary-img{
-          height: 100%;
-          img{
-              height: 100%;
-          }
-      }
-  }
+
   // ------------- Knowledge Hub End Here ----------------
   
   
@@ -673,6 +624,11 @@ img{
         }
     }
 }
+.our-legacy .slider-wrapper .slick-dots li {
+    top: -18px;
+    margin: 0 36px;
+    padding: 0px; 
+}
 // ------------- our vertical css start here ----------------
 .our-vertivcal-sect{
     .section-title{
@@ -725,9 +681,14 @@ img{
 // ------------- Footer Start Here ----------------
 footer{
     .copyright{
-        p,a{
-            color: #a7a7a7;
-            font-size: 14px;
+        margin-bottom: 28px;
+        opacity: 0.6;
+        p{
+            color: #f6f5f2;
+            font-size: 12px;
+            a{
+                @extend p
+            }
         }
         a:hover{
                 color: theme-color("primary");
@@ -737,28 +698,36 @@ footer{
     }
     background: theme-color("footer-bg");
     .footer-menu{
+        margin: 58px 0 40px 0;
         ul{
-            li{
-                padding: 0 30px 0 0;
-                border-right: 1px solid #fff;
-                margin-left: 30px;
+            margin-bottom: 36px;
+            .nav-item{
+                margin-bottom: 26px;
                 a{
                     color: #fff;
+                    padding:0 24px 0 24px;
+                    border-right: 1px solid #fff;
+                    font-size: 15px;
+                    font-weight: 200;
+                    line-height: normal;
+                    letter-spacing: normal;
                     &:hover{
                         color: theme-color("primary");
                         text-decoration: none;
                         transition: .5s ease-in-out;
-                    
+                    }
                 }
-    }
                 &:last-child{
+                   a{
                     border-right: none;
+                   }
                 }
             }
         }
     }
     .footer-social-icon{
         ul{
+            margin-bottom: 40px;
             li{
                 a{
                     i{
@@ -772,9 +741,10 @@ footer{
 .background-circle{
     border-radius: 50%;
     background: #c1c1c1;
-    width: 25px;
+    width: 24px;
+    height: 24px;
     text-align: center;
-    margin-right: 20px;
+    margin-right: 28px;
     &:hover{
         background:  theme-color("primary");
         cursor: pointer;
@@ -784,9 +754,250 @@ footer{
 .bottom-border{
     border-bottom: 1px solid #525252;
 }
-.description{
-    color: #929292;
+
+// --------- Residential Projects css start here ----------
+.residential-projects{
+    .projects{
+        margin: 64px 0 80px 0;
+      select{
+          width: 271px;
+          height: 40px;
+          margin-right: 24px;
+      }
+    }
+    .residences{
+        padding-top: 20px;
+        .residences-card{
+            margin: 72px  0 72px;
+        }
+    }
+    .listing-heading{
+      width: 300px;
+      height: 40px;
+      background: #b1a585;
+      margin-top: -40px;
+        .heading{
+          font-size: 18px;
+          font-weight: 200;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: -0.54px;
+          color: #ffffff;
+          margin-left: 20px;
+        
+        }
+    }
+    .complete-project{
+        margin-bottom: 200px;
+        p{
+          opacity: 0.5;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.71;
+          letter-spacing: -0.31px;
+          color: #000000;
+          margin: 32px 0 56px 0;
+        }
+        .listing-heading{
+            margin-top: -23px;
+        }
+    }
+    .slick-list{
+        padding-bottom: 46px;
+    }
+    .slick-prev {
+        left: -50px;
+        &:before{
+            content: "";
+            background: url('../images/left-arrow-1.png') no-repeat center center;
+            padding: 12px 0px 16px 38px;
+    }
+  }
+  .slick-next {
+      transform: rotate(180deg);
+      right: -50px;
+      &:before{
+        content: "";
+        background: url('../images/left-arrow-1.png') no-repeat center center;
+        padding: 12px 0px 16px 38px;
+      }
+    }
 }
+
+//   .secondary-card{
+//       .secondary-card-rectangle{
+//           width: 252px;
+//           box-shadow: 3px 3px 13px 0 rgba(227, 227, 227, 0.65);
+//           background-color: #ffffff;
+//           padding: 20px 20px 16px 20px;
+//           bottom: -50px;
+//           left: 10px;
+//           .inner-section-title{
+//               font-size: 14px;
+//               color: theme-color("heading-secondary");
+//               letter-spacing: 0.14px;
+//           }
+//           .project-location,
+//           .apartment-size{
+//               font-size: 10px;
+//               color: #000;
+//               font-stretch: normal;
+//               font-style: normal;
+//               letter-spacing: -0.17px;
+//           }
+//           .project-location{
+//              span{
+//               opacity: 0.5;
+//              }
+//           }
+//          .apartment-size{
+//               span{
+//                   opacity: 0.35;
+//               }
+//          }
+//           i {
+//               color:theme-color("icon-color");
+//           }
+//       }
+//     }
+    
+    .residences{
+        background-color:theme-color("bg-color"); 
+        padding: 72px 0 172px;
+    }
+  // -------------   Hospitality Projects Start Here ----------------
+  .hospitality-projects {
+    margin: 56px 0 80px 0;
+    }
+// ------------- Card Start Here ----------------
+.card-primary{
+    .card-primary-img{
+        height: 100%;
+        img{
+            height: 100%;
+        }
+    }
+}
+.residences{
+    background-color:theme-color("bg-color"); 
+    padding: 72px 0 172px;
+}
+//Residences Card 
+.residences-card{
+    .residences-img {
+        // position: relative;
+        // padding-bottom: 133.33%;
+          .gatsby-image-wrapper{
+              padding-bottom: 133.33%;
+              div{
+                  padding: 0!important;
+              }
+            img{
+                position: absolute;
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+          }
+    }
+    .rectangle{
+        width: 300px;
+        // height: 110px;
+        box-shadow: 6px 6px 13px 0 rgba(227, 227, 227, 0.76);
+        background: #fff;
+        padding: 20px 20px 16px 20px;
+        bottom: -70px;
+        left: 10px;
+    .rectangle-title{
+        .inner-section-title{
+            color: theme-color("headig-secondary");
+        }
+    }
+   
+    i {
+        color:theme-color("icon-color");
+    }
+    .fa-map-marker-alt{
+        margin-right: 4px;
+    }
+    .apartment-size{
+        span{
+          opacity: 0.35;
+          font-size: 12px;
+          color:theme-color("text-black"); 
+    }
+}
+.project-location{
+    span{
+        font-size: 13px;
+        opacity: 0.5;
+        color:theme-color("text-black"); 
+    }
+    i {
+        font-size: 12px;
+    }
+  }
+}
+}
+// Secondary card
+.secondary-card{
+    .secondary-card-img{
+        .gatsby-image-wrapper{
+            padding-bottom: 66.6%;
+            div{
+                padding: 0!important;
+            }
+          img{
+              position: absolute;
+              object-fit: cover;
+              width: 100%;
+              height: 100%;
+          }
+        }
+        
+    }
+    .secondary-card-rectangle{
+        width: 252px;
+        // height: 75px;
+        box-shadow: 3px 3px 13px 0 rgba(227, 227, 227, 0.65);
+        background-color: #FFFFFF;
+        padding: 20px 20px 16px 20px;
+        bottom: -50px;
+        left: 10px;
+        .inner-section-title{
+            font-size: 14px;
+            color: theme-color("headig-secondary");;
+            letter-spacing: 0.14px;
+        }
+        .project-location,
+        .apartment-size{
+            font-size: 10px;
+            color: #000;
+            font-stretch: normal;
+            font-style: normal;
+            letter-spacing: -0.17px;
+        }
+        .project-location{
+           span{
+            opacity: 0.5;
+           }
+        }
+       .apartment-size{
+            span{
+                opacity: 0.35;
+            }
+       }
+        i {
+            color:theme-color("icon-color");
+        }
+        .fa-map-marker-alt{
+            margin-right: 4px;
+        }
+    }
+}
+// ------------- Card End Here ----------------
 
 // ------------- Event Start Here ----------------
 .event{
@@ -956,7 +1167,12 @@ footer{
     border:1px solid theme-color("tertiary");
     color:theme-color("tertiary");
   }
-
+// // slick arrow
+// .slick-prev:before{
+//     content: "\f054";
+//     font: 40px/1 'FontAwesome';
+//     background: black;
+// }
 // ------------- Media Query Start Here ----------------
 @media (max-width:1200px){
     // Hospitality project
@@ -968,6 +1184,13 @@ footer{
     .residences-card {
         .rectangle{
             width: 250px
+        }
+     }
+     .residential-projects{
+        .projects{
+            select{
+                margin-bottom: 16px;
+            }
         }
      }
         .career-tabs{
@@ -986,6 +1209,7 @@ footer{
                }
            }
         }  
+        
         .knowledge-hub{
             .mt-100{
                 margin-top: 0;
@@ -1033,10 +1257,6 @@ footer{
             .locate-us{
                 margin-bottom: 50px;
             }
-            hr{
-                margin: 0 auto;
-                width: 25%;;
-            }
             form{
                 .customer {
                     select{
@@ -1054,7 +1274,15 @@ footer{
                     margin: 16px 0  40px 0;
                 }
             }
+            .contact-details{
+                text-align: center;
+                .section-title::after{
+                    content: "";
+                    margin: 0 auto;
+                }
+            }   
         }
+
         footer{
             .copyright{
                 margin-top: 12px;
@@ -1088,9 +1316,7 @@ footer{
                    bottom: 0;
                    padding: 20px 20px;
                    .section-title,
-                   hr{
-                       display: none;
-                   }
+
                    .know-more{
                        align-self: flex-end;
                        position: absolute;
@@ -1135,6 +1361,13 @@ footer{
    .management-card{
        height: 200px;
    }
+       // Residence Card
+       .residences-card {
+        .rectangle{
+            width: 350px;
+            left: 10px;
+        }
+      }
 }
 @media (max-width:580px){
     .padding-sm-0{
@@ -1349,7 +1582,21 @@ footer{
             padding: 12px 0;
             margin: 0 auto 28px;
             }
+//residential projects
+    .residential-section {
+        .main-paragraph{
+            padding: 0 16px 60px;
+        }   
     }
+    .residential-projects{
+        .projects{
+             display: none;
+        }
+        .residences{
+            background: #fff;
+        }
+    }
+}
 
 @media (max-width:420px){
     .navbar-collapse{
@@ -1379,4 +1626,11 @@ footer{
         }
        }     
     }
+        // Residence Card
+        .residences-card {
+            .rectangle{
+                width: 280px;
+                left: 10px;
+            }
+          }
 }

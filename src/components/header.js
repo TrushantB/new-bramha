@@ -31,9 +31,9 @@ const Header = ({ siteTitle }) => (
               Our Verticals
             </Link>
             <div className="dropdown-menu  border-0" aria-labelledby="navbarDropdown">
-              <Link className="dropdown-item" to='/'>Residencial</Link>
+              <Link className="dropdown-item" to='/residential'>Residencial</Link>
               <Link className="dropdown-item" to='/'>Commercial</Link>
-              <Link className="dropdown-item" to='/'>Hospitality</Link>
+              <Link className="dropdown-item" to='/hospitality'>Hospitality</Link>
               <Link className="dropdown-item" to='/'>Leisure</Link>
             </div>
           </li>
@@ -61,20 +61,6 @@ const Header = ({ siteTitle }) => (
       </div>
     </nav>
   </header>
-  // <header>
-  //   <div>
-  //     <h6 style={{ margin: 10, padding:50, marginLeft:"35%" }}>
-  //       <Link style={{paddingRight: 10}} to="/">HOME </Link>
-  //       <Link style={{paddingRight: 10}} to="/about-us"> ABOUT US</Link>
-  //       <Link style={{paddingRight: 10}} to="/our-verticals"> OUR VERTICALS</Link>
-  //       <Link style={{paddingRight: 10}} to="/partners"> PARTNERS</Link>
-  //       <Link style={{paddingRight: 10}} to="/knoweldge-hub">KNOWELDGE HUB</Link>
-  //       <Link style={{paddingRight: 10}} to="/careers">CAREERS</Link>
-  //       <Link style={{paddingRight: 10}} to="/media-and-events">MEDIA & EVENTS</Link>
-  //       <Link style={{paddingRight: 10}} to="/contacts">CONTACT</Link>
-  //     </h6>
-  //   </div>
-  // </header>
 )
 
 Header.propTypes = {

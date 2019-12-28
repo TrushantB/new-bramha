@@ -1,33 +1,59 @@
 import React from 'react'
-import Layout from '../components/layout'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Slider from "react-slick";
-import { Link } from "gatsby"
+import Img from 'gatsby-image';
+import Layout from '../components/layout'
 import Footer from '../components/footer';
 
 class AboutUs extends React.Component {
-  state= {
-    styleData:{height: 160, overflow: 'hidden'}
+  state = {
+    styleData:{height: 160, overflow: 'hidden'},
+    activeSlide: 0,
+    activeSlide2: 0,
   }
+  
   render(){
+    let index = 0;
     var settings = {
       dots: true,
+      dotsClass: "slick-dots slick-thumb",
       infinite: true,
-      speed: 500,
+      speed: 1000,
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay : true,
+      customPaging: i => (
+        <div>
+          {
+            data.our_legacy.document[0].data.our_legacy.map((item,value)=>{
+              if(value == index){
+                return(
+                  <div key={value}> {item.year}</div>
+                )
+              }
+              if(data.our_legacy.document[0].data.our_legacy.length-1 === value ){
+                index = index +1;
+              }
+            })
+          }
+          {/* {i + 1} */}
+        </div>
+      ),
+      beforeChange: (current, next) => this.setState({ activeSlide: next }),
+      afterChange: current => this.setState({ activeSlide2: current }),
       adaptiveHeight : true,
+
     };
     const data = this.props.data.prismicAboutus.data;
-    console.log('Data from about us page', data);
     const verticalsData = this.props.data.prismicOurVerticals.data;
-    console.log('verticalsData from about us page', verticalsData);
+    // const ourLegacy = this.props.data.allPrismicOurLegacy.edges;
+    // console.log('ourLegacy', ourLegacy);
+    console.log('data from about us page', data);
     return(
       <Layout>
         <div>
           <section className="banner-section">
-              <img src={data.image.url} alt="banner image here" className="banner-img" />
+              <Img fluid={data.image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
           </section>
           <section className="about-sections pb-0 pt-sm-0 page-heading-section container container-sm-fluid bg-color">
               <div className="row padding-block-60 pb-0">
@@ -37,7 +63,7 @@ class AboutUs extends React.Component {
               </div>
               <div className="row padding-block-60 d-flex align-items-center">
                   <div className="col-sm-3 year-img-wrap">
-                  <img src={data.banner.url} alt="35 Years image" className="w-100"/>
+                  <Img fluid={data.banner.localFile.childImageSharp.fluid} alt="35 Years image" className="w-100"/>
                 </div>
                 <div className="col-sm-9 main-description">
                   <div className="mb-4" dangerouslySetInnerHTML={{__html: data.description.html}} />
@@ -78,12 +104,35 @@ class AboutUs extends React.Component {
                 </h3>
               </div>
               <div className="slider-wrapper">
-                <Slider  {...settings}>
+                {/* <Slider  {...settings}>
+                  {
+                    ourLegacy.map((item,value)=>{
+                      return(
+                        item.node.data.our_legacy.map((item,value)=>{
+                          return(
+                            <div key={value} className="legacy-slide">
+                            <img src={item.image.url} alt="slider image" className="legacy-slider-image" />
+                            <div className="slide-caption">
+                              <h3 className="section-title text-white">
+                                {item.title.text}
+                              </h3>
+                              <p className="text text-white"> 
+                                {item.description.text}
+                              </p>
+                            </div>
+                          </div>
+                          )
+                        })
+                      )
+                    })
+                  }
+                </Slider> */}
+                <Slider {...settings}>
                   {
                     data.our_legacy.document[0].data.our_legacy.map((item,value)=>{
                       return(
                         <div key={value} className="legacy-slide">
-                          <img src={item.image.url} alt="slider image" className="legacy-slider-image" />
+                          <Img fluid={item.image.localFile.childImageSharp.fluid} alt="slider image" className="legacy-slider-image" />
                           <div className="slide-caption">
                             <h3 className="section-title text-white">
                               {item.title.text}
@@ -109,13 +158,13 @@ class AboutUs extends React.Component {
                 <div className="col-md-6 padding-sm-0">
                   <div className="vertical-card d-flex">
                     <div className="vertical-img-wrapper w-100">
-                      <img src={verticalsData.vertical1.document[0].data.banner.url} alt="verticals image" className="w-100"/>
+                      <Img fluid={verticalsData.vertical1.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
                     </div>
                     <div className="vertical-card-body d-flex flex-column justify-content-around"> 
                       <h2 className="inner-section-title">
                         {verticalsData.vertical1.document[0].data.title.text}
                       </h2>
-                      <Link to='/our-verticals' className="link-text vertical-card-link d-flex justify-content-between align-items-center">
+                      <Link to='our-verticals-main/residential' className="link-text vertical-card-link d-flex justify-content-between align-items-center">
                           <span> View Projects </span> 
                           <i className="fas fa-arrow-right"></i>
                       </Link>
@@ -125,7 +174,7 @@ class AboutUs extends React.Component {
                 <div className="col-md-6 mt-5 mt-md-0 padding-sm-0">
                   <div className="vertical-card d-flex flex-row-reverse flex-md-row">
                     <div className="vertical-img-wrapper w-100">
-                      <img src={verticalsData.vertical2.document[0].data.banner.url} alt="verticals image" className="w-100"/>
+                      <Img fluid={verticalsData.vertical2.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
                     </div>
                     <div className="vertical-card-body d-flex flex-column justify-content-around"> 
                       <h2 className="inner-section-title">
@@ -144,13 +193,13 @@ class AboutUs extends React.Component {
                     <h2 className="inner-section-title">
                       {verticalsData.vertical3.document[0].data.title.text}
                     </h2>
-                    <Link to='/our-verticals' className="link-text vertical-card-link d-flex justify-content-between align-items-center">
+                    <Link to='our-verticals-main/hospitality' className="link-text vertical-card-link d-flex justify-content-between align-items-center">
                         <span> View Projects </span> 
                         <i className="fas fa-arrow-right"></i>
                     </Link>
                     </div>
                     <div className="vertical-img-wrapper w-100">
-                    <img src={verticalsData.vertical3.document[0].data.banner.url} alt="verticals image" className="w-100"/>
+                    <Img fluid={verticalsData.vertical3.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
                     </div>
                 </div>
                 </div>
@@ -166,7 +215,7 @@ class AboutUs extends React.Component {
                     </Link>
                     </div> 
                     <div className="vertical-img-wrapper w-100">
-                    <img src={verticalsData.vertical4.document[0].data.banner.url} alt="verticals image" className="w-100"/>
+                    <Img fluid={verticalsData.vertical4.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
                     </div>
                 </div>
                 </div>
@@ -180,7 +229,7 @@ class AboutUs extends React.Component {
               <div className="col-12 padding-sm-0">
                 <div className="management-card d-flex">
                   <div className="management-img-wrapper w-100">
-                    <img src={data.management_team.document[0].data.banner.url} alt="verticals image" className="w-100"/>
+                    <Img fluid={data.management_team.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
                   </div>
                   <div className="management-card-body d-flex flex-column justify-content-around"> 
                     <p className="d-none d-md-block">
@@ -210,10 +259,22 @@ export const AboutPage = graphql`{
         text
       }
       image {
-        url
+        localFile {
+          childImageSharp {
+            fluid(maxWidth: 1150, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
       banner {
-        url
+        localFile {
+          childImageSharp {
+            fluid(maxWidth: 1150, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
       description {
         html
@@ -226,6 +287,7 @@ export const AboutPage = graphql`{
           text
         }
       }
+
       our_legacy {
         slug
         document {
@@ -235,7 +297,13 @@ export const AboutPage = graphql`{
                 text
               }
               image {
-                url
+                localFile {
+                  childImageSharp {
+                    fluid(maxWidth: 1150, quality: 100) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
               }
               year
               description {
@@ -243,7 +311,13 @@ export const AboutPage = graphql`{
               }
             }
              banner {
-              url
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 1150, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
             }
             title {
               text
@@ -256,7 +330,7 @@ export const AboutPage = graphql`{
           
         }
       }
-
+      
       management_team {
         uid
         document {
@@ -268,13 +342,20 @@ export const AboutPage = graphql`{
               text
             }
             banner {
-              url
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 1150, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
             }
           }
         }
       }
     }
   }
+
   prismicOurVerticals {
     data {
       title {
@@ -287,7 +368,13 @@ export const AboutPage = graphql`{
               text
             }
             banner {
-              url
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 1150, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
             }
           }
         }
@@ -299,7 +386,13 @@ export const AboutPage = graphql`{
              text
            }
              banner {
-              url
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 1150, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
             }
           }
         }
@@ -311,7 +404,13 @@ export const AboutPage = graphql`{
              text
            }
             banner {
-              url
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 1150, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
             }
           }
         }
@@ -323,12 +422,19 @@ export const AboutPage = graphql`{
              text
            }
             banner {
-              url
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 1150, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
             }
           }
         }
       }
     }
   }
+  
 }
 `
