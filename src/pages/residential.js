@@ -14,13 +14,16 @@ export default class Residential extends React.Component {
   render(){
     var settings = {
       className: "center",
-      centerPadding: "60px",
+      centerPadding: "30px",
       dots: false,
       infinite: false,
       speed: 500,
       slidesToShow: 3,
       slidesToScroll: 1,
       initialSlide: 0,
+      cssEase: 'ease-in-out',
+    //   fade: true,
+    //  touchThreshold: 100,
       beforeChange: (current, next) => this.setState({ activeSlide: next }),
       afterChange: current => this.setState({ activeSlide2: current }),
       responsive: [
@@ -39,7 +42,7 @@ export default class Residential extends React.Component {
             className: "center",
             centerMode: true,
             infinite: true,
-            centerPadding: "60px",
+            centerPadding: "35px",
             slidesToShow: 1,
             speed: 500
           }
@@ -50,7 +53,7 @@ export default class Residential extends React.Component {
             className: "center",
             centerMode: true,
             infinite: true,
-            centerPadding: "60px",
+            centerPadding: "30px",
             slidesToShow: 1,
             speed: 500
             
@@ -160,7 +163,7 @@ export default class Residential extends React.Component {
                 <div className="listing-heading d-flex align-items-center">
                   <h4 className="text-uppercase heading mb-0">Completed Projects</h4>
                 </div>
-                  <p className="text-left">{residentialData[0].node.data.completed_description.text}
+                  <p className="text-left d-none d-md-block">{residentialData[0].node.data.completed_description.text}
                   </p>
                   <Slider  {...settings}>
                   {
@@ -169,7 +172,7 @@ export default class Residential extends React.Component {
                       <div className="row"  key={value}> 
                         <div>
                           <div className="secondary-card position-relative ">
-                            <div className="secondary-card-img">
+                            <div className="secondary-card-img image-ratio">
                               <Img fluid={item.completed_links.document[0].data.banner[0].image.localFile.childImageSharp.fluid} alt="" width="100%"/>
                             </div>
                             <div className="secondary-card-rectangle position-absolute d-flex flex-column justify-content-around">
