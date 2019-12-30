@@ -5,11 +5,6 @@ import Img from 'gatsby-image';
 import Slider from 'react-slick';
 import Layout from '../components/layout'
 import Footer from '../components/footer'
-import aboutus from '../styles/images/about-us-banner.jpg'
-import residency from '../styles/images/residency-logo.png'
-import ourLegacy from '../styles/images/our-legacy.jpg'
-import maharera from '../styles/images/mahareha.png';
-
 
 class VerticalPage extends React.Component {
   render(){
