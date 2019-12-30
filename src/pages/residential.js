@@ -167,9 +167,10 @@ export default class Residential extends React.Component {
                               </div>
                               <div className="apartment-size d-flex justify-content-between align-items-center">
                                 <span className="text-uppercase">{item.completed_links.document[0].data.flat_bhk.text}</span>
-                                <a href="#">
+                                { console.log('item', item)}
+                                <Link to={`residential/${item.completed_links.uid}`}>
                                   <i className="fas fa-arrow-right"></i>
-                                </a>
+                                </Link>
                               </div>
                               <div className="project-location">
                                 <i className="fas fa-map-marker-alt"></i>

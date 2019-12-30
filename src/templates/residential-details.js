@@ -319,14 +319,22 @@ class VerticalPage extends React.Component {
                               <i className="fas fa-fire-extinguisher"></i>
                               {verticalData.data.amenities[4].title1.text}
                             </button>
-                            <button className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
-                              <i className="fas fa-dumbbell"></i>
-                              {verticalData.data.amenities[5].title1.text}
-                            </button>
-                            <button className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
-                              <i className="fas fa-hand-holding-heart"></i>
-                              {verticalData.data.amenities[6].title1.text}
-                            </button>
+                            {
+                              verticalData.data.amenities[6] ?
+                                <button className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
+                                  <i className="fas fa-dumbbell"></i>
+                                  {verticalData.data.amenities[5].title1.text}
+                                </button>: null
+                            }
+
+                            {
+                              verticalData.data.amenities[6] ?
+                                <button className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
+                                  <i className="fas fa-hand-holding-heart"></i>
+                                  {verticalData.data.amenities[6].title1.text}
+                                </button>: null
+                            }
+
                             {
                               verticalData.data.amenities[7] ? 
                               <button className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
