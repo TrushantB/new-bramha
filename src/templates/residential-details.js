@@ -543,32 +543,8 @@ export const verticalViewData = graphql`
         unique_features{
            text
         }
-        thumbnail{
-          url
-        }
-        certificate{
-          title1{
-            text
-          }
-          image{
-            localFile {
-                childImageSharp {
-                    fluid(maxWidth: 1150, quality: 100) {
-                        ...GatsbyImageSharpFluid
-                        presentationWidth
-                    }
-                }
-            }
-          }
-        }
-        photo_gallery{
-          text
-        }
         showcase{
           title1{
-            text
-          }
-          short_description1{
             text
           }
           image1{
@@ -587,9 +563,6 @@ export const verticalViewData = graphql`
         }
         floor_plans{
           title1{
-            text
-          }
-          short_description1{
             text
           }
           image1{
@@ -628,9 +601,6 @@ export const verticalViewData = graphql`
             text
           }
         }
-        site_progress_heading{
-            text
-        }
         site_progress{
           images{
             localFile {
@@ -641,11 +611,6 @@ export const verticalViewData = graphql`
                     }
                 }
             }
-          }
-        }
-        locate_us{
-          title1{
-            text
           }
         }
       }
