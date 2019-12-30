@@ -1,36 +1,48 @@
 import React from 'react'
 import Slider from "react-slick";
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image';
 import Layout from '../components/layout'
 import Footer from '../components/footer'
 
 export default class Residential extends React.Component {
+  state = {
+    activeSlide: 1,
+    activeSlide2: 0
+  };
+
   render(){
     var settings = {
+      className: "center",
+      centerPadding: "30px",
       dots: false,
       infinite: false,
       speed: 500,
       slidesToShow: 3,
       slidesToScroll: 1,
       initialSlide: 0,
+      cssEase: 'ease-in-out',
+    //   fade: true,
+    //  touchThreshold: 100,
+      beforeChange: (current, next) => this.setState({ activeSlide: next }),
+      afterChange: current => this.setState({ activeSlide2: current }),
       responsive: [
         {
           breakpoint: 1024,
           settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
+            slidesToShow: 2,
+            slidesToScroll: 2,
             infinite: true,
             dots: false
           }
         },
         {
-          breakpoint: 600,
+          breakpoint: 580,
           settings: {
             className: "center",
             centerMode: true,
             infinite: true,
-            centerPadding: "60px",
+            centerPadding: "35px",
             slidesToShow: 1,
             speed: 500
           }
@@ -38,8 +50,13 @@ export default class Residential extends React.Component {
         {
           breakpoint: 480,
           settings: {
+            className: "center",
+            centerMode: true,
+            infinite: true,
+            centerPadding: "30px",
             slidesToShow: 1,
-            slidesToScroll: 1
+            speed: 500
+            
           }
         }
       ]
@@ -98,6 +115,8 @@ export default class Residential extends React.Component {
                     <div className="row">
                       {
                         residentialData[0].node.data.all_residential.map((item,value)=>{
+                          console.log('uid',item);
+                          
                           return(
                             <div key={value} className="col-md-6 col-lg-4 col-sm-12 p-0 pl-sm-3 pr-sm-3">
                               <div className="residences-card position-relative">
@@ -110,9 +129,9 @@ export default class Residential extends React.Component {
                                     </div>
                                     <div className="apartment-size d-flex justify-content-between align-items-center">
                                       <span className="text-uppercase">{item.residential_links.document[0].data.flat_bhk.text}</span>
-                                      <a href="#">
+                                      <Link to={`residential/${item.residential_links.uid}`}>
                                         <i className="fas fa-arrow-right"></i>
-                                      </a>
+                                      </Link>
                                     </div>
                                     <div className="project-location">
                                       <i className="fas fa-map-marker-alt"></i>
@@ -128,22 +147,21 @@ export default class Residential extends React.Component {
                 </div>
               </div>
             </section>
-            <section className="complete-project">
+            <section className="complete-project position-relative">
               <div className="container">
                 <div className="listing-heading d-flex align-items-center">
                   <h4 className="text-uppercase heading mb-0">Completed Projects</h4>
                 </div>
-                  <p>{residentialData[0].node.data.completed_description.text}
+                  <p className="text-left d-none d-md-block">{residentialData[0].node.data.completed_description.text}
                   </p>
                   <Slider  {...settings}>
                   {
                     residentialData[0].node.data.completed_project.map((item, value)=>{
                     return(
-                      <div className="row"> 
-                        <div key={value}>
-                        
+                      <div className="row"  key={value}> 
+                        <div>
                           <div className="secondary-card position-relative ">
-                            <div className="secondary-card-img">
+                            <div className="secondary-card-img image-ratio">
                               <Img fluid={item.completed_links.document[0].data.banner[0].image.localFile.childImageSharp.fluid} alt="" width="100%"/>
                             </div>
                             <div className="secondary-card-rectangle position-absolute d-flex flex-column justify-content-around">
@@ -152,9 +170,10 @@ export default class Residential extends React.Component {
                               </div>
                               <div className="apartment-size d-flex justify-content-between align-items-center">
                                 <span className="text-uppercase">{item.completed_links.document[0].data.flat_bhk.text}</span>
-                                <a href="#">
+                                { console.log('item', item)}
+                                <Link to={`residential/${item.completed_links.uid}`}>
                                   <i className="fas fa-arrow-right"></i>
-                                </a>
+                                </Link>
                               </div>
                               <div className="project-location">
                                 <i className="fas fa-map-marker-alt"></i>
@@ -169,6 +188,9 @@ export default class Residential extends React.Component {
                   })
                   }
                 </Slider>
+                <span className="d-inline-block d-sm-none position-absolute pagination">
+                   {this.state.activeSlide} of 4
+                </span>
               </div>
             </section>
           </section>

@@ -25,20 +25,69 @@ class Careers extends React.Component {
     this.setState({dataSource : event})
   }
 
+  // render(){
+  //   const careerData = this.props.data.prismicCareers.data;
+  //   console.log('career Data from career page', careerData);
+
+  //   var settings = {
+  //     dots: true,
+  //     infinite: true,
+  //     speed: 500,
+  //     slidesToShow: 1,
+  //     slidesToScroll: 1,
+  //     autoplay : true,
+  //     adaptiveHeight : true,
+  //   };
+      
   render(){
     const careerData = this.props.data.prismicCareers.data;
     console.log('career Data from career page', careerData);
-
     var settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
+      className:"center",
+      centerMode: true,
+      centerPadding: '200px',
       slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay : true,
-      adaptiveHeight : true,
+      beforeChange: (current, next) => this.setState({ activeSlide: next }),
+      afterChange: current => this.setState({ activeSlide2: current }),
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '100px',
+            slidesToShow: 1
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '100px',
+            slidesToShow: 1
+          }
+        },
+        {
+          breakpoint: 580,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '80px',
+            slidesToShow: 1
+          }
+        },
+        {
+          breakpoint: 500,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 1
+          }
+        }
+      ]
     };
-    
     return(
       <Layout>
         <div className="career-page">   
@@ -65,15 +114,25 @@ class Careers extends React.Component {
             </div>
             <div className="slider-wrapper">
               <div className="container">
-                <Slider {...settings}>
-                  {careerData.showcase.map((item,value)=>{
-                    return(
-                      <div key={value} className="life-at-bramha-slide">
-                        <Img fluid={item.image.localFile.childImageSharp.fluid} alt="slider image" className="life-at-bramha-slider-image" />
-                      </div>
-                    )
-                  })}
-                </Slider>
+              <Slider {...settings}>
+                    {
+                      careerData.showcase.map((item,value)=>{
+                        return(
+                          <div key={value}>
+                            <div  className="slider-img image-ratio">
+                              {/* <h5>{item.heading.text}</h5>
+                              <p>{item.date.text}</p>
+                              <p>{item.location.text}</p> */}
+                              <Img fluid={item.image.localFile.childImageSharp.fluid} alt="slider image" className="life-at-bramha-slider-image" />
+                            </div>
+                          </div>
+                        )
+                      })
+                    }
+                  </Slider>
+                  <p className=" text-center pages mb-0">
+                   {this.state.activeSlide} of 5
+                  </p>
               </div>
             </div>
           </section>

@@ -161,14 +161,14 @@ class KnoweldgeHub extends React.Component {
           <div className=" buyer-tips-banner">
       <div className="container container-sm-fluid">
         <div className="heading">
-            <h3 className="text-center text-uppercase section-title">Buyer’s Tips</h3>
+            <h3 className="text-center text-uppercase section-title ">Buyer’s Tips</h3>
         </div>
           <div className="position-relative buyer-tips-banner-img">
             <div className="buyer-tips-image">
               <img src={hero1} alt="" width="100%"/>
             </div>
             <div className="buyer-tips-box position-absolute  d-flex justify-content-between flex-column">
-              <h3 className=" text-uppercase m-0 section-title">Buyer’s tips</h3>
+              <h3 className=" text-uppercase m-0 section-title d-none d-md-block">Buyer’s tips</h3>
               <p className="mb-0 text-white">Learn all about tax planning and documentation by reading all the FAQs and more…</p>
                 <div className="know-more">
                   <a href="#">

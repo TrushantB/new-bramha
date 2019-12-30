@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import Layout from '../components/layout'
 import Footer from '../components/footer'
@@ -7,6 +7,8 @@ import Footer from '../components/footer'
 class Hospitality extends React.Component {
   render(){
     const hospitalityData = this.props.data.allPrismicHospitality.edges;
+    console.log('data from hospitality page', hospitalityData);
+    
     const data = hospitalityData[0].node.data;
     return(
       <Layout>
@@ -31,6 +33,8 @@ class Hospitality extends React.Component {
                   {console.log('data',data)}
                   {
                     data.hospitality_links.map((item,value)=>{
+                      console.log('hospitality_links', item);
+                      
                       return(
                         <div className="col-md-4 p-0 pl-sm-3 pr-sm-3" key={value}>
                           {item.vertical_links.document.map((datas, value)=>{
@@ -46,9 +50,10 @@ class Hospitality extends React.Component {
                                     </div>
                                     <div className="apartment-size d-flex justify-content-between align-items-center">
                                       <span className="text-uppercase">{datas.data.flat_bhk.text}</span>
-                                      <a href="#">
+                                      {console.log('item.vertical_links.uid', item.vertical_links.uid)}
+                                      <Link to={`hospitality/${item.vertical_links.uid}`}>
                                         <i className="fas fa-arrow-right"></i>
-                                      </a>
+                                      </Link>
                                     </div>
                                     <div className="project-location">
                                       <i className="fas fa-map-marker-alt"></i>
@@ -89,6 +94,7 @@ export const hospitalityPage = graphql`{
           }
           hospitality_links{
             vertical_links{
+              uid
               document{
                 data{
                   title{

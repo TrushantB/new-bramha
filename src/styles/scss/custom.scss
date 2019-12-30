@@ -269,7 +269,14 @@ img{
         padding: 0 16px 32px;
     }
 }
-
+.bg-light-gray{
+    background-color: theme-color("bg-color");
+    padding: 52px 0 64px 0;
+    margin-top: 64px;
+}
+.pages{
+    margin-top: 36px;
+}
 // ------------------ Header Css Start ----------------
 .header{
     box-shadow: 1px 0px 6px rgba(00,00,00,0.2);
@@ -393,21 +400,21 @@ img{
                 .section-title::after{
                     content: "";
                     width: auto;
-                    padding: 4px 0;
+                    padding: 6px 0;
                     border-bottom: 1px solid #fff;
                     opacity: 0.43;
                 }
             p{
                 opacity: 0.8;
+                line-height: 24px;
+                // letter-spacing: 0.31px;
+                margin-top: 16px;
             }
         }
     }
     .bg-light-gray{
         height: 100%;
         padding: 44px 36px;
-    }
-    .bg-light-gray{
-        background-color: theme-color("bg-color");
     }
     .guidelines-nris {
         .guidelines-nris-info{
@@ -444,17 +451,33 @@ img{
   // ------------- Knowledge Hub End Here ----------------
   
   
-// ------------- Event Start Here ----------------
-.event{
-    .event-heading{
-        .title{
-            h2{
-              @include border-left;
-              font-weight: 400;
-            }
-        }
-    }
+// ------------- Slider Start Here ----------------
+.slick-center{
+    transform: scale(1.3);
+    transition: transform .5s ease;
+}
+.slider-img{
+    margin: 42px 56px 32px;
+}
+.center .slick-prev {
+    left: 32px;
+    z-index: 1;
+    &:before{
+        content: "";
+        background: url('../images/left-arrow-1.png') no-repeat center center;
+        padding: 12px 0px 16px 38px;
+}
+}
+.center .slick-next {
+  transform: rotate(180deg);
+  right: 50px;
+  &:before{
+    content: "";
+    background: url('../images/left-arrow-1.png') no-repeat center center;
+    padding: 12px 0px 16px 38px;
   }
+}
+// ------------- Slider End Here ----------------
 // ------------- Contact Start Here ----------------
 .contact-section{
     .contact-form{
@@ -688,6 +711,237 @@ img{
     }
 }
 
+/*===========================================
+    Residencial Details page css start here
+=============================================*/
+.logo-card{
+    width:300px;
+    box-shadow: 0 2px 13px 0 rgba(0, 0, 0, 0.18);
+    background-color: #ffffff;
+    padding:8px 0;
+    margin-top: -32px;
+    position: relative;
+    z-index: 99;
+  }
+  .residencial-details{
+      .section-title{
+          padding-bottom:32px;
+          &:after{
+              display: none;
+          }
+      }
+    .page-heading-section{
+        div{
+            padding-top:76px;
+            padding-bottom: 32px;
+        }
+    }
+  }
+  .slider-wrapper-gray{
+      padding: 48px 0;
+      background: theme-color(bg-color);
+      .showcase-slider{
+          max-height:75vh;
+          overflow: hidden;
+      }
+  }
+  .detail-page-sections{
+      padding-top:76px;
+      padding-bottom: 76px;
+  }
+  
+  #pills-tab{
+      border-bottom:1px solid theme-color(tertiary);
+    .tab-icon{
+      font-size:32px;
+      margin-bottom:8px;
+    }
+  }
+  #pills-tabContent{
+      border-bottom:1px solid theme-color(tertiary);
+      ul{
+        padding-top:36px;
+        padding-bottom:36px;
+      }
+  }
+  .nav-pills .nav-link{
+      color:theme-color(text-tertiary);
+  }
+  .nav-pills .nav-link.active{
+      border:1px solid theme-color(border-color);
+      border-bottom:5px solid theme-color(tertiary);
+      border-radius: 5px 5px 0 0;
+      background-color: transparent;
+      color:theme-color(heading-primary);
+  }
+  #factfile-tab .nav-link{
+      border-bottom:3px solid theme-color(border-colors);
+      background-color: theme-color(bg-color);
+      border-radius: 0;
+  }
+  #factfile-tab .nav-link.active{
+      border:1px solid theme-color(border-color);
+      border-bottom:3px solid theme-color(tertiary);
+      border-radius: 0;
+      background-color: transparent;
+      color:theme-color(tertiary);
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.08);
+  }
+  .amenities{
+      button{
+          flex: 1 200px;
+          margin: 12px 8px;
+          border: 0;
+          background: transparent;
+          color:theme-color(text-tertiary);
+          outline: 0;
+          i{
+            font-size: 32px;
+            padding: 5px 24px 5px;
+          color:theme-color(text-tertiary);
+          }
+          &:hover{
+              color:theme-color(primary);
+              i{
+                  color:theme-color(primary);
+              }
+          }
+      }
+  }
+  // ------------- Contact Start Here ----------------
+  .contact-section{
+      .contact-form{
+          margin: 106px 0 0 0;
+      }
+      .contact-details{
+          margin-top: 60px;
+          p,address{
+              opacity: 0.5;
+              font-family: Graphik;
+              font-size: 14px;
+              font-weight: normal;
+              font-stretch: normal;
+              font-style: normal;
+              line-height: 1.71;
+              letter-spacing: -0.31px;
+              color: #000000;
+          }
+          i{
+              font-size: 26px;
+              color:theme-color("icon-color");
+          }   
+      }
+      form{
+          .form-bg-color{
+              background: #b2a585;
+              padding: 16px 0;
+               label{
+                   margin-right: 8px;
+               }
+          }
+          .customer{
+              select{
+                  flex-basis: 23%;
+                  background: transparent;
+                  color: #fff;
+                  border: solid 0.5px #ffffff;
+                  border-radius: 0;
+                  padding: 4px;
+                  font-weight: 300;
+                  font-size: 14px;
+                  height: 30px;
+                  option{
+                      color: #929292;
+                  }
+                      &:focus{
+                      box-shadow: none;
+                      outline: none;
+                      border-color: #fff;
+                  }
+              }
+          }
+      }
+      .contact-form-bg {
+          background: #fafafa;
+          padding: 40px 0 40px 0;
+          .container{
+              max-width: 700px;
+          }
+          .form-row{
+              select{
+                  font-weight: 300;
+                  font-size: 14px; 
+              }
+              input,textarea,select{
+                  font-weight: 300;
+                  padding-left: 8px;
+                  font-size: 14px;
+                  background: transparent;
+                  border: solid 0.5px #999999;
+                  border-radius: 0;
+                  color: #929292;
+                      &::placeholder{
+                          color: #929292;
+                          font-weight: 300;
+                          font-size: 14px;
+                      }
+              }
+              input,select{
+                  height: 30px;
+              }
+              .form-control:focus{
+                  box-shadow: none;
+                  outline: none;
+                  border-color: #999999;
+              }
+              .form-group{
+                  margin-bottom: 32px;
+                  padding: 0 20px 0 20px;
+              }
+          }
+          button{
+              padding: 16px 0;
+              width: 320px;
+              border-radius: 0;
+              font-weight: 300;
+              background: theme-color("tertiary");
+              border-color:theme-color("tertiary") ;
+              &:focus{
+                  border-color:theme-color("tertiary");
+                  box-shadow: none;
+              }
+          }
+      }
+      .locate-us{
+          margin: 130px 0 116px 0;
+      } 
+      .locate-us,
+      .contact-form{
+          .section-title{
+              margin-bottom: 26px;
+              &::after{
+                  display: none;
+              }
+          }
+  
+      }
+      .map {
+          -webkit-filter: grayscale(100%);
+             -moz-filter: grayscale(100%);
+              -ms-filter: grayscale(100%);
+               -o-filter: grayscale(100%);
+                  filter: grayscale(100%);
+      }
+  }
+  .detail-maharera-sections{
+      padding-bottom:128px;
+  }
+  .hospitality-viewmore{
+      width:196px;
+      color:theme-color(tertiary);
+  }
+
+
 // ------------- Footer Start Here ----------------
 footer{
     .copyright{
@@ -738,6 +992,9 @@ footer{
     .footer-social-icon{
         ul{
             margin-bottom: 40px;
+            & .background-circle:last-child{
+                margin-right: 0;
+            }
             li{
                 a{
                     i{
@@ -799,7 +1056,16 @@ footer{
         }
     }
     .complete-project{
-        margin-bottom: 200px;
+        margin-bottom: 148px;
+        .container{
+            text-align: center;
+        }
+        .secondary-card{
+            margin: 0 15px;
+            .secondary-card-rectangle{
+                text-align: left;
+            }
+        }
         p{
           opacity: 0.5;
           font-weight: normal;
@@ -843,6 +1109,53 @@ footer{
 .hospitality-projects {
   margin: 56px 0 80px 0;
 }
+    .slick-next,
+    .slick-prev{
+        top: 100px;
+    }
+
+
+//   .secondary-card{
+//       .secondary-card-rectangle{
+//           width: 252px;
+//           box-shadow: 3px 3px 13px 0 rgba(227, 227, 227, 0.65);
+//           background-color: #ffffff;
+//           padding: 20px 20px 16px 20px;
+//           bottom: -50px;
+//           left: 10px;
+//           .inner-section-title{
+//               font-size: 14px;
+//               color: theme-color("heading-secondary");
+//               letter-spacing: 0.14px;
+//           }
+//           .project-location,
+//           .apartment-size{
+//               font-size: 10px;
+//               color: #000;
+//               font-stretch: normal;
+//               font-style: normal;
+//               letter-spacing: -0.17px;
+//           }
+//           .project-location{
+//              span{
+//               opacity: 0.5;
+//              }
+//           }
+//          .apartment-size{
+//               span{
+//                   opacity: 0.35;
+//               }
+//          }
+//           i {
+//               color:theme-color("icon-color");
+//           }
+//       }
+//     }
+
+  // -------------   Hospitality Projects Start Here ----------------
+  .hospitality-projects {
+    margin: 56px 0 80px 0;
+    }
 // ------------- Card Start Here ----------------
 .card-primary{
     .card-primary-img{
@@ -854,7 +1167,7 @@ footer{
 }
 .residences{
     background-color:theme-color("bg-color"); 
-    padding: 72px 0 172px;
+    padding: 72px 0 148px;
 }
 //Residences Card 
 .residences-card{
@@ -875,11 +1188,11 @@ footer{
           }
     }
     .rectangle{
-        width: 300px;
+        width: 90%;
         // height: 110px;
         box-shadow: 6px 6px 13px 0 rgba(227, 227, 227, 0.76);
         background: #fff;
-        padding: 20px 20px 16px 20px;
+        padding: 20px   ;
         bottom: -70px;
         left: 10px;
     .rectangle-title{
@@ -914,24 +1227,23 @@ footer{
 }
 }
 // Secondary card
-.secondary-card{
-    .secondary-card-img{
-        .gatsby-image-wrapper{
-            padding-bottom: 66.6%;
-            div{
-                padding: 0!important;
-            }
-          img{
-              position: absolute;
-              object-fit: cover;
-              width: 100%;
-              height: 100%;
-          }
+.image-ratio{
+    .gatsby-image-wrapper{
+        padding-bottom: 66.6%;
+        div{
+            padding: 0!important;
         }
-        
-    }
+      img{
+          position: absolute;
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+      }
+    }    
+}
+.secondary-card{
     .secondary-card-rectangle{
-        width: 252px;
+        width:90%;
         // height: 75px;
         box-shadow: 3px 3px 13px 0 rgba(227, 227, 227, 0.65);
         background-color: #FFFFFF;
@@ -983,72 +1295,6 @@ footer{
     }
   }
 
-  
-
-// ------------- Knowledge Hub Start Here ----------------
-.knowledge-hub{
-    margin-bottom: 100px;
-    .buyer-tips-banner{
-        .buyer-tips-image{
-            margin-top: 30px;
-        }
-        .buyer-tips-box{
-            width: 656px;
-            height: 209px;
-            bottom: 45px;
-            left: 77px;
-            background: #000000a3;
-            padding: 20px 40px;
-            hr{
-                width: 96%;
-                background: #fff;
-                opacity: 0.43;
-               
-            }
-            p{
-                opacity: 0.8;
-            }
-        }
-    }
-    .about-loan,
-    .important-notices,
-    .maha-rera{
-        .description{
-           height: 100%;
-            padding: 45px 25px;
-        }
-    }
-    .maha-rera,
-    .important-notices{
-        .sub-heading{
-            margin-top: 80px;
-        }
-    }
-    .bg-light-gray{
-        background-color: theme-color("bg-color");
-    }
-    .guidelines-nris {
-        .guidelines-nris-info{
-            width: 247px;
-            padding: 14px 23px;
-            bottom: 42px;
-            opacity: 0.68;
-            background-color: #000000;
-        }
-    }
-    .know-more{
-        a{
-         color: #b1a585;
-        }
-     }
-    //  .maha-rera,
-    //  .important-notices,
-    //  .guidelines-nris,
-    //  .about-loan{
-    //      margin: 0 10px;
-    //  }
-}
-
 /*======================================
     Career page css start
 ========================================*/
@@ -1083,6 +1329,7 @@ footer{
 }
 .search-bar{
     position: relative;
+    border:1px solid theme-color("border-secondary");
 }
 .search-btn{
     position: absolute;
@@ -1158,6 +1405,10 @@ footer{
 // }
 // ------------- Media Query Start Here ----------------
 @media (max-width:1200px){
+         // slider
+         .slider-img{
+            margin: 42px 44px 32px;
+        }
     // Hospitality project
     .hospitality-projects{
         margin-bottom: 0;
@@ -1166,7 +1417,7 @@ footer{
     // Residence Card
     .residences-card {
         .rectangle{
-            width: 250px
+            width: 90%
         }
      }
      .residential-projects{
@@ -1181,11 +1432,26 @@ footer{
                 padding:16px 8px;
             }
         }
+        .residential-projects{
+            .complete-project{
+                margin-bottom:100px ;
+            }
+            .slick-prev {
+                left: -31px;
+            }
+            .slick-next {
+                right: -31px;
+            }
+        }
     }
     @media (max-width:992px){
         //------- about us ----
         .management-card .management-card-body {
             padding: 20px 38px;
+        }
+        // slider
+        .slider-img{
+            margin: 42px 43px 32px;
         }
         // Card Primary
         .card-primary{
@@ -1231,12 +1497,38 @@ footer{
     // Residence Card
     .residences-card {
         .rectangle{
-            width: 100%;
-            left: 0;
+            width: 90%;   
         }
       }
+      //------------- Residencial detail page ---------------
+        #amenities{
+            .container{
+                overflow-x: scroll;
+                &::-webkit-scrollbar {
+                    height:6px;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background: theme-color(border-color);
+                    border-radius:30px;
+                }
+                &::-webkit-scrollbar-thumb:hover {
+                    background: theme-color(text-secondary); 
+                }
+            }
+        }
+        .amenities-inner-wrapper{
+            width:160%;
+        }
     }
+
     @media (max-width:768px){
+        // slider
+        // .slider-img{
+        //     margin: 20px 26px 16px;
+        // }
+        .pages{
+            margin-top: 20px;
+        }
         .our-verticals-tabs .nav-item{
             padding:16px 8px;
         }
@@ -1330,6 +1622,9 @@ footer{
        .hospitality-projects{
         .residences{
             padding-bottom: 0;}
+            .residences-card{
+                margin-bottom: 140px;
+            }
         }
    .career-tabs{
     .btn-wraper{
@@ -1351,10 +1646,47 @@ footer{
        // Residence Card
        .residences-card {
         .rectangle{
-            width: 350px;
+            width: 90%;
             left: 10px;
         }
       }
+
+      //------------- Residencial detail page ---------------
+    .nav-pills .nav-link, 
+    .nav-pills .nav-link.active{
+      padding: 10px 0;
+    }
+    .amenities-inner-wrapper {
+        width: 200%;
+        .image-wrapper{
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+    }
+    .amenities button {
+        flex: 1 140px;
+        margin: 8px 4px;
+    }
+      .residential-projects{
+        .complete-project {
+            .secondary-card {
+                margin: 0 15px;
+                .secondary-card-rectangle{
+                    width: 90%;
+                }
+            }
+             .slick-next,
+             .slick-prev{
+                 top: 180px;
+             }
+        }
+      }
+      .image-ratio{
+        .gatsby-image-wrapper{
+            padding-bottom: 133.33%;
+        }
+    }
 }
 @media (max-width:580px){
     .padding-sm-0{
@@ -1393,7 +1725,7 @@ footer{
        }
        .management-card{
            height: 200px;
-       }
+       }  
     }
 
     @media (max-width:580px){
@@ -1544,6 +1876,7 @@ footer{
             .residences{
                 background-color: #fff;
                 padding: 0;
+        
              }
         }   
         .bg-color {
@@ -1585,10 +1918,110 @@ footer{
         .residences{
             background: #fff;
         }
+        .complete-project {
+            .container{
+                background-color:theme-color("bg-color"); 
+                padding: 0;
+            }
+            .listing-heading {
+                transform: translate(0px,-18px);
+            }
+            .secondary-card {
+                margin: 40px  24px;
+            }
+            .slick-list{
+                padding-bottom: 124px!important;
+            }
+         .slick-next{
+            bottom: -35px;
+            right: 16px;
+            top: auto;
+            &:before{
+                background: url('../images/left.jpg') no-repeat center center;
+                padding: 0 0 0 36px;
+              }
+          }
+          .slick-prev{
+              top: auto;
+              bottom: -45px;
+              right: 90px;
+              left: auto;
+              &:before{
+                background: url('../images/left.jpg') no-repeat center center;
+                padding: 0 0 0 36px;
+              }
+          }
+          .pagination{
+              bottom: -40px;
+              left: 70px;
+          }
+        }
+        .slick-center{
+            transform: scale(1.2);
+            transition: transform .5s ease;
+        }
     }
+
+    /*Residencial media query start*/
+        .logo-card{
+            box-shadow: none;
+            margin-top: 28px;
+            width:280px;
+            img{
+            width: 70% !important;
+            }
+        }
+        .detail-page-sections{
+            padding-top:36px;
+            padding-bottom:36px;
+        }
+        .residencial-details .page-heading-section div {
+        padding-top: 36px;
+        padding-bottom: 32px;
+        .page-heading{
+            border:0;    
+            padding: 0;
+            font-size: 20px;
+            line-height: 32px;
+        }
+        }
+        #pills-tab,
+        #factfile-tab{
+        padding: 0 15px;
+        }
+        .nav-pills .nav-link{
+        padding: 10px 5px 0;
+        height: 100%;
+        }
+        #pills-tabContent,
+        #pills-tab {
+        border-bottom:0;
+        }
+
+        .contact-section .contact-form-bg button{
+        width: 265px;
+        }
+        #pills-tabContent ul {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        }
+        .contact-section .contact-form-bg .form-row .form-group{
+        padding: 0;
+        }
+
 }
 
 @media (max-width:420px){
+    .slider-img {
+        margin: 20px 24px 16px;
+    }
+    .pages{
+        margin-top: 0;
+    }
+    .bg-light-gray{
+        margin-top: 0;
+        padding: 36px 0 36px 0;
+    }
     .navbar-collapse{
         width:95%;
     }
@@ -1617,10 +2050,30 @@ footer{
        }     
     }
         // Residence Card
-        .residences-card {
-            .rectangle{
-                width: 280px;
-                left: 10px;
+        // .residences-card {
+        //     .rectangle{
+        //         width: 280px;
+        //         left: 10px;
+        //     }
+        //   }
+    .residential-projects {
+        .complete-project {
+            .secondary-card{
+                margin: 16px 16px;
             }
-          }
+        }
+        // .listing-heading{
+        //     width: 100%;
+        // }
+        .residences{
+            .residences-card{
+                margin: 44px 0 72px;
+            }
+        } 
+    }
 }
+@media (max-width:350px){
+    .slider-img {
+        margin: 20px 16px 16px;
+    }
+}    
