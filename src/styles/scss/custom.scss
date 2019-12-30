@@ -262,7 +262,14 @@ img{
         padding: 0 16px 32px;
     }
 }
-
+.bg-light-gray{
+    background-color: theme-color("bg-color");
+    padding: 52px 0 64px 0;
+    margin-top: 64px;
+}
+.pages{
+    margin-top: 36px;
+}
 // ------------------ Header Css Start ----------------
 .header{
     box-shadow: 1px 0px 6px rgba(00,00,00,0.2);
@@ -402,9 +409,6 @@ img{
         height: 100%;
         padding: 44px 36px;
     }
-    .bg-light-gray{
-        background-color: theme-color("bg-color");
-    }
     .guidelines-nris {
         .guidelines-nris-info{
             width: 247px;
@@ -440,17 +444,33 @@ img{
   // ------------- Knowledge Hub End Here ----------------
   
   
-// ------------- Event Start Here ----------------
-.event{
-    .event-heading{
-        .title{
-            h2{
-              @include border-left;
-              font-weight: 400;
-            }
-        }
-    }
+// ------------- Slider Start Here ----------------
+.slick-center{
+    transform: scale(1.3);
+    transition: transform .5s ease;
+}
+.slider-img{
+    margin: 42px 56px 32px;
+}
+.center .slick-prev {
+    left: 32px;
+    z-index: 1;
+    &:before{
+        content: "";
+        background: url('../images/left-arrow-1.png') no-repeat center center;
+        padding: 12px 0px 16px 38px;
+}
+}
+.center .slick-next {
+  transform: rotate(180deg);
+  right: 50px;
+  &:before{
+    content: "";
+    background: url('../images/left-arrow-1.png') no-repeat center center;
+    padding: 12px 0px 16px 38px;
   }
+}
+// ------------- Slider End Here ----------------
 // ------------- Contact Start Here ----------------
 .contact-section{
     .contact-form{
@@ -731,6 +751,9 @@ footer{
     .footer-social-icon{
         ul{
             margin-bottom: 40px;
+            & .background-circle:last-child{
+                margin-right: 0;
+            }
             li{
                 a{
                     i{
@@ -915,7 +938,7 @@ footer{
           }
     }
     .rectangle{
-        width: 96%;
+        width: 90%;
         // height: 110px;
         box-shadow: 6px 6px 13px 0 rgba(227, 227, 227, 0.76);
         background: #fff;
@@ -954,22 +977,21 @@ footer{
 }
 }
 // Secondary card
-.secondary-card{
-    .secondary-card-img{
-        .gatsby-image-wrapper{
-            padding-bottom: 66.6%;
-            div{
-                padding: 0!important;
-            }
-          img{
-              position: absolute;
-              object-fit: cover;
-              width: 100%;
-              height: 100%;
-          }
+.image-ratio{
+    .gatsby-image-wrapper{
+        padding-bottom: 66.6%;
+        div{
+            padding: 0!important;
         }
-        
-    }
+      img{
+          position: absolute;
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+      }
+    }    
+}
+.secondary-card{
     .secondary-card-rectangle{
         width:90%;
         // height: 75px;
@@ -1121,6 +1143,10 @@ footer{
 // }
 // ------------- Media Query Start Here ----------------
 @media (max-width:1200px){
+         // slider
+         .slider-img{
+            margin: 42px 44px 32px;
+        }
     // Hospitality project
     .hospitality-projects{
         margin-bottom: 0;
@@ -1157,6 +1183,10 @@ footer{
         }
     }
     @media (max-width:992px){
+        // slider
+        .slider-img{
+            margin: 42px 43px 32px;
+        }
         // Card Primary
         .card-primary{
             .card-primary-img{
@@ -1207,6 +1237,13 @@ footer{
 
 }
     @media (max-width:768px){
+        // slider
+        // .slider-img{
+        //     margin: 20px 26px 16px;
+        // }
+        .pages{
+            margin-top: 20px;
+        }
         .our-verticals-tabs .nav-item{
             padding:16px 8px;
         }
@@ -1335,11 +1372,6 @@ footer{
                 .secondary-card-rectangle{
                     width: 90%;
                 }
-                .secondary-card-img{
-                    .gatsby-image-wrapper{
-                        padding-bottom: 133.33%;
-                    }
-                }
             }
              .slick-next,
              .slick-prev{
@@ -1347,7 +1379,11 @@ footer{
              }
         }
       }
-    
+      .image-ratio{
+        .gatsby-image-wrapper{
+            padding-bottom: 133.33%;
+        }
+    }
 }
 @media (max-width:580px){
     .padding-sm-0{
@@ -1579,24 +1615,20 @@ footer{
         .complete-project {
             .container{
                 background-color:theme-color("bg-color"); 
+                padding: 0;
             }
             .listing-heading {
-                transform: translate(10px,-18px);
+                transform: translate(0px,-18px);
             }
             .secondary-card {
-                margin: 0 24px;
-                .secondary-card-img{
-                    .gatsby-image-wrapper{
-                        padding-bottom: 133.33%;
-                    }
-                }
+                margin: 40px  24px;
             }
             .slick-list{
                 padding-bottom: 124px!important;
             }
          .slick-next{
             bottom: -35px;
-            right: 0;
+            right: 16px;
             top: auto;
             &:before{
                 background: url('../images/left.jpg') no-repeat center center;
@@ -1620,12 +1652,22 @@ footer{
         }
         .slick-center{
             transform: scale(1.2);
+            transition: transform .5s ease;
         }
     }
-
 }
 
 @media (max-width:420px){
+    .slider-img {
+        margin: 20px 24px 16px;
+    }
+    .pages{
+        margin-top: 0;
+    }
+    .bg-light-gray{
+        margin-top: 0;
+        padding: 36px 0 36px 0;
+    }
     .navbar-collapse{
         width:95%;
     }
@@ -1663,12 +1705,12 @@ footer{
     .residential-projects {
         .complete-project {
             .secondary-card{
-                margin: 0 16px;
+                margin: 16px 16px;
             }
         }
-        .listing-heading{
-            width: 100%;
-        }
+        // .listing-heading{
+        //     width: 100%;
+        // }
         .residences{
             .residences-card{
                 margin: 44px 0 72px;
@@ -1676,3 +1718,8 @@ footer{
         } 
     }
 }
+@media (max-width:350px){
+    .slider-img {
+        margin: 20px 16px 16px;
+    }
+}    
