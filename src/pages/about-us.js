@@ -63,7 +63,7 @@ class AboutUs extends React.Component {
               </div>
               <div className="row padding-block-60 d-flex align-items-center">
                   <div className="col-sm-3 year-img-wrap">
-                  <Img fluid={data.banner.localFile.childImageSharp.fluid} alt="35 Years image" className="w-100"/>
+                  <Img fluid={data.banner.localFile.childImageSharp.fluid} alt="35 Years image"/>
                 </div>
                 <div className="col-sm-9 main-description">
                   <div className="mb-4" dangerouslySetInnerHTML={{__html: data.description.html}} />
@@ -74,7 +74,7 @@ class AboutUs extends React.Component {
                 return(
                   <div key={value} className="col-md-4 mt-2 mt-sm-2 mt-md-2">
                     <div className="about-sect-4"  style={this.state.styleData}>
-                      <h3 className="section-title">
+                      <h3 className="section-title text-uppercase">
                       {item.sub_title.text}
                       </h3>
                       <p>
@@ -99,19 +99,18 @@ class AboutUs extends React.Component {
           </section>
           <section className="our-legacy about-sections">
               <div className="d-flex justify-content-center flex-column section-title-wrapper w-100 ">
-                <h3 className="section-title text-center">
+                <h3 className="section-title text-center text-uppercase">
                     Our Legacy
                 </h3>
               </div>
               <div className="slider-wrapper">
-                {/* <Slider  {...settings}>
-                  {
-                    ourLegacy.map((item,value)=>{
-                      return(
-                        item.node.data.our_legacy.map((item,value)=>{
-                          return(
-                            <div key={value} className="legacy-slide">
-                            <img src={item.image.url} alt="slider image" className="legacy-slider-image" />
+                <div className="container">
+                  <Slider {...settings}>
+                    {
+                      data.our_legacy.document[0].data.our_legacy.map((item,value)=>{
+                        return(
+                          <div key={value} className="legacy-slide">
+                            <Img fluid={item.image.localFile.childImageSharp.fluid} alt="slider image" className="legacy-slider-image" />
                             <div className="slide-caption">
                               <h3 className="section-title text-white">
                                 {item.title.text}
@@ -121,37 +120,17 @@ class AboutUs extends React.Component {
                               </p>
                             </div>
                           </div>
-                          )
-                        })
-                      )
-                    })
-                  }
-                </Slider> */}
-                <Slider {...settings}>
-                  {
-                    data.our_legacy.document[0].data.our_legacy.map((item,value)=>{
-                      return(
-                        <div key={value} className="legacy-slide">
-                          <Img fluid={item.image.localFile.childImageSharp.fluid} alt="slider image" className="legacy-slider-image" />
-                          <div className="slide-caption">
-                            <h3 className="section-title text-white">
-                              {item.title.text}
-                            </h3>
-                            <p className="text text-white"> 
-                              {item.description.text}
-                            </p>
-                          </div>
-                        </div>
-                      )
-                    })
-                  }
-                </Slider>
+                        )
+                      })
+                    }
+                  </Slider>
+                </div>
               </div>
           </section>
           <section className="container">
             <div className="row our-vertivcal-sect about-sections">
                 <div className="d-flex justify-content-center align-items-center flex-column section-title-wrapper w-100 ">
-                  <h3 className="section-title text-center">
+                  <h3 className="section-title text-center text-uppercase">
                       {verticalsData.title.text}
                   </h3>
                 </div>
@@ -178,7 +157,7 @@ class AboutUs extends React.Component {
                     </div>
                     <div className="vertical-card-body d-flex flex-column justify-content-around"> 
                       <h2 className="inner-section-title">
-                        {verticalsData.vertical2.document[0].data.title.text}
+                        {verticalsData.vertical3.document[0].data.title.text}
                       </h2>
                       <Link to='/our-verticals' className="link-text vertical-card-link d-flex justify-content-between align-items-center">
                           <span> View Projects </span> 
@@ -191,7 +170,7 @@ class AboutUs extends React.Component {
                 <div className="vertical-card d-flex flex-row-reverse flex-md-row">
                     <div className="vertical-card-body d-flex flex-column justify-content-around"> 
                     <h2 className="inner-section-title">
-                      {verticalsData.vertical3.document[0].data.title.text}
+                      {verticalsData.vertical2.document[0].data.title.text}
                     </h2>
                     <Link to='our-verticals-main/hospitality' className="link-text vertical-card-link d-flex justify-content-between align-items-center">
                         <span> View Projects </span> 
@@ -222,7 +201,7 @@ class AboutUs extends React.Component {
             </div>
             <div className="row management-team-sect about-sections">
               <div className="d-flex justify-content-center align-items-center flex-column section-title-wrapper w-100 ">
-                <h3 className="section-title text-center">
+                <h3 className="section-title text-center text-uppercase">
                     {data.management_team.document[0].data.sub_title.text}
                 </h3>
               </div>
