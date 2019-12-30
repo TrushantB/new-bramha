@@ -63,6 +63,8 @@ export default class Residential extends React.Component {
     };
     const residentialData = this.props.data.allPrismicResidential.edges;
     console.log('residentialData', residentialData);
+    const addressData = residentialData[0].node.data.ongoing_projects;
+    console.log('addressData',addressData);
     return(
       <Layout>
         {
@@ -86,18 +88,29 @@ export default class Residential extends React.Component {
           <section className="residential-projects">
             <div className="container">
               <div className="projects">
+
                 <select className="" placeholder="Budget" >
                   <option>Ongoing Projects</option>
                   <option>2</option>
                   <option>3</option>
                   <option>4</option>
                 </select>
+
                 <select className="" placeholder="Budget" >
-                  <option>Location</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
+                {
+                  addressData.map((item,value)=>{
+                    console.log('item', item);
+                    // return(
+                    //   <option>{item.data.flat_address.text}</option>
+                    // )
+                  })
+                }
                 </select>
+
+                  {/* <option>2</option>
+                  <option>3</option>
+                  <option>4</option> */}
+                
                 <select className="" placeholder="Budget" >
                   <option>Type</option>
                   <option>2</option>
@@ -114,10 +127,8 @@ export default class Residential extends React.Component {
                   </div>
                     <div className="row">
                       {
-                        residentialData[0].node.data.all_residential.map((item,value)=>{
-                          console.log('uid',item);
-                          
-                          return(
+                        residentialData[0].node.data.ongoing_projects.map((item,value)=>{
+                        return(
                             <div key={value} className="col-md-6 col-lg-4 col-sm-12 p-0 pl-sm-3 pr-sm-3">
                               <div className="residences-card position-relative">
                                 <div className="residences-img">
@@ -170,7 +181,6 @@ export default class Residential extends React.Component {
                               </div>
                               <div className="apartment-size d-flex justify-content-between align-items-center">
                                 <span className="text-uppercase">{item.completed_links.document[0].data.flat_bhk.text}</span>
-                                { console.log('item', item)}
                                 <Link to={`residential/${item.completed_links.uid}`}>
                                   <i className="fas fa-arrow-right"></i>
                                 </Link>
@@ -212,7 +222,7 @@ export const residentialPage = graphql`{
         description{
           text
         }
-        all_residential{
+        ongoing_projects{
           residential_links{
             uid
             document{
