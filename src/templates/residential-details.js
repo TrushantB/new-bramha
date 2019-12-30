@@ -428,11 +428,11 @@ class VerticalPage extends React.Component {
                   </span>
                   <span className="d-block text-left text-sm-center">Let us help you in making up your mind.</span>
                 </p>
-                <form name="customer" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+                <form name="Residential Customer" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
                   <div className="contact-form-bg pt-4 pb-4 pt-sm-5 pb-sm-5">
                     <div className="container">
                       <div className="form-row">
-                      <input type="hidden" name="form-name" value="customer" />
+                      <input type="hidden" name="form-name" value="Residential Customer" />
                         <div className="col-sm-6 form-group  ">
                             <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" required/>
                         </div>
