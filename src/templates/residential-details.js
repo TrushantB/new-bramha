@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { graphql ,Link } from 'gatsby';
 import 'lazysizes';
 import Img from 'gatsby-image';
 import Slider from 'react-slick';
@@ -327,26 +327,47 @@ class VerticalPage extends React.Component {
                               <i className="fas fa-hand-holding-heart"></i>
                               {verticalData.data.amenities[6].title1.text}
                             </button>
-                            <button className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
-                              <i className="fas fa-walking"></i>
-                              {verticalData.data.amenities[7].title1.text}
-                            </button>
-                            <button className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
-                              <i className="fas fa-archway"></i>
-                              {verticalData.data.amenities[8].title1.text}
-                            </button>
-                            <button className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
-                              <i className="fas fa-swimming-pool"></i>
-                              {verticalData.data.amenities[9].title1.text}
-                            </button>
-                            <button className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
-                              <i className="fas fa-swimmer"></i>
-                              {verticalData.data.amenities[10].title1.text}
-                            </button>
-                            <button className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
+                            {
+                              verticalData.data.amenities[7] ? 
+                              <button className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
+                                <i className="fas fa-walking"></i>
+                                {verticalData.data.amenities[7].title1.text}
+                              </button> :null
+                            }
+
+                            {
+                              verticalData.data.amenities[8] ? 
+                                <button className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
+                                <i className="fas fa-archway"></i>
+                                {verticalData.data.amenities[8].title1.text}
+                              </button> :  null
+                            }
+                            {
+                              verticalData.data.amenities[9] ? 
+                                <button className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
+                                  <i className="fas fa-swimming-pool"></i>
+                                  {verticalData.data.amenities[9].title1.text}
+                                </button>: null
+                            }
+                            {
+                              verticalData.data.amenities[10] ? 
+                              <button className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
+                                <i className="fas fa-swimmer"></i>
+                                {verticalData.data.amenities[10].title1.text}
+                              </button>: null
+                            }
+                            {
+                              verticalData.data.amenities[11] ? 
+                                <button className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
+                                  <i className="fas fa-swimmer"></i>
+                                  {verticalData.data.amenities[11].title1.text}
+                                </button>: null
+                            }
+
+                            {/* <button className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
                               <i className="fas fa-video"></i>
                               {verticalData.data.amenities[11].title1.text}
-                            </button>
+                            </button> */}
                           </div>
                           <div className="d-flex"></div>
                         </div>
