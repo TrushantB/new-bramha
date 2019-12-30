@@ -34,7 +34,7 @@ class VerticalPage extends React.Component {
                 <div className="logo-card">
                   <picture className="d-flex justify-content-start justify-content-sm-center align-items-center">
                     <source media="(min-width: 581px)" srcSet="images/residency-logo.png" />
-                    <Img fluid={verticalData.data.logo.localFile.childImageSharp.fluid} alt="Residency Logo" className="w-50" />
+                    <img src={verticalData.data.logo.url} alt="Residency Logo" className="w-50" />
                   </picture>
                 </div>
               <div className="row page-heading-section">
@@ -488,14 +488,7 @@ export const verticalViewData = graphql`
           }
         }
         logo{
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 1150, quality: 100) {
-                ...GatsbyImageSharpFluid
-                presentationWidth
-              }
-            }
-          }
+          url
         }
         maharera{
          url
