@@ -1,6 +1,6 @@
 import React from 'react'
 import Slider from "react-slick";
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image';
 import Layout from '../components/layout'
 import Footer from '../components/footer'
@@ -115,6 +115,8 @@ export default class Residential extends React.Component {
                     <div className="row">
                       {
                         residentialData[0].node.data.all_residential.map((item,value)=>{
+                          console.log('uid',item);
+                          
                           return(
                             <div key={value} className="col-md-6 col-lg-4 col-sm-12 p-0 pl-sm-3 pr-sm-3">
                               <div className="residences-card position-relative">
@@ -127,9 +129,9 @@ export default class Residential extends React.Component {
                                     </div>
                                     <div className="apartment-size d-flex justify-content-between align-items-center">
                                       <span className="text-uppercase">{item.residential_links.document[0].data.flat_bhk.text}</span>
-                                      <a href="#">
+                                      <Link to={`residential/${item.residential_links.uid}`}>
                                         <i className="fas fa-arrow-right"></i>
-                                      </a>
+                                      </Link>
                                     </div>
                                     <div className="project-location">
                                       <i className="fas fa-map-marker-alt"></i>
@@ -156,9 +158,8 @@ export default class Residential extends React.Component {
                   {
                     residentialData[0].node.data.completed_project.map((item, value)=>{
                     return(
-                      <div className="row"> 
-                        <div key={value}>
-                        
+                      <div className="row"  key={value}> 
+                        <div>
                           <div className="secondary-card position-relative ">
                             <div className="secondary-card-img image-ratio">
                               <Img fluid={item.completed_links.document[0].data.banner[0].image.localFile.childImageSharp.fluid} alt="" width="100%"/>
@@ -169,9 +170,10 @@ export default class Residential extends React.Component {
                               </div>
                               <div className="apartment-size d-flex justify-content-between align-items-center">
                                 <span className="text-uppercase">{item.completed_links.document[0].data.flat_bhk.text}</span>
-                                <a href="#">
+                                { console.log('item', item)}
+                                <Link to={`residential/${item.completed_links.uid}`}>
                                   <i className="fas fa-arrow-right"></i>
-                                </a>
+                                </Link>
                               </div>
                               <div className="project-location">
                                 <i className="fas fa-map-marker-alt"></i>

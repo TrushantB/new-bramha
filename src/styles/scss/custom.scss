@@ -701,6 +701,237 @@ img{
     }
 }
 
+/*===========================================
+    Residencial Details page css start here
+=============================================*/
+.logo-card{
+    width:300px;
+    box-shadow: 0 2px 13px 0 rgba(0, 0, 0, 0.18);
+    background-color: #ffffff;
+    padding:8px 0;
+    margin-top: -32px;
+    position: relative;
+    z-index: 99;
+  }
+  .residencial-details{
+      .section-title{
+          padding-bottom:32px;
+          &:after{
+              display: none;
+          }
+      }
+    .page-heading-section{
+        div{
+            padding-top:76px;
+            padding-bottom: 32px;
+        }
+    }
+  }
+  .slider-wrapper-gray{
+      padding: 48px 0;
+      background: theme-color(bg-color);
+      .showcase-slider{
+          max-height:75vh;
+          overflow: hidden;
+      }
+  }
+  .detail-page-sections{
+      padding-top:76px;
+      padding-bottom: 76px;
+  }
+  
+  #pills-tab{
+      border-bottom:1px solid theme-color(tertiary);
+    .tab-icon{
+      font-size:32px;
+      margin-bottom:8px;
+    }
+  }
+  #pills-tabContent{
+      border-bottom:1px solid theme-color(tertiary);
+      ul{
+        padding-top:36px;
+        padding-bottom:36px;
+      }
+  }
+  .nav-pills .nav-link{
+      color:theme-color(text-tertiary);
+  }
+  .nav-pills .nav-link.active{
+      border:1px solid theme-color(border-color);
+      border-bottom:5px solid theme-color(tertiary);
+      border-radius: 5px 5px 0 0;
+      background-color: transparent;
+      color:theme-color(heading-primary);
+  }
+  #factfile-tab .nav-link{
+      border-bottom:3px solid theme-color(border-colors);
+      background-color: theme-color(bg-color);
+      border-radius: 0;
+  }
+  #factfile-tab .nav-link.active{
+      border:1px solid theme-color(border-color);
+      border-bottom:3px solid theme-color(tertiary);
+      border-radius: 0;
+      background-color: transparent;
+      color:theme-color(tertiary);
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.08);
+  }
+  .amenities{
+      button{
+          flex: 1 200px;
+          margin: 12px 8px;
+          border: 0;
+          background: transparent;
+          color:theme-color(text-tertiary);
+          outline: 0;
+          i{
+            font-size: 32px;
+            padding: 5px 24px 5px;
+          color:theme-color(text-tertiary);
+          }
+          &:hover{
+              color:theme-color(primary);
+              i{
+                  color:theme-color(primary);
+              }
+          }
+      }
+  }
+  // ------------- Contact Start Here ----------------
+  .contact-section{
+      .contact-form{
+          margin: 106px 0 0 0;
+      }
+      .contact-details{
+          margin-top: 60px;
+          p,address{
+              opacity: 0.5;
+              font-family: Graphik;
+              font-size: 14px;
+              font-weight: normal;
+              font-stretch: normal;
+              font-style: normal;
+              line-height: 1.71;
+              letter-spacing: -0.31px;
+              color: #000000;
+          }
+          i{
+              font-size: 26px;
+              color:theme-color("icon-color");
+          }   
+      }
+      form{
+          .form-bg-color{
+              background: #b2a585;
+              padding: 16px 0;
+               label{
+                   margin-right: 8px;
+               }
+          }
+          .customer{
+              select{
+                  flex-basis: 23%;
+                  background: transparent;
+                  color: #fff;
+                  border: solid 0.5px #ffffff;
+                  border-radius: 0;
+                  padding: 4px;
+                  font-weight: 300;
+                  font-size: 14px;
+                  height: 30px;
+                  option{
+                      color: #929292;
+                  }
+                      &:focus{
+                      box-shadow: none;
+                      outline: none;
+                      border-color: #fff;
+                  }
+              }
+          }
+      }
+      .contact-form-bg {
+          background: #fafafa;
+          padding: 40px 0 40px 0;
+          .container{
+              max-width: 700px;
+          }
+          .form-row{
+              select{
+                  font-weight: 300;
+                  font-size: 14px; 
+              }
+              input,textarea,select{
+                  font-weight: 300;
+                  padding-left: 8px;
+                  font-size: 14px;
+                  background: transparent;
+                  border: solid 0.5px #999999;
+                  border-radius: 0;
+                  color: #929292;
+                      &::placeholder{
+                          color: #929292;
+                          font-weight: 300;
+                          font-size: 14px;
+                      }
+              }
+              input,select{
+                  height: 30px;
+              }
+              .form-control:focus{
+                  box-shadow: none;
+                  outline: none;
+                  border-color: #999999;
+              }
+              .form-group{
+                  margin-bottom: 32px;
+                  padding: 0 20px 0 20px;
+              }
+          }
+          button{
+              padding: 16px 0;
+              width: 320px;
+              border-radius: 0;
+              font-weight: 300;
+              background: theme-color("tertiary");
+              border-color:theme-color("tertiary") ;
+              &:focus{
+                  border-color:theme-color("tertiary");
+                  box-shadow: none;
+              }
+          }
+      }
+      .locate-us{
+          margin: 130px 0 116px 0;
+      } 
+      .locate-us,
+      .contact-form{
+          .section-title{
+              margin-bottom: 26px;
+              &::after{
+                  display: none;
+              }
+          }
+  
+      }
+      .map {
+          -webkit-filter: grayscale(100%);
+             -moz-filter: grayscale(100%);
+              -ms-filter: grayscale(100%);
+               -o-filter: grayscale(100%);
+                  filter: grayscale(100%);
+      }
+  }
+  .detail-maharera-sections{
+      padding-bottom:128px;
+  }
+  .hospitality-viewmore{
+      width:196px;
+      color:theme-color(tertiary);
+  }
+
+
 // ------------- Footer Start Here ----------------
 footer{
     .copyright{
@@ -1234,8 +1465,27 @@ footer{
             width: 90%;   
         }
       }
+      //------------- Residencial detail page ---------------
+        #amenities{
+            .container{
+                overflow-x: scroll;
+                &::-webkit-scrollbar {
+                    height:6px;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background: theme-color(border-color);
+                    border-radius:30px;
+                }
+                &::-webkit-scrollbar-thumb:hover {
+                    background: theme-color(text-secondary); 
+                }
+            }
+        }
+        .amenities-inner-wrapper{
+            width:160%;
+        }
+    }
 
-}
     @media (max-width:768px){
         // slider
         // .slider-img{
@@ -1365,6 +1615,24 @@ footer{
             left: 10px;
         }
       }
+
+      //------------- Residencial detail page ---------------
+    .nav-pills .nav-link, 
+    .nav-pills .nav-link.active{
+      padding: 10px 0;
+    }
+    .amenities-inner-wrapper {
+        width: 200%;
+        .image-wrapper{
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+    }
+    .amenities button {
+        flex: 1 140px;
+        margin: 8px 4px;
+    }
       .residential-projects{
         .complete-project {
             .secondary-card {
@@ -1655,6 +1923,57 @@ footer{
             transition: transform .5s ease;
         }
     }
+<<<<<<< HEAD
+=======
+
+    /*Residencial media query start*/
+        .logo-card{
+            box-shadow: none;
+            margin-top: 28px;
+            width:280px;
+            img{
+            width: 70% !important;
+            }
+        }
+        .detail-page-sections{
+            padding-top:36px;
+            padding-bottom:36px;
+        }
+        .residencial-details .page-heading-section div {
+        padding-top: 36px;
+        padding-bottom: 32px;
+        .page-heading{
+            border:0;    
+            padding: 0;
+            font-size: 20px;
+            line-height: 32px;
+        }
+        }
+        #pills-tab,
+        #factfile-tab{
+        padding: 0 15px;
+        }
+        .nav-pills .nav-link{
+        padding: 10px 5px 0;
+        height: 100%;
+        }
+        #pills-tabContent,
+        #pills-tab {
+        border-bottom:0;
+        }
+
+        .contact-section .contact-form-bg button{
+        width: 265px;
+        }
+        #pills-tabContent ul {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        }
+        .contact-section .contact-form-bg .form-row .form-group{
+        padding: 0;
+        }
+
+>>>>>>> a1cc32730e76e397b70dbc830067363f938daff8
 }
 
 @media (max-width:420px){
