@@ -5,8 +5,6 @@ exports.createPages=({graphql,actions}) => {
     const { createPage } = actions
     return new Promise((resolve ,reject) =>{
         const post = path.resolve('src/templates/our-vertical.js')
-        // const verticalPost = path.resolve('src/templates/vertical-view.js')
-        // const blogPost = path.resolve('src/templates/knowledgeHub-view.js') 
         resolve(
             graphql(`
                 {
