@@ -265,10 +265,9 @@ img{
 .bg-light-gray{
     background-color: theme-color("bg-color");
     padding: 52px 0 64px 0;
-    margin-top: 64px;
 }
 .pages{
-    margin-top: 36px;
+    margin-top: 28px;
 }
 // ------------------ Header Css Start ----------------
 .header{
@@ -1096,44 +1095,7 @@ footer{
     }
 }
 
-//   .secondary-card{
-//       .secondary-card-rectangle{
-//           width: 252px;
-//           box-shadow: 3px 3px 13px 0 rgba(227, 227, 227, 0.65);
-//           background-color: #ffffff;
-//           padding: 20px 20px 16px 20px;
-//           bottom: -50px;
-//           left: 10px;
-//           .inner-section-title{
-//               font-size: 14px;
-//               color: theme-color("heading-secondary");
-//               letter-spacing: 0.14px;
-//           }
-//           .project-location,
-//           .apartment-size{
-//               font-size: 10px;
-//               color: #000;
-//               font-stretch: normal;
-//               font-style: normal;
-//               letter-spacing: -0.17px;
-//           }
-//           .project-location{
-//              span{
-//               opacity: 0.5;
-//              }
-//           }
-//          .apartment-size{
-//               span{
-//                   opacity: 0.35;
-//               }
-//          }
-//           i {
-//               color:theme-color("icon-color");
-//           }
-//       }
-//     }
-
-  // -------------   Hospitality Projects Start Here ----------------
+/// -------------   Hospitality Projects Start Here ----------------
   .hospitality-projects {
     margin: 56px 0 80px 0;
     }
@@ -1265,16 +1227,46 @@ footer{
 // ------------- Card End Here ----------------
 
 // ------------- Event Start Here ----------------
-.event{
-    .event-heading{
-        .title{
-            h2{
-              @include border-left;
-              font-weight: 400;
-            }
+
+    .center{
+       .slick-next{
+            top: auto;
+            left: auto;
+            bottom: -58px;
+            right: 15%;
+            &:before{
+               
+                background: url('../images/left.jpg') no-repeat center center;
+                padding: 0 0 0 36px;
+              }
+        }
+        .slick-prev{
+            right: 24%;
+            bottom: -78px;
+            top: auto;
+            left: auto;
+            &:before{
+               
+                background: url('../images/left.jpg') no-repeat center center;
+                padding: 0 0 0 36px;
+              }
+        }
+        .slick-next,
+        .slick-prev{
+            width: 7%;
+            height: 8%;
+            background-color: #333333;
         }
     }
-  }
+    .section-title{
+        margin: 64px 0 16px 0;
+        &::after{
+            content: "";
+            margin: 0 auto;
+        }  
+    }
+
+// ------------- Event End Here ----------------
 
 /*======================================
     Career page css start
@@ -1412,12 +1404,23 @@ footer{
                 right: -31px;
             }
         }
+        //slider
+        .center{
+            .slick-next{
+                right: 28%;
+                bottom: -51px;
+            }
+            .slick-prev{
+                bottom: -66px;
+                right: 19%;
+            }
+        }
     }
     @media (max-width:992px){
         // slider
-        .slider-img{
-            margin: 42px 43px 32px;
-        }
+        // .slider-img{
+        //     margin: 42px 43px 32px;
+        // }
         // Card Primary
         .card-primary{
             .card-primary-img{
@@ -1484,13 +1487,24 @@ footer{
         .amenities-inner-wrapper{
             width:160%;
         }
-    }
+  //slider
+    .center{
+        .slick-next{
+            right: 22%;
+            bottom: -51px;
+        }
+        .slick-prev{
+            bottom: -64px;
+            right: 12%;
+        }
+     }    
+ }
 
-    @media (max-width:768px){
+    @media (max-width:767px){
         // slider
-        // .slider-img{
-        //     margin: 20px 26px 16px;
-        // }
+         .slider-img{
+            margin: 20px 26px 16px;
+         }
         .pages{
             margin-top: 20px;
         }
@@ -1652,6 +1666,17 @@ footer{
             padding-bottom: 133.33%;
         }
     }
+      //slider
+    .center{
+        .slick-next{
+            right: 29%;
+            bottom: -38px;
+        }
+        .slick-prev{
+            bottom: -48px;
+            right: 17%;
+        }
+     }
 }
 @media (max-width:580px){
     .padding-sm-0{
@@ -1923,8 +1948,6 @@ footer{
             transition: transform .5s ease;
         }
     }
-<<<<<<< HEAD
-=======
 
     /*Residencial media query start*/
         .logo-card{
@@ -1973,7 +1996,6 @@ footer{
         padding: 0;
         }
 
->>>>>>> a1cc32730e76e397b70dbc830067363f938daff8
 }
 
 @media (max-width:420px){

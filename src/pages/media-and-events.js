@@ -23,7 +23,7 @@ class MediaAndEvents extends React.Component {
           {
             breakpoint: 992,
             settings: {
-              arrows: false,
+              arrows: true,
               centerMode: true,
               centerPadding: '100px',
               slidesToShow: 1
@@ -32,7 +32,7 @@ class MediaAndEvents extends React.Component {
           {
             breakpoint: 768,
             settings: {
-              arrows: false,
+              arrows: true,
               centerMode: true,
               centerPadding: '100px',
               slidesToShow: 1
@@ -41,7 +41,7 @@ class MediaAndEvents extends React.Component {
           {
             breakpoint: 580,
             settings: {
-              arrows: false,
+              arrows: true,
               centerMode: true,
               centerPadding: '80px',
               slidesToShow: 1
@@ -50,7 +50,7 @@ class MediaAndEvents extends React.Component {
           {
             breakpoint: 500,
             settings: {
-              arrows: false,
+              arrows: true,
               centerMode: true,
               centerPadding: '40px',
               slidesToShow: 1
@@ -60,8 +60,8 @@ class MediaAndEvents extends React.Component {
       };
         return(
             <Layout>
-               <section >
-                <div className="event-heading">
+               <section className="events" >
+                <div>
                     <div className="container container-sm page-heading-section">
                         <div className="padding-block-60"> 
                             <h2 className="page-heading">{eventData.event_heading.text}</h2>
@@ -75,6 +75,9 @@ class MediaAndEvents extends React.Component {
                       </div>
                     </div>
                 </div>
+                <div className="heading">
+                  <h3 className="text-center text-uppercase section-title "> Time Realty Showcase</h3>
+               </div>
                 <div className="bg-light-gray">
                 <div className="container ">
                 <Slider {...settings}>
