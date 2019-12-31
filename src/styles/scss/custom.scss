@@ -156,7 +156,7 @@ input,textarea,select{
     color: theme-color("text-black");
     align-items: center;
     display: flex;
-    margin: 0 0 0 15px;
+   
 }
 .section-title{
     font-family: georgia;
@@ -478,6 +478,7 @@ img{
   }
 }
 // ------------- Slider End Here ----------------
+
 // ------------- Contact Start Here ----------------
 .contact-section{
     .contact-form{
@@ -1255,7 +1256,7 @@ footer{
             bottom: -58px;
             right: 15%;
             &:before{
-               
+                display: none;
                 background: url('../images/left.jpg') no-repeat center center;
                 padding: 0 0 0 36px;
               }
@@ -1266,7 +1267,7 @@ footer{
             top: auto;
             left: auto;
             &:before{
-               
+                display: none;
                 background: url('../images/left.jpg') no-repeat center center;
                 padding: 0 0 0 36px;
               }
@@ -1276,6 +1277,11 @@ footer{
             width: 7%;
             height: 8%;
             background-color: #333333;
+            &:hover,
+            &:focus{
+                color: #000;
+                background: #000;
+            }
         }
     }
     .section-title{
@@ -1555,10 +1561,10 @@ footer{
     @media (max-width:767px){
         // slider
          .slider-img{
-            margin: 20px 26px 16px;
+            margin: 20px 28px 16px;
          }
         .pages{
-            margin-top: 20px;
+            margin-top: 12px;
         }
         .our-verticals-tabs .nav-item{
             padding:16px 8px;
@@ -1701,6 +1707,9 @@ footer{
     }
       .residential-projects{
         .complete-project {
+            .slick-slider{
+                margin-top: 28px;
+            }
             .secondary-card {
                 margin: 0 15px;
                 .secondary-card-rectangle{
@@ -1721,11 +1730,11 @@ footer{
       //slider
     .center{
         .slick-next{
-            right: 29%;
-            bottom: -38px;
+            right: 26%;
+            bottom: -31px;
         }
         .slick-prev{
-            bottom: -48px;
+            bottom: -40px;
             right: 17%;
         }
      }
@@ -2050,10 +2059,20 @@ footer{
         .contact-section .contact-form-bg .form-row .form-group{
         padding: 0;
         }
-
+        .center .slick-prev{
+            right: 12%;
+        }
+        .center .slick-next{
+            right: 22%;
+            bottom: -30px;
+        }
+   
 }
 
 @media (max-width:420px){
+    .residential-projects .listing-heading{
+        width: 90%;
+    }
     .slider-img {
         margin: 20px 24px 16px;
     }
@@ -2101,7 +2120,7 @@ footer{
     .residential-projects {
         .complete-project {
             .secondary-card{
-                margin: 16px 16px;
+                margin: 16px 20px;
             }
         }
         // .listing-heading{
@@ -2112,10 +2131,29 @@ footer{
                 margin: 44px 0 72px;
             }
         } 
+    }  
+    .center .slick-prev{
+        right: 8%;
+        bottom: -29px;
     }
+    .center .slick-next{
+        right: 18%;
+        bottom: -21px;
+    }
+
 }
 @media (max-width:350px){
     .slider-img {
         margin: 20px 16px 16px;
     }
-}    
+    .center {
+        .slick-next{
+            right: 20%;
+            bottom: -15px;
+        }
+        .slick-prev {
+            right: 9%;
+            bottom: -22px;
+        }
+    }   
+}   

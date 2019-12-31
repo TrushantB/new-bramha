@@ -13,7 +13,6 @@ export default class Residential extends React.Component {
 
   render(){
     var settings = {
-      
       centerPadding: "30px",
       dots: false,
       infinite: false,
@@ -42,7 +41,7 @@ export default class Residential extends React.Component {
             
             centerMode: true,
             infinite: true,
-            centerPadding: "35px",
+            centerPadding: "50px",
             slidesToShow: 1,
             speed: 500
           }
