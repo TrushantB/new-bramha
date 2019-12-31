@@ -11,19 +11,54 @@ class VerticalPage extends React.Component {
     const verticalData = this.props.data.prismicOurVerticalsArticle;
     console.log('verticalData from template page', verticalData);
     var settings = {
-      dots: true,
-      // dotsClass: "slick-dots slick-thumb",
-      infinite: true,
-      speed: 1000,
+      className:"center",
+      centerMode: true,
+      centerPadding: '200px',
       slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay : true,
-      // centerPadding: "50%",
- 
+      beforeChange: (current, next) => this.setState({ activeSlide: next }),
+      afterChange: current => this.setState({ activeSlide2: current }),
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '100px',
+            slidesToShow: 1
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '100px',
+            slidesToShow: 1
+          }
+        },
+        {
+          breakpoint: 580,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '80px',
+            slidesToShow: 1
+          }
+        },
+        {
+          breakpoint: 500,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 1
+          }
+        }
+      ]
     };
     return(
       <Layout>
-        <main className="residencial-details">
+        <main className="detail-page">
             {/* <!--   ---------------- banner start here ---------------- --> */}
               <section className="banner-section">
                   <Img fluid={verticalData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
@@ -31,44 +66,46 @@ class VerticalPage extends React.Component {
             {/* <!--   ---------------- banner end here ---------------- --> */}
             {/* <!--  -------------------- middle section start here ----------------------> */}
             <section className="detail-page-sections pb-0 pt-sm-0 container container-sm-fluid bg-color">
-                <div className="logo-card">
-                  <picture className="d-flex justify-content-start justify-content-sm-center align-items-center">
-                    <source media="(min-width: 581px)" srcSet="images/residency-logo.png" />
-                    <img src={verticalData.data.logo.url} alt="Residency Logo" className="w-50" />
-                  </picture>
-                </div>
-              <div className="row page-heading-section">
-                  <div className="col-12 padding-sm-0">
-                      <h2 className="page-heading text-uppercase"> 
-                        {verticalData.data.heading.text}   
-                      </h2> 
-                  </div>
-              </div>
-              <div className="row">
-                  <div className="col-12">
-                      <p className="mb-4">
+                        <div className="logo-card">
+                            <picture className="d-flex justify-content-start justify-content-sm-center align-items-center">
+                            <source media="(min-width: 581px)" srcSet="images/residency-logo.png" />
+                            <img src={verticalData.data.logo.url} alt="Residency Logo" className="w-50" />
+                            </picture>
+                        </div>
+                        <div className="row padding-block-60">
+                          <h2 className="page-heading text-uppercase"> 
+                            {verticalData.data.heading.text}       
+                          </h2> 
+                        </div>
+                        <div className="row">
+                          <div className="col-12">
+                            <p className="mb-4">
                           {verticalData.data.description.text}
-                      </p>
-                    </div>
-              </div>
-            </section>
+                            </p>
+                          </div>
+                        </div>
+                    </section>
             {/* <!--   ------------------- Showcase section start here ------------------- --> */}
             <section className="detail-page-sections">
               <h2 className="section-title text-uppercase text-center">
                   Showcase
               </h2>
-              <div className="slider-wrapper-gray">
+              <div className="slider-wrapper">
+                <div className="container">
                 <Slider {...settings}>
-                  {
-                    verticalData.data.showcase.map((item, value)=>{
-                      return(
-                        <div className="container showcase-slider" key={value}>
-                          <Img fluid={item.image1.localFile.childImageSharp.fluid} alt=" Showcase slidwer" className="w-100 h-100" />
-                        </div>
-                      )
-                    })
-                  }
-                </Slider>
+                      {
+                        verticalData.data.showcase.map((item,value)=>{
+                          return(
+                            <div key={value}>
+                              <div  className="slider-img image-ratio">
+                                <Img fluid={item.image1.localFile.childImageSharp.fluid} alt=" Showcase slidwer" className="life-at-bramha-slider-image" />
+                              </div>
+                            </div>
+                          )
+                        })
+                      }
+                    </Slider>
+                </div>
               </div>
             </section>
             {/* <!--   ------------------- Showcase section end here ------------------- --> */}
@@ -78,7 +115,7 @@ class VerticalPage extends React.Component {
                   Location
               </h2>
               <div className="map-image">
-                <iframe className="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.9979896405875!2d73.87803231420851!3d18.52899298740413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c056fa4d8413%3A0xe2b3bd637ed792be!2sResidency%20Club!5e0!3m2!1sen!2sin!4v1576302776373!5m2!1sen!2sin" style={{ width:"100%", height:"450", frameborder:"0", border:"0", allowFullScreen:"0"}}> </iframe>
+                <iframe className="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.9979896405875!2d73.87803231420851!3d18.52899298740413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c056fa4d8413%3A0xe2b3bd637ed792be!2sResidency%20Club!5e0!3m2!1sen!2sin!4v1576302776373!5m2!1sen!2sin" style={{ width:"100%", height:"375px", frameborder:"0", border:"0", allowFullScreen:"0"}}> </iframe>
               </div>
             </section>
             {/* <!--   ------------------- Location section end here ------------------- --> */}
@@ -262,11 +299,26 @@ class VerticalPage extends React.Component {
             </div>
             {/* <!--   ------------------- Proximities section end here ------------------- --> */}
             {/* <!--   ------------------- Floor Plan section start here ------------------- --> */}
-            <div className="detail-page-sections container d-none d-sm-block">
+            <div className="detail-page-sections container-fluid d-none d-sm-block">
               <h2 className="section-title text-uppercase text-center">
                   {verticalData.data.floor_plans1.text}
               </h2>
-              <div className=" showcase-slider">
+              <div className="showcase-slider">
+                <Slider {...settings}>
+                      {
+                        verticalData.data.floor_plans.map((item,value)=>{
+                          return(
+                            <div key={value}>
+                              <div  className="slider-img image-ratio">
+                                <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt=" Floor Plans" className="w-100 h-100" />
+                              </div>
+                            </div>
+                          )
+                        })
+                      }
+                    </Slider>
+              </div>
+              {/* <div className=" showcase-slider">
                 <Slider {...settings}>
                   {
                     verticalData.data.floor_plans.map((item,value)=>{
@@ -276,7 +328,7 @@ class VerticalPage extends React.Component {
                     })
                   }
                 </Slider>
-              </div>
+              </div> */}
             </div>
             {/* <!--   ------------------- Floor Plan section end here ------------------- --> */}
             {/* <!--   ------------------- Antity And Fact Files section start here ------------------- --> */}
@@ -398,6 +450,23 @@ class VerticalPage extends React.Component {
               </h2>
               <div className="slider-wrapper-gray">
                   <div className="container showcase-slider">
+                      <Slider {...settings}>
+                        {
+                          verticalData.data.site_progress.map((item,value)=>{
+                            return(
+                              <div key={value}>
+                                <div  className="slider-img image-ratio">
+                                  <Img fluid={item.images.localFile.childImageSharp.fluid} key={value} alt=" Floor Plans" className="w-100 h-100" />
+                                </div>
+                              </div>
+                            )
+                          })
+                        }
+                      </Slider>
+                    </div>
+              </div>
+              {/* <div className="slider-wrapper-gray">
+                  <div className="container showcase-slider">
                     <Slider {...settings}>
                     {
                       verticalData.data.site_progress.map((item,value)=>{
@@ -408,7 +477,7 @@ class VerticalPage extends React.Component {
                     }
                     </Slider>
                   </div>
-              </div>
+              </div> */}
             </section>
             {/* <!--   ------------------- progress section end here ------------------- --> */}
             {/* <!--   ------------------- Download Brouchure section start here ------------------- --> */}
