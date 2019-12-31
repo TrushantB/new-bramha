@@ -25,20 +25,69 @@ class Careers extends React.Component {
     this.setState({dataSource : event})
   }
 
+  // render(){
+  //   const careerData = this.props.data.prismicCareers.data;
+  //   console.log('career Data from career page', careerData);
+
+  //   var settings = {
+  //     dots: true,
+  //     infinite: true,
+  //     speed: 500,
+  //     slidesToShow: 1,
+  //     slidesToScroll: 1,
+  //     autoplay : true,
+  //     adaptiveHeight : true,
+  //   };
+      
   render(){
     const careerData = this.props.data.prismicCareers.data;
     console.log('career Data from career page', careerData);
-
     var settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
+      className:"center",
+      centerMode: true,
+      centerPadding: '200px',
       slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay : true,
-      adaptiveHeight : true,
+      beforeChange: (current, next) => this.setState({ activeSlide: next }),
+      afterChange: current => this.setState({ activeSlide2: current }),
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '100px',
+            slidesToShow: 1
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '100px',
+            slidesToShow: 1
+          }
+        },
+        {
+          breakpoint: 580,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '80px',
+            slidesToShow: 1
+          }
+        },
+        {
+          breakpoint: 500,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 1
+          }
+        }
+      ]
     };
-    
     return(
       <Layout>
         <div className="career-page">   
@@ -46,8 +95,8 @@ class Careers extends React.Component {
             <Img fluid={careerData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
           </section>
           <section className="career-info container-md bg-color">
-            <div className="padding-block-60">
-              <h2 className="page-heading">{careerData.title.text}</h2> 
+            <div className="row padding-block-60">
+              <h2 className="col-12 page-heading">{careerData.title.text}</h2> 
             </div>
             <div className="row">
               <div className="col-12">
@@ -58,26 +107,38 @@ class Careers extends React.Component {
             </div>
           </section>
           <section className="life-at-bramha">
-            <div className="padding-block-60 pb-4 d-flex justify-content-center flex-column w-100 ">
-              <h3 className="section-title text-center">
+            <div className="padding-block-60 d-flex justify-content-center flex-column w-100 ">
+              <h3 className="section-title text-center text-uppercase">
                {careerData.life_at_bramha.text}
               </h3>
             </div>
             <div className="slider-wrapper">
+              <div className="container">
               <Slider {...settings}>
-                {careerData.showcase.map((item,value)=>{
-                  return(
-                    <div key={value} className="life-at-bramha-slide">
-                      <Img fluid={item.image.localFile.childImageSharp.fluid} alt="slider image" className="life-at-bramha-slider-image" />
-                    </div>
-                  )
-                })}
-              </Slider>
+                    {
+                      careerData.showcase.map((item,value)=>{
+                        return(
+                          <div key={value}>
+                            <div  className="slider-img image-ratio">
+                              {/* <h5>{item.heading.text}</h5>
+                              <p>{item.date.text}</p>
+                              <p>{item.location.text}</p> */}
+                              <Img fluid={item.image.localFile.childImageSharp.fluid} alt="slider image" className="life-at-bramha-slider-image" />
+                            </div>
+                          </div>
+                        )
+                      })
+                    }
+                  </Slider>
+                  <p className=" text-center pages mb-0">
+                   {this.state.activeSlide} of 5
+                  </p>
+              </div>
             </div>
           </section>
           <section className="container">
             <div className="row">
-              <div className="padding-block-60 pb-3 d-flex justify-content-center flex-column w-100 align-items-center ">
+              <div className="padding-block-60 section-title-wrapper d-flex justify-content-center flex-column w-100 align-items-center ">
                 <h3 className="section-title text-center">
                   {careerData.looking_for_a_job_opening.text}
                 </h3>
@@ -90,15 +151,15 @@ class Careers extends React.Component {
                     })
                     this.setState({collapseDescription : data })
                     }}
-                   placeholder="Search by title or Department" className="form-control search-bar pl-3"/>
-                  <button className="search-btn"><i className="fas fa-search"></i></button>
+                   placeholder="Search by title or Department" className="form-control search-bar rounded-0 pl-5"/>
+                  <i className="fas fa-search search-btn"></i>
                 </form>
                 <div className="career-tabs py-4 d-flex flex-wrap justify-content-between align-content-between">
                   {
                     careerData.job_opening.map((item,value)=>{
                       return(
                         <div key={value} className="btn-wraper">
-                          <button onClick={()=>{this.handleOpportunity(item)}} className="btn-tertiary active w-100 mt-2" 
+                          <button onClick={()=>{this.handleOpportunity(item)}} className="button-tertiary w-100 mt-2" 
                            data-toggle="collapse" data-target={`#collapseOne${value}`}  aria-expanded="true" aria-controls="collapseOne"
                           >{item.title1.text}</button>
                         </div>
@@ -114,9 +175,9 @@ class Careers extends React.Component {
                       return(
                         <div className="card border-0" key={value}>
                           <div className="card-header" id="headingOne">
-                            <h5 className="mb-0 d-flex justify-content-between align-items-center section-title-secondary">
+                            <h5 className="mb-0 d-flex justify-content-between align-items-center section-title-secondary" data-toggle="collapse" data-target={`#collapseOne${value}`}  aria-expanded="true" aria-controls="collapseOne">
                               {item.position.text}
-                              <button className="btn btn-link" type="button" data-toggle="collapse" data-target={`#collapseOne${value}`}  aria-expanded="true" aria-controls="collapseOne">
+                              <button className="btn btn-link">
                                 <i className="fas fa-chevron-down"></i>
                               </button>
                             </h5>
@@ -134,6 +195,7 @@ class Careers extends React.Component {
                                   {item.description2.text}
                                 </p>
                               </div>
+                              <button className="btn-secondary">Apply For Job</button>
                             </div>
                           </div>
                         </div>
@@ -145,9 +207,11 @@ class Careers extends React.Component {
             </div>
           </section>     
           <section className="text-center padding-block-60">
-            <h2 className=" section-title text-center">
-              Cant find what you are looking for?
-            </h2>
+            <div>
+              <h2 className=" section-title text-center">
+                Cant find what you are looking for?
+              </h2>
+            </div>
             <p className="text py-3">
               <span className="d-block">Upload your CV to our portal.</span>
               <span className="d-block">We will get back to you once suitable position is open</span>

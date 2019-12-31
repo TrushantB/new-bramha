@@ -13,7 +13,8 @@ $theme-colors: (
   "bg-color":#f9fafa,
   "sub-title-color":#988a63,
   "text-black":#000,
-  "border-color":#eeeeee
+  "border-color":#eeeeee,
+  "border-color-secondary":#979797
 );
 
 .mt-25{
@@ -155,7 +156,7 @@ input,textarea,select{
     color: theme-color("text-black");
     align-items: center;
     display: flex;
-    margin: 0;
+    margin: 0 0 0 15px;
 }
 .section-title{
     font-family: georgia;
@@ -207,6 +208,7 @@ input,textarea,select{
   font-size: 14px;
   letter-spacing: -0.23px;
   color: theme-color("tertiary");
+  cursor: pointer;
   &:hover{
       text-decoration: none;
   }
@@ -227,9 +229,10 @@ input,textarea,select{
     width: 320px;
     border-radius: 0;
     font-weight: 300;
-    color:#fff!important;
+    color:#fff;
     background: theme-color("tertiary");
-    border-color:theme-color("tertiary") ;
+    border-color:theme-color("tertiary");
+    border:0;
     &:focus{
         border-color:theme-color("tertiary");
         box-shadow: none;
@@ -238,16 +241,21 @@ input,textarea,select{
         color: #fff;
     }
 }
-.btn-tertiary{
+.button-tertiary{
     padding: 16px;
     color:theme-color("text-tertiary");
-    border:1px solid theme-color("text-tertiary");
+    border:1px solid theme-color("border-color-secondary");
     font-family: 'Graphik', sans-serif;
     font-weight: 300;
     font-size: 14px;
     letter-spacing: -0.4px;
     text-align: center;
     background:transparent;
+    outline: 0;
+    &:hover{
+        background-color: theme-color("heading-primary");
+        color:theme-color("secondary");
+    }
 }
 img{
     object-fit: cover;
@@ -605,14 +613,17 @@ img{
 }
 // --------- Our Legacy css start here ----------
 .our-legacy{
+    .section-title-wrapper{
+        padding-bottom:24px;
+    }
     .section-title{
         &::after{
-            margin:0 auto;
+            display:none;
         }
     }
     .slider-wrapper{
-        background-color: theme-color("bg-secondary");
-        padding:40px;
+        background-color: theme-color("bg-color");
+        padding:68px 0px 40px;
         .legacy-slide{
             height:80vh;
             position: relative;
@@ -1089,11 +1100,20 @@ footer{
         padding: 12px 0px 16px 38px;
       }
     }
+} 
+.residences{
+    background-color:theme-color("bg-color"); 
+    padding: 72px 0 172px;
+}
+// -------------   Hospitality Projects Start Here ----------------
+.hospitality-projects {
+  margin: 56px 0 80px 0;
+}
     .slick-next,
     .slick-prev{
         top: 100px;
     }
-}
+
 
 /// -------------   Hospitality Projects Start Here ----------------
   .hospitality-projects {
@@ -1279,8 +1299,16 @@ footer{
     }
 }
 .life-at-bramha{
+    .section-title-wrapper{
+        padding-bottom:24px;
+    }
+    .section-title{
+        &::after{
+            display: none;
+        }
+    }
     .slider-wrapper{
-        background-color: theme-color("bg-secondary");
+        background-color: theme-color("bg-color");
         padding:40px;
         .life-at-bramha-slide{
             height:80vh;
@@ -1294,18 +1322,16 @@ footer{
 }
 .search-bar{
     position: relative;
-    padding-left:35px;
-    border-radius: 0;
+    border:1px solid theme-color("border-secondary");
 }
 .search-btn{
     position: absolute;
-    top: 8px;
+    top: 12px;
     background: transparent;
     border: 0;
-    left: 20px;
+    left: 30px;
 }
 .career-tabs{
-    height:183px;
     .btn-wraper{
         flex-basis: 23%;
     }
@@ -1321,8 +1347,29 @@ footer{
     .card{
         border-bottom: 1px solid rgba(0, 0, 0, 0.125) !important;
     }
+    .card-header{
+        h5{
+            cursor: pointer;
+            opacity: 0.6;
+            font-family: Graphik;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.43;
+            letter-spacing: -0.31px;
+            color:theme-color("text-black");
+        }
+        i{
+            color:theme-color("text-black");
+        }
+    }
     .card-head{
         height:90px;
+    }
+    .card-body{
+        .btn-secondary{
+            background:theme-color("tertiary");
+            color:#fff;
+        }
     }
     .accordion{
         border-top: 1px solid rgba(0, 0, 0, 0.125);
@@ -1352,6 +1399,7 @@ footer{
     cursor: pointer;
     width:302px;
     border:1px solid transparent;
+    color:#fff; 
   }
   .input-file-btn:hover::before {
     background-color: transparent;
@@ -1417,6 +1465,10 @@ footer{
         }
     }
     @media (max-width:992px){
+        //------- about us ----
+        .management-card .management-card-body {
+            padding: 20px 38px;
+        }
         // slider
         // .slider-img{
         //     margin: 42px 43px 32px;
@@ -1693,6 +1745,7 @@ footer{
             }
             .page-heading{
                 font-size: 24px;  
+                margin: 0;
             }
             .text{
                 padding: 0 15px;
@@ -1729,6 +1782,7 @@ footer{
                 }
                 .page-heading{
                     font-size: 24px;  
+                    margin:0;
                 }
                 .text{
                     padding: 0 15px;
@@ -1876,6 +1930,7 @@ footer{
                 }
                 .page-heading{
                     font-size: 24px;  
+                    margin: 0;
                 }
         }
         //Page heading
