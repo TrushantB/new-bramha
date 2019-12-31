@@ -195,6 +195,7 @@ class Careers extends React.Component {
                                   {item.description2.text}
                                 </p>
                               </div>
+                              <button className="btn-secondary">Apply For Job</button>
                             </div>
                           </div>
                         </div>
@@ -206,7 +207,7 @@ class Careers extends React.Component {
             </div>
           </section>     
           <section className="text-center padding-block-60">
-            <div className="section-title-wrapper">
+            <div>
               <h2 className=" section-title text-center">
                 Cant find what you are looking for?
               </h2>
