@@ -149,8 +149,7 @@ input,textarea,select{
     border-left: 10px solid theme-color("tertiary");
     font-family: 'Graphik', sans-serif;
     font-weight: 400;
-    padding:0px 12px;
-    height: 40px;
+    padding:4px 12px;
     opacity: 0.8;
     font-size:30px;
     color: theme-color("text-black");
@@ -724,20 +723,6 @@ img{
     position: relative;
     z-index: 99;
   }
-  .residencial-details{
-      .section-title{
-          padding-bottom:32px;
-          &:after{
-              display: none;
-          }
-      }
-    .page-heading-section{
-        div{
-            padding-top:76px;
-            padding-bottom: 32px;
-        }
-    }
-  }
   .slider-wrapper-gray{
       padding: 48px 0;
       background: theme-color(bg-color);
@@ -926,21 +911,55 @@ img{
           }
   
       }
-      .map {
-          -webkit-filter: grayscale(100%);
-             -moz-filter: grayscale(100%);
-              -ms-filter: grayscale(100%);
-               -o-filter: grayscale(100%);
-                  filter: grayscale(100%);
-      }
   }
   .detail-maharera-sections{
       padding-bottom:128px;
   }
-  .hospitality-viewmore{
-      width:196px;
-      color:theme-color(tertiary);
-  }
+.detail-page{
+    .section-title{
+        padding-bottom:32px;
+        &:after{
+            display: none;
+        }
+    }
+      .page-heading-section{
+          div{
+              padding-top:76px;
+              padding-bottom: 32px;
+          }
+      }
+    .detail-page-sections{
+        .slider-wrapper{
+            background-color: theme-color("bg-color");
+            padding:40px;
+        }
+        .hospitality-viewmore{
+            width:196px;
+            color:theme-color("tertiary");
+            padding:16px 20px;
+            background:transparent;
+            border:1px solid theme-color("tertiary");
+        }
+        .btn-secondary{            
+            color: #fff;
+            background: theme-color("tertiary");
+            border:1px solid theme-color("tertiary");
+            &:hover{
+                background-color: transparent;
+                color:theme-color("tertiary");
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.map {
+    -webkit-filter: grayscale(100%);
+       -moz-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+         -o-filter: grayscale(100%);
+            filter: grayscale(100%);
+}
 
 
 // ------------- Footer Start Here ----------------
@@ -956,7 +975,7 @@ footer{
             }
         }
         a:hover{
-                color: theme-color("primary");
+                color: #fff;
                 text-decoration: none;
                 transition: .5s ease-in-out;  
            }
@@ -2025,6 +2044,11 @@ footer{
         .contact-section .contact-form-bg .form-row .form-group{
         padding: 0;
         }
+        .detail-page{
+            .page-heading{
+                border:0;
+            }
+        }
 
 }
 
@@ -2087,6 +2111,9 @@ footer{
                 margin: 44px 0 72px;
             }
         } 
+    }
+    .btn-secondary{
+        width:280px;
     }
 }
 @media (max-width:350px){
