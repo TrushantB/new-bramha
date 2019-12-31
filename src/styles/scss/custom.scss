@@ -737,14 +737,14 @@ img{
   }
   
   #pills-tab{
-      border-bottom:1px solid theme-color(tertiary);
+      border-bottom:1px solid theme-color("border-color");
     .tab-icon{
       font-size:32px;
       margin-bottom:8px;
     }
   }
   #pills-tabContent{
-      border-bottom:1px solid theme-color(tertiary);
+      border-bottom:1px solid theme-color("border-color");
       ul{
         padding-top:36px;
         padding-bottom:36px;
@@ -752,21 +752,29 @@ img{
   }
   .nav-pills .nav-link{
       color:theme-color(text-tertiary);
+      border:1px solid transparent;
   }
-  .nav-pills .nav-link.active{
-      border:1px solid theme-color(border-color);
-      border-bottom:5px solid theme-color(tertiary);
-      border-radius: 5px 5px 0 0;
-      background-color: transparent;
-      color:theme-color(heading-primary);
-  }
+  .nav-pills{
+    .nav-item{
+        .nav-link{
+            &.active{
+                border:1px solid theme-color(border-color);
+                border-bottom:5px solid theme-color(tertiary);
+                border-radius: 5px 5px 0 0;
+                background-color: transparent;
+                color:theme-color(heading-primary);
+            }
+        }
+    }
+} 
   #factfile-tab .nav-link{
+      border:0;
       border-bottom:3px solid theme-color(border-colors);
       background-color: theme-color(bg-color);
       border-radius: 0;
   }
   #factfile-tab .nav-link.active{
-      border:1px solid theme-color(border-color);
+      border:0;
       border-bottom:3px solid theme-color(tertiary);
       border-radius: 0;
       background-color: transparent;
