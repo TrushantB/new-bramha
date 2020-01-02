@@ -38,11 +38,12 @@ class Careers extends React.Component {
   //     autoplay : true,
   //     adaptiveHeight : true,
   //   };
-      
+  
   render(){
+    
     const careerData = this.props.data.prismicCareers.data;
     console.log('career Data from career page', careerData);
-    var settings = {
+        var settings = {
       className:"center",
       centerMode: true,
       centerPadding: '200px',
