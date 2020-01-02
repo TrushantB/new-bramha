@@ -36,6 +36,7 @@ module.exports = {
         useResolveUrlLoader: {
           options: {
             sourceMap: true, //default is false
+            debug: true,
           },
         },
       },
