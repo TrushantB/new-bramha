@@ -8,14 +8,6 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     `gatsby-prismic-lazy-load`,
-    // {
-    //   resolve: `gatsby-plugin-sharp`,
-    //   options: {
-    //     useMozJpeg: false,
-    //     stripMetadata: true,
-    //     defaultQuality: 75,
-    //   },
-    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -40,9 +32,11 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sass",
       options: {
+        useResolveUrlLoader: true,
         useResolveUrlLoader: {
           options: {
-            sourceMap: true, //default is false
+            sourceMap: false, //default is false
+            debug: true,
           },
         },
       },
@@ -67,8 +61,5 @@ module.exports = {
         head: true,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }
