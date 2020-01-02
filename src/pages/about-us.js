@@ -61,7 +61,7 @@ class AboutUs extends React.Component {
                   <h2 className="page-heading">{data.sub_title.text} </h2>
                 </div> 
               </div>
-              <div className="row padding-block-60 d-flex align-items-center">
+              <div className="row about-description d-flex align-items-center">
                   <div className="col-sm-3 year-img-wrap">
                   <Img fluid={data.banner.localFile.childImageSharp.fluid} alt="35 Years image"/>
                 </div>
@@ -69,7 +69,7 @@ class AboutUs extends React.Component {
                   <div className="mb-4" dangerouslySetInnerHTML={{__html: data.description.html}} />
                 </div>
               </div>
-              <div className="row bg-white padding-block-60">
+              <div className="row bg-white about-content">
               {data.aboutus_content.map((item,value)=>{
                 return(
                   <div key={value} className="col-md-4 mt-2 mt-sm-2 mt-md-2">
