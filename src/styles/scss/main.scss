@@ -52,13 +52,13 @@
     border-left: 10px solid theme-color("tertiary");
     font-family: 'Graphik', sans-serif;
     font-weight: 400;
-    padding:4px 12px;
+    padding:4px 9px;
     opacity: 0.8;
     font-size:30px;
     color: theme-color("text-black");
     align-items: center;
     display: flex;
-    margin: 0 0 0 15px;
+    margin: 0 0 0 0;
 }
 .section-title{
     font-family: georgia;
@@ -118,20 +118,6 @@
       }
   }
 }
-
-/*==============================
- -----About us page css start
-==============================*/
-
-/*===========================================
-    Residencial Details page css start here
-=============================================*/
-
-// ------------- Footer Start Here ----------------
-
-// --------- Residential Projects css start here ----------
-
-// -------------   Hospitality Projects Start Here ----------------
     
 // ------------- Media Query Start Here ----------------
 @media (max-width:1200px){
@@ -197,9 +183,9 @@
             .mt-100{
                 margin-top: 0;
             }
-            .heading{
-                margin-top: 80px;
-            }
+            // .heading{
+            //     margin-top: 80px;
+            // }
             .buyer-tips-banner-img{
                 .buyer-tips-box{
                     width: 535px;
@@ -263,9 +249,6 @@
             padding:16px 8px;
         }
         .contact-section {
-            .locate-us{
-                margin-bottom: 50px;
-            }
             form{
                 .customer {
                     select{
@@ -292,7 +275,7 @@
             }   
         }
 
-        footer{
+        .footer{
             .copyright{
                 margin-top: 12px;
             }
@@ -302,9 +285,9 @@
             .mt-92{
                 margin-top: 0;
             }
-            .heading{
-                margin-top: 60px;
-            }
+            // .heading{
+            //     margin-top: 60px;
+            // }
             .section-title{
                 margin-top: 0;
             }
@@ -334,7 +317,7 @@
                }
            }
            .guidelines-nris {
-               margin-top: 0;
+            //    margin-top: 0;
                 .guidelines-nris-img{
                 img{
                     height: auto;
@@ -342,11 +325,14 @@
                     }
                }
             }
-            .buyer-tips-info{
-                .about-loan{
-                    margin-top: 24px;
-                }
-              }
+            // .buyer-tips-info{
+            //     .about-loan ,
+            //     .guidelines-nris ,
+            //     .maha-rera ,
+            //     .important-notices{
+            //         margin-top: 24px;
+            //     }
+            //   }
        } 
     // Hospitality Project
        .hospitality-projects{
@@ -491,6 +477,9 @@
         }
         }   
         .contact-section{
+            .contact-form{
+                margin-top: 80px;
+            }
             .bg-color {
                 .form-control{
                     flex: 75%;
@@ -546,19 +535,19 @@
                    }
                 }
                 .bg-light-gray{
-                    padding: 24px 24px;
+                    padding: 16px 20px;
                     .know-more{
                         align-self: flex-end;
                     }
                 }
             }
         .buyer-tips-banner{
-            margin:80px 0 80px 0;
+            // margin:80px 0 80px 0;
             .container{
                 padding: 0;
             }
         }
-        .guidelines-nris {
+        .guidelines-nris{
             margin: 92px 0 80px 0;  
             .heading{
                 display: none;       
@@ -728,9 +717,9 @@
         border-bottom:0;
         }
 
-        .contact-section .contact-form-bg button{
-        width: 265px;
-        }
+        // .contact-section .contact-form-bg button{
+        // width: 265px;
+        // }
         #pills-tabContent ul {
         padding-top: 8px;
         padding-bottom: 8px;
@@ -743,6 +732,10 @@
                 border:0;
             }
         }
+        
+       .about-loan {
+           margin-top: 92px;
+       } 
 
 }
 
@@ -809,9 +802,29 @@
     .btn-secondary{
         width:280px;
     }
+    .knowledge-hub {
+        .know-more {
+            padding-top: 6px;
+        }
+    } 
+    .knowledge-hub {
+        .important-notices {
+            .bg-light-gray {
+                padding: 13px 20px;
+            }
+        } 
+    } 
 }
+
+
+
 @media (max-width:350px){
     .slider-img {
         margin: 20px 16px 16px;
+    }
+    .card-primary {
+        .bg-light-gray {
+            padding: 12px 18px;
+        }
     }
 }

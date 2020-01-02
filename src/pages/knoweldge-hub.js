@@ -188,7 +188,7 @@ class KnoweldgeHub extends React.Component {
                         <div className="heading">
                             <h3 className=" text-uppercase mb-2 mb-sm-3 section-title ">About Loan</h3>
                         </div>
-                        <div className="row mt-25">
+                        <div className="row mt-30">
                             <div className="col-md-12 col-lg-6 col-6 pr-0 pr-md-3 pr-lg-0">
                                 <div className="card-primary-img">
                                      <img src={aboutLoan} alt="" width="100%"/>
@@ -213,13 +213,13 @@ class KnoweldgeHub extends React.Component {
                       <div className="heading">
                         <h3 className=" text-uppercase mb-3 section-title">Guidelines for NRIs</h3> 
                       </div>
-                    <div className="guidelines-nris-wrapper position-relative mt-25">
+                    <div className="guidelines-nris-wrapper position-relative mt-30">
                         <div className=" guidelines-nris-img">  
                           <img src={guidelines1} alt="" width="100%"/>
                         </div> 
                         <div className="guidelines-nris-info position-absolute">
                           <p className="mb-0 mb-sm-2 text-white">Guidelines For NRIs</p>
-                          <div className="know-more">
+                          <div className="know-more pt-0">
                             <a href="#">
                                 <span className="mr-sm-5 mr-3">Know More</span>
                                 <i className="fas fa-arrow-right"></i>
@@ -232,11 +232,11 @@ class KnoweldgeHub extends React.Component {
             </div>
             <div className="row">
                 <div className="col-md-6 d-none d-sm-block">
-                    <div className="maha-rera card-primary mt-92 ">
+                    <div className="maha-rera card-primary mt-84">
                         <div className="heading ">
                             <h3 className=" text-uppercase mb-3 section-title">Maha Rera</h3>
                         </div>
-                        <div className="row mt-25">
+                        <div className="row mt-30">
                             <div className="col-md-12 col-lg-6 col-6 pr-0 pr-md-3 pr-lg-0">
                                 <div className="card-primary-img">
                                       <img src={aboutLoan} alt="" width="100%"/>
@@ -272,11 +272,11 @@ class KnoweldgeHub extends React.Component {
                   </div>
                 </div>
                     <div className="col-md-6 ">
-                        <div className="important-notices card-primary mt-92">
+                        <div className="important-notices card-primary mt-84">
                             <div className="heading">
                                 <h3 className=" text-uppercase mb-3 section-title">Important Notices</h3>
                             </div>
-                              <div className="row mt-25">
+                              <div className="row mt-30">
                                   <div className="col-md-12 col-lg-6 col-6 pr-0 pr-md-3 pr-lg-0">
                                       <div className="card-primary-img">
                                             <img src={aboutLoan} alt="" width="100%"/>

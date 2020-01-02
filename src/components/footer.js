@@ -4,7 +4,7 @@ import React from "react"
 import '../styles/css/custom.css';
 import '../styles/scss/main.scss';
 const Footer = ({ siteTitle }) => (
-  <footer>
+  <footer className="footer">
     <div className="container">
       <div className="row">
         <div className="col-md-12">
@@ -17,16 +17,16 @@ const Footer = ({ siteTitle }) => (
                 <Link to="/"> Blog</Link>
               </li>
               <li className="nav-item ">
-                <Link to="/"> channel Partner</Link>
+                <Link to="/"> Channel Partner</Link>
               </li>
               <li className="nav-item ">
                 <Link to="/"> Career</Link>
               </li>
               <li className="nav-item ">
-                <Link to="/"> Site map</Link>
+                <Link to="/"> Site Map</Link>
               </li>
               <li className="nav-item ">
-                <Link className=" " to="/">Private Privacy</Link>
+                <Link className=" " to="/">Privacy Policy</Link>
               </li>
               <li className="nav-item ">
                 <Link to="/">Disclaimer</Link>
@@ -55,7 +55,7 @@ const Footer = ({ siteTitle }) => (
             </ul>
           </div>
           <div className="text-center text-white copyright">
-            <p className="m-0"><Link to="/">Bramhacorp Ltd</Link> ©2019. All reserved.</p>
+            <p className="m-0"><Link to="/">Bramhacorp Ltd</Link> ©2019. All right reserved.</p>
           </div>
         </div>
       </div>

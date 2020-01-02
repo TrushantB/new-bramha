@@ -29,6 +29,30 @@
                 color: #ffffff;
             }
         }
+        .dropdown{
+            &.show{
+                .dropdown-toggle::after{
+                    content: "\F068";
+                }                
+            }
+        }
+        .dropdown-toggle{
+            &::after{
+                border: none;
+                content: "\F067";
+                -moz-osx-font-smoothing: grayscale;
+                -webkit-font-smoothing: antialiased;
+                display: inline-block;
+                font-style: normal;
+                font-variant: normal;
+                text-rendering: auto;
+                line-height: 1;
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;       
+                color: #333333;
+                opacity: 0.6;    
+            }
+        }
     }    
 }
 .logo-img{
@@ -91,40 +115,40 @@
 .navbar-toggler{
     border: none;
     z-index: 100;
-}
-.icon-bar{
-    display: block;
-    width: 22px;
-    height: 3px;
-    border-radius: 1px;
-    background-color: theme-color("heading-primary");
-    transition: all 0.2s;
-    &.middle-bar{
-        width: 16px;
+    &:focus{
+        outline: none;
+    }
+    &:not(.collapsed){
+        .icon-bar:after, .icon-bar:before, .icon-bar div{
+            height: 2px;
+        }
+        .icon-bar::before {
+          transform: translateY(6px) rotate(135deg);
+        }
+        .icon-bar::after {
+            transform: translateY(-8px) rotate(-135deg);
+        }
+        .icon-bar div {
+            transform: scale(0);
+        }
     }
 }
-.navbar-toggler .icon-bar+.icon-bar {
-    margin-top: 3px;
+.icon-bar {
+  width: 24px;
+      > div{
+        width: 18px;
+    }
 }
-.navbar-toggler .top-bar {
-  transform: rotate(45deg);
-  transform-origin: 10% 10%;
-}
-.navbar-toggler .middle-bar {
-  opacity: 0;
-}
-.navbar-toggler .bottom-bar {
-  transform: rotate(-45deg);
-  transform-origin: 10% 90%;
-}
-.navbar-toggler.collapsed .top-bar {
-  transform: rotate(0);
-}
-.navbar-toggler.collapsed .middle-bar {
-  opacity: 1;
-}
-.navbar-toggler.collapsed .bottom-bar {
-  transform: rotate(0);
+.icon-bar:after, 
+.icon-bar:before, 
+.icon-bar div {
+    content: '';
+    background-color: #7f7f7f;
+    border-radius: 3px;
+    display: block;
+    height: 3px;
+    margin: 5px 0;
+    transition: all .2s ease-in-out;
 }
 
 @media (max-width: 580px){
