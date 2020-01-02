@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Bramhacorp`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    author: `iVision Studio`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -35,7 +35,7 @@ module.exports = {
         useResolveUrlLoader: true,
         useResolveUrlLoader: {
           options: {
-            sourceMap: false, //default is false
+            sourceMap: true, //default is false
             debug: true,
           },
         },
