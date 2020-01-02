@@ -23,8 +23,8 @@ class HospitalityDetails extends React.Component {
                     <section className="detail-page-sections pb-0 pt-sm-0 container container-sm-fluid bg-color">
                         <div className="logo-card">
                             <picture className="d-flex justify-content-start justify-content-sm-center align-items-center">
-                            <source media="(min-width: 581px)" srcSet="images/residency-logo.png" />
-                            <img src="images/residency-logo1.png" alt="hospital Logo" className="w-50" />
+                            <source media="(min-width: 581px)" srcSet={hospitalityData.data.logo.url} />
+                            <img src={hospitalityData.data.logo.url} alt="hospital Logo" className="w-50" />
                             </picture>
                         </div>
                         <div className="row page-heading-section">
@@ -40,7 +40,7 @@ class HospitalityDetails extends React.Component {
                                    {hospitalityData.data.description.text}
                                 </p>
                                 <a href="#" className="link-text d-flex justify-content-around align-items-center btn-tertiary hospitality-viewmore">
-                                    <span> View Projects </span> 
+                                    <span> View Website </span> 
                                     <i className="fas fa-arrow-right"></i>
                                 </a>
                             </div>
@@ -110,14 +110,7 @@ export const hospitalityPage = graphql`
           }
         }
         logo{
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 1150, quality: 100) {
-                ...GatsbyImageSharpFluid
-                presentationWidth
-              }
-            }
-          }
+          url
         }
         maharera{
          url

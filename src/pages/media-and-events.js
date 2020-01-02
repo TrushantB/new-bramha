@@ -76,6 +76,7 @@ class MediaAndEvents extends React.Component {
                     </div>
                 </div>
                 <div className="bg-light-gray">
+                  
                 <div className="container ">
                 <Slider {...settings}>
                     {
@@ -83,9 +84,9 @@ class MediaAndEvents extends React.Component {
                         return(
                           <div key={value}>
                             <div  className="slider-img image-ratio">
-                              {/* <h5>{item.heading.text}</h5>
-                              <p>{item.date.text}</p>
-                              <p>{item.location.text}</p> */}
+                              {/* <h5>{item.heading.text}</h5> */}
+                              {/* <p>{item.date.text}</p> */}
+                              <p>{item.location.text}   {item.date.text}</p>
                               <img src={item.image.url}width="100%"/>
                             </div>
                           </div>

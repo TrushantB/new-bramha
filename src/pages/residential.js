@@ -6,24 +6,64 @@ import Layout from '../components/layout'
 import Footer from '../components/footer'
 
 export default class Residential extends React.Component {
-  state = {
-    activeSlide: 1,
-    activeSlide2: 0
-  };
+  constructor(){
+    super();
+   this.state = {
+      activeSlide: 1,
+      activeSlide2: 0,
+      activeProject: '',
+      activeAddress: '',
+      activeType: ''
+    };
+    // this.handleProjects = this.handleProjects.bind(this);
+  }
+
+  addressHandle(event){
+    let temp = [];
+     event.map((item, index1)=>{
+      item.residential_links.document.map((data)=>{
+        temp.push(<option key={index1}>{data.data.flat_address.text}</option>)
+      })
+    })
+    return temp;
+  }
+
+  addressSelect =(e)=>{
+    this.setState({activeAddress: e.target.value})
+  }
+
+  typeHandle(event){
+    let temp = [];
+    event.map((item, index)=>{
+     item.residential_links.document.map((data)=>{
+       temp.push(<option value={data.data.flat_bhk.text} key={index}>{data.data.flat_bhk.text}</option>)
+     })
+     
+   })
+   return temp;
+  }
+
+  typeSelect =(e)=>{
+    this.setState({activeType: e.target.value})
+  }
+
+  handleProjects = (e) =>{
+    this.setState({activeProject: e.target.value});
+  }
 
   render(){
+    console.log('Project', this.state.activeProject);
+    console.log('Address', this.state.activeAddress);
+    console.log('Type', this.state.activeType);
     var settings = {
       className: "center",
-      centerPadding: "30px",
+      centerPadding: "60px",
       dots: false,
       infinite: false,
       speed: 500,
       slidesToShow: 3,
       slidesToScroll: 1,
       initialSlide: 0,
-      cssEase: 'ease-in-out',
-    //   fade: true,
-    //  touchThreshold: 100,
       beforeChange: (current, next) => this.setState({ activeSlide: next }),
       afterChange: current => this.setState({ activeSlide2: current }),
       responsive: [
@@ -42,7 +82,7 @@ export default class Residential extends React.Component {
             className: "center",
             centerMode: true,
             infinite: true,
-            centerPadding: "35px",
+            centerPadding: "60px",
             slidesToShow: 1,
             speed: 500
           }
@@ -53,7 +93,7 @@ export default class Residential extends React.Component {
             className: "center",
             centerMode: true,
             infinite: true,
-            centerPadding: "30px",
+            centerPadding: "60px",
             slidesToShow: 1,
             speed: 500
             
@@ -63,8 +103,6 @@ export default class Residential extends React.Component {
     };
     const residentialData = this.props.data.allPrismicResidential.edges;
     console.log('residentialData', residentialData);
-    const addressData = residentialData[0].node.data.ongoing_projects;
-    console.log('addressData',addressData);
     return(
       <Layout>
         {
@@ -89,34 +127,23 @@ export default class Residential extends React.Component {
             <div className="container">
               <div className="projects">
 
-                <select className="" placeholder="Budget" >
-                  <option>Ongoing Projects</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
+                <select id='dropdown' onChange={this.handleProjects} className="" placeholder="Budget" >
+                  <option value='ongoing_projects'>Ongoing Projects</option>
+                  <option value='completed_projects'>Completed Projects</option>
                 </select>
 
-                <select className="" placeholder="Budget" >
+                <select className="" placeholder="Budget" onChange={this.addressSelect}>
                 {
-                  addressData.map((item,value)=>{
-                    console.log('item', item);
-                    // return(
-                    //   <option>{item.data.flat_address.text}</option>
-                    // )
-                  })
+                  this.addressHandle(residentialData[0].node.data.ongoing_projects)
                 }
                 </select>
 
-                  {/* <option>2</option>
-                  <option>3</option>
-                  <option>4</option> */}
-                
-                <select className="" placeholder="Budget" >
-                  <option>Type</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
+                <select className="" placeholder="Budget" onChange={this.typeSelect} >
+                  {
+                    this.typeHandle(residentialData[0].node.data.ongoing_projects)
+                  }
                 </select>
+                 
               </div>
             </div>
             <section className="ongoing-project">
@@ -127,8 +154,39 @@ export default class Residential extends React.Component {
                   </div>
                     <div className="row">
                       {
+                        this.state.activeAddress  ?
                         residentialData[0].node.data.ongoing_projects.map((item,value)=>{
-                        return(
+                          if(this.state.activeAddress == item.residential_links.document[0].data.flat_address.text){
+                            return(
+                              <div key={value} className="col-md-6 col-lg-4 col-sm-12 p-0 pl-sm-3 pr-sm-3">
+                              <div className="residences-card position-relative">
+                                <div className="residences-img">
+                                  <Img fluid={item.residential_links.document[0].data.banner[0].image.localFile.childImageSharp.fluid} alt="" width="100%"/>
+                                </div>
+                                <div className="rectangle position-absolute d-flex flex-column justify-content-around">
+                                    <div className="rectangle-title">
+                                        <h4 className="text-uppercase m-0 inner-section-title">{item.residential_links.document[0].data.title.text}</h4>
+                                    </div>
+                                    <div className="apartment-size d-flex justify-content-between align-items-center">
+                                      <span className="text-uppercase">{item.residential_links.document[0].data.flat_bhk.text}</span>
+                                      <Link to={`residential/${item.residential_links.uid}`}>
+                                        <i className="fas fa-arrow-right"></i>
+                                      </Link>
+                                    </div>
+                                    <div className="project-location">
+                                      <i className="fas fa-map-marker-alt"></i>
+                                      <span>{item.residential_links.document[0].data.flat_address.text}</span>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                            )
+                          }
+                          }) : 
+                        this.state.activeType ? 
+                        residentialData[0].node.data.ongoing_projects.map((item,value)=>{
+                          if(this.state.activeType == item.residential_links.document[0].data.flat_bhk.text){
+                            return(
                             <div key={value} className="col-md-6 col-lg-4 col-sm-12 p-0 pl-sm-3 pr-sm-3">
                               <div className="residences-card position-relative">
                                 <div className="residences-img">
@@ -151,19 +209,45 @@ export default class Residential extends React.Component {
                                 </div>
                               </div>
                             </div>
-                          )
-                        })
-                      }
-                    </div> 
-                </div>
-              </div>
-            </section>
+                          )}
+                        }):
+                        residentialData[0].node.data.ongoing_projects.map((item,value)=>{
+                          return(
+                              <div key={value} className="col-md-6 col-lg-4 col-sm-12 p-0 pl-sm-3 pr-sm-3">
+                                <div className="residences-card position-relative">
+                                  <div className="residences-img">
+                                    <Img fluid={item.residential_links.document[0].data.banner[0].image.localFile.childImageSharp.fluid} alt="" width="100%"/>
+                                  </div>
+                                  <div className="rectangle position-absolute d-flex flex-column justify-content-around">
+                                      <div className="rectangle-title">
+                                          <h4 className="text-uppercase m-0 inner-section-title">{item.residential_links.document[0].data.title.text}</h4>
+                                      </div>
+                                      <div className="apartment-size d-flex justify-content-between align-items-center">
+                                        <span className="text-uppercase">{item.residential_links.document[0].data.flat_bhk.text}</span>
+                                        <Link to={`residential/${item.residential_links.uid}`}>
+                                          <i className="fas fa-arrow-right"></i>
+                                        </Link>
+                                      </div>
+                                      <div className="project-location">
+                                        <i className="fas fa-map-marker-alt"></i>
+                                        <span>{item.residential_links.document[0].data.flat_address.text}</span>
+                                      </div>
+                                  </div>
+                                </div>
+                              </div>
+                            )
+                          })
+                        }
+                      </div> 
+                    </div>
+                  </div>
+                </section>
             <section className="complete-project position-relative">
               <div className="container">
                 <div className="listing-heading d-flex align-items-center">
                   <h4 className="text-uppercase heading mb-0">Completed Projects</h4>
                 </div>
-                  <p className="text-left d-none d-md-block">{residentialData[0].node.data.completed_description.text}
+                  <p className="text-left">{residentialData[0].node.data.completed_description.text}
                   </p>
                   <Slider  {...settings}>
                   {
@@ -172,7 +256,7 @@ export default class Residential extends React.Component {
                       <div className="row"  key={value}> 
                         <div>
                           <div className="secondary-card position-relative ">
-                            <div className="secondary-card-img image-ratio">
+                            <div className="secondary-card-img">
                               <Img fluid={item.completed_links.document[0].data.banner[0].image.localFile.childImageSharp.fluid} alt="" width="100%"/>
                             </div>
                             <div className="secondary-card-rectangle position-absolute d-flex flex-column justify-content-around">

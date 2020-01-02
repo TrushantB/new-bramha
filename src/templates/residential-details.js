@@ -33,7 +33,7 @@ class VerticalPage extends React.Component {
             <section className="detail-page-sections pb-0 pt-sm-0 container container-sm-fluid bg-color">
                 <div className="logo-card">
                   <picture className="d-flex justify-content-start justify-content-sm-center align-items-center">
-                    <source media="(min-width: 581px)" srcSet="images/residency-logo.png" />
+                    <source media="(min-width: 581px)" srcSet={verticalData.data.logo.url}/>
                     <img src={verticalData.data.logo.url} alt="Residency Logo" className="w-50" />
                   </picture>
                 </div>
@@ -87,179 +87,51 @@ class VerticalPage extends React.Component {
               <h2 className="section-title text-uppercase text-center">
                   Proximities
               </h2>
-              <ul className="nav nav-pills mb-3 row" id="pills-tab" role="tablist">
-                  <li className="nav-item col-3 p-0">
-                    <a className="nav-link d-flex flex-column align-items-center text-center active" id="pills-distance-tab" data-toggle="pill" href="#important-distance" role="tab" aria-controls="pills-home" aria-selected="true">
-                      <i className="fas fa-map-marked-alt tab-icon"></i>  
-                      Important Distance
-                    </a>
-                  </li>
-                  <li className="nav-item col-3 p-0">
-                    <a className="nav-link d-flex flex-column align-items-center" id="pills-hotel-tab" data-toggle="pill" href="#hotel" role="tab" aria-controls="pills-profile" aria-selected="false">
-                      <i className="fas fa-hotel tab-icon"></i> 
-                      Hotel
-                    </a>
-                  </li>
-                  <li className="nav-item col-3 p-0 ">
-                    <a className="nav-link d-flex flex-column align-items-center" id="pills-mall-tab" data-toggle="pill" href="#mall" role="tab" aria-controls="pills-contact" aria-selected="false">
-                      <i className="fas fa-hotel tab-icon"></i>  
-                      Malls
-                    </a>
-                  </li>
-                  <li className="nav-item col-3 p-0 ">
-                    <a className="nav-link d-flex flex-column align-items-center" id="pills-education-tab" data-toggle="pill" href="#education" role="tab" aria-controls="pills-contact" aria-selected="false">
-                      <i className="fas fa-graduation-cap tab-icon"></i> 
-                      Education
-                    </a>
-                  </li>
+
+              {/* {
+                verticalData.data.proximites.forEach((item, index)=>{
+                  return(
+                    console.log('item', item.title1.text)
+                  )
+                })
+              } */}
+                <ul className="nav nav-pills mb-3 row" id="pills-tab" role="tablist">
+                  {
+                    verticalData.data.proximites.map((item, index)=>{
+                      return(
+                        <li key={index} className="nav-item col-3 p-0">
+                          <a className="nav-link d-flex flex-column align-items-center text-center" id="pills-distance-tab" data-toggle="pill" href={`#${item.title1.text}`} role="tab" aria-controls="pills-home" aria-selected="true">
+                            <img src={item.icon.url} style={{width:'40px', height:'40px'}} /> 
+                              {item.title1.text}
+                          </a>
+                        </li>
+                      )
+                    })
+                  }
                 </ul>
-                <div className="tab-content" id="pills-tabContent">
-                  <div className="tab-pane fade show active" id="important-distance" role="tabpanel" aria-labelledby="pills-home-tab">
-                      <div className="container">
-                          <div className="row">
+                    {
+                      verticalData.data.proximites.map((item, index)=>{
+                        return(
+                      <div className="tab-content" id="pills-tabContent" key={index}>
+                        <div className="tab-pane fade show active" id={`${item.title1.text}`} role="tabpanel" aria-labelledby="pills-home-tab">
+                          <div className="container">
+                            <div className="row" key={index}>
                               <div className="col-md-4">
-                                  <ul>
-                                      <li>
-                                          Pune International Airport- 5 km
-                                      </li>
-                                      <li>
-                                          Pune Railway Station- 6 km
-                                      </li>
-                                  </ul>
-                              </div>
-                              <div className="col-md-4">
-                                  <ul>
-                                      <li>
-                                          Pune International Airport- 5 km
-                                      </li>
-                                      <li>
-                                          Pune Railway Station- 6 km
-                                      </li>
-                                  </ul>
-                              </div>
-                              <div className="col-md-4">
-                                  <ul>
-                                      <li>
-                                          Pune International Airport- 5 km
-                                      </li>
-                                      <li>
-                                          Pune Railway Station- 6 km
-                                      </li>
-                                  </ul>
-                              </div>
+                                <ul>
+                                    <li>
+                                        {item.description1.text}
+                                    </li>
+                                </ul>
+                            </div>
                           </div>
-                      </div>
-                  </div>
-                  <div className="tab-pane fade" id="hotel" role="tabpanel" aria-labelledby="pills-hotel-tab">
-                      <div className="container">
-                          <div className="row">
-                              <div className="col-md-4">
-                                  <ul>
-                                      <li>
-                                          Pune International Airport- 5 km
-                                      </li>
-                                      <li>
-                                          Pune Railway Station- 6 km
-                                      </li>
-                                  </ul>
-                              </div>
-                              <div className="col-md-4">
-                                  <ul>
-                                      <li>
-                                          Pune International Airport- 5 km
-                                      </li>
-                                      <li>
-                                          Pune Railway Station- 6 km
-                                      </li>
-                                  </ul>
-                              </div>
-                              <div className="col-md-4">
-                                  <ul>
-                                      <li>
-                                          Pune International Airport- 5 km
-                                      </li>
-                                      <li>
-                                          Pune Railway Station- 6 km
-                                      </li>
-                                  </ul>
-                              </div>
                           </div>
+                        </div>
                       </div>
-                  </div>
-                  <div className="tab-pane fade" id="pills-mall" role="tabpanel" aria-labelledby="pills-mall-tab">
-                      <div className="container">
-                          <div className="row">
-                              <div className="col-md-4">
-                                  <ul>
-                                      <li>
-                                          Pune International Airport- 5 km
-                                      </li>
-                                      <li>
-                                          Pune Railway Station- 6 km
-                                      </li>
-                                  </ul>
-                              </div>
-                              <div className="col-md-4">
-                                  <ul>
-                                      <li>
-                                          Pune International Airport- 5 km
-                                      </li>
-                                      <li>
-                                          Pune Railway Station- 6 km
-                                      </li>
-                                  </ul>
-                              </div>
-                              <div className="col-md-4">
-                                  <ul>
-                                      <li>
-                                          Pune International Airport- 5 km
-                                      </li>
-                                      <li>
-                                          Pune Railway Station- 6 km
-                                      </li>
-                                  </ul>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div className="tab-pane fade" id="education" role="tabpanel" aria-labelledby="pills-education-tab">
-                      <div className="container">
-                          <div className="row">
-                              <div className="col-md-4">
-                                  <ul>
-                                      <li>
-                                          Pune International Airport- 5 km
-                                      </li>
-                                      <li>
-                                          Pune Railway Station- 6 km
-                                      </li>
-                                  </ul>
-                              </div>
-                              <div className="col-md-4">
-                                  <ul>
-                                      <li>
-                                          Pune International Airport- 5 km
-                                      </li>
-                                      <li>
-                                          Pune Railway Station- 6 km
-                                      </li>
-                                  </ul>
-                              </div>
-                              <div className="col-md-4">
-                                  <ul>
-                                      <li>
-                                          Pune International Airport- 5 km
-                                      </li>
-                                      <li>
-                                          Pune Railway Station- 6 km
-                                      </li>
-                                  </ul>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                </div>
-            </div>
+                      )}
+                      )
+                      }
+                     </div>
+                      
             {/* <!--   ------------------- Proximities section end here ------------------- --> */}
             {/* <!--   ------------------- Floor Plan section start here ------------------- --> */}
             <div className="detail-page-sections container d-none d-sm-block">
@@ -582,6 +454,17 @@ export const verticalViewData = graphql`
                     }
                 }
             }
+          }
+        }
+        proximites{
+          title1{
+            text
+          }
+          description1{
+            text
+          }
+          icon{
+            url
           }
         }
         amenities1{
