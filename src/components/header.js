@@ -12,9 +12,9 @@ const Header = ({ siteTitle }) => (
       </Link>
       <button className="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="sr-only">Toggle navigation</span>
-        <span className="icon-bar top-bar"></span>
-        <span className="icon-bar middle-bar"></span>
-        <span className="icon-bar bottom-bar"></span>
+        <div className="icon-bar">
+          <div></div>
+        </div>
       </button>
       <div className="collapse navbar-collapse p-0" id="navbarNav">
         <div className="d-flex justify-content-center bg-white py-2 w-100">

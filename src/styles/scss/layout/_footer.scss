@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------------
 // This file contains Footer Style
 // -----------------------------------------------------------------------------
-footer{
+.footer{
     .copyright{
         margin-bottom: 28px;
         opacity: 0.6;
@@ -24,7 +24,7 @@ footer{
         ul{
             margin-bottom: 36px;
             .nav-item{
-                margin-bottom: 26px;
+                margin-bottom: 28px;
                 a{
                     color: #fff;
                     padding:0 24px 0 24px;
@@ -33,6 +33,7 @@ footer{
                     font-weight: 200;
                     line-height: normal;
                     letter-spacing: normal;
+                    text-transform: capitalize;
                     &:hover{
                         color: theme-color("primary");
                         text-decoration: none;

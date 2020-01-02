@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/layout'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Footer from '../components/footer';
 
 class Contacts extends React.Component {
@@ -33,7 +33,7 @@ class Contacts extends React.Component {
               <div className="row">
                 <div className="col-md-4">
                   <div className="postal-address mb-5 mb-md-0">
-                    <div className="d-md-flex align-items-center mb-2">
+                    <div className="d-md-flex align-items-center mb-10">
                       <h3 className=" section-title mb-md-0 text-center text-capitalize"> <i className="fas fa-map-marker-alt mr-0 mr-md-1"></i> Postal Address </h3>          
                     </div>
                     {
@@ -48,15 +48,14 @@ class Contacts extends React.Component {
 
                 <div className="col-md-4">
                   <div className="email-address mb-5 mb-md-0">
-                    <div className="d-md-flex align-items-baseline mb-2">
+                    <div className="d-md-flex align-items-baseline mb-10">
                       <h3 className=" section-title mb-md-0 text-center text-capitalize"><i className="fas fa-envelope-open-text mr-0 mr-md-1"></i> Email Address
                       </h3>          
                     </div>
                     {
                       contactData.email_address.map((item,value)=>{
                         return(
-                          console.log('item', item),
-                          <p className=" mb-0 mt-3 mt-md-0" key={value}>{item.email_add.text}</p>
+                          <p className=" mb-0 mt-3 mt-md-0" key={value}> <a href={`mailto:${item.email_add.text}`}> {item.email_add.text} </a> </p>
                         )
                       })
                     }
@@ -65,7 +64,7 @@ class Contacts extends React.Component {
 
                 <div className="col-md-4">
                   <div className="contact-info mb-5 mb-md-0">
-                    <div className="d-md-flex align-items-baseline mb-2">  
+                    <div className="d-md-flex align-items-baseline mb-10">  
                       <h3 className=" section-title mb-md-0 text-center text-capitalize"> <i className="fas fa-phone-volume mr-0 mr-md-1"></i>Contact Info
                       </h3>          
                     </div>
@@ -73,7 +72,7 @@ class Contacts extends React.Component {
                       contactData.contact_info.map((item,value)=>{
                       return(
                         // <p key={value} className="description mb-0">{item.title1.text}{" "}{item.number}</p>
-                        <p className=" mb-0 mt-3 mt-md-0" key={value}>{item.title1.text}{" "}{item.number}</p>
+                        <p className=" mb-0 mt-3 mt-md-0" key={value}>{item.title1.text}{" "}  <a href={`tel:${item.number}`}>{item.number} </a></p>
                       )
                     })
                     }
@@ -121,7 +120,7 @@ class Contacts extends React.Component {
                           </div>
                           <div className="col-sm-6 form-group ">
                             <select className="form-control" id="aboutus" placeholder="Budget" name="aboutus" required >
-                              <option>Where did you here about us?</option>
+                              <option>Where did you hear about us?</option>
                               <option>2</option>
                               <option>3</option>
                               <option>4</option>
@@ -132,7 +131,7 @@ class Contacts extends React.Component {
                           </div>
                         </div>
                         <div className="sumbit text-center mt-sm-0 mt-4">
-                          <button type="submit" className="btn-secondary btn">Submit</button>
+                          <button type="submit" className="btn-secondary btn">Download Brochure</button>
                         </div>  
                       </div> 
                     </div>
