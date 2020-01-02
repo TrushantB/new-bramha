@@ -123,53 +123,46 @@ class VerticalPage extends React.Component {
             {/* <!--   ------------------- Location section end here ------------------- --> */}
             {/* <!--   ------------------- Proximities section start here ------------------- --> */}
             <div className="detail-page-sections container">
-              <h2 className="section-title text-uppercase text-center">
-                  Proximities
-              </h2>
-
-              {/* {
-                verticalData.data.proximites.forEach((item, index)=>{
+        <h2 className="section-title text-uppercase text-center">
+            Proximities
+        </h2>
+        <ul className="nav nav-pills mb-3 row" id="pills-tab" role="tablist">
+              {
+                verticalData.data.proximites.map((item, index)=>{
                   return(
-                    console.log('item', item.title1.text)
+                  <li className="nav-item col-3 p-0" key={index}>
+                    <a className={ index ? "nav-link d-flex flex-column align-items-center text-center" : "nav-link d-flex flex-column align-items-center text-center active"} id={`tab${index}`} data-toggle="pill" href={`#id${index}`} role="tab" aria-controls="pills-home" aria-selected="true">
+                        <img src={item.icon.url} style={{height:'40px'}}/>
+                        {item.title1.text}
+                        {console.log('item', item)}
+                    </a>
+                  </li>
                   )
                 })
-              } */}
-                <ul className="nav nav-pills mb-3 row" id="pills-tab" role="tablist">
-                  {
-                    verticalData.data.proximites.map((item, index)=>{
-                      return(
-                        <li key={index} className="nav-item col-3 p-0">
-                          <a className="nav-link d-flex flex-column align-items-center text-center" id="pills-distance-tab" data-toggle="pill" href={`#${item.title1.text}`} role="tab" aria-controls="pills-home" aria-selected="true">
-                            <img src={item.icon.url} style={{width:'40px', height:'40px'}} /> 
-                              {item.title1.text}
-                          </a>
-                        </li>
-                      )
-                    })
-                  }
-                </ul>
-                    {
-                      verticalData.data.proximites.map((item, index)=>{
-                        return(
-                      <div className="tab-content" id="pills-tabContent" key={index}>
-                        <div className="tab-pane fade show active" id={`${item.title1.text}`} role="tabpanel" aria-labelledby="pills-home-tab">
-                          <div className="container">
-                            <div className="row" key={index}>
-                              <div className="col-md-4">
-                                <ul>
-                                    <li>
-                                        {item.description1.text}
-                                    </li>
-                                </ul>
+              }
+          </ul>
+          <div className="tab-content" id="pills-tabContent">
+              {
+                verticalData.data.proximites.map((item, index) => {
+                  return(
+                    <div key={index} className={ index ? "tab-pane fade show" : "tab-pane fade show active"} id={`id${index}`} role="tabpanel" aria-labelledby={`tab${index}`}>
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-md-4">
+                                    <ul>
+                                        <li>
+                                            {item.description1.text}
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                          </div>
-                          </div>
                         </div>
-                      </div>
-                      )}
-                      )
-                      }
-                     </div>
+                    </div>
+                  )
+                })
+              }
+          </div>
+      </div>
                       
             {/* <!--   ------------------- Proximities section end here ------------------- --> */}
             {/* <!--   ------------------- Floor Plan section start here ------------------- --> */}
