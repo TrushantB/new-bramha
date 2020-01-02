@@ -13,7 +13,6 @@ export default class Residential extends React.Component {
 
   render(){
     var settings = {
-      className: "center",
       centerPadding: "30px",
       dots: false,
       infinite: false,
@@ -39,10 +38,10 @@ export default class Residential extends React.Component {
         {
           breakpoint: 580,
           settings: {
-            className: "center",
+            
             centerMode: true,
             infinite: true,
-            centerPadding: "35px",
+            centerPadding: "50px",
             slidesToShow: 1,
             speed: 500
           }
@@ -50,7 +49,7 @@ export default class Residential extends React.Component {
         {
           breakpoint: 480,
           settings: {
-            className: "center",
+            
             centerMode: true,
             infinite: true,
             centerPadding: "30px",

@@ -126,25 +126,25 @@ class VerticalPage extends React.Component {
               </h2>
               <ul className="nav nav-pills mb-3 row" id="pills-tab" role="tablist">
                   <li className="nav-item col-3 p-0">
-                    <a className="nav-link d-flex flex-column align-items-center text-center active" id="pills-distance-tab" data-toggle="pill" href="#important-distance" role="tab" aria-controls="pills-home" aria-selected="true">
+                    <a className="nav-link d-flex flex-column align-items-center justify-content-around text-center active" id="pills-distance-tab" data-toggle="pill" href="#important-distance" role="tab" aria-controls="pills-home" aria-selected="true">
                       <i className="fas fa-map-marked-alt tab-icon"></i>  
                       Important Distance
                     </a>
                   </li>
                   <li className="nav-item col-3 p-0">
-                    <a className="nav-link d-flex flex-column align-items-center" id="pills-hotel-tab" data-toggle="pill" href="#hotel" role="tab" aria-controls="pills-profile" aria-selected="false">
+                    <a className="nav-link d-flex flex-column align-items-center justify-content-around" id="pills-hotel-tab" data-toggle="pill" href="#hotel" role="tab" aria-controls="pills-profile" aria-selected="false">
                       <i className="fas fa-hotel tab-icon"></i> 
                       Hotel
                     </a>
                   </li>
                   <li className="nav-item col-3 p-0 ">
-                    <a className="nav-link d-flex flex-column align-items-center" id="pills-mall-tab" data-toggle="pill" href="#mall" role="tab" aria-controls="pills-contact" aria-selected="false">
+                    <a className="nav-link d-flex flex-column align-items-center justify-content-around" id="pills-mall-tab" data-toggle="pill" href="#mall" role="tab" aria-controls="pills-contact" aria-selected="false">
                       <i className="fas fa-hotel tab-icon"></i>  
                       Malls
                     </a>
                   </li>
                   <li className="nav-item col-3 p-0 ">
-                    <a className="nav-link d-flex flex-column align-items-center" id="pills-education-tab" data-toggle="pill" href="#education" role="tab" aria-controls="pills-contact" aria-selected="false">
+                    <a className="nav-link d-flex flex-column align-items-center justify-content-around" id="pills-education-tab" data-toggle="pill" href="#education" role="tab" aria-controls="pills-contact" aria-selected="false">
                       <i className="fas fa-graduation-cap tab-icon"></i> 
                       Education
                     </a>
