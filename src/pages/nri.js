@@ -25,14 +25,14 @@ class NRI extends React.Component {
           <section className="banner-section">
             <Img fluid={nriData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
           </section>
-
-          <section className="career-info container">
-            <div className="padding-block-60">
-              <h2 className="page-heading"> Guidlines for NRIs</h2> 
+          
+          <section className="career-info container-md bg-color">
+            <div className="row padding-block-60">
+              <h2 className="col-12 page-heading">Guidlines for NRIs</h2> 
             </div>
             <div className="row">
               <div className="col-12">
-                <p className="text m-0">
+                <p className="mb-4">
                 {nriData.description.text}
                 </p>
               </div>
@@ -49,8 +49,8 @@ class NRI extends React.Component {
                     })
                     this.setState({collapseDescription : data })
                     }}
-                   placeholder="Search by title or Department" className="form-control search-bar"/>
-                  <button className="search-btn"><i className="fas fa-search"></i></button>
+                    placeholder="Search by title or Department" className="form-control search-bar rounded-0 pl-5"/>
+                   <i className="fas fa-search search-btn"></i>
                 </form>
               </div>
               <div className="col-12 accordions-sect padding-block-60 pt-0">

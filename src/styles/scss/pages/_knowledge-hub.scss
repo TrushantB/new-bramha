@@ -1,0 +1,74 @@
+.knowledge-hub{
+    margin-bottom: 124px;
+        .important-notices{
+            .inner-section-title{
+                display: none;
+            }   
+        }
+        .buyer-tips-banner{
+            margin-top: 108px;
+            .section-title::after{
+                content: "";
+                margin: 0 auto;
+            }
+            .buyer-tips-image{
+            margin-top: 30px;
+         }
+        .buyer-tips-box{
+            width: 541px;
+            height: 172px;
+            bottom: 45px;
+            left: 77px;
+            background: #000000a3;
+            padding: 20px 40px;
+                .section-title::after{
+                    content: "";
+                    width: auto;
+                    padding: 6px 0;
+                    border-bottom: 1px solid #fff;
+                    opacity: 0.43;
+                }
+            p{
+                opacity: 0.8;
+                line-height: 24px;
+                // letter-spacing: 0.31px;
+                margin-top: 16px;
+            }
+        }
+    }
+    .bg-light-gray{
+        height: 100%;
+        padding: 44px 36px;
+        margin-top: 0;
+    }
+    .guidelines-nris {
+        .guidelines-nris-info{
+            width: 247px;
+            padding: 16px 24px;
+            bottom: 42px;
+            background-color: #000000a3;
+            p{
+                opacity: 0.85;
+                font-size: 16px;
+                font-weight: 300;
+                letter-spacing: 0.36px;
+            }
+        }
+    }
+    .know-more{
+        a{
+         color: #b1a585;
+         letter-spacing: -0.23px;
+        }
+     }
+     .maha-rera-mb{
+         border-bottom: 1px solid theme-color("border-color"); 
+         border-top: 1px solid theme-color("border-color");
+         padding: 12px 0;
+         box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.06);
+         .know-more{
+            right: 18px;
+            bottom: 12px;
+        }
+     }
+  }

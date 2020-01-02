@@ -1,0 +1,81 @@
+// -----------------------------------------------------------------------------
+// This file contains Footer Style
+// -----------------------------------------------------------------------------
+footer{
+    .copyright{
+        margin-bottom: 28px;
+        opacity: 0.6;
+        p{
+            color: #f6f5f2;
+            font-size: 12px;
+            a{
+                @extend p
+            }
+        }
+        a:hover{
+                color: #fff;
+                text-decoration: none;
+                transition: .5s ease-in-out;  
+           }
+    }
+    background: theme-color("footer-bg");
+    .footer-menu{
+        margin: 58px 0 40px 0;
+        ul{
+            margin-bottom: 36px;
+            .nav-item{
+                margin-bottom: 26px;
+                a{
+                    color: #fff;
+                    padding:0 24px 0 24px;
+                    border-right: 1px solid #fff;
+                    font-size: 15px;
+                    font-weight: 200;
+                    line-height: normal;
+                    letter-spacing: normal;
+                    &:hover{
+                        color: theme-color("primary");
+                        text-decoration: none;
+                        transition: .5s ease-in-out;
+                    }
+                }
+                &:last-child{
+                   a{
+                    border-right: none;
+                   }
+                }
+            }
+        }
+    }
+    .footer-social-icon{
+        ul{
+            margin-bottom: 40px;
+            & .background-circle:last-child{
+                margin-right: 0;
+            }
+            li{
+                a{
+                    i{
+                        color: #333;
+                    }
+                }
+            }
+        }
+    }
+}
+.background-circle{
+    border-radius: 50%;
+    background: #c1c1c1;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    margin-right: 28px;
+    &:hover{
+        background:  theme-color("primary");
+        cursor: pointer;
+        transition: .5s ease-in-out;
+    }
+}
+.bottom-border{
+    border-bottom: 1px solid #525252;
+}

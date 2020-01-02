@@ -1,0 +1,38 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Regular font family
+/// @type List
+$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue',
+                    'Helvetica', 'Arial', sans-serif !default;
+
+/// Code (monospace) font family
+/// @type List
+$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
+                    'Monaco', monospace !default;
+
+$theme-colors: (
+  "primary": #b82831,
+  "secondary": #fbfbfb,
+  "tertiary":#b2a585,
+  "footer-bg": #333333,
+  "danger": #ff4136, 
+  "heading-primary":#333333,
+  "headig-secondary":#958c65,
+  "text-primary":#343434,
+  "text-secondary":#5b5b5b,
+  "text-tertiary":#7f7f7f,
+  "icon-color":#b0a683,
+  "bg-color":#f9fafa,
+  "sub-title-color":#988a63,
+  "text-black":#000,
+  "border-color":#eeeeee,
+  "border-color-secondary":#979797
+);
+$font-sizes:(
+  "heading-primary-size": 4rem,
+  "heading-secondary-size":3rem,
+  "heading-tertiary-size":2rem,
+  "default": 1rem
+);

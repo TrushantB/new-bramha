@@ -2,18 +2,19 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import '../styles/css/custom.css';
+import '../styles/scss/main.scss';
 const Footer = ({ siteTitle }) => (
-    <footer>
-     <div className="container"> 
+  <footer>
+    <div className="container">
       <div className="row">
-        <div className="col-md-12"> 
+        <div className="col-md-12">
           <div className="footer-menu">
             <ul className="d-flex list-unstyled justify-content-center bottom-border flex-wrap ">
               <li className="nav-item  ">
                 <Link to="/"> Real Estate</Link>
               </li>
               <li className="nav-item ">
-                <Link  to="/"> Blog</Link>
+                <Link to="/"> Blog</Link>
               </li>
               <li className="nav-item ">
                 <Link to="/"> channel Partner</Link>
@@ -51,7 +52,7 @@ const Footer = ({ siteTitle }) => (
               <li className="background-circle" >
                 <Link to="/"><i className="fas fa-caret-right"></i></Link>
               </li>
-            </ul>        
+            </ul>
           </div>
           <div className="text-center text-white copyright">
             <p className="m-0"><Link to="/">Bramhacorp Ltd</Link> ©2019. All reserved.</p>

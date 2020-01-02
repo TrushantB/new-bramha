@@ -79,7 +79,7 @@ export default class Residential extends React.Component {
         {
           breakpoint: 580,
           settings: {
-            className: "center",
+            
             centerMode: true,
             infinite: true,
             centerPadding: "60px",
@@ -90,7 +90,7 @@ export default class Residential extends React.Component {
         {
           breakpoint: 480,
           settings: {
-            className: "center",
+            
             centerMode: true,
             infinite: true,
             centerPadding: "60px",

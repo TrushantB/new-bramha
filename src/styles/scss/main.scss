@@ -1,3 +1,46 @@
+// @charset 'UTF-8';
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+// 1. Configuration and helpers
+@import
+  'abstracts/variables',
+  'abstracts/functions',
+  'abstracts/mixins';
+
+// 2. Vendors
+// @import
+//   'vendors/normalize';
+
+// 3. Base stuff
+@import
+  'base/base',
+  'base/fonts',
+  'base/typography',
+  'base/helpers';
+
+// 4. Layout-related sections
+@import
+  'layout/header',
+  'layout/footer';
+
+// 5. Components
+@import
+  'components/button',
+  'components/carousel',
+  'components/cards',
+  'components/contact';
+
+// 6. Page-specific styles
+@import
+  'pages/home',
+  'pages/about',
+  'pages/knowledge-hub',
+  'pages/residentials-details',
+  'pages/residential-listing',
+  'pages/events',
+  'pages/career',
+  'pages/hospitality-projects';
+
+
 
 /*================================
 -------- Common Basic css start
@@ -15,7 +58,7 @@
     color: theme-color("text-black");
     align-items: center;
     display: flex;
-   
+    margin: 0 0 0 15px;
 }
 .section-title{
     font-family: georgia;
@@ -63,7 +106,7 @@
     }
 }
 .pages{
-    margin-top: 28px;
+    margin-top: 36px;
 }
 
 // ------------- Award Start Here ----------------
@@ -130,17 +173,6 @@
                 right: -31px;
             }
         }
-        //slider
-        .center{
-            .slick-next{
-                right: 28%;
-                bottom: -51px;
-            }
-            .slick-prev{
-                bottom: -66px;
-                right: 19%;
-            }
-        }
     }
     @media (max-width:992px){
         //------- about us ----
@@ -148,9 +180,9 @@
             padding: 20px 38px;
         }
         // slider
-        // .slider-img{
-        //     margin: 42px 43px 32px;
-        // }
+        .slider-img{
+            margin: 42px 43px 32px;
+        }
         // Card Primary
         .card-primary{
             .card-primary-img{
@@ -217,26 +249,15 @@
         .amenities-inner-wrapper{
             width:160%;
         }
-  //slider
-    .center{
-        .slick-next{
-            right: 22%;
-            bottom: -51px;
-        }
-        .slick-prev{
-            bottom: -64px;
-            right: 12%;
-        }
-     }    
- }
+    }
 
-    @media (max-width:767px){
+    @media (max-width:768px){
         // slider
-         .slider-img{
-            margin: 20px 28px 16px;
-         }
+        // .slider-img{
+        //     margin: 20px 26px 16px;
+        // }
         .pages{
-            margin-top: 12px;
+            margin-top: 20px;
         }
         .our-verticals-tabs .nav-item{
             padding:16px 8px;
@@ -379,9 +400,6 @@
     }
       .residential-projects{
         .complete-project {
-            .slick-slider{
-                margin-top: 28px;
-            }
             .secondary-card {
                 margin: 0 15px;
                 .secondary-card-rectangle{
@@ -399,17 +417,6 @@
             padding-bottom: 133.33%;
         }
     }
-      //slider
-    .center{
-        .slick-next{
-            right: 26%;
-            bottom: -31px;
-        }
-        .slick-prev{
-            bottom: -40px;
-            right: 17%;
-        }
-     }
 }
 @media (max-width:580px){
     .padding-sm-0{
@@ -731,14 +738,6 @@
         .contact-section .contact-form-bg .form-row .form-group{
         padding: 0;
         }
-        .center .slick-prev{
-            right: 12%;
-        }
-        .center .slick-next{
-            right: 22%;
-            bottom: -30px;
-        }
-   
         .detail-page{
             .page-heading{
                 border:0;
@@ -748,9 +747,6 @@
 }
 
 @media (max-width:420px){
-    .residential-projects .listing-heading{
-        width: 90%;
-    }
     .slider-img {
         margin: 20px 24px 16px;
     }
@@ -798,7 +794,7 @@
     .residential-projects {
         .complete-project {
             .secondary-card{
-                margin: 16px 20px;
+                margin: 16px 16px;
             }
         }
         // .listing-heading{
@@ -809,14 +805,6 @@
                 margin: 44px 0 72px;
             }
         } 
-    }  
-    .center .slick-prev{
-        right: 8%;
-        bottom: -29px;
-    }
-    .center .slick-next{
-        right: 18%;
-        bottom: -21px;
     }
     .btn-secondary{
         width:280px;
@@ -826,14 +814,4 @@
     .slider-img {
         margin: 20px 16px 16px;
     }
-    .center {
-        .slick-next{
-            right: 20%;
-            bottom: -15px;
-        }
-        .slick-prev {
-            right: 9%;
-            bottom: -22px;
-        }
-    }   
-}   
+}

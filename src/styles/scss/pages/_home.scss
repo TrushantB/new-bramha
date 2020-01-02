@@ -1,0 +1,35 @@
+.our-verticals-tabs{
+    font-family: 'Graphik', sans-serif;
+    font-weight: 500;
+    .nav-item{
+        padding:15px 10px;
+        flex-basis: 24%;
+    }
+    li{
+        border-bottom: 4px solid transparent;
+        cursor: pointer;
+        &:hover{
+            border-bottom: 4px solid theme-color("primary");
+            .tab{
+                color: theme-color("primary");
+            }
+        }
+    }
+    .tab{
+        color: theme-color("text-tertiary");
+        span{
+            padding-left:10px;
+        }
+    }
+    .active{
+        .tab{
+            color: theme-color("primary");
+        }
+        border-bottom: 4px solid theme-color("primary");
+    }
+}
+.home-slider{
+    .slick-arrow{
+        display: none !important;
+    }
+}

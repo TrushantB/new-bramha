@@ -1,0 +1,50 @@
+// -----------------------------------------------------------------------------
+// This file contains all @font-face declarations, if any.
+
+@font-face {
+    font-family: 'georgia-regular';
+    src: url(../../fonts/georgia.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'georgia-bold';
+    src: url(../../fonts/georgiab.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'georgia-italic';
+    src: url(../../fonts/georgiai.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Graphik';
+    font-weight: 100;
+    src: url(../../fonts/Graphik-Thin.otf) format('Opentype');
+}
+@font-face {
+    font-family: 'Graphik';
+    font-weight: 200;
+    src: url(../../fonts/Graphik-Extralight.otf) format('Opentype');
+}
+@font-face {
+    font-family: 'Graphik';
+    font-weight: 300;
+    src: url(../../fonts/Graphik-Light.otf) format('Opentype');
+}
+@font-face {
+    font-family: 'Graphik';
+    font-weight: 400;
+    src: url(../../fonts/Graphik-Regular.otf) format('Opentype');
+}
+@font-face {
+    font-family: 'Graphik';
+    font-weight: 500;
+    src: url(../../fonts/Graphik-Medium.otf) format('Opentype');
+}
+@font-face {
+    font-family: 'Graphik';
+    font-weight: 600;
+    src: url(../../fonts/Graphik-Semibold.otf) format('Opentype');
+}
+@font-face {
+    font-family: 'Graphik';
+    font-weight: 700;
+    src: url(../../fonts/Graphik-Bold.otf) format('Opentype');
+}
