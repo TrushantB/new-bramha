@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/layout'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Footer from '../components/footer';
 
 class Contacts extends React.Component {
@@ -55,8 +55,7 @@ class Contacts extends React.Component {
                     {
                       contactData.email_address.map((item,value)=>{
                         return(
-                          console.log('item', item),
-                          <p className=" mb-0 mt-3 mt-md-0" key={value}>{item.email_add.text}</p>
+                          <p className=" mb-0 mt-3 mt-md-0" key={value}> <a href={`mailto:${item.email_add.text}`}> {item.email_add.text} </a> </p>
                         )
                       })
                     }
@@ -73,7 +72,7 @@ class Contacts extends React.Component {
                       contactData.contact_info.map((item,value)=>{
                       return(
                         // <p key={value} className="description mb-0">{item.title1.text}{" "}{item.number}</p>
-                        <p className=" mb-0 mt-3 mt-md-0" key={value}>{item.title1.text}{" "}{item.number}</p>
+                        <p className=" mb-0 mt-3 mt-md-0" key={value}>{item.title1.text}{" "}  <a href={`tel:${item.number}`}>{item.number} </a></p>
                       )
                     })
                     }
