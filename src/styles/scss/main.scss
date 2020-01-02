@@ -58,7 +58,6 @@
     color: theme-color("text-black");
     align-items: center;
     display: flex;
-    margin: 0 0 0 15px;
 }
 .section-title{
     font-family: georgia;
@@ -292,7 +291,7 @@
             }   
         }
 
-        footer{
+        .footer{
             .copyright{
                 margin-top: 12px;
             }

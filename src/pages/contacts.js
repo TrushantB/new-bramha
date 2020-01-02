@@ -56,7 +56,7 @@ class Contacts extends React.Component {
                       contactData.email_address.map((item,value)=>{
                         return(
                           console.log('item', item),
-                          <p className=" mb-0 mt-3 mt-md-0" key={value}>{item.email_add.text}</p>
+                          <a href="mailto: " className="text-decoration-none"><p className=" mb-0 mt-3 mt-md-0" key={value}>{item.email_add.text}</p></a>
                         )
                       })
                     }
@@ -73,7 +73,7 @@ class Contacts extends React.Component {
                       contactData.contact_info.map((item,value)=>{
                       return(
                         // <p key={value} className="description mb-0">{item.title1.text}{" "}{item.number}</p>
-                        <p className=" mb-0 mt-3 mt-md-0" key={value}>{item.title1.text}{" "}{item.number}</p>
+                        <a href="tel:" className="text-decoration-none"><p className=" mb-0 mt-3 mt-md-0" key={value}>{item.title1.text}{" "}{item.number}</p></a>
                       )
                     })
                     }
@@ -121,7 +121,7 @@ class Contacts extends React.Component {
                           </div>
                           <div className="col-sm-6 form-group ">
                             <select className="form-control" id="aboutus" placeholder="Budget" name="aboutus" required >
-                              <option>Where did you here about us?</option>
+                              <option>Where did you hear about us?</option>
                               <option>2</option>
                               <option>3</option>
                               <option>4</option>
@@ -132,7 +132,7 @@ class Contacts extends React.Component {
                           </div>
                         </div>
                         <div className="sumbit text-center mt-sm-0 mt-4">
-                          <button type="submit" className="btn-secondary btn">Submit</button>
+                          <button type="submit" className="btn-secondary btn">Download Brochure</button>
                         </div>  
                       </div> 
                     </div>
