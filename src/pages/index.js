@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import "../styles/css/custom.css"
+import '../styles/scss/main.scss';
 import { Link } from "gatsby"
 // import Commerical from "./our-verticals/commercial"
 // import Residential from "./our-verticals/residential"
