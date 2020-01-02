@@ -1,0 +1,82 @@
+.residential-projects{
+    .projects{
+        margin: 64px 0 80px 0;
+      select{
+          width: 271px;
+          height: 40px;
+          margin-right: 24px;
+      }
+    }
+    .residences{
+        padding-top: 20px;
+        .residences-card{
+            margin: 72px  0 72px;
+        }
+    }
+    .listing-heading{
+      width: 300px;
+      height: 40px;
+      background: #b1a585;
+      margin-top: -40px;
+        .heading{
+          font-size: 18px;
+          font-weight: 200;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: -0.54px;
+          color: #ffffff;
+          margin-left: 20px;
+        
+        }
+    }
+    .complete-project{
+        margin-bottom: 148px;
+        .container{
+            text-align: center;
+        }
+        .secondary-card{
+            margin: 0 15px;
+            .secondary-card-rectangle{
+                text-align: left;
+            }
+        }
+        p{
+          opacity: 0.5;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.71;
+          letter-spacing: -0.31px;
+          color: #000000;
+          margin: 32px 0 56px 0;
+        }
+        .listing-heading{
+            margin-top: -23px;
+        }
+    }
+    .slick-list{
+        padding-bottom: 46px;
+    }
+    .slick-prev {
+        left: -50px;
+        &:before{
+            content: "";
+            background: url('../images/left-arrow-1.png') no-repeat center center;
+            padding: 12px 0px 16px 38px;
+    }
+  }
+  .slick-next {
+      transform: rotate(180deg);
+      right: -50px;
+      &:before{
+        content: "";
+        background: url('../images/left-arrow-1.png') no-repeat center center;
+        padding: 12px 0px 16px 38px;
+      }
+    }
+} 
+.residences{
+    background-color:theme-color("bg-color"); 
+    padding: 72px 0 172px;
+}

@@ -1,0 +1,10 @@
+.event{
+    .event-heading{
+        .title{
+            h2{
+              @include border-left;
+              font-weight: 400;
+            }
+        }
+    }
+  }

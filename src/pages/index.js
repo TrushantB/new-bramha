@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import "../styles/css/custom.css"
 import { Link } from "gatsby"
 // import Commerical from "./our-verticals/commercial"
 // import Residential from "./our-verticals/residential"
@@ -8,7 +9,7 @@ import { Link } from "gatsby"
 // import Leisure from "./our-verticals/leisure"
 
 class IndexPage extends React.Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
       selectedVertical: null,
@@ -36,72 +37,72 @@ class IndexPage extends React.Component {
   //   this.setState({leisure: leisureData});
   //   // this.setState({selectedVertical : < Leisure gallery = { leisureData } />})
   // }
-  
+
   // handleVerticals(event){
   //   switch(event){
   //     case 'residencial': {
   //       this.setState({selectedVertical : < Residential gallery = {this.state.residential}/>})
   //     }
   //     break;
-      
+
   //     case 'commercial': {
   //       this.setState({selectedVertical : < Commerical galleryData = { this.state.commercial}/>})
   //     }
   //     break;
-      
+
   //     case 'hospitality': {
   //       this.setState({selectedVertical : < Hospitality gallery = { this.state.hospitality}/>})
   //     }
   //     break;
-      
+
   //     case 'leisure': {
   //       this.setState({selectedVertical : < Leisure gallery = {this.state.leisure} />})
   //     }
   //     break;
   //   }
-    
+
   // }
 
-  render(){
-    return(
-    <Layout>
-      <SEO title="Home" />
-      <div>
-      {this.state.selectedVertical}
-      <section className="our-verticals-tabs container">
-        <ul className="p-0 d-flex w-100 justify-content-around list-style-none text-uppercase nav nav-tabs border-0" id="myTab" role="tablist">
-          <li className="nav-item active" id="residencial-tab" data-toggle="tab" href="#residencial" role="tab" aria-controls="residencial" aria-selected="true">
-            <Link to='/' className="tab">            
-                <i className="far fa-building"></i>
-              <span > residencial </span>
-              {/* onClick={()=> {this.handleVerticals('residencial')}} */}
-            </Link>
-          </li>
-          <li className="nav-item"  id="commercial-tab" data-toggle="tab" href="#commercial" role="tab" aria-controls="commercial" aria-selected="true">
-            <a href="#" className="tab">            
-              <i className="fas fa-hotel"></i>
-              <span >commercial</span>
-              {/* onClick={()=> {this.handleVerticals('commercial')}} */}
-            </a>
-          </li>
-          <li className="nav-item"  id="hospitality-tab" data-toggle="tab" href="#hospitality" role="tab" aria-controls="hospitality" aria-selected="true">
-            <a href="#" className="tab">            
-                <i className="far fa-hospital"></i>
-              <span >hospitality</span>
-              {/* onClick={()=> {this.handleVerticals('hospitality')}} */}
-            </a>
-          </li>
-          <li className="nav-item"  id="leisure-tab" data-toggle="tab" href="#leisure" role="tab" aria-controls="leisure" aria-selected="true">
-            <a href="#" className="tab">            
-                <i className="fas fa-hot-tub"></i>
-              <span >leisure</span>
-              {/* onClick={()=> {this.handleVerticals('leisure')}} */}
-            </a>
-          </li>
-        </ul>
-      </section>
-      </div>
-    </Layout>
+  render() {
+    return (
+      <Layout>
+        <SEO title="Home" />
+        <div>
+          {this.state.selectedVertical}
+          <section className="our-verticals-tabs container">
+            <ul className="p-0 d-flex w-100 justify-content-around list-style-none text-uppercase nav nav-tabs border-0" id="myTab" role="tablist">
+              <li className="nav-item active" id="residencial-tab" data-toggle="tab" href="#residencial" role="tab" aria-controls="residencial" aria-selected="true">
+                <Link to='/' className="tab">
+                  <i className="far fa-building"></i>
+                  <span > residencial </span>
+                  {/* onClick={()=> {this.handleVerticals('residencial')}} */}
+                </Link>
+              </li>
+              <li className="nav-item" id="commercial-tab" data-toggle="tab" href="#commercial" role="tab" aria-controls="commercial" aria-selected="true">
+                <a href="#" className="tab">
+                  <i className="fas fa-hotel"></i>
+                  <span >commercial</span>
+                  {/* onClick={()=> {this.handleVerticals('commercial')}} */}
+                </a>
+              </li>
+              <li className="nav-item" id="hospitality-tab" data-toggle="tab" href="#hospitality" role="tab" aria-controls="hospitality" aria-selected="true">
+                <a href="#" className="tab">
+                  <i className="far fa-hospital"></i>
+                  <span >hospitality</span>
+                  {/* onClick={()=> {this.handleVerticals('hospitality')}} */}
+                </a>
+              </li>
+              <li className="nav-item" id="leisure-tab" data-toggle="tab" href="#leisure" role="tab" aria-controls="leisure" aria-selected="true">
+                <a href="#" className="tab">
+                  <i className="fas fa-hot-tub"></i>
+                  <span >leisure</span>
+                  {/* onClick={()=> {this.handleVerticals('leisure')}} */}
+                </a>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </Layout>
     )
   }
 }

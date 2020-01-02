@@ -1,0 +1,59 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+/**
+ * Clear inner floats
+ */
+.clearfix::after {
+  clear: both;
+  content: '';
+  display: table;
+}
+.padding-block-60{
+    padding: 52px 0 24px;
+}
+.mt-25{
+    margin-top: 25px;
+}
+.mb-100 {
+    margin-bottom: 100px;
+}
+.mt-140{
+    margin-top: 140px;
+}
+.mt-92{
+    margin-top:92px;
+}
+.black-text{
+    color:theme-color("text-black");
+}
+.text-white{
+    color:theme-color("text-white");
+}
+.list-style-none{
+    list-style: none;
+}
+.hr-primary{
+    width:85px;
+    height:3px;
+    background: theme-color("primary");
+}
+.link-text{
+  font-family: 'Graphik', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: -0.23px;
+  color: theme-color("tertiary");
+  cursor: pointer;
+  &:hover{
+      text-decoration: none;
+  }
+}
+.bg-light-gray{
+    background-color: theme-color("bg-color");
+    padding: 52px 0 64px 0;
+    margin-top: 64px;
+}
+.mt-25{
+    margin-top: 25px;
+}

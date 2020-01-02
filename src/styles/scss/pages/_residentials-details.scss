@@ -1,0 +1,246 @@
+.logo-card{
+    width:300px;
+    box-shadow: 0 2px 13px 0 rgba(0, 0, 0, 0.18);
+    background-color: #ffffff;
+    padding:8px 0;
+    margin-top: -32px;
+    position: relative;
+    z-index: 99;
+  }
+  .slider-wrapper-gray{
+      padding: 48px 0;
+      background: theme-color(bg-color);
+      .showcase-slider{
+          max-height:75vh;
+          overflow: hidden;
+      }
+  }
+  .detail-page-sections{
+      padding-top:76px;
+      padding-bottom: 76px;
+  }
+  
+  #pills-tab{
+      border-bottom:1px solid theme-color(tertiary);
+    .tab-icon{
+      font-size:32px;
+      margin-bottom:8px;
+    }
+  }
+  #pills-tabContent{
+      border-bottom:1px solid theme-color(tertiary);
+      ul{
+        padding-top:36px;
+        padding-bottom:36px;
+      }
+  }
+  .nav-pills .nav-link{
+      color:theme-color(text-tertiary);
+  }
+  .nav-pills .nav-link.active{
+      border:1px solid theme-color(border-color);
+      border-bottom:5px solid theme-color(tertiary);
+      border-radius: 5px 5px 0 0;
+      background-color: transparent;
+      color:theme-color(heading-primary);
+  }
+  #factfile-tab .nav-link{
+      border-bottom:3px solid theme-color(border-colors);
+      background-color: theme-color(bg-color);
+      border-radius: 0;
+  }
+  #factfile-tab .nav-link.active{
+      border:1px solid theme-color(border-color);
+      border-bottom:3px solid theme-color(tertiary);
+      border-radius: 0;
+      background-color: transparent;
+      color:theme-color(tertiary);
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.08);
+  }
+  .amenities{
+      button{
+          flex: 1 200px;
+          margin: 12px 8px;
+          border: 0;
+          background: transparent;
+          color:theme-color(text-tertiary);
+          outline: 0;
+          i{
+            font-size: 32px;
+            padding: 5px 24px 5px;
+          color:theme-color(text-tertiary);
+          }
+          &:hover{
+              color:theme-color(primary);
+              i{
+                  color:theme-color(primary);
+              }
+          }
+      }
+  }
+  // ------------- Contact Start Here ----------------
+  .contact-section{
+      .contact-form{
+          margin: 106px 0 0 0;
+      }
+      .contact-details{
+          margin-top: 60px;
+          p,address{
+              opacity: 0.5;
+              font-family: Graphik;
+              font-size: 14px;
+              font-weight: normal;
+              font-stretch: normal;
+              font-style: normal;
+              line-height: 1.71;
+              letter-spacing: -0.31px;
+              color: #000000;
+          }
+          i{
+              font-size: 26px;
+              color:theme-color("icon-color");
+          }   
+      }
+      form{
+          .form-bg-color{
+              background: #b2a585;
+              padding: 16px 0;
+               label{
+                   margin-right: 8px;
+               }
+          }
+          .customer{
+              select{
+                  flex-basis: 23%;
+                  background: transparent;
+                  color: #fff;
+                  border: solid 0.5px #ffffff;
+                  border-radius: 0;
+                  padding: 4px;
+                  font-weight: 300;
+                  font-size: 14px;
+                  height: 30px;
+                  option{
+                      color: #929292;
+                  }
+                      &:focus{
+                      box-shadow: none;
+                      outline: none;
+                      border-color: #fff;
+                  }
+              }
+          }
+      }
+      .contact-form-bg {
+          background: #fafafa;
+          padding: 40px 0 40px 0;
+          .container{
+              max-width: 700px;
+          }
+          .form-row{
+              select{
+                  font-weight: 300;
+                  font-size: 14px; 
+              }
+              input,textarea,select{
+                  font-weight: 300;
+                  padding-left: 8px;
+                  font-size: 14px;
+                  background: transparent;
+                  border: solid 0.5px #999999;
+                  border-radius: 0;
+                  color: #929292;
+                      &::placeholder{
+                          color: #929292;
+                          font-weight: 300;
+                          font-size: 14px;
+                      }
+              }
+              input,select{
+                  height: 30px;
+              }
+              .form-control:focus{
+                  box-shadow: none;
+                  outline: none;
+                  border-color: #999999;
+              }
+              .form-group{
+                  margin-bottom: 32px;
+                  padding: 0 20px 0 20px;
+              }
+          }
+          button{
+              padding: 16px 0;
+              width: 320px;
+              border-radius: 0;
+              font-weight: 300;
+              background: theme-color("tertiary");
+              border-color:theme-color("tertiary") ;
+              &:focus{
+                  border-color:theme-color("tertiary");
+                  box-shadow: none;
+              }
+          }
+      }
+      .locate-us{
+          margin: 130px 0 116px 0;
+      } 
+      .locate-us,
+      .contact-form{
+          .section-title{
+              margin-bottom: 26px;
+              &::after{
+                  display: none;
+              }
+          }
+  
+      }
+  }
+  .detail-maharera-sections{
+      padding-bottom:128px;
+  }
+.detail-page{
+    .section-title{
+        padding-bottom:32px;
+        &:after{
+            display: none;
+        }
+    }
+      .page-heading-section{
+          div{
+              padding-top:76px;
+              padding-bottom: 32px;
+          }
+      }
+    .detail-page-sections{
+        .slider-wrapper{
+            background-color: theme-color("bg-color");
+            padding:40px;
+        }
+        .hospitality-viewmore{
+            width:196px;
+            color:theme-color("tertiary");
+            padding:16px 20px;
+            background:transparent;
+            border:1px solid theme-color("tertiary");
+        }
+        .btn-secondary{            
+            color: #fff;
+            background: theme-color("tertiary");
+            border:1px solid theme-color("tertiary");
+            &:hover{
+                background-color: transparent;
+                color:theme-color("tertiary");
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.map {
+    -webkit-filter: grayscale(100%);
+       -moz-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+         -o-filter: grayscale(100%);
+            filter: grayscale(100%);
+}

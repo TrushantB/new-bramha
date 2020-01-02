@@ -7,7 +7,7 @@ const Header = ({ siteTitle }) => (
   <header className="header">
     <nav className="navbar navbar-light container" >
       <Link className="navbar-brand" to='/'>
-        <img src={img1} alt="BramhaCorp Logo" className="logo-img"/>
+        <img src={img1} alt="BramhaCorp Logo" className="logo-img" />
       </Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
@@ -19,7 +19,7 @@ const Header = ({ siteTitle }) => (
           </li>
           <li className="nav-item dropdown border-0">
             <Link className="nav-link dropdown-toggle" to="/about-us" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              About Us 
+              About Us
             </Link>
             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
               <Link className="dropdown-item" to="/about-us">Our Legacy</Link>
@@ -42,12 +42,12 @@ const Header = ({ siteTitle }) => (
           </li>
           <li className="nav-item dropdown">
             <Link className="nav-link dropdown-toggle" to='/knoweldge-hub' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Knoweldge Hub
+              Knoweldge Hub
             </Link>
             <div className="dropdown-menu border-0" aria-labelledby="navbarDropdown">
               <Link className="dropdown-item" to='/knoweldge-hub'>Inner</Link>
             </div>
-          </li> 
+          </li>
           <li className="nav-item">
             <Link className="nav-link" to="/careers">Careers</Link>
           </li>

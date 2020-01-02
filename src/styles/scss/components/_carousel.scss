@@ -1,0 +1,28 @@
+// -----------------------------------------------------------------------------
+// This file contains all Carousel Style
+// -----------------------------------------------------------------------------
+.slick-center{
+    transform: scale(1.3);
+    transition: transform .5s ease;
+}
+.slider-img{
+    margin: 42px 56px 32px;
+}
+.center .slick-prev {
+    left: 32px;
+    z-index: 1;
+    &:before{
+        content: "";
+        background: url('../images/left-arrow-1.png') no-repeat center center;
+        padding: 12px 0px 16px 38px;
+}
+}
+.center .slick-next {
+  transform: rotate(180deg);
+  right: 50px;
+  &:before{
+    content: "";
+    background: url('../images/left-arrow-1.png') no-repeat center center;
+    padding: 12px 0px 16px 38px;
+  }
+}

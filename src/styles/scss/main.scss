@@ -1,3 +1,46 @@
+// @charset 'UTF-8';
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+// 1. Configuration and helpers
+@import
+  'abstracts/variables',
+  'abstracts/functions',
+  'abstracts/mixins';
+
+// 2. Vendors
+// @import
+//   'vendors/normalize';
+
+// 3. Base stuff
+@import
+  'base/base',
+  'base/fonts',
+  'base/typography',
+  'base/helpers';
+
+// 4. Layout-related sections
+@import
+  'layout/header',
+  'layout/footer';
+
+// 5. Components
+@import
+  'components/button',
+  'components/carousel',
+  'components/cards',
+  'components/contact';
+
+// 6. Page-specific styles
+@import
+  'pages/home',
+  'pages/about',
+  'pages/knowledge-hub',
+  'pages/residentials-details',
+  'pages/residential-listing',
+  'pages/events',
+  'pages/career',
+  'pages/hospitality-projects';
+
+
 
 /*================================
 -------- Common Basic css start
@@ -771,4 +814,4 @@
     .slider-img {
         margin: 20px 16px 16px;
     }
-}    
+}

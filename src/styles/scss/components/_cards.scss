@@ -1,0 +1,124 @@
+.card-primary{
+    .card-primary-img{
+        height: 100%;
+        img{
+            height: 100%;
+        }
+    }
+}
+.residences{
+    background-color:theme-color("bg-color"); 
+    padding: 72px 0 148px;
+}
+//Residences Card 
+.residences-card{
+    .residences-img {
+        // position: relative;
+        // padding-bottom: 133.33%;
+          .gatsby-image-wrapper{
+              padding-bottom: 133.33%;
+              div{
+                  padding: 0!important;
+              }
+            img{
+                position: absolute;
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+          }
+    }
+    .rectangle{
+        width: 90%;
+        // height: 110px;
+        box-shadow: 6px 6px 13px 0 rgba(227, 227, 227, 0.76);
+        background: #fff;
+        padding: 20px   ;
+        bottom: -70px;
+        left: 10px;
+    .rectangle-title{
+        .inner-section-title{
+            color: theme-color("headig-secondary");
+        }
+    }
+   
+    i {
+        color:theme-color("icon-color");
+    }
+    .fa-map-marker-alt{
+        margin-right: 4px;
+    }
+    .apartment-size{
+        span{
+          opacity: 0.35;
+          font-size: 12px;
+          color:theme-color("text-black"); 
+    }
+}
+.project-location{
+    span{
+        font-size: 13px;
+        opacity: 0.5;
+        color:theme-color("text-black"); 
+    }
+    i {
+        font-size: 12px;
+    }
+  }
+}
+}
+// Secondary card
+.image-ratio{
+    .gatsby-image-wrapper{
+        padding-bottom: 66.6%;
+        div{
+            padding: 0!important;
+        }
+      img{
+          position: absolute;
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+      }
+    }    
+}
+.secondary-card{
+    .secondary-card-rectangle{
+        width:90%;
+        // height: 75px;
+        box-shadow: 3px 3px 13px 0 rgba(227, 227, 227, 0.65);
+        background-color: #FFFFFF;
+        padding: 20px 20px 16px 20px;
+        bottom: -50px;
+        left: 10px;
+        .inner-section-title{
+            font-size: 14px;
+            color: theme-color("headig-secondary");;
+            letter-spacing: 0.14px;
+        }
+        .project-location,
+        .apartment-size{
+            font-size: 10px;
+            color: #000;
+            font-stretch: normal;
+            font-style: normal;
+            letter-spacing: -0.17px;
+        }
+        .project-location{
+           span{
+            opacity: 0.5;
+           }
+        }
+       .apartment-size{
+            span{
+                opacity: 0.35;
+            }
+       }
+        i {
+            color:theme-color("icon-color");
+        }
+        .fa-map-marker-alt{
+            margin-right: 4px;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+@mixin border-left {
+    border-left: 10px solid #b0a683;
+    padding-left: 10px;
+}
+@mixin hover {
+    color: theme-color("primary");
+    text-decoration: none;
+    transition: .5s ease-in-out;  
+}

@@ -1,0 +1,42 @@
+// -----------------------------------------------------------------------------
+// This file contains all Buttons
+// -----------------------------------------------------------------------------
+.btn-primary{
+    padding:16px 24px;
+    border:1px solid theme-color("secondary");
+    color: theme-color("secondary");
+    width:169px;
+}
+.btn-secondary{
+    padding: 16px 0;
+    width: 320px;
+    border-radius: 0;
+    font-weight: 300;
+    color:#fff;
+    background: theme-color("tertiary");
+    border-color:theme-color("tertiary");
+    border:0;
+    &:focus{
+        border-color:theme-color("tertiary");
+        box-shadow: none;
+    }
+    &:hover{
+        color: #fff;
+    }
+}
+.button-tertiary{
+    padding: 16px;
+    color:theme-color("text-tertiary");
+    border:1px solid theme-color("border-color-secondary");
+    font-family: 'Graphik', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: -0.4px;
+    text-align: center;
+    background:transparent;
+    outline: 0;
+    &:hover{
+        background-color: theme-color("heading-primary");
+        color:theme-color("secondary");
+    }
+}

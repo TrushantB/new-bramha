@@ -1,0 +1,37 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+/**
+ * Set up a decent box model on the root element
+ */
+body{
+    font-family: 'Graphik', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.86;
+    letter-spacing: -0.31px;
+    color: theme-color("text-tertiary");
+}
+img{
+    object-fit: cover;
+}
+input,textarea,select{
+    font-weight: 300;
+    padding-left: 8px;
+    font-size: 14px;
+    background: transparent;
+    border: solid 0.5px #999999;
+    border-radius: 0;
+    color: #929292;
+        &::placeholder{
+            color: #929292;
+            font-weight: 300;
+            font-size: 14px;
+     }
+     &:focus{
+        box-shadow: none;
+        outline: none;
+        border-color: #999999;
+    }
+}
