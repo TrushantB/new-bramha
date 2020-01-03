@@ -56,7 +56,7 @@ export default class Residential extends React.Component {
     console.log('Address', this.state.activeAddress);
     console.log('Type', this.state.activeType);
     var settings = {
-      className: "center",
+      className: "slick-center",
       centerPadding: "60px",
       dots: false,
       infinite: false,
@@ -64,8 +64,8 @@ export default class Residential extends React.Component {
       slidesToShow: 3,
       slidesToScroll: 1,
       initialSlide: 0,
-      beforeChange: (current, next) => this.setState({ activeSlide: next }),
-      afterChange: current => this.setState({ activeSlide2: current }),
+      // beforeChange: (current, next) => this.setState({ activeSlide: next }),
+      // afterChange: current => this.setState({ activeSlide2: current }),
       responsive: [
         {
           breakpoint: 1024,

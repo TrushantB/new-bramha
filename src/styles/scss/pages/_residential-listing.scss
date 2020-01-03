@@ -56,7 +56,9 @@
         }
     }
     .slick-list{
-        padding-bottom: 46px;
+        .slick-slide > div{
+            padding-bottom:60px;
+        }
     }
     .slick-prev {
         left: -50px;

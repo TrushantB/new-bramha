@@ -50,7 +50,7 @@
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
-    z-index: 99;
+    z-index: 100;
     left: 0;
     right: 0;
     bottom: 0;
@@ -90,7 +90,7 @@
 // Toggle Icon CSS
 .navbar-toggler{
     border: none;
-    z-index: 100;
+    z-index: 101;
 }
 .icon-bar{
     display: block;

@@ -15,8 +15,8 @@ class VerticalPage extends React.Component {
       centerMode: true,
       centerPadding: '200px',
       slidesToShow: 1,
-      beforeChange: (current, next) => this.setState({ activeSlide: next }),
-      afterChange: current => this.setState({ activeSlide2: current }),
+      // beforeChange: (current, next) => this.setState({ activeSlide: next }),
+      // afterChange: current => this.setState({ activeSlide2: current }),
       responsive: [
         {
           breakpoint: 992,
@@ -202,12 +202,12 @@ class VerticalPage extends React.Component {
             <section className="detail-page-sections container">
               <ul className="nav nav-pills mb-3 row" id="factfile-tab" role="tablist">
                   <li className="nav-item col-6 p-0">
-                    <a className="nav-link text-center text-uppercase section-title active" id="pills-amenities-tab" data-toggle="pill" href="#amenities" role="tab" aria-controls="pills-amenities" aria-selected="true">
+                    <a className="nav-link text-center text-uppercase section-title pb-1 active" id="pills-amenities-tab" data-toggle="pill" href="#amenities" role="tab" aria-controls="pills-amenities" aria-selected="true">
                       {verticalData.data.amenities1.text}
                     </a>
                   </li>
                   <li className="nav-item col-6 p-0">
-                    <a className="nav-link text-center text-uppercase section-title" id="pills-factfile-tab" data-toggle="pill" href="#fact-file" role="tab" aria-controls="pills-factfile" aria-selected="false">
+                    <a className="nav-link text-center text-uppercase section-title pb-1" id="pills-factfile-tab" data-toggle="pill" href="#fact-file" role="tab" aria-controls="pills-factfile" aria-selected="false">
                       {verticalData.data.fact_file_heading.text}
                     </a>
                   </li>
