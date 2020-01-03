@@ -107,16 +107,16 @@ class Contacts extends React.Component {
                               <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" required/>
                           </div>
                           <div className="col-sm-6 form-group  ">
-                              <input type="" className="form-control" id="phone-number" placeholder="Your Phone Number*" name="phone-number" required/>
+                              <input type="number" className="form-control" id="phone-number" placeholder="Your Phone Number*" name="phone-number" required/>
                           </div>
                           <div className="col-sm-6 form-group  ">
                               <input type="text" className="form-control" id="email" placeholder="Your Email*" name="email" required/>
                           </div>
                           <div className="col-sm-6 form-group  ">
-                              <input type="" className="form-control" id="city" placeholder="City" name="city" required/>
+                              <input type="text" className="form-control" id="city" placeholder="City" name="city" required/>
                           </div>
                           <div className="col-sm-6 form-group  ">
-                              <input type="text" className="form-control" id="budget" placeholder="Budget" name="budget" required/>
+                              <input type="number" className="form-control" id="budget" placeholder="Budget" name="budget" required/>
                           </div>
                           <div className="col-sm-6 form-group ">
                             <select className="form-control" id="aboutus" placeholder="Budget" name="aboutus" required >
@@ -131,7 +131,7 @@ class Contacts extends React.Component {
                           </div>
                         </div>
                         <div className="sumbit text-center mt-sm-0 mt-4">
-                          <button type="submit" className="btn-secondary btn">Submits</button>
+                          <button type="submit" className="btn-secondary btn">Submit</button>
                         </div>  
                       </div> 
                     </div>
