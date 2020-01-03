@@ -16,10 +16,12 @@ class Leisure extends React.Component {
       // adaptiveHeight : true,
     };
     const data = this.props.gallery;
+    console.log('this.props.gallery leisure', this.props.gallery);
+
     return(
       <Slider {...settings} className="home-slider">
         {
-        data.gallery.map((item,value)=>{
+        this.props.gallery && this.props.gallery.data.gallery.map((item,value) => {
             return(
               <section className="banner-section" key={value}>
                 <img src={item.image.url} alt="banner here" className="banner-img" style={{width:'100%'}}/>

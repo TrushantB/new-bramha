@@ -7,7 +7,8 @@ class Commerical extends React.Component {
   }
 
   render(){
-    let data = this.props.galleryData;
+    let data = this.props.gallery;
+    console.log('this.props.gallery commericial', this.props.gallery);
     var settings = {
       dots: false,
       infinite: true,
@@ -20,7 +21,7 @@ class Commerical extends React.Component {
     return(
       <Slider {...settings} className="home-slider">
         {
-          data.gallery && data.gallery.map(function(item,value){
+          this.props.gallery && this.props.gallery.data.gallery.map((item,value) => {
             return(
               <section className="banner-section" key={value}>
                 <img src={item.image.url} alt="banner here" className="banner-img" style={{width:'100%'}}/>

@@ -15,11 +15,12 @@ class Residential extends React.Component {
       autoplay : true,
       // adaptiveHeight : true,
     };
-    const data = this.props.gallery.data;
+    // const data = this.props.gallery.data;
+    console.log('this.props.gallery residential', this.props.gallery);
     return(
       <Slider {...settings} className="home-slider">
         {
-          data.gallery.map((item,value)=>{
+          this.props.gallery && this.props.gallery.data.gallery.map((item,value) => {
             return(
               <section className="banner-section" key={value}>
                 <img src={item.image.url} alt="banner here" className="banner-img" style={{width:'100%'}}/>
