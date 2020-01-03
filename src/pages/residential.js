@@ -11,6 +11,11 @@ export default class Residential extends React.Component {
    this.state = {
       activeSlide: 1,
       activeSlide2: 0,
+      allType: null,
+      allAddress: null,
+      dataSource: null,
+      ongoingProject: null,
+      completedProject: null,
       activeProject: '',
       activeAddress: '',
       activeType: ''
@@ -18,43 +23,84 @@ export default class Residential extends React.Component {
     // this.handleProjects = this.handleProjects.bind(this);
   }
 
-  addressHandle(event){
-    let temp = [];
-     event.map((item, index1)=>{
-      item.residential_links.document.map((data)=>{
-        temp.push(<option key={index1}>{data.data.flat_address.text}</option>)
-      })
-    })
-    return temp;
-  }
-
-  addressSelect =(e)=>{
+  addressSelect = (e) => {
     this.setState({activeAddress: e.target.value})
   }
 
-  typeHandle(event){
-    let temp = [];
-    event.map((item, index)=>{
-     item.residential_links.document.map((data)=>{
-       temp.push(<option value={data.data.flat_bhk.text} key={index}>{data.data.flat_bhk.text}</option>)
-     })
-     
-   })
-   return temp;
+  typeSelect = (e) => {
+    
+    // this.setState({activeType: e.target.value})
+  }
+  
+  sortAddress = (e) => {
+    let type = [];
+    let address = [];
+    e.map((item)=>{
+      type.push(item.residential_links.document[0].data.flat_bhk.text);
+      address.push(item.residential_links.document[0].data.flat_address.text);
+   }) 
+
+      let allType = [...new Set(type)];
+      let allAddress = [...new Set(address)];
+      this.setState({allType});
+      this.setState({allAddress});
   }
 
-  typeSelect =(e)=>{
-    this.setState({activeType: e.target.value})
+  handleProjects = (e) => {
+    let type = [];
+    let address = [];
+
+    let project = this.state.dataSource[0].node.data[e.target.value];
+    if(e.target.value == 'ongoing_projects'){
+      this.setState({ongoingProject: project, completedProject: []});
+      project.map((item)=>{
+        type.push(item.residential_links.document[0].data.flat_bhk.text);
+        address.push(item.residential_links.document[0].data.flat_address.text);
+      console.log('type in loop', type);
+
+      }) 
+      this.setState({allType: type, allAddress: address})
+      console.log('type', type);
+      
+    }
+    else{
+      this.setState({completedProject: project, ongoingProject: []});
+      project.map((item)=>{
+        type.push(item.completed_links.document[0].data.flat_bhk.text);
+        address.push(item.completed_links.document[0].data.flat_address.text);
+     }) 
+     this.setState({allType: type, allAddress: address})
+    }
   }
 
-  handleProjects = (e) =>{
-    this.setState({activeProject: e.target.value});
-  }
+  componentWillMount() {
+    let type = [];
+    let address = [];
+    const allData = this.props.data.allPrismicResidential.edges;
+    this.setState({dataSource: allData});
+      allData.map((item,index) => {
+        this.setState({ongoingProject: item.node.data.ongoing_projects});
+        // this.sortAddress(item.node.data.ongoing_projects);
+         item.node.data.ongoing_projects.map((item)=>{
+           type.push(item.residential_links.document[0].data.flat_bhk.text);
+           address.push(item.residential_links.document[0].data.flat_address.text);
+        }) 
+      })
 
+      allData.map((item,index) => {
+        this.setState({completedProject: item.node.data.completed_project});
+         item.node.data.completed_project.map((item)=>{
+           type.push(item.completed_links.document[0].data.flat_bhk.text);
+           address.push(item.completed_links.document[0].data.flat_address.text);
+        }) 
+      })
+      let allType = [...new Set(type)];
+      let allAddress = [...new Set(address)];
+      this.setState({allType});
+      this.setState({allAddress});
+  }
+  
   render(){
-    console.log('Project', this.state.activeProject);
-    console.log('Address', this.state.activeAddress);
-    console.log('Type', this.state.activeType);
     var settings = {
       className: "slick-center",
       centerPadding: "60px",
@@ -127,93 +173,47 @@ export default class Residential extends React.Component {
             <div className="container">
               <div className="projects">
 
-                <select id='dropdown' onChange={this.handleProjects} className="" placeholder="Budget" >
-                  <option value='ongoing_projects'>Ongoing Projects</option>
-                  <option value='completed_projects'>Completed Projects</option>
+                <select defaultValue="" onChange={(e)=>{this.handleProjects(e)}}>
+                  <option value="" disabled hidden>Select Project Type</option>
+                  <option value="ongoing_projects">Ongoing Project</option>
+                  <option value="completed_project">Completed Project</option>
                 </select>
-
-                <select className="" placeholder="Budget" onChange={this.addressSelect}>
+               
+                <select className="" defaultValue="" onChange={this.addressSelect}>
+                   <option value="" disabled  hidden>Select Type </option>
                 {
-                  this.addressHandle(residentialData[0].node.data.ongoing_projects)
+                   this.state.allAddress.map((data, index)=>{
+                    return(
+                      <option value={data} key={index}>{data}</option>
+                    );
+                  })
                 }
                 </select>
 
-                <select className="" placeholder="Budget" onChange={this.typeSelect} >
+                <select className="" defaultValue="" placeholder="Budget" onChange={this.typeSelect} >
+                  <option value="" disabled  hidden>Select Type </option>
                   {
-                    this.typeHandle(residentialData[0].node.data.ongoing_projects)
+                    this.state.allType.map((data, index) => {
+                      return(
+                      <option value={data} key={index}>{data}</option>
+                      );
+                    })
                   }
                 </select>
-                 
               </div>
             </div>
-            <section className="ongoing-project">
-              <div className="residences">
-                <div className="container">
-                  <div className="listing-heading d-flex align-items-center">
-                    <h4 className="text-uppercase heading mb-0">Ongoing Projects</h4>
-                  </div>
-                    <div className="row">
-                      {
-                        this.state.activeAddress  ?
-                        residentialData[0].node.data.ongoing_projects.map((item,value)=>{
-                          if(this.state.activeAddress == item.residential_links.document[0].data.flat_address.text){
-                            return(
-                              <div key={value} className="col-md-6 col-lg-4 col-sm-12 p-0 pl-sm-3 pr-sm-3">
-                              <div className="residences-card position-relative">
-                                <div className="residences-img">
-                                  <Img fluid={item.residential_links.document[0].data.banner[0].image.localFile.childImageSharp.fluid} alt="" width="100%"/>
-                                </div>
-                                <div className="rectangle position-absolute d-flex flex-column justify-content-around">
-                                    <div className="rectangle-title">
-                                        <h4 className="text-uppercase m-0 inner-section-title">{item.residential_links.document[0].data.title.text}</h4>
-                                    </div>
-                                    <div className="apartment-size d-flex justify-content-between align-items-center">
-                                      <span className="text-uppercase">{item.residential_links.document[0].data.flat_bhk.text}</span>
-                                      <Link to={`residential/${item.residential_links.uid}`}>
-                                        <i className="fas fa-arrow-right"></i>
-                                      </Link>
-                                    </div>
-                                    <div className="project-location">
-                                      <i className="fas fa-map-marker-alt"></i>
-                                      <span>{item.residential_links.document[0].data.flat_address.text}</span>
-                                    </div>
-                                </div>
-                              </div>
-                            </div>
-                            )
-                          }
-                          }) : 
-                        this.state.activeType ? 
-                        residentialData[0].node.data.ongoing_projects.map((item,value)=>{
-                          if(this.state.activeType == item.residential_links.document[0].data.flat_bhk.text){
-                            return(
-                            <div key={value} className="col-md-6 col-lg-4 col-sm-12 p-0 pl-sm-3 pr-sm-3">
-                              <div className="residences-card position-relative">
-                                <div className="residences-img">
-                                  <Img fluid={item.residential_links.document[0].data.banner[0].image.localFile.childImageSharp.fluid} alt="" width="100%"/>
-                                </div>
-                                <div className="rectangle position-absolute d-flex flex-column justify-content-around">
-                                    <div className="rectangle-title">
-                                        <h4 className="text-uppercase m-0 inner-section-title">{item.residential_links.document[0].data.title.text}</h4>
-                                    </div>
-                                    <div className="apartment-size d-flex justify-content-between align-items-center">
-                                      <span className="text-uppercase">{item.residential_links.document[0].data.flat_bhk.text}</span>
-                                      <Link to={`residential/${item.residential_links.uid}`}>
-                                        <i className="fas fa-arrow-right"></i>
-                                      </Link>
-                                    </div>
-                                    <div className="project-location">
-                                      <i className="fas fa-map-marker-alt"></i>
-                                      <span>{item.residential_links.document[0].data.flat_address.text}</span>
-                                    </div>
-                                </div>
-                              </div>
-                            </div>
-                          )}
-                        }):
-                        residentialData[0].node.data.ongoing_projects.map((item,value)=>{
-                          return(
-                              <div key={value} className="col-md-6 col-lg-4 col-sm-12 p-0 pl-sm-3 pr-sm-3">
+            { this.state.ongoingProject.length > 0 && 
+              <section className="ongoing-project">
+                <div className="residences">
+                  <div className="container">
+                    <div className="listing-heading d-flex align-items-center">
+                      <h4 className="text-uppercase heading mb-0">Ongoing Projects</h4>
+                    </div>
+                      <div className="row">
+                        {
+                          this.state.ongoingProject.map((item,value)=>{
+                              return(
+                                <div key={value} className="col-md-6 col-lg-4 col-sm-12 p-0 pl-sm-3 pr-sm-3">
                                 <div className="residences-card position-relative">
                                   <div className="residences-img">
                                     <Img fluid={item.residential_links.document[0].data.banner[0].image.localFile.childImageSharp.fluid} alt="" width="100%"/>
@@ -235,58 +235,63 @@ export default class Residential extends React.Component {
                                   </div>
                                 </div>
                               </div>
-                            )
-                          })
-                        }
-                      </div> 
+                              )
+                            })
+                          }
+                        </div> 
+                      </div>
                     </div>
-                  </div>
-                </section>
-            <section className="complete-project position-relative">
-              <div className="container">
-                <div className="listing-heading d-flex align-items-center">
-                  <h4 className="text-uppercase heading mb-0">Completed Projects</h4>
-                </div>
-                  <p className="text-left">{residentialData[0].node.data.completed_description.text}
-                  </p>
-                  <Slider  {...settings}>
-                  {
-                    residentialData[0].node.data.completed_project.map((item, value)=>{
-                    return(
-                      <div className="row"  key={value}> 
-                        <div>
-                          <div className="secondary-card position-relative ">
-                            <div className="secondary-card-img">
-                              <Img fluid={item.completed_links.document[0].data.banner[0].image.localFile.childImageSharp.fluid} alt="" width="100%"/>
-                            </div>
-                            <div className="secondary-card-rectangle position-absolute d-flex flex-column justify-content-around">
-                              <div className="title">
-                                <h4 className="text-uppercase m-0 inner-section-title">{item.completed_links.document[0].data.title.text}</h4>
+                  </section>
+            }
+            {
+              this.state.completedProject.length > 0 && 
+                <section className="complete-project position-relative">
+                  <div className="container">
+                    <div className="listing-heading d-flex align-items-center">
+                      <h4 className="text-uppercase heading mb-0">Completed Projects</h4>
+                    </div>
+                      <p className="text-left">{residentialData[0].node.data.completed_description.text}
+                      </p>
+                      <Slider  {...settings}>
+                      {
+                        this.state.completedProject.map((item, value)=>{
+                        return(
+                          <div className="row"  key={value}> 
+                            <div>
+                              <div className="secondary-card position-relative ">
+                                <div className="secondary-card-img">
+                                  <Img fluid={item.completed_links.document[0].data.banner[0].image.localFile.childImageSharp.fluid} alt="" width="100%"/>
+                                </div>
+                                <div className="secondary-card-rectangle position-absolute d-flex flex-column justify-content-around">
+                                  <div className="title">
+                                    <h4 className="text-uppercase m-0 inner-section-title">{item.completed_links.document[0].data.title.text}</h4>
+                                  </div>
+                                  <div className="apartment-size d-flex justify-content-between align-items-center">
+                                    <span className="text-uppercase">{item.completed_links.document[0].data.flat_bhk.text}</span>
+                                    <Link to={`residential/${item.completed_links.uid}`}>
+                                      <i className="fas fa-arrow-right"></i>
+                                    </Link>
+                                  </div>
+                                  <div className="project-location">
+                                    <i className="fas fa-map-marker-alt"></i>
+                                    <span>{item.completed_links.document[0].data.flat_address.text}</span>
+                                  </div>
+                                </div>
                               </div>
-                              <div className="apartment-size d-flex justify-content-between align-items-center">
-                                <span className="text-uppercase">{item.completed_links.document[0].data.flat_bhk.text}</span>
-                                <Link to={`residential/${item.completed_links.uid}`}>
-                                  <i className="fas fa-arrow-right"></i>
-                                </Link>
-                              </div>
-                              <div className="project-location">
-                                <i className="fas fa-map-marker-alt"></i>
-                                <span>{item.completed_links.document[0].data.flat_address.text}</span>
-                              </div>
+            
                             </div>
                           </div>
-        
-                        </div>
-                      </div>
-                    )
-                  })
-                  }
-                </Slider>
-                <span className="d-inline-block d-sm-none position-absolute pagination">
-                   {this.state.activeSlide} of 4
-                </span>
-              </div>
-            </section>
+                        )
+                      })
+                      }
+                    </Slider>
+                    <span className="d-inline-block d-sm-none position-absolute pagination">
+                      {this.state.activeSlide} of 4
+                    </span>
+                  </div>
+                </section>
+
+            }
           </section>
           <Footer/>
       </Layout>
