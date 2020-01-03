@@ -44,7 +44,7 @@ class Careers extends React.Component {
     const careerData = this.props.data.prismicCareers.data;
     console.log('career Data from career page', careerData);
         var settings = {
-      className:"center",
+      className:"career-center",
       centerMode: true,
       centerPadding: '200px',
       slidesToShow: 1,
@@ -63,28 +63,9 @@ class Careers extends React.Component {
         {
           breakpoint: 768,
           settings: {
-            arrows: false,
-            centerMode: true,
-            centerPadding: '100px',
-            slidesToShow: 1
-          }
-        },
-        {
-          breakpoint: 580,
-          settings: {
-            arrows: false,
-            centerMode: true,
-            centerPadding: '80px',
-            slidesToShow: 1
-          }
-        },
-        {
-          breakpoint: 500,
-          settings: {
-            arrows: false,
-            centerMode: true,
-            centerPadding: '40px',
-            slidesToShow: 1
+            arrows: true,
+            centerMode: false,
+            slidesToShow: 2
           }
         }
       ]
@@ -120,10 +101,7 @@ class Careers extends React.Component {
                       careerData.showcase.map((item,value)=>{
                         return(
                           <div key={value}>
-                            <div  className="slider-img image-ratio">
-                              {/* <h5>{item.heading.text}</h5>
-                              <p>{item.date.text}</p>
-                              <p>{item.location.text}</p> */}
+                            <div  className="slider-img">
                               <Img fluid={item.image.localFile.childImageSharp.fluid} alt="slider image" className="life-at-bramha-slider-image" />
                             </div>
                           </div>
