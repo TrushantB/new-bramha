@@ -113,3 +113,63 @@
     border:1px solid theme-color("tertiary");
     color:theme-color("tertiary");
   }
+@media (max-width:1200px){}
+@media (max-width:992px){
+    .career-tabs{
+      .button-tertiary {
+          padding: 16px 8px;
+      }
+    }   
+}
+@media (max-width:768px){
+  .career-center{
+    .slider-img{
+        margin: 0 15px;
+    }
+    .slick-slide{ 
+        text-align: center;
+        margin: 0;
+        -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+            transform: scale(1);  
+          .slider-img div::before{
+            display: none;
+          }
+      }  
+  }
+  .career-tabs{
+    .button-tertiary {
+        padding: 16px 4px;
+    }
+  }
+}
+@media (max-width:580px){
+    .career-center .slick-prev {
+        &:before{
+            content: "";
+            background: url('../../images/left.jpg') no-repeat center center;
+            padding: 12px 0px 16px 38px;
+          }
+        left: auto;
+        z-index: 1;
+        right: 100px;
+        top: auto;
+        bottom: -36px;
+    }
+    .career-center .slick-next {
+        transform: rotate(0deg);
+        &:before{
+            content: "";
+            background: url('../../images/right.jpg') no-repeat center center;
+            padding: 12px 0px 16px 38px;
+          }
+        right: 40px;
+        bottom: -27px;
+        top: auto;
+    }
+    .life-at-bramha .slider-wrapper {
+        background-color: transparent;
+        padding: 0px 0 40px;
+    }
+}
+@media (max-width:420px){}

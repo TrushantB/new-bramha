@@ -102,7 +102,7 @@ export default class Residential extends React.Component {
   
   render(){
     var settings = {
-      className: "slick-center",
+      className: "project-carousel",
       centerPadding: "60px",
       dots: false,
       infinite: false,
@@ -128,7 +128,7 @@ export default class Residential extends React.Component {
             
             centerMode: true,
             infinite: true,
-            centerPadding: "60px",
+            centerPadding: "50px",
             slidesToShow: 1,
             speed: 500
           }
@@ -259,7 +259,7 @@ export default class Residential extends React.Component {
                           <div className="row"  key={value}> 
                             <div>
                               <div className="secondary-card position-relative ">
-                                <div className="secondary-card-img">
+                                <div className="secondary-card-img image-ratio">
                                   <Img fluid={item.completed_links.document[0].data.banner[0].image.localFile.childImageSharp.fluid} alt="" width="100%"/>
                                 </div>
                                 <div className="secondary-card-rectangle position-absolute d-flex flex-column justify-content-around">
