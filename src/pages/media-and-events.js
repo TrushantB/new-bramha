@@ -89,7 +89,7 @@ class MediaAndEvents extends React.Component {
                             <div  className="slider-img image-ratio">
                               {/* <h5>{item.heading.text}</h5> */}
                               {/* <p>{item.date.text}</p> */}
-                              <p>{item.location.text}   {item.date.text}</p>
+                              <p className="location-date">{item.location.text}   {item.date.text}</p>
                               <img src={item.image.url}width="100%"/>
                             </div>
                           </div>
