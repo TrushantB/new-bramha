@@ -7,11 +7,14 @@ import mahareraa from '../styles/images/mahareha.png'
 import { Link } from '@reach/router';
 import Footer from '../components/footer';
 import { graphql } from 'gatsby';
+
 class KnoweldgeHub extends React.Component {
   render(){
     const postData = this.props.data.allPrismicKnowledgeHubPost.edges;
     const data = this.props.data.prismicKnoweldeHubMain.data;
-    console.log('data from knowledge hub page', postData);
+    const nriData = this.props.data.prismicNri.data;
+    console.log('data inside knoweldgehub main', data);
+    // console.log('data from knowledge hub page', postData);
     return(
       <Layout>
         <section className="page-heading-section container container-sm-fluid bg-color">
@@ -84,19 +87,19 @@ class KnoweldgeHub extends React.Component {
                 <div className="col-md-6 p-0 pl-md-3 pr-md-3 ">
                     <div className="guidelines-nris mt-100">
                       <div className="heading">
-                        <h3 className=" text-uppercase mb-3 section-title">Guidelines for NRIs</h3> 
+                        <h3 className=" text-uppercase mb-3 section-title">{nriData.title.text}</h3> 
                       </div>
                     <div className="guidelines-nris-wrapper position-relative mt-25">
                       <div className=" guidelines-nris-img">  
-                        <img src={guidelines1} alt="" width="100%"/>
+                        <img src={nriData.banner.url} alt="" width="100%"/>
                       </div> 
                       <div className="guidelines-nris-info position-absolute">
-                        <p className="mb-0 mb-sm-2 text-white">Guidelines For NRIs</p>
+                        <p className="mb-0 mb-sm-2 text-white">{nriData.title.text}</p>
                         <div className="know-more">
-                          <a href="#">
+                          <Link to="/nri">
                             <span className="mr-sm-5 mr-3">Know More</span>
                             <i className="fas fa-arrow-right"></i>
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -158,6 +161,11 @@ class KnoweldgeHub extends React.Component {
               </div>
             </div>
           </div> */}
+
+
+
+
+           
           <div className=" buyer-tips-banner">
       <div className="container container-sm-fluid">
         <div className="heading">
@@ -298,8 +306,10 @@ class KnoweldgeHub extends React.Component {
                           </div>
                     </div>
                 </div>
-        </div>
-    </div>
+            </div>
+          </div> 
+
+
         </section>
         <Footer />
       </Layout>
@@ -341,6 +351,41 @@ prismicKnoweldeHubMain{
     description{
       html
     }
+    knoweldge_hub_post{
+      knoweldge_post{
+        document{
+          data{
+            title{
+              text
+            }
+            heading{
+              text
+            }
+            short_description{
+              text
+            }
+            banner{
+              url
+            }
+          }
+        }
+      }
+    }
   }
 }
+  prismicNri{
+    data{
+      title{
+        text
+      }
+      heading{
+        text
+      }
+    	banner{
+        url
+      }
+    }
+  }
+
+  
 }`
