@@ -8,7 +8,7 @@
 // .slider-img{
 //   margin: 42px 56px 32px;
 // }
-.center .slick-prev {
+.project-carousel .slick-prev {
   left: 32px;
   z-index: 1;
   &:before{
@@ -17,7 +17,7 @@
       padding: 12px 0px 16px 38px;
 }
 }
-.center .slick-next {
+.project-carousel .slick-next {
 transform: rotate(180deg);
 right: 50px;
 &:before{
