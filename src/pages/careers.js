@@ -101,7 +101,10 @@ class Careers extends React.Component {
                       careerData.showcase.map((item,value)=>{
                         return(
                           <div key={value}>
-                            <div  className="slider-img">
+                            <div  className="slider-img image-ratio">
+                              {/* <h5>{item.heading.text}</h5>
+                              <p>{item.date.text}</p>
+                              <p>{item.location.text}</p> */}
                               <Img fluid={item.image.localFile.childImageSharp.fluid} alt="slider image" className="life-at-bramha-slider-image" />
                             </div>
                           </div>
