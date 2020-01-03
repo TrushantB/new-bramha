@@ -111,7 +111,7 @@ class Careers extends React.Component {
     
     const careerData = this.props.data.prismicCareers.data;
         var settings = {
-      className:"center",
+      className:"career-center",
       centerMode: true,
       centerPadding: '200px',
       slidesToShow: 1,
@@ -128,28 +128,9 @@ class Careers extends React.Component {
         {
           breakpoint: 768,
           settings: {
-            arrows: false,
-            centerMode: true,
-            centerPadding: '100px',
-            slidesToShow: 1
-          }
-        },
-        {
-          breakpoint: 580,
-          settings: {
-            arrows: false,
-            centerMode: true,
-            centerPadding: '80px',
-            slidesToShow: 1
-          }
-        },
-        {
-          breakpoint: 500,
-          settings: {
-            arrows: false,
-            centerMode: true,
-            centerPadding: '40px',
-            slidesToShow: 1
+            arrows: true,
+            centerMode: false,
+            slidesToShow: 2
           }
         }
       ]
