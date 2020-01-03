@@ -16,8 +16,8 @@ class HospitalityDetails extends React.Component {
             centerMode: true,
             centerPadding: '200px',
             slidesToShow: 1,
-            beforeChange: (current, next) => this.setState({ activeSlide: next }),
-            afterChange: current => this.setState({ activeSlide2: current }),
+            // beforeChange: (current, next) => this.setState({ activeSlide: next }),
+            // afterChange: current => this.setState({ activeSlide2: current }),
             responsive: [
               {
                 breakpoint: 992,

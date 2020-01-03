@@ -74,7 +74,7 @@
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
-    z-index: 99;
+    z-index: 100;
     left: 0;
     right: 0;
     bottom: 0;
@@ -114,23 +114,17 @@
 // Toggle Icon CSS
 .navbar-toggler{
     border: none;
-    z-index: 100;
-    &:focus{
-        outline: none;
-    }
-    &:not(.collapsed){
-        .icon-bar:after, .icon-bar:before, .icon-bar div{
-            height: 2px;
-        }
-        .icon-bar::before {
-          transform: translateY(6px) rotate(135deg);
-        }
-        .icon-bar::after {
-            transform: translateY(-8px) rotate(-135deg);
-        }
-        .icon-bar div {
-            transform: scale(0);
-        }
+    z-index: 101;
+}
+.icon-bar{
+    display: block;
+    width: 22px;
+    height: 3px;
+    border-radius: 1px;
+    background-color: theme-color("heading-primary");
+    transition: all 0.2s;
+    &.middle-bar{
+        width: 16px;
     }
 }
 .icon-bar {
