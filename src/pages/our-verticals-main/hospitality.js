@@ -7,6 +7,8 @@ class Hospitality extends React.Component {
   }
   render(){
     const data = this.props.gallery;
+    console.log('this.props.gallery hospitality', this.props.gallery);
+
     var settings = {
       dots: false,
       infinite: true,
@@ -17,10 +19,11 @@ class Hospitality extends React.Component {
       // adaptiveHeight : true,
     };
     
+    
     return(
       <Slider {...settings} className="home-slider">
       {
-        data.gallery.map((item,value)=>{
+        this.props.gallery && this.props.gallery.data.gallery.map((item,value) => {
           return(
             <section className="banner-section" key={value}>
               <img src={item.image.url} alt="banner here" className="banner-img" style={{width:'100%'}}/>

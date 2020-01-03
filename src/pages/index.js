@@ -26,15 +26,15 @@ class IndexPage extends React.Component {
     this.setState({residential: residentialData})
     this.setState({selectedVertical : < Residential galleryData = {residentialData}/>})
 
-    const commercialData = this.props.data.prismicCommercial.data;
+    const commercialData = this.props.data.prismicCommercial;
     this.setState({commercial: commercialData})
-    this.setState({selectedVertical : < Commerical galleryData = { commercialData } />})
+    this.setState({selectedVertical : < Commerical gallery = { commercialData } />})
 
-    const hospitalityData = this.props.data.prismicHospitality.data;
+    const hospitalityData = this.props.data.prismicHospitality;
     this.setState({hospitality: hospitalityData})
     this.setState({selectedVertical : < Hospitality gallery = { hospitalityData } />})
 
-    const leisureData  = this.props.data.prismicLeisureClub.data;
+    const leisureData  = this.props.data.prismicLeisureClub;
     this.setState({leisure: leisureData});
     this.setState({selectedVertical : < Leisure gallery = { leisureData } />})
   }
@@ -47,7 +47,7 @@ class IndexPage extends React.Component {
       break;
 
       case 'commercial': {
-        this.setState({selectedVertical : < Commerical galleryData = { this.state.commercial}/>})
+        this.setState({selectedVertical : < Commerical gallery = { this.state.commercial}/>})
       }
       break;
 
@@ -62,7 +62,7 @@ class IndexPage extends React.Component {
       break;
     }
   }
-  
+
   render() {
     return (
       <Layout>
