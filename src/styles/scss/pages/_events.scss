@@ -1,4 +1,4 @@
-.event{
+.events{
     .event-heading{
         .title{
             h2{
@@ -6,5 +6,10 @@
               font-weight: 400;
             }
         }
+    }
+    .section-title{
+      &::after{
+        margin: 0 auto;
+      }
     }
   }
