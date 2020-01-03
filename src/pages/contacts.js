@@ -131,7 +131,7 @@ class Contacts extends React.Component {
                           </div>
                         </div>
                         <div className="sumbit text-center mt-sm-0 mt-4">
-                          <button type="submit" className="btn-secondary btn">Download Brochure</button>
+                          <button type="submit" className="btn-secondary btn">Submits</button>
                         </div>  
                       </div> 
                     </div>
