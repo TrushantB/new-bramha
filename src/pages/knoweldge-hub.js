@@ -27,8 +27,7 @@ class KnoweldgeHub extends React.Component {
               <p className=" m-0" dangerouslySetInnerHTML={{__html: data.description.html}} />
             </div>
           </div>
-        </div>
-        
+         </div>
         </section>
         <section className="knowledge-hub mt-0 mt-md-5">
           {/* {
