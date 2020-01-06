@@ -678,7 +678,7 @@ button:focus{
                 padding: 0;
             }
             .listing-heading {
-                transform: translate(0px,-18px);
+                // transform: translate(0px,-18px);
                 margin-bottom: 48px;
             }
             .secondary-card {
@@ -715,6 +715,7 @@ button:focus{
             transform: scale(1.2);
             transition: transform .5s ease;
         }
+        
     }
 
     /*Residencial media query start*/
