@@ -536,7 +536,7 @@ button:focus{
             .contact-details{
                 .section-title::after{
                     content: "";
-                    margin: 0 auto; 
+                    margin: 0 auto;
                 }
                 i{
                     display: block;
@@ -626,7 +626,7 @@ button:focus{
     }
     //Hospitality Project
        .hospitality-projects{
-            margin: 0;
+            margin-bottom: 0;
             .residences{
                 background-color: #fff;
                 padding: 0;
@@ -672,13 +672,18 @@ button:focus{
         .residences{
             background: #fff;
         }
+        .ongoing-project{
+            .listing-heading {
+                transform: translate(-15px 0);
+            }
+         }
         .complete-project {
             .container{
                 background-color:theme-color("bg-color"); 
                 padding: 0;
             }
             .listing-heading {
-                // transform: translate(0px,-18px);
+                transform: translate(0px,-18px);
                 margin-bottom: 48px;
             }
             .secondary-card {
