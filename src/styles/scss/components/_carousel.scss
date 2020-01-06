@@ -44,6 +44,9 @@
     text-align: center;
     margin:0 auto; 
   }
+  .location-date{
+    display: none;
+  }
 } 
 .center, .career-center{
   .slick-current {
@@ -59,6 +62,14 @@
     -o-transition: transform .3s ease; 
     transition: transform .3s ease; 
     transition: transform .3s ease, -webkit-transform .3s ease;
+    
+  .location-date{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
   }
 } 
 .slick-slide .slider-img div::before {

@@ -45,6 +45,9 @@
 /*================================
 -------- Common Basic css start
 ================================*/ 
+.mb-10{
+    margin-bottom: 10px;
+}
 button:focus{
     outline: 0;
 }
@@ -132,7 +135,7 @@ button:focus{
     }
 }
 .pages{
-    margin-top: 36px;
+    margin-top: 32px;
 }
 
 // ------------- Award Start Here ----------------

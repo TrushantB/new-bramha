@@ -11,14 +11,16 @@ class MediaAndEvents extends React.Component {
   };  
   render(){
       const eventData = this.props.data.prismicMediaAndEvent.data;
+      const eventwiseData = this.props.data.allPrismicEvents.edges;
+      console.log('eventwiseData', eventwiseData);
       console.log("event data from media and event page",eventData);
       var settings = {
         className:"center",
         centerMode: true,
         centerPadding: '200px',
         slidesToShow: 1,
-        beforeChange: (current, next) => this.setState({ activeSlide: next }),
-        afterChange: current => this.setState({ activeSlide2: current }),
+        // beforeChange: (current, next) => this.setState({ activeSlide: next }),
+        // afterChange: current => this.setState({ activeSlide2: current }),
         responsive: [
           {
             breakpoint: 992,
@@ -61,49 +63,49 @@ class MediaAndEvents extends React.Component {
         return(
             <Layout>
                <section className="events" >
-                <div>
-                    <div className="container container-sm page-heading-section">
-                        <div className="padding-block-60"> 
-                            <h2 className="page-heading">{eventData.event_heading.text}</h2>
-                        </div>
-                        <div className="row  mr-0">
-                          <div className="col-12">
-                            <div className="main-paragraph"> 
-                            {eventData.description.text}
-                            </div>  
-                          </div>
-                      </div>
+                <section className="page-heading-section container container-sm-fluid bg-color">
+                  <div className="padding-block-60">
+                      <h2 className="page-heading">{eventData.event_heading.text}</h2> 
+                  </div>
+                <div className="row mr-0">
+                  <div className="col-12">
+                    <div className="main-paragraph"> 
+                      {eventData.description.text}
+                    </div>  
+                  </div>
+                </div>
+                </section>
+                <section className="event-slider">
+                    <div className="padding-block-60 d-flex justify-content-center flex-column w-100 ">
+                        <h3 className="section-title text-center text-uppercase">
+                          Time Realty Showcase
+                        </h3>
                     </div>
-                </div>
-                <div className="heading">
-                  <h3 className="text-center text-uppercase section-title "> Time Realty Showcase</h3>
-               </div>
-                <div className="bg-light-gray">
-                  <p>
-                  Location: Hotel Conrad, Pune.         |          Date: 28th & 29th July 2018
-                  </p>
-                <div className="container ">
-                <Slider {...settings}>
-                    {
-                      eventData.event.map((item,value)=>{
-                        return(
-                          <div key={value}>
-                            <div  className="slider-img image-ratio">
-                              {/* <h5>{item.heading.text}</h5> */}
-                              {/* <p>{item.date.text}</p> */}
-                              {/* <p>{item.location.text}   {item.date.text}</p> */}
-                              <img src={item.image.url}width="100%"/>
-                            </div>
-                          </div>
-                        )
-                      })
-                    }
-                  </Slider>
-                  <p className=" text-center pages mb-0">
-                   {this.state.activeSlide} of 4
-                </p>
-                </div>
-                </div>
+                    <div className="slider-wrapper">
+                        <div className="container">
+                            <p className="location text-center mb-0">
+                            <span className="mr-32">Location: Hotel Conrad, Pune.</span> | <span className="ml-32">Date: 28th & 29th July 2018</span>
+                            </p>
+                            <Slider {...settings}>
+                            {
+                            eventData.event.map((item,value)=>{
+                            return(
+                              <div key={value}>
+                                <div  className="slider-img image-ratio">
+                                  {/* <p className="location-date">{item.location.text}   {item.date.text}</p> */}
+                                  <img src={item.image.url}width="100%"/>
+                                </div>
+                              </div>
+                            )
+                            })
+                            }
+                            </Slider>
+                            <p className=" text-center pages mb-0">
+                              {this.state.activeSlide} of 4
+                            </p>
+                        </div>
+                    </div>
+                </section>   
             </section>
             <Footer />
             </Layout>
@@ -133,6 +135,61 @@ export const eventPage = graphql`{
         }
          location{
           text
+        }
+      }
+    }
+  }
+
+
+  allPrismicEvents{
+    edges{
+      node{
+        data{
+          title{
+            text
+          }
+          event1_title{
+            text
+          }
+          event1_location{
+            text
+          }
+          event1_date{
+            text
+          }
+          event1_showcase{
+            image{
+              url
+            }
+          }
+          event2_title{
+            text
+          }
+          event2_location{
+            text
+          }
+          event2_date{
+            text
+          }
+          event2_showcase{
+            image{
+              url
+            }
+          }
+          event3_title{
+            text
+          }
+          event3_location{
+            text
+          }
+          event3_date{
+            text
+          }
+          event3_showcase{
+            image{
+              url
+            }
+          }
         }
       }
     }
