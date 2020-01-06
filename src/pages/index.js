@@ -17,7 +17,27 @@ class IndexPage extends React.Component {
       residential: null,
       commercial: null,
       hospitality: null,
-      leisure: null
+      leisure: null,
+      ourVerticals:[
+        {
+          id:'residencial',
+          name:'Residencial',
+          class:'active'
+        },
+        {
+          id:'commercial',
+          name:'Commercial',
+
+        },
+        {
+          id:'hospitality',
+          name:'Hospitality'
+        },
+        {
+          id:'leisure',
+          name:'Leisure'
+        }
+      ]
     }
   }
 
@@ -40,7 +60,7 @@ class IndexPage extends React.Component {
   }
 
   handleVerticals(event){
-    switch(event){
+    switch(event.id){
       case 'residencial': {
         this.setState({selectedVertical : < Residential gallery = {this.state.residential}/>})
       }
@@ -61,6 +81,14 @@ class IndexPage extends React.Component {
       }
       break;
     }
+
+      this.state.ourVerticals.map((item) => {
+        if(item.id==event.id) {
+          item.class = "active";
+        } 
+        else item.class="";
+      })
+
   }
 
   render() {
@@ -71,7 +99,19 @@ class IndexPage extends React.Component {
           {this.state.selectedVertical}
           <section className="our-verticals-tabs container">
             <ul className="p-0 d-flex w-100 justify-content-around list-style-none text-uppercase nav nav-tabs border-0" id="myTab" role="tablist">
-              <li className="nav-item active" id="residencial-tab" data-toggle="tab" href="#residencial" role="tab" aria-controls="residencial" aria-selected="true">
+              {
+                this.state.ourVerticals.map((item) => {
+                  return(
+                    <li key={item.id} className={`nav-item ${item.class}`} id={item.id} data-toggle="tab" href={`#{item.id}`} role="tab" aria-controls={item.id} aria-selected="true" onClick={()=> {this.handleVerticals(item)}}>
+                      <Link to='/' className="tab" >
+                      <i className="far fa-building"></i>
+                     <span >{item.name}</span>
+                     </Link>
+                    </li>
+                  )
+                })
+              }
+              {/* <li className="nav-item active" id="residencial-tab" data-toggle="tab" href="#residencial" role="tab" aria-controls="residencial" aria-selected="true">
                 <Link to='/' className="tab" onClick={()=> {this.handleVerticals('residencial')}}>
                   <i className="far fa-building"></i>
                   <span > residencial </span>
@@ -95,7 +135,7 @@ class IndexPage extends React.Component {
                   <i className="fas fa-hot-tub"></i>
                   <span >leisure</span>
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </section>
         </div>

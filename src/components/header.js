@@ -11,10 +11,12 @@ const Header = ({ siteTitle }) => (
         <img src={img1} alt="BramhaCorp Logo" className="logo-img" />
       </Link>
       <button className="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="sr-only">Toggle navigation</span>
+      <span className="my-1 mx-2 close"><i className="fas fa-times"></i></span>
+       <span className="navbar-toggler-icon"></span>
+        {/* <span className="sr-only">Toggle navigation</span>
         <div className="icon-bar">
           <div></div>
-        </div>
+        </div> */}
       </button>
       <div className="collapse navbar-collapse p-0" id="navbarNav">
         <div className="d-flex justify-content-center bg-white py-2 w-100">
@@ -24,7 +26,7 @@ const Header = ({ siteTitle }) => (
         </div>
         <ul className="navbar-nav pt-5">
           <li className="nav-item active">
-            <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
+            <Link className="nav-link" to="/">Home</Link>
           </li>
           <li className="nav-item dropdown border-0">
             <Link className="nav-link dropdown-toggle" to="/about-us" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
