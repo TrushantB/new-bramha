@@ -112,7 +112,13 @@ export const pageDataResidential = graphql`{
     data{
 			gallery{
         image{
-          url
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1150, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }
@@ -121,7 +127,13 @@ export const pageDataResidential = graphql`{
     data{
       gallery{
         image{
-          url
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1150, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }
@@ -130,7 +142,13 @@ export const pageDataResidential = graphql`{
     data{
       gallery{
         image{
-          url
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1150, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }
@@ -139,7 +157,13 @@ export const pageDataResidential = graphql`{
     data{
       gallery{
         image{
-          url
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1150, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }

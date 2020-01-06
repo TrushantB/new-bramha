@@ -4,9 +4,8 @@ import hero1 from '../styles/images/hero1.png';
 import aboutLoan from '../styles/images/about-loan.jpg';
 import guidelines1 from '../styles/images/guidelines1.jpg';
 import mahareraa from '../styles/images/mahareha.png'
-import { Link } from '@reach/router';
 import Footer from '../components/footer';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 class KnoweldgeHub extends React.Component {
   render(){
@@ -100,10 +99,10 @@ class KnoweldgeHub extends React.Component {
                                   <div className="guidelines-nris-info position-absolute">
                                     <p className="mb-0 mb-sm-2 text-white">{item.data.heading.text}</p>
                                     <div className="know-more pt-0">
-                                      <a href="#">
+                                      <Link to="/nri">
                                           <span className="mr-sm-5 mr-3">Know More</span>
                                           <i className="fas fa-arrow-right"></i>
-                                      </a>
+                                      </Link>
                                     </div>
                                   </div>
                                 </div>
