@@ -39,6 +39,7 @@
     .rectangle-title{
         .inner-section-title{
             color: theme-color("headig-secondary");
+            letter-spacing: 0.2px;
         }
     }
    
@@ -47,6 +48,8 @@
     }
     .fa-map-marker-alt{
         margin-right: 4px;
+        color: black;
+        opacity: 0.4;
     }
     .apartment-size{
         span{
@@ -63,6 +66,7 @@
     }
     i {
         font-size: 12px;
+        
     }
   }
 }
@@ -117,6 +121,7 @@
         i {
             color:theme-color("icon-color");
         }
+        
         .fa-map-marker-alt{
             margin-right: 4px;
         }

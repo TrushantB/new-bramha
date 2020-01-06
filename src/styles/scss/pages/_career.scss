@@ -16,7 +16,7 @@
     }
     .slider-wrapper{
         background-color: theme-color("bg-color");
-        padding:40px;
+        padding:50px 0;
         .life-at-bramha-slide{
             height:80vh;
             .life-at-bramha-slider-image{
@@ -112,4 +112,9 @@
     background-color: transparent;
     border:1px solid theme-color("tertiary");
     color:theme-color("tertiary");
+  }
+
+
+  .mb-22 {
+      margin-bottom: 22px;
   }
