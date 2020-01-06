@@ -4,52 +4,100 @@ import { graphql } from 'gatsby';
 import Slider from "react-slick";
 import Img from "gatsby-image"
 import Footer from '../components/footer';
-
 class Careers extends React.Component {
   constructor(){
     super();
     this.state = {
       flag : false,
       dataSource : null,
-      collapseDescription: null
+      jobOpening:[],
+      jobOpeningStore:[],
+      jobOpenningButtons:[
+        {
+          id:'sales',
+          name:'Sales'
+        },
+        {
+          id:'human_resources',
+          name:'Human Resources'
+        },
+        {
+          id:'management',
+          name:'Management'
+        },
+        {
+          id:'engineers',
+          name:'Engineers'
+        },
+        {
+          id:'accounts',
+          name:'Accounts'
+        },
+        {
+          id:'project_manager',
+          name:'Project Manager'
+        },
+        {
+          id:'admin',
+          name:'Admin'
+        },
+        {
+          id:'architect',
+          name:'Architect'
+        }
+      ]
     }
   }
-
   componentWillMount() {
+    let jobOpening=[];
     const careerData = this.props.data.prismicCareers.data;
-    this.setState({collapseDescription: careerData.job_opening})
+    careerData.architect.map((item) => {
+     jobOpening.push(item)
+    })
+    careerData.admin.map((item) => {
+     jobOpening.push(item)
+    })
+    careerData.project_manager.map((item) => {
+      jobOpening.push(item)
+    })
+    careerData.accounts.map((item) => {
+     jobOpening.push(item)
+    })
+    careerData.engineers.map((item) => {
+     jobOpening.push(item)
+    })
+    careerData.management.map((item) => {
+     jobOpening.push(item)
+    })
+    careerData.human_resources.map((item) => {
+     jobOpening.push(item)
+    })
+    careerData.sales.map((item) => {
+     jobOpening.push(item)
+    })
+    this.setState({jobOpening,jobOpeningStore:jobOpening,dataSource:careerData})
   }
 
-  handleOpportunity(event){
-    console.log('handleOpportunity', event);
-    this.setState({dataSource : event})
+  handleJobOpening(event){
+    let jobOpening=[];
+    this.state.dataSource[event].map((item) => {
+      jobOpening.push(item)
+    })
+    this.setState({jobOpening})
+    this.state.jobOpenningButtons.map((item) => {
+      if(item.id==event) {
+        item.class="active";
+      }
+      else item.class="";
+    })
   }
-
-  // render(){
-  //   const careerData = this.props.data.prismicCareers.data;
-  //   console.log('career Data from career page', careerData);
-
-  //   var settings = {
-  //     dots: true,
-  //     infinite: true,
-  //     speed: 500,
-  //     slidesToShow: 1,
-  //     slidesToScroll: 1,
-  //     autoplay : true,
-  //     adaptiveHeight : true,
-  //   };
-  
   render(){
-    
     const careerData = this.props.data.prismicCareers.data;
-    console.log('career Data from career page', careerData);
         var settings = {
-      className:"center",
+      className:"career-center",
       centerMode: true,
       centerPadding: '200px',
       slidesToShow: 1,
-      // beforeChange: (current, next) => this.setState({ activeSlide: next }),
-      // afterChange: current => this.setState({ activeSlide2: current }),
       responsive: [
         {
           breakpoint: 992,
@@ -63,46 +111,27 @@ class Careers extends React.Component {
         {
           breakpoint: 768,
           settings: {
-            arrows: false,
-            centerMode: true,
-            centerPadding: '100px',
-            slidesToShow: 1
-          }
-        },
-        {
-          breakpoint: 580,
-          settings: {
-            arrows: false,
-            centerMode: true,
-            centerPadding: '80px',
-            slidesToShow: 1
-          }
-        },
-        {
-          breakpoint: 500,
-          settings: {
-            arrows: false,
-            centerMode: true,
-            centerPadding: '40px',
-            slidesToShow: 1
+            arrows: true,
+            centerMode: false,
+            slidesToShow: 2
           }
         }
       ]
     };
     return(
       <Layout>
-        <div className="career-page">   
+        <div className="career-page">
           <section className="banner-section">
             <Img fluid={careerData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
           </section>
           <section className="career-info container-md bg-color">
             <div className="row padding-block-60">
-              <h2 className="col-12 page-heading">{careerData.title.text}</h2> 
+              <h2 className="col-12 page-heading">{careerData.title.text}</h2>
             </div>
             <div className="row">
               <div className="col-12">
                 <p className="text mb-4">
-                 {careerData.description.text} 
+                 {careerData.description.text}
                 </p>
               </div>
             </div>
@@ -144,32 +173,31 @@ class Careers extends React.Component {
               <div className="col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
                 <form action="">
                   <input type="search" onChange={(e)=>{
-                   let data =  careerData.job_opening.filter(res => {
+                   let data =  this.state.jobOpeningStore.filter(res => {
                       return res.position.text.toLocaleLowerCase().match(e.target.value.toLocaleLowerCase())
                     })
-                    this.setState({collapseDescription : data })
+                    this.setState({jobOpening : data })
                     }}
                    placeholder="Search by title or Department" className="form-control search-bar rounded-0 pl-5"/>
                   <i className="fas fa-search search-btn"></i>
                 </form>
                 <div className="career-tabs py-4 d-flex flex-wrap justify-content-between align-content-between">
-                  {
-                    careerData.job_opening.map((item,value)=>{
-                      return(
-                        <div key={value} className="btn-wraper">
-                          <button onClick={()=>{this.handleOpportunity(item)}} className="button-tertiary w-100 mt-2" 
-                           data-toggle="collapse" data-target={`#collapseOne${value}`}  aria-expanded="true" aria-controls="collapseOne"
-                          >{item.title1.text}</button>
-                        </div>
-                      )
-                    })
-                  }
+                  {this.state.jobOpenningButtons.map((item) => {
+                    return (
+                      <div className="btn-wraper" key={item.id}>
+                        <button onClick={() => this.handleJobOpening(item.id)} className={`button-tertiary w-100 mt-2 ${item.class}`}>
+                         {item.name}
+                        </button>
+                      </div>
+                    )
+                  })}
+                </div>
                 </div>
               </div>
-              <div className="col-12 accordions-sect mt-30">
+              <div className="col-12 accordions-sect">
                 <div className="accordion" id="accordionExample">
                   {
-                    this.state.collapseDescription && this.state.collapseDescription.map((item,value)=>{
+                    this.state.jobOpening && this.state.jobOpening.map((item,value)=>{
                       return(
                         <div className="card border-0" key={value}>
                           <div className="card-header" id="headingOne">
@@ -182,7 +210,7 @@ class Careers extends React.Component {
                           </div>
                           <div id={`collapseOne${value}`} className="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                             <div className="card-body">
-                              <div className="card-description card-head d-flex align-content-around text black-text flex-column">
+                              <div className="card-head d-flex align-content-around text black-text flex-column">
                                 <span>Qualification: – {item.qualification.text}</span>
                                 <span>Total Experience: – {item.total_experience.text}</span>
                                 <span>Location: – {item.location.text }</span>
@@ -202,8 +230,7 @@ class Careers extends React.Component {
                   }
                 </div>
               </div>
-            </div>
-          </section>     
+          </section>
           <section className="text-center padding-block-60">
             <div>
               <h2 className=" section-title text-center">
@@ -223,7 +250,6 @@ class Careers extends React.Component {
   }
 }
 export default Careers;
-
 export const careerPage = graphql`{
   prismicCareers{
     data{
@@ -233,7 +259,7 @@ export const careerPage = graphql`{
       description{
         text
       }
-			banner{
+      banner{
         localFile {
           childImageSharp {
             fluid(maxWidth: 1150, quality: 100) {
@@ -285,6 +311,142 @@ export const careerPage = graphql`{
           text
         }
         description2{
+          text
+        }
+      }
+      architect{
+        position{
+          text
+        }
+        qualification{
+          text
+        }
+        total_experience{
+          text
+        }
+        description2{
+          text
+        }
+        location{
+          text
+        }
+      }
+      admin{
+        position{
+          text
+        }
+        qualification{
+          text
+        }
+        total_experience{
+          text
+        }
+        description2{
+          text
+        }
+        location{
+          text
+        }
+      }
+      project_manager{
+        position{
+          text
+        }
+        qualification{
+          text
+        }
+        total_experience{
+          text
+        }
+        description2{
+          text
+        }
+        location{
+          text
+        }
+      }
+      accounts{
+        position{
+          text
+        }
+        qualification{
+          text
+        }
+        total_experience{
+          text
+        }
+        description2{
+          text
+        }
+        location{
+          text
+        }
+      }
+      engineers{
+        position{
+          text
+        }
+        qualification{
+          text
+        }
+        total_experience{
+          text
+        }
+        description2{
+          text
+        }
+        location{
+          text
+        }
+      }
+      management{
+        position{
+          text
+        }
+        qualification{
+          text
+        }
+        total_experience{
+          text
+        }
+        description2{
+          text
+        }
+        location{
+          text
+        }
+      }
+      human_resources{
+        position{
+          text
+        }
+        qualification{
+          text
+        }
+        total_experience{
+          text
+        }
+        description2{
+          text
+        }
+        location{
+          text
+        }
+      }
+      sales{
+        position{
+          text
+        }
+        qualification{
+          text
+        }
+        total_experience{
+          text
+        }
+        description2{
+          text
+        }
+        location{
           text
         }
       }
