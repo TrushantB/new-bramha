@@ -27,8 +27,7 @@ class KnoweldgeHub extends React.Component {
               <p className=" m-0" dangerouslySetInnerHTML={{__html: data.description.html}} />
             </div>
           </div>
-        </div>
-        
+         </div>
         </section>
         <section className="knowledge-hub mt-0 mt-md-5">
           {/* {
@@ -198,7 +197,7 @@ class KnoweldgeHub extends React.Component {
                         </div>
                         <div className="row mt-30">
                             <div className="col-md-12 col-lg-6 col-6 pr-0 pr-md-3 pr-lg-0">
-                                <div className="card-primary-img">
+                                <div className="card-primary-img image-ratio33">
                                      <img src={aboutLoan} alt="" width="100%"/>
                                 </div>
                             </div>
@@ -246,7 +245,7 @@ class KnoweldgeHub extends React.Component {
                         </div>
                         <div className="row mt-30">
                             <div className="col-md-12 col-lg-6 col-6 pr-0 pr-md-3 pr-lg-0">
-                                <div className="card-primary-img">
+                                <div className="card-primary-img image-ratio33">
                                       <img src={aboutLoan} alt="" width="100%"/>
                                 </div>
                             </div>
@@ -265,7 +264,7 @@ class KnoweldgeHub extends React.Component {
                     </div>
                 </div>
                 <div className="col-md-6 d-sm-none p-0">
-                  <div className="maha-rera-mb d-flex position-relative">
+                  <div className="maha-rera-mb d-flex position-relative ">
                     <img src={mahareraa} alt="" className="pl-4"/>
                     <div className="ml-3 ">
                       <h3 className="inner-section-title mb-1">Maha <span className="text-uppercase">Rera</span> </h3>
@@ -286,7 +285,7 @@ class KnoweldgeHub extends React.Component {
                             </div>
                               <div className="row mt-30">
                                   <div className="col-md-12 col-lg-6 col-6 pr-0 pr-md-3 pr-lg-0">
-                                      <div className="card-primary-img">
+                                      <div className="card-primary-img image-ratio33">
                                             <img src={aboutLoan} alt="" width="100%"/>
                                       </div>
                                   </div>
