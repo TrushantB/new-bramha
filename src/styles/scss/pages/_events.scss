@@ -1,3 +1,9 @@
+.mr-32{
+  margin-right: 32px;
+}
+.ml-32{
+  margin-left: 32px;
+}
 .events{
     .event-heading{
         .title{
@@ -13,12 +19,15 @@
       }
     }
     .event-slider{
+      .padding-block-60{
+        padding-bottom: 8px;
+      }
       .slider-wrapper{
         background-color: theme-color("bg-color");
-        padding:20px 0 36px 0;
+        padding:12px 0 36px 0;
       }
       .slick-slide{
-        padding-top:28px;
+        padding-top:12px;
       }
       .slick-arrow{
         top:auto;

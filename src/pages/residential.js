@@ -255,7 +255,7 @@ export default class Residential extends React.Component {
                     <div className="listing-heading d-flex align-items-center">
                       <h4 className="text-uppercase heading mb-0">Completed Projects</h4>
                     </div>
-                      <p className="text-left">{residentialData[0].node.data.completed_description.text}
+                      <p className="text-left d-none d-sm-block">{residentialData[0].node.data.completed_description.text}
                       </p>
                       <Slider  {...settings}>
                       {

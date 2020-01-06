@@ -45,6 +45,9 @@
 /*================================
 -------- Common Basic css start
 ================================*/ 
+.mb-10{
+    margin-bottom: 10px;
+}
 button:focus{
     outline: 0;
 }
@@ -676,9 +679,10 @@ button:focus{
             }
             .listing-heading {
                 transform: translate(0px,-18px);
+                margin-bottom: 48px;
             }
             .secondary-card {
-                margin: 40px  28px;
+                margin: 20px  28px;
             }
             .slick-list{
                 padding-bottom: 40px!important;
