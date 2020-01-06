@@ -16,7 +16,7 @@
     }
     .slider-wrapper{
         background-color: theme-color("bg-color");
-        padding:40px;
+        padding:50px 0;
         .life-at-bramha-slide{
             height:80vh;
             .life-at-bramha-slider-image{
@@ -114,6 +114,11 @@
     border:1px solid theme-color("tertiary");
     color:theme-color("tertiary");
   }
+
+
+  .mb-22 {
+      margin-bottom: 22px;
+  }
 @media (max-width:1200px){}
 @media (max-width:992px){
     .career-tabs{
@@ -173,4 +178,8 @@
         padding: 0px 0 40px;
     }
 }
+<<<<<<< HEAD
 @media (max-width:420px){}
+=======
+@media (max-width:420px){}
+>>>>>>> 288df65ddf194475f71ae201d2656d51a2e2e8ee
