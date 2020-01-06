@@ -11,6 +11,8 @@ class MediaAndEvents extends React.Component {
   };  
   render(){
       const eventData = this.props.data.prismicMediaAndEvent.data;
+      const eventwiseData = this.props.data.allPrismicEvents.edges;
+      console.log('eventwiseData', eventwiseData);
       console.log("event data from media and event page",eventData);
       var settings = {
         className:"center",
@@ -81,13 +83,16 @@ class MediaAndEvents extends React.Component {
                     </div>
                     <div className="slider-wrapper">
                         <div className="container">
+                            <p className="location text-center mb-0">
+                            <span className="mr-32">Location: Hotel Conrad, Pune.</span> | <span className="ml-32">Date: 28th & 29th July 2018</span>
+                            </p>
                             <Slider {...settings}>
                             {
                             eventData.event.map((item,value)=>{
                             return(
                               <div key={value}>
                                 <div  className="slider-img image-ratio">
-                                  <p className="location-date">{item.location.text}   {item.date.text}</p>
+                                  {/* <p className="location-date">{item.location.text}   {item.date.text}</p> */}
                                   <img src={item.image.url}width="100%"/>
                                 </div>
                               </div>
@@ -130,6 +135,61 @@ export const eventPage = graphql`{
         }
          location{
           text
+        }
+      }
+    }
+  }
+
+
+  allPrismicEvents{
+    edges{
+      node{
+        data{
+          title{
+            text
+          }
+          event1_title{
+            text
+          }
+          event1_location{
+            text
+          }
+          event1_date{
+            text
+          }
+          event1_showcase{
+            image{
+              url
+            }
+          }
+          event2_title{
+            text
+          }
+          event2_location{
+            text
+          }
+          event2_date{
+            text
+          }
+          event2_showcase{
+            image{
+              url
+            }
+          }
+          event3_title{
+            text
+          }
+          event3_location{
+            text
+          }
+          event3_date{
+            text
+          }
+          event3_showcase{
+            image{
+              url
+            }
+          }
         }
       }
     }

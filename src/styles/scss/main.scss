@@ -45,6 +45,9 @@
 /*================================
 -------- Common Basic css start
 ================================*/ 
+.mb-10{
+    margin-bottom: 10px;
+}
 button:focus{
     outline: 0;
 }
@@ -91,7 +94,7 @@ button:focus{
     font-size: 20px;
     font-weight: 500;
     letter-spacing: -0.44px;
-    color: theme-color("tertiary");
+    color: #988a63;
     text-align:left;
     &::after{
         content: "";
@@ -669,6 +672,11 @@ button:focus{
         .residences{
             background: #fff;
         }
+        .ongoing-project{
+            .listing-heading {
+                transform: translate(-15px, 0px);
+            }
+         }
         .complete-project {
             .container{
                 background-color:theme-color("bg-color"); 
@@ -676,9 +684,10 @@ button:focus{
             }
             .listing-heading {
                 transform: translate(0px,-18px);
+                margin-bottom: 48px;
             }
             .secondary-card {
-                margin: 40px  28px;
+                margin: 20px  28px;
             }
             .slick-list{
                 padding-bottom: 40px!important;
@@ -711,6 +720,7 @@ button:focus{
             transform: scale(1.2);
             transition: transform .5s ease;
         }
+        
     }
 
     /*Residencial media query start*/

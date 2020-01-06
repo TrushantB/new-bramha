@@ -4,7 +4,6 @@ import { graphql } from 'gatsby';
 import Slider from "react-slick";
 import Img from "gatsby-image"
 import Footer from '../components/footer';
-
 class Careers extends React.Component {
   constructor(){
     super();
@@ -13,7 +12,7 @@ class Careers extends React.Component {
       dataSource : null,
       jobOpening:[],
       jobOpeningStore:[],
-      jobOpenningButtons:[ 
+      jobOpenningButtons:[
         {
           id:'sales',
           name:'Sales'
@@ -49,11 +48,9 @@ class Careers extends React.Component {
       ]
     }
   }
-
   componentWillMount() {
     let jobOpening=[];
     const careerData = this.props.data.prismicCareers.data;
-    console.log(careerData);
     careerData.architect.map((item) => {
      jobOpening.push(item)
     })
@@ -78,27 +75,15 @@ class Careers extends React.Component {
     careerData.sales.map((item) => {
      jobOpening.push(item)
     })
-   console.log("this.state.jobOpening",jobOpening);
     this.setState({jobOpening,jobOpeningStore:jobOpening,dataSource:careerData})
   }
 
-  // handleJobOpeningButtons(id) {
-  // this.state.jobOpenningButtons.map((item) => {
-  //   if(item.id==id) {
-  //     item.class="active";
-  //   }
-  //   else item.class="";
-  // })
-  // }
-
   handleJobOpening(event){
     let jobOpening=[];
-    console.log('handleOpportunity', event);
     this.state.dataSource[event].map((item) => {
       jobOpening.push(item)
     })
     this.setState({jobOpening})
-
     this.state.jobOpenningButtons.map((item) => {
       if(item.id==event) {
         item.class="active";
@@ -106,9 +91,7 @@ class Careers extends React.Component {
       else item.class="";
     })
   }
-
   render(){
-    
     const careerData = this.props.data.prismicCareers.data;
         var settings = {
       className:"career-center",
@@ -137,18 +120,18 @@ class Careers extends React.Component {
     };
     return(
       <Layout>
-        <div className="career-page">   
+        <div className="career-page">
           <section className="banner-section">
             <Img fluid={careerData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
           </section>
           <section className="career-info container-md bg-color">
-            <div className="row padding-block-60">
+            <div className="row padding-block-60 career-info-row">
               <h2 className="col-12 page-heading">{careerData.title.text}</h2> 
             </div>
-            <div className="row">
+            <div className="row career-info-row">
               <div className="col-12">
                 <p className="text mb-4">
-                 {careerData.description.text} 
+                 {careerData.description.text}
                 </p>
               </div>
             </div>
@@ -187,8 +170,8 @@ class Careers extends React.Component {
                   {careerData.looking_for_a_job_opening.text}
                 </h3>
               </div>
-              <div className="col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
-                <form action="">
+              <div className="job-opening col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
+                <form action="" className="mb-24">
                   <input type="search" onChange={(e)=>{
                    let data =  this.state.jobOpeningStore.filter(res => {
                       return res.position.text.toLocaleLowerCase().match(e.target.value.toLocaleLowerCase())
@@ -198,6 +181,7 @@ class Careers extends React.Component {
                    placeholder="Search by title or Department" className="form-control search-bar rounded-0 pl-5"/>
                   <i className="fas fa-search search-btn"></i>
                 </form>
+
                 <div className="career-tabs py-4 d-flex flex-wrap justify-content-between align-content-between">
                   {this.state.jobOpenningButtons.map((item) => {
                     return (
@@ -233,8 +217,8 @@ class Careers extends React.Component {
                                 <span>Location: – {item.location.text }</span>
                               </div>
                               <div className="description">
-                                <p className="text black-text">Description</p>
-                                <p className="text">
+                                <p className="text black-text mb-0">Description</p>
+                                <p className="text desc_info mb-32">
                                   {item.description2.text}
                                 </p>
                               </div>
@@ -247,7 +231,7 @@ class Careers extends React.Component {
                   }
                 </div>
               </div>
-          </section>     
+          </section>
           <section className="text-center padding-block-60">
             <div>
               <h2 className=" section-title text-center">
@@ -267,7 +251,6 @@ class Careers extends React.Component {
   }
 }
 export default Careers;
-
 export const careerPage = graphql`{
   prismicCareers{
     data{
@@ -277,7 +260,7 @@ export const careerPage = graphql`{
       description{
         text
       }
-			banner{
+      banner{
         localFile {
           childImageSharp {
             fluid(maxWidth: 1150, quality: 100) {
@@ -332,8 +315,6 @@ export const careerPage = graphql`{
           text
         }
       }
-
-
       architect{
         position{
           text
@@ -351,8 +332,6 @@ export const careerPage = graphql`{
           text
         }
       }
-      
-      
       admin{
         position{
           text
@@ -370,7 +349,6 @@ export const careerPage = graphql`{
           text
         }
       }
-      
       project_manager{
         position{
           text
@@ -383,12 +361,11 @@ export const careerPage = graphql`{
         }
         description2{
           text
-        }  
+        }
         location{
           text
-        }      
+        }
       }
-      
       accounts{
         position{
           text
@@ -404,10 +381,8 @@ export const careerPage = graphql`{
         }
         location{
           text
-        }        
+        }
       }
-      
-      
       engineers{
         position{
           text
@@ -420,13 +395,11 @@ export const careerPage = graphql`{
         }
         description2{
           text
-        } 
+        }
         location{
           text
-        }       
+        }
       }
-      
-      
       management{
         position{
           text
@@ -439,12 +412,11 @@ export const careerPage = graphql`{
         }
         description2{
           text
-        } 
+        }
         location{
           text
-        }       
+        }
       }
-      
       human_resources{
         position{
           text
@@ -460,9 +432,8 @@ export const careerPage = graphql`{
         }
         location{
           text
-        }        
+        }
       }
-      
       sales{
         position{
           text
@@ -478,9 +449,8 @@ export const careerPage = graphql`{
         }
         location{
           text
-        }        
+        }
       }
-
     }
   }
 }`
