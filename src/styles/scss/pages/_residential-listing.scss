@@ -84,8 +84,12 @@
 }
 @media(max-width:580px){
     .ongoing-project{
-        .listing-heading {
-            transform: translate(-15px 0);
-        }
+        .ongoing-project{
+            .residences{
+                .listing-heading {
+                    transform: translate(-15px, 0px);
+                }
+            }
+         }
     }
 }
