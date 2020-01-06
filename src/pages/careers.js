@@ -166,7 +166,7 @@ class Careers extends React.Component {
                   }
                 </div>
               </div>
-              <div className="col-12 accordions-sect">
+              <div className="col-12 accordions-sect mt-30">
                 <div className="accordion" id="accordionExample">
                   {
                     this.state.collapseDescription && this.state.collapseDescription.map((item,value)=>{
@@ -182,7 +182,7 @@ class Careers extends React.Component {
                           </div>
                           <div id={`collapseOne${value}`} className="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                             <div className="card-body">
-                              <div className="card-head d-flex align-content-around text black-text flex-column">
+                              <div className="card-description card-head d-flex align-content-around text black-text flex-column">
                                 <span>Qualification: – {item.qualification.text}</span>
                                 <span>Total Experience: – {item.total_experience.text}</span>
                                 <span>Location: – {item.location.text }</span>
