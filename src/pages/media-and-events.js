@@ -79,7 +79,9 @@ class MediaAndEvents extends React.Component {
                   <h3 className="text-center text-uppercase section-title "> Time Realty Showcase</h3>
                </div>
                 <div className="bg-light-gray">
-                  
+                  <p>
+                  Location: Hotel Conrad, Pune.         |          Date: 28th & 29th July 2018
+                  </p>
                 <div className="container ">
                 <Slider {...settings}>
                     {
@@ -89,7 +91,7 @@ class MediaAndEvents extends React.Component {
                             <div  className="slider-img image-ratio">
                               {/* <h5>{item.heading.text}</h5> */}
                               {/* <p>{item.date.text}</p> */}
-                              <p>{item.location.text}   {item.date.text}</p>
+                              {/* <p>{item.location.text}   {item.date.text}</p> */}
                               <img src={item.image.url}width="100%"/>
                             </div>
                           </div>
