@@ -14,9 +14,7 @@ class Residential extends React.Component {
       slidesToShow: 1, 
       slidesToScroll: 1,
       autoplay : true,
-      // adaptiveHeight : true,
     };
-    // const data = this.props.gallery.data;
     console.log('this.props.gallery residential', this.props.gallery);
     return(
       <Slider {...settings} className="home-slider">
