@@ -83,13 +83,16 @@ class MediaAndEvents extends React.Component {
                     </div>
                     <div className="slider-wrapper">
                         <div className="container">
+                            <p className="location text-center mb-0">
+                            <span className="mr-32">Location: Hotel Conrad, Pune.</span> | <span className="ml-32">Date: 28th & 29th July 2018</span>
+                            </p>
                             <Slider {...settings}>
                             {
                             eventData.event.map((item,value)=>{
                             return(
                               <div key={value}>
                                 <div  className="slider-img image-ratio">
-                                  <p className="location-date">{item.location.text}   {item.date.text}</p>
+                                  {/* <p className="location-date">{item.location.text}   {item.date.text}</p> */}
                                   <img src={item.image.url}width="100%"/>
                                 </div>
                               </div>
