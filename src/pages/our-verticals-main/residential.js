@@ -1,5 +1,6 @@
-import React from 'react'
+import React from 'react';
 import Slider from "react-slick";
+import Img from 'gatsby-image';
 
 class Residential extends React.Component {
   constructor(props){
@@ -23,7 +24,7 @@ class Residential extends React.Component {
           this.props.gallery && this.props.gallery.data.gallery.map((item,value) => {
             return(
               <section className="banner-section" key={value}>
-                <img src={item.image.url} alt="banner here" className="banner-img" style={{width:'100%'}}/>
+                <Img fluid={item.image.localFile.childImageSharp.fluid} alt="banner here" className="banner-img" style={{width:'100%'}}/>
               </section>  
             )
           })
