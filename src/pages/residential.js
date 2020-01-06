@@ -15,7 +15,8 @@ export default class Residential extends React.Component {
       allAddress: null,
       dataSource: null,
       ongoingProject: null,
-      completedProject: null,
+      ongoingProjectStore: null,
+      completedProjectStore: null,
       activeProject: '',
       activeAddress: '',
       activeType: ''
@@ -24,12 +25,16 @@ export default class Residential extends React.Component {
   }
 
   addressSelect = (e) => {
-    this.setState({activeAddress: e.target.value})
+    let ongoing = this.state.ongoingProject.length > 0 && this.state.ongoingProjectStore.filter(res => res.residential_links.document[0].data.flat_address.text==e.target.value)
+    let completed =  this.state.completedProject.length > 0 && this.state.completedProjectStore.filter(res => res.completed_links.document[0].data.flat_address.text==e.target.value)
+    this.setState({ongoingProject:ongoing,completedProject:completed})
   }
 
+
   typeSelect = (e) => {
-    
-    // this.setState({activeType: e.target.value})
+    let ongoing = this.state.ongoingProject.length > 0 && this.state.ongoingProjectStore.filter(res => res.residential_links.document[0].data.flat_bhk.text==e.target.value)
+    let completed =  this.state.completedProject.length > 0 && this.state.completedProjectStore.filter(res => res.completed_links.document[0].data.flat_bhk.text==e.target.value)
+    this.setState({ongoingProject:ongoing,completedProject:completed})
   }
   
   sortAddress = (e) => {
@@ -79,7 +84,7 @@ export default class Residential extends React.Component {
     const allData = this.props.data.allPrismicResidential.edges;
     this.setState({dataSource: allData});
       allData.map((item,index) => {
-        this.setState({ongoingProject: item.node.data.ongoing_projects});
+        this.setState({ongoingProject: item.node.data.ongoing_projects, ongoingProjectStore:item.node.data.ongoing_projects});
         // this.sortAddress(item.node.data.ongoing_projects);
          item.node.data.ongoing_projects.map((item)=>{
            type.push(item.residential_links.document[0].data.flat_bhk.text);
@@ -88,7 +93,7 @@ export default class Residential extends React.Component {
       })
 
       allData.map((item,index) => {
-        this.setState({completedProject: item.node.data.completed_project});
+        this.setState({completedProject: item.node.data.completed_project, completedProjectStore:item.node.data.completed_project});
          item.node.data.completed_project.map((item)=>{
            type.push(item.completed_links.document[0].data.flat_bhk.text);
            address.push(item.completed_links.document[0].data.flat_address.text);
@@ -102,7 +107,7 @@ export default class Residential extends React.Component {
   
   render(){
     var settings = {
-      className: "slick-center",
+      className: "project-carousel",
       centerPadding: "60px",
       dots: false,
       infinite: false,
@@ -128,7 +133,7 @@ export default class Residential extends React.Component {
             
             centerMode: true,
             infinite: true,
-            centerPadding: "60px",
+            centerPadding: "50px",
             slidesToShow: 1,
             speed: 500
           }
@@ -179,8 +184,8 @@ export default class Residential extends React.Component {
                   <option value="completed_project">Completed Project</option>
                 </select>
                
-                <select className="" defaultValue="" onChange={this.addressSelect}>
-                   <option value="" disabled  hidden>Select Type </option>
+                <select className="" defaultValue="" onChange={(e)=> this.addressSelect(e)}>
+                   <option value="" disabled  hidden>Select Address </option>
                 {
                    this.state.allAddress.map((data, index)=>{
                     return(
@@ -190,7 +195,7 @@ export default class Residential extends React.Component {
                 }
                 </select>
 
-                <select className="" defaultValue="" placeholder="Budget" onChange={this.typeSelect} >
+                <select className="" defaultValue="" placeholder="Budget" onChange={(e) => this.typeSelect(e)} >
                   <option value="" disabled  hidden>Select Type </option>
                   {
                     this.state.allType.map((data, index) => {
@@ -259,7 +264,7 @@ export default class Residential extends React.Component {
                           <div className="row"  key={value}> 
                             <div>
                               <div className="secondary-card position-relative ">
-                                <div className="secondary-card-img">
+                                <div className="secondary-card-img image-ratio">
                                   <Img fluid={item.completed_links.document[0].data.banner[0].image.localFile.childImageSharp.fluid} alt="" width="100%"/>
                                 </div>
                                 <div className="secondary-card-rectangle position-absolute d-flex flex-column justify-content-around">

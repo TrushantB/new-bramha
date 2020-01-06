@@ -143,7 +143,7 @@ class AboutUs extends React.Component {
                       <h2 className="inner-section-title">
                         {verticalsData.vertical1.document[0].data.title.text}
                       </h2>
-                      <Link to='our-verticals-main/residential' className="link-text vertical-card-link d-flex justify-content-between align-items-center">
+                      <Link to='/residential' className="link-text vertical-card-link d-flex justify-content-between align-items-center">
                           <span> View Projects </span> 
                           <i className="fas fa-arrow-right"></i>
                       </Link>
@@ -159,7 +159,7 @@ class AboutUs extends React.Component {
                       <h2 className="inner-section-title">
                         {verticalsData.vertical3.document[0].data.title.text}
                       </h2>
-                      <Link to='/our-verticals' className="link-text vertical-card-link d-flex justify-content-between align-items-center">
+                      <Link to='/hospitality' className="link-text vertical-card-link d-flex justify-content-between align-items-center">
                           <span> View Projects </span> 
                           <i className="fas fa-arrow-right"></i>
                       </Link>

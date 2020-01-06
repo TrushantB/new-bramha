@@ -60,9 +60,9 @@ class NRI extends React.Component {
                       return(
                         <div key={value} className="card border-0">
                           <div className="card-header" id="headingOne">
-                            <h5 className="mb-0 d-flex justify-content-between align-items-center section-title-secondary">
+                            <h5 className="mb-0 d-flex justify-content-between align-items-center section-title-secondary border-0" data-toggle="collapse" data-target={`#collapseOne${value}`} aria-expanded="true" aria-controls="collapseOne">
                               {item.heading1.text}
-                              <button className="btn btn-link" type="button" data-toggle="collapse" data-target={`#collapseOne${value}`} aria-expanded="true" aria-controls="collapseOne">
+                              <button className="btn btn-link">
                                 <i className="fas fa-chevron-down"></i>
                               </button>
                             </h5>

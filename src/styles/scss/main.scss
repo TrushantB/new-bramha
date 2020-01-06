@@ -45,7 +45,33 @@
 /*================================
 -------- Common Basic css start
 ================================*/ 
-
+button:focus{
+    outline: 0;
+}
+.image-ratio23 {
+    position: relative;
+    padding-bottom: 66.6%;
+    img{
+        position: absolute;
+        height: 100%;
+    }
+}
+.image-ratio33 {
+    position: relative;
+    padding-bottom: 100%;
+    img{
+        position: absolute;
+        height: 100%;
+    }
+}
+.image-ratio816 {
+    position: relative;
+    padding-bottom: 50%;
+    img{
+        position: absolute;
+        height: 100%;
+    }
+}
 // -------- Input Box Css start Here ----------
 
 .page-heading{
@@ -106,7 +132,7 @@
     }
 }
 .pages{
-    margin-top: 36px;
+    margin-top: 32px;
 }
 
 // ------------- Award Start Here ----------------
@@ -161,6 +187,7 @@
         }
     }
     @media (max-width:992px){
+
         //------- about us ----
         .management-card .management-card-body {
             padding: 20px 38px;
@@ -173,13 +200,15 @@
         .card-primary{
             .card-primary-img{
                img{
-                height: 210px;
                 object-fit: cover;
                }
            }
         }  
         
         .knowledge-hub{
+            .image-ratio33{
+                padding-bottom:63.3%;
+            }
             .mt-100{
                 margin-top: 0;
             }
@@ -282,6 +311,9 @@
         }
         // Knowledge Hub
         .knowledge-hub{
+            .mt-140{
+                margin-top: 80px;
+            }
             .mt-92{
                 margin-top: 0;
             }
@@ -529,11 +561,11 @@
                 .inner-section-title{
                     display: block;
                 }
-                .card-primary-img{
-                   img{
-                    height: 115px;
-                   }
-                }
+                // .card-primary-img{
+                //    img{
+                //     height: 115px;
+                //    }
+                // }
                 .bg-light-gray{
                     padding: 16px 20px;
                     .know-more{
@@ -646,10 +678,10 @@
                 transform: translate(0px,-18px);
             }
             .secondary-card {
-                margin: 40px  24px;
+                margin: 40px  28px;
             }
             .slick-list{
-                padding-bottom: 124px!important;
+                padding-bottom: 40px!important;
             }
          .slick-next{
             bottom: -35px;
