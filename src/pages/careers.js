@@ -136,13 +136,13 @@ class Careers extends React.Component {
           </section>
           <section className="container">
             <div className="row">
-              <div className="padding-block-60 d-flex justify-content-center flex-column w-100 align-items-center ">
+              <div className="padding-block-60 section-title-wrapper d-flex justify-content-center flex-column w-100 align-items-center ">
                 <h3 className="section-title text-center">
                   {careerData.looking_for_a_job_opening.text}
                 </h3>
               </div>
               <div className="col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
-                <form action="" class="mb-22">
+                <form action="">
                   <input type="search" onChange={(e)=>{
                    let data =  careerData.job_opening.filter(res => {
                       return res.position.text.toLocaleLowerCase().match(e.target.value.toLocaleLowerCase())
@@ -152,12 +152,12 @@ class Careers extends React.Component {
                    placeholder="Search by title or Department" className="form-control search-bar rounded-0 pl-5"/>
                   <i className="fas fa-search search-btn"></i>
                 </form>
-                <div className="career-tabs  d-flex flex-wrap justify-content-between align-content-between">
+                <div className="career-tabs py-4 d-flex flex-wrap justify-content-between align-content-between">
                   {
                     careerData.job_opening.map((item,value)=>{
                       return(
-                        <div key={value} className="btn-wraper mb-22">
-                          <button onClick={()=>{this.handleOpportunity(item)}} className="button-tertiary w-100" 
+                        <div key={value} className="btn-wraper">
+                          <button onClick={()=>{this.handleOpportunity(item)}} className="button-tertiary w-100 mt-2" 
                            data-toggle="collapse" data-target={`#collapseOne${value}`}  aria-expanded="true" aria-controls="collapseOne"
                           >{item.title1.text}</button>
                         </div>
