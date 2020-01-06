@@ -96,10 +96,10 @@ class Careers extends React.Component {
             <Img fluid={careerData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
           </section>
           <section className="career-info container-md bg-color">
-            <div className="row padding-block-60">
+            <div className="row padding-block-60 career-info-row">
               <h2 className="col-12 page-heading">{careerData.title.text}</h2> 
             </div>
-            <div className="row">
+            <div className="row career-info-row">
               <div className="col-12">
                 <p className="text mb-4">
                  {careerData.description.text} 
@@ -141,8 +141,8 @@ class Careers extends React.Component {
                   {careerData.looking_for_a_job_opening.text}
                 </h3>
               </div>
-              <div className="col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
-                <form action="">
+              <div className="job-opening col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
+                <form action="" className="mb-24">
                   <input type="search" onChange={(e)=>{
                    let data =  careerData.job_opening.filter(res => {
                       return res.position.text.toLocaleLowerCase().match(e.target.value.toLocaleLowerCase())
@@ -152,12 +152,13 @@ class Careers extends React.Component {
                    placeholder="Search by title or Department" className="form-control search-bar rounded-0 pl-5"/>
                   <i className="fas fa-search search-btn"></i>
                 </form>
+
                 <div className="career-tabs py-4 d-flex flex-wrap justify-content-between align-content-between">
                   {
                     careerData.job_opening.map((item,value)=>{
                       return(
-                        <div key={value} className="btn-wraper">
-                          <button onClick={()=>{this.handleOpportunity(item)}} className="button-tertiary w-100 mt-2" 
+                        <div key={value} className="btn-wraper mb-24">
+                          <button onClick={()=>{this.handleOpportunity(item)}} className="button-tertiary w-100" 
                            data-toggle="collapse" data-target={`#collapseOne${value}`}  aria-expanded="true" aria-controls="collapseOne"
                           >{item.title1.text}</button>
                         </div>
@@ -165,8 +166,8 @@ class Careers extends React.Component {
                     })
                   }
                 </div>
-              </div>
-              <div className="col-12 accordions-sect mt-30">
+                </div>
+              <div className="col-12 accordions-sect">
                 <div className="accordion" id="accordionExample">
                   {
                     this.state.collapseDescription && this.state.collapseDescription.map((item,value)=>{
@@ -188,8 +189,8 @@ class Careers extends React.Component {
                                 <span>Location: – {item.location.text }</span>
                               </div>
                               <div className="description">
-                                <p className="text black-text">Description</p>
-                                <p className="text">
+                                <p className="text black-text mb-0">Description</p>
+                                <p className="text desc_info mb-32">
                                   {item.description2.text}
                                 </p>
                               </div>
