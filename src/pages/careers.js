@@ -119,7 +119,7 @@ class Careers extends React.Component {
         {
           breakpoint: 992,
           settings: {
-            arrows: false,
+            arrows: true,
             centerMode: true,
             centerPadding: '100px',
             slidesToShow: 1
