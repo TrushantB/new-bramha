@@ -16,7 +16,7 @@ class MediaAndEvents extends React.Component {
       console.log('eventwiseData', eventwiseData);
       // console.log("event data from media and event page",eventData);
       var settings = {
-        className:"center",
+        
         centerMode: true,
         centerPadding: '200px',
         slidesToShow: 1,
@@ -102,7 +102,7 @@ class MediaAndEvents extends React.Component {
                             })
                             }
                             </Slider>
-                            <p className=" text-center pages mb-0">
+                            <p className=" text-center pages m-0">
                               {this.state.activeSlide} of 4
                             </p>
                         </div>
@@ -134,7 +134,7 @@ class MediaAndEvents extends React.Component {
                             })
                             }
                             </Slider>
-                            <p className=" text-center pages mb-0">
+                            <p className=" text-center pages m-0">
                               {this.state.activeSlide} of 4
                             </p>
                         </div>
@@ -166,7 +166,7 @@ class MediaAndEvents extends React.Component {
                             })
                             }
                             </Slider>
-                            <p className=" text-center pages mb-0">
+                            <p className=" text-center pages m-0">
                               {this.state.activeSlide} of 4
                             </p>
                         </div>

@@ -1,5 +1,10 @@
 
 .detail-page{
+    .download-btn{
+        .btn-secondary{
+            margin: 100px 0 120px 0;
+        }
+    }
     .section-title{
        margin-bottom: 24px;
         &:after{
@@ -46,11 +51,12 @@
             opacity: 0.7;
             font-size: 16px;
         }
-    }
 
+    }
     .slick-next{       
         transform: rotate(180deg);
         right: 66px;
+        top:50%;
         &:before{
             content: "";
             background: url('../../images/left-arrow-1.png') no-repeat center center;
@@ -60,6 +66,7 @@
       .slick-prev{
           left: 60px;
           z-index:1;
+          top:50%;
         &:before{
             content: "";
             background: url('../../images/left-arrow-1.png') no-repeat center center;
@@ -84,11 +91,7 @@
          }
      }
  }
- .download-btn{
-    .btn-secondary{
-        margin: 100px 0 120px 0;
-    }
-}
+ 
 @media (max-width:1200px){
     .slider-img {
         margin: 40px 36px;
@@ -141,11 +144,12 @@
     .slider-img {
         margin: 8px 24px;
     }
+    
     .slider-page{
         margin-bottom: 0;
         .slider-wrapper{
             background: transparent;
-            padding-top: 0;
+            padding: 0;
             .pages{
                 margin-left: 36px;
                 text-align: left!important;
@@ -178,10 +182,22 @@
                   }
               }
         }
+    
     }
-    .location-sections{
-        margin-top: 20px;
+    .location-sections,
+    .proximities-section{
+        margin-top:44px;
     }
+    .slider-wrapper-gray{
+        padding: 24px 0;
+    }
+   .antity-sections{
+       margin-bottom: 80px;
+
+   }
+   .detail-maharera-sections{
+       padding-bottom: 0;
+   }
 }
 @media (max-width:420px){
     .slider-img {

@@ -10,10 +10,10 @@
   .slider-wrapper-gray{
       padding: 48px 0;
       background: theme-color(bg-color);
-      .showcase-slider{
-          max-height:75vh;
-          overflow: hidden;
-      }
+    //   .showcase-slider{
+    //       max-height:75vh;
+    //       overflow: hidden;
+    //   }
   }
 
   
@@ -75,6 +75,10 @@
           }
       }
   }
+  .proximities-section{
+      margin-top: 100px;
+  }
+  
   // ------------- Contact Start Here ----------------
   .contact-section{
       .contact-form{
