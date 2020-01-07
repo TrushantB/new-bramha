@@ -162,14 +162,7 @@ export const pageDataResidential = graphql`{
       }
 			gallery{
         image{
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 1150, quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp
-                presentationWidth
-              }
-            }
-          }
+          url
         }
       }
     }
