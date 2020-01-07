@@ -94,22 +94,24 @@ class IndexPage extends React.Component {
         <SEO title="Home"/>
         <div>
           { this.state.selectedVertical}
-          <section className="our-verticals-tabs container">
-            <ul className="p-0 d-flex w-100 justify-content-around list-style-none text-uppercase nav nav-tabs border-0" id="myTab" role="tablist">
-              {
-                this.state.ourVerticals.map((item) => {
-                  return(
-                    <li key={item.id} className={`nav-item ${item.class}`} id={item.id} data-toggle="tab" href={`#{item.id}`} role="tab" aria-controls={item.id} aria-selected="true" onClick={()=> {this.handleVerticals(item)}}>
-                      <Link to='/' className="tab" >
-                      <i className="far fa-building"></i>
-                      <span >{item.name}</span>
-                     </Link>
-                    </li>
-                  )
-                })
-              }
-            </ul>
-          </section>
+          <footer className="our-verticals-tabs d-flex">
+            <div className="container d-flex">
+              <ul className="p-0 d-flex w-100 justify-content-around list-style-none text-uppercase nav nav-tabs border-0" id="myTab" role="tablist">
+                {
+                  this.state.ourVerticals.map((item) => {
+                    return(
+                      <li key={item.id} className={`nav-item d-flex align-items-center ${item.class}`} id={item.id} data-toggle="tab" href={`#{item.id}`} role="tab" aria-controls={item.id} aria-selected="true" onClick={()=> {this.handleVerticals(item)}}>
+                        <Link to='/' className="tab d-flex">
+                          <i className="far fa-building"></i>
+                          <span >{item.name}</span>
+                      </Link>
+                      </li>
+                    )
+                  })
+                }
+              </ul>
+            </div>
+          </footer>
         </div>
       </Layout>
     )
