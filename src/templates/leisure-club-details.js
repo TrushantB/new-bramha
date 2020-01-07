@@ -5,10 +5,10 @@ import Footer from '../components/footer'
 import Img from 'gatsby-image'
 import Slider from 'react-slick'
 
-class CommercialDetails extends React.Component {
+class LeisureDetails extends React.Component {
     render(){
-        const commercialData = this.props.data.prismicOurVerticalsArticle;
-        console.log('commercialData', commercialData);
+        const leisureData = this.props.data.prismicOurVerticalsArticle;
+        console.log('leisureData', leisureData);
               var settings = {
                 className:"center",
                 centerMode: true,
@@ -57,30 +57,31 @@ class CommercialDetails extends React.Component {
               }; 
             return(
                 <Layout>
-                    <SEO title={commercialData.data.title.text} />
+                    <SEO title={leisureData.data.title.text}/>
                     <main className="detail-page">
                         {/* <!-- ---------------- banner start here ---------------- --> */}
                             <section className="banner-section">
-                                <Img fluid={commercialData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
+                                {console.log('t', leisureData.data.title.text)}
+                                <Img fluid={leisureData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
                             </section>
                         {/* <!-- ---------------- banner end here ---------------- --> */}
                         {/*  {/* <!------------------ middle section start here ----------------------> */}
                         <section className="detail-page-sections pt-sm-0 container-md bg-color">
                             <div className="logo-card">
                                 <picture className="d-flex justify-content-start justify-content-sm-center align-items-center">
-                                <source media="(min-width: 581px)" srcSet={commercialData.data.logo.url} />
-                                <img src={commercialData.data.logo.url} alt="hospital Logo" className="w-50" />
+                                <source media="(min-width: 581px)" srcSet={leisureData.data.logo.url} />
+                                <img src={leisureData.data.logo.url} alt="hospital Logo" className="w-50" />
                                 </picture>
                             </div>
                             <div className="row padding-block-60">
                               <h2 className="page-heading text-uppercase"> 
-                                  {commercialData.data.heading.text}     
+                                  {leisureData.data.heading.text}     
                               </h2> 
                             </div>
                             <div className="row">
                                 <div className="col-12">
                                     <p className="mb-4">
-                                       {commercialData.data.description.text}
+                                       {leisureData.data.description.text}
                                     </p>
                                     <a href="#" className="link-text d-flex justify-content-around align-items-center btn-tertiary hospitality-viewmore">
                                         <span> View Website </span> 
@@ -99,7 +100,7 @@ class CommercialDetails extends React.Component {
                                   <div className="container">
                                   <Slider {...settings}>
                                         {
-                                          commercialData.data.showcase.map((item,value)=>{
+                                          leisureData.data.showcase.map((item,value)=>{
                                             return(
                                               <div key={value}>
                                                 <div  className="slider-img image-ratio">
@@ -138,11 +139,11 @@ class CommercialDetails extends React.Component {
             )
     }
 }
-export default CommercialDetails;
+export default LeisureDetails;
 
 
-export const hospitalityPage = graphql` 
-    query commercialData($uid: String!) {
+export const leisurePage = graphql` 
+    query leisureData($uid: String!) {
     prismicOurVerticalsArticle(uid: { eq: $uid }) {
     data{
         title{

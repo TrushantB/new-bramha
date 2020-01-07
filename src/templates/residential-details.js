@@ -5,6 +5,7 @@ import Img from 'gatsby-image';
 import Slider from 'react-slick';
 import Layout from '../components/layout'
 import Footer from '../components/footer'
+import SEO from '../components/seo';
 
 class VerticalPage extends React.Component {
   render(){
@@ -58,6 +59,7 @@ class VerticalPage extends React.Component {
     };
     return(
       <Layout>
+        <SEO title={verticalData.data.title.text}/>
         <main className="detail-page">
             {/* <!--   ---------------- banner start here ---------------- --> */}
               <section className="banner-section">

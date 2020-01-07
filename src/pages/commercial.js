@@ -8,10 +8,9 @@ import { graphql, Link } from 'gatsby'
 class Commercial extends React.Component {
     render(){
         const commercialData = this.props.data.allPrismicCommercial.edges[0].node.data;
-        console.log('commercialData', commercialData);
         return(
             <Layout>
-                <SEO title="Commercial"/>
+                <SEO title={commercialData.title.text}/>
                 <section className=" page-heading-section container container-sm-fluid bg-color">
                     <div className="padding-block-60">
                         <h2 className="page-heading">{commercialData.title.text}</h2> 
@@ -30,7 +29,6 @@ class Commercial extends React.Component {
                                 <div className="row">
                                     {
                                         commercialData.all_vericals.map((item2) => {
-                                            console.log('item.verticals', item2.verticals.uid)
                                             return(
                                                 item2.verticals.document.map((item, index)=>{
                                                    return(
@@ -45,9 +43,9 @@ class Commercial extends React.Component {
                                                                 </div>
                                                                 <div className="apartment-size d-flex justify-content-between align-items-center">
                                                                     <span className="text-uppercase">{item.data.flat_bhk.text}</span>
-                                                                    <a href="#">
+                                                                    <div>
                                                                     <i className="fas fa-arrow-right"></i>
-                                                                    </a>
+                                                                    </div>
                                                                 </div>
                                                                 <div className="project-location">
                                                                     <i className="fas fa-map-marker-alt"></i>
@@ -109,7 +107,7 @@ export const commercialPage = graphql`{
                                     ...GatsbyImageSharpFluid
                                   }
                                 }
-                              }
+                            }
                         }
                     }
                   }
