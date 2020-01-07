@@ -167,7 +167,7 @@ export default class Residential extends React.Component {
     console.log('residentialData', residentialData);
     return(
       <Layout>
-        <SEO title="MediaAndEvents"/>
+        <SEO title="Residential"/>
         {
           residentialData.map((item,value)=>{
             return(
