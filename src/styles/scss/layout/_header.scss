@@ -3,6 +3,9 @@
 // -----------------------------------------------------------------------------
 .header{
     box-shadow: 1px 0px 6px rgba(00,00,00,0.2);
+    .navbar{
+        padding: 0.4rem 1rem;
+    }
     .navbar-nav{
         display: flex;
         flex-direction: column;
@@ -151,7 +154,12 @@
 .navbar-light .navbar-toggler{
     position: relative;
 }
-
+.navbar-toggler>.close {
+    display:inline;
+}
+.navbar-toggler.collapsed>.close, .navbar-toggler:not(.collapsed)>.navbar-toggler-icon {
+    display:none;
+}
 @media (max-width: 580px){
     .navbar {
         .navbar-collapse {
