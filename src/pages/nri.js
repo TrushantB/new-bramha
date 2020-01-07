@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import Layout from '../components/layout';
 import Footer from '../components/footer';
+import SEO from '../components/seo';
 
 class NRI extends React.Component {
   constructor(){
@@ -21,6 +22,7 @@ class NRI extends React.Component {
     const nriData = this.props.data.prismicNri.data;
     return(
       <Layout>
+        <SEO title="NRI"/>
         <div>
           <section className="banner-section">
             <Img fluid={nriData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
