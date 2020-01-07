@@ -100,9 +100,9 @@ class IndexPage extends React.Component {
                 this.state.ourVerticals.map((item) => {
                   return(
                     <li key={item.id} className={`nav-item d-flex align-items-center ${item.class}`} id={item.id} data-toggle="tab" href={`#{item.id}`} role="tab" aria-controls={item.id} aria-selected="true" onClick={()=> {this.handleVerticals(item)}}>
-                      <Link to='/' className="tab" >
-                      <i className="far fa-building"></i>
-                      <span >{item.name}</span>
+                      <Link to='/' className="tab d-flex">
+                        <i className="far fa-building"></i>
+                        <span >{item.name}</span>
                      </Link>
                     </li>
                   )
