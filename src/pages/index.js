@@ -150,6 +150,9 @@ export default IndexPage
 export const pageDataResidential = graphql`{
   prismicResidential{
     data{
+      banner{
+        url
+      }
 			gallery{
         image{
           localFile {
@@ -165,6 +168,9 @@ export const pageDataResidential = graphql`{
   }
   prismicCommercial{
     data{
+      banner{
+        url
+      }
       gallery{
         image{
           localFile {
@@ -180,6 +186,9 @@ export const pageDataResidential = graphql`{
   }
   prismicHospitality{
     data{
+      banner{
+        url
+      }
       gallery{
         image{
           localFile {
@@ -195,6 +204,9 @@ export const pageDataResidential = graphql`{
   }
   prismicLeisureClub{
     data{
+      banner{
+        url
+      }
       gallery{
         image{
           localFile {
