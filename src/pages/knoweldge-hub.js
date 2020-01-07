@@ -3,6 +3,7 @@ import Layout from '../components/layout'
 import Footer from '../components/footer';
 import SEO from "../components/seo";
 import { graphql, Link } from 'gatsby';
+import Img from 'gatsby-image';
 
 class KnoweldgeHub extends React.Component {
   render(){
@@ -34,7 +35,7 @@ class KnoweldgeHub extends React.Component {
                 </div>
                   <div className="position-relative buyer-tips-banner-img">
                     <div className="buyer-tips-image">
-                      <img src={buyerData.banner.url} alt="" width="100%"/>
+                      <Img fluid={buyerData.banner.localFile.childImageSharp.fluid} alt="" width="100%"/>
                     </div>
                     <div className="buyer-tips-box position-absolute  d-flex justify-content-between flex-column">
                       <h3 className=" text-uppercase m-0 section-title d-none d-md-block">{buyerData.title.text}</h3>
@@ -65,7 +66,7 @@ class KnoweldgeHub extends React.Component {
                               <div className="row mt-30">
                                   <div className="col-md-12 col-lg-6 col-6 pr-0 pr-md-3 pr-lg-0">
                                       <div className="card-primary-img image-ratio33">
-                                          <img src={item.topics.document[0].data.banner.url} alt="" width="100%"/>
+                                          <Img fluid={item.topics.document[0].data.banner.localFile.childImageSharp.fluid} alt="" width="100%"/>
                                       </div>
                                   </div>
                                   <div className="col-md-12 col-lg-6  col-6 pl-0 pl-md-3 pl-lg-0 ">
@@ -87,7 +88,7 @@ class KnoweldgeHub extends React.Component {
                                 </div>
                               <div className="guidelines-nris-wrapper position-relative mt-30">
                                 <div className=" guidelines-nris-img">
-                                  <img src={ item.topics.document[0].data.banner.url } alt="" width="100%"/>
+                                  <Img fluid={item.topics.document[0].data.banner.localFile.childImageSharp.fluid } alt="" width="100%"/>
                                 </div>
                                 <div className="guidelines-nris-info position-absolute">
                                   <p className="mb-0 mb-sm-2 text-white">{item.topics.document[0].data.heading.text}</p>
@@ -137,7 +138,14 @@ export const knowledgePage = graphql`{
                   text
                 }
                 banner{
-                  url
+                  localFile {
+                    childImageSharp {
+                        fluid(maxWidth: 1150, quality: 100) {
+                            ...GatsbyImageSharpFluid
+                            presentationWidth
+                        }
+                    }
+                }
                 }
                 short_description{
                   text
@@ -153,7 +161,14 @@ export const knowledgePage = graphql`{
                   text
                 }
                 banner{
-                  url
+                  localFile {
+                    childImageSharp {
+                        fluid(maxWidth: 1150, quality: 100) {
+                            ...GatsbyImageSharpFluid
+                            presentationWidth
+                        }
+                    }
+                }
                 }
                 short_description{
                   text
@@ -169,7 +184,14 @@ export const knowledgePage = graphql`{
                   text
                 }
                 banner{
-                  url
+                  localFile {
+                    childImageSharp {
+                        fluid(maxWidth: 1150, quality: 100) {
+                            ...GatsbyImageSharpFluid
+                            presentationWidth
+                        }
+                    }
+                }
                 }
                 short_description{
                   text
@@ -188,7 +210,14 @@ export const knowledgePage = graphql`{
                   text
                 }
                 banner{
-                  url
+                  localFile {
+                    childImageSharp {
+                        fluid(maxWidth: 1150, quality: 100) {
+                            ...GatsbyImageSharpFluid
+                            presentationWidth
+                        }
+                    }
+                }
                 }
               }
             }
@@ -207,7 +236,14 @@ export const knowledgePage = graphql`{
         text
       }
       banner{
-        url
+        localFile {
+          childImageSharp {
+              fluid(maxWidth: 1150, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                  presentationWidth
+              }
+          }
+      }
       }
     }
   }
