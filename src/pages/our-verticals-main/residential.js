@@ -15,7 +15,7 @@ class Residential extends React.Component {
     //   slidesToScroll: 1,
     //   autoplay : true,
     // };
-    // console.log('this.props.gallery residential', this.props.gallery);
+    console.log('this.props.gallery residential', this.props.gallery);
     return(
       <div className="home-slider">
         {
