@@ -39,7 +39,7 @@ class Contacts extends React.Component {
                     {
                       contactData.address.map((item,value)=>{
                         return(
-                          <address className="text mt-3 mt-md-0 mb-0" key={value}>{item.contact_address.text}</address>
+                          <address className="text mt-0  mb-0" key={value}>{item.contact_address.text}</address>
                         )
                       })
                     }
@@ -55,7 +55,7 @@ class Contacts extends React.Component {
                     {
                       contactData.email_address.map((item,value)=>{
                         return(
-                          <p className=" mb-0 mt-3 mt-md-0" key={value}> <a href={`mailto:${item.email_add.text}`}> {item.email_add.text} </a> </p>
+                          <p className=" mb-0 mt-0 " key={value}> <a href={`mailto:${item.email_add.text}`}> {item.email_add.text} </a> </p>
                         )
                       })
                     }
@@ -72,7 +72,7 @@ class Contacts extends React.Component {
                       contactData.contact_info.map((item,value)=>{
                       return(
                         // <p key={value} className="description mb-0">{item.title1.text}{" "}{item.number}</p>
-                        <p className=" mb-0 mt-3 mt-md-0" key={value}>{item.title1.text}{" "}  <a href={`tel:${item.number}`}>{item.number} </a></p>
+                        <p className=" mb-0 mt-0 " key={value}>{item.title1.text}{" "}  <a href={`tel:${item.number}`}>{item.number} </a></p>
                       )
                     })
                     }
@@ -104,13 +104,13 @@ class Contacts extends React.Component {
                         <div className="form-row">
                         <input type="hidden" name="form-name" value="customer" />
                           <div className="col-sm-6 form-group  ">
-                              <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" required/>
+                              <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" autocomplete="off" required/>
                           </div>
                           <div className="col-sm-6 form-group  ">
                               <input type="number" className="form-control" id="phone-number" placeholder="Your Phone Number*" name="phone-number" required/>
                           </div>
                           <div className="col-sm-6 form-group  ">
-                              <input type="text" className="form-control" id="email" placeholder="Your Email*" name="email" required/>
+                              <input type="text" className="form-control" id="email" placeholder="Your Email*" autocomplete="off" name="email" required/>
                           </div>
                           <div className="col-sm-6 form-group  ">
                               <input type="text" className="form-control" id="city" placeholder="City" name="city" required/>

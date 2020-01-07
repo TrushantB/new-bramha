@@ -55,7 +55,7 @@ class AboutUs extends React.Component {
           <section className="banner-section">
               <Img fluid={data.image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
           </section>
-          <section className="about-sections pb-0 pt-sm-0 page-heading-section container container-sm-fluid bg-color">
+          <section className="about-sections pb-0 pt-sm-0 page-heading-section container container-sm-fluid">
               <div className="row padding-block-60 pb-0">
                 <div className="col-12 padding-sm-0">
                   <h2 className="page-heading">{data.sub_title.text} </h2>
