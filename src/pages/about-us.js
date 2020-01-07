@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import Img from 'gatsby-image';
 import Layout from '../components/layout'
 import Footer from '../components/footer';
+import SEO from '../components/seo';
 
 class AboutUs extends React.Component {
   state = {
@@ -51,6 +52,7 @@ class AboutUs extends React.Component {
     console.log('data from about us page', data);
     return(
       <Layout>
+        <SEO title="AboutUs"/>
         <div>
           <section className="banner-section">
               <Img fluid={data.image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />

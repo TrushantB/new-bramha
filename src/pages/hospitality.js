@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import Layout from '../components/layout'
 import Footer from '../components/footer'
+import SEO from '../components/seo';
 
 class Hospitality extends React.Component {
   render(){
@@ -10,6 +11,7 @@ class Hospitality extends React.Component {
     const data = hospitalityData[0].node.data;
     return(
       <Layout>
+        <SEO title="Hospitality"/>
         <section className=" page-heading-section container container-sm-fluid bg-color">
           <div className="padding-block-60">
             <h2 className="page-heading">{data.title.text}</h2> 

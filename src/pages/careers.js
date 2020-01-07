@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import Slider from "react-slick";
 import Img from "gatsby-image"
 import Footer from '../components/footer';
+import SEO from '../components/seo';
 class Careers extends React.Component {
   constructor(){
     super();
@@ -120,6 +121,7 @@ class Careers extends React.Component {
     };
     return(
       <Layout>
+        <SEO title="Careers"/>
         <div className="career-page">
           <section className="banner-section">
             <Img fluid={careerData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
