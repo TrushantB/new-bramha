@@ -69,9 +69,7 @@ class MediaAndEvents extends React.Component {
                   </div>
                 <div className="row mr-0">
                   <div className="col-12">
-                    <div className="main-paragraph"> 
-                      {eventwiseData.description.text}
-                    </div>  
+                    <div className="main-paragraph" dangerouslySetInnerHTML={{__html: eventwiseData.description.text}}/> 
                   </div>
                 </div>
 
@@ -195,7 +193,7 @@ export const eventPage = graphql`{
         text
       }
       description{
-        text
+        html
       }
       all_events{
         events{
