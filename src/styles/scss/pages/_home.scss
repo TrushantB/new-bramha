@@ -1,16 +1,13 @@
 .our-verticals-tabs{
     background-color: #fff;
-    font-family: 'Graphik', sans-serif;
-    font-weight: 500;
     .nav-item{
-        padding:4px 12px;
-        flex-basis: 24%;
+        flex-basis: 22%;
     }
     li{
-        border-bottom: 4px solid transparent;
         cursor: pointer;
+        transition: 0.3s;
         &:hover{
-            border-bottom: 4px solid theme-color("primary");
+            box-shadow: 0px -4px 0 theme-color("primary") inset;
             .tab{
                 color: theme-color("primary");
             }            
@@ -18,15 +15,20 @@
     }
     .tab{
         color: theme-color("text-tertiary");
+        transition: 0.3s;
+        text-decoration: none;
+        .far {
+            font-size: 24px;
+        }
         span{
             padding-left:12px;
         }
     }
     .active{
+        box-shadow: 0px -4px 0 theme-color("primary") inset;
         .tab{
             color: theme-color("primary");
         }
-        border-bottom: 4px solid theme-color("primary");
     }
 }
 .home-slider{

@@ -4,6 +4,7 @@ import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image';
 import Layout from '../components/layout'
 import Footer from '../components/footer'
+import SEO from '../components/seo';
 
 export default class Residential extends React.Component {
   constructor(){
@@ -17,7 +18,6 @@ export default class Residential extends React.Component {
       ongoingProject: null,
       ongoingProjectStore: null,
       completedProjectStore: null,
-      activeProject: '',
       activeAddress: '',
       activeType: ''
     };
@@ -27,17 +27,19 @@ export default class Residential extends React.Component {
   addressSelect = (e) => {
     let ongoing = this.state.ongoingProject.length > 0 && this.state.ongoingProjectStore.filter(res => res.residential_links.document[0].data.flat_address.text==e.target.value)
     let completed =  this.state.completedProject.length > 0 && this.state.completedProjectStore.filter(res => res.completed_links.document[0].data.flat_address.text==e.target.value)
-    this.setState({ongoingProject:ongoing,completedProject:completed})
+    this.setState({ongoingProject:ongoing,completedProject:completed,activeAddress:e,activeType:''})
   }
 
 
   typeSelect = (e) => {
     let ongoing = this.state.ongoingProject.length > 0 && this.state.ongoingProjectStore.filter(res => res.residential_links.document[0].data.flat_bhk.text==e.target.value)
     let completed =  this.state.completedProject.length > 0 && this.state.completedProjectStore.filter(res => res.completed_links.document[0].data.flat_bhk.text==e.target.value)
-    this.setState({ongoingProject:ongoing,completedProject:completed})
+    this.setState({ongoingProject:ongoing,completedProject:completed,activeAddress:'',activeType:e})
   }
   
   sortAddress = (e) => {
+    console.log(e);
+    
     let type = [];
     let address = [];
     e.map((item)=>{
@@ -54,7 +56,7 @@ export default class Residential extends React.Component {
   handleProjects = (e) => {
     let type = [];
     let address = [];
-
+    this.setState({activeAddress:'',activeType:''});
     let project = this.state.dataSource[0].node.data[e.target.value];
     if(e.target.value == 'ongoing_projects'){
       this.setState({ongoingProject: project, completedProject: []});
@@ -68,13 +70,31 @@ export default class Residential extends React.Component {
       console.log('type', type);
       
     }
-    else{
+    else if(e.target.value == 'completed_project'){
       this.setState({completedProject: project, ongoingProject: []});
       project.map((item)=>{
         type.push(item.completed_links.document[0].data.flat_bhk.text);
         address.push(item.completed_links.document[0].data.flat_address.text);
      }) 
      this.setState({allType: type, allAddress: address})
+    }
+    else {
+      this.state.dataSource.map((item,index) => {
+        this.setState({ongoingProject: item.node.data.ongoing_projects, ongoingProjectStore:item.node.data.ongoing_projects});
+        // this.sortAddress(item.node.data.ongoing_projects);
+         item.node.data.ongoing_projects.map((item)=>{
+           type.push(item.residential_links.document[0].data.flat_bhk.text);
+           address.push(item.residential_links.document[0].data.flat_address.text);
+        }) 
+      })
+
+      this.state.dataSource.map((item,index) => {
+        this.setState({completedProject: item.node.data.completed_project, completedProjectStore:item.node.data.completed_project});
+         item.node.data.completed_project.map((item)=>{
+           type.push(item.completed_links.document[0].data.flat_bhk.text);
+           address.push(item.completed_links.document[0].data.flat_address.text);
+        }) 
+      })
     }
   }
 
@@ -166,6 +186,7 @@ export default class Residential extends React.Component {
     console.log('residentialData', residentialData);
     return(
       <Layout>
+        <SEO title="Residential"/>
         {
           residentialData.map((item,value)=>{
             return(
@@ -189,12 +210,12 @@ export default class Residential extends React.Component {
               <div className="projects">
 
                 <select defaultValue="" onChange={(e)=>{this.handleProjects(e)}}>
-                  <option value="" disabled hidden>Select Project Type</option>
+                  <option value="all_projects" >All Projects</option>
                   <option value="ongoing_projects">Ongoing Project</option>
                   <option value="completed_project">Completed Project</option>
                 </select>
                
-                <select className="" defaultValue="" onChange={(e)=> this.addressSelect(e)}>
+                <select className="" value={this.state.activeAddress} onChange={(e)=> this.addressSelect(e)}>
                    <option value="" disabled  hidden>Select Address </option>
                 {
                    this.state.allAddress.map((data, index)=>{
@@ -205,7 +226,7 @@ export default class Residential extends React.Component {
                 }
                 </select>
 
-                <select className="" defaultValue="" placeholder="Budget" onChange={(e) => this.typeSelect(e)} >
+                <select className="" value={this.state.activeType} placeholder="Budget" onChange={(e) => this.typeSelect(e)} >
                   <option value="" disabled  hidden>Select Type </option>
                   {
                     this.state.allType.map((data, index) => {
