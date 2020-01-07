@@ -6,6 +6,7 @@ exports.createPages=({graphql,actions}) => {
     return new Promise((resolve ,reject) =>{
         const residential = path.resolve('src/templates/residential-details.js');
         const hospitality = path.resolve('src/templates/hospitality-details.js');
+        const commercial = path.resolve('src/templates/commercial-details.js');
         
         resolve(
             graphql(`
@@ -39,6 +40,15 @@ exports.createPages=({graphql,actions}) => {
                            uid:element.node.uid
                         }
                     })
+                    createPage({
+                        path:`/commercial/${element.node.uid}`,
+                        component:commercial,
+                        context:{
+                           uid:element.node.uid
+                        }
+                    })
+
+
                 })
             })
         )

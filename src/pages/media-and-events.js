@@ -253,6 +253,29 @@ export const eventPage = graphql`{
               url
             }
           }
+
+          all_events{
+            events{
+              document{
+                uid
+                data{
+                  title{
+                    text
+                  }
+                  location{
+                    text
+                  }
+                  date
+                  showcase{
+                    image{
+                      url
+                    }
+                  }
+                }
+              }
+            }
+          }
+          
        }
      }
 }`
