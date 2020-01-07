@@ -62,6 +62,7 @@
     }
     .slick-prev {
         left: -50px;
+        top: 37%;
         &:before{
             content: "";
             background: url('../../images/left-arrow-1.png') no-repeat center center;
@@ -71,6 +72,7 @@
   .slick-next {
       transform: rotate(180deg);
       right: -50px;
+      top: 37%;
       &:before{
         content: "";
         background: url('../../images/left-arrow-1.png') no-repeat center center;
@@ -81,15 +83,4 @@
 .residences{
     background-color:theme-color("bg-color"); 
     padding: 72px 0 172px;
-}
-@media(max-width:580px){
-    .ongoing-project{
-        .ongoing-project{
-            .residences{
-                .listing-heading {
-                    transform: translate(-15px, 0px);
-                }
-            }
-         }
-    }
 }

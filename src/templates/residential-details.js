@@ -132,9 +132,8 @@ class VerticalPage extends React.Component {
                   return(
                   <li className="nav-item col-3 p-0" key={index}>
                     <a className={ index ? "nav-link d-flex flex-column align-items-center text-center" : "nav-link d-flex flex-column align-items-center text-center active"} id={`tab${index}`} data-toggle="pill" href={`#id${index}`} role="tab" aria-controls="pills-home" aria-selected="true">
-                        <img src={item.icon.url} style={{height:'40px'}}/>
+                        <i className={item.icon_name} style={{fontSize:'40px'}}></i>
                         {item.title1.text}
-                        {console.log('item', item)}
                     </a>
                   </li>
                   )
@@ -521,6 +520,7 @@ export const verticalViewData = graphql`
           }
         }
         proximites{
+          icon_name
           title1{
             text
           }
