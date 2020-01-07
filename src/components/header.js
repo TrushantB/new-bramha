@@ -43,9 +43,9 @@ const Header = ({ siteTitle }) => (
             </Link>
             <div className="dropdown-menu  border-0" aria-labelledby="navbarDropdown">
               <Link className="dropdown-item" to='/residential'>Residencial</Link>
-              <Link className="dropdown-item" to='/'>Commercial</Link>
+              <Link className="dropdown-item" to='/commercial'>Commercial</Link>
               <Link className="dropdown-item" to='/hospitality'>Hospitality</Link>
-              <Link className="dropdown-item" to='/'>Leisure</Link>
+              <Link className="dropdown-item" to='/leisure-club'>Leisure</Link>
             </div>
           </li>
           <li className="nav-item">

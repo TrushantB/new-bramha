@@ -149,6 +149,19 @@ button:focus{
   }
 }
     
+.vertical-img-wrapper {
+    .w-100.gatsby-image-wrapper {
+        div {
+            padding-bottom: 56% !important;
+        }
+    }
+}
+
+
+
+
+
+
 // ------------- Media Query Start Here ----------------
 @media (max-width:1200px){
         //  // slider
