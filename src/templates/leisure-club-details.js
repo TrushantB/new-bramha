@@ -8,53 +8,52 @@ import Slider from 'react-slick'
 class LeisureDetails extends React.Component {
     render(){
         const leisureData = this.props.data.prismicOurVerticalsArticle;
-        console.log('leisureData', leisureData);
-              var settings = {
-                className:"center",
-                centerMode: true,
-                centerPadding: '200px',
-                slidesToShow: 1,
-                // beforeChange: (current, next) => this.setState({ activeSlide: next }),
-                // afterChange: current => this.setState({ activeSlide2: current }),
-                responsive: [
-                  {
-                    breakpoint: 992,
-                    settings: {
-                      arrows: false,
-                      centerMode: true,
-                      centerPadding: '100px',
-                      slidesToShow: 1
-                    }
-                  },
-                  {
-                    breakpoint: 768,
-                    settings: {
-                      arrows: false,
-                      centerMode: true,
-                      centerPadding: '100px',
-                      slidesToShow: 1
-                    }
-                  },
-                  {
-                    breakpoint: 580,
-                    settings: {
-                      arrows: false,
-                      centerMode: true,
-                      centerPadding: '80px',
-                      slidesToShow: 1
-                    }
-                  },
-                  {
-                    breakpoint: 500,
-                    settings: {
-                      arrows: false,
-                      centerMode: true,
-                      centerPadding: '40px',
-                      slidesToShow: 1
-                    }
-                  }
-                ]
-              }; 
+            var settings = {
+            className:"center",
+            centerMode: true,
+            centerPadding: '200px',
+            slidesToShow: 1,
+            // beforeChange: (current, next) => this.setState({ activeSlide: next }),
+            // afterChange: current => this.setState({ activeSlide2: current }),
+            responsive: [
+                {
+                breakpoint: 992,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '100px',
+                    slidesToShow: 1
+                }
+                },
+                {
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '100px',
+                    slidesToShow: 1
+                }
+                },
+                {
+                breakpoint: 580,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '80px',
+                    slidesToShow: 1
+                }
+                },
+                {
+                breakpoint: 500,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '40px',
+                    slidesToShow: 1
+                }
+                }
+            ]
+            }; 
             return(
                 <Layout>
                     <SEO title={leisureData.data.title.text}/>
@@ -140,7 +139,6 @@ class LeisureDetails extends React.Component {
     }
 }
 export default LeisureDetails;
-
 
 export const leisurePage = graphql` 
     query leisureData($uid: String!) {

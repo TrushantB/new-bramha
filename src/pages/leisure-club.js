@@ -8,7 +8,6 @@ import Img from 'gatsby-image'
 class LeisureClub extends React.Component {
     render(){
         const leisureData = this.props.data.allPrismicLeisureClub.edges[0].node.data;    
-        console.log('leisureData', leisureData);
         return(
             <Layout>
                 <SEO title={leisureData.title.text}/>
