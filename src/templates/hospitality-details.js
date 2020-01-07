@@ -68,20 +68,20 @@ class HospitalityDetails extends React.Component {
                         </section>
                     {/* <!-- ---------------- banner end here ---------------- --> */}
                     {/*  {/* <!------------------ middle section start here ----------------------> */}
-                    <section className="detail-page-sections pt-sm-0 container-md bg-color">
+                    <section className="detail-page-sections pt-sm-0 container ">
                         <div className="logo-card">
                             <picture className="d-flex justify-content-start justify-content-sm-center align-items-center">
                             <source media="(min-width: 581px)" srcSet={hospitalityData.data.logo.url} />
                             <img src={hospitalityData.data.logo.url} alt="hospital Logo" className="w-50" />
                             </picture>
                         </div>
-                        <div className="row padding-block-60">
+                        <div className="padding-block-60">
                           <h2 className="page-heading text-uppercase"> 
                               {hospitalityData.data.heading.text}     
                           </h2> 
                         </div>
                         <div className="row">
-                            <div className="col-12">
+                            <div className="col-12 d-flex d-sm-block flex-wrap justify-content-end">
                                 <p className="mb-4">
                                    {hospitalityData.data.description.text}
                                 </p>
@@ -134,7 +134,7 @@ class HospitalityDetails extends React.Component {
                         </section>
                     {/* <!-- ------------------- Location section end here ------------------- --> */}
                     {/* <!-- ------------------- Download Brouchure section start here ------------------- --> */}
-                        <div className="container detail-page-sections d-flex justify-content-center ">
+                        <div className="container detail-page-sections d-flex justify-content-center download-btn">
                             <a href="#pdf-link" download="Brouchure.pdf" className="btn-secondary text-center">Download Brouchure</a>
                         </div>
                     {/* <!-- ------------------- Download Brouchure section end here ------------------- --> */}
