@@ -11,10 +11,8 @@ class MediaAndEvents extends React.Component {
     activeSlide2: 0
   };  
   render(){
-      const eventData = this.props.data.prismicMediaAndEvent.data;
       const eventwiseData = this.props.data.prismicEvents.data;
       console.log('eventwiseData', eventwiseData);
-      // console.log("event data from media and event page",eventData);
       var settings = {
         className:"center",
         centerMode: true,
@@ -67,49 +65,60 @@ class MediaAndEvents extends React.Component {
                <section className="events" >
                 <section className="page-heading-section container container-sm-fluid bg-color">
                   <div className="padding-block-60">
-                      <h2 className="page-heading">{eventData.event_heading.text}</h2> 
+                      <h2 className="page-heading">{eventwiseData.title.text}</h2> 
                   </div>
                 <div className="row mr-0">
                   <div className="col-12">
                     <div className="main-paragraph"> 
-                      {eventData.description.text}
+                      {eventwiseData.description.text}
                     </div>  
                   </div>
                 </div>
-                </section>
-                <section className="event-slider">
-                    <div className="padding-block-60 d-flex justify-content-center flex-column w-100 ">
-                        <h3 className="section-title text-center text-uppercase">
-                          {eventwiseData.event1_title.text}
-                        </h3>
-                    </div>
-                    <div className="slider-wrapper">
-                        <div className="container">
-                            <p className="location text-center mb-0">
-                            <span className="mr-32">Location: {eventwiseData.event1_location.text}</span> | <span className="ml-32">Date: {eventwiseData.event1_date.text}</span>
-                            </p>
-                            <Slider {...settings}>
-                            {
-                            eventwiseData.event1_showcase.map((item,value)=>{
-                            return(
-                              <div key={value}>
-                                <div  className="slider-img image-ratio">
-                                  {/* <p className="location-date">{item.location.text}   {item.date.text}</p> */}
-                                  <img src={item.image.url}width="100%"/>
-                                </div>
-                              </div>
-                            )
-                            })
-                            }
-                            </Slider>
-                            <p className=" text-center pages mb-0">
-                              {this.state.activeSlide} of 4
-                            </p>
-                        </div>
-                    </div>
-                </section>   
 
-                <section className="event-slider">
+                </section>
+                {
+                  eventwiseData.all_events.map((item)=>{
+                    return(
+                      item.events.document.map((datas, index)=>{
+                        console.log('item', datas)
+                        return(
+                          <section className="event-slider" key={index}>
+                            <div className="padding-block-60 d-flex justify-content-center flex-column w-100 ">
+                                <h3 className="section-title text-center text-uppercase">
+                                  {datas.data.title.text}
+                                </h3>
+                            </div>
+                            <div className="slider-wrapper">
+                                <div className="container">
+                                    <p className="location text-center mb-0">
+                                    <span className="mr-32">Location: {datas.data.location.text}</span> | <span className="ml-32">Date: {datas.data.date}</span>
+                                    </p>
+                                    <Slider {...settings}>
+                                    {
+                                      datas.data.showcase.map((item,value)=>{
+                                        return(
+                                          <div key={value}>
+                                            <div  className="slider-img image-ratio">
+                                              <img src={item.image.url}width="100%"/>
+                                            </div>
+                                          </div>
+                                        )
+                                      })
+                                    }
+                                    </Slider>
+                                    <p className=" text-center pages mb-0">
+                                      {this.state.activeSlide} of 4
+                                    </p>
+                                </div>
+                            </div>
+                        </section>   
+                        )
+                      })
+                    )
+                  })
+                }
+                
+                {/* <section className="event-slider">
                     <div className="padding-block-60 d-flex justify-content-center flex-column w-100 ">
                         <h3 className="section-title text-center text-uppercase">
                           {eventwiseData.event2_title.text}
@@ -126,7 +135,6 @@ class MediaAndEvents extends React.Component {
                             return(
                               <div key={value}>
                                 <div  className="slider-img image-ratio">
-                                  {/* <p className="location-date">{item.location.text}   {item.date.text}</p> */}
                                   <img src={item.image.url}width="100%"/>
                                 </div>
                               </div>
@@ -158,7 +166,6 @@ class MediaAndEvents extends React.Component {
                             return(
                               <div key={value}>
                                 <div  className="slider-img image-ratio">
-                                  {/* <p className="location-date">{item.location.text}   {item.date.text}</p> */}
                                   <img src={item.image.url}width="100%"/>
                                 </div>
                               </div>
@@ -171,7 +178,8 @@ class MediaAndEvents extends React.Component {
                             </p>
                         </div>
                     </div>
-                </section>
+                </section> */}
+
             </section>
             <Footer />
             </Layout>
@@ -181,101 +189,35 @@ class MediaAndEvents extends React.Component {
 export default MediaAndEvents;
 
 export const eventPage = graphql`{
-  prismicMediaAndEvent{
-    data {
-      event_heading{
+  prismicEvents{
+    data{
+      title{
         text
       }
       description{
         text
       }
-      event {
-        image {
-          url
-        }
-        heading{
-          text
-        }
-        date{
-          text
-        }
-         location{
-          text
-        }
-      }
-    }
-  }
-
-  prismicEvents{
-    data{
-      title{
-            text
-          }
-          event1_title{
-            text
-          }
-          event1_location{
-            text
-          }
-          event1_date{
-            text
-          }
-          event1_showcase{
-            image{
-              url
-            }
-          }
-          event2_title{
-            text
-          }
-          event2_location{
-            text
-          }
-          event2_date{
-            text
-          }
-          event2_showcase{
-            image{
-              url
-            }
-          }
-          event3_title{
-            text
-          }
-          event3_location{
-            text
-          }
-          event3_date{
-            text
-          }
-          event3_showcase{
-            image{
-              url
-            }
-          }
-
-          all_events{
-            events{
-              document{
-                uid
-                data{
-                  title{
-                    text
-                  }
-                  location{
-                    text
-                  }
-                  date
-                  showcase{
-                    image{
-                      url
-                    }
-                  }
+      all_events{
+        events{
+          document{
+            uid
+            data{
+              title{
+                text
+              }
+              location{
+                text
+              }
+              date
+              showcase{
+                image{
+                  url
                 }
               }
             }
           }
-          
-       }
-     }
+        }
+      }
+    }
+  }
 }`
