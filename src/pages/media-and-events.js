@@ -69,7 +69,7 @@ class MediaAndEvents extends React.Component {
                   </div>
                 <div className="row mr-0">
                   <div className="col-12">
-                    <div className="main-paragraph" dangerouslySetInnerHTML={{__html: eventwiseData.description.text}}/> 
+                    <p className="main-paragraph" dangerouslySetInnerHTML={{__html: eventwiseData.description.html}}/> 
                   </div>
                 </div>
 
