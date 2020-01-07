@@ -7,8 +7,6 @@ import Footer from '../components/footer'
 class Hospitality extends React.Component {
   render(){
     const hospitalityData = this.props.data.allPrismicHospitality.edges;
-    console.log('data from hospitality page', hospitalityData);
-    
     const data = hospitalityData[0].node.data;
     return(
       <Layout>
@@ -30,16 +28,12 @@ class Hospitality extends React.Component {
             <div className="residences">
               <div className="container">
                 <div className="row">
-                  {console.log('data',data)}
                   {
-                    data.hospitality_links.map((item,value)=>{
-                      console.log('hospitality_links', item);
-                      
+                    data.hospitality_links.map((item)=>{
                       return(
-                        <div className="col-md-4 p-0 pl-sm-3 pr-sm-3" key={value}>
-                          {item.vertical_links.document.map((datas, value)=>{
-                            return(
-                              console.log('datas', datas),
+                        item.vertical_links.document.map((datas, value)=>{
+                          return(
+                            <Link to={`hospitality/${item.vertical_links.uid}`} className="col-md-4 p-0 pl-sm-3 pr-sm-3" key={value}>
                                 <div className="residences-card position-relative" key={value}>
                                   <div className="residences-img ">
                                     <Img fluid={datas.data.banner[0].image.localFile.childImageSharp.fluid} alt="" width="100%"/>
@@ -50,21 +44,19 @@ class Hospitality extends React.Component {
                                     </div>
                                     <div className="apartment-size d-flex justify-content-between align-items-center">
                                       <span className="text-uppercase">{datas.data.flat_bhk.text}</span>
-                                      {console.log('item.vertical_links.uid', item.vertical_links.uid)}
-                                      <Link to={`hospitality/${item.vertical_links.uid}`}>
+                                      <div>
                                         <i className="fas fa-arrow-right"></i>
-                                      </Link>
+                                      </div>
                                     </div>
                                     <div className="project-location">
                                       <i className="fas fa-map-marker-alt"></i>
-                                      {console.log('datas.data.flat_address.text', datas.data.flat_address.text)}
                                       <span>{datas.data.flat_address.text}</span>
                                     </div>
                                   </div>
                                 </div>
+                              </Link>
                               )
-                          })}
-                        </div>
+                          })
                       )
                     })
                   }
