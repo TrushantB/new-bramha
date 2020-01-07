@@ -4,7 +4,7 @@
 .header{
     box-shadow: 1px 0px 6px rgba(00,00,00,0.2);
     .navbar{
-        padding: 0.4rem 1rem;
+        padding: 0.407rem 1rem;
     }
     .navbar-nav{
         display: flex;
@@ -64,9 +64,8 @@
 .home-slider{
     .banner-section{
         width: 100%;
-        min-height: calc(94.2vh - 70px);
+        height: calc(100vh - 120px);
         object-fit: cover;
-        height: 100%; 
         position: relative;
           .banner-img{
               width: 100%;
