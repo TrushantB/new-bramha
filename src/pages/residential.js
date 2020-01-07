@@ -239,9 +239,9 @@ export default class Residential extends React.Component {
                                     </div>
                                     <div className="apartment-size d-flex justify-content-between align-items-center">
                                       <span className="text-uppercase">{item.residential_links.document[0].data.flat_bhk.text}</span>
-                                      <Link to={`residential/${item.residential_links.uid}`}>
+                                      <div>
                                         <i className="fas fa-arrow-right"></i>
-                                      </Link>
+                                      </div>
                                     </div>
                                     <div className="project-location">
                                       <i className="fas fa-map-marker-alt"></i>
@@ -282,9 +282,9 @@ export default class Residential extends React.Component {
                                 </div>
                                 <div className="apartment-size d-flex justify-content-between align-items-center">
                                   <span className="text-uppercase">{item.completed_links.document[0].data.flat_bhk.text}</span>
-                                  <Link to={`residential/${item.completed_links.uid}`}>
+                                  <div>
                                     <i className="fas fa-arrow-right"></i>
-                                  </Link>
+                                  </div>
                                 </div>
                                 <div className="project-location">
                                   <i className="fas fa-map-marker-alt"></i>
