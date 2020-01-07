@@ -5,6 +5,7 @@ import 'lazysizes';
 import Slider from 'react-slick';
 import Layout from '../components/layout'
 import Footer from '../components/footer'
+import SEO from '../components/seo';
 
 class HospitalityDetails extends React.Component {
     
@@ -12,17 +13,19 @@ class HospitalityDetails extends React.Component {
     const hospitalityData = this.props.data.prismicOurVerticalsArticle;
     console.log('hospitalityData', hospitalityData);
           var settings = {
-            className:"center",
+            className:"",
             centerMode: true,
             centerPadding: '200px',
             slidesToShow: 1,
+            infinite: true,
+            speed:2000,
             // beforeChange: (current, next) => this.setState({ activeSlide: next }),
             // afterChange: current => this.setState({ activeSlide2: current }),
             responsive: [
               {
                 breakpoint: 992,
                 settings: {
-                  arrows: false,
+                  arrows: true,
                   centerMode: true,
                   centerPadding: '100px',
                   slidesToShow: 1
@@ -31,7 +34,7 @@ class HospitalityDetails extends React.Component {
               {
                 breakpoint: 768,
                 settings: {
-                  arrows: false,
+                  arrows: true,
                   centerMode: true,
                   centerPadding: '100px',
                   slidesToShow: 1
@@ -40,16 +43,16 @@ class HospitalityDetails extends React.Component {
               {
                 breakpoint: 580,
                 settings: {
-                  arrows: false,
+                  arrows: true,
                   centerMode: true,
-                  centerPadding: '80px',
+                  centerPadding: '45px',
                   slidesToShow: 1
                 }
               },
               {
                 breakpoint: 500,
                 settings: {
-                  arrows: false,
+                  arrows: true,
                   centerMode: true,
                   centerPadding: '40px',
                   slidesToShow: 1
@@ -59,6 +62,7 @@ class HospitalityDetails extends React.Component {
           }; 
         return(
             <Layout>
+              <SEO title={hospitalityData.data.title.text} />
                 <main className="detail-page">
                     {/* <!-- ---------------- banner start here ---------------- --> */}
                         <section className="banner-section">
@@ -66,24 +70,24 @@ class HospitalityDetails extends React.Component {
                         </section>
                     {/* <!-- ---------------- banner end here ---------------- --> */}
                     {/*  {/* <!------------------ middle section start here ----------------------> */}
-                    <section className="detail-page-sections pt-sm-0 container-md bg-color">
+                    <section className="detail-page-sections pt-sm-0 container ">
                         <div className="logo-card">
                             <picture className="d-flex justify-content-start justify-content-sm-center align-items-center">
                             <source media="(min-width: 581px)" srcSet={hospitalityData.data.logo.url} />
                             <img src={hospitalityData.data.logo.url} alt="hospital Logo" className="w-50" />
                             </picture>
                         </div>
-                        <div className="row padding-block-60">
+                        <div className="padding-block-60">
                           <h2 className="page-heading text-uppercase"> 
                               {hospitalityData.data.heading.text}     
                           </h2> 
                         </div>
                         <div className="row">
-                            <div className="col-12">
+                            <div className="col-12 d-flex d-sm-block flex-wrap justify-content-end">
                                 <p className="mb-4">
                                    {hospitalityData.data.description.text}
                                 </p>
-                                <a href="#" className="link-text d-flex justify-content-around align-items-center btn-tertiary hospitality-viewmore">
+                                <a href="#" className="link-text d-flex justify-content-between align-items-center btn-tertiary hospitality-viewmore">
                                     <span> View Website </span> 
                                     <i className="fas fa-arrow-right"></i>
                                 </a>
@@ -92,7 +96,7 @@ class HospitalityDetails extends React.Component {
                     </section>
                     {/*  {/* <!------------------ middle section end here ------------------------> */}
                     {/* <!-- ------------------- Showcase section start here ------------------- --> */}
-                        <section className="detail-page-sections">
+                        <section className="slider-page">
                             <h2 className="section-title text-uppercase text-center">
                                 Showcase
                             </h2>
@@ -103,7 +107,7 @@ class HospitalityDetails extends React.Component {
                                       hospitalityData.data.showcase.map((item,value)=>{
                                         return(
                                           <div key={value}>
-                                            <div  className="slider-img image-ratio">
+                                            <div  className="slider-img ">
                                               {/* <h5>{item.heading.text}</h5>
                                               <p>{item.date.text}</p>
                                               <p>{item.location.text}</p> */}
@@ -114,12 +118,15 @@ class HospitalityDetails extends React.Component {
                                       })
                                     }
                                   </Slider>
+                                  <p className=" text-left text-sm-center pages mb-0">
+                                     1 of 4
+                                  </p>
                               </div>
                             </div>
                         </section>
                     {/* <!-- ------------------- Showcase section end here ------------------- --> */}
                     {/* <!-- ------------------- Location section start here ------------------- --> */}
-                        <section className="detail-page-sections">
+                        <section className="location-sections">
                             <h2 className="section-title text-uppercase text-center">
                                 Location
                             </h2>
@@ -129,7 +136,7 @@ class HospitalityDetails extends React.Component {
                         </section>
                     {/* <!-- ------------------- Location section end here ------------------- --> */}
                     {/* <!-- ------------------- Download Brouchure section start here ------------------- --> */}
-                        <div className="container detail-page-sections d-flex justify-content-center">
+                        <div className="container detail-page-sections d-flex justify-content-center download-btn">
                             <a href="#pdf-link" download="Brouchure.pdf" className="btn-secondary text-center">Download Brouchure</a>
                         </div>
                     {/* <!-- ------------------- Download Brouchure section end here ------------------- --> */}

@@ -5,23 +5,25 @@ import Img from 'gatsby-image';
 import Slider from 'react-slick';
 import Layout from '../components/layout'
 import Footer from '../components/footer'
+import SEO from '../components/seo';
 
 class VerticalPage extends React.Component {
   render(){
     const verticalData = this.props.data.prismicOurVerticalsArticle;
     console.log('verticalData from template page', verticalData);
     var settings = {
-      className:"center",
+      // className:"center",
       centerMode: true,
       centerPadding: '200px',
       slidesToShow: 1,
+      speed:2000,
       // beforeChange: (current, next) => this.setState({ activeSlide: next }),
       // afterChange: current => this.setState({ activeSlide2: current }),
       responsive: [
         {
           breakpoint: 992,
           settings: {
-            arrows: false,
+            arrows: true,
             centerMode: true,
             centerPadding: '100px',
             slidesToShow: 1
@@ -30,7 +32,7 @@ class VerticalPage extends React.Component {
         {
           breakpoint: 768,
           settings: {
-            arrows: false,
+            arrows: true,
             centerMode: true,
             centerPadding: '100px',
             slidesToShow: 1
@@ -39,16 +41,16 @@ class VerticalPage extends React.Component {
         {
           breakpoint: 580,
           settings: {
-            arrows: false,
+            arrows: true,
             centerMode: true,
-            centerPadding: '80px',
+            centerPadding: '45px',
             slidesToShow: 1
           }
         },
         {
           breakpoint: 500,
           settings: {
-            arrows: false,
+            arrows: true,
             centerMode: true,
             centerPadding: '40px',
             slidesToShow: 1
@@ -58,6 +60,7 @@ class VerticalPage extends React.Component {
     };
     return(
       <Layout>
+        <SEO title={verticalData.data.title.text}/>
         <main className="detail-page">
             {/* <!--   ---------------- banner start here ---------------- --> */}
               <section className="banner-section">
@@ -65,14 +68,14 @@ class VerticalPage extends React.Component {
               </section>
             {/* <!--   ---------------- banner end here ---------------- --> */}
             {/* <!--  -------------------- middle section start here ----------------------> */}
-            <section className="detail-page-sections pb-0 pt-sm-0 container container-sm-fluid bg-color">
+            <section className="detail-page-sections pb-0 pt-sm-0 container container-sm-fluid ">
                 <div className="logo-card">
                   <picture className="d-flex justify-content-start justify-content-sm-center align-items-center">
                     <source media="(min-width: 581px)" srcSet={verticalData.data.logo.url}/>
                     <img src={verticalData.data.logo.url} alt="Residency Logo" className="w-50" />
                   </picture>
                 </div>
-              <div className="row page-heading-section">
+              <div className="padding-block-60 page-heading-section">
                   <div className="col-12 padding-sm-0">
                       <h2 className="page-heading text-uppercase"> 
                         {verticalData.data.heading.text}   
@@ -88,7 +91,7 @@ class VerticalPage extends React.Component {
                         </div>
                     </section>
             {/* <!--   ------------------- Showcase section start here ------------------- --> */}
-            <section className="detail-page-sections">
+            <section className="slider-page">
               <h2 className="section-title text-uppercase text-center">
                   Showcase
               </h2>
@@ -99,7 +102,7 @@ class VerticalPage extends React.Component {
                         verticalData.data.showcase.map((item,value)=>{
                           return(
                             <div key={value}>
-                              <div  className="slider-img image-ratio">
+                              <div  className="slider-img ">
                                 <Img fluid={item.image1.localFile.childImageSharp.fluid} alt=" Showcase slidwer" className="life-at-bramha-slider-image" />
                               </div>
                             </div>
@@ -107,12 +110,15 @@ class VerticalPage extends React.Component {
                         })
                       }
                     </Slider>
+                    <p className=" text-left text-sm-center pages mb-0">
+                        1 of 4
+                    </p>
                 </div>
               </div>
             </section>
             {/* <!--   ------------------- Showcase section end here ------------------- --> */}
             {/* <!--   ------------------- Location section start here ------------------- --> */}
-            <section className="detail-page-sections">
+            <section className="location-sections">
               <h2 className="section-title text-uppercase text-center">
                   Location
               </h2>
@@ -122,7 +128,8 @@ class VerticalPage extends React.Component {
             </section>
             {/* <!--   ------------------- Location section end here ------------------- --> */}
             {/* <!--   ------------------- Proximities section start here ------------------- --> */}
-            <div className="detail-page-sections container">
+  <section className="proximities-section">
+     <div className=" container">
         <h2 className="section-title text-uppercase text-center">
             Proximities
         </h2>
@@ -162,10 +169,11 @@ class VerticalPage extends React.Component {
               }
           </div>
       </div>
+    </section>  
                       
             {/* <!--   ------------------- Proximities section end here ------------------- --> */}
             {/* <!--   ------------------- Floor Plan section start here ------------------- --> */}
-            <div className="detail-page-sections container-fluid d-none d-sm-block">
+            <div className="slider-page container-fluid d-none d-sm-block">
               <h2 className="section-title text-uppercase text-center">
                   {verticalData.data.floor_plans1.text}
               </h2>
@@ -175,7 +183,7 @@ class VerticalPage extends React.Component {
                         verticalData.data.floor_plans.map((item,value)=>{
                           return(
                             <div key={value}>
-                              <div  className="slider-img image-ratio">
+                              <div  className="slider-img ">
                                 <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt=" Floor Plans" className="w-100 h-100" />
                               </div>
                             </div>
@@ -183,6 +191,9 @@ class VerticalPage extends React.Component {
                         })
                       }
                     </Slider>
+                    <p className=" text-left text-sm-center pages mb-0">
+                        1 of 4
+                    </p>
               </div>
               {/* <div className=" showcase-slider">
                 <Slider {...settings}>
@@ -198,7 +209,7 @@ class VerticalPage extends React.Component {
             </div>
             {/* <!--   ------------------- Floor Plan section end here ------------------- --> */}
             {/* <!--   ------------------- Antity And Fact Files section start here ------------------- --> */}
-            <section className="detail-page-sections container">
+            <section className="antity-sections container">
               <ul className="nav nav-pills mb-3 row" id="factfile-tab" role="tablist">
                   <li className="nav-item col-6 p-0">
                     <a className="nav-link text-center text-uppercase section-title pb-1 active" id="pills-amenities-tab" data-toggle="pill" href="#amenities" role="tab" aria-controls="pills-amenities" aria-selected="true">
@@ -310,18 +321,18 @@ class VerticalPage extends React.Component {
             </section>
             {/* <!--   ------------------- Antity And Fact Files section end here ------------------- --> */}
             {/* <!--   ------------------- Site-progress section start here ------------------- --> */}
-            <section className="detail-page-sections">
+            <section className="slider-page mb-0">
               <h2 className="section-title text-uppercase text-center">
                   Site Progress
               </h2>
-              <div className="slider-wrapper-gray">
-                  <div className="container showcase-slider">
+              <div className="slider-wrapper-gray ">
+                  <div className="container showcase-slider slider-wrapper">
                       <Slider {...settings}>
                         {
                           verticalData.data.site_progress.map((item,value)=>{
                             return(
                               <div key={value}>
-                                <div  className="slider-img image-ratio">
+                                <div  className="slider-img ">
                                   <Img fluid={item.images.localFile.childImageSharp.fluid} key={value} alt=" Floor Plans" className="w-100 h-100" />
                                 </div>
                               </div>
@@ -329,6 +340,9 @@ class VerticalPage extends React.Component {
                           })
                         }
                       </Slider>
+                      <p className=" text-left text-sm-center pages mb-0">
+                          1 of 4
+                      </p>
                     </div>
               </div>
               {/* <div className="slider-wrapper-gray">
@@ -347,7 +361,7 @@ class VerticalPage extends React.Component {
             </section>
             {/* <!--   ------------------- progress section end here ------------------- --> */}
             {/* <!--   ------------------- Download Brouchure section start here ------------------- --> */}
-            <div className="container detail-page-sections d-flex justify-content-center">
+            <div className="container detail-page-sections d-flex justify-content-center download-btn">
               <a href="#pdf-link" download="Brouchure.pdf" className="btn-secondary text-center">Download Brouchure</a>
             </div>
             {/* <!--   ------------------- Download Brouchure section end here ------------------- --> */}
@@ -405,8 +419,8 @@ class VerticalPage extends React.Component {
             </section>
             {/* <!--   ------------------- Enquiry section end here ------------------- --> */}
             {/* <!--   ------------------- Maharera section start here ------------------- --> */}
-            <section className="container d-flex flex-column align-items-center detail-maharera-sections">
-              <img src={verticalData.data.maharera.url} alt="maha-rera logo"/>
+            <section className="container d-flex flex-column align-items-center mb-5 detail-maharera-sections">
+              <img src={verticalData.data.maharera.url} alt="maha-rera logo" style={{width:"70px"}}/>
               <p className="text-left text-sm-center mt-3">
                 {
                   verticalData.data.phase.map((item,value)=>{

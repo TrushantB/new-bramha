@@ -38,7 +38,8 @@
   'pages/residential-listing',
   'pages/events',
   'pages/career',
-  'pages/hospitality-projects';
+  'pages/hospitality-projects',
+  'pages/hospitality-details';
 
 
 
@@ -148,6 +149,17 @@ button:focus{
   }
 }
     
+.vertical-img-wrapper {
+    .w-100.gatsby-image-wrapper {
+        div {
+            padding-bottom: 56% !important;
+        }
+    }
+}
+
+
+
+
 
 
 // ------------- Media Query Start Here ----------------

@@ -13,6 +13,7 @@ class Careers extends React.Component {
       dataSource : null,
       jobOpening:[],
       jobOpeningStore:[],
+      activeButton:null,
       jobOpenningButtons:[
         {
           id:'sales',
@@ -80,17 +81,24 @@ class Careers extends React.Component {
   }
 
   handleJobOpening(event){
-    let jobOpening=[];
-    this.state.dataSource[event].map((item) => {
-      jobOpening.push(item)
-    })
-    this.setState({jobOpening})
-    this.state.jobOpenningButtons.map((item) => {
-      if(item.id==event) {
-        item.class="active";
-      }
-      else item.class="";
-    })
+    if(this.state.activeButton!=event.id) {
+      this.setState({activeButton:event.id})
+      let jobOpening=[];
+      this.state.dataSource[event.id].map((item) => {
+        jobOpening.push(item)
+      })
+      this.setState({jobOpening})
+      this.state.jobOpenningButtons.map((item) => {
+        if(item.id==event.id) {
+          item.class="active";
+        }
+        else item.class="";
+      })
+    }
+    else {
+      event.class="";
+      this.setState({jobOpening:this.state.jobOpeningStore})
+    }
   }
   render(){
     const careerData = this.props.data.prismicCareers.data;
@@ -188,7 +196,7 @@ class Careers extends React.Component {
                   {this.state.jobOpenningButtons.map((item) => {
                     return (
                       <div className="btn-wraper" key={item.id}>
-                        <button onClick={() => this.handleJobOpening(item.id)} className={`button-tertiary w-100 mt-2 ${item.class}`}>
+                        <button onClick={() => this.handleJobOpening(item)} className={`button-tertiary w-100 mt-2 ${item.class}`}>
                          {item.name}
                         </button>
                       </div>

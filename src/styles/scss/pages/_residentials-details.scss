@@ -10,15 +10,12 @@
   .slider-wrapper-gray{
       padding: 48px 0;
       background: theme-color(bg-color);
-      .showcase-slider{
-          max-height:75vh;
-          overflow: hidden;
-      }
+    //   .showcase-slider{
+    //       max-height:75vh;
+    //       overflow: hidden;
+    //   }
   }
-  .detail-page-sections{
-      padding-top:76px;
-      padding-bottom: 76px;
-  }
+
   
   #pills-tab{
       border-bottom:1px solid theme-color(border-color);
@@ -78,6 +75,10 @@
           }
       }
   }
+  .proximities-section{
+      margin-top: 100px;
+  }
+  
   // ------------- Contact Start Here ----------------
   .contact-section{
       .contact-form{
@@ -198,43 +199,7 @@
   .detail-maharera-sections{
       padding-bottom:128px;
   }
-.detail-page{
-    .section-title{
-        padding-bottom:32px;
-        &:after{
-            display: none;
-        }
-    }
-      .page-heading-section{
-          div{
-              padding-top:76px;
-              padding-bottom: 32px;
-          }
-      }
-    .detail-page-sections{
-        .slider-wrapper{
-            background-color: theme-color("bg-color");
-            padding:40px;
-        }
-        .hospitality-viewmore{
-            width:196px;
-            color:theme-color("tertiary");
-            padding:16px 20px;
-            background:transparent;
-            border:1px solid theme-color("tertiary");
-        }
-        .btn-secondary{            
-            color: #fff;
-            background: theme-color("tertiary");
-            border:1px solid theme-color("tertiary");
-            &:hover{
-                background-color: transparent;
-                color:theme-color("tertiary");
-                text-decoration: none;
-            }
-        }
-    }
-}
+
 
 .map {
     -webkit-filter: grayscale(100%);

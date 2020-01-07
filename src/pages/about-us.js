@@ -79,7 +79,6 @@ class AboutUs extends React.Component {
     const data = this.props.data.prismicAboutus.data;
     const verticalsData = this.props.data.prismicOurVerticals.data;
     // const ourLegacy = this.props.data.allPrismicOurLegacy.edges;
-    // console.log('ourLegacy', ourLegacy);
     console.log('data from about us page', data);
     return(
       <Layout>
@@ -190,7 +189,7 @@ class AboutUs extends React.Component {
                   </h3>
                 </div>
                 <div className="col-md-6 padding-sm-0">
-                  <div className="vertical-card d-flex">
+                  <Link to='/residential' className="vertical-card d-flex text-decoration-none">
                     <div className="vertical-img-wrapper w-100">
                       <Img fluid={verticalsData.vertical1.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
                     </div>
@@ -198,15 +197,15 @@ class AboutUs extends React.Component {
                       <h2 className="inner-section-title">
                         {verticalsData.vertical1.document[0].data.title.text}
                       </h2>
-                      <Link to='/residential' className="link-text vertical-card-link d-flex justify-content-between align-items-center">
+                      <div className="link-text vertical-card-link d-flex justify-content-between align-items-center">
                           <span> View Projects </span> 
                           <i className="fas fa-arrow-right"></i>
-                      </Link>
+                      </div>
                     </div> 
-                  </div>
+                  </Link>
                 </div>
                 <div className="col-md-6 mt-5 mt-md-0 padding-sm-0">
-                  <div className="vertical-card d-flex flex-row-reverse flex-md-row">
+                  <Link to='/hospitality' className="vertical-card d-flex flex-row-reverse flex-md-row text-decoration-none">
                     <div className="vertical-img-wrapper w-100">
                       <Img fluid={verticalsData.vertical2.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
                     </div>
@@ -214,44 +213,44 @@ class AboutUs extends React.Component {
                       <h2 className="inner-section-title">
                         {verticalsData.vertical3.document[0].data.title.text}
                       </h2>
-                      <Link to='/hospitality' className="link-text vertical-card-link d-flex justify-content-between align-items-center">
+                      <div className="link-text vertical-card-link d-flex justify-content-between align-items-center">
                           <span> View Projects </span> 
                           <i className="fas fa-arrow-right"></i>
-                      </Link>
+                      </div>
                     </div> 
-                  </div>
+                  </Link>
                 </div>
                 <div className="col-md-6 mt-5 padding-sm-0 ">
-                <div className="vertical-card d-flex flex-row-reverse flex-md-row">
+                  <Link to='commercial' className="vertical-card d-flex flex-row-reverse flex-md-row text-decoration-none">
                     <div className="vertical-card-body d-flex flex-column justify-content-around"> 
                     <h2 className="inner-section-title">
                       {verticalsData.vertical2.document[0].data.title.text}
                     </h2>
-                    <Link to='our-verticals-main/hospitality' className="link-text vertical-card-link d-flex justify-content-between align-items-center">
+                    <div className="link-text vertical-card-link d-flex justify-content-between align-items-center">
                         <span> View Projects </span> 
                         <i className="fas fa-arrow-right"></i>
-                    </Link>
+                    </div>
                     </div>
                     <div className="vertical-img-wrapper w-100">
                     <Img fluid={verticalsData.vertical3.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
                     </div>
-                </div>
+                  </Link>
                 </div>
                 <div className="col-md-6 mt-5 padding-sm-0">
-                <div className="vertical-card d-flex">
-                    <div className="vertical-card-body d-flex flex-column justify-content-around"> 
-                    <h2 className="inner-section-title">
-                      {verticalsData.vertical4.document[0].data.title.text}
-                    </h2>
-                    <Link to='/our-verticals' className="link-text vertical-card-link d-flex justify-content-between align-items-center">
-                        <span> View Projects </span> 
-                        <i className="fas fa-arrow-right"></i>
-                    </Link>
-                    </div> 
-                    <div className="vertical-img-wrapper w-100">
-                    <Img fluid={verticalsData.vertical4.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
-                    </div>
-                </div>
+                  <Link to='/leisure-club' className="vertical-card d-flex text-decoration-none">
+                      <div className="vertical-card-body d-flex flex-column justify-content-around"> 
+                      <h2 className="inner-section-title">
+                        {verticalsData.vertical4.document[0].data.title.text}
+                      </h2>
+                      <div className="link-text vertical-card-link d-flex justify-content-between align-items-center">
+                          <span> View Projects </span> 
+                          <i className="fas fa-arrow-right"></i>
+                      </div>
+                      </div> 
+                      <div className="vertical-img-wrapper w-100">
+                      <Img fluid={verticalsData.vertical4.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
+                      </div>
+                  </Link>
                 </div>
             </div>
             <div className="row management-team-sect about-sections">

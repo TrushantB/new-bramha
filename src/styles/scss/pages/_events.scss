@@ -31,17 +31,19 @@
       }
       .slick-arrow{
         top:auto;
-        bottom:-36px;
-        left:auto;
-        right:60px;
+        &:hover,
+        &:focus{
+          background: #000;
+        }
+        
       }
     }
-    .center{
+    
       .slick-prev {
         left: auto;
         z-index: 1;
         right: 277px;
-        bottom: -67px;
+        bottom: -50px;
         background: #333;
         padding: 5px 50px 30px 17px;
         &:before{
@@ -50,12 +52,12 @@
             padding: 12px 0px 16px 38px;
         }
       }
-    } 
-    .center{
+    
+    
       .slick-next {
         transform: rotate(180deg);
         right: 200px;
-        bottom: -50px;
+        bottom: -32px;
         background: #333;
         padding: 5px 50px 30px 15px;
         &:before{
@@ -65,7 +67,6 @@
         }
       }
     } 
-  }
   @media(max-width:580px){
     .events .event-slider .slider-wrapper {
         background-color: transparent;
