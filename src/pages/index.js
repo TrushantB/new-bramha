@@ -105,7 +105,7 @@ class IndexPage extends React.Component {
                     <li key={item.id} className={`nav-item ${item.class}`} id={item.id} data-toggle="tab" href={`#{item.id}`} role="tab" aria-controls={item.id} aria-selected="true" onClick={()=> {this.handleVerticals(item)}}>
                       <Link to='/' className="tab" >
                       <i className="far fa-building"></i>
-                     <span >{item.name}</span>
+                      <span >{item.name}</span>
                      </Link>
                     </li>
                   )
@@ -151,7 +151,13 @@ export const pageDataResidential = graphql`{
   prismicResidential{
     data{
       banner{
-        url
+        localFile {
+          childImageSharp {
+            fluid(maxWidth: 1150, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
 			gallery{
         image{
@@ -169,7 +175,13 @@ export const pageDataResidential = graphql`{
   prismicCommercial{
     data{
       banner{
-        url
+        localFile {
+          childImageSharp {
+            fluid(maxWidth: 1150, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
       gallery{
         image{
@@ -187,7 +199,13 @@ export const pageDataResidential = graphql`{
   prismicHospitality{
     data{
       banner{
-        url
+        localFile {
+          childImageSharp {
+            fluid(maxWidth: 1150, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
       gallery{
         image{
@@ -205,7 +223,13 @@ export const pageDataResidential = graphql`{
   prismicLeisureClub{
     data{
       banner{
-        url
+        localFile {
+          childImageSharp {
+            fluid(maxWidth: 1150, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
       gallery{
         image{
