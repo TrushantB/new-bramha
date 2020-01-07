@@ -148,6 +148,17 @@ button:focus{
   }
 }
     
+.vertical-img-wrapper {
+    .w-100.gatsby-image-wrapper {
+        div {
+            padding-bottom: 56% !important;
+        }
+    }
+}
+
+
+
+
 
 
 // ------------- Media Query Start Here ----------------
