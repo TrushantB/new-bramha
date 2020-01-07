@@ -111,10 +111,13 @@ export default class Residential extends React.Component {
       centerPadding: "60px",
       dots: false,
       infinite: false,
-      speed: 500,
+      speed: 2000,
       slidesToShow: 3,
       slidesToScroll: 1,
       initialSlide: 0,
+     
+      autoplaySpeed: 0,
+      nfinite:true,
       // beforeChange: (current, next) => this.setState({ activeSlide: next }),
       // afterChange: current => this.setState({ activeSlide2: current }),
       responsive: [
@@ -124,7 +127,10 @@ export default class Residential extends React.Component {
             slidesToShow: 2,
             slidesToScroll: 2,
             infinite: true,
-            dots: false
+            dots: false,
+            speed: 3000,
+           
+            autoplaySpeed: 0
           }
         },
         {
@@ -135,7 +141,9 @@ export default class Residential extends React.Component {
             infinite: true,
             centerPadding: "50px",
             slidesToShow: 1,
-            speed: 500
+            speed: 3000,
+           
+            autoplaySpeed: 0
           }
         },
         {
@@ -146,7 +154,9 @@ export default class Residential extends React.Component {
             infinite: true,
             centerPadding: "60px",
             slidesToShow: 1,
-            speed: 500
+            speed: 2000,
+           
+            autoplaySpeed: 0
             
           }
         }
