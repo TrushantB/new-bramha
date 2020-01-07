@@ -1,11 +1,9 @@
 import React from 'react'
 import Layout from '../components/layout'
-import hero1 from '../styles/images/hero1.png';
-import aboutLoan from '../styles/images/about-loan.jpg';
-import guidelines1 from '../styles/images/guidelines1.jpg';
-import mahareraa from '../styles/images/mahareha.png'
 import Footer from '../components/footer';
+import SEO from "../components/seo";
 import { graphql, Link } from 'gatsby';
+
 class KnoweldgeHub extends React.Component {
   render(){
     // const nriData = this.props.data.prismicNri.data;
@@ -15,6 +13,7 @@ class KnoweldgeHub extends React.Component {
     console.log('knowledgeData from knowledge hub page', knowledgeData);
     return(
       <Layout>
+        <SEO title="KnoweldgeHub"/>
         <section className="page-heading-section container container-sm-fluid bg-color">
           <div className="padding-block-60">
               <h2 className="page-heading">{knowledgeData.title.text}</h2>

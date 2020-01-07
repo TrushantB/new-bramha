@@ -4,6 +4,7 @@ import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image';
 import Layout from '../components/layout'
 import Footer from '../components/footer'
+import SEO from '../components/seo';
 
 export default class Residential extends React.Component {
   constructor(){
@@ -166,6 +167,7 @@ export default class Residential extends React.Component {
     console.log('residentialData', residentialData);
     return(
       <Layout>
+        <SEO title="MediaAndEvents"/>
         {
           residentialData.map((item,value)=>{
             return(

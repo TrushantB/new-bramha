@@ -3,6 +3,7 @@ import Layout from '../components/layout'
 import Slider from "react-slick";
 import { graphql } from 'gatsby';
 import Footer from '../components/footer';
+import SEO from '../components/seo';
 
 class MediaAndEvents extends React.Component {
   state = {
@@ -62,6 +63,7 @@ class MediaAndEvents extends React.Component {
       };
         return(
             <Layout>
+            <SEO title="MediaAndEvents"/>
                <section className="events" >
                 <section className="page-heading-section container container-sm-fluid bg-color">
                   <div className="padding-block-60">

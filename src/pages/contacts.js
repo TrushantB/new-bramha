@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import { graphql, Link } from 'gatsby'
 import Footer from '../components/footer';
+import SEO from '../components/seo';
 
 class Contacts extends React.Component {
   render(){
@@ -9,6 +10,7 @@ class Contacts extends React.Component {
     console.log('ccontact data from contact page', contactData);
     return(
       <Layout>
+        <SEO title="Contacts"/>
         <section className="contact-section">
           <div className="contact-page-image">
             <img src={contactData.banner.url} alt="" width="100%"/>
