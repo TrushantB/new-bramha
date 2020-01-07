@@ -154,7 +154,8 @@ export const pageDataResidential = graphql`{
         localFile {
           childImageSharp {
             fluid(maxWidth: 1150, quality: 100) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
+              presentationWidth
             }
           }
         }
@@ -164,7 +165,8 @@ export const pageDataResidential = graphql`{
           localFile {
             childImageSharp {
               fluid(maxWidth: 1150, quality: 100) {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_withWebp
+                presentationWidth
               }
             }
           }
@@ -178,7 +180,8 @@ export const pageDataResidential = graphql`{
         localFile {
           childImageSharp {
             fluid(maxWidth: 1150, quality: 100) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
+              presentationWidth
             }
           }
         }
@@ -188,7 +191,8 @@ export const pageDataResidential = graphql`{
           localFile {
             childImageSharp {
               fluid(maxWidth: 1150, quality: 100) {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_withWebp
+                presentationWidth
               }
             }
           }
@@ -202,7 +206,8 @@ export const pageDataResidential = graphql`{
         localFile {
           childImageSharp {
             fluid(maxWidth: 1150, quality: 100) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
+              presentationWidth
             }
           }
         }
@@ -212,7 +217,8 @@ export const pageDataResidential = graphql`{
           localFile {
             childImageSharp {
               fluid(maxWidth: 1150, quality: 100) {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_withWebp
+                presentationWidth
               }
             }
           }
@@ -226,7 +232,8 @@ export const pageDataResidential = graphql`{
         localFile {
           childImageSharp {
             fluid(maxWidth: 1150, quality: 100) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
+              presentationWidth
             }
           }
         }
@@ -236,7 +243,8 @@ export const pageDataResidential = graphql`{
           localFile {
             childImageSharp {
               fluid(maxWidth: 1150, quality: 100) {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_withWebp
+                presentationWidth
               }
             }
           }
