@@ -13,7 +13,7 @@ class Residential extends React.Component {
       speed: 1000,
       slidesToShow: 1, 
       slidesToScroll: 1,
-      autoplay : true,
+      autoplay : false,
       // adaptiveHeight : true,
     };
     // const data = this.props.gallery.data;
@@ -24,7 +24,7 @@ class Residential extends React.Component {
           this.props.gallery && this.props.gallery.data.gallery.map((item,value) => {
             return(
               <section className="banner-section" key={value}>
-                <Img fluid={item.image.localFile.childImageSharp.fluid} alt="banner here" className="banner-img" style={{width:'100%'}}/>
+                <img src={item.image.url} alt="banner here" className="banner-img" style={{maxHeight: '100%'}}/>
               </section>  
             )
           })
