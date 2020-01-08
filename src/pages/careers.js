@@ -103,10 +103,11 @@ class Careers extends React.Component {
   render(){
     const careerData = this.props.data.prismicCareers.data;
         var settings = {
-      className:"career-center",
+      // className:"career-center",
       centerMode: true,
       centerPadding: '200px',
       slidesToShow: 1,
+      speed:2000,
       responsive: [
         {
           breakpoint: 992,
@@ -144,7 +145,7 @@ class Careers extends React.Component {
               </div>
             </div>
           </section>
-          <section className="life-at-bramha">
+          <section className="life-at-bramha slider-page m-0">
             <div className="padding-block-60 d-flex justify-content-center flex-column w-100 ">
               <h3 className="section-title text-center text-uppercase mb-0" >
                {careerData.life_at_bramha.text}
@@ -168,6 +169,9 @@ class Careers extends React.Component {
                       })
                     }
                   </Slider>
+                  <p className=" text-left text-sm-center pages mb-0">
+                      1 of 4
+                  </p>
               </div>
             </div>
           </section>
