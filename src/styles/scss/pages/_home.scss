@@ -41,3 +41,38 @@
         display: none !important;
     }
 }
+.home-slider{
+    .gatsby-image-wrapper{
+        img{
+            width:100%;
+            animation: kenburns 14s ease-in-out;
+    
+        }
+    }
+    @keyframes kenburns{
+        0%{
+            transform-origin:  center center;
+            transform: scale(1.0);
+        }
+        51%{
+            transform: scale(1.1);
+        }
+        100%{
+            transform: scale(1.0);
+        }
+    }
+}
+// .home-slider{
+//     .banner-section{
+//         .banner-caption{
+//             position: absolute;
+//             bottom: 24px;
+//             display: inline-block;
+//             top: auto;
+//             margin: 0 auto;
+//             color: #fff;
+//             padding: 20px 40px;
+//             background-color: rgba(00,00,00,0.8);
+//         }
+//     }
+// }

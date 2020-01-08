@@ -8,17 +8,13 @@
     z-index: 99;
   }
   .slider-wrapper-gray{
-      padding: 48px 0;
       background: theme-color(bg-color);
-      .showcase-slider{
-          max-height:75vh;
-          overflow: hidden;
-      }
+    //   .showcase-slider{
+    //       max-height:75vh;
+    //       overflow: hidden;
+    //   }
   }
-  .detail-page-sections{
-      padding-top:76px;
-      padding-bottom: 76px;
-  }
+
   
   #pills-tab{
       border-bottom:1px solid theme-color(border-color);
@@ -28,18 +24,23 @@
     }
   }
   #pills-tabContent{
-      border-bottom:1px solid theme-color(tertiary);
+      border-bottom:1px solid theme-color(border-color);
       ul{
-        padding-top:36px;
-        padding-bottom:36px;
+        padding:44px 0;
+        margin-bottom: 0;
+        li{
+            font-size: 20px;
+            line-height: 30px;
+        }
       }
   }
   .nav-pills .nav-link{
       color:theme-color(text-tertiary);
   }
   .nav-pills .nav-link.active{
-      border:1px solid theme-color(border-color);
-      border-bottom:5px solid theme-color(tertiary);
+    //   border:1px solid theme-color(border-color);
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.08);
+      border-bottom:7px solid theme-color(tertiary);
       border-radius: 5px 5px 0 0;
       background-color: transparent;
       color:theme-color(heading-primary);
@@ -68,7 +69,7 @@
           i{
             font-size: 32px;
             padding: 5px 24px 5px;
-          color:theme-color(text-tertiary);
+             color:theme-color(text-tertiary);
           }
           &:hover{
               color:theme-color(primary);
@@ -76,6 +77,35 @@
                   color:theme-color(primary);
               }
           }
+      }
+  }
+  .detail-page{
+    .proximities-section{
+        margin-top: 126px;
+        .section-title{
+            margin-bottom: 60px;
+        }
+    }
+    .floor-plan{
+        .section-title{
+            margin-bottom: 52px;
+        }
+        .slider-img {
+            margin:60px 50px;
+            border: solid 1px #9999;
+        }
+    }
+    .enquiry-form{
+        p{
+            padding-top: 44px;
+        }
+    }
+  }
+
+  .amenities-inner-wrapper{
+      .icon-wrapper,
+      .image-wrapper{
+          flex: 50%;
       }
   }
   // ------------- Contact Start Here ----------------
@@ -145,6 +175,7 @@
               input,textarea,select{
                   font-weight: 300;
                   padding-left: 8px;
+                  padding-right: 8px;
                   font-size: 14px;
                   background: transparent;
                   border: solid 0.5px #999999;
@@ -196,45 +227,13 @@
       }
   }
   .detail-maharera-sections{
-      padding-bottom:128px;
-  }
-.detail-page{
-    .section-title{
-        padding-bottom:32px;
-        &:after{
-            display: none;
-        }
-    }
-      .page-heading-section{
-          div{
-              padding-top:76px;
-              padding-bottom: 32px;
-          }
+      margin-top: 78px;
+      margin-bottom: 110px; 
+      a{
+          color: #7f7f7f;
       }
-    .detail-page-sections{
-        .slider-wrapper{
-            background-color: theme-color("bg-color");
-            padding:40px;
-        }
-        .hospitality-viewmore{
-            width:196px;
-            color:theme-color("tertiary");
-            padding:16px 20px;
-            background:transparent;
-            border:1px solid theme-color("tertiary");
-        }
-        .btn-secondary{            
-            color: #fff;
-            background: theme-color("tertiary");
-            border:1px solid theme-color("tertiary");
-            &:hover{
-                background-color: transparent;
-                color:theme-color("tertiary");
-                text-decoration: none;
-            }
-        }
-    }
-}
+  }
+
 
 .map {
     -webkit-filter: grayscale(100%);

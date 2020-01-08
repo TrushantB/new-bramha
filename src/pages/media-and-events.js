@@ -4,6 +4,8 @@ import Slider from "react-slick";
 import { graphql } from 'gatsby';
 import Footer from '../components/footer';
 import SEO from '../components/seo';
+import Img from 'gatsby-image';
+
 
 class MediaAndEvents extends React.Component {
   state = {
@@ -14,10 +16,11 @@ class MediaAndEvents extends React.Component {
     const eventwiseData = this.props.data.prismicEvents.data;
     console.log('eventwiseData', eventwiseData);
     var settings = {
-      className:"center",
+      // className:"center",
       centerMode: true,
       centerPadding: '200px',
       slidesToShow: 1,
+      speed:2000,
       // beforeChange: (current, next) => this.setState({ activeSlide: next }),
       // afterChange: current => this.setState({ activeSlide2: current }),
       responsive: [
@@ -85,7 +88,7 @@ class MediaAndEvents extends React.Component {
                         </h3>
                       </div>
                       <div className="slider-wrapper">
-                        <div className="container">
+                        <div className="container-fluid container-sm p-0 px-sm-3">
                           <p className="location text-center mb-0">
                             <span className="mr-32">Location: {datas.data.location.text}</span> | <span className="ml-32">Date: {datas.data.date}</span>
                           </p>
@@ -95,16 +98,16 @@ class MediaAndEvents extends React.Component {
                               return(
                                 <div key={value}>
                                   <div  className="slider-img image-ratio">
-                                    <img src={item.image.url}width="100%"/>
+                                    <Img fluid={item.image.localFile.childImageSharp.fluid} width="100%"/>
                                   </div>
                                 </div>
                               )
                             })
-                          }
-                          </Slider>
-                          <p className=" text-center pages mb-0">
-                            {this.state.activeSlide} of {datas.data.showcase.length}
-                          </p>
+                            }
+                            </Slider>
+                            <p className=" text-center pages mb-0">
+                              {this.state.activeSlide} of 4
+                            </p>
                         </div>
                       </div>
                     </section>   
@@ -144,7 +147,13 @@ export const eventPage = graphql`{
               date
               showcase {
                 image {
-                  url
+                  localFile {
+                    childImageSharp {
+                      fluid(maxWidth: 1150, quality: 100) {
+                        ...GatsbyImageSharpFluid
+                      }
+                    }
+                  }
                 }
               }
             }

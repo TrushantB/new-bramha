@@ -96,7 +96,7 @@ class IndexPage extends React.Component {
           { this.state.selectedVertical}
           <footer className="our-verticals-tabs d-flex">
             <div className="container d-flex">
-              <ul className="p-0 d-flex w-100 justify-content-around list-style-none text-uppercase nav nav-tabs border-0" id="myTab" role="tablist">
+              <ul className="p-0 d-flex w-100 justify-content-around list-style-none text-uppercase nav-tabs border-0 mb-0" id="myTab" role="tablist">
                 {
                   this.state.ourVerticals.map((item) => {
                     return(
