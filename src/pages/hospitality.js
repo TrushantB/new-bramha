@@ -35,7 +35,7 @@ class Hospitality extends React.Component {
                       return(
                         item.vertical_links.document.map((datas, value)=>{
                           return(
-                            <Link to={`hospitality/${item.vertical_links.uid}`} className="col-md-4 p-0 pl-sm-3 pr-sm-3" key={value}>
+                            <Link to={`hospitality/${item.vertical_links.uid}`} className="col-md-6 col-lg-4 p-0 pl-sm-3 pr-sm-3" key={value}>
                                 <div className="residences-card position-relative" key={value}>
                                   <div className="residences-img ">
                                     <Img fluid={datas.data.banner[0].image.localFile.childImageSharp.fluid} alt="" width="100%"/>
