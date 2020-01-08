@@ -4,6 +4,8 @@ import Slider from "react-slick";
 import { graphql } from 'gatsby';
 import Footer from '../components/footer';
 import SEO from '../components/seo';
+import Img from 'gatsby-image';
+
 
 class MediaAndEvents extends React.Component {
   state = {
@@ -95,7 +97,7 @@ class MediaAndEvents extends React.Component {
                               return(
                                 <div key={value}>
                                   <div  className="slider-img image-ratio">
-                                    <img src={item.image.url}width="100%"/>
+                                    <Img fluid={item.image.localFile.childImageSharp.fluid} width="100%"/>
                                   </div>
                                 </div>
                               )
@@ -144,7 +146,13 @@ export const eventPage = graphql`{
               date
               showcase {
                 image {
-                  url
+                  localFile {
+                    childImageSharp {
+                      fluid(maxWidth: 1150, quality: 100) {
+                        ...GatsbyImageSharpFluid
+                      }
+                    }
+                  }
                 }
               }
             }
