@@ -41,3 +41,24 @@
         display: none !important;
     }
 }
+.home-slider{
+    .gatsby-image-wrapper{
+        img{
+            width:100%;
+            animation: kenburns 14s ease-in-out;
+    
+        }
+    }
+    @keyframes kenburns{
+        0%{
+            transform-origin:  center center;
+            transform: scale(1.0);
+        }
+        51%{
+            transform: scale(1.1);
+        }
+        100%{
+            transform: scale(1.0);
+        }
+    }
+}

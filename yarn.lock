@@ -4671,6 +4671,14 @@ fs-extra@^4.0.2:
     jsonfile "^4.0.0"
     universalify "^0.1.0"
 
+fs-extra@^7.0.0:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-7.0.1.tgz#4f189c44aa123b895f722804f55ea23eadc348e9"
+  dependencies:
+    graceful-fs "^4.1.2"
+    jsonfile "^4.0.0"
+    universalify "^0.1.0"
+
 fs-extra@^8.1.0:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-8.1.0.tgz#49d43c45a88cd9677668cb7be1b46efdb8d2e1c0"
@@ -4735,6 +4743,53 @@ functional-red-black-tree@^1.0.1:
 gatsby-cli@^2.8.21:
   version "2.8.21"
   resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.8.21.tgz#456277538b983545be5dc2ce036616f5a5b43fdf"
+  dependencies:
+    "@babel/code-frame" "^7.5.5"
+    "@babel/runtime" "^7.7.6"
+    "@hapi/joi" "^15.1.1"
+    better-opn "^1.0.0"
+    bluebird "^3.7.2"
+    chalk "^2.4.2"
+    clipboardy "^2.1.0"
+    common-tags "^1.8.0"
+    configstore "^5.0.0"
+    convert-hrtime "^3.0.0"
+    core-js "^2.6.11"
+    envinfo "^7.5.0"
+    execa "^3.4.0"
+    fs-exists-cached "^1.0.0"
+    fs-extra "^8.1.0"
+    gatsby-core-utils "^1.0.25"
+    gatsby-telemetry "^1.1.46"
+    hosted-git-info "^3.0.2"
+    is-valid-path "^0.1.1"
+    lodash "^4.17.15"
+    meant "^1.0.1"
+    node-fetch "^2.6.0"
+    object.entries "^1.1.0"
+    opentracing "^0.14.4"
+    pretty-error "^2.1.1"
+    progress "^2.0.3"
+    prompts "^2.3.0"
+    react "^16.12.0"
+    redux "^4.0.4"
+    resolve-cwd "^2.0.0"
+    semver "^6.3.0"
+    signal-exit "^3.0.2"
+    source-map "0.7.3"
+    stack-trace "^0.0.10"
+    strip-ansi "^5.2.0"
+    update-notifier "^3.0.1"
+    uuid "3.3.3"
+    yargs "^12.0.5"
+    yurnalist "^1.1.1"
+  optionalDependencies:
+    ink "^2.6.0"
+    ink-spinner "^3.0.1"
+
+gatsby-cli@^2.8.22:
+  version "2.8.23"
+  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.8.23.tgz#e79761f19437619e6deabc31956a25fd194e60d6"
   dependencies:
     "@babel/code-frame" "^7.5.5"
     "@babel/runtime" "^7.7.6"
@@ -4849,6 +4904,13 @@ gatsby-plugin-manifest@^2.2.30:
     gatsby-core-utils "^1.0.21"
     semver "^5.7.1"
     sharp "^0.23.3"
+
+gatsby-plugin-netlify-cache@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify-cache/-/gatsby-plugin-netlify-cache-1.2.0.tgz#e68db9c5bd4ae103b4589f9be2a3cb9958750788"
+  dependencies:
+    babel-runtime "^6.26.0"
+    fs-extra "^7.0.0"
 
 gatsby-plugin-offline@^3.0.24:
   version "3.0.24"

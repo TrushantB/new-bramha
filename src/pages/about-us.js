@@ -11,44 +11,74 @@ class AboutUs extends React.Component {
     styleData:{height: 160, overflow: 'hidden'},
     activeSlide: 0,
     activeSlide2: 0,
+    nav1: null,
+    nav2: null
   }
   
+  componentDidMount() {
+    this.setState({
+      nav1: this.slider1,
+      nav2: this.slider2
+    });
+  }
   render(){
     let index = 0;
-    var settings = {
-      dots: true,
-      dotsClass: "slick-dots slick-thumb",
-      infinite: true,
-      speed: 1000,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay : true,
-      customPaging: i => (
-        <div>
+    var settings1={
+          // autoplay: true,
+          // autoplaySpeed:3500,
+          slidesToShow: 12,
+          slidesToScroll: 1,
+          centerMode: false,
+          focusOnSelect: true,
+           mobileFirst: true,
+          arrows: false,
+          infinite:false,
+          className:"timeline-nav",
+           responsive: [
+               {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 8,
+               }
+              },
+             {
+              breakpoint: 0,
+              settings: {
+                slidesToShow: 4,
+                slidesToScroll: 2,
+              }
+            }
+         ]
+      }
+      var settings2={
+        autoplay: true,
+        autoplaySpeed:3500,
+       slidesToShow: 1,
+       slidesToScroll: 1,
+       arrows: false,  
+       centerMode: false,     
+       cssEase: 'ease',
+        edgeFriction: 0.5,
+        mobileFirst: true,
+        speed: 500,
+        responsive: [
           {
-            data.our_legacy.document[0].data.our_legacy.map((item,value)=>{
-              if(value == index){
-                return(
-                  <div key={value}> {item.year}</div>
-                )
-              }
-              if(data.our_legacy.document[0].data.our_legacy.length-1 === value ){
-                index = index +1;
-              }
-            })
-          }
-          {/* {i + 1} */}
-        </div>
-      ),
-      beforeChange: (current, next) => this.setState({ activeSlide: next }),
-      afterChange: current => this.setState({ activeSlide2: current }),
-      adaptiveHeight : true,
-
-    };
+           breakpoint: 0,
+           settings: {
+               centerMode: false
+           }
+         },
+            {
+           breakpoint: 768,
+           settings: {
+               centerMode: false
+           }
+         }
+      ]
+   }
     const data = this.props.data.prismicAboutus.data;
     const verticalsData = this.props.data.prismicOurVerticals.data;
     // const ourLegacy = this.props.data.allPrismicOurLegacy.edges;
-    // console.log('ourLegacy', ourLegacy);
     console.log('data from about us page', data);
     return(
       <Layout>
@@ -106,9 +136,31 @@ class AboutUs extends React.Component {
                 </h3>
               </div>
               <div className="slider-wrapper">
+                <div className="slider-border"></div>
                 <div className="container">
-                  <Slider {...settings}>
-                    {
+                <Slider {...settings1}
+          asNavFor={this.state.nav2}
+          ref={slider => (this.slider1 = slider)}
+        >
+            <div className="timeline-nav__item">1991</div>
+              <div className="timeline-nav__item">1999</div>
+              <div className="timeline-nav__item">2000</div>
+              <div className="timeline-nav__item">2003</div>
+              <div className="timeline-nav__item">2005</div>
+              <div className="timeline-nav__item">2010</div>
+              <div className="timeline-nav__item">2012</div>
+              <div className="timeline-nav__item">2013</div>
+              <div className="timeline-nav__item">2015</div>
+              <div className="timeline-nav__item">2016</div>
+        </Slider>
+        <Slider {...settings2}
+          asNavFor={this.state.nav1}
+          ref={slider => (this.slider2 = slider)}
+          slidesToShow={1}
+          swipeToSlide={true}
+          focusOnSelect={true}
+        >
+                      {
                       data.our_legacy.document[0].data.our_legacy.map((item,value)=>{
                         return(
                           <div key={value} className="legacy-slide">
@@ -125,7 +177,7 @@ class AboutUs extends React.Component {
                         )
                       })
                     }
-                  </Slider>
+        </Slider>
                 </div>
               </div>
           </section>
@@ -137,7 +189,7 @@ class AboutUs extends React.Component {
                   </h3>
                 </div>
                 <div className="col-md-6 padding-sm-0">
-                  <div className="vertical-card d-flex">
+                  <Link to='/residential' className="vertical-card d-flex text-decoration-none">
                     <div className="vertical-img-wrapper w-100">
                       <Img fluid={verticalsData.vertical1.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
                     </div>
@@ -145,15 +197,15 @@ class AboutUs extends React.Component {
                       <h2 className="inner-section-title">
                         {verticalsData.vertical1.document[0].data.title.text}
                       </h2>
-                      <Link to='/residential' className="link-text vertical-card-link d-flex justify-content-between align-items-center">
+                      <div className="link-text vertical-card-link d-flex justify-content-between align-items-center">
                           <span> View Projects </span> 
                           <i className="fas fa-arrow-right"></i>
-                      </Link>
+                      </div>
                     </div> 
-                  </div>
+                  </Link>
                 </div>
                 <div className="col-md-6 mt-5 mt-md-0 padding-sm-0">
-                  <div className="vertical-card d-flex flex-row-reverse flex-md-row">
+                  <Link to='/hospitality' className="vertical-card d-flex flex-row-reverse flex-md-row text-decoration-none">
                     <div className="vertical-img-wrapper w-100">
                       <Img fluid={verticalsData.vertical2.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
                     </div>
@@ -161,44 +213,44 @@ class AboutUs extends React.Component {
                       <h2 className="inner-section-title">
                         {verticalsData.vertical3.document[0].data.title.text}
                       </h2>
-                      <Link to='/hospitality' className="link-text vertical-card-link d-flex justify-content-between align-items-center">
+                      <div className="link-text vertical-card-link d-flex justify-content-between align-items-center">
                           <span> View Projects </span> 
                           <i className="fas fa-arrow-right"></i>
-                      </Link>
+                      </div>
                     </div> 
-                  </div>
+                  </Link>
                 </div>
                 <div className="col-md-6 mt-5 padding-sm-0 ">
-                <div className="vertical-card d-flex flex-row-reverse flex-md-row">
+                  <Link to='commercial' className="vertical-card d-flex flex-row-reverse flex-md-row text-decoration-none">
                     <div className="vertical-card-body d-flex flex-column justify-content-around"> 
                     <h2 className="inner-section-title">
                       {verticalsData.vertical2.document[0].data.title.text}
                     </h2>
-                    <Link to='our-verticals-main/hospitality' className="link-text vertical-card-link d-flex justify-content-between align-items-center">
+                    <div className="link-text vertical-card-link d-flex justify-content-between align-items-center">
                         <span> View Projects </span> 
                         <i className="fas fa-arrow-right"></i>
-                    </Link>
+                    </div>
                     </div>
                     <div className="vertical-img-wrapper w-100">
                     <Img fluid={verticalsData.vertical3.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
                     </div>
-                </div>
+                  </Link>
                 </div>
                 <div className="col-md-6 mt-5 padding-sm-0">
-                <div className="vertical-card d-flex">
-                    <div className="vertical-card-body d-flex flex-column justify-content-around"> 
-                    <h2 className="inner-section-title">
-                      {verticalsData.vertical4.document[0].data.title.text}
-                    </h2>
-                    <Link to='/our-verticals' className="link-text vertical-card-link d-flex justify-content-between align-items-center">
-                        <span> View Projects </span> 
-                        <i className="fas fa-arrow-right"></i>
-                    </Link>
-                    </div> 
-                    <div className="vertical-img-wrapper w-100">
-                    <Img fluid={verticalsData.vertical4.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
-                    </div>
-                </div>
+                  <Link to='/leisure-club' className="vertical-card d-flex text-decoration-none">
+                      <div className="vertical-card-body d-flex flex-column justify-content-around"> 
+                      <h2 className="inner-section-title">
+                        {verticalsData.vertical4.document[0].data.title.text}
+                      </h2>
+                      <div className="link-text vertical-card-link d-flex justify-content-between align-items-center">
+                          <span> View Projects </span> 
+                          <i className="fas fa-arrow-right"></i>
+                      </div>
+                      </div> 
+                      <div className="vertical-img-wrapper w-100">
+                      <Img fluid={verticalsData.vertical4.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
+                      </div>
+                  </Link>
                 </div>
             </div>
             <div className="row management-team-sect about-sections">
