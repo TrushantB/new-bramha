@@ -82,5 +82,54 @@
         }
     }
   }
+@media (max-width:580px){
+    .knowledge-hub{
+        #index2{
+            display: none;
+        }
+        #index3{
+            .section-title,p{
+                display: none;
+            }
+            .know-more {
+                align-self: flex-end;
+            }
+            .image-ratio33 .gatsby-image-wrapper {
+                padding-bottom: 48.3%;
+            }
+        }
+        #maharera0,
+        #maharera3{
+            display: none;
+        }
+        #index0{
+            .inner-section-title{
+                display: none!important;
+            }
+        }
+        #index1{
+            padding: 0;
+        }
+        #maharera1{
+            .gatsby-image-wrapper{
+                div{
+                    padding: 0!important;
+                }
+                img{
+                    display: none;
+                }
+                picture{
+                   img{
+                    position: unset!important;
+                    width: auto !important;
+                    display: block;
+                    height: 115px !important;
+                    padding-left: 24px;
+                   }
+                }
+            }
+        }
+    }
+}
     
   
