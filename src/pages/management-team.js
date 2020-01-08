@@ -8,12 +8,10 @@ class ManagementTeam extends React.Component {
         return(
             <Layout>
             <SEO title="Management Team"/>
-
                 <h3>
                     Hello, This Is Management Team Page...
                 </h3>
-        <Footer />
-
+            <Footer/>
             </Layout>
         )
     }

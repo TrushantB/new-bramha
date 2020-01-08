@@ -18,7 +18,7 @@ class Commercial extends React.Component {
                     <div className="row  mr-0">
                         <div className="col-12">
                             <div className="main-paragraph"> 
-                            <p>{commercialData.description.text}</p>
+                            <p dangerouslySetInnerHTML={{__html: commercialData.description.html}}/>
                             </div>  
                         </div>
                     </div>
@@ -35,7 +35,7 @@ class Commercial extends React.Component {
                                                     <Link to={`commercial/${item2.verticals.uid}`}className="col-md-4 p-0 pl-sm-3 pr-sm-3" key={index}>
                                                         <div className="residences-card position-relative">
                                                             <div className="residences-img ">
-                                                                <Img fluid={item.data.banner[0].image.localFile.childImageSharp.fluid} alt="" width="100%"/>
+                                                                <Img fluid={item.data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%"/>
                                                             </div>
                                                             <div className="rectangle position-absolute d-flex flex-column justify-content-around">
                                                                 <div className="rectangle-title">
@@ -80,7 +80,7 @@ export const commercialPage = graphql`{
               text
             }
             description{
-              text
+              html
             }
             banner{
               url
@@ -98,6 +98,15 @@ export const commercialPage = graphql`{
                     }
                     flat_address{
                       text
+                    }
+                    thumbnail{
+                      localFile {
+                        childImageSharp {
+                          fluid(maxWidth: 1150, quality: 100) {
+                            ...GatsbyImageSharpFluid
+                          }
+                        }
+                      }
                     }
                     banner{
                         image{

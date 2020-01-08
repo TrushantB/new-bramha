@@ -196,9 +196,7 @@ export default class Residential extends React.Component {
                 </div>
                 <div className="row  mr-0">
                     <div className="col-12">
-                      <div className="main-paragraph"> 
-                        {item.node.data.description.text}
-                      </div>  
+                      <div className="main-paragraph" dangerouslySetInnerHTML={{__html: item.node.data.description.html}}/ > 
                     </div>
                 </div>
               </section>
@@ -252,7 +250,7 @@ export default class Residential extends React.Component {
                               <Link to={`residential/${item.residential_links.uid}`}  key={value} className="col-md-6 col-lg-4 col-sm-12 p-0 pl-sm-3 pr-sm-3">
                                 <div className="residences-card position-relative">
                                   <div className="residences-img">
-                                    <Img fluid={item.residential_links.document[0].data.banner[0].image.localFile.childImageSharp.fluid} alt="" width="100%"/>
+                                    <Img fluid={item.residential_links.document[0].data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%"/>
                                   </div>
                                   <div className="rectangle position-absolute d-flex flex-column justify-content-around">
                                     <div className="rectangle-title">
@@ -295,7 +293,7 @@ export default class Residential extends React.Component {
                           <Link to={`residential/${item.completed_links.uid}`} className="row"  key={value}> 
                             <div className="secondary-card position-relative ">
                               <div className="secondary-card-img image-ratio">
-                                <Img fluid={item.completed_links.document[0].data.banner[0].image.localFile.childImageSharp.fluid} alt="" width="100%"/>
+                                <Img fluid={item.completed_links.document[0].data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%"/>
                               </div>
                               <div className="secondary-card-rectangle position-absolute d-flex flex-column justify-content-around">
                                 <div className="title">
@@ -342,7 +340,7 @@ export const residentialPage = graphql`{
           text
         }
         description{
-          text
+          html
         }
         ongoing_projects{
           residential_links{
@@ -351,6 +349,15 @@ export const residentialPage = graphql`{
               data{
                 title{
                   text
+                }
+                thumbnail{
+                  localFile {
+                    childImageSharp {
+                      fluid(maxWidth: 1150, quality: 100) {
+                        ...GatsbyImageSharpFluid
+                      }
+                    }
+                  }
                 }
                 banner{
                   image{
@@ -385,6 +392,15 @@ export const residentialPage = graphql`{
                 title{
                  text
                }
+               thumbnail{
+                localFile {
+                  childImageSharp {
+                    fluid(maxWidth: 1150, quality: 100) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
+              }
                banner{
                  image{
                   localFile {

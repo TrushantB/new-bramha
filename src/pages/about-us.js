@@ -51,8 +51,8 @@ class AboutUs extends React.Component {
          ]
       }
       var settings2={
-        autoplay: true,
-        autoplaySpeed:3500,
+        // autoplay: true,
+        // autoplaySpeed:3500,
        slidesToShow: 1,
        slidesToScroll: 1,
        arrows: false,  
