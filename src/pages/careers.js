@@ -135,18 +135,18 @@ class Careers extends React.Component {
             <Img fluid={careerData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
           </section>
           <section className="career-info container-md bg-color">
-            <div className="row padding-block-60 career-info-row">
-              <h2 className="col-12 page-heading">{careerData.title.text}</h2> 
+            <div className="padding-block-60 career-info-row">
+              <h2 className="page-heading">{careerData.title.text}</h2> 
             </div>
             <div className="row career-info-row">
               <div className="col-12">
-                <p className="text mb-4" dangerouslySetInnerHTML={{__html: careerData.description.html}}/>
+                <p className="text mb-0" dangerouslySetInnerHTML={{__html: careerData.description.html}}/>
               </div>
             </div>
           </section>
           <section className="life-at-bramha">
             <div className="padding-block-60 d-flex justify-content-center flex-column w-100 ">
-              <h3 className="section-title text-center text-uppercase">
+              <h3 className="section-title text-center text-uppercase mb-0" >
                {careerData.life_at_bramha.text}
               </h3>
             </div>

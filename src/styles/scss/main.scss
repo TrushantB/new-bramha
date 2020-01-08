@@ -111,6 +111,7 @@ button:focus{
         display: block;
     }
 }
+
 .section-title-wrapper{
     padding-bottom:48px;
 }
@@ -816,8 +817,15 @@ button:focus{
         }
         
        .about-loan {
-           margin-top: 92px;
+           margin-top: 84px;
        } 
+       .our-legacy-title::after {
+        content: "";
+        border-bottom: 2px solid #b82831;
+        padding: 8px 0;
+        width: 85px;
+        display: block;
+    }
 
 }
 
