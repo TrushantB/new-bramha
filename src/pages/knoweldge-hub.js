@@ -55,11 +55,15 @@ class KnoweldgeHub extends React.Component {
                 <div className="row">
                     {
                       knowledgeData.knowledge_topics.map((item,index)=>{
+                     
                         return(
                           <div className="col-md-6 p-sm-3" key={index}>
                             {
+                              console.log( item.topics.document[0].data.title.text ),
+                              
                            !item.topics.document[0].data.heading ?
-                          <div className="about-loan card-primary mt-84">
+
+                          <div className="about-loan card-primary mt-84" id={`index${index}`}>
                               <div className="heading">
                                   <h3 className=" text-uppercase mb-2 mb-sm-3 section-title ">{item.topics.document[0].data.title.text}</h3>
                               </div>
@@ -82,7 +86,7 @@ class KnoweldgeHub extends React.Component {
                                   </div>
                               </div>
                             </div>:
-                                <div className="guidelines-nris mt-84">
+                                <div className="guidelines-nris mt-84" id={`index${index}`}>
                                 <div className="heading">
                                   <h3 className=" text-uppercase mb-3 section-title">{item.topics.document[0].data.title.text}</h3>
                                 </div>
@@ -102,6 +106,36 @@ class KnoweldgeHub extends React.Component {
                               </div>
                               </div>
                             }
+                            {
+                              knowledgeData.knowledge_topics.map((item,index)=>{
+                                // console.log(item.topics.document[0].data.mobile_view.localFile.childImageSharp.fluid);
+                                
+                                if(item.topics.document[0].data.title.text=="Maha Rera") {
+                                  {
+                                    console.log(item.topics.document[0].data.mobile_view.localFile.childImageSharp.fluid);
+                                  }
+                                  return(
+                                    <div className="col-md-6 d-sm-none p-0" id={`maharera${index}`}>
+                                    <div className="maha-rera-mb d-flex position-relative ">
+                                     <Img fluid={item.topics.document[0].data.mobile_view.localFile.childImageSharp.fluid } alt="" width="100%"/>  
+                                      <div className="ml-3 ">
+                                        <h3 className="inner-section-title mb-1">Maha <span className="text-uppercase">Rera</span> </h3>
+                                        <p className="m-0">Rules and regulations</p>
+                                      </div>
+                                      <div className="know-more d-flex align-items-end justify-content-end position-absolute">
+                                        <a href="#">
+                                            <span  className="mr-3">Know More</span>
+                                            <i className="fas fa-arrow-right"></i>
+                                        </a>
+                                      </div>
+                                    </div>
+                                  </div> 
+                                  )
+
+                               }
+                            })
+                          }
+                            
                           </div>
                         )
                       })
@@ -183,6 +217,16 @@ export const knowledgePage = graphql`{
                 title{
                   text
                 }
+                mobile_view{
+                  localFile {
+                   childImageSharp {
+                       fluid(maxWidth: 1150, quality: 100) {
+                        ...GatsbyImageSharpFluid
+                           presentationWidth
+                       }
+                   }
+               }
+               }
                 banner{
                   localFile {
                     childImageSharp {
