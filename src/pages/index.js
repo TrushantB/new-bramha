@@ -96,7 +96,7 @@ class IndexPage extends React.Component {
           { this.state.selectedVertical}
           <footer className="our-verticals-tabs d-flex">
             <div className="container d-flex">
-              <ul className="p-0 d-flex w-100 justify-content-around list-style-none text-uppercase nav-tabs border-0" id="myTab" role="tablist">
+              <ul className="p-0 d-flex w-100 justify-content-around list-style-none text-uppercase nav nav-tabs border-0" id="myTab" role="tablist">
                 {
                   this.state.ourVerticals.map((item) => {
                     return(
@@ -133,17 +133,6 @@ export const pageDataResidential = graphql`{
           }
         }
       }
-			gallery{
-        image{
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 1150, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
     }
   }
   prismicCommercial{
@@ -153,17 +142,6 @@ export const pageDataResidential = graphql`{
           childImageSharp {
             fluid(maxWidth: 1150, quality: 100) {
               ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-      gallery{
-        image{
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 1150, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
             }
           }
         }
@@ -181,17 +159,6 @@ export const pageDataResidential = graphql`{
           }
         }
       }
-      gallery{
-        image{
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 1150, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
     }
   }
   prismicLeisureClub{
@@ -201,17 +168,6 @@ export const pageDataResidential = graphql`{
           childImageSharp {
             fluid(maxWidth: 1150, quality: 100) {
               ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-      gallery{
-        image{
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 1150, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
             }
           }
         }

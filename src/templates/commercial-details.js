@@ -10,7 +10,7 @@ class CommercialDetails extends React.Component {
         const commercialData = this.props.data.prismicOurVerticalsArticle;
         console.log('commercialData', commercialData);
               var settings = {
-                className:"center",
+                // className:"center",
                 centerMode: true,
                 centerPadding: '200px',
                 slidesToShow: 1,
@@ -20,16 +20,17 @@ class CommercialDetails extends React.Component {
                   {
                     breakpoint: 992,
                     settings: {
-                      arrows: false,
+                      arrows: true,
                       centerMode: true,
                       centerPadding: '100px',
-                      slidesToShow: 1
+                      slidesToShow: 1,
+                      speed:2000
                     }
                   },
                   {
                     breakpoint: 768,
                     settings: {
-                      arrows: false,
+                      arrows: true,
                       centerMode: true,
                       centerPadding: '100px',
                       slidesToShow: 1
@@ -38,7 +39,7 @@ class CommercialDetails extends React.Component {
                   {
                     breakpoint: 580,
                     settings: {
-                      arrows: false,
+                      arrows: true,
                       centerMode: true,
                       centerPadding: '80px',
                       slidesToShow: 1
@@ -47,7 +48,7 @@ class CommercialDetails extends React.Component {
                   {
                     breakpoint: 500,
                     settings: {
-                      arrows: false,
+                      arrows: true,
                       centerMode: true,
                       centerPadding: '40px',
                       slidesToShow: 1
@@ -65,24 +66,24 @@ class CommercialDetails extends React.Component {
                             </section>
                         {/* <!-- ---------------- banner end here ---------------- --> */}
                         {/*  {/* <!------------------ middle section start here ----------------------> */}
-                        <section className="detail-page-sections pt-sm-0 container-md bg-color">
+                        <section className="detail-page-sections pt-sm-0 container">
                             <div className="logo-card">
                                 <picture className="d-flex justify-content-start justify-content-sm-center align-items-center">
                                 <source media="(min-width: 581px)" srcSet={commercialData.data.logo.url} />
                                 <img src={commercialData.data.logo.url} alt="hospital Logo" className="w-50" />
                                 </picture>
                             </div>
-                            <div className="row padding-block-60">
+                            <div className=" padding-block-60">
                               <h2 className="page-heading text-uppercase"> 
                                   {commercialData.data.heading.text}     
                               </h2> 
                             </div>
                             <div className="row">
-                                <div className="col-12">
+                                <div className="col-12 d-flex d-sm-block flex-wrap justify-content-end">
                                     <p className="mb-4">
                                        {commercialData.data.description.text}
                                     </p>
-                                    <a href="#" className="link-text d-flex justify-content-around align-items-center btn-tertiary hospitality-viewmore">
+                                    <a href="#" className="link-text d-flex justify-content-between align-items-center btn-tertiary hospitality-viewmore">
                                         <span> View Website </span> 
                                         <i className="fas fa-arrow-right"></i>
                                     </a>
@@ -91,7 +92,7 @@ class CommercialDetails extends React.Component {
                         </section>
                         {/*  {/* <!------------------ middle section end here ------------------------> */}
                         {/* <!-- ------------------- Showcase section start here ------------------- --> */}
-                            <section className="detail-page-sections">
+                            <section className="slider-page">
                                 <h2 className="section-title text-uppercase text-center">
                                     Showcase
                                 </h2>
@@ -118,7 +119,7 @@ class CommercialDetails extends React.Component {
                             </section>
                         {/* <!-- ------------------- Showcase section end here ------------------- --> */}
                         {/* <!-- ------------------- Location section start here ------------------- --> */}
-                            <section className="detail-page-sections">
+                            <section className="location-sections">
                                 <h2 className="section-title text-uppercase text-center">
                                     Location
                                 </h2>
@@ -128,7 +129,7 @@ class CommercialDetails extends React.Component {
                             </section>
                         {/* <!-- ------------------- Location section end here ------------------- --> */}
                         {/* <!-- ------------------- Download Brouchure section start here ------------------- --> */}
-                            <div className="container detail-page-sections d-flex justify-content-center">
+                            <div className="container detail-page-sections d-flex justify-content-center download-btn">
                                 <a href="#pdf-link" download="Brouchure.pdf" className="btn-secondary text-center">Download Brouchure</a>
                             </div>
                         {/* <!-- ------------------- Download Brouchure section end here ------------------- --> */}
@@ -149,10 +150,10 @@ export const hospitalityPage = graphql`
           text
         }
         banner{
-          image{
+          image {
             localFile {
                 childImageSharp {
-                    fluid(maxWidth: 1150, quality: 100) {
+                    fluid(maxWidth: 1150, maxHeight:650 quality: 100) {
                         ...GatsbyImageSharpFluid
                         presentationWidth
                     }
