@@ -18,10 +18,12 @@ return(
 Menu <span></span>
 </a>
 <nav className="nav-container pb-0" id="navigation">
-<Link className="navbar-brand" to='/'>
-  <img src={img1} alt="BramhaCorp Logo" className="logo-img" />
-</Link>
-<ul className="nav navbar-nav">
+    <ul className="nav navbar-nav">
+        <li>
+          <Link className="navbar-brand" to='/'>
+            <img src={img1} alt="BramhaCorp Logo" className="logo-img" />
+          </Link>
+        </li>
           <li className="nav-item active">
             <Link className="nav-link" to="/" onClick={classHandle}>Home</Link>
           </li>
