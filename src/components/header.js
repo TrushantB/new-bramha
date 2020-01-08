@@ -17,7 +17,7 @@ return(
   <a  className="nav-trigger" id="toggle" onClick={() => $("body").toggleClass("nav-open")} >
 Menu <span></span>
 </a>
-<nav className="nav-container" id="navigation">
+<nav className="nav-container pb-0" id="navigation">
 <Link className="navbar-brand" to='/'>
   <img src={img1} alt="BramhaCorp Logo" className="logo-img" />
 </Link>
@@ -65,7 +65,10 @@ Menu <span></span>
           <li className="nav-item">
             <Link className="nav-link" to="/contacts" onClick={classHandle}>Contact Us</Link>
           </li>
-</ul>
+        </ul>
+        <div className="nav-footer text-center py-2 bg-white w-100">
+          <small> BramhaCorp Ltd @2020. All rights reserved.</small>
+        </div>
 </nav>
 <div className="overlay"></div>
 </nav>
@@ -136,9 +139,9 @@ Menu <span></span>
           //   <Link className="nav-link" to="/contacts">Contact Us</Link>
           // </li>
   //       </ul>
-  //       <div className="nav-footer text-center py-2 bg-white w-100">
-  //         <small> BramhaCorp Ltd @2020. All rights reserved.</small>
-  //       </div>
+        // <div className="nav-footer text-center py-2 bg-white w-100">
+        //   <small> BramhaCorp Ltd @2020. All rights reserved.</small>
+        // </div>
   //     </div>
   //   </nav>
   // </header>

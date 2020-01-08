@@ -51,8 +51,8 @@ class AboutUs extends React.Component {
          ]
       }
       var settings2={
-        autoplay: true,
-        autoplaySpeed:3500,
+        // autoplay: true,
+        // autoplaySpeed:3500,
        slidesToShow: 1,
        slidesToScroll: 1,
        arrows: false,  
@@ -106,7 +106,7 @@ class AboutUs extends React.Component {
                 return(
                   <div key={value} className="col-md-4 mt-2 mt-sm-2 mt-md-2">
                     <div className="about-sect-4"  style={this.state.styleData}>
-                      <h3 className="section-title text-uppercase">
+                      <h3 className="mb-3 section-title text-uppercase">
                       {item.sub_title.text}
                       </h3>
                       <p className="vision-mission-des">
@@ -131,7 +131,7 @@ class AboutUs extends React.Component {
           </section>
           <section className="our-legacy about-sections">
               <div className="d-flex justify-content-center flex-column section-title-wrapper w-100 ">
-                <h3 className="section-title text-center text-uppercase">
+                <h3 className="our-legacy-title section-title text-center text-uppercase">
                     Our Legacy
                 </h3>
               </div>
@@ -262,7 +262,7 @@ class AboutUs extends React.Component {
               <div className="col-12 padding-sm-0">
                 <div className="management-card d-flex">
                   <div className="management-img-wrapper w-100">
-                    <Img fluid={data.management_team.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
+                    <Img fluid={data.management_team.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100 h-100"/>
                   </div>
                   <div className="management-card-body d-flex flex-column justify-content-around"> 
                     <p className="d-none d-md-block">

@@ -5,58 +5,59 @@
     box-shadow: 1px 0px 6px rgba(00,00,00,0.2);
     .navbar{
         padding: 0.407rem 1rem;
-    }
-    .navbar-nav{
-        display: flex;
-        flex-direction: column;
-        padding-left: 0;
-        margin-bottom: 0;
-        list-style: none;
-        width: 100%;
-        max-width: 300px;
-        // justify-content: center;
-        margin: auto;
-        flex: 1 ;
-        .dropdown-menu{
-            border: none;
-            background: transparent;
-            margin-left: 35px;
-        }
-        .dropdown-item{
-            font-family: 'Graphik', sans-serif;
-            font-size: 14px;
-            color: #333333;
-            opacity: 0.8;
-            &:hover{
-                background-color: theme-color("tertiary");
-                color: #ffffff;
-            }
-        }
-        .dropdown{
-            &.show{
-                .dropdown-toggle::after{
-                    content: "\F068";
-                }                
-            }
-        }
-        .dropdown-toggle{
-            &::after{
-                border: none;
-                content: "\F067";
-                -moz-osx-font-smoothing: grayscale;
-                -webkit-font-smoothing: antialiased;
-                display: inline-block;
-                font-style: normal;
-                font-variant: normal;
-                text-rendering: auto;
-                line-height: 1;
-                font-family: "Font Awesome 5 Free";
-                font-weight: 900;       
-                color: #333333;
-                opacity: 0.6;    
-            }
-        }
     }    
+}
+.navbar-nav{
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    width: 100%;
+    max-width: 300px;
+    // justify-content: center;
+    margin: auto;
+    flex: 1 ;
+    .dropdown-menu{
+        border: none;
+        background: transparent;
+        margin-left: 35px;
+    }
+    .dropdown-item{
+        font-family: 'Graphik', sans-serif;
+        font-size: 14px;
+        color: #333333;
+        opacity: 0.8;
+        padding-left: 12px;
+        &:hover{
+            background-color: theme-color("tertiary");
+            color: #ffffff;
+        }
+    }
+    .dropdown{
+        &.show{
+            .dropdown-toggle::after{
+                content: "\F068";
+            }                
+        }
+    }
+    .dropdown-toggle{
+        &::after{
+            border: none;
+            content: "\F067";
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            line-height: 1;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;       
+            color: #333333;
+            opacity: 0.6;    
+        }
+    }
 }
 .logo-img{
     width:60%;
@@ -115,7 +116,7 @@
 .navbar-light .navbar-nav .nav-link{
     color: theme-color("text-primary");
     padding: 0.4rem 1rem 0.4rem 1.4rem;
-    border-left: 0.5rem solid theme-color("secondary");
+    border-left: 0.5rem solid transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
