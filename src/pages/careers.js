@@ -12,6 +12,7 @@ class Careers extends React.Component {
     this.state = {
       flag : false,
       dataSource : null,
+      activeSlide:null,
       jobOpening:[],
       jobOpeningStore:[],
       activeButton:null,
@@ -108,7 +109,8 @@ class Careers extends React.Component {
       centerMode: true,
       centerPadding: '200px',
       slidesToShow: 1,
-      speed:2000,
+      speed:1000,
+      afterChange: current => this.setState({ activeSlide: current }),
       responsive: [
         {
           breakpoint: 992,
@@ -173,7 +175,7 @@ class Careers extends React.Component {
                     }
                   </Slider>
                   <p className=" text-left text-sm-center pages mb-0">
-                      1 of 4
+                      {this.state.activeSlide + 1} of {careerData.showcase.length}
                   </p>
               </div>
             </div>
