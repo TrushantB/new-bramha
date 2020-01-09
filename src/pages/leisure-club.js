@@ -99,7 +99,7 @@ export const leisurePage = graphql`{
                     thumbnail{
                       localFile {
                         childImageSharp {
-                          fluid(maxWidth: 1150, quality: 100) {
+                          fluid(maxWidth: 1150) {
                             ...GatsbyImageSharpFluid
                           }
                         }
@@ -109,7 +109,7 @@ export const leisurePage = graphql`{
                       image{
                         localFile {
                             childImageSharp {
-                              fluid(maxWidth: 1150, quality: 100) {
+                              fluid(maxWidth: 1150) {
                                 ...GatsbyImageSharpFluid
                               }
                             }

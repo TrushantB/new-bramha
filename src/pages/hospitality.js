@@ -95,7 +95,7 @@ export const hospitalityPage = graphql`{
                   thumbnail{
                     localFile {
                       childImageSharp {
-                        fluid(maxWidth: 1150, quality: 100) {
+                        fluid(maxWidth: 1150) {
                           ...GatsbyImageSharpFluid
                         }
                       }
@@ -105,7 +105,7 @@ export const hospitalityPage = graphql`{
                     image{
                       localFile {
                         childImageSharp {
-                          fluid(maxWidth: 1150, quality: 100) {
+                          fluid(maxWidth: 1150) {
                             ...GatsbyImageSharpFluid
                           }
                         }

@@ -153,7 +153,7 @@ export const hospitalityPage = graphql`
           image {
             localFile {
                 childImageSharp {
-                    fluid(maxWidth: 1150, maxHeight:650 quality: 100) {
+                    fluid(maxWidth: 1150) {
                         ...GatsbyImageSharpFluid
                         presentationWidth
                     }
@@ -227,7 +227,7 @@ export const hospitalityPage = graphql`
           image1{
             localFile {
                 childImageSharp {
-                    fluid(maxWidth: 1150, quality: 100) {
+                    fluid(maxWidth: 1150) {
                       ...GatsbyImageSharpFluid
                       presentationWidth
                   }
@@ -248,7 +248,7 @@ export const hospitalityPage = graphql`
           image1{
             localFile {
                 childImageSharp {
-                    fluid(maxWidth: 1150, quality: 100) {
+                    fluid(maxWidth: 1150) {
                         ...GatsbyImageSharpFluid
                         presentationWidth
                     }
@@ -288,7 +288,7 @@ export const hospitalityPage = graphql`
           images{
             localFile {
                 childImageSharp {
-                    fluid(maxWidth: 1150, quality: 100) {
+                    fluid(maxWidth: 1150) {
                         ...GatsbyImageSharpFluid
                         presentationWidth
                     }
