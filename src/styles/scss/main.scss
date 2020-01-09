@@ -39,7 +39,9 @@
   'pages/events',
   'pages/career',
   'pages/hospitality-projects',
-  'pages/hospitality-details';
+  'pages/hospitality-details',
+  'pages/leisure-club';
+  
 
 
 
@@ -164,7 +166,24 @@ button:focus{
     }
 }
 
+.leisure-club-detail-page {
+    .section-title::after{
+        display: none;
+    }
+    .section-title {
+        margin-bottom: 24px;
+    }
+}
 
+// @media (max-width:580px) {
+//     .leisure-club-detail-page {
+//         .page-heading{
+//             font-size: 16px;
+//             font-weight: 500;
+//             padding-left: 0;
+//         }
+//     }
+// }
 
 
 

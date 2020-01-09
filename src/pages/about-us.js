@@ -97,7 +97,7 @@ class AboutUs extends React.Component {
               </div>
               <div className="slider-wrapper">
                 <div className="slider-border"></div>
-                <div className="container-fluid container-md slider-container">
+                <div className="container-fluid container-md slider-container padding-sm-0">
                 <Slider {...settings}>
                     {
                       data.our_legacy.document[0].data.our_legacy.map((item,value)=>{

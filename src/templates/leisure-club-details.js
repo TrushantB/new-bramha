@@ -16,7 +16,7 @@ class LeisureDetails extends React.Component {
     render(){
       const { photoIndex, isOpen } = this.state;
         const leisureData = this.props.data.prismicOurVerticalsArticle;
-            var settings = {
+            let settings = {
             // className:"center",
             centerMode: true,
             centerPadding: '200px',

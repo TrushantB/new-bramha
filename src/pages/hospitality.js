@@ -9,6 +9,7 @@ class Hospitality extends React.Component {
   render(){
     const hospitalityData = this.props.data.allPrismicHospitality.edges;
     const data = hospitalityData[0].node.data;
+    console.log('data', data);
     return(
       <Layout>
         <SEO title="Hospitality"/>
@@ -45,7 +46,7 @@ class Hospitality extends React.Component {
                                       <h4 className="text-uppercase m-0 inner-section-title">{datas.data.title.text}</h4>
                                     </div>
                                     <div className="apartment-size d-flex justify-content-between align-items-center">
-                                      <span className="text-uppercase">{datas.data.flat_bhk.text}</span>
+                                      <span className="text-uppercase">{datas.data.unique_features.text}</span>
                                       <div>
                                         <i className="fas fa-arrow-right"></i>
                                       </div>
@@ -118,6 +119,9 @@ export const hospitalityPage = graphql`{
                     text
                   }
                   flat_address{
+                    text
+                  }
+                  unique_features {
                     text
                   }
                 }

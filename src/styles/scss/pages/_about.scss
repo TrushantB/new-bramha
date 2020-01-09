@@ -185,13 +185,20 @@
         .slider-wrapper{
             .slick-dots{
                 li{
-                    margin: 0 16px;
+                    margin: 0 20px;
                 }
             } 
+            .legacy-slide{
+                height:65vh;
+            }
         }
     }
  }
-
+ @media (max-width:680px){
+    .our-legacy .slider-wrapper .slick-dots li{
+        margin: 0 14px;
+    }
+ }
  @media (max-width:580px) {
      .about-description ,
      .about-heading {
@@ -227,13 +234,28 @@
     
     /*========= our legacy css start =========*/
     .our-legacy{
-        .slider-wrapper{
-            .slider-container{
-                margin-top: 60px;
-            }
+      .slider-wrapper{
+        .slider-container{
+            margin-top: 60px;
+        }
+        .slider-border{
+            border: 1px solid #bcbdbd;
+        }
+        .legacy-slide{
+            height:45vh;
+          .slide-caption{
+              bottom:0;
+              left:0;
+              right:0;
+              padding:8px 16px;
+              p{
+                  margin: 0;
+              }
+          }
+        }
             .slick-dots{
                 li{
-                    margin:0 8px;
+                    margin:0 12px;
                     top:-4px;
                     div{
                         div{        
@@ -255,12 +277,17 @@
         }
     }
  }
+ @media (max-width:500px){
+    .our-legacy .slider-wrapper .slick-dots li{
+        margin:0 8px;
+    }
+ }
  @media (max-width:420px){
     
     /*=========== our legacy css start ============*/
     .our-legacy .slider-wrapper .slick-dots li {
-        margin: 0 3px;
-        top: -4px;
+        margin: 0 7px;
+        top: -2px;
     }
     .our-legacy .slider-wrapper .slick-dots li div div::before {
         margin-left: 0;
@@ -277,3 +304,8 @@
         border:6px solid #fff;
     }
  }
+@media(max-width:348px){
+    .our-legacy .slider-wrapper .slick-dots li{
+        margin: 0 5px;
+    }
+}

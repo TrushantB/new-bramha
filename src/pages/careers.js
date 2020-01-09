@@ -271,13 +271,13 @@ class Careers extends React.Component {
                 </div>
               </div>
           </section>
-          <section className="upload-cv-scetion  text-left text-sm-center padding-block-60">
+          <section className="upload-cv-scetion text-center padding-block-60">
             <div>
-              <h2 className=" section-title text-center">
+              <h2 className=" section-title text-left text-sm-center">
                 Cant find what you are looking for?
               </h2>
             </div>
-            <p className="text py-3">
+            <p className="text py-3 text-left text-sm-center">
               <span className="d-block">Upload your CV to our portal.</span>
               <span className="d-block">We will get back to you once suitable position is open</span>
             </p>

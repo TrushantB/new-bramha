@@ -49,10 +49,12 @@
   font-weight: 300;
   font-size: 14px;
   letter-spacing: -0.23px;
+  transition: color 0.3s ease-in-out;
   color: theme-color("tertiary");
   cursor: pointer;
   &:hover{
       text-decoration: none;
+      color: theme-color("primary");
   }
 }
 .bg-light-gray{

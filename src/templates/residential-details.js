@@ -157,48 +157,48 @@ class VerticalPage extends React.Component {
             </section>
             {/* <!--   ------------------- Location section end here ------------------- --> */}
             {/* <!--   ------------------- Proximities section start here ------------------- --> */}
-  <section className="proximities-section">
-     <div className=" container">
-        <h2 className="section-title text-uppercase text-center">
-            Proximities
-        </h2>
-        <ul className="nav nav-pills row" id="pills-tab" role="tablist">
-              {
-                verticalData.data.proximites.map((item, index)=>{
-                  return(
-                  <li className="nav-item col-3 p-0" key={index}>
-                    <a className={ index ? "nav-link d-flex flex-column align-items-center text-center" : "nav-link d-flex flex-column align-items-center text-center active"} id={`tab${index}`} data-toggle="pill" href={`#id${index}`} role="tab" aria-controls="pills-home" aria-selected="true">
-                        <i className={item.icon_name} style={{fontSize:'40px'}}></i>
-                        <span className="mt-2 text-capitalize">{item.title1.text}</span>
-                    </a>
-                  </li>
-                  )
-                })
-              }
-          </ul>
-          <div className="tab-content" id="pills-tabContent">
-              {
-                verticalData.data.proximites.map((item, index) => {
-                  return(
-                    <div key={index} className={ index ? "tab-pane fade show" : "tab-pane fade show active"} id={`id${index}`} role="tabpanel" aria-labelledby={`tab${index}`}>
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-md-4">
+          <section className="proximities-section">
+            <div className=" container">
+                <h2 className="section-title text-uppercase text-center">
+                    Proximities
+                </h2>
+                <ul className="nav nav-pills row" id="pills-tab" role="tablist">
+                      {
+                        verticalData.data.proximites.map((item, index)=>{
+                          return(
+                          <li className="nav-item col-3 p-0" key={index}>
+                            <a className={ index ? "nav-link d-flex flex-column align-items-center text-center" : "nav-link d-flex flex-column align-items-center text-center active"} id={`tab${index}`} data-toggle="pill" href={`#id${index}`} role="tab" aria-controls="pills-home" aria-selected="true">
+                                <i className={item.icon_name} style={{fontSize:'40px'}}></i>
+                                <span className="mt-2 text-capitalize">{item.title1.text}</span>
+                            </a>
+                          </li>
+                          )
+                        })
+                      }
+                  </ul>
+                  <div className="tab-content" id="pills-tabContent">
+                      {
+                        verticalData.data.proximites.map((item, index) => {
+                          return(
+                            <div key={index} className={ index ? "tab-pane fade show" : "tab-pane fade show active"} id={`id${index}`} role="tabpanel" aria-labelledby={`tab${index}`}>
+                              <div className="container">
+                                <div className="row">
+                                  <div className="col-md-4">
                                     <ul>
-                                        <li>
-                                            {item.description1.text}
-                                        </li>
+                                      <li>
+                                          {item.description1.text}
+                                      </li>
                                     </ul>
+                                  </div>
                                 </div>
+                              </div>
                             </div>
-                        </div>
-                    </div>
-                  )
-                })
-              }
-          </div>
-      </div>
-    </section>  
+                          )
+                        })
+                      }
+                  </div>
+              </div>
+            </section>  
                       
             {/* <!--   ------------------- Proximities section end here ------------------- --> */}
             {/* <!--   ------------------- Floor Plan section start here ------------------- --> */}
@@ -239,21 +239,11 @@ class VerticalPage extends React.Component {
                         }
                         />
                   }
-                    <p className=" text-left text-sm-center pages mb-0">
-                        1 of 4
-                    </p>
+                <p className=" text-left text-sm-center pages mb-0">
+                {this.state.activeSlide + 1} of {verticalData.data.floor_plans.length}
+                </p>
+                   
               </div>
-              {/* <div className=" showcase-slider">
-                <Slider {...settings}>
-                  {
-                    verticalData.data.floor_plans.map((item,value)=>{
-                      return(
-                        <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt=" Showcase slidwer" className="w-100 h-100" />
-                      )
-                    })
-                  }
-                </Slider>
-              </div> */}
             </div>
             {/* <!--   ------------------- Floor Plan section end here ------------------- --> */}
             {/* <!--   ------------------- Antity And Fact Files section start here ------------------- --> */}
@@ -276,83 +266,17 @@ class VerticalPage extends React.Component {
                       <div className="amenities-inner-wrapper d-flex">
                         <div className="icon-wrapper">
                           <div className="d-flex flex-wrap amenities" id="myTab" role="tablist">
-                            <button className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
-                              <i className="far fa-lightbulb"></i>
-                                {verticalData.data.amenities[0].title1.text}
-                            </button>
-                            <button className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
-                              <i className="fas fa-basketball-ball"></i>
-                              {verticalData.data.amenities[1].title1.text}
-                            </button>
-                            <button className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
-                              <i className="fas fa-lock"></i>
-                              {verticalData.data.amenities[2].title1.text}
-                            </button>
-                            <button className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
-                              <i className="fas fa-table-tennis"></i>
-                              {verticalData.data.amenities[3].title1.text}
-                            </button>
-                            <button className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
-                              <i className="fas fa-fire-extinguisher"></i>
-                              {verticalData.data.amenities[4].title1.text}
-                            </button>
+                            {console.log('verticalData.data', verticalData.data)}
                             {
-                              verticalData.data.amenities[6] ?
-                                <button className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
-                                  <i className="fas fa-dumbbell"></i>
-                                  {verticalData.data.amenities[5].title1.text}
-                                </button>: null
+                              verticalData.data.amenities.map((item, index) => {
+                                return(
+                                  <button key={index} className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
+                                    <i className={item.icon}></i>
+                                      {item.title1.text}
+                                  </button>
+                                )
+                              })
                             }
-
-                            {
-                              verticalData.data.amenities[6] ?
-                                <button className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
-                                  <i className="fas fa-hand-holding-heart"></i>
-                                  {verticalData.data.amenities[6].title1.text}
-                                </button>: null
-                            }
-
-                            {
-                              verticalData.data.amenities[7] ? 
-                              <button className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
-                                <i className="fas fa-walking"></i>
-                                {verticalData.data.amenities[7].title1.text}
-                              </button> :null
-                            }
-
-                            {
-                              verticalData.data.amenities[8] ? 
-                                <button className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
-                                <i className="fas fa-archway"></i>
-                                {verticalData.data.amenities[8].title1.text}
-                              </button> :  null
-                            }
-                            {
-                              verticalData.data.amenities[9] ? 
-                                <button className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
-                                  <i className="fas fa-swimming-pool"></i>
-                                  {verticalData.data.amenities[9].title1.text}
-                                </button>: null
-                            }
-                            {
-                              verticalData.data.amenities[10] ? 
-                              <button className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
-                                <i className="fas fa-swimmer"></i>
-                                {verticalData.data.amenities[10].title1.text}
-                              </button>: null
-                            }
-                            {
-                              verticalData.data.amenities[11] ? 
-                                <button className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
-                                  <i className="fas fa-swimmer"></i>
-                                  {verticalData.data.amenities[11].title1.text}
-                                </button>: null
-                            }
-
-                            {/* <button className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
-                              <i className="fas fa-video"></i>
-                              {verticalData.data.amenities[11].title1.text}
-                            </button> */}
                           </div>
                           <div className="d-flex"></div>
                         </div>
@@ -408,23 +332,10 @@ class VerticalPage extends React.Component {
                         />
                   }
                       <p className=" text-left text-sm-center pages mb-0">
-                          1 of 4
-                      </p>
+                    {this.state.activeSlide + 1} of {verticalData.data.site_progress.length}
+                  </p>
                     </div>
               </div>
-              {/* <div className="slider-wrapper-gray">
-                  <div className="container showcase-slider">
-                    <Slider {...settings}>
-                    {
-                      verticalData.data.site_progress.map((item,value)=>{
-                        return(
-                          <Img fluid={item.images.localFile.childImageSharp.fluid} key={value} alt=" Showcase slidwer" className="w-100 h-100" />
-                        )
-                      })
-                    }
-                    </Slider>
-                  </div>
-              </div> */}
             </section>
             {/* <!--   ------------------- progress section end here ------------------- --> */}
             {/* <!--   ------------------- Download Brouchure section start here ------------------- --> */}
@@ -514,141 +425,142 @@ class VerticalPage extends React.Component {
 export default VerticalPage;
 
 export const verticalViewData = graphql` 
-    query verticalData($uid: String!) {
-    prismicOurVerticalsArticle(uid: { eq: $uid }) {
+  query verticalData($uid: String!) {
+  prismicOurVerticalsArticle(uid: { eq: $uid }) {
     data{
-        title{
-          text
-        }
-        banner{
-          image{
-            localFile {
-                childImageSharp {
-                    fluid(maxWidth: 1150, quality: 100) {
-                        ...GatsbyImageSharpFluid
-                        presentationWidth
-                    }
-                }
+      title{
+        text
+      }
+      banner{
+        image{
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1150, quality: 100) {
+                ...GatsbyImageSharpFluid
+                presentationWidth
+              }
             }
           }
         }
-        logo{
+      }
+      logo{
+        url
+      }
+      maharera{
+        url
+      }
+      heading{
+        text
+      }
+      description{
+        text
+      }
+      phase{
+        title1{
+          text
+        }
+        description1{
+          text
+        }
+      }
+      short_description{
+        text
+      }
+      flat_bhk{
+        text
+      }
+      flat_address{
+        text
+      }
+      tag_line{
+        text
+      }
+      unique_features{
+          text
+      }
+      showcase{
+        title1{
+          text
+        }
+        image1{
+          localFile {
+            childImageSharp {
+                fluid(maxWidth: 1150, quality: 100) {
+                ...GatsbyImageSharpFluid
+                presentationWidth
+              }
+            }
+          }
+        }
+      }
+      floor_plans1{
+        text
+      }
+      floor_plans{
+        title1{
+          text
+        }
+        image1{
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1150, quality: 100) {
+                ...GatsbyImageSharpFluid
+                presentationWidth
+              }
+            }
+          }
+        }
+      }
+      proximites{
+        icon_name
+        title1{
+          text
+        }
+        description1{
+          text
+        }
+        icon{
           url
         }
-        maharera{
-         url
+      }
+      amenities1{
+        text
+      }
+      amenities_banner{
+        url
+      }
+      amenities{
+        title1{
+            text
         }
-        heading{
+        description1{
           text
         }
-        description{
+        icon
+      }
+      fact_file_heading{
           text
-        }
-        phase{
-            title1{
-              text
-            }
-            description1{
-              text
-            }
-          }
-        short_description{
-          text
-        }
-        flat_bhk{
-          text
-        }
-        flat_address{
-          text
-        }
-        tag_line{
-          text
-        }
-        unique_features{
-           text
-        }
-        showcase{
+      }
+      fact_file{
           title1{
-            text
-          }
-          image1{
-            localFile {
-                childImageSharp {
-                    fluid(maxWidth: 1150, quality: 100) {
-                      ...GatsbyImageSharpFluid
-                      presentationWidth
-                  }
-                }
-            }
-          }
-        }
-        floor_plans1{
           text
         }
-        floor_plans{
-          title1{
-            text
-          }
-          image1{
-            localFile {
-                childImageSharp {
-                    fluid(maxWidth: 1150, quality: 100) {
-                        ...GatsbyImageSharpFluid
-                        presentationWidth
-                    }
-                }
-            }
-          }
-        }
-        proximites{
-          icon_name
-          title1{
-            text
-          }
-          description1{
-            text
-          }
-          icon{
-            url
-          }
-        }
-        amenities1{
+        description1{
           text
         }
-        amenities_banner{
-          url
-        }
-        amenities{
-          title1{
-              text
-          }
-          description1{
-            text
-          }
-        }
-        fact_file_heading{
-           text
-        }
-        fact_file{
-           title1{
-            text
-          }
-          description1{
-            text
-          }
-        }
-        site_progress{
-          images{
-            localFile {
-                childImageSharp {
-                    fluid(maxWidth: 1150, quality: 100) {
-                        ...GatsbyImageSharpFluid
-                        presentationWidth
-                    }
-                }
+      }
+      site_progress{
+        images{
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1150, quality: 100) {
+                ...GatsbyImageSharpFluid
+                presentationWidth
+              }
             }
           }
         }
       }
     }
+  }
 }`
