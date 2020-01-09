@@ -27,7 +27,7 @@ class AboutUs extends React.Component {
       dots: true,
       dotsClass: "slick-dots slick-thumb",
       infinite: true,
-      speed: 1000,
+      speed: 2000,
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay : true,
@@ -48,8 +48,8 @@ class AboutUs extends React.Component {
           {/* {i + 1} */}
         </div>
       ),
-      // beforeChange: (current, next) => this.setState({ activeSlide: next }),
-      // afterChange: current => this.setState({ activeSlide2: current }),
+      beforeChange: (current, next) => this.setState({ activeSlide: next }),
+      afterChange: current => this.setState({ activeSlide2: current }),
       adaptiveHeight : true,
     };
     const data = this.props.data.prismicAboutus.data;
