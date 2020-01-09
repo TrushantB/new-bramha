@@ -160,7 +160,11 @@
     }
 }
 
-
+.upload-cv-scetion {
+    .section-title::after {
+        display: none;
+    }
+}
 
 
 
@@ -281,6 +285,15 @@
         }
         .upload-cv-scetion {
             padding-top: 52px;
+        }
+    }
+   
+    .input-file-btn::before {
+        width: auto;
+    }
+    .career-page {
+        .slider-img {
+            margin: 8px 5px;
         }
     }
    

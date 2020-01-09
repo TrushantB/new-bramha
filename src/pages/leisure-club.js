@@ -26,7 +26,7 @@ class LeisureClub extends React.Component {
                     </div>
                     </section>
                     <section className="hospitality-projects">
-                        <div className="residences">
+                        <div className="residences leisure-club">
                             <div className="container">
                                 <div className="row">
                                 {
@@ -34,8 +34,8 @@ class LeisureClub extends React.Component {
                                             return(
                                                 item2.verticals.document.map((item, index)=>{
                                                    return(
-                                                    <Link to={`leisure-club/${item2.verticals.uid}`}className="col-md-4 p-0 pl-sm-3 pr-sm-3" key={index}>
-                                                        <div className="residences-card position-relative mt-5 mb-5">
+                                                    <Link to={`leisure-club/${item2.verticals.uid}`}className="col-md-6 col-lg-4 p-0 pl-sm-3 pr-sm-3" key={index}>
+                                                        <div className="residences-card position-relative mt-0 mt-sm-5">
                                                             <div className="residences-img ">
                                                                 <Img fluid={item.data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%"/>
                                                             </div>

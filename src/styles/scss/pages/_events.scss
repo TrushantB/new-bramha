@@ -4,8 +4,8 @@
 .ml-32{
   margin-left: 32px;
 }
-.events{
-    .event-heading{
+.events{  
+   .event-heading{
         .title{
             h2{
               @include border-left;
@@ -67,6 +67,10 @@
         }
       }
     } 
+    .events:last-child{
+      margin-bottom: 124px;
+    }
+//================Media query============//
   //  @media (max-width:1200px){
   //   .events{
   //     .slider-img{
