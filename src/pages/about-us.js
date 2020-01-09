@@ -23,6 +23,7 @@ class AboutUs extends React.Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay : true,
+      arrows:false,
       customPaging: i => (
         <div>
           <div key={i}> {data.our_legacy.document[0].data.our_legacy[i].year}</div>
@@ -96,7 +97,7 @@ class AboutUs extends React.Component {
               </div>
               <div className="slider-wrapper">
                 <div className="slider-border"></div>
-                <div className="container">
+                <div className="container-fluid container-md slider-container">
                 <Slider {...settings}>
                     {
                       data.our_legacy.document[0].data.our_legacy.map((item,value)=>{
