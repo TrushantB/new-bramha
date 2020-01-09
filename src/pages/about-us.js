@@ -10,46 +10,27 @@ class AboutUs extends React.Component {
     styleData:{height: 160, overflow: 'hidden'},
     activeSlide: 0,
     activeSlide2: 0,
-    nav1: null,
-    nav2: null
+  
   }
   
-  componentDidMount() {
-    this.setState({
-      nav1: this.slider1,
-      nav2: this.slider2
-    });
-  }
-  
+
   render(){
     let index = 0;
     let settings = {
       dots: true,
       dotsClass: "slick-dots slick-thumb",
       infinite: true,
-      speed: 2000,
+      speed: 1000,
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay : true,
       customPaging: i => (
         <div>
-          {
-            data.our_legacy.document[0].data.our_legacy.map((item,value)=>{
-              if(value == index){
-                return(
-                  <div key={value}> {item.year}</div>
-                )
-              }
-              if(data.our_legacy.document[0].data.our_legacy.length-1 === value ){
-                index = index +1;
-              }
-            })
-          }
-          {/* {i + 1} */}
+          <div key={i}> {data.our_legacy.document[0].data.our_legacy[i].year}</div>
         </div>
       ),
-      beforeChange: (current, next) => this.setState({ activeSlide: next }),
-      afterChange: current => this.setState({ activeSlide2: current }),
+      // beforeChange: (current, next) => this.setState({ activeSlide: next }),
+      // afterChange: current => this.setState({ activeSlide2: current }),
       adaptiveHeight : true,
     };
     const data = this.props.data.prismicAboutus.data;
