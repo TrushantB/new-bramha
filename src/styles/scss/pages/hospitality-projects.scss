@@ -5,3 +5,11 @@
 .hospitality-projects {
     margin: 54px 0 80px 0;
 }
+
+
+@media (max-width:580px) {
+    .hospitality-projects .residences-card ,
+    .hospitality-projects {
+        margin:0;
+    }
+}

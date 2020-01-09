@@ -145,7 +145,7 @@ class Careers extends React.Component {
               </div>
             </div>
           </section>
-          <section className="life-at-bramha slider-page m-0">
+          <section className="life-at-bramha slider-page mt-5 m-sm-0">
             <div className="padding-block-60 d-flex justify-content-center flex-column w-100 ">
               <h3 className="section-title text-center text-uppercase mb-0" >
                {careerData.life_at_bramha.text}
@@ -169,7 +169,7 @@ class Careers extends React.Component {
                       })
                     }
                   </Slider>
-                  <p className=" text-left text-sm-center pages mb-0">
+                  <p className="page-count-no text-left text-sm-center pages mb-0">
                       1 of 4
                   </p>
               </div>
@@ -177,13 +177,13 @@ class Careers extends React.Component {
           </section>
           <section className="container">
             <div className="row">
-              <div className="padding-block-60 section-title-wrapper d-flex justify-content-center flex-column w-100 align-items-center ">
+              <div className="padding-block-60 section-title-wrapper d-flex justify-content-center flex-column w-100 align-items-center">
                 <h3 className="section-title text-center">
                   {careerData.looking_for_a_job_opening.text}
                 </h3>
               </div>
               <div className="job-opening col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
-                <form action="" className="mb-24">
+                <form action="" >
                   <input type="search" onChange={(e)=>{
                    let data =  this.state.jobOpeningStore.filter(res => {
                       return res.position.text.toLocaleLowerCase().match(e.target.value.toLocaleLowerCase())
@@ -197,7 +197,7 @@ class Careers extends React.Component {
                 <div className="career-tabs py-4 d-flex flex-wrap justify-content-between align-content-between">
                   {this.state.jobOpenningButtons.map((item) => {
                     return (
-                      <div className="btn-wraper" key={item.id}>
+                      <div className="btn-wraper mb-3" key={item.id}>
                         <button onClick={() => this.handleJobOpening(item)} className={`button-tertiary w-100 mt-2 ${item.class}`}>
                          {item.name}
                         </button>
@@ -244,7 +244,7 @@ class Careers extends React.Component {
                 </div>
               </div>
           </section>
-          <section className="text-center padding-block-60">
+          <section className="upload-cv-scetion  text-left text-sm-center padding-block-60">
             <div>
               <h2 className=" section-title text-center">
                 Cant find what you are looking for?
