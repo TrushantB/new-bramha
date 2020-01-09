@@ -64,7 +64,7 @@ class MediaAndEvents extends React.Component {
     };
     return(
       <Layout>
-      <SEO title="MediaAndEvents"/>
+      <SEO title="Media And Events"/>
         <section className="events" >
           <section className="page-heading-section container container-sm-fluid bg-color">
             <div className="padding-block-60">

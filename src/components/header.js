@@ -11,7 +11,7 @@ function classHandle() {
  }
 return(
   <nav className="navbar navbar-light container" >
-  <Link className="navbar-brand" to='/' >
+  <Link className="navbar-brand" to='/'  >
         <img src={img1} alt="BramhaCorp Logo" className="logo-img" />
       </Link>
   <a  className="nav-trigger" id="toggle" onClick={() => $("body").toggleClass("nav-open")} >
@@ -20,7 +20,7 @@ Menu <span></span>
 <nav className="nav-container pb-0" id="navigation">
     <ul className="nav navbar-nav">
         <li>
-          <Link className="navbar-brand" to='/'>
+          <Link className="navbar-brand" to='/' onClick={classHandle}>
             <img src={img1} alt="BramhaCorp Logo" className="logo-img" />
           </Link>
         </li>
@@ -69,7 +69,7 @@ Menu <span></span>
           </li>
         </ul>
         <div className="nav-footer text-center py-2 bg-white w-100">
-          <small> BramhaCorp Ltd @2020. All rights reserved.</small>
+        <p className="m-0"><Link to="/" onClick={classHandle}>BramhaCorp Ltd</Link>&copy; {new Date().getFullYear()}. All right reserved.</p>
         </div>
 </nav>
 <div className="overlay"></div>
