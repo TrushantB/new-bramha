@@ -11,13 +11,11 @@ class AboutUs extends React.Component {
     styleData:{height: 160, overflow: 'hidden'},
     activeSlide: 0,
     activeSlide2: 0,
-  
   }
-  
 
   render(){
     let index = 0;
-    var settings = {
+    let settings = {
       dots: true,
       dotsClass: "slick-dots slick-thumb",
       infinite: true,
@@ -25,6 +23,7 @@ class AboutUs extends React.Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay : true,
+      arrows:false,
       customPaging: i => (
         <div>
           <div key={i}> {data.our_legacy.document[0].data.our_legacy[i].year}</div>
@@ -98,7 +97,7 @@ class AboutUs extends React.Component {
               </div>
               <div className="slider-wrapper">
                 <div className="slider-border"></div>
-                <div className="container">
+                <div className="container-fluid container-md slider-container">
                 <Slider {...settings}>
                     {
                       data.our_legacy.document[0].data.our_legacy.map((item,value)=>{

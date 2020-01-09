@@ -74,9 +74,9 @@ class KnoweldgeHub extends React.Component {
                                       </div>
                                   </div>
                                   <div className="col-md-12 col-lg-6  col-6 pl-0 pl-md-3 pl-lg-0 pr-0 pr-sm-3">
-                                      <div className="  d-flex justify-content-between flex-column bg-light-gray">
+                                      <div className=" important-notice-section d-flex justify-content-between flex-column bg-light-gray">
                                           <p>{item.topics.document[0].data.short_description.text}</p>
-                                          <h3 class="inner-section-title  text-right d-block d-sm-none">Important Notices</h3>
+                                          <h3 classNames="inner-section-title  text-right text-sm-center d-block d-sm-none">Important Notices</h3>
                                           <div className="know-more ">
                                               <a href="#">
                                                   <span className="mr-3">Know More</span>
@@ -99,7 +99,7 @@ class KnoweldgeHub extends React.Component {
                                   <p className="mb-0 mb-sm-2 text-white">{item.topics.document[0].data.heading.text}</p>
                                   <div className="know-more pt-0">
                                     <Link to="/nri">
-                                        <span className="mr-sm-5 mr-3">Know More</span>
+                                        <span className="mr-sm-5 mr-3">Read More</span>
                                         <i className="fas fa-arrow-right"></i>
                                     </Link>
                                   </div>
@@ -112,11 +112,8 @@ class KnoweldgeHub extends React.Component {
                                 // console.log(item.topics.document[0].data.mobile_view.localFile.childImageSharp.fluid);
                                 
                                 if(item.topics.document[0].data.title.text=="Maha Rera") {
-                                  {
-                                    console.log(item.topics.document[0].data.mobile_view.localFile.childImageSharp.fluid);
-                                  }
                                   return(
-                                    <div className="col-md-6 d-sm-none p-0" id={`maharera${index}`}>
+                                    <div className="col-md-6 d-sm-none p-0" key={index} id={`maharera${index}`}>
                                     <div className="maha-rera-mb d-flex position-relative ">
                                      <Img fluid={item.topics.document[0].data.mobile_view.localFile.childImageSharp.fluid } alt="" width="100%"/>  
                                       <div className="ml-3 ">
