@@ -234,10 +234,25 @@
     
     /*========= our legacy css start =========*/
     .our-legacy{
-        .slider-wrapper{
-            .slider-container{
-                margin-top: 60px;
-            }
+      .slider-wrapper{
+        .slider-container{
+            margin-top: 60px;
+        }
+        .slider-border{
+            border: 1px solid #bcbdbd;
+        }
+        .legacy-slide{
+            height:45vh;
+          .slide-caption{
+              bottom:0;
+              left:0;
+              right:0;
+              padding:8px 16px;
+              p{
+                  margin: 0;
+              }
+          }
+        }
             .slick-dots{
                 li{
                     margin:0 12px;
@@ -271,8 +286,8 @@
     
     /*=========== our legacy css start ============*/
     .our-legacy .slider-wrapper .slick-dots li {
-        margin: 0 5px;
-        top: -4px;
+        margin: 0 7px;
+        top: -2px;
     }
     .our-legacy .slider-wrapper .slick-dots li div div::before {
         margin-left: 0;
@@ -291,6 +306,6 @@
  }
 @media(max-width:348px){
     .our-legacy .slider-wrapper .slick-dots li{
-        margin: 0 3px;
+        margin: 0 5px;
     }
 }
