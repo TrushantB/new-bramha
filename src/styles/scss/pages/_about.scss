@@ -22,7 +22,7 @@
      .slider-wrapper{
         background-color: theme-color("bg-color");
         padding:28px 0px 40px;
-         .container{
+        .slider-container{
              margin-top: 52px;
          }
         .slider-border{
@@ -183,7 +183,11 @@
     /*our legacy css start*/
     .our-legacy{
         .slider-wrapper{
-            
+            .slick-dots{
+                li{
+                    margin: 0 16px;
+                }
+            } 
         }
     }
  }
@@ -211,12 +215,6 @@
             }
         }
     }
-   
-    // .timeline-nav{
-    //     .timeline-nav__item{
-    //         writing-mode: vertical-rl;
-    //     }
-    // }   
     .about-description {
         margin-bottom: 48px;
     }
@@ -227,10 +225,55 @@
         margin-bottom: 48px;
     }
     
-    /*our legacy css start*/
+    /*========= our legacy css start =========*/
     .our-legacy{
         .slider-wrapper{
-            
+            .slider-container{
+                margin-top: 60px;
+            }
+            .slick-dots{
+                li{
+                    margin:0 8px;
+                    top:-4px;
+                    div{
+                        div{        
+                            &::before{
+                                margin-left:0;
+                                margin-bottom: 4px;
+                            }
+                            display:flex;
+                            flex-direction: row;
+                            writing-mode: vertical-rl;
+                            align-items: center;
+                        }
+                    }
+                }
+                .slick-active{
+                    top:-12px;
+                }
+            } 
         }
+    }
+ }
+ @media (max-width:420px){
+    
+    /*=========== our legacy css start ============*/
+    .our-legacy .slider-wrapper .slick-dots li {
+        margin: 0 3px;
+        top: -4px;
+    }
+    .our-legacy .slider-wrapper .slick-dots li div div::before {
+        margin-left: 0;
+        margin-bottom: 4px;
+        width:10px;
+        height:10px;
+    }
+    .our-legacy .slider-wrapper .slick-dots .slick-active {
+        top: -8px;
+    }
+    .our-legacy .slider-wrapper .slick-dots .slick-active div div::before{
+        width:20px;
+        height:20px;
+        border:6px solid #fff;
     }
  }
