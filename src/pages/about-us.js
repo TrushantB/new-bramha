@@ -5,7 +5,6 @@ import Img from 'gatsby-image';
 import Layout from '../components/layout'
 import Footer from '../components/footer';
 import SEO from '../components/seo';
-import $ from 'jQuery';
 class AboutUs extends React.Component {
   state = {
     styleData:{height: 160, overflow: 'hidden'},
