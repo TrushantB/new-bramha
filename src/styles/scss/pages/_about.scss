@@ -163,7 +163,11 @@
     /*our legacy css start*/
     .our-legacy{
         .slider-wrapper{
-
+            .slick-dots{
+                li{
+                    margin: 0 24px;
+                }
+            }
         }
     }
 }
