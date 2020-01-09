@@ -155,7 +155,7 @@ export const leisurePage = graphql`
           image{
             localFile {
                 childImageSharp {
-                    fluid(maxWidth: 1150, quality: 100) {
+                    fluid(maxWidth: 1150) {
                         ...GatsbyImageSharpFluid
                         presentationWidth
                     }
@@ -208,7 +208,7 @@ export const leisurePage = graphql`
           image{
             localFile {
                 childImageSharp {
-                    fluid(maxWidth: 1150, quality: 100) {
+                    fluid(maxWidth: 1150) {
                         ...GatsbyImageSharpFluid
                         presentationWidth
                     }
@@ -229,7 +229,7 @@ export const leisurePage = graphql`
           image1{
             localFile {
                 childImageSharp {
-                    fluid(maxWidth: 1150, quality: 100) {
+                    fluid(maxWidth: 1150) {
                       ...GatsbyImageSharpFluid
                       presentationWidth
                   }
@@ -250,7 +250,7 @@ export const leisurePage = graphql`
           image1{
             localFile {
                 childImageSharp {
-                    fluid(maxWidth: 1150, quality: 100) {
+                    fluid(maxWidth: 1150) {
                         ...GatsbyImageSharpFluid
                         presentationWidth
                     }
@@ -290,7 +290,7 @@ export const leisurePage = graphql`
           images{
             localFile {
                 childImageSharp {
-                    fluid(maxWidth: 1150, quality: 100) {
+                    fluid(maxWidth: 1150) {
                         ...GatsbyImageSharpFluid
                         presentationWidth
                     }

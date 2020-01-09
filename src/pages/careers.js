@@ -275,7 +275,7 @@ export const careerPage = graphql`{
       banner{
         localFile {
           childImageSharp {
-            fluid(maxWidth: 1150, quality: 100) {
+            fluid(maxWidth: 1150) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -288,7 +288,7 @@ export const careerPage = graphql`{
         image{
           localFile {
             childImageSharp {
-              fluid(maxWidth: 1150, quality: 100) {
+              fluid(maxWidth: 1150) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -314,7 +314,7 @@ export const careerPage = graphql`{
         image{
           localFile {
             childImageSharp {
-              fluid(maxWidth: 1150, quality: 100) {
+              fluid(maxWidth: 1150) {
                 ...GatsbyImageSharpFluid
               }
             }
