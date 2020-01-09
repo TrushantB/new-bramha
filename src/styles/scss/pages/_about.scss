@@ -3,7 +3,7 @@
  }
  .about-description{
     padding-top: 48px;
-    margin-bottom: 132px;
+    margin-bottom: 104px;
 
  }
  .about-content{
@@ -149,6 +149,13 @@
      font-size: 14px;
  }
 
+ .col-md-4.col-sm-12.about-years {
+     .about-years-img  {
+         div:first-child {
+             padding-bottom: 68.5495% !important;
+         }
+     }
+ }
 
 
 /*============ Media Query stast here ===========*/
@@ -162,7 +169,7 @@
 }
  @media (max-width:768px) {
     .about-years-img {
-        width: 50%;
+        width: 70%;
     }
     .about-years {
         display: flex;
