@@ -19,7 +19,9 @@ class Hospitality extends React.Component {
           <div className="row  mr-0">
             <div className="col-12">
               <div className="main-paragraph"> 
-                <p dangerouslySetInnerHTML={{__html: data.description.html}}/>
+                <p>
+                  {data.description.text}
+                </p>
               </div>  
             </div>
           </div>
@@ -82,7 +84,7 @@ export const hospitalityPage = graphql`{
             text
           }
           description{
-            html
+            text
           }
           hospitality_links{
             vertical_links{

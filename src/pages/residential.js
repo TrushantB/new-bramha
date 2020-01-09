@@ -187,7 +187,9 @@ export default class Residential extends React.Component {
                 </div>
                 <div className="row  mr-0">
                     <div className="col-12">
-                      <div className="main-paragraph" dangerouslySetInnerHTML={{__html: item.node.data.description.html}}/ > 
+                      <div className="main-paragraph">
+                        {item.node.data.description.text}
+                      </div>   
                     </div>
                 </div>
               </section>
@@ -331,7 +333,7 @@ export const residentialPage = graphql`{
           text
         }
         description{
-          html
+          text
         }
         ongoing_projects{
           residential_links{
