@@ -6,10 +6,17 @@ import Slider from 'react-slick';
 import Layout from '../components/layout'
 import Footer from '../components/footer'
 import SEO from '../components/seo';
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
 
 class HospitalityDetails extends React.Component {
-    
+    state={
+      activeSlide:null,
+      photoIndex: 0,
+      isOpen: false, 
+    }
   render(){
+    const { photoIndex, isOpen } = this.state;
     const hospitalityData = this.props.data.prismicOurVerticalsArticle;
     console.log('hospitalityData', hospitalityData);
           var settings = {
@@ -19,8 +26,8 @@ class HospitalityDetails extends React.Component {
             slidesToShow: 1,
             infinite: true,
             speed:2000,
-            // beforeChange: (current, next) => this.setState({ activeSlide: next }),
-            // afterChange: current => this.setState({ activeSlide2: current }),
+            
+            afterChange: current => this.setState({ activeSlide: current }),
             responsive: [
               {
                 breakpoint: 992,
@@ -107,10 +114,7 @@ class HospitalityDetails extends React.Component {
                                       hospitalityData.data.showcase.map((item,value)=>{
                                         return(
                                           <div key={value}>
-                                            <div  className="slider-img ">
-                                              {/* <h5>{item.heading.text}</h5>
-                                              <p>{item.date.text}</p>
-                                              <p>{item.location.text}</p> */}
+                                            <div  className="slider-img " onClick={() => this.setState({ isOpen: true ,photoIndex:value})}>
                                               <Img fluid={item.image1.localFile.childImageSharp.fluid} alt=" Showcase slidwer" className="life-at-bramha-slider-image" />
                                             </div>
                                           </div>
@@ -118,8 +122,27 @@ class HospitalityDetails extends React.Component {
                                       })
                                     }
                                   </Slider>
+                                  {
+                    isOpen &&
+                    <Lightbox
+                        mainSrc={hospitalityData.data.showcase[photoIndex].image1.localFile.childImageSharp.fluid.src}
+                        nextSrc={hospitalityData.data.showcase[(photoIndex + 1) % hospitalityData.data.showcase.length].image1.localFile.childImageSharp.fluid.src}
+                        prevSrc={hospitalityData.data.showcase[(photoIndex + hospitalityData.data.showcase.length - 1) % hospitalityData.data.showcase.length].image1.localFile.childImageSharp.fluid.src}
+                        onCloseRequest={() => this.setState({ isOpen: false })}
+                        onMovePrevRequest={() =>
+                          this.setState({
+                            photoIndex: (photoIndex + hospitalityData.data.showcase.length - 1) % hospitalityData.data.showcase.length,
+                          })
+                        }
+                        onMoveNextRequest={() =>
+                          this.setState({
+                            photoIndex: (photoIndex + 1) % hospitalityData.data.showcase.length,
+                          })
+                        }
+                        />
+                  }
                                   <p className=" text-left text-sm-center pages mb-0">
-                                     1 of 4
+                                     {this.state.activeSlide + 1 } of { hospitalityData.data.showcase.length}
                                   </p>
                               </div>
                             </div>

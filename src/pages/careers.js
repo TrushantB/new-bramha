@@ -5,6 +5,8 @@ import Slider from "react-slick";
 import Img from "gatsby-image"
 import Footer from '../components/footer';
 import SEO from '../components/seo';
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
 
 class Careers extends React.Component {
   constructor(){
@@ -12,9 +14,12 @@ class Careers extends React.Component {
     this.state = {
       flag : false,
       dataSource : null,
+      activeSlide:null,
       jobOpening:[],
       jobOpeningStore:[],
       activeButton:null,
+      photoIndex: 0,
+      isOpen: false,  
       jobOpenningButtons:[
         {
           id:'sales',
@@ -51,6 +56,7 @@ class Careers extends React.Component {
       ]
     }
   }
+
   componentWillMount() {
     let jobOpening=[];
     const careerData = this.props.data.prismicCareers.data;
@@ -102,13 +108,15 @@ class Careers extends React.Component {
     }
   }
   render(){
+    const { photoIndex, isOpen } = this.state;
     const careerData = this.props.data.prismicCareers.data;
         var settings = {
       // className:"career-center",
       centerMode: true,
       centerPadding: '200px',
       slidesToShow: 1,
-      speed:2000,
+      speed:1000,
+      afterChange: current => this.setState({ activeSlide: current }),
       responsive: [
         {
           breakpoint: 992,
@@ -161,10 +169,7 @@ class Careers extends React.Component {
                       careerData.showcase.map((item,value)=>{
                         return(
                           <div key={value}>
-                            <div  className="slider-img image-ratio">
-                              {/* <h5>{item.heading.text}</h5>
-                              <p>{item.date.text}</p>
-                              <p>{item.location.text}</p> */}
+                            <div  className="slider-img image-ratio" onClick={() => this.setState({ isOpen: true ,photoIndex:value})}>
                               <Img fluid={item.image.localFile.childImageSharp.fluid} alt="slider image" className="life-at-bramha-slider-image" />
                             </div>
                           </div>
@@ -172,8 +177,27 @@ class Careers extends React.Component {
                       })
                     }
                   </Slider>
-                  <p className="page-count-no text-left text-sm-center pages mb-0">
-                      1 of 4
+                  {
+                    isOpen &&
+                    <Lightbox
+                        mainSrc={careerData.showcase[photoIndex].image.localFile.childImageSharp.fluid.src}
+                        nextSrc={careerData.showcase[(photoIndex + 1) % careerData.showcase.length].image.localFile.childImageSharp.fluid.src}
+                        prevSrc={careerData.showcase[(photoIndex + careerData.showcase.length - 1) % careerData.showcase.length].image.localFile.childImageSharp.fluid.src}
+                        onCloseRequest={() => this.setState({ isOpen: false })}
+                        onMovePrevRequest={() =>
+                          this.setState({
+                            photoIndex: (photoIndex + careerData.showcase.length - 1) % careerData.showcase.length,
+                          })
+                        }
+                        onMoveNextRequest={() =>
+                          this.setState({
+                            photoIndex: (photoIndex + 1) % careerData.showcase.length,
+                          })
+                        }
+                        />
+                  }
+                  <p className=" text-left text-sm-center pages mb-0">
+                      {this.state.activeSlide + 1} of {careerData.showcase.length}
                   </p>
               </div>
             </div>
