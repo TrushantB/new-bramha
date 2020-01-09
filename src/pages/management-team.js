@@ -19,7 +19,9 @@ class ManagementTeam extends React.Component {
                         BramhaCorp is one of today's leading business groups headquartered 
                         in Pune. Our businesses encompass real estate development, 
                         hospitality, retail and leisure. The vision and dynamism of
-                        the founders has seen the group making remarkable strides. 
+                        the founders has seen the group making remarkable strides. </p>
+
+                        <p>
                         Our achievements over the last 35 years are landmarks that have
                         set precedents. In 1998, we were the first to bring the premium
                         hospitality brand - Le Meridien, now Sheraton Grand to Pune. 
