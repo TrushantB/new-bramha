@@ -24,21 +24,6 @@ class AboutUs extends React.Component {
   
   render(){
     let index = 0;
-    //remove active class from all thumbnail slides
- $('.slider-nav-thumbnails .slick-slide').removeClass('slick-active');
- //set active class to first thumbnail slides
- $('.slider-nav-thumbnails .slick-slide').eq(0).addClass('slick-active');
- // On before slide change match active thumbnail to current slide
- $('.slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
- 	var mySlideNumber = nextSlide;
- 	$('.slider-nav-thumbnails .slick-slide').removeClass('slick-active');
- 	$('.slider-nav-thumbnails .slick-slide').eq(mySlideNumber).addClass('slick-active');
-});
-//UPDATED
-$('.slider').on('afterChange', function(event, slick, currentSlide){
-  $('.content').hide();
-  $('.content[data-id=' + (currentSlide + 1) + ']').show();
-});
     var settings1={
           // slidesToShow: 12,
           // slidesToScroll: 1,
