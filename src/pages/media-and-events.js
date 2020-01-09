@@ -9,8 +9,7 @@ import Img from 'gatsby-image';
 
 class MediaAndEvents extends React.Component {
   state = {
-    activeSlide: 1,
-    activeSlide2: 0
+    activeSlide: null
   };  
   render(){
     const eventwiseData = this.props.data.prismicEvents.data;
@@ -20,9 +19,8 @@ class MediaAndEvents extends React.Component {
       centerMode: true,
       centerPadding: '200px',
       slidesToShow: 1,
-      speed:2000,
-      // beforeChange: (current, next) => this.setState({ activeSlide: next }),
-      // afterChange: current => this.setState({ activeSlide2: current }),
+      speed:1000,
+      afterChange: current => this.setState({ activeSlide: current }),
       responsive: [
         {
           breakpoint: 992,
@@ -108,7 +106,7 @@ class MediaAndEvents extends React.Component {
                             }
                             </Slider>
                             <p className=" text-left text-sm-center pages mb-0">
-                                1 of 4
+                                {this.state.activeSlide + 1} of {datas.data.showcase.length}
                             </p>
                         </div>
                       </div>
