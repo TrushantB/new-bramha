@@ -6,6 +6,9 @@ import Img from 'gatsby-image'
 import Slider from 'react-slick'
 
 class LeisureDetails extends React.Component {
+  state = {
+    activeSlide:null
+  };
     render(){
         const leisureData = this.props.data.prismicOurVerticalsArticle;
             var settings = {
@@ -13,8 +16,7 @@ class LeisureDetails extends React.Component {
             centerMode: true,
             centerPadding: '200px',
             slidesToShow: 1,
-            // beforeChange: (current, next) => this.setState({ activeSlide: next }),
-            // afterChange: current => this.setState({ activeSlide2: current }),
+            afterChange: current => this.setState({ activeSlide: current }),
             responsive: [
                 {
                 breakpoint: 992,
@@ -23,7 +25,7 @@ class LeisureDetails extends React.Component {
                     centerMode: true,
                     centerPadding: '100px',
                     slidesToShow: 1,
-                    speed:2000
+                    speed:1000
                 }
                 },
                 {
@@ -58,7 +60,7 @@ class LeisureDetails extends React.Component {
             return(
                 <Layout>
                     <SEO title={leisureData.data.title.text}/>
-                    <main className="detail-page">
+                    <main className="detail-page leisure-club-detail-page">
                         {/* <!-- ---------------- banner start here ---------------- --> */}
                             <section className="banner-section">
                                 {console.log('t', leisureData.data.title.text)}
@@ -115,7 +117,7 @@ class LeisureDetails extends React.Component {
                                         }
                                       </Slider>
                                       <p className=" text-left text-sm-center pages mb-0">
-                                        1 of 4
+                                        {this.state.activeSlide + 1} of {leisureData.data.showcase.length}
                                        </p>
                                   </div>
                                 </div>
@@ -155,7 +157,7 @@ export const leisurePage = graphql`
           image{
             localFile {
                 childImageSharp {
-                    fluid(maxWidth: 1150, quality: 100) {
+                    fluid(maxWidth: 1150) {
                         ...GatsbyImageSharpFluid
                         presentationWidth
                     }
@@ -208,7 +210,7 @@ export const leisurePage = graphql`
           image{
             localFile {
                 childImageSharp {
-                    fluid(maxWidth: 1150, quality: 100) {
+                    fluid(maxWidth: 1150) {
                         ...GatsbyImageSharpFluid
                         presentationWidth
                     }
@@ -229,7 +231,7 @@ export const leisurePage = graphql`
           image1{
             localFile {
                 childImageSharp {
-                    fluid(maxWidth: 1150, quality: 100) {
+                    fluid(maxWidth: 1150) {
                       ...GatsbyImageSharpFluid
                       presentationWidth
                   }
@@ -250,7 +252,7 @@ export const leisurePage = graphql`
           image1{
             localFile {
                 childImageSharp {
-                    fluid(maxWidth: 1150, quality: 100) {
+                    fluid(maxWidth: 1150) {
                         ...GatsbyImageSharpFluid
                         presentationWidth
                     }
@@ -290,7 +292,7 @@ export const leisurePage = graphql`
           images{
             localFile {
                 childImageSharp {
-                    fluid(maxWidth: 1150, quality: 100) {
+                    fluid(maxWidth: 1150) {
                         ...GatsbyImageSharpFluid
                         presentationWidth
                     }

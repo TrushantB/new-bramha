@@ -1,19 +1,19 @@
 import React from 'react'
 import Layout from '../components/layout'
 import { graphql, Link } from 'gatsby'
+import Img from 'gatsby-image';
 import Footer from '../components/footer';
 import SEO from '../components/seo';
 
 class Contacts extends React.Component {
   render(){
     const contactData = this.props.data.prismicCompanyDetails.data;
-    console.log('ccontact data from contact page', contactData);
     return(
       <Layout>
         <SEO title="Contacts"/>
         <section className="contact-section">
           <div className="contact-page-image">
-            <img src={contactData.banner.url} alt="" width="100%"/>
+            <Img fluid={contactData.banner.localFile.childImageSharp.fluid} alt="" width="100%"/>
           </div>
           <section className="page-heading-section container container-sm-fluid bg-color">
             <div className="padding-block-60">
@@ -166,7 +166,13 @@ export const contactPage = graphql`{
         text
       }
       banner {
-        url
+        localFile {
+            childImageSharp {
+              fluid(maxWidth: 1150) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+        }
       }
       contactus {
         text

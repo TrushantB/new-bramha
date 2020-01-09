@@ -67,9 +67,89 @@
         }
       }
     } 
-  @media(max-width:580px){
-    .events .event-slider .slider-wrapper {
-        background-color: transparent;
-        padding: 0px 0 40px;
+  //  @media (max-width:1200px){
+  //   .events{
+  //     .slider-img{
+  //       margin: 28px 36px;
+  //    }
+  //   }
+  // }
+  @media (max-width:992px) {
+    .events{
+      .event-slider .slider-wrapper{
+        padding:18px 0 36px 0
+      }
+      .slick-prev{
+        right:190px
+      }
+      .slick-next{
+        right:90px
+      }
+      .pages{
+        margin-top:20px;
+        margin-left: 98px;
+        text-align: left !important;
+      }
+      .mr-32{
+        margin-right:12px;
+      }
+      .ml-32{
+        margin-left: 12px;
+      }
+    }
+
+  } 
+  @media (max-width:767px){
+    .events{
+      .location{
+        padding: 0 16px 16px 16px;
+      }
     }
   }
+  @media(max-width:580px){
+    .events .event-slider{
+      .slider-wrapper {
+        // background-color: transparent;
+        padding: 20px 0 20px;
+        .pages{
+          margin-left: 36px;
+          text-align: left !important;
+        }
+        .slick-next{
+          bottom: -41px;
+          right: 53px;
+          top: auto;
+          z-index: 1;
+          transform: rotate(0deg);
+          padding: 0;
+          background: transparent;
+          &:before{
+              content: "";
+              background: url('../../images/right.jpg') no-repeat center center;
+              padding: 0 0 0 36px;
+            }
+        }
+        .slick-prev{
+          top: auto;
+          bottom: -50px;
+          right: 120px;
+          left: auto;
+          z-index: 1;
+          padding: 0;
+          background: transparent;
+            &:before{
+              content: "";
+              background: url('../../images/left.jpg') no-repeat center center;
+              padding: 0 0 0 36px;
+            }
+        }
+        
+      }
+      .padding-block-60 {
+        padding: 52px 0 10px;
+    } 
+    .section-title{
+      padding: 0 10px;
+    }
+  }
+}

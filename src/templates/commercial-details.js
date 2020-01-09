@@ -6,6 +6,9 @@ import Img from 'gatsby-image'
 import Slider from 'react-slick'
 
 class CommercialDetails extends React.Component {
+  state = {
+    activeSlide: null
+  };
     render(){
         const commercialData = this.props.data.prismicOurVerticalsArticle;
         console.log('commercialData', commercialData);
@@ -14,8 +17,7 @@ class CommercialDetails extends React.Component {
                 centerMode: true,
                 centerPadding: '200px',
                 slidesToShow: 1,
-                // beforeChange: (current, next) => this.setState({ activeSlide: next }),
-                // afterChange: current => this.setState({ activeSlide2: current }),
+                afterChange: current => this.setState({ activeSlide: current }),
                 responsive: [
                   {
                     breakpoint: 992,
@@ -24,7 +26,7 @@ class CommercialDetails extends React.Component {
                       centerMode: true,
                       centerPadding: '100px',
                       slidesToShow: 1,
-                      speed:2000
+                      speed:1000
                     }
                   },
                   {
@@ -115,7 +117,7 @@ class CommercialDetails extends React.Component {
                                         }
                                       </Slider>
                                       <p className=" text-left text-sm-center pages mb-0">
-                                         1 of 4
+                                         {this.state.activeSlide + 1} of {commercialData.data.showcase.length}
                                       </p>
                                   </div>
                                 </div>
@@ -156,7 +158,7 @@ export const hospitalityPage = graphql`
           image {
             localFile {
                 childImageSharp {
-                    fluid(maxWidth: 1150, maxHeight:650 quality: 100) {
+                    fluid(maxWidth: 1150) {
                         ...GatsbyImageSharpFluid
                         presentationWidth
                     }
@@ -230,7 +232,7 @@ export const hospitalityPage = graphql`
           image1{
             localFile {
                 childImageSharp {
-                    fluid(maxWidth: 1150, quality: 100) {
+                    fluid(maxWidth: 1150) {
                       ...GatsbyImageSharpFluid
                       presentationWidth
                   }
@@ -251,7 +253,7 @@ export const hospitalityPage = graphql`
           image1{
             localFile {
                 childImageSharp {
-                    fluid(maxWidth: 1150, quality: 100) {
+                    fluid(maxWidth: 1150) {
                         ...GatsbyImageSharpFluid
                         presentationWidth
                     }
@@ -291,7 +293,7 @@ export const hospitalityPage = graphql`
           images{
             localFile {
                 childImageSharp {
-                    fluid(maxWidth: 1150, quality: 100) {
+                    fluid(maxWidth: 1150) {
                         ...GatsbyImageSharpFluid
                         presentationWidth
                     }

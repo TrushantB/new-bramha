@@ -5,12 +5,14 @@ import Slider from "react-slick";
 import Img from "gatsby-image"
 import Footer from '../components/footer';
 import SEO from '../components/seo';
+
 class Careers extends React.Component {
   constructor(){
     super();
     this.state = {
       flag : false,
       dataSource : null,
+      activeSlide:null,
       jobOpening:[],
       jobOpeningStore:[],
       activeButton:null,
@@ -107,7 +109,8 @@ class Careers extends React.Component {
       centerMode: true,
       centerPadding: '200px',
       slidesToShow: 1,
-      speed:2000,
+      speed:1000,
+      afterChange: current => this.setState({ activeSlide: current }),
       responsive: [
         {
           breakpoint: 992,
@@ -141,11 +144,13 @@ class Careers extends React.Component {
             </div>
             <div className="row career-info-row">
               <div className="col-12">
-                <p className="text mb-0" dangerouslySetInnerHTML={{__html: careerData.description.html}}/>
+                <p className="text mb-0">
+                  {careerData.description.text}
+                </p>
               </div>
             </div>
           </section>
-          <section className="life-at-bramha slider-page m-0">
+          <section className="life-at-bramha slider-page mt-5 m-sm-0">
             <div className="padding-block-60 d-flex justify-content-center flex-column w-100 ">
               <h3 className="section-title text-center text-uppercase mb-0" >
                {careerData.life_at_bramha.text}
@@ -170,20 +175,20 @@ class Careers extends React.Component {
                     }
                   </Slider>
                   <p className=" text-left text-sm-center pages mb-0">
-                      1 of 4
+                      {this.state.activeSlide + 1} of {careerData.showcase.length}
                   </p>
               </div>
             </div>
           </section>
           <section className="container">
             <div className="row">
-              <div className="padding-block-60 section-title-wrapper d-flex justify-content-center flex-column w-100 align-items-center ">
+              <div className="padding-block-60 section-title-wrapper d-flex justify-content-center flex-column w-100 align-items-center">
                 <h3 className="section-title text-center">
                   {careerData.looking_for_a_job_opening.text}
                 </h3>
               </div>
               <div className="job-opening col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
-                <form action="" className="mb-24">
+                <form action="" >
                   <input type="search" onChange={(e)=>{
                    let data =  this.state.jobOpeningStore.filter(res => {
                       return res.position.text.toLocaleLowerCase().match(e.target.value.toLocaleLowerCase())
@@ -197,7 +202,7 @@ class Careers extends React.Component {
                 <div className="career-tabs py-4 d-flex flex-wrap justify-content-between align-content-between">
                   {this.state.jobOpenningButtons.map((item) => {
                     return (
-                      <div className="btn-wraper" key={item.id}>
+                      <div className="btn-wraper mb-3" key={item.id}>
                         <button onClick={() => this.handleJobOpening(item)} className={`button-tertiary w-100 mt-2 ${item.class}`}>
                          {item.name}
                         </button>
@@ -244,13 +249,13 @@ class Careers extends React.Component {
                 </div>
               </div>
           </section>
-          <section className="text-center padding-block-60">
+          <section className="upload-cv-scetion text-center padding-block-60">
             <div>
-              <h2 className=" section-title text-center">
+              <h2 className=" section-title text-left text-sm-center">
                 Cant find what you are looking for?
               </h2>
             </div>
-            <p className="text py-3">
+            <p className="text py-3 text-left text-sm-center">
               <span className="d-block">Upload your CV to our portal.</span>
               <span className="d-block">We will get back to you once suitable position is open</span>
             </p>
@@ -270,12 +275,12 @@ export const careerPage = graphql`{
         text
       }
       description{
-        html
+        text
       }
       banner{
         localFile {
           childImageSharp {
-            fluid(maxWidth: 1150, quality: 100) {
+            fluid(maxWidth: 1150) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -288,7 +293,7 @@ export const careerPage = graphql`{
         image{
           localFile {
             childImageSharp {
-              fluid(maxWidth: 1150, quality: 100) {
+              fluid(maxWidth: 1150) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -314,7 +319,7 @@ export const careerPage = graphql`{
         image{
           localFile {
             childImageSharp {
-              fluid(maxWidth: 1150, quality: 100) {
+              fluid(maxWidth: 1150) {
                 ...GatsbyImageSharpFluid
               }
             }

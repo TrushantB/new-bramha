@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Bramhacorp`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `iVision Studio`,
+    title: `BramhaCorp`,
+    description: `BramhaCorp is one of today's leading business groups headquartered in Pune. Our businesses encompass real estate development, hospitality, retail and leisure`,
+    author: `iVision Web Studio`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -16,7 +16,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    'gatsby-plugin-sharp',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

@@ -138,6 +138,36 @@
 }
 
 
+.career-page {
+    .section-title::after {
+        content: "";
+        border-bottom: 2px solid #b82831;
+        padding: 8px 0;
+        width: 85px;
+        display: block;
+    }
+    
+}
+
+.career-page {
+    .upload-cv-scetion {
+        padding-left: 15px;
+        padding-right: 15px;
+    
+    }
+    .input-file-btn {
+        padding-left: 0;
+    }
+}
+
+.upload-cv-scetion {
+    .section-title::after {
+        display: none;
+    }
+}
+
+
+
 
 @media (max-width:1200px){
     .btn-wraper {
@@ -224,6 +254,49 @@
     .padding-block-60 {
         padding: 0 0 24px;
     }
+    .career-info {
+        .career-info-row {
+            padding-top: 0 !important;
+        }
+    }
+    .career-page {
+        .section-title-wrapper {
+            padding-bottom: 24px;
+            padding-top:64px;
+        }
+    }
+    .page-count-no {
+        display: none;
+    }
+
+    .career-page {
+        .slider-wrapper {
+            .container {
+                .slick-prev {
+                    bottom: -30px;
+                }
+                .slick-next {
+                    bottom: -21px;
+                }
+            }
+        }
+        .accordions-sect {
+           padding:0;
+        }
+        .upload-cv-scetion {
+            padding-top: 52px;
+        }
+    }
+   
+    .input-file-btn::before {
+        width: auto;
+    }
+    .career-page {
+        .slider-img {
+            margin: 8px 5px;
+        }
+    }
+   
 }
 
 @media (max-width:470px) {

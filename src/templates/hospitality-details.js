@@ -8,7 +8,9 @@ import Footer from '../components/footer'
 import SEO from '../components/seo';
 
 class HospitalityDetails extends React.Component {
-    
+    state={
+      activeSlide:null
+    }
   render(){
     const hospitalityData = this.props.data.prismicOurVerticalsArticle;
     console.log('hospitalityData', hospitalityData);
@@ -19,8 +21,7 @@ class HospitalityDetails extends React.Component {
             slidesToShow: 1,
             infinite: true,
             speed:2000,
-            // beforeChange: (current, next) => this.setState({ activeSlide: next }),
-            // afterChange: current => this.setState({ activeSlide2: current }),
+            afterChange: current => this.setState({ activeSlide: current }),
             responsive: [
               {
                 breakpoint: 992,
@@ -119,7 +120,7 @@ class HospitalityDetails extends React.Component {
                                     }
                                   </Slider>
                                   <p className=" text-left text-sm-center pages mb-0">
-                                     1 of 4
+                                     {this.state.activeSlide + 1 } of { hospitalityData.data.showcase.length}
                                   </p>
                               </div>
                             </div>
@@ -159,7 +160,7 @@ export const hospitalityPage = graphql`
           image{
             localFile {
                 childImageSharp {
-                    fluid(maxWidth: 1150, quality: 100) {
+                    fluid(maxWidth: 1150) {
                         ...GatsbyImageSharpFluid
                         presentationWidth
                     }
@@ -212,7 +213,7 @@ export const hospitalityPage = graphql`
           image{
             localFile {
                 childImageSharp {
-                    fluid(maxWidth: 1150, quality: 100) {
+                    fluid(maxWidth: 1150) {
                         ...GatsbyImageSharpFluid
                         presentationWidth
                     }
@@ -233,7 +234,7 @@ export const hospitalityPage = graphql`
           image1{
             localFile {
                 childImageSharp {
-                    fluid(maxWidth: 1150, quality: 100) {
+                    fluid(maxWidth: 1150) {
                       ...GatsbyImageSharpFluid
                       presentationWidth
                   }
@@ -254,7 +255,7 @@ export const hospitalityPage = graphql`
           image1{
             localFile {
                 childImageSharp {
-                    fluid(maxWidth: 1150, quality: 100) {
+                    fluid(maxWidth: 1150) {
                         ...GatsbyImageSharpFluid
                         presentationWidth
                     }
@@ -294,7 +295,7 @@ export const hospitalityPage = graphql`
           images{
             localFile {
                 childImageSharp {
-                    fluid(maxWidth: 1150, quality: 100) {
+                    fluid(maxWidth: 1150) {
                         ...GatsbyImageSharpFluid
                         presentationWidth
                     }
