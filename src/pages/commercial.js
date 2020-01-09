@@ -18,7 +18,9 @@ class Commercial extends React.Component {
                     <div className="row  mr-0">
                         <div className="col-12">
                             <div className="main-paragraph"> 
-                            <p dangerouslySetInnerHTML={{__html: commercialData.description.html}}/>
+                            <p>
+                              {commercialData.description.text}
+                            </p>
                             </div>  
                         </div>
                     </div>
@@ -80,7 +82,7 @@ export const commercialPage = graphql`{
               text
             }
             description{
-              html
+              text
             }
             banner{
               url

@@ -5,6 +5,7 @@ import Img from 'gatsby-image';
 import Layout from '../components/layout'
 import Footer from '../components/footer';
 import SEO from '../components/seo';
+
 class AboutUs extends React.Component {
   state = {
     styleData:{height: 160, overflow: 'hidden'},
@@ -16,7 +17,7 @@ class AboutUs extends React.Component {
 
   render(){
     let index = 0;
-    let settings = {
+    var settings = {
       dots: true,
       dotsClass: "slick-dots slick-thumb",
       infinite: true,
@@ -30,9 +31,10 @@ class AboutUs extends React.Component {
           <div key={i}> {data.our_legacy.document[0].data.our_legacy[i].year}</div>
         </div>
       ),
-      // beforeChange: (current, next) => this.setState({ activeSlide: next }),
-      // afterChange: current => this.setState({ activeSlide2: current }),
+      beforeChange: (current, next) => this.setState({ activeSlide: next }),
+      afterChange: current => this.setState({ activeSlide2: current }),
       adaptiveHeight : true,
+
     };
     const data = this.props.data.prismicAboutus.data;
     const verticalsData = this.props.data.prismicOurVerticals.data;
@@ -56,7 +58,9 @@ class AboutUs extends React.Component {
                   <Img fluid={data.banner.localFile.childImageSharp.fluid} alt="35 Years image" className="about-years-img"/>
                 </div>
                 <div className="col-md-8 col-sm-12">
-                  <div className="" dangerouslySetInnerHTML={{__html: data.description.html}} />
+                  <div className="">
+                    {data.description.text}
+                  </div>
                 </div>
               </div>
               <div className="row bg-white about-content">
@@ -247,7 +251,7 @@ export const AboutPage = graphql`{
         }
       }
       description {
-        html
+        text
       }
       aboutus_content {
         sub_title {

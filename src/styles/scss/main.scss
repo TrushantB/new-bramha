@@ -472,13 +472,13 @@ button:focus{
              .slick-prev{
                  top: 180px;
              }
+             .image-ratio{
+                .gatsby-image-wrapper{
+                    padding-bottom: 133.33%;
+                }
+            }
         }
       }
-    //   .image-ratio{
-    //     .gatsby-image-wrapper{
-    //         padding-bottom: 133.33%;
-    //     }
-    // }
 }
 @media (max-width:580px){
     .padding-sm-0{
