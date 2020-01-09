@@ -149,7 +149,7 @@ export const eventPage = graphql`{
                 image {
                   localFile {
                     childImageSharp {
-                      fluid(maxWidth: 1150, quality: 100) {
+                      fluid(maxWidth: 1150) {
                         ...GatsbyImageSharpFluid
                       }
                     }

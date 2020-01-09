@@ -102,7 +102,7 @@ export const commercialPage = graphql`{
                     thumbnail{
                       localFile {
                         childImageSharp {
-                          fluid(maxWidth: 1150, quality: 100) {
+                          fluid(maxWidth: 1150) {
                             ...GatsbyImageSharpFluid
                           }
                         }
@@ -112,7 +112,7 @@ export const commercialPage = graphql`{
                         image{
                             localFile {
                                 childImageSharp {
-                                  fluid(maxWidth: 1150, quality: 100) {
+                                  fluid(maxWidth: 1150) {
                                     ...GatsbyImageSharpFluid
                                   }
                                 }

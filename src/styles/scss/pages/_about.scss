@@ -23,57 +23,51 @@
         background-color: theme-color("bg-color");
         padding:28px 0px 40px;
          .container{
-             margin-top: -20px;
+             margin-top: 52px;
          }
         .slider-border{
             border: 1px dashed #bcbdbd;
         }
-        .timeline-nav__item{
-            position: relative;
-            padding-top: 28px;
-            text-align: center;
-            outline: 0;
-            color:rgba(00,00,00,0.4);
-            cursor: pointer;
-            &::before{
-                content:"1";
-                position: absolute;
-                top: 12px;
-                z-index: 9;
-                font-size: 0;
-                left: 40px;
-                right: 0;
-                width: 12px;
-                height: 12px;
-                border-radius: 40px;
-                border: solid 1px #bcbdbd;
-                background-color: #ffffff;
-            }
-        }
-        .timeline-nav{
-            margin-bottom: 24px;
-            .slick-track{
-                display: flex;
-                justify-content: space-between;
-                width:100% !important;
-            }
-            .slick-current{
-                .timeline-nav__item{
-                    color:theme-color('primary');
-                    font-family: Graphik;
-                    font-weight: 500;
-                    font-size: 14px;
-                    line-height: 35px;
-                    &::before{
-                        width: 28px;
-                        height: 28px;
-                        top: 5px;
-                        left: 35px;
-                        background-color: theme-color('primary');
-                        border: 9px solid #fff;
-                        box-shadow:0px 0px 0px 0.5px theme-color('primary');
+        .slick-dots{
+            bottom: auto;
+            top: -64px;
+            li{
+                margin: 0 36px;
+                padding: 0px; 
+                top:-21px;
+                font-family: Graphik;
+                div{
+                    div{
+                        &::before{
+                            content:"1";
+                            display: inline-block;
+                            font-size: 0;
+                            width: 12px;
+                            height: 12px;
+                            margin-left: 8px;
+                            background: #fff;
+                            border-radius: 50%;
+                            border: 1px solid #bcbdbd;
+                        }
                     }
-                }  
+                }
+            }
+            .slick-active{
+                color:theme-color('primary');
+                top: -13px;
+                font-weight: 500;
+                div{
+                    div{
+                        &::before{
+                            margin-left: 0;
+                            width:30px;
+                            height:30px;
+                            background:theme-color('primary');
+                            border:9px solid #fff;
+                            box-shadow: 0px 0px 0px 0.5px theme-color('primary');
+                        }
+                    }
+                }
             }
         }
          .legacy-slide{
@@ -93,11 +87,6 @@
              }
          }
      }
- }
- .our-legacy .slider-wrapper .slick-dots li {
-     top: -18px;
-     margin: 0 36px;
-     padding: 0px; 
  }
  // ------------- our vertical css start here ----------------
  .our-vertivcal-sect{
