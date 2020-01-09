@@ -1,5 +1,8 @@
 
 .detail-page{
+    .padding-block-60{
+        padding: 78px 0 24px;
+    }
     .download-btn{
         .btn-secondary{
             margin: 100px 0 120px 0;
@@ -13,8 +16,8 @@
     }
       .page-heading-section{
           div{
-              padding-top:76px;
-              padding-bottom: 32px;
+            //   padding: 72px 0 32px 0;
+            padding: 0;
           }
       }
 }
@@ -94,7 +97,7 @@
  
 @media (max-width:1200px){
     .slider-img {
-        margin: 40px 36px;
+        margin: 28px 36px;
     }
     .detail-page .floor-plan .slider-img {
         margin: 40px 40px;
