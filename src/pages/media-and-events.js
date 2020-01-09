@@ -47,7 +47,7 @@ class MediaAndEvents extends React.Component {
           settings: {
             arrows: true,
             centerMode: true,
-            centerPadding: '80px',
+            centerPadding: '45px',
             slidesToShow: 1
           }
         },
@@ -72,7 +72,9 @@ class MediaAndEvents extends React.Component {
             </div>
             <div className="row mr-0">
               <div className="col-12">
-                <p className="main-paragraph" dangerouslySetInnerHTML={{__html: eventwiseData.description.html}}/> 
+                <p className="main-paragraph">
+                  {eventwiseData.description.text}
+                </p>   
               </div>
             </div>
           </section>
@@ -90,7 +92,7 @@ class MediaAndEvents extends React.Component {
                       <div className="slider-wrapper">
                         <div className="container-fluid container-sm p-0 px-sm-3">
                           <p className="location text-center mb-0">
-                            <span className="mr-32">Location: {datas.data.location.text}</span> | <span className="ml-32">Date: {datas.data.date}</span>
+                            <span className="mr-32  text-capitalize">Location: {datas.data.location.text}</span> | <span className="ml-32">Date: {datas.data.date}</span>
                           </p>
                           <Slider {...settings}>
                           {
@@ -105,8 +107,8 @@ class MediaAndEvents extends React.Component {
                             })
                             }
                             </Slider>
-                            <p className=" text-center pages mb-0">
-                              {this.state.activeSlide} of 4
+                            <p className=" text-left text-sm-center pages mb-0">
+                                1 of 4
                             </p>
                         </div>
                       </div>
@@ -131,7 +133,7 @@ export const eventPage = graphql`{
         text
       }
       description {
-        html
+        text
       }
       all_events {
         events {

@@ -5,52 +5,36 @@ import Img from 'gatsby-image';
 import Layout from '../components/layout'
 import Footer from '../components/footer';
 import SEO from '../components/seo';
+
 class AboutUs extends React.Component {
   state = {
     styleData:{height: 160, overflow: 'hidden'},
     activeSlide: 0,
     activeSlide2: 0,
-    nav1: null,
-    nav2: null
+  
   }
   
-  componentDidMount() {
-    this.setState({
-      nav1: this.slider1,
-      nav2: this.slider2
-    });
-  }
-  
+
   render(){
     let index = 0;
-    let settings = {
+    var settings = {
       dots: true,
       dotsClass: "slick-dots slick-thumb",
       infinite: true,
-      speed: 2000,
+      speed: 1000,
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay : true,
+      arrows:false,
       customPaging: i => (
         <div>
-          {
-            data.our_legacy.document[0].data.our_legacy.map((item,value)=>{
-              if(value == index){
-                return(
-                  <div key={value}> {item.year}</div>
-                )
-              }
-              if(data.our_legacy.document[0].data.our_legacy.length-1 === value ){
-                index = index +1;
-              }
-            })
-          }
-          {/* {i + 1} */}
+          <div key={i}> {data.our_legacy.document[0].data.our_legacy[i].year}</div>
         </div>
       ),
       beforeChange: (current, next) => this.setState({ activeSlide: next }),
       afterChange: current => this.setState({ activeSlide2: current }),
       adaptiveHeight : true,
+
     };
     const data = this.props.data.prismicAboutus.data;
     const verticalsData = this.props.data.prismicOurVerticals.data;
@@ -74,7 +58,9 @@ class AboutUs extends React.Component {
                   <Img fluid={data.banner.localFile.childImageSharp.fluid} alt="35 Years image" className="about-years-img"/>
                 </div>
                 <div className="col-md-8 col-sm-12">
-                  <div className="" dangerouslySetInnerHTML={{__html: data.description.html}} />
+                  <div className="">
+                    {data.description.text}
+                  </div>
                 </div>
               </div>
               <div className="row bg-white about-content">
@@ -113,7 +99,7 @@ class AboutUs extends React.Component {
               </div>
               <div className="slider-wrapper">
                 <div className="slider-border"></div>
-                <div className="container">
+                <div className="container-fluid container-md slider-container">
                 <Slider {...settings}>
                     {
                       data.our_legacy.document[0].data.our_legacy.map((item,value)=>{
@@ -265,7 +251,7 @@ export const AboutPage = graphql`{
         }
       }
       description {
-        html
+        text
       }
       aboutus_content {
         sub_title {

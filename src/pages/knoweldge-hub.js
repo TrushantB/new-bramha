@@ -22,7 +22,9 @@ class KnoweldgeHub extends React.Component {
          <div className="row mr-0">
           <div className="col-12">
             <div className="main-paragraph">
-              <p className=" m-0" dangerouslySetInnerHTML={{__html: knowledgeData.description.html}} />
+              <p className="m-0">
+                {knowledgeData.description.text}
+                </p>
             </div>
           </div>
          </div>
@@ -60,9 +62,7 @@ class KnoweldgeHub extends React.Component {
                           <div className="col-md-6 p-sm-3" key={index} id={`index${index}`}>
                             {
                               console.log( item.topics.document[0].data.title.text ),
-                              
                            !item.topics.document[0].data.heading ?
-
                           <div className="about-loan card-primary mt-84" >
                               <div className="heading">
                                   <h3 className=" text-uppercase mb-2 mb-sm-3 section-title ">{item.topics.document[0].data.title.text}</h3>
@@ -132,11 +132,9 @@ class KnoweldgeHub extends React.Component {
                                     </div>
                                   </div> 
                                   )
-
                                }
                             })
                           }
-                            
                           </div>
                         )
                       })
@@ -162,7 +160,7 @@ export const knowledgePage = graphql`{
          text
       }
       description{
-        html
+        text
       }
       knowledge_topics{
         topics{
