@@ -11,13 +11,11 @@ class AboutUs extends React.Component {
     styleData:{height: 160, overflow: 'hidden'},
     activeSlide: 0,
     activeSlide2: 0,
-  
   }
-  
 
   render(){
     let index = 0;
-    var settings = {
+    let settings = {
       dots: true,
       dotsClass: "slick-dots slick-thumb",
       infinite: true,

@@ -457,7 +457,7 @@ export const verticalViewData = graphql`
           image{
             localFile {
                 childImageSharp {
-                    fluid(maxWidth: 1150) {
+                    fluid(maxWidth: 1150, quality: 100) {
                         ...GatsbyImageSharpFluid
                         presentationWidth
                     }
@@ -507,7 +507,7 @@ export const verticalViewData = graphql`
           image1{
             localFile {
                 childImageSharp {
-                    fluid(maxWidth: 1150) {
+                    fluid(maxWidth: 1150, quality: 100) {
                       ...GatsbyImageSharpFluid
                       presentationWidth
                   }
@@ -525,7 +525,7 @@ export const verticalViewData = graphql`
           image1{
             localFile {
                 childImageSharp {
-                    fluid(maxWidth: 1150) {
+                    fluid(maxWidth: 1150, quality: 100) {
                         ...GatsbyImageSharpFluid
                         presentationWidth
                     }
@@ -574,7 +574,7 @@ export const verticalViewData = graphql`
           images{
             localFile {
                 childImageSharp {
-                    fluid(maxWidth: 1150) {
+                    fluid(maxWidth: 1150, quality: 100) {
                         ...GatsbyImageSharpFluid
                         presentationWidth
                     }

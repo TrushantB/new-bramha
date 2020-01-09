@@ -2,18 +2,19 @@ import React from 'react'
 import Layout from '../components/layout'
 import Footer from '../components/footer'
 import SEO from "../components/seo";
-import aboutus from '../styles/images/contact-page.jpg';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 class ManagementTeam extends React.Component {
     render(){
+        const mgntData = this.props.data.prismicManagementTeam.data;
+        console.log('data', mgntData);
         return(
             <Layout>
-            <SEO title="Management Team"/>
+            <SEO title={mgntData.sub_title.text}/>
                 <div className="container mt-5 mb-5">
-                <h1 className="text-center mb-5"> Management Team Page </h1>
+                <h1 className="text-center mb-5">{mgntData.sub_title.text} </h1>
                     <div className="row ">
-                        
                         <div className="col-lg-6">
                         <p>
                         BramhaCorp is one of today's leading business groups headquartered 
@@ -34,7 +35,7 @@ class ManagementTeam extends React.Component {
                         <Link to='/'> Back To Home Page </Link>
                         </div>
                         <div className="col-lg-6"> 
-                        <img src={aboutus} className="w-100 h-100"/>
+                        <Img fluid={mgntData.banner.localFile.childImageSharp.fluid} className="w-100 h-100"/>
                         </div>
                     </div>
                 </div>
@@ -44,3 +45,25 @@ class ManagementTeam extends React.Component {
     } 
 }
 export default ManagementTeam;
+
+export const managementPage = graphql` {
+    prismicManagementTeam {
+      data {
+        sub_title {
+          text
+        }
+        description {
+          text
+        }
+        banner {
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1150) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  }`
