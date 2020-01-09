@@ -60,7 +60,7 @@ class LeisureDetails extends React.Component {
             return(
                 <Layout>
                     <SEO title={leisureData.data.title.text}/>
-                    <main className="detail-page">
+                    <main className="detail-page leisure-club-detail-page">
                         {/* <!-- ---------------- banner start here ---------------- --> */}
                             <section className="banner-section">
                                 {console.log('t', leisureData.data.title.text)}
