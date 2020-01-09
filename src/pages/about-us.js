@@ -11,71 +11,30 @@ class AboutUs extends React.Component {
     styleData:{height: 160, overflow: 'hidden'},
     activeSlide: 0,
     activeSlide2: 0,
-    nav1: null,
-    nav2: null
+  
   }
   
-  componentDidMount() {
-    this.setState({
-      nav1: this.slider1,
-      nav2: this.slider2
-    });
-  }
+
   render(){
     let index = 0;
-    var settings1={
-          // autoplay: true,
-          // autoplaySpeed:3500,
-          slidesToShow: 12,
-          slidesToScroll: 1,
-          centerMode: false,
-          focusOnSelect: true,
-           mobileFirst: true,
-          arrows: false,
-          infinite:false,
-          className:"timeline-nav",
-           responsive: [
-               {
-              breakpoint: 768,
-              settings: {
-                slidesToShow: 8,
-               }
-              },
-             {
-              breakpoint: 0,
-              settings: {
-                slidesToShow: 4,
-                slidesToScroll: 2,
-              }
-            }
-         ]
-      }
-      var settings2={
-        // autoplay: true,
-        // autoplaySpeed:3500,
-       slidesToShow: 1,
-       slidesToScroll: 1,
-       arrows: false,  
-       centerMode: false,     
-       cssEase: 'ease',
-        edgeFriction: 0.5,
-        mobileFirst: true,
-        speed: 500,
-        responsive: [
-          {
-           breakpoint: 0,
-           settings: {
-               centerMode: false
-           }
-         },
-            {
-           breakpoint: 768,
-           settings: {
-               centerMode: false
-           }
-         }
-      ]
-   }
+    var settings = {
+      dots: true,
+      dotsClass: "slick-dots slick-thumb",
+      infinite: true,
+      speed: 1000,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay : true,
+      customPaging: i => (
+        <div>
+          <div key={i}> {data.our_legacy.document[0].data.our_legacy[i].year}</div>
+        </div>
+      ),
+      beforeChange: (current, next) => this.setState({ activeSlide: next }),
+      afterChange: current => this.setState({ activeSlide2: current }),
+      adaptiveHeight : true,
+
+    };
     const data = this.props.data.prismicAboutus.data;
     const verticalsData = this.props.data.prismicOurVerticals.data;
     // const ourLegacy = this.props.data.allPrismicOurLegacy.edges;
@@ -94,11 +53,13 @@ class AboutUs extends React.Component {
                 </div> 
               </div>
               <div className="row about-description d-flex">
-                  <div className="col-md-3 col-sm-12 about-years">
+                  <div className="col-md-4 col-sm-12 about-years">
                   <Img fluid={data.banner.localFile.childImageSharp.fluid} alt="35 Years image" className="about-years-img"/>
                 </div>
-                <div className="col-md-9 col-sm-12">
-                  <div className="" dangerouslySetInnerHTML={{__html: data.description.html}} />
+                <div className="col-md-8 col-sm-12">
+                  <div className="">
+                    {data.description.text}
+                  </div>
                 </div>
               </div>
               <div className="row bg-white about-content">
@@ -138,29 +99,8 @@ class AboutUs extends React.Component {
               <div className="slider-wrapper">
                 <div className="slider-border"></div>
                 <div className="container">
-                <Slider {...settings1}
-          asNavFor={this.state.nav2}
-          ref={slider => (this.slider1 = slider)}
-        >
-            <div className="timeline-nav__item">1991</div>
-              <div className="timeline-nav__item">1999</div>
-              <div className="timeline-nav__item">2000</div>
-              <div className="timeline-nav__item">2003</div>
-              <div className="timeline-nav__item">2005</div>
-              <div className="timeline-nav__item">2010</div>
-              <div className="timeline-nav__item">2012</div>
-              <div className="timeline-nav__item">2013</div>
-              <div className="timeline-nav__item">2015</div>
-              <div className="timeline-nav__item">2016</div>
-        </Slider>
-        <Slider {...settings2}
-          asNavFor={this.state.nav1}
-          ref={slider => (this.slider2 = slider)}
-          slidesToShow={1}
-          swipeToSlide={true}
-          focusOnSelect={true}
-        >
-                      {
+                <Slider {...settings}>
+                    {
                       data.our_legacy.document[0].data.our_legacy.map((item,value)=>{
                         return(
                           <div key={value} className="legacy-slide">
@@ -177,7 +117,7 @@ class AboutUs extends React.Component {
                         )
                       })
                     }
-        </Slider>
+                  </Slider>
                 </div>
               </div>
           </section>
@@ -294,7 +234,7 @@ export const AboutPage = graphql`{
       image {
         localFile {
           childImageSharp {
-            fluid(maxWidth: 1150, quality: 100) {
+            fluid(maxWidth: 1150) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -303,14 +243,14 @@ export const AboutPage = graphql`{
       banner {
         localFile {
           childImageSharp {
-            fluid(maxWidth: 1150, quality: 100) {
+            fluid(maxWidth: 1150) {
               ...GatsbyImageSharpFluid
             }
           }
         }
       }
       description {
-        html
+        text
       }
       aboutus_content {
         sub_title {
@@ -332,7 +272,7 @@ export const AboutPage = graphql`{
               image {
                 localFile {
                   childImageSharp {
-                    fluid(maxWidth: 1150, quality: 100) {
+                    fluid(maxWidth: 1150) {
                       ...GatsbyImageSharpFluid
                     }
                   }
@@ -346,7 +286,7 @@ export const AboutPage = graphql`{
              banner {
               localFile {
                 childImageSharp {
-                  fluid(maxWidth: 1150, quality: 100) {
+                  fluid(maxWidth: 1150) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -377,7 +317,7 @@ export const AboutPage = graphql`{
             banner {
               localFile {
                 childImageSharp {
-                  fluid(maxWidth: 1150, quality: 100) {
+                  fluid(maxWidth: 1150) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -403,7 +343,7 @@ export const AboutPage = graphql`{
             banner {
               localFile {
                 childImageSharp {
-                  fluid(maxWidth: 1150, quality: 100) {
+                  fluid(maxWidth: 1150) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -421,7 +361,7 @@ export const AboutPage = graphql`{
              banner {
               localFile {
                 childImageSharp {
-                  fluid(maxWidth: 1150, quality: 100) {
+                  fluid(maxWidth: 1150) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -439,7 +379,7 @@ export const AboutPage = graphql`{
             banner {
               localFile {
                 childImageSharp {
-                  fluid(maxWidth: 1150, quality: 100) {
+                  fluid(maxWidth: 1150) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -457,7 +397,7 @@ export const AboutPage = graphql`{
             banner {
               localFile {
                 childImageSharp {
-                  fluid(maxWidth: 1150, quality: 100) {
+                  fluid(maxWidth: 1150) {
                     ...GatsbyImageSharpFluid
                   }
                 }

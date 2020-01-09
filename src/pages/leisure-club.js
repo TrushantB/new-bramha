@@ -18,7 +18,9 @@ class LeisureClub extends React.Component {
                     <div className="row  mr-0">
                         <div className="col-12">
                             <div className="main-paragraph"> 
-                            <p dangerouslySetInnerHTML={{__html: leisureData.description.html}}/>
+                            <p>
+                              {leisureData.description.text}
+                            </p>  
                             </div>  
                         </div>
                     </div>
@@ -80,7 +82,7 @@ export const leisurePage = graphql`{
               text
             }
             description{
-              html
+              text
             }
             all_verticals{
               verticals{
@@ -99,7 +101,7 @@ export const leisurePage = graphql`{
                     thumbnail{
                       localFile {
                         childImageSharp {
-                          fluid(maxWidth: 1150, quality: 100) {
+                          fluid(maxWidth: 1150) {
                             ...GatsbyImageSharpFluid
                           }
                         }
@@ -109,7 +111,7 @@ export const leisurePage = graphql`{
                       image{
                         localFile {
                             childImageSharp {
-                              fluid(maxWidth: 1150, quality: 100) {
+                              fluid(maxWidth: 1150) {
                                 ...GatsbyImageSharpFluid
                               }
                             }

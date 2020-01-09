@@ -38,19 +38,16 @@ export default class Residential extends React.Component {
   }
   
   sortAddress = (e) => {
-    console.log(e);
-    
     let type = [];
     let address = [];
     e.map((item)=>{
       type.push(item.residential_links.document[0].data.flat_bhk.text);
       address.push(item.residential_links.document[0].data.flat_address.text);
    }) 
-
-      let allType = [...new Set(type)];
-      let allAddress = [...new Set(address)];
-      this.setState({allType});
-      this.setState({allAddress});
+    let allType = [...new Set(type)];
+    let allAddress = [...new Set(address)];
+    this.setState({allType});
+    this.setState({allAddress});
   }
 
   handleProjects = (e) => {
@@ -63,11 +60,9 @@ export default class Residential extends React.Component {
       project.map((item)=>{
         type.push(item.residential_links.document[0].data.flat_bhk.text);
         address.push(item.residential_links.document[0].data.flat_address.text);
-      console.log('type in loop', type);
 
       }) 
       this.setState({allType: type, allAddress: address})
-      console.log('type', type);
       
     }
     else if(e.target.value == 'completed_project'){
@@ -169,21 +164,17 @@ export default class Residential extends React.Component {
         {
           breakpoint: 480,
           settings: {
-            
             centerMode: true,
             infinite: true,
             centerPadding: "60px",
             slidesToShow: 1,
             speed: 2000,
-           
             autoplaySpeed: 0
-            
           }
         }
       ]
     };
     const residentialData = this.props.data.allPrismicResidential.edges;
-    console.log('residentialData', residentialData);
     return(
       <Layout>
         <SEO title="Residential"/>
@@ -196,7 +187,9 @@ export default class Residential extends React.Component {
                 </div>
                 <div className="row  mr-0">
                     <div className="col-12">
-                      <div className="main-paragraph" dangerouslySetInnerHTML={{__html: item.node.data.description.html}}/ > 
+                      <div className="main-paragraph">
+                        {item.node.data.description.text}
+                      </div>   
                     </div>
                 </div>
               </section>
@@ -340,7 +333,7 @@ export const residentialPage = graphql`{
           text
         }
         description{
-          html
+          text
         }
         ongoing_projects{
           residential_links{
@@ -353,7 +346,7 @@ export const residentialPage = graphql`{
                 thumbnail{
                   localFile {
                     childImageSharp {
-                      fluid(maxWidth: 1150, quality: 100) {
+                      fluid(maxWidth: 1150) {
                         ...GatsbyImageSharpFluid
                       }
                     }
@@ -363,7 +356,7 @@ export const residentialPage = graphql`{
                   image{
                     localFile {
                       childImageSharp {
-                        fluid(maxWidth: 1150, quality: 100) {
+                        fluid(maxWidth: 1150) {
                           ...GatsbyImageSharpFluid
                         }
                       }
@@ -395,7 +388,7 @@ export const residentialPage = graphql`{
                thumbnail{
                 localFile {
                   childImageSharp {
-                    fluid(maxWidth: 1150, quality: 100) {
+                    fluid(maxWidth: 1150) {
                       ...GatsbyImageSharpFluid
                     }
                   }
@@ -405,7 +398,7 @@ export const residentialPage = graphql`{
                  image{
                   localFile {
                     childImageSharp {
-                      fluid(maxWidth: 1150, quality: 100) {
+                      fluid(maxWidth: 1150) {
                         ...GatsbyImageSharpFluid
                       }
                     }
