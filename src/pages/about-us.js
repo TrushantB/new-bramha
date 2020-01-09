@@ -11,17 +11,10 @@ class AboutUs extends React.Component {
     styleData:{height: 160, overflow: 'hidden'},
     activeSlide: 0,
     activeSlide2: 0,
-    nav1: null,
-    nav2: null
+  
   }
   
-  componentDidMount() {
-    this.setState({
-      nav1: this.slider1,
-      nav2: this.slider2
-    });
-  }
-  
+
   render(){
     let index = 0;
     var settings = {
@@ -34,19 +27,7 @@ class AboutUs extends React.Component {
       autoplay : true,
       customPaging: i => (
         <div>
-          {
-            data.our_legacy.document[0].data.our_legacy.map((item,value)=>{
-              if(value == index){
-                return(
-                  <div key={value}> {item.year}</div>
-                )
-              }
-              if(data.our_legacy.document[0].data.our_legacy.length-1 === value ){
-                index = index +1;
-              }
-            })
-          }
-          {/* {i + 1} */}
+          <div key={i}> {data.our_legacy.document[0].data.our_legacy[i].year}</div>
         </div>
       ),
       beforeChange: (current, next) => this.setState({ activeSlide: next }),
@@ -72,10 +53,10 @@ class AboutUs extends React.Component {
                 </div> 
               </div>
               <div className="row about-description d-flex">
-                  <div className="col-md-3 col-sm-12 about-years">
+                  <div className="col-md-4 col-sm-12 about-years">
                   <Img fluid={data.banner.localFile.childImageSharp.fluid} alt="35 Years image" className="about-years-img"/>
                 </div>
-                <div className="col-md-9 col-sm-12">
+                <div className="col-md-8 col-sm-12">
                   <div className="">
                     {data.description.text}
                   </div>
