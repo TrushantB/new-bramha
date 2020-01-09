@@ -51,10 +51,10 @@ class AboutUs extends React.Component {
                 </div> 
               </div>
               <div className="row about-description d-flex">
-                  <div className="col-md-3 col-sm-12 about-years">
+                  <div className="col-md-4 col-sm-12 about-years">
                   <Img fluid={data.banner.localFile.childImageSharp.fluid} alt="35 Years image" className="about-years-img"/>
                 </div>
-                <div className="col-md-9 col-sm-12">
+                <div className="col-md-8 col-sm-12">
                   <div className="" dangerouslySetInnerHTML={{__html: data.description.html}} />
                 </div>
               </div>
