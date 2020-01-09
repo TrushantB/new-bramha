@@ -10,6 +10,7 @@ function classHandle() {
   $("body").removeClass("nav-open");
  }
 return(
+<header className="header">
   <nav className="navbar navbar-light container" >
   <Link className="navbar-brand" to='/' >
         <img src={img1} alt="BramhaCorp Logo" className="logo-img" />
@@ -74,6 +75,7 @@ Menu <span></span>
 </nav>
 <div className="overlay"></div>
 </nav>
+</header>
 )
 
 
