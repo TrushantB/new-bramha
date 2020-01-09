@@ -24,57 +24,35 @@ class AboutUs extends React.Component {
   
   render(){
     let index = 0;
-    var settings1={
-          // slidesToShow: 12,
-          // slidesToScroll: 1,
-          // centerMode: true,
-          // focusOnSelect: true,
-          //  mobileFirst: true,
-          // arrows: false,
-          // infinite:false,
-          // className:"timeline-nav",
-           responsive: [
-               {
-              breakpoint: 768,
-              settings: {
-                slidesToShow: 8,
-               }
-              },
-             {
-              breakpoint: 580,
-              settings: {
-                slidesToShow: 4,
-                slidesToScroll: 1,
-              }
-            }
-         ]
-      }
-      var settings2={
-        // autoplay: true,
-        // autoplaySpeed:3500,
-      //  slidesToShow: 1,
-      //  slidesToScroll: 1,
-      //  arrows: false,  
-      //  centerMode: false,     
-      //  cssEase: 'ease',
-      //   edgeFriction: 0.5,
-      //   mobileFirst: true,
-      //   speed: 500,
-        responsive: [
+    let settings = {
+      dots: true,
+      dotsClass: "slick-dots slick-thumb",
+      infinite: true,
+      speed: 1000,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay : true,
+      customPaging: i => (
+        <div>
           {
-           breakpoint: 0,
-           settings: {
-               centerMode: false
-           }
-         },
-            {
-           breakpoint: 768,
-           settings: {
-               centerMode: false
-           }
-         }
-      ]
-   }
+            data.our_legacy.document[0].data.our_legacy.map((item,value)=>{
+              if(value == index){
+                return(
+                  <div key={value}> {item.year}</div>
+                )
+              }
+              if(data.our_legacy.document[0].data.our_legacy.length-1 === value ){
+                index = index +1;
+              }
+            })
+          }
+          {/* {i + 1} */}
+        </div>
+      ),
+      // beforeChange: (current, next) => this.setState({ activeSlide: next }),
+      // afterChange: current => this.setState({ activeSlide2: current }),
+      adaptiveHeight : true,
+    };
     const data = this.props.data.prismicAboutus.data;
     const verticalsData = this.props.data.prismicOurVerticals.data;
     // const ourLegacy = this.props.data.allPrismicOurLegacy.edges;
@@ -137,42 +115,8 @@ class AboutUs extends React.Component {
               <div className="slider-wrapper">
                 <div className="slider-border"></div>
                 <div className="container">
-                <Slider {...settings1}
-          ref={slider => (this.slider1 = slider)}
-          className= {"timeline-nav"}
-          asNavFor={this.state.nav2}
-          slidesToShow = {12} 
-          slidesToScroll = {1}
-          centerMode = {false}
-          focusOnSelect = {true}
-           mobileFirst = {true}
-          arrows = { false } 
-          infinite = {false}
-        >
-            <div className="timeline-nav__item">1991</div>
-              <div className="timeline-nav__item">1999</div>
-              <div className="timeline-nav__item">2000</div>
-              <div className="timeline-nav__item">2003</div>
-              <div className="timeline-nav__item">2005</div>
-              <div className="timeline-nav__item">2010</div>
-              <div className="timeline-nav__item">2012</div>
-              <div className="timeline-nav__item">2013</div>
-              <div className="timeline-nav__item">2015</div>
-              <div className="timeline-nav__item">2016</div>
-        </Slider>
-        <Slider {...settings2}
-          className= {"timeline-slider"}
-          asNavFor={this.state.nav1}
-          ref={slider => (this.slider2 = slider)}
-          slidesToShow={1}
-          slidesToScroll={1}
-          centerMode ={false}
-          cssEase ={'ease'}
-          edgeFriction={0.5}
-          mobileFirst={true}
-          speed={500}
-        >
-                      {
+                <Slider {...settings}>
+                    {
                       data.our_legacy.document[0].data.our_legacy.map((item,value)=>{
                         return(
                           <div key={value} className="legacy-slide">
@@ -189,7 +133,7 @@ class AboutUs extends React.Component {
                         )
                       })
                     }
-        </Slider>
+                  </Slider>
                 </div>
               </div>
           </section>
