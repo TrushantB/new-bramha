@@ -5,7 +5,7 @@ import Img from 'gatsby-image';
 import Layout from '../components/layout'
 import Footer from '../components/footer';
 import SEO from '../components/seo';
-
+import $ from 'jQuery';
 class AboutUs extends React.Component {
   state = {
     styleData:{height: 160, overflow: 'hidden'},
@@ -21,19 +21,33 @@ class AboutUs extends React.Component {
       nav2: this.slider2
     });
   }
+  
   render(){
     let index = 0;
+    //remove active class from all thumbnail slides
+ $('.slider-nav-thumbnails .slick-slide').removeClass('slick-active');
+ //set active class to first thumbnail slides
+ $('.slider-nav-thumbnails .slick-slide').eq(0).addClass('slick-active');
+ // On before slide change match active thumbnail to current slide
+ $('.slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+ 	var mySlideNumber = nextSlide;
+ 	$('.slider-nav-thumbnails .slick-slide').removeClass('slick-active');
+ 	$('.slider-nav-thumbnails .slick-slide').eq(mySlideNumber).addClass('slick-active');
+});
+//UPDATED
+$('.slider').on('afterChange', function(event, slick, currentSlide){
+  $('.content').hide();
+  $('.content[data-id=' + (currentSlide + 1) + ']').show();
+});
     var settings1={
-          // autoplay: true,
-          // autoplaySpeed:3500,
-          slidesToShow: 12,
-          slidesToScroll: 1,
-          centerMode: false,
-          focusOnSelect: true,
-           mobileFirst: true,
-          arrows: false,
-          infinite:false,
-          className:"timeline-nav",
+          // slidesToShow: 12,
+          // slidesToScroll: 1,
+          // centerMode: true,
+          // focusOnSelect: true,
+          //  mobileFirst: true,
+          // arrows: false,
+          // infinite:false,
+          // className:"timeline-nav",
            responsive: [
                {
               breakpoint: 768,
@@ -42,10 +56,10 @@ class AboutUs extends React.Component {
                }
               },
              {
-              breakpoint: 0,
+              breakpoint: 580,
               settings: {
                 slidesToShow: 4,
-                slidesToScroll: 2,
+                slidesToScroll: 1,
               }
             }
          ]
@@ -53,14 +67,14 @@ class AboutUs extends React.Component {
       var settings2={
         // autoplay: true,
         // autoplaySpeed:3500,
-       slidesToShow: 1,
-       slidesToScroll: 1,
-       arrows: false,  
-       centerMode: false,     
-       cssEase: 'ease',
-        edgeFriction: 0.5,
-        mobileFirst: true,
-        speed: 500,
+      //  slidesToShow: 1,
+      //  slidesToScroll: 1,
+      //  arrows: false,  
+      //  centerMode: false,     
+      //  cssEase: 'ease',
+      //   edgeFriction: 0.5,
+      //   mobileFirst: true,
+      //   speed: 500,
         responsive: [
           {
            breakpoint: 0,
@@ -139,8 +153,16 @@ class AboutUs extends React.Component {
                 <div className="slider-border"></div>
                 <div className="container">
                 <Slider {...settings1}
-          asNavFor={this.state.nav2}
           ref={slider => (this.slider1 = slider)}
+          className= {"timeline-nav"}
+          asNavFor={this.state.nav2}
+          slidesToShow = {12} 
+          slidesToScroll = {1}
+          centerMode = {false}
+          focusOnSelect = {true}
+           mobileFirst = {true}
+          arrows = { false } 
+          infinite = {false}
         >
             <div className="timeline-nav__item">1991</div>
               <div className="timeline-nav__item">1999</div>
@@ -154,11 +176,16 @@ class AboutUs extends React.Component {
               <div className="timeline-nav__item">2016</div>
         </Slider>
         <Slider {...settings2}
+          className= {"timeline-slider"}
           asNavFor={this.state.nav1}
           ref={slider => (this.slider2 = slider)}
           slidesToShow={1}
-          swipeToSlide={true}
-          focusOnSelect={true}
+          slidesToScroll={1}
+          centerMode ={false}
+          cssEase ={'ease'}
+          edgeFriction={0.5}
+          mobileFirst={true}
+          speed={500}
         >
                       {
                       data.our_legacy.document[0].data.our_legacy.map((item,value)=>{

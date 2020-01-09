@@ -114,6 +114,9 @@ class LeisureDetails extends React.Component {
                                           })
                                         }
                                       </Slider>
+                                      <p className=" text-left text-sm-center pages mb-0">
+                                        1 of 4
+                                       </p>
                                   </div>
                                 </div>
                             </section>

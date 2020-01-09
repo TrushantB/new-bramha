@@ -57,13 +57,13 @@ class KnoweldgeHub extends React.Component {
                       knowledgeData.knowledge_topics.map((item,index)=>{
                      
                         return(
-                          <div className="col-md-6 p-sm-3" key={index}>
+                          <div className="col-md-6 p-sm-3" key={index} id={`index${index}`}>
                             {
                               console.log( item.topics.document[0].data.title.text ),
                               
                            !item.topics.document[0].data.heading ?
 
-                          <div className="about-loan card-primary mt-84" id={`index${index}`}>
+                          <div className="about-loan card-primary mt-84" >
                               <div className="heading">
                                   <h3 className=" text-uppercase mb-2 mb-sm-3 section-title ">{item.topics.document[0].data.title.text}</h3>
                               </div>
@@ -76,7 +76,8 @@ class KnoweldgeHub extends React.Component {
                                   <div className="col-md-12 col-lg-6  col-6 pl-0 pl-md-3 pl-lg-0 pr-0 pr-sm-3">
                                       <div className="  d-flex justify-content-between flex-column bg-light-gray">
                                           <p>{item.topics.document[0].data.short_description.text}</p>
-                                          <div className="know-more">
+                                          <h3 class="inner-section-title  text-right d-block d-sm-none">Important Notices</h3>
+                                          <div className="know-more ">
                                               <a href="#">
                                                   <span className="mr-3">Know More</span>
                                                   <i className="fas fa-arrow-right"></i>
@@ -107,7 +108,7 @@ class KnoweldgeHub extends React.Component {
                               </div>
                             }
                             {
-                              knowledgeData.knowledge_topics.map((item,index)=>{
+                              knowledgeData.knowledge_topics.map((item)=>{
                                 // console.log(item.topics.document[0].data.mobile_view.localFile.childImageSharp.fluid);
                                 
                                 if(item.topics.document[0].data.title.text=="Maha Rera") {
