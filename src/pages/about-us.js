@@ -24,7 +24,7 @@ class AboutUs extends React.Component {
       speed: 1000,
       slidesToShow: 1,
       slidesToScroll: 1,
-      // autoplay : true,
+      autoplay : true,
       arrows:false,
       customPaging: i => (
         <div>
