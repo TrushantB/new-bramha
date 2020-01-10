@@ -144,7 +144,7 @@ class Careers extends React.Component {
           <section className="banner-section">
             <Img fluid={careerData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
           </section>
-          <section className="career-info container-md bg-color">
+          <section className="career-info container-md bg-color pb-5 pb-sm-0">
             <div className="padding-block-60 career-info-row">
               <h2 className="page-heading">{careerData.title.text}</h2> 
             </div>
