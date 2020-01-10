@@ -788,8 +788,8 @@ button:focus{
             box-shadow: none;
             margin-top: 28px;
             width:280px;
-            img{
-            width: 70% !important;
+            .w-50{
+                width: 70%!important;
             }
         }
         .detail-page-sections{

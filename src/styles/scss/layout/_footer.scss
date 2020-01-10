@@ -2,6 +2,9 @@
 // This file contains Footer Style
 // -----------------------------------------------------------------------------
 .footer{
+    .container{
+        max-width: 920px;
+    }
     .copyright{
         margin-bottom: 28px;
         opacity: 0.6;
@@ -16,6 +19,7 @@
                 color: #fff;
                 text-decoration: none;
                 transition: .5s ease-in-out;  
+                
            }
     }
     background: theme-color("footer-bg");
@@ -26,18 +30,17 @@
             .nav-item{
                 margin-bottom: 28px;
                 a{
-                    color: #fff;
+                    color:rgba(255,255,255,0.8);
                     padding:0 24px 0 24px;
-                    border-right: 1px solid #fff;
+                    border-right: 1px solid rgba(255,255,255,0.8);
                     font-size: 15px;
-                    font-weight: 200;
+                    font-weight: 300;
                     line-height: normal;
                     letter-spacing: normal;
                     text-transform: capitalize;
                     &:hover{
-                        color: theme-color("primary");
+                        color:#fff;
                         text-decoration: none;
-                        transition: .5s ease-in-out;
                     }
                 }
                 &:last-child{
@@ -72,7 +75,7 @@
     text-align: center;
     margin-right: 28px;
     &:hover{
-        background:  theme-color("primary");
+        background: #fff;
         cursor: pointer;
         transition: .5s ease-in-out;
     }

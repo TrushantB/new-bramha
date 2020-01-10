@@ -1,11 +1,14 @@
 .logo-card{
-    width:300px;
+    width:320px;
     box-shadow: 0 2px 13px 0 rgba(0, 0, 0, 0.18);
     background-color: #ffffff;
     padding:8px 0;
     margin-top: -32px;
     position: relative;
     z-index: 99;
+    .w-50{
+        width: 38%!important;
+    }
   }
   .slider-wrapper-gray{
       background: theme-color(bg-color);
