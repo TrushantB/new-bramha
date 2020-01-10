@@ -97,13 +97,19 @@
         }
         button{
             padding: 12px 88px;
-            border-radius: 0;
-            font-weight: 300;
-            background: theme-color("tertiary");
-            border-color:theme-color("tertiary") ;
-            &:focus{
-                border-color:theme-color("tertiary");
-                box-shadow: none;
+            color: #fff;
+            background: #b2a585;
+            border: 1px solid #b2a585;
+            font-size: 18px;
+            font-weight: normal;
+            line-height: normal;
+            letter-spacing: -0.4px;
+            &:hover{
+                background-color: transparent;
+                color: #b2a585;
+                text-decoration: none;
+                -webkit-transition: .5s ease-in-out;
+                transition: .5s ease-in-out;
             }
         }
     }

@@ -90,7 +90,7 @@ class LeisureDetails extends React.Component {
                                     <p className="mb-4">
                                        {leisureData.data.description.text}
                                     </p>
-                                    <a href="#" className="link-text d-flex justify-content-between align-items-center btn-tertiary hospitality-viewmore">
+                                    <a href="#" className="d-flex justify-content-between align-items-center btn-tertiary hospitality-viewmore">
                                         <span> View Website </span> 
                                         <i className="fas fa-arrow-right"></i>
                                     </a>

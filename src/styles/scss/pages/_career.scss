@@ -74,12 +74,6 @@
         height:90px;
         opacity: 0.7;
     }
-    .card-body{
-        .btn-secondary{
-            background:theme-color("tertiary");
-            color:#fff;
-        }
-    }
     .accordion{
         border-top: 1px solid rgba(0, 0, 0, 0.125);
         border-bottom: 1px solid rgba(0, 0, 0, 0.125);
@@ -107,15 +101,16 @@
     -webkit-user-select: none;
     cursor: pointer;
     width:302px;
-    border:1px solid transparent;
+    border:1px solid theme-color("tertiary");
     color:#fff; 
   }
   .input-file-btn:hover::before {
+    text-decoration: none;
     background-color: transparent;
-    border:1px solid theme-color("tertiary");
     color:theme-color("tertiary");
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
   }
-
   .description {
       .black-text {
           opacity: 0.7;

@@ -133,7 +133,7 @@ class Contacts extends React.Component {
                           </div>
                         </div>
                         <div className="sumbit text-center mt-sm-0 mt-4">
-                          <button type="submit" className="btn-secondary btn">Submit</button>
+                          <button type="submit" className="btn-secondary">Submit</button>
                         </div>  
                       </div> 
                     </div>
