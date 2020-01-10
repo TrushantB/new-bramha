@@ -43,7 +43,7 @@ class KnoweldgeHub extends React.Component {
                       <h3 className=" text-uppercase m-0 section-title d-none d-md-block">{buyerData.title.text}</h3>
                       <p className="mb-0 text-white">{buyerData.short_description.text}</p>
                         <div className="know-more">
-                          <a href="#">
+                          <a href="#" className="link-text">
                               <span className="mr-3">Read More</span>
                               <i className="fas fa-arrow-right"></i>
                           </a>
@@ -77,8 +77,8 @@ class KnoweldgeHub extends React.Component {
                                       <div className=" important-notice-section d-flex justify-content-between flex-column bg-light-gray">
                                           <p>{item.topics.document[0].data.short_description.text}</p>
                                           <h3 className="inner-section-title  text-right text-sm-center d-block d-sm-none">Important Notices</h3>
-                                          <div className="know-more ">
-                                              <a href="#">
+                                          <div className="know-more">
+                                              <a href="#" className="link-text">
                                                   <span className="mr-3">Know More</span>
                                                   <i className="fas fa-arrow-right"></i>
                                               </a>
@@ -98,7 +98,7 @@ class KnoweldgeHub extends React.Component {
                                 <div className="guidelines-nris-info position-absolute">
                                   <p className="mb-0 mb-sm-2 text-white">{item.topics.document[0].data.heading.text}</p>
                                   <div className="know-more pt-0">
-                                    <Link to="/nri">
+                                    <Link to="/nri" className="link-text">
                                         <span className="mr-sm-5 mr-3">Read More</span>
                                         <i className="fas fa-arrow-right"></i>
                                     </Link>
@@ -121,7 +121,7 @@ class KnoweldgeHub extends React.Component {
                                         <p className="m-0">Rules and regulations</p>
                                       </div>
                                       <div className="know-more d-flex align-items-end justify-content-end position-absolute">
-                                        <a href="#">
+                                        <a href="#" className="link-text">
                                             <span  className="mr-3">Know More</span>
                                             <i className="fas fa-arrow-right"></i>
                                         </a>

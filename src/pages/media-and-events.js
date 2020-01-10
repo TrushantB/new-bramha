@@ -5,13 +5,17 @@ import { graphql } from 'gatsby';
 import Footer from '../components/footer';
 import SEO from '../components/seo';
 import Img from 'gatsby-image';
-
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
 
 class MediaAndEvents extends React.Component {
   state = {
-    activeSlide: null
+    activeSlide: null,
+    photoIndex: 0,
+    isOpen: false, 
   };  
   render(){
+    const { photoIndex, isOpen } = this.state;
     const eventwiseData = this.props.data.prismicEvents.data;
     console.log('eventwiseData', eventwiseData);
     var settings = {
@@ -62,7 +66,7 @@ class MediaAndEvents extends React.Component {
     };
     return(
       <Layout>
-      <SEO title="MediaAndEvents"/>
+      <SEO title="Media And Events"/>
         <section className="events" >
           <section className="page-heading-section container container-sm-fluid bg-color">
             <div className="padding-block-60">
@@ -97,7 +101,7 @@ class MediaAndEvents extends React.Component {
                             datas.data.showcase.map((item,value)=>{
                               return(
                                 <div key={value}>
-                                  <div  className="slider-img image-ratio">
+                                  <div  className="slider-img image-ratio" onClick={() => this.setState({ isOpen: true ,photoIndex:value})}>
                                     <Img fluid={item.image.localFile.childImageSharp.fluid} width="100%"/>
                                   </div>
                                 </div>
@@ -105,6 +109,25 @@ class MediaAndEvents extends React.Component {
                             })
                             }
                             </Slider>
+                            {
+                              isOpen &&
+                              <Lightbox
+                                  mainSrc={datas.data.showcase[photoIndex].image.localFile.childImageSharp.fluid.src}
+                                  nextSrc={datas.data.showcase[(photoIndex + 1) % datas.data.showcase.length].image.localFile.childImageSharp.fluid.src}
+                                  prevSrc={datas.data.showcase[(photoIndex + datas.data.showcase.length - 1) % datas.data.showcase.length].image.localFile.childImageSharp.fluid.src}
+                                  onCloseRequest={() => this.setState({ isOpen: false })}
+                                  onMovePrevRequest={() =>
+                                    this.setState({
+                                      photoIndex: (photoIndex + datas.data.showcase.length - 1) % datas.data.showcase.length,
+                                    })
+                                  }
+                                  onMoveNextRequest={() =>
+                                    this.setState({
+                                      photoIndex: (photoIndex + 1) % datas.data.showcase.length,
+                                    })
+                                  }
+                                  />
+                              }
                             <p className=" text-left text-sm-center pages mb-0">
                                 {this.state.activeSlide + 1} of {datas.data.showcase.length}
                             </p>

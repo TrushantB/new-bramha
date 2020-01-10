@@ -4,14 +4,19 @@ import SEO from '../components/seo'
 import Footer from '../components/footer'
 import Img from 'gatsby-image'
 import Slider from 'react-slick'
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
 
 class LeisureDetails extends React.Component {
   state = {
-    activeSlide:null
+    activeSlide:null,
+    photoIndex: 0,
+    isOpen: false, 
   };
     render(){
+      const { photoIndex, isOpen } = this.state;
         const leisureData = this.props.data.prismicOurVerticalsArticle;
-            var settings = {
+            let settings = {
             // className:"center",
             centerMode: true,
             centerPadding: '200px',
@@ -60,7 +65,7 @@ class LeisureDetails extends React.Component {
             return(
                 <Layout>
                     <SEO title={leisureData.data.title.text}/>
-                    <main className="detail-page leisure-club-detail-page">
+                    <main className="detail-page">
                         {/* <!-- ---------------- banner start here ---------------- --> */}
                             <section className="banner-section">
                                 {console.log('t', leisureData.data.title.text)}
@@ -105,10 +110,7 @@ class LeisureDetails extends React.Component {
                                           leisureData.data.showcase.map((item,value)=>{
                                             return(
                                               <div key={value}>
-                                                <div  className="slider-img image-ratio">
-                                                  {/* <h5>{item.heading.text}</h5>
-                                                  <p>{item.date.text}</p>
-                                                  <p>{item.location.text}</p> */}
+                                                <div  className="slider-img image-ratio" onClick={() => this.setState({ isOpen: true ,photoIndex:value})}>
                                                   <Img fluid={item.image1.localFile.childImageSharp.fluid} alt=" Showcase slidwer" className="life-at-bramha-slider-image" />
                                                 </div>
                                               </div>
@@ -116,6 +118,25 @@ class LeisureDetails extends React.Component {
                                           })
                                         }
                                       </Slider>
+                                      {
+                                        isOpen &&
+                                        <Lightbox
+                                            mainSrc={leisureData.data.showcase[photoIndex].image1.localFile.childImageSharp.fluid.src}
+                                            nextSrc={leisureData.data.showcase[(photoIndex + 1) % leisureData.data.showcase.length].image1.localFile.childImageSharp.fluid.src}
+                                            prevSrc={leisureData.data.showcase[(photoIndex + leisureData.data.showcase.length - 1) % leisureData.data.showcase.length].image1.localFile.childImageSharp.fluid.src}
+                                            onCloseRequest={() => this.setState({ isOpen: false })}
+                                            onMovePrevRequest={() =>
+                                              this.setState({
+                                                photoIndex: (photoIndex + leisureData.data.showcase.length - 1) % leisureData.data.showcase.length,
+                                              })
+                                            }
+                                            onMoveNextRequest={() =>
+                                              this.setState({
+                                                photoIndex: (photoIndex + 1) % leisureData.data.showcase.length,
+                                              })
+                                            }
+                                            />
+                                      }
                                       <p className=" text-left text-sm-center pages mb-0">
                                         {this.state.activeSlide + 1} of {leisureData.data.showcase.length}
                                        </p>
