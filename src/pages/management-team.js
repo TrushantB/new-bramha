@@ -32,7 +32,7 @@ class ManagementTeam extends React.Component {
                         </p>
 
                         <h2> Coming Soon... </h2>
-                        <Link to='/'> Back To Home Page </Link>
+                        <Link to='/' className="link-text font-weight-bold"> Back To Home Page </Link>
                         </div>
                         <div className="col-lg-6"> 
                         <Img fluid={mgntData.banner.localFile.childImageSharp.fluid} className="w-100 h-100"/>

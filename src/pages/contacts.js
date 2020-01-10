@@ -16,7 +16,7 @@ class Contacts extends React.Component {
             <Img fluid={contactData.banner.localFile.childImageSharp.fluid} alt="" width="100%"/>
           </div>
           <section className="page-heading-section container container-sm-fluid bg-color">
-            <div className="padding-block-60">
+            <div className="contact-us-title padding-block-60">
               <h2 className="page-heading"> {contactData.contactus.text}</h2> 
             </div>
             <div className="row mr-0">
@@ -133,7 +133,7 @@ class Contacts extends React.Component {
                           </div>
                         </div>
                         <div className="sumbit text-center mt-sm-0 mt-4">
-                          <button type="submit" className="btn-secondary btn">Submit</button>
+                          <button type="submit" className="btn-secondary">Submit</button>
                         </div>  
                       </div> 
                     </div>
