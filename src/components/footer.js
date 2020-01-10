@@ -20,7 +20,7 @@ const Footer = ({ siteTitle }) => (
                 <Link to="/"> Channel Partners</Link>
               </li>
               <li className="nav-item ">
-                <Link to="/"> Careers</Link>
+                <Link to="/careers"> Careers</Link>
               </li>
               <li className="nav-item ">
                 <Link to="/"> Site Map</Link>
