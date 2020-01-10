@@ -183,7 +183,7 @@ class VerticalPage extends React.Component {
                             <div key={index} className={ index ? "tab-pane fade show" : "tab-pane fade show active"} id={`id${index}`} role="tabpanel" aria-labelledby={`tab${index}`}>
                               <div className="container">
                                 <div className="row">
-                                  <div className="col-md-4">
+                                  <div className="col-md-4 mt-5 mt-sm-0">
                                     <ul>
                                       <li>
                                           {item.description1.text}

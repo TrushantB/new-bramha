@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import '../styles/css/custom.css';
 import '../styles/scss/main.scss';
-import img1 from '../styles/images/logo.png';
+import img1 from '../images/logo.png';
 import $ from 'jquery';
 const Header = ({ siteTitle }) => {
 function classHandle() {

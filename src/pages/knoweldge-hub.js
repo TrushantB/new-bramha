@@ -20,8 +20,8 @@ class KnoweldgeHub extends React.Component {
               <h2 className="page-heading">{knowledgeData.title.text}</h2>
           </div>
          <div className="row mr-0">
-          <div className="col-12">
-            <div className="main-paragraph">
+          <div className="col-12 knoweldge-hub-title">
+            <div className="main-paragraph ">
               <p className="m-0">
                 {knowledgeData.description.text}
                 </p>
