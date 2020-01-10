@@ -4,12 +4,17 @@ import SEO from '../components/seo'
 import Footer from '../components/footer'
 import Img from 'gatsby-image'
 import Slider from 'react-slick'
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
 
 class CommercialDetails extends React.Component {
   state = {
-    activeSlide: null
+    activeSlide: null,
+    photoIndex: 0,
+    isOpen: false, 
   };
     render(){
+      const { photoIndex, isOpen } = this.state;
         const commercialData = this.props.data.prismicOurVerticalsArticle;
         console.log('commercialData', commercialData);
               var settings = {
@@ -105,10 +110,7 @@ class CommercialDetails extends React.Component {
                                           commercialData.data.showcase.map((item,value)=>{
                                             return(
                                               <div key={value}>
-                                                <div  className="slider-img image-ratio">
-                                                  {/* <h5>{item.heading.text}</h5>
-                                                  <p>{item.date.text}</p>
-                                                  <p>{item.location.text}</p> */}
+                                                <div  className="slider-img image-ratio" onClick={() => this.setState({ isOpen: true ,photoIndex:value})}>
                                                   <Img fluid={item.image1.localFile.childImageSharp.fluid} alt=" Showcase slidwer" className="life-at-bramha-slider-image" />
                                                 </div>
                                               </div>
@@ -116,6 +118,25 @@ class CommercialDetails extends React.Component {
                                           })
                                         }
                                       </Slider>
+                                      {
+                                          isOpen &&
+                                          <Lightbox
+                                              mainSrc={commercialData.data.showcase[photoIndex].image1.localFile.childImageSharp.fluid.src}
+                                              nextSrc={commercialData.data.showcase[(photoIndex + 1) % commercialData.data.showcase.length].image1.localFile.childImageSharp.fluid.src}
+                                              prevSrc={commercialData.data.showcase[(photoIndex + commercialData.data.showcase.length - 1) % commercialData.data.showcase.length].image1.localFile.childImageSharp.fluid.src}
+                                              onCloseRequest={() => this.setState({ isOpen: false })}
+                                              onMovePrevRequest={() =>
+                                                this.setState({
+                                                  photoIndex: (photoIndex + commercialData.data.showcase.length - 1) % commercialData.data.showcase.length,
+                                                })
+                                              }
+                                              onMoveNextRequest={() =>
+                                                this.setState({
+                                                  photoIndex: (photoIndex + 1) % commercialData.data.showcase.length,
+                                                })
+                                              }
+                                              />
+                                        }
                                       <p className=" text-left text-sm-center pages mb-0">
                                          {this.state.activeSlide + 1} of {commercialData.data.showcase.length}
                                       </p>

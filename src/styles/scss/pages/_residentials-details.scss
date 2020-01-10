@@ -46,7 +46,7 @@
       color:theme-color(heading-primary);
   }
   #factfile-tab .nav-link{
-      border-bottom:3px solid theme-color(border-colors);
+      border-bottom:3px solid #eeeeee;
       background-color: theme-color(bg-color);
       border-radius: 0;
   }
@@ -241,4 +241,10 @@
         -ms-filter: grayscale(100%);
          -o-filter: grayscale(100%);
             filter: grayscale(100%);
+}
+@media(max-width:580px){
+    .detail-maharera-sections{
+        margin-top: 40px;
+        margin-bottom: 52px; 
+  }
 }

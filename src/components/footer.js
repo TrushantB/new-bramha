@@ -17,10 +17,10 @@ const Footer = ({ siteTitle }) => (
                 <Link to="/"> Blog</Link>
               </li>
               <li className="nav-item ">
-                <Link to="/"> Channel Partner</Link>
+                <Link to="/"> Channel Partners</Link>
               </li>
               <li className="nav-item ">
-                <Link to="/"> Career</Link>
+                <Link to="/"> Careers</Link>
               </li>
               <li className="nav-item ">
                 <Link to="/"> Site Map</Link>
@@ -55,7 +55,7 @@ const Footer = ({ siteTitle }) => (
             </ul>
           </div>
           <div className="text-center text-white copyright">
-            <p className="m-0"><Link to="/">Bramhacorp Ltd</Link> ©2019. All right reserved.</p>
+            <p className="m-0"><Link to="/">BramhaCorp Ltd</Link>&copy; {new Date().getFullYear()}. All right reserved.</p>
           </div>
         </div>
       </div>

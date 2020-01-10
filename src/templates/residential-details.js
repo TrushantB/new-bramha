@@ -6,16 +6,24 @@ import Slider from 'react-slick';
 import Layout from '../components/layout'
 import Footer from '../components/footer'
 import SEO from '../components/seo';
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
 
 class VerticalPage extends React.Component {
   state = {
-    activeSlide:null
+    activeSlide:null,
+    isOpenOne:false,
+    isOpenTwo:false,
+    isOpenTHree:false,
   };
   render(){
+    const { photoIndex, isOpenOne ,isOpenTwo,isOpenThree} = this.state;
     const verticalData = this.props.data.prismicOurVerticalsArticle;
     console.log('verticalData from template page', verticalData);
     var settings = {
       // className:"center",
+      photoIndex: 0,
+      isOpen: false,  
       centerMode: true,
       centerPadding: '200px',
       slidesToShow: 1,
@@ -104,7 +112,7 @@ class VerticalPage extends React.Component {
                         verticalData.data.showcase.map((item,value)=>{
                           return(
                             <div key={value}>
-                              <div  className="slider-img ">
+                              <div  className="slider-img " onClick={() => this.setState({ isOpenOne: true ,photoIndex:value})}>
                                 <Img fluid={item.image1.localFile.childImageSharp.fluid} alt=" Showcase slidwer" className="life-at-bramha-slider-image" />
                               </div>
                             </div>
@@ -112,6 +120,25 @@ class VerticalPage extends React.Component {
                         })
                       }
                     </Slider>
+                    {
+                    isOpenOne &&
+                    <Lightbox
+                        mainSrc={verticalData.data.showcase[photoIndex].image1.localFile.childImageSharp.fluid.src}
+                        nextSrc={verticalData.data.showcase[(photoIndex + 1) % verticalData.data.showcase.length].image1.localFile.childImageSharp.fluid.src}
+                        prevSrc={verticalData.data.showcase[(photoIndex + verticalData.data.showcase.length - 1) % verticalData.data.showcase.length].image1.localFile.childImageSharp.fluid.src}
+                        onCloseRequest={() => this.setState({ isOpenOne: false })}
+                        onMovePrevRequest={() =>
+                          this.setState({
+                            photoIndex: (photoIndex + verticalData.data.showcase.length - 1) % verticalData.data.showcase.length,
+                          })
+                        }
+                        onMoveNextRequest={() =>
+                          this.setState({
+                            photoIndex: (photoIndex + 1) % verticalData.data.showcase.length,
+                          })
+                        }
+                        />
+                  }
                     <p className=" text-left text-sm-center pages mb-0">
                         {this.state.activeSlide + 1} of {verticalData.data.showcase.length}
                     </p>
@@ -181,21 +208,41 @@ class VerticalPage extends React.Component {
               </h2>
               <div className="showcase-slider">
                 <Slider {...settings}>
-                  {
-                    verticalData.data.floor_plans.map((item,value)=>{
-                      return(
-                        <div key={value}>
-                          <div  className="slider-img ">
-                            <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt=" Floor Plans" className="w-100 h-100" />
-                          </div>
-                        </div>
-                      )
-                    })
+                      {
+                        verticalData.data.floor_plans.map((item,value)=>{
+                          return(
+                            <div key={value}>
+                              <div  className="slider-img " onClick={() => this.setState({ isOpenTwo: true ,photoIndex:value})}>
+                                <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt=" Floor Plans" className="w-100 h-100" />
+                              </div>
+                            </div>
+                          )
+                        })
+                      }
+                    </Slider>
+                    {
+                    isOpenTwo &&
+                    <Lightbox
+                        mainSrc={verticalData.data.floor_plans[photoIndex].image1.localFile.childImageSharp.fluid.src}
+                        nextSrc={verticalData.data.floor_plans[(photoIndex + 1) % verticalData.data.floor_plans.length].image1.localFile.childImageSharp.fluid.src}
+                        prevSrc={verticalData.data.floor_plans[(photoIndex + verticalData.data.floor_plans.length - 1) % verticalData.data.floor_plans.length].image1.localFile.childImageSharp.fluid.src}
+                        onCloseRequest={() => this.setState({ isOpenTwo: false })}
+                        onMovePrevRequest={() =>
+                          this.setState({
+                            photoIndex: (photoIndex + verticalData.data.floor_plans.length - 1) % verticalData.data.floor_plans.length,
+                          })
+                        }
+                        onMoveNextRequest={() =>
+                          this.setState({
+                            photoIndex: (photoIndex + 1) % verticalData.data.floor_plans.length,
+                          })
+                        }
+                        />
                   }
-                </Slider>
                 <p className=" text-left text-sm-center pages mb-0">
                 {this.state.activeSlide + 1} of {verticalData.data.floor_plans.length}
                 </p>
+                   
               </div>
             </div>
             {/* <!--   ------------------- Floor Plan section end here ------------------- --> */}
@@ -251,24 +298,43 @@ class VerticalPage extends React.Component {
                   Site Progress
               </h2>
               <div className="slider-wrapper-gray ">
-                <div className="container showcase-slider slider-wrapper">
-                  <Slider {...settings}>
-                    {
-                      verticalData.data.site_progress.map((item,value)=>{
-                        return(
-                          <div key={value}>
-                            <div  className="slider-img ">
-                              <Img fluid={item.images.localFile.childImageSharp.fluid} key={value} alt=" Floor Plans" className="w-100 h-100" />
-                            </div>
-                          </div>
-                        )
-                      })
-                    }
-                  </Slider>
-                  <p className=" text-left text-sm-center pages mb-0">
+                  <div className="container showcase-slider slider-wrapper">
+                      <Slider {...settings}>
+                        {
+                          verticalData.data.site_progress.map((item,value)=>{
+                            return(
+                              <div key={value}>
+                                <div  className="slider-img " onClick={() => this.setState({ isOpenThree: true ,photoIndex:value})}>
+                                  <Img fluid={item.images.localFile.childImageSharp.fluid} key={value} alt=" Floor Plans" className="w-100 h-100" />
+                                </div>
+                              </div>
+                            )
+                          })
+                        }
+                      </Slider>
+                      {
+                    isOpenThree &&
+                    <Lightbox
+                        mainSrc={verticalData.data.site_progress[photoIndex].images.localFile.childImageSharp.fluid.src}
+                        nextSrc={verticalData.data.site_progress[(photoIndex + 1) % verticalData.data.site_progress.length].images.localFile.childImageSharp.fluid.src}
+                        prevSrc={verticalData.data.site_progress[(photoIndex + verticalData.data.site_progress.length - 1) % verticalData.data.site_progress.length].images.localFile.childImageSharp.fluid.src}
+                        onCloseRequest={() => this.setState({ isOpenThree: false })}
+                        onMovePrevRequest={() =>
+                          this.setState({
+                            photoIndex: (photoIndex + verticalData.data.site_progress.length - 1) % verticalData.data.site_progress.length,
+                          })
+                        }
+                        onMoveNextRequest={() =>
+                          this.setState({
+                            photoIndex: (photoIndex + 1) % verticalData.data.site_progress.length,
+                          })
+                        }
+                        />
+                  }
+                      <p className=" text-left text-sm-center pages mb-0">
                     {this.state.activeSlide + 1} of {verticalData.data.site_progress.length}
                   </p>
-                </div>
+                    </div>
               </div>
             </section>
             {/* <!--   ------------------- progress section end here ------------------- --> */}
