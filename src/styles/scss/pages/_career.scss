@@ -69,6 +69,17 @@
         i{
             color:theme-color("text-black");
         }
+        h5[aria-expanded="true"]{
+            i{
+                transform: rotate(180deg);
+                transition: 0.3s ease-in-out;
+            }
+        }
+        h5[aria-expanded="false"]{
+            i{
+                transition: 0.3s ease-in-out;
+            }
+        }
     }
     .card-head{
         height:90px;

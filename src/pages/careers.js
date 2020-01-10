@@ -241,7 +241,7 @@ class Careers extends React.Component {
                       return(
                         <div className="card border-0" key={value}>
                           <div className="card-header" id="headingOne">
-                            <h5 className="mb-0 d-flex justify-content-between align-items-center section-title-secondary" data-toggle="collapse" data-target={`#collapseOne${value}`}  aria-expanded="true" aria-controls="collapseOne">
+                            <h5 className="mb-0 d-flex justify-content-between align-items-center section-title-secondary" data-toggle="collapse" data-target={`#collapseOne${value}`}  aria-expanded="false" aria-controls="collapseOne">
                               {item.position.text}
                               <button className="btn btn-link">
                                 <i className="fas fa-chevron-down"></i>
