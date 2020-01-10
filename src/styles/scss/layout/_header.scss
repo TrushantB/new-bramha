@@ -13,10 +13,7 @@
     padding-left: 0;
     margin-bottom: 0;
     list-style: none;
-    width: 100%;
-    max-width: 300px;
-    // justify-content: center;
-    margin: auto;
+    max-width: 75%;
     flex: 1 ;
     .dropdown-menu{
         border: none;
@@ -53,7 +50,8 @@
             text-rendering: auto;
             line-height: 1;
             font-family: "Font Awesome 5 Free";
-            font-weight: 900;       
+            font-weight: 900;
+            font-size: 12px;
             color: #333333;
             opacity: 0.6;    
         }
@@ -278,10 +276,10 @@
     right: 0;
     z-index: 105;
     height: 100%;
-    width: 100%;
+    width: 25%;
     max-width: 100%;
     padding: 2em 0;
-    background: #f3f3f3;
+    background: #FFF;
     overflow: auto;
     transform: translateZ(0);
     transform: translateX(100%);
@@ -292,8 +290,6 @@
   }
   .nav-container .nav{
     flex-direction: column;
-    width:30%;
-    margin: 0 auto;
   }
   .nav-container .navbar-brand{
       width:70%;
@@ -332,39 +328,39 @@
     transform: translateZ(0);
   }
   
-  .nav-open .nav a {
+  .nav-open .nav-container .nav a {
     animation: slide-in 0.8s 0.2s backwards;
   }
   
-  .nav-open .nav li:nth-of-type(2) a {
+  .nav-open .nav-container .nav li:nth-of-type(2) a {
     animation-delay: 0.3s;
   }
   
-  .nav-open .nav li:nth-of-type(3) a {
+  .nav-open .nav-container .nav li:nth-of-type(3) a {
     animation-delay: 0.4s;
   }
   
-  .nav-open .nav li:nth-of-type(4) a {
+  .nav-open .nav-container .nav li:nth-of-type(4) a {
     animation-delay: 0.5s;
   }
   
-  .nav-open .nav li:nth-of-type(5) a {
+  .nav-open .nav-container .nav li:nth-of-type(5) a {
     animation-delay: 0.6s;
   }
   
-  .nav-open .nav li:nth-of-type(6) a {
+  .nav-open .nav-container .nav li:nth-of-type(6) a {
     animation-delay: 0.7s;
   }
   
-  .nav-open .nav li:nth-of-type(7) a {
+  .nav-open .nav-container .nav li:nth-of-type(7) a {
     animation-delay: 0.8s;
   }
   
-  .nav-open .nav li:nth-of-type(8) a {
+  .nav-open .nav-container .nav li:nth-of-type(8) a {
     animation-delay: 0.9s;
   }
   
-  .nav-open .nav li:nth-of-type(9) a {
+  .nav-open .nav-container .nav li:nth-of-type(9) a {
     animation-delay: 1.0s;
   }
 

@@ -13,18 +13,13 @@ return(
 <header className="header">
   <nav className="navbar navbar-light container" >
   <Link className="navbar-brand" to='/'  >
-        <img src={img1} alt="BramhaCorp Logo" className="logo-img" />
-      </Link>
+    <img src={img1} alt="BramhaCorp Logo" className="logo-img" />
+  </Link>
   <a  className="nav-trigger" id="toggle" onClick={() => $("body").toggleClass("nav-open")} >
 Menu <span></span>
 </a>
 <nav className="nav-container pb-0" id="navigation">
   <ul className="nav navbar-nav">
-    <li>
-      <Link className="navbar-brand" to='/'>
-        <img src={img1} alt="BramhaCorp Logo" className="logo-img" />
-      </Link>
-    </li>
       <li className="nav-item active">
         <Link className="nav-link" to="/" onClick={classHandle}>Home</Link>
       </li>
