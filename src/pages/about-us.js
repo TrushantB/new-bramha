@@ -55,7 +55,7 @@ class AboutUs extends React.Component {
                   <div className="col-md-4 col-sm-12 about-years">
                   <Img fluid={data.banner.localFile.childImageSharp.fluid} alt="35 Years image" className="about-years-img"/>
                 </div>
-                <div className="col-md-8 col-sm-12">
+                <div className="about-para col-md-8 col-sm-12 mb-sm-3">
                   <div className="">
                     {data.description.text}
                   </div>

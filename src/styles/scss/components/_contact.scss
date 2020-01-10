@@ -128,3 +128,16 @@
                 filter: grayscale(100%);
     }
 }
+
+
+@media (max-width:580px) {
+    .contact-section {
+        .bg-color {
+            .contact-us-title {
+                padding-top: 0;
+            }
+        }
+      
+    } 
+  
+}
