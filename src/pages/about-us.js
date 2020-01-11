@@ -8,7 +8,7 @@ import SEO from '../components/seo';
 
 class AboutUs extends React.Component {
   state = {
-    styleData:{height: 160, overflow: 'hidden'},
+    // styleData:{height: 160, overflow: 'hidden'},
     activeSlide: 0,
     activeSlide2: 0,
   }
@@ -76,7 +76,7 @@ class AboutUs extends React.Component {
                   </div>
                   )
                 })}
-                <div className="d-none d-md-flex justify-content-center align-items-center p-3 w-100">
+                {/* <div className="d-none d-md-flex justify-content-center align-items-center p-3 w-100">
                   {
                     this.state.styleData ? 
                     <div className="link-text" onClick={() => {
@@ -86,7 +86,7 @@ class AboutUs extends React.Component {
                       this.setState({styleData:{height: 160, overflow: 'hidden'}})
                       }}>Show Less <i className="fas fa-chevron-up"></i> </div>
                   }
-                </div>
+                </div> */}
               </div>
           </section>
           <section className="our-legacy about-sections">

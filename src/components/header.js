@@ -37,7 +37,7 @@ Menu <span></span>
           Our Verticals
         </Link>
         <div className="dropdown-menu  border-0" aria-labelledby="navbarDropdown">
-          <Link className="dropdown-item" to='/residential' onClick={classHandle}>Residencial</Link>
+          <Link className="dropdown-item" to='/residential' onClick={classHandle}>Residential</Link>
           <Link className="dropdown-item" to='/commercial' onClick={classHandle}>Commercial</Link>
           <Link className="dropdown-item" to='/hospitality' onClick={classHandle}>Hospitality</Link>
           <Link className="dropdown-item" to='/leisure-club' onClick={classHandle}>Leisure</Link>
