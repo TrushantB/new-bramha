@@ -143,7 +143,7 @@ class Contacts extends React.Component {
               <div className="container">
                 <h3 className="text-center text-uppercase mb-4 section-title ">Locate Us</h3>
                 <div className="map-image">
-                  <iframe className="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.9979896405875!2d73.87803231420851!3d18.52899298740413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c056fa4d8413%3A0xe2b3bd637ed792be!2sResidency%20Club!5e0!3m2!1sen!2sin!4v1576302776373!5m2!1sen!2sin" style={{width:"100%", height:"450px", frameborder:"0", border:"0", allowfullscreen:""}}></iframe>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15131.933349805166!2d73.8796209!3d18.5296551!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x10c8d7103151a095!2sBRAMHACORP%20LTD.!5e0!3m2!1sen!2sin!4v1578749393535!5m2!1sen!2sin" style={{width:"100%", height:"450px", frameborder:"0", border:"0", allowfullscreen:""}}></iframe>
                 </div>
               </div>
             </section>
