@@ -211,7 +211,7 @@ class VerticalPage extends React.Component {
                     verticalData.data.floor_plans.map((item,value) => {
                       return(
                         <div key={value}>
-                          <div  className="slider-img " onClick={() => this.setState({ isOpenTwo: true ,photoIndex:value})}>
+                          <div className="slider-img " onClick={() => this.setState({ isOpenTwo: true ,photoIndex:value})}>
                             <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt="Floor Plans" className="w-100 h-100" />
                           </div>
                         </div>
