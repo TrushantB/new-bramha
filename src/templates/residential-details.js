@@ -163,7 +163,7 @@ class VerticalPage extends React.Component {
                   <h2 className="section-title text-uppercase text-center">
                       Proximities
                   </h2>
-                  <p className="text-center">THE TEXT HERE</p>
+                  <p className="text-center mx-5">{verticalData.data.proximities_description.text}</p>
                 </div>
                 <ul className="nav nav-pills row" id="pills-tab" role="tablist">
                       {
@@ -480,7 +480,7 @@ export const verticalViewData = graphql`
         text
       }
       unique_features {
-          text
+        text
       }
       showcase {
         title1 {
@@ -508,13 +508,16 @@ export const verticalViewData = graphql`
         image1 {
           localFile {
             childImageSharp {
-              fluid(maxWidth: 1150) {
+              fluid(maxWidth: 1150, quality: 100) {
                 ...GatsbyImageSharpFluid
                 presentationWidth
               }
             }
           }
         }
+      }
+      proximities_description {
+        text
       }
       proximites {
         icon_name
