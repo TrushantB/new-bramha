@@ -10,10 +10,10 @@ class LeisureClub extends React.Component {
     const leisureData = this.props.data.allPrismicLeisureClub.edges[0].node.data;    
     return(
       <Layout>
-        <SEO title={leisureData.title.text}/>
+        <SEO title={leisureData.sub_title.text}/>
         <section className=" page-heading-section container container-sm-fluid bg-color">
           <div className="padding-block-60">
-            <h2 className="page-heading">{leisureData.title.text}</h2> 
+            <h2 className="page-heading">{leisureData.sub_title.text}</h2> 
           </div>
           <div className="row  mr-0">
             <div className="col-12">
@@ -79,6 +79,9 @@ export const leisurePage = graphql` {
         uid
         data {
           title {
+            text
+          }
+          sub_title {
             text
           }
           description {

@@ -4,6 +4,7 @@ import SEO from '../components/seo';
 import Footer from '../components/footer';
 import Img from 'gatsby-image';
 import Slider from 'react-slick';
+import { graphql } from 'gatsby'
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 
@@ -65,7 +66,7 @@ class CommercialDetails extends React.Component {
 
     return(
       <Layout>
-        <SEO title={commercialData.data.title.text} />
+        <SEO title={commercialData.data.sub_title.text} />
         <main className="detail-page">
           {/* <!-- ---------------- banner start here ---------------- --> */}
             <section className="banner-section">
@@ -174,6 +175,9 @@ export const hospitalityPage = graphql`
       title {
         text
       }
+      sub_title {
+        text
+      }
       banner {
         image {
           localFile {
@@ -252,13 +256,14 @@ export const hospitalityPage = graphql`
         image1 {
           localFile {
             childImageSharp {
-              fluid(maxWidth: 1150) {
+              fluid(maxWidth: 1150, quality: 100) {
                 ...GatsbyImageSharpFluid
                 presentationWidth
               }
             }
           }
         }
+        caption
       }
       floor_plans1 {
         text
@@ -273,7 +278,7 @@ export const hospitalityPage = graphql`
         image1 {
           localFile {
             childImageSharp {
-              fluid(maxWidth: 1150) {
+              fluid(maxWidth: 1150, quality: 100) {
                 ...GatsbyImageSharpFluid
                 presentationWidth
               }
@@ -313,7 +318,7 @@ export const hospitalityPage = graphql`
         images {
           localFile {
             childImageSharp {
-              fluid(maxWidth: 1150) {
+              fluid(maxWidth: 1150, quality: 100) {
                 ...GatsbyImageSharpFluid
                 presentationWidth
               }

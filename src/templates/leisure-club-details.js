@@ -4,6 +4,7 @@ import SEO from '../components/seo';
 import Footer from '../components/footer';
 import Img from 'gatsby-image';
 import Slider from 'react-slick';
+import { graphql } from 'gatsby';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 
@@ -65,7 +66,7 @@ class LeisureDetails extends React.Component {
     }; 
     return(
       <Layout>
-        <SEO title={leisureData.data.title.text}/>
+        <SEO title={leisureData.data.sub_title.text}/>
         <main className="detail-page">
           {/* <!-- ---------------- banner start here ---------------- --> */}
             <section className="banner-section">
@@ -174,6 +175,9 @@ export const leisurePage = graphql`
       title {
         text
       }
+      sub_title {
+        text
+      }
       banner {
         image {
           localFile {
@@ -259,6 +263,7 @@ export const leisurePage = graphql`
             }
           }
         }
+        caption
       }
       floor_plans1 {
         text

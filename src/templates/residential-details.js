@@ -69,7 +69,7 @@ class VerticalPage extends React.Component {
     };
     return(
       <Layout>
-        <SEO title={verticalData.data.title.text}/>
+        <SEO title={verticalData.data.sub_title.text}/>
         <main className="detail-page">
             {/* <!--   ---------------- banner start here ---------------- --> */}
               <section className="banner-section">
@@ -108,7 +108,7 @@ class VerticalPage extends React.Component {
                 <div className="container">
                 <Slider {...settings}>
                       {
-                        verticalData.data.showcase.map((item,value)=>{
+                        verticalData.data.showcase.map((item,value) => {
                           return(
                             <div key={value}>
                               <div  className="slider-img " onClick={() => this.setState({ isOpenOne: true ,photoIndex:value})}>
@@ -120,8 +120,8 @@ class VerticalPage extends React.Component {
                       }
                     </Slider>
                     {
-                    isOpenOne &&
-                    <Lightbox
+                      isOpenOne &&
+                      <Lightbox
                         mainSrc={verticalData.data.showcase[photoIndex].image1.localFile.childImageSharp.fluid.src}
                         nextSrc={verticalData.data.showcase[(photoIndex + 1) % verticalData.data.showcase.length].image1.localFile.childImageSharp.fluid.src}
                         prevSrc={verticalData.data.showcase[(photoIndex + verticalData.data.showcase.length - 1) % verticalData.data.showcase.length].image1.localFile.childImageSharp.fluid.src}
@@ -136,10 +136,10 @@ class VerticalPage extends React.Component {
                             photoIndex: (photoIndex + 1) % verticalData.data.showcase.length,
                           })
                         }
-                        />
-                  }
+                      />
+                      }
                     <p className=" text-left text-sm-center pages mb-0">
-                        {this.state.activeSlide + 1} of {verticalData.data.showcase.length}
+                      {this.state.activeSlide + 1} of {verticalData.data.showcase.length}
                     </p>
                 </div>
               </div>
@@ -151,7 +151,6 @@ class VerticalPage extends React.Component {
                   Location
               </h2> 
               <div className="map-image">
-                
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15130.20482232911!2d73.9169759!3d18.5491723!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfa889adcc4f893bd!2sF-Residences%20by%20BramhaCorp%20at%20New%20Kalyani%20Nagar!5e0!3m2!1sen!2sin!4v1578749234432!5m2!1sen!2sin" style={{ width:"100%", height:"375px", frameborder:"0", border:"0", allowFullScreen:"0"}}></iframe>
               </div>
             </section>
@@ -209,11 +208,11 @@ class VerticalPage extends React.Component {
               <div className="showcase-slider">
                 <Slider {...settings}>
                   {
-                    verticalData.data.floor_plans.map((item,value)=>{
+                    verticalData.data.floor_plans.map((item,value) => {
                       return(
                         <div key={value}>
                           <div  className="slider-img " onClick={() => this.setState({ isOpenTwo: true ,photoIndex:value})}>
-                            <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt=" Floor Plans" className="w-100 h-100" />
+                            <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt="Floor Plans" className="w-100 h-100" />
                           </div>
                         </div>
                       )
@@ -429,11 +428,14 @@ export const verticalViewData = graphql`
       title {
         text
       }
+      sub_title {
+        text
+      }
       banner {
         image {
           localFile {
             childImageSharp {
-              fluid(maxWidth: 1150, quality: 100) {
+              fluid(maxWidth: 1150) {
                 ...GatsbyImageSharpFluid
                 presentationWidth
               }
@@ -483,13 +485,14 @@ export const verticalViewData = graphql`
         image1 {
           localFile {
             childImageSharp {
-                fluid(maxWidth: 1150, quality: 100) {
+                fluid(maxWidth: 1150) {
                 ...GatsbyImageSharpFluid
                 presentationWidth
               }
             }
           }
         }
+        caption
       }
       floor_plans1 {
         text
@@ -501,7 +504,7 @@ export const verticalViewData = graphql`
         image1 {
           localFile {
             childImageSharp {
-              fluid(maxWidth: 1150, quality: 100) {
+              fluid(maxWidth: 1150) {
                 ...GatsbyImageSharpFluid
                 presentationWidth
               }

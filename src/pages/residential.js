@@ -168,12 +168,12 @@ export default class Residential extends React.Component {
     const residentialData = this.props.data.allPrismicResidential.edges;
     return(
       <Layout>
-        <SEO title="Residential"/>
+        <SEO title="Residential Project"/>
           {residentialData.map((item,value) => {
             return(
               <section key={value} className="residential-section page-heading-section container container-sm-fluid bg-color">
                 <div className="padding-block-60">
-                  <h2 className="page-heading">{item.node.data.title.text}</h2> 
+                  <h2 className="page-heading">{item.node.data.sub_title.text}</h2> 
                 </div>
                 <div className="row  mr-0">
                   <div className="col-12">
@@ -310,6 +310,9 @@ export const residentialPage = graphql` {
         uid
         data {
           title {
+            text
+          }
+          sub_title {
             text
           }
           description {

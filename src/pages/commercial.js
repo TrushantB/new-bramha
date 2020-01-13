@@ -10,10 +10,10 @@ class Commercial extends React.Component {
     const commercialData = this.props.data.allPrismicCommercial.edges[0].node.data;
     return(
       <Layout>
-        <SEO title={commercialData.title.text}/>
+        <SEO title={commercialData.sub_title.text}/>
         <section className=" page-heading-section container container-sm-fluid bg-color">
           <div className="padding-block-60">
-            <h2 className="page-heading">{commercialData.title.text}</h2> 
+            <h2 className="page-heading">{commercialData.sub_title.text}</h2> 
           </div>
           <div className="row  mr-0">
             <div className="col-12">
@@ -79,6 +79,9 @@ export const commercialPage = graphql` {
         uid
         data {
           title {
+            text
+          }
+          sub_title {
             text
           }
           description {
