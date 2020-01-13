@@ -72,7 +72,7 @@ class AboutUs extends React.Component {
                     </div>
                     )
                   })}
-                <div className="d-none d-md-flex justify-content-center align-items-center p-3 w-100">
+                {/* <div className="d-none d-md-flex justify-content-center align-items-center p-3 w-100">
                   {
                     this.state.styleData ? 
                     <div className="link-text" onClick={() => {
@@ -83,7 +83,7 @@ class AboutUs extends React.Component {
                       }}>Show Less <i className="fas fa-chevron-up"></i>
                     </div>
                   }
-                </div>
+                </div> */}
               </div>
           </section>
           <section className="our-legacy about-sections">
