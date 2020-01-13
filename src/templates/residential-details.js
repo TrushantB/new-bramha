@@ -246,7 +246,7 @@ class VerticalPage extends React.Component {
             </div>
             {/* <!--   ------------------- Floor Plan section end here ------------------- --> */}
             {/* <!--   ------------------- Antity And Fact Files section start here ------------------- --> */}
-            <section className="antity-sections container">
+            <section className="antity-sections container"  id={verticalData.uid}>
               <ul className="nav nav-pills mb-3 row" id="factfile-tab" role="tablist">
                 <li className="nav-item col-6 p-0">
                   <a className="nav-link text-center text-uppercase section-title pb-1 active" id="pills-amenities-tab" data-toggle="pill" href="#amenities" role="tab" aria-controls="pills-amenities" aria-selected="true">
@@ -425,6 +425,7 @@ export default VerticalPage;
 export const verticalViewData = graphql` 
   query verticalData($uid: String!) {
   prismicOurVerticalsArticle(uid: { eq: $uid }) {
+    uid
     data {
       title {
         text
