@@ -1,5 +1,4 @@
-import React from 'react'
-// import Slider from "react-slick";
+import React from 'react';
 import Img from 'gatsby-image';
 
 class Leisure extends React.Component {

@@ -5,6 +5,9 @@
   margin-left: 32px;
 }
 .events{  
+  .page-heading-section{
+    margin-bottom: 72px;
+  }
    .event-heading{
         .title{
             h2{
@@ -19,9 +22,10 @@
       }
     }
     .event-slider{
-      margin: 60px 0 60px;
+      // margin: 60px 0 60px;
+      margin-bottom: 108px;
       .padding-block-60{
-        padding-bottom: 8px;
+        padding: 0 0 8px 0;
       }
       .slider-wrapper{
         background-color: theme-color("bg-color");
@@ -113,7 +117,9 @@
     }
   }
   @media(max-width:580px){
+
     .events .event-slider{
+      margin-bottom: 80px;
       .slider-wrapper {
         // background-color: transparent;
         padding: 20px 0 20px;
@@ -151,9 +157,9 @@
         }
         
       }
-      .padding-block-60 {
-        padding: 52px 0 10px;
-    } 
+    //   .padding-block-60 {
+    //     padding: 52px 0 10px;
+    // } 
     .section-title{
       padding: 0 10px;
     }

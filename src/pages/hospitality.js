@@ -1,18 +1,17 @@
-import React from 'react'
+import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
-import Layout from '../components/layout'
-import Footer from '../components/footer'
+import Layout from '../components/layout';
+import Footer from '../components/footer';
 import SEO from '../components/seo';
 
 class Hospitality extends React.Component {
   render(){
     const hospitalityData = this.props.data.allPrismicHospitality.edges;
     const data = hospitalityData[0].node.data;
-    console.log('data', data);
     return(
       <Layout>
-        <SEO title="Hospitality"/>
+        <SEO title={data.title.text}/>
         <section className=" page-heading-section container container-sm-fluid bg-color">
           <div className="padding-block-60">
             <h2 className="page-heading">{data.title.text}</h2> 
@@ -32,9 +31,9 @@ class Hospitality extends React.Component {
               <div className="container">
                 <div className="row">
                   {
-                    data.hospitality_links.map((item)=>{
+                    data.hospitality_links.map((item) => {
                       return(
-                        item.vertical_links.document.map((datas, value)=>{
+                        item.vertical_links.document.map((datas, value) => {
                           return(
                             <Link to={`hospitality/${item.vertical_links.uid}`} className="col-md-6 col-lg-4 p-0 pl-sm-3 pr-sm-3" key={value}>
                                 <div className="residences-card position-relative" key={value}>

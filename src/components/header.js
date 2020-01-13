@@ -15,7 +15,7 @@ return(
   <Link className="navbar-brand" to='/'  >
     <img src={img1} alt="BramhaCorp Logo" className="logo-img" />
   </Link>
-  <a  className="nav-trigger" id="toggle" onClick={() => $("body").toggleClass("nav-open")} >
+  <a className="nav-trigger" id="toggle" onClick={() => $("body").toggleClass("nav-open")} >
 Menu <span></span>
 </a>
 <nav className="nav-container pb-0" id="navigation">
@@ -61,7 +61,7 @@ Menu <span></span>
         <Link className="nav-link" to="/media-and-events" onClick={classHandle}>Media & Events</Link>
       </li>
       <li className="nav-item">
-        <Link className="nav-link" to="/contacts" onClick={classHandle}>Contact Us</Link>
+        <Link className="nav-link" to="/contact-us" onClick={classHandle}>Contact Us</Link>
       </li>
     </ul>
     <div className="nav-footer text-center py-2 bg-white w-100">

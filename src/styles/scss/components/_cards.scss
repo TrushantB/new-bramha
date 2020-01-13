@@ -8,10 +8,13 @@
 }
 .residences{
     background-color:theme-color("bg-color"); 
-    padding:0 0 148px;
+    padding:0 0 100px;
 }
 //Residences Card 
 .residences-card{
+    .project-location{
+        margin-top: 4px;
+    }
     margin: 72px 0 72px;
     .residences-img {
         // position: relative;
@@ -88,6 +91,9 @@
     }    
 }
 .secondary-card{
+    .project-location{
+        margin-top: 4px;
+    }
     .secondary-card-rectangle{
         width:90%;
         // height: 75px;
@@ -125,6 +131,8 @@
         
         .fa-map-marker-alt{
             margin-right: 4px;
+            color: black;
+            opacity: 0.4;
         }
     }
 }

@@ -1,9 +1,7 @@
 import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-// import "../styles/css/custom.css"
-// import '../styles/scss/main.scss';
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby";
 import Commerical from '../pages/our-verticals-main/commercial';
 import Residential from "../pages/our-verticals-main/residential";
 import Hospitality from "../pages/our-verticals-main/hospitality";
@@ -27,7 +25,6 @@ class IndexPage extends React.Component {
         {
           id:'commercial',
           name:'Commercial',
-
         },
         {
           id:'hospitality',
@@ -79,13 +76,12 @@ class IndexPage extends React.Component {
       break;
     }
 
-      this.state.ourVerticals.map((item) => {
-        if(item.id==event.id) {
-          item.class = "active";
-        } 
-        else item.class="";
-      })
-
+    this.state.ourVerticals.map((item) => {
+      if(item.id==event.id) {
+        item.class = "active";
+      } 
+      else item.class="";
+    })
   }
 
   render() {
@@ -121,10 +117,10 @@ class IndexPage extends React.Component {
 export default IndexPage
 
 
-export const pageDataResidential = graphql`{
-  prismicResidential{
-    data{
-      banner{
+export const pageDataResidential = graphql` {
+  prismicResidential {
+    data {
+      banner {
         localFile {
           childImageSharp {
             fluid(maxWidth: 1150) {
@@ -135,9 +131,9 @@ export const pageDataResidential = graphql`{
       }
     }
   }
-  prismicCommercial{
-    data{
-      banner{
+  prismicCommercial {
+    data {
+      banner {
         localFile {
           childImageSharp {
             fluid(maxWidth: 1150) {
@@ -148,9 +144,9 @@ export const pageDataResidential = graphql`{
       }
     }
   }
-  prismicHospitality{
-    data{
-      banner{
+  prismicHospitality {
+    data {
+      banner {
         localFile {
           childImageSharp {
             fluid(maxWidth: 1150) {
@@ -161,9 +157,9 @@ export const pageDataResidential = graphql`{
       }
     }
   }
-  prismicLeisureClub{
-    data{
-      banner{
+  prismicLeisureClub {
+    data {
+      banner {
         localFile {
           childImageSharp {
             fluid(maxWidth: 1150) {
@@ -175,4 +171,3 @@ export const pageDataResidential = graphql`{
     }
   }
 }`
-

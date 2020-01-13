@@ -1,5 +1,5 @@
-import React from 'react'
-import Layout from '../components/layout'
+import React from 'react';
+import Layout from '../components/layout';
 import Slider from "react-slick";
 import { graphql } from 'gatsby';
 import Footer from '../components/footer';
@@ -13,13 +13,12 @@ class MediaAndEvents extends React.Component {
     activeSlide: null,
     photoIndex: 0,
     isOpen: false, 
-  };  
+  };
+
   render(){
     const { photoIndex, isOpen } = this.state;
     const eventwiseData = this.props.data.prismicEvents.data;
-    console.log('eventwiseData', eventwiseData);
-    var settings = {
-      // className:"center",
+    let settings = {
       centerMode: true,
       centerPadding: '200px',
       slidesToShow: 1,
@@ -74,7 +73,7 @@ class MediaAndEvents extends React.Component {
             </div>
             <div className="row mr-0">
               <div className="col-12">
-                <p className="main-paragraph">
+                <p className="main-paragraph mb-0">
                   {eventwiseData.description.text}
                 </p>   
               </div>
@@ -97,40 +96,40 @@ class MediaAndEvents extends React.Component {
                             <span className="mr-32  text-capitalize">Location: {datas.data.location.text}</span> | <span className="ml-32">Date: {datas.data.date}</span>
                           </p>
                           <Slider {...settings}>
-                          {
-                            datas.data.showcase.map((item,value)=>{
-                              return(
-                                <div key={value}>
-                                  <div  className="slider-img image-ratio" onClick={() => this.setState({ isOpen: true ,photoIndex:value})}>
-                                    <Img fluid={item.image.localFile.childImageSharp.fluid} width="100%"/>
-                                  </div>
-                                </div>
-                              )
-                            })
-                            }
-                            </Slider>
                             {
-                              isOpen &&
-                              <Lightbox
-                                  mainSrc={datas.data.showcase[photoIndex].image.localFile.childImageSharp.fluid.src}
-                                  nextSrc={datas.data.showcase[(photoIndex + 1) % datas.data.showcase.length].image.localFile.childImageSharp.fluid.src}
-                                  prevSrc={datas.data.showcase[(photoIndex + datas.data.showcase.length - 1) % datas.data.showcase.length].image.localFile.childImageSharp.fluid.src}
-                                  onCloseRequest={() => this.setState({ isOpen: false })}
-                                  onMovePrevRequest={() =>
-                                    this.setState({
-                                      photoIndex: (photoIndex + datas.data.showcase.length - 1) % datas.data.showcase.length,
-                                    })
-                                  }
-                                  onMoveNextRequest={() =>
-                                    this.setState({
-                                      photoIndex: (photoIndex + 1) % datas.data.showcase.length,
-                                    })
-                                  }
-                                  />
+                              datas.data.showcase.map((item,value) => {
+                                return(
+                                  <div key={value}>
+                                    <div className="slider-img image-ratio" onClick={() => this.setState({ isOpen: true ,photoIndex:value})}>
+                                      <Img fluid={item.image.localFile.childImageSharp.fluid} width="100%"/>
+                                    </div>
+                                  </div>
+                                )
+                              })
                               }
-                            <p className=" text-left text-sm-center pages mb-0">
-                                {this.state.activeSlide + 1} of {datas.data.showcase.length}
-                            </p>
+                          </Slider>
+                          {
+                            isOpen &&
+                            <Lightbox
+                              mainSrc={datas.data.showcase[photoIndex].image.localFile.childImageSharp.fluid.src}
+                              nextSrc={datas.data.showcase[(photoIndex + 1) % datas.data.showcase.length].image.localFile.childImageSharp.fluid.src}
+                              prevSrc={datas.data.showcase[(photoIndex + datas.data.showcase.length - 1) % datas.data.showcase.length].image.localFile.childImageSharp.fluid.src}
+                              onCloseRequest={() => this.setState({ isOpen: false })}
+                              onMovePrevRequest={() =>
+                                this.setState({
+                                  photoIndex: (photoIndex + datas.data.showcase.length - 1) % datas.data.showcase.length,
+                                })
+                              }
+                              onMoveNextRequest={() =>
+                                this.setState({
+                                  photoIndex: (photoIndex + 1) % datas.data.showcase.length,
+                                })
+                              }
+                              />
+                            }
+                          <p className="text-left text-sm-center pages mb-0">
+                            {this.state.activeSlide + 1} of {datas.data.showcase.length}
+                          </p>
                         </div>
                       </div>
                     </section>   
@@ -140,14 +139,14 @@ class MediaAndEvents extends React.Component {
             })
           }
         </section>
-      <Footer />
+        <Footer/>
       </Layout>
     )
   }
 }
 export default MediaAndEvents;
 
-export const eventPage = graphql`{
+export const eventPage = graphql` {
   prismicEvents {
     data {
       title {
