@@ -45,6 +45,24 @@
     .slick-arrow{
         display: none !important;
     }
+    .banner-section{
+        .banner-caption{
+            position: absolute;
+            bottom: 32px;
+            display: flex;
+            justify-content: center;
+            background: rgba(00,00,00,0.7);
+            padding: 16px;
+            color: #fff;
+            font-family: Graphik;
+            font-size: 18px;
+            font-weight: 500;
+            width: 200px;
+            top: auto;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
 }
 .home-slider{
     .gatsby-image-wrapper{
