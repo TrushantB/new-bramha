@@ -133,11 +133,11 @@ class Contacts extends React.Component {
                         <div className="form-row">
                         <input type="hidden" name="form-name" value="customer" />
                           <div className="col-sm-6 form-group  ">
-                              <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" autocomplete="false" required/>
+                              <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" autoComplete="false" required/>
                           </div>
                          
                           <div className="col-sm-6 form-group  ">
-                              <input type="text" className="form-control" id="email" placeholder="Your Email*" autocomplete="false" name="email" required/>
+                              <input type="text" className="form-control" id="email" placeholder="Your Email*" autoComplete="false" name="email" required/>
                           </div>
                           <div className="col-sm-6 form-group  ">
                               <input type="number" className="form-control" id="phone-number" placeholder="Your Phone Number*" name="phone-number" required/>
@@ -182,11 +182,11 @@ class Contacts extends React.Component {
                         <div className="form-row">
                         <input type="hidden" name="form-name" value="customer" />
                           <div className="col-sm-6 form-group  ">
-                              <input type="text" className="form-control" id="name" placeholder="Individual Name*" name="name" autocomplete="false" required/>
+                              <input type="text" className="form-control" id="name" placeholder="Individual Name*" name="name" autoComplete="false" required/>
                           </div>
                          
                           <div className="col-sm-6 form-group  ">
-                              <input type="text" className="form-control" id="email" placeholder="Your Email*" autocomplete="false" name="email" required/>
+                              <input type="text" className="form-control" id="email" placeholder="Your Email*" autoComplete="false" name="email" required/>
                           </div>
                           <div className="col-sm-6 form-group  ">
                               <input type="number" className="form-control" id="phone-number" placeholder="Your Phone Number*" name="phone-number" required/>
@@ -217,14 +217,14 @@ class Contacts extends React.Component {
                         <div className="form-row">
                         <input type="hidden" name="form-name" value="constructors" />
                         <div className="col-sm-6 form-group  ">
-                              <input type="text" className="form-control" id="name" placeholder="Company*" name="name" autocomplete="false" required/>
+                              <input type="text" className="form-control" id="name" placeholder="Company*" name="name" autoComplete="false" required/>
                           </div>
                           <div className="col-sm-6 form-group  ">
-                              <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" autocomplete="false" required/>
+                              <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" autoComplete="false" required/>
                           </div>
                          
                           <div className="col-sm-6 form-group  ">
-                              <input type="text" className="form-control" id="email" placeholder="Your Email*" autocomplete="false" name="email" required/>
+                              <input type="text" className="form-control" id="email" placeholder="Your Email*" autoComplete="false" name="email" required/>
                           </div>
                           <div className="col-sm-6 form-group  ">
                               <input type="number" className="form-control" id="phone-number" placeholder="Your Phone Number*" name="phone-number" required/>
@@ -251,11 +251,11 @@ class Contacts extends React.Component {
                         <div className="form-row">
                         <input type="hidden" name="form-name" value="career" />
                           <div className="col-sm-6 form-group  ">
-                              <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" autocomplete="false" required/>
+                              <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" autoComplete="false" required/>
                           </div>
                          
                           <div className="col-sm-6 form-group  ">
-                              <input type="text" className="form-control" id="email" placeholder="Your Email*" autocomplete="false" name="email" required/>
+                              <input type="text" className="form-control" id="email" placeholder="Your Email*" autoComplete="false" name="email" required/>
                           </div>
                           <div className="col-sm-6 form-group  ">
                               <input type="number" className="form-control" id="phone-number" placeholder="Your Phone Number*" name="phone-number" required/>
@@ -264,10 +264,10 @@ class Contacts extends React.Component {
                           <div className="col-sm-6 form-group  ">
                               <input type="text" className="form-control" id="city" placeholder="City" name="city" required/>
                           </div> 
-                          <div class="form-group file-area">
-                            <input type="file" name="" id="" required="required" multiple="multiple" className="h-100"/>
-                              <div class="file-dummy resume-upload">
-                                <div class="default">Resume Upload (PDF/DOC)*</div>
+                          <div className="form-group file-area">
+                            <input type="file" name="" id="" required="required" multiple="multiple" classNameName="h-100"/>
+                              <div className="file-dummy resume-upload">
+                                <div className="default">Resume Upload (PDF/DOC)*</div>
                               </div>
                             </div>
   
