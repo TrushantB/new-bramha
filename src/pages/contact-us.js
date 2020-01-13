@@ -265,7 +265,7 @@ class Contacts extends React.Component {
                               <input type="text" className="form-control" id="city" placeholder="City" name="city" required/>
                           </div> 
                           <div className="form-group file-area">
-                            <input type="file" name="" id="" required="required" multiple="multiple" classNameName="h-100"/>
+                            <input type="file" name="" id="" required="required" multiple="multiple" className="h-100"/>
                               <div className="file-dummy resume-upload">
                                 <div className="default">Resume Upload (PDF/DOC)*</div>
                               </div>
