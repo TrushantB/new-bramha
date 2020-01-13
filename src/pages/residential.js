@@ -167,6 +167,9 @@ export default class Residential extends React.Component {
       ]
     };
     const residentialData = this.props.data.allPrismicResidential.edges;
+    const lookingForMe = residentialData[0].node.data
+    console.log('lookingForMe', lookingForMe);
+    
     return(
       <Layout>
         <SEO title="Residential Project"/>
@@ -301,7 +304,7 @@ export default class Residential extends React.Component {
               <div className="container">    
                 <h4 className="text-uppercase text-center section-title">Looking for more option?</h4>  
                 <p>
-                  Tell us your requirment and we will let you know when there is match 
+                  {lookingForMe.looking_for_more.text}
                 </p>
                 <div className="sumbit text-center mt-sm-0 mt-4">
                   <button type="submit" className="btn-secondary">Give Details</button>
@@ -328,6 +331,9 @@ export const residentialPage = graphql` {
             text
           }
           description {
+            text
+          }
+          looking_for_more{
             text
           }
           ongoing_projects {

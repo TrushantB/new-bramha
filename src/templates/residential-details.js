@@ -199,7 +199,6 @@ class VerticalPage extends React.Component {
                   </div>
               </div>
             </section>  
-                      
             {/* <!--   ------------------- Proximities section end here ------------------- --> */}
             {/* <!--   ------------------- Floor Plan section start here ------------------- --> */}
             <div className="slider-page container-fluid d-none d-sm-block floor-plan">
