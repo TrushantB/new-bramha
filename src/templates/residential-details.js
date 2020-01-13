@@ -158,9 +158,12 @@ class VerticalPage extends React.Component {
             {/* <!--   ------------------- Proximities section start here ------------------- --> */}
           <section className="proximities-section">
             <div className=" container">
-                <h2 className="section-title text-uppercase text-center">
-                    Proximities
-                </h2>
+                <div className="section-title-wrapper">
+                  <h2 className="section-title text-uppercase text-center">
+                      Proximities
+                  </h2>
+                  <p className="text-center">THE TEXT HERE</p>
+                </div>
                 <ul className="nav nav-pills row" id="pills-tab" role="tablist">
                       {
                         verticalData.data.proximites.map((item, index)=>{
