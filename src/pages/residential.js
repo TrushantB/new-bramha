@@ -126,7 +126,7 @@ export default class Residential extends React.Component {
       centerPadding: "60px",
       dots: false,
       infinite: false,
-      speed: 2000,
+      speed: 1000,
       slidesToShow: 3,
       slidesToScroll: 1,
       initialSlide: 0,
@@ -143,7 +143,7 @@ export default class Residential extends React.Component {
             slidesToScroll: 2,
             infinite: true,
             dots: false,
-            speed: 3000,
+            speed: 1000,
            
             autoplaySpeed: 0
           }
@@ -156,7 +156,7 @@ export default class Residential extends React.Component {
             infinite: true,
             centerPadding: "50px",
             slidesToShow: 1,
-            speed: 3000,
+           
            
             autoplaySpeed: 0
           }
@@ -168,7 +168,7 @@ export default class Residential extends React.Component {
             infinite: true,
             centerPadding: "60px",
             slidesToShow: 1,
-            speed: 2000,
+           
             autoplaySpeed: 0
           }
         }
@@ -314,8 +314,18 @@ export default class Residential extends React.Component {
                     </span>
                   </div>
                 </section>
-
             }
+            <section className="give-details text-center">
+              <div className="container">    
+                <h4 className="text-uppercase text-center section-title">Looking for more option?</h4>  
+                <p>
+                  Tell us your requirment and we will let you know when there is match 
+                </p>
+                <div className="sumbit text-center mt-sm-0 mt-4">
+                  <button type="submit" className="btn-secondary">Give Details</button>
+                </div> 
+              </div>
+            </section>
           </section>
           <Footer/>
       </Layout>
