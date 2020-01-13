@@ -8,7 +8,7 @@ import SEO from '../components/seo';
 
 class AboutUs extends React.Component {
   state = {
-    styleData:{height: 160, overflow: 'hidden'},
+    // styleData:{height: 160, overflow: 'hidden'},
     activeSlide: 0,
     activeSlide2: 0,
   }
