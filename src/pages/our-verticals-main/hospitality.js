@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Img from 'gatsby-image';
 
 class Hospitality extends React.Component {

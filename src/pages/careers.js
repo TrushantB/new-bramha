@@ -1,8 +1,8 @@
-import React from 'react'
-import Layout from '../components/layout'
+import React from 'react';
+import Layout from '../components/layout';
 import { graphql } from 'gatsby';
 import Slider from "react-slick";
-import Img from "gatsby-image"
+import Img from "gatsby-image";
 import Footer from '../components/footer';
 import SEO from '../components/seo';
 import Lightbox from 'react-image-lightbox';
@@ -58,7 +58,7 @@ class Careers extends React.Component {
   }
 
   componentWillMount() {
-    let jobOpening=[];
+    let jobOpening = [];
     const careerData = this.props.data.prismicCareers.data;
     careerData.architect.map((item) => {
      jobOpening.push(item)
@@ -90,7 +90,7 @@ class Careers extends React.Component {
   handleJobOpening(event){
     if(this.state.activeButton!=event.id) {
       this.setState({activeButton:event.id})
-      let jobOpening=[];
+      let jobOpening = [];
       this.state.dataSource[event.id].map((item) => {
         jobOpening.push(item)
       })
@@ -107,11 +107,11 @@ class Careers extends React.Component {
       this.setState({jobOpening:this.state.jobOpeningStore})
     }
   }
+
   render(){
     const { photoIndex, isOpen } = this.state;
     const careerData = this.props.data.prismicCareers.data;
-        var settings = {
-      // className:"career-center",
+    let settings = {
       centerMode: true,
       centerPadding: '200px',
       slidesToShow: 1,
@@ -164,41 +164,41 @@ class Careers extends React.Component {
             </div>
             <div className="slider-wrapper">
               <div className="container">
-              <Slider {...settings}>
-                    {
-                      careerData.showcase.map((item,value)=>{
-                        return(
-                          <div key={value}>
-                            <div  className="slider-img image-ratio" onClick={() => this.setState({ isOpen: true ,photoIndex:value})}>
-                              <Img fluid={item.image.localFile.childImageSharp.fluid} alt="slider image" className="life-at-bramha-slider-image" />
-                            </div>
+                <Slider {...settings}>
+                  {
+                    careerData.showcase.map((item,value)=>{
+                      return(
+                        <div key={value}>
+                          <div  className="slider-img image-ratio" onClick={() => this.setState({ isOpen: true ,photoIndex:value})}>
+                            <Img fluid={item.image.localFile.childImageSharp.fluid} alt="slider image" className="life-at-bramha-slider-image" />
                           </div>
-                        )
+                        </div>
+                      )
+                    })
+                  }
+                </Slider>
+                {
+                  isOpen &&
+                  <Lightbox
+                    mainSrc={careerData.showcase[photoIndex].image.localFile.childImageSharp.fluid.src}
+                    nextSrc={careerData.showcase[(photoIndex + 1) % careerData.showcase.length].image.localFile.childImageSharp.fluid.src}
+                    prevSrc={careerData.showcase[(photoIndex + careerData.showcase.length - 1) % careerData.showcase.length].image.localFile.childImageSharp.fluid.src}
+                    onCloseRequest={() => this.setState({ isOpen: false })}
+                    onMovePrevRequest={() =>
+                      this.setState({
+                        photoIndex: (photoIndex + careerData.showcase.length - 1) % careerData.showcase.length,
                       })
                     }
-                  </Slider>
-                  {
-                    isOpen &&
-                    <Lightbox
-                        mainSrc={careerData.showcase[photoIndex].image.localFile.childImageSharp.fluid.src}
-                        nextSrc={careerData.showcase[(photoIndex + 1) % careerData.showcase.length].image.localFile.childImageSharp.fluid.src}
-                        prevSrc={careerData.showcase[(photoIndex + careerData.showcase.length - 1) % careerData.showcase.length].image.localFile.childImageSharp.fluid.src}
-                        onCloseRequest={() => this.setState({ isOpen: false })}
-                        onMovePrevRequest={() =>
-                          this.setState({
-                            photoIndex: (photoIndex + careerData.showcase.length - 1) % careerData.showcase.length,
-                          })
-                        }
-                        onMoveNextRequest={() =>
-                          this.setState({
-                            photoIndex: (photoIndex + 1) % careerData.showcase.length,
-                          })
-                        }
-                        />
-                  }
-                  <p className=" text-left text-sm-center pages mb-0">
-                      {this.state.activeSlide + 1} of {careerData.showcase.length}
-                  </p>
+                    onMoveNextRequest={() =>
+                      this.setState({
+                        photoIndex: (photoIndex + 1) % careerData.showcase.length,
+                      })
+                    }
+                  />
+                }
+                <p className=" text-left text-sm-center pages mb-0">
+                    {this.state.activeSlide + 1} of {careerData.showcase.length}
+                </p>
               </div>
             </div>
           </section>
@@ -211,7 +211,7 @@ class Careers extends React.Component {
               </div>
               <div className="job-opening col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
                 <form action="" >
-                  <input type="search" onChange={(e)=>{
+                  <input type="search" onChange={(e) => {
                    let data =  this.state.jobOpeningStore.filter(res => {
                       return res.position.text.toLocaleLowerCase().match(e.target.value.toLocaleLowerCase())
                     })
@@ -220,7 +220,6 @@ class Careers extends React.Component {
                    placeholder="Search by title or Department" className="form-control search-bar rounded-0 pl-5"/>
                   <i className="fas fa-search search-btn"></i>
                 </form>
-
                 <div className="career-tabs py-4 d-flex flex-wrap justify-content-between align-content-between">
                   {this.state.jobOpenningButtons.map((item) => {
                     return (
@@ -232,12 +231,12 @@ class Careers extends React.Component {
                     )
                   })}
                 </div>
-                </div>
+              </div>
               </div>
               <div className="col-12 accordions-sect">
                 <div className="accordion" id="accordionExample">
                   {
-                    this.state.jobOpening && this.state.jobOpening.map((item,value)=>{
+                    this.state.jobOpening && this.state.jobOpening.map((item,value) => {
                       return(
                         <div className="card border-0" key={value}>
                           <div className="card-header" id="headingOne">
@@ -270,7 +269,7 @@ class Careers extends React.Component {
                   }
                 </div>
               </div>
-          </section>
+            </section>
           <section className="upload-cv-scetion text-center padding-block-60">
             <div>
               <h2 className=" section-title text-left text-sm-center">
@@ -290,16 +289,17 @@ class Careers extends React.Component {
   }
 }
 export default Careers;
-export const careerPage = graphql`{
-  prismicCareers{
-    data{
-      title{
+
+export const careerPage = graphql` {
+  prismicCareers {
+    data {
+      title {
         text
       }
-      description{
+      description {
         text
       }
-      banner{
+      banner {
         localFile {
           childImageSharp {
             fluid(maxWidth: 1150) {
@@ -308,11 +308,11 @@ export const careerPage = graphql`{
           }
         }
       }
-      life_at_bramha{
+      life_at_bramha {
         text
       }
-      showcase{
-        image{
+      showcase {
+        image {
           localFile {
             childImageSharp {
               fluid(maxWidth: 1150) {
@@ -322,23 +322,23 @@ export const careerPage = graphql`{
           }
         }
       }
-      looking_for_a_job_opening{
+      looking_for_a_job_opening {
         text
       }
-      job_opening{
-        title1{
+      job_opening {
+        title1 {
           text
         }
-        position{
+        position {
           text
         }
-        qualification{
+        qualification {
           text
         }
-        total_experience{
+        total_experience {
           text
         }
-        image{
+        image {
           localFile {
             childImageSharp {
               fluid(maxWidth: 1150) {
@@ -347,146 +347,146 @@ export const careerPage = graphql`{
             }
           }
         }
-        location{
+        location {
           text
         }
-        description2{
-          text
-        }
-      }
-      architect{
-        position{
-          text
-        }
-        qualification{
-          text
-        }
-        total_experience{
-          text
-        }
-        description2{
-          text
-        }
-        location{
+        description2 {
           text
         }
       }
-      admin{
-        position{
+      architect {
+        position {
           text
         }
-        qualification{
+        qualification {
           text
         }
-        total_experience{
+        total_experience {
           text
         }
-        description2{
+        description2 {
           text
         }
-        location{
-          text
-        }
-      }
-      project_manager{
-        position{
-          text
-        }
-        qualification{
-          text
-        }
-        total_experience{
-          text
-        }
-        description2{
-          text
-        }
-        location{
+        location {
           text
         }
       }
-      accounts{
-        position{
+      admin {
+        position {
           text
         }
-        qualification{
+        qualification {
           text
         }
-        total_experience{
+        total_experience {
           text
         }
-        description2{
+        description2 {
           text
         }
-        location{
-          text
-        }
-      }
-      engineers{
-        position{
-          text
-        }
-        qualification{
-          text
-        }
-        total_experience{
-          text
-        }
-        description2{
-          text
-        }
-        location{
+        location {
           text
         }
       }
-      management{
-        position{
+      project_manager {
+        position {
           text
         }
-        qualification{
+        qualification {
           text
         }
-        total_experience{
+        total_experience {
           text
         }
-        description2{
+        description2 {
           text
         }
-        location{
-          text
-        }
-      }
-      human_resources{
-        position{
-          text
-        }
-        qualification{
-          text
-        }
-        total_experience{
-          text
-        }
-        description2{
-          text
-        }
-        location{
+        location {
           text
         }
       }
-      sales{
-        position{
+      accounts {
+        position {
           text
         }
-        qualification{
+        qualification {
           text
         }
-        total_experience{
+        total_experience {
           text
         }
-        description2{
+        description2 {
           text
         }
-        location{
+        location {
+          text
+        }
+      }
+      engineers {
+        position {
+          text
+        }
+        qualification {
+          text
+        }
+        total_experience {
+          text
+        }
+        description2 {
+          text
+        }
+        location {
+          text
+        }
+      }
+      management {
+        position {
+          text
+        }
+        qualification {
+          text
+        }
+        total_experience {
+          text
+        }
+        description2 {
+          text
+        }
+        location {
+          text
+        }
+      }
+      human_resources {
+        position {
+          text
+        }
+        qualification {
+          text
+        }
+        total_experience {
+          text
+        }
+        description2 {
+          text
+        }
+        location {
+          text
+        }
+      }
+      sales {
+        position {
+          text
+        }
+        qualification {
+          text
+        }
+        total_experience {
+          text
+        }
+        description2 {
+          text
+        }
+        location {
           text
         }
       }

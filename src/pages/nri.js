@@ -27,7 +27,6 @@ class NRI extends React.Component {
           <section className="banner-section">
             <Img fluid={nriData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
           </section>
-          
           <section className="career-info container-md bg-color">
             <div className="row padding-block-60">
               <h2 className="col-12 page-heading">Guidlines for NRIs</h2> 
@@ -40,12 +39,11 @@ class NRI extends React.Component {
               </div>
             </div>
           </section>
-
           <section className="container">
             <div className="row">
               <div className="col-sm-6 my-5">
                 <form action="">
-                 <input type="search" onChange={(e)=>{
+                 <input type="search" onChange={(e) => {
                    let data =  nriData.group.filter(res => {
                       return res.heading1.text.toLocaleLowerCase().match(e.target.value.toLocaleLowerCase())
                     })
