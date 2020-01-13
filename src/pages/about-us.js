@@ -52,9 +52,7 @@ class AboutUs extends React.Component {
                 <Img fluid={data.banner.localFile.childImageSharp.fluid} alt="35 Years image" className="about-years-img"/>
               </div>
               <div className="about-para col-md-8 col-sm-12 mb-sm-3">
-                <div className="">
-                  {data.description.text}
-                </div>
+                <div className="" dangerouslySetInnerHTML={{__html:data.description.html }}/>
               </div>
             </div>
             <div className="row bg-white about-content">
@@ -246,7 +244,7 @@ export const AboutPage = graphql` {
         }
       }
       description {
-        text
+        html
       }
       aboutus_content {
         sub_title {

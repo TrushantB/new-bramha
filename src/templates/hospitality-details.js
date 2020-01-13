@@ -69,7 +69,7 @@ class HospitalityDetails extends React.Component {
 
     return(
       <Layout>
-        <SEO title={hospitalityData.data.title.text} />
+        <SEO title={hospitalityData.data.sub_title.text} />
         <main className="detail-page">
           {/* <!-- ---------------- banner start here ---------------- --> */}
             <section className="banner-section">
@@ -178,6 +178,9 @@ export const hospitalityPage = graphql`
       title {
         text
       }
+      sub_title {
+        text
+      }
       banner {
         image {
           localFile {
@@ -263,6 +266,7 @@ export const hospitalityPage = graphql`
             }
           }
         }
+        caption
       }
       floor_plans1 {
         text
