@@ -18,8 +18,8 @@ class IndexPage extends React.Component {
       leisure: null,
       ourVerticals:[
         {
-          id:'residencial',
-          name:'Residencial',
+          id:'residential',
+          name:'residential',
           class:'active'
         },
         {
@@ -55,7 +55,7 @@ class IndexPage extends React.Component {
 
   handleVerticals(event){
     switch(event.id){
-      case 'residencial': {
+      case 'residential': {
         this.setState({selectedVertical : < Residential gallery = {this.state.residential}/>})
       }
       break;
