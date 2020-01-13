@@ -111,7 +111,30 @@
           flex: 50%;
       }
   }
-  // ------------- Contact Start Here ----------------
+
+//   ------------ facility tab hide on f residency -----------
+#f-residences-phase-2-residential{
+    .nav-pills{
+        .col-6{
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+        .nav-item:nth-child(2){
+            display:none;
+        }
+        .nav-item:nth-child(1){
+            .nav-link{
+                border: 0;
+                box-shadow: none;
+                background-color: transparent;
+                .avtive{
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}
+// ------------- Contact Start Here ----------------
   .contact-section{
       .contact-form{
           margin: 106px 0 0 0;

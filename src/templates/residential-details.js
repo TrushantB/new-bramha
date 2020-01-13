@@ -150,7 +150,8 @@ class VerticalPage extends React.Component {
               <h2 className="section-title text-uppercase text-center">
                   Location
               </h2> 
-              <div className="map-image">
+              <div className="map-image map">
+                
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15130.20482232911!2d73.9169759!3d18.5491723!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfa889adcc4f893bd!2sF-Residences%20by%20BramhaCorp%20at%20New%20Kalyani%20Nagar!5e0!3m2!1sen!2sin!4v1578749234432!5m2!1sen!2sin" style={{ width:"100%", height:"375px", frameborder:"0", border:"0", allowFullScreen:"0"}}></iframe>
               </div>
             </section>
@@ -245,7 +246,7 @@ class VerticalPage extends React.Component {
             </div>
             {/* <!--   ------------------- Floor Plan section end here ------------------- --> */}
             {/* <!--   ------------------- Antity And Fact Files section start here ------------------- --> */}
-            <section className="antity-sections container">
+            <section className="antity-sections container"  id={verticalData.uid}>
               <ul className="nav nav-pills mb-3 row" id="factfile-tab" role="tablist">
                 <li className="nav-item col-6 p-0">
                   <a className="nav-link text-center text-uppercase section-title pb-1 active" id="pills-amenities-tab" data-toggle="pill" href="#amenities" role="tab" aria-controls="pills-amenities" aria-selected="true">
@@ -424,6 +425,7 @@ export default VerticalPage;
 export const verticalViewData = graphql` 
   query verticalData($uid: String!) {
   prismicOurVerticalsArticle(uid: { eq: $uid }) {
+    uid
     data {
       title {
         text

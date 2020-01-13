@@ -31,7 +31,7 @@
         }
     }
     .complete-project{
-        margin-bottom: 148px;
+        margin-bottom: 72px;
         .container{
             text-align: center;
         }
@@ -78,6 +78,19 @@
         background: url('../../images/left-arrow-1.png') no-repeat center center;
         padding: 12px 0px 16px 38px;
       }
+    }
+    .give-details{
+        padding:  60px 0 60px;
+        background-color:theme-color("bg-color");
+        .section-title{
+            font-size: 18px;
+            &::after{
+                display: none;
+            }
+        }
+        .btn-secondary{
+            width: 230px;
+        }
     }
 } 
 
