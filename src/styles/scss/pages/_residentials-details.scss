@@ -85,8 +85,10 @@
   .detail-page{
     .proximities-section{
         margin-top: 126px;
-        .section-title{
-            margin-bottom: 60px;
+        .section-title-wrapper{
+            .section-title{
+                margin-bottom: 12px;
+            }
         }
     }
     .floor-plan{
