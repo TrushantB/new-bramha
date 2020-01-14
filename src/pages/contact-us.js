@@ -148,9 +148,12 @@ class Contacts extends React.Component {
                               <div className="col-sm-6 form-group ">
                                 <select className="form-control" id="aboutus" placeholder="Budget" name="project-intrested" required >
                                   <option>Project Intrested</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
+                                  <option>F-Residences</option>
+                                  <option>whaterbay</option>
+                                  <option>Vantage+</option>
+                                  <option>Vantage Tower</option>
+                                  <option>Exuberance Elite</option>
+                                  <option>Meander</option>
                                 </select>
                               </div> 
 
