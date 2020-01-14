@@ -12,6 +12,9 @@ import 'react-image-lightbox/style.css';
 class VerticalPage extends React.Component {
   state = {
     activeSlide:null,
+    floorPlanActive:null,
+    showCaseActive:null,
+    siteProcessActive:null,
     isOpenOne:false,
     isOpenTwo:false,
     isOpenTHree:false,
@@ -20,14 +23,15 @@ class VerticalPage extends React.Component {
   render(){
     const { photoIndex, isOpenOne ,isOpenTwo,isOpenThree} = this.state;
     const verticalData = this.props.data.prismicOurVerticalsArticle;
-    let settings = {
+
+    let showCase = {
       photoIndex: 0,
       isOpen: false,  
       centerMode: true,
       centerPadding: '200px',
       slidesToShow: 1,
       speed:1000,
-      afterChange: current => this.setState({ activeSlide: current }),
+      afterChange: current => this.setState({ showCaseActive: current }),
       responsive: [
         {
           breakpoint: 992,
@@ -67,6 +71,102 @@ class VerticalPage extends React.Component {
         }
       ]
     };
+  
+    let floorPlan = {
+      photoIndex: 0,
+      isOpen: false,  
+      centerMode: true,
+      centerPadding: '200px',
+      slidesToShow: 1,
+      speed:1000,
+      afterChange: current => this.setState({ floorPlanActive: current }),
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            arrows: true,
+            centerMode: true,
+            centerPadding: '100px',
+            slidesToShow: 1
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            arrows: true,
+            centerMode: true,
+            centerPadding: '100px',
+            slidesToShow: 1
+          }
+        },
+        {
+          breakpoint: 580,
+          settings: {
+            arrows: true,
+            centerMode: true,
+            centerPadding: '45px',
+            slidesToShow: 1
+          }
+        },
+        {
+          breakpoint: 500,
+          settings: {
+            arrows: true,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 1
+          }
+        }
+      ]
+    };
+    let siteProcess = {
+      photoIndex: 0,
+      isOpen: false,  
+      centerMode: true,
+      centerPadding: '200px',
+      slidesToShow: 1,
+      speed:1000,
+      afterChange: current => this.setState({ siteProcessActive: current }),
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            arrows: true,
+            centerMode: true,
+            centerPadding: '100px',
+            slidesToShow: 1
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            arrows: true,
+            centerMode: true,
+            centerPadding: '100px',
+            slidesToShow: 1
+          }
+        },
+        {
+          breakpoint: 580,
+          settings: {
+            arrows: true,
+            centerMode: true,
+            centerPadding: '45px',
+            slidesToShow: 1
+          }
+        },
+        {
+          breakpoint: 500,
+          settings: {
+            arrows: true,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 1
+          }
+        }
+      ]
+    };
+   
     return(
       <Layout>
         <SEO title={verticalData.data.sub_title.text}/>
@@ -106,7 +206,7 @@ class VerticalPage extends React.Component {
               </h2>
               <div className="slider-wrapper">
                 <div className="container">
-                <Slider {...settings}>
+                <Slider {...showCase}>
                       {
                         verticalData.data.showcase.map((item,value) => {
                           return(
@@ -139,7 +239,7 @@ class VerticalPage extends React.Component {
                       />
                       }
                     <p className=" text-left text-sm-center pages mb-0">
-                      {this.state.activeSlide + 1} of {verticalData.data.showcase.length}
+                      {this.state.showCaseActive + 1} of {verticalData.data.showcase.length}
                     </p>
                 </div>
               </div>
@@ -204,12 +304,13 @@ class VerticalPage extends React.Component {
             </section>  
             {/* <!--   ------------------- Proximities section end here ------------------- --> */}
             {/* <!--   ------------------- Floor Plan section start here ------------------- --> */}
-            <div className="slider-page container-fluid d-none d-sm-block floor-plan">
+            <div className="slider-page d-none d-sm-block floor-plan">
+              <div className="container-fluid">
               <h2 className="section-title text-uppercase text-center">
                   {verticalData.data.floor_plans1.text}
               </h2>
               <div className="showcase-slider">
-                <Slider {...settings}>
+                <Slider {...floorPlan}>
                   {
                     verticalData.data.floor_plans.map((item,value) => {
                       return(
@@ -242,9 +343,10 @@ class VerticalPage extends React.Component {
                   />
                 }
               <p className=" text-left text-sm-center pages mb-0">
-              {this.state.activeSlide + 1} of {verticalData.data.floor_plans.length}
+              {this.state.floorPlanActive + 1} of {verticalData.data.floor_plans.length}
               </p>
             </div>
+            </div>    
             </div>
             {/* <!--   ------------------- Floor Plan section end here ------------------- --> */}
             {/* <!--   ------------------- Antity And Fact Files section start here ------------------- --> */}
@@ -299,7 +401,7 @@ class VerticalPage extends React.Component {
               </h2>
               <div className="slider-wrapper-gray ">
                 <div className="container showcase-slider slider-wrapper">
-                  <Slider {...settings}>
+                  <Slider {...siteProcess}>
                     {
                       verticalData.data.site_progress.map((item,value) => {
                         return(
@@ -332,7 +434,7 @@ class VerticalPage extends React.Component {
                   />
                 }
                 <p className=" text-left text-sm-center pages mb-0">
-                  {this.state.activeSlide + 1} of {verticalData.data.site_progress.length}
+                  {this.state.siteProcessActive + 1} of {verticalData.data.site_progress.length}
                 </p>
               </div>
               </div>

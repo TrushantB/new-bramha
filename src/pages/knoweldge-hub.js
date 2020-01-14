@@ -55,7 +55,7 @@ class KnoweldgeHub extends React.Component {
                 {
                   knowledgeData.knowledge_topics.map((item,index)=>{
                     return(
-                      <div className="col-md-6 p-sm-3" key={index} id={`index${index}`}>
+                      <div className="col-md-6 px-sm-3" key={index} id={`index${index}`}>
                         {
                           !item.topics.document[0].data.heading ?
                           <div className="about-loan card-primary mt-84" >
