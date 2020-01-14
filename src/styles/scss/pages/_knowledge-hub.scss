@@ -55,9 +55,9 @@
             }
         }
     }
-    .know-more{
-        padding-top: 24px;
-     }
+    // .know-more{
+    //     padding-top: 24px;
+    //  }
      .maha-rera-mb{
          border-bottom: 1px solid theme-color("border-color"); 
          border-top: 1px solid theme-color("border-color");
@@ -66,6 +66,15 @@
          .know-more{
             right: 18px;
             bottom: 12px;
+        }
+     }
+     .about-loan.card-primary.mt-84{
+        height: calc(100% - 84px) !important;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: start;
+        .row{
+            height: inherit;
         }
      }
   }
