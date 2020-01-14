@@ -68,6 +68,15 @@
             bottom: 12px;
         }
      }
+     .about-loan.card-primary.mt-84{
+        height: calc(100% - 84px) !important;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: start;
+        .row{
+            height: inherit;
+        }
+     }
   }
  
   .guidelines-nris {
