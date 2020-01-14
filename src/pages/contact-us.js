@@ -64,7 +64,7 @@ class Contacts extends React.Component {
                       <h3 className=" section-title mb-md-0 text-center text-capitalize"> <i className="fas fa-map-marker-alt mr-0 mr-md-1"></i> Postal Address </h3>          
                     </div>
                     {
-                      contactData.address.map((item,value)=>{
+                      contactData.address.map((item,value) => {
                         return(
                           <address className="text mt-0  mb-0" key={value}>{item.contact_address.text}</address>
                         )
@@ -146,7 +146,7 @@ class Contacts extends React.Component {
                                   <input type="number" className="form-control" id="phone-number" placeholder="Your Phone Number*" name="phone-number" required/>
                               </div>
                               <div className="col-sm-6 form-group ">
-                                <select className="form-control" id="aboutus" placeholder="Budget" name="aboutus" required >
+                                <select className="form-control" id="aboutus" placeholder="Budget" name="project-intrested" required >
                                   <option>Project Intrested</option>
                                   <option>2</option>
                                   <option>3</option>
@@ -161,7 +161,7 @@ class Contacts extends React.Component {
                                   <input type="text" className="form-control" id="city" placeholder="City" name="city" required/>
                               </div>
                               <div className="col-sm-12 form-group ">
-                                <select className="form-control" id="aboutus" placeholder="source" name="aboutus" required >
+                                <select className="form-control" id="aboutus" placeholder="source" name="source" required >
                                   <option>source</option>
                                   <option>2</option>
                                   <option>3</option>
@@ -181,110 +181,115 @@ class Contacts extends React.Component {
                     }
                     {
                       this.state.channel && 
-                    <div className="contact-form-bg pt-4 pb-4 pt-sm-5 pb-sm-5" id="channel-partner">
-                      <div className="container">
-                        <div className="form-row">
-                        <input type="hidden" name="form-name" value="customer" />
-                          <div className="col-sm-6 form-group  ">
-                              <input type="text" className="form-control" id="name" placeholder="Individual Name*" name="name" autoComplete="false" required/>
-                          </div>
-                         
-                          <div className="col-sm-6 form-group  ">
-                              <input type="text" className="form-control" id="email" placeholder="Your Email*" autoComplete="false" name="email" required/>
-                          </div>
-                          <div className="col-sm-6 form-group  ">
-                              <input type="number" className="form-control" id="phone-number" placeholder="Your Phone Number*" name="phone-number" required/>
-                          </div>
-                          <div className="col-sm-6 form-group ">
-                            <select className="form-control" id="aboutus" placeholder="Budget" name="aboutus" required >
-                              <option>RERA Registration Number</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                            </select>
+                      <form name="channel-partner" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+                        <div className="contact-form-bg pt-4 pb-4 pt-sm-5 pb-sm-5" id="channel-partner">
+                          <div className="container">
+                            <div className="form-row">
+                            <input type="hidden" name="form-name" value="channel-partner" />
+                              <div className="col-sm-6 form-group  ">
+                                  <input type="text" className="form-control" id="name" placeholder="Individual Name*" name="name" autoComplete="false" required/>
+                              </div>
+                            
+                              <div className="col-sm-6 form-group  ">
+                                  <input type="text" className="form-control" id="email" placeholder="Your Email*" autoComplete="false" name="email" required/>
+                              </div>
+                              <div className="col-sm-6 form-group  ">
+                                  <input type="number" className="form-control" id="phone-number" placeholder="Your Phone Number*" name="phone-number" required/>
+                              </div>
+                              <div className="col-sm-6 form-group ">
+                                <select className="form-control" id="aboutus" placeholder="Budget" name="rera-registration-number" required >
+                                  <option>RERA Registration Number</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                </select>
+                              </div> 
+    
+                              <div className="form-group col-md-12">
+                                <textarea className="form-control" rows="5" id="message" placeholder="Additional Message" name="message" required></textarea>
+                              </div>
+                            </div>
+                            <div className="sumbit text-center mt-sm-0 mt-4">
+                              <button type="submit" className="btn-secondary">Submit</button>
+                            </div>  
                           </div> 
- 
-                          <div className="form-group col-md-12">
-                            <textarea className="form-control" rows="5" id="message" placeholder="Additional Message" name="message" required></textarea>
-                          </div>
                         </div>
-                        <div className="sumbit text-center mt-sm-0 mt-4">
-                          <button type="submit" className="btn-secondary">Submit</button>
-                        </div>  
-                      </div> 
-                    </div>
+                    </form>
                     }
                     {
                       this.state.constructors &&
-                    <div className="contact-form-bg pt-4 pb-4 pt-sm-5 pb-sm-5" id="constructors">
-                      <div className="container">
-                        <div className="form-row">
-                        <input type="hidden" name="form-name" value="constructors" />
-                        <div className="col-sm-6 form-group  ">
-                              <input type="text" className="form-control" id="name" placeholder="Company*" name="name" autoComplete="false" required/>
-                          </div>
-                          <div className="col-sm-6 form-group  ">
-                              <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" autoComplete="false" required/>
-                          </div>
-                         
-                          <div className="col-sm-6 form-group  ">
-                              <input type="text" className="form-control" id="email" placeholder="Your Email*" autoComplete="false" name="email" required/>
-                          </div>
-                          <div className="col-sm-6 form-group  ">
-                              <input type="number" className="form-control" id="phone-number" placeholder="Your Phone Number*" name="phone-number" required/>
-                          </div>
+                      <form name="constructors" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+                        <div className="contact-form-bg pt-4 pb-4 pt-sm-5 pb-sm-5" id="constructors">
+                          <div className="container">
+                            <div className="form-row">
+                            <input type="hidden" name="form-name" value="constructors" />
+                            <div className="col-sm-6 form-group  ">
+                                  <input type="text" className="form-control" id="name" placeholder="Company*" name="company-name" autoComplete="false" required/>
+                              </div>
+                              <div className="col-sm-6 form-group  ">
+                                  <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" autoComplete="false" required/>
+                              </div>
+                            
+                              <div className="col-sm-6 form-group  ">
+                                  <input type="text" className="form-control" id="email" placeholder="Your Email*" autoComplete="false" name="email" required/>
+                              </div>
+                              <div className="col-sm-6 form-group  ">
+                                  <input type="number" className="form-control" id="phone-number" placeholder="Your Phone Number*" name="phone-number" required/>
+                              </div>
 
-                          <div className="col-sm-12 form-group  ">
-                              <input type="text" className="form-control" id="city" placeholder="City" name="city" required/>
+                              <div className="col-sm-12 form-group  ">
+                                  <input type="text" className="form-control" id="city" placeholder="City" name="city" required/>
+                              </div> 
+                              <div className="form-group col-md-12">
+                                <textarea className="form-control" rows="5" id="message" placeholder="Additional Message" name="message" required></textarea>
+                              </div>
+                            </div>
+                            <div className="sumbit text-center mt-sm-0 mt-4">
+                              <button type="submit" className="btn-secondary">Submit</button>
+                            </div>  
                           </div> 
-                          <div className="form-group col-md-12">
-                            <textarea className="form-control" rows="5" id="message" placeholder="Additional Message" name="message" required></textarea>
-                          </div>
-                        </div>
-                        <div className="sumbit text-center mt-sm-0 mt-4">
-                          <button type="submit" className="btn-secondary">Submit</button>
                         </div>  
-                      </div> 
-                    </div>  
+                      </form>
  
                     }
                    {
                       this.state.career &&
-                      <div className="contact-form-bg pt-4 pb-4 pt-sm-5 pb-sm-5" id="career">
-                      <div className="container">
-                        <div className="form-row">
-                        <input type="hidden" name="form-name" value="career" />
-                          <div className="col-sm-6 form-group  ">
-                              <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" autoComplete="false" required/>
-                          </div>
-                         
-                          <div className="col-sm-6 form-group  ">
-                              <input type="text" className="form-control" id="email" placeholder="Your Email*" autoComplete="false" name="email" required/>
-                          </div>
-                          <div className="col-sm-6 form-group  ">
-                              <input type="number" className="form-control" id="phone-number" placeholder="Your Phone Number*" name="phone-number" required/>
-                          </div>
-
-                          <div className="col-sm-6 form-group  ">
-                              <input type="text" className="form-control" id="city" placeholder="City" name="city" required/>
-                          </div> 
-                          <div className="form-group file-area">
-                            <input type="file" name="" id="" required="required" multiple="multiple" className="h-100"/>
-                              <div className="file-dummy resume-upload">
-                                <div className="default">Resume Upload (PDF/DOC)*</div>
-                              </div>
+                      <form name="career" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+                        <div className="contact-form-bg pt-4 pb-4 pt-sm-5 pb-sm-5" id="career">
+                        <div className="container">
+                          <div className="form-row">
+                          <input type="hidden" name="form-name" value="career"/>
+                            <div className="col-sm-6 form-group  ">
+                                <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" autoComplete="false" required/>
                             </div>
-  
-                          <div className="form-group col-md-12">
-                            <textarea className="form-control" rows="5" id="message" placeholder="Additional Message" name="message" required></textarea>
+                          
+                            <div className="col-sm-6 form-group  ">
+                                <input type="text" className="form-control" id="email" placeholder="Your Email*" autoComplete="false" name="email" required/>
+                            </div>
+                            <div className="col-sm-6 form-group  ">
+                                <input type="number" className="form-control" id="phone-number" placeholder="Your Phone Number*" name="phone-number" required/>
+                            </div>
+
+                            <div className="col-sm-6 form-group  ">
+                                <input type="text" className="form-control" id="city" placeholder="City" name="city" required/>
+                            </div> 
+                            <div className="form-group file-area">
+                              <input type="file" name="" id="" required="required" multiple="multiple" name="resume-upload" className="h-100"/>
+                                <div className="file-dummy resume-upload">
+                                  <div className="default">Resume Upload (PDF/DOC)*</div>
+                                </div>
+                              </div>
+    
+                            <div className="form-group col-md-12">
+                              <textarea className="form-control" rows="5" id="message" placeholder="Additional Message" name="message" required></textarea>
+                            </div>
                           </div>
-                        </div>
-                        <div className="sumbit text-center mt-sm-0 mt-4">
-                          <button type="submit" className="btn-secondary">Submit</button>
-                        </div>  
-                      </div> 
-                    </div>  
- 
+                          <div className="sumbit text-center mt-sm-0 mt-4">
+                            <button type="submit" className="btn-secondary">Submit</button>
+                          </div>  
+                        </div> 
+                      </div>  
+                    </form>
                     }
             </div>
             </section>
