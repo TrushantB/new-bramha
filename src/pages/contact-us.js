@@ -181,11 +181,11 @@ class Contacts extends React.Component {
                     } */}
                     {
                       this.state.channel && 
-                      <form name="channel-partner" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
-                        <div className="contact-form-bg pt-4 pb-4 pt-sm-5 pb-sm-5" id="channel-partner">
+                      <form name="channel" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+                        <div className="contact-form-bg pt-4 pb-4 pt-sm-5 pb-sm-5" id="channel">
                           <div className="container">
                             <div className="form-row">
-                            <input type="hidden" name="form-name" value="channel-partner" />
+                            <input type="hidden" name="form-name" value="channel" />
                               <div className="col-sm-6 form-group  ">
                                   <input type="text" className="form-control" id="name" placeholder="Individual Name*" name="name" autoComplete="false" required/>
                               </div>
