@@ -89,6 +89,44 @@
         border-top: 1px solid rgba(0, 0, 0, 0.125);
         border-bottom: 1px solid rgba(0, 0, 0, 0.125);
     }
+    .file-area {
+        width: 100%;
+        position: relative;
+        
+        input[type=file] {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          opacity: 0;
+          cursor: pointer;
+        }
+        
+        .resume-upload {
+          width: 100%;
+          padding: 30px;;
+          border: 1px dashed !important;
+          text-align: center;
+        }
+        
+        &:hover .resume-upload {
+          background: rgba(255,255,255,0.1);
+        }
+        
+        input[type=file]:focus + .resume-upload {
+          outline: 0;
+        }
+      }
+      .modal-dialog{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        border-radius: 0;
+      }
 }
 .input-file-btn{
     color:transparent;
@@ -154,7 +192,11 @@
     }
     
 }
-
+.accordions-sect {
+    .section-title::after {
+        display: none;
+    }   
+}
 .career-page {
     .upload-cv-scetion {
         padding-left: 15px;

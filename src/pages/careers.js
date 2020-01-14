@@ -97,13 +97,13 @@ class Careers extends React.Component {
       this.setState({jobOpening})
       this.state.jobOpenningButtons.map((item) => {
         if(item.id==event.id) {
-          item.class="active";
+          item.className="active";
         }
-        else item.class="";
+        else item.className="";
       })
     }
     else {
-      event.class="";
+      event.className="";
       this.setState({jobOpening:this.state.jobOpeningStore})
     }
   }
@@ -260,7 +260,46 @@ class Careers extends React.Component {
                                   {item.description2.text}
                                 </p>
                               </div>
-                              <button className="btn-secondary">Apply For Job</button>
+                              <button className="btn-secondary" data-toggle="modal" data-target="#exampleModal">
+                                Apply For Job
+                              </button>
+                              {/* ------------- Modal ----------------- */}
+                              <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div className="modal-dialog" role="document">
+                                  <div className="modal-content">
+                                    <div className="modal-header">
+                                      <h2 className="modal-title section-title text-center w-100" id="exampleModalLabel">Apply For Job</h2>
+                                      <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div className="modal-body">
+                                    <div className="container">
+                                        <div className="form-row">
+                                        <input type="hidden" name="form-name" value="career" />
+                                          <div className="col-sm-6 form-group  ">
+                                              <input type="text" className="form-control rounded-0" id="name" placeholder="Your Name*" name="name" autoComplete="false" required/>
+                                          </div>
+                                          <div className="col-sm-6 form-group  ">
+                                              <input type="text" className="form-control rounded-0" id="email" placeholder="Your Email*" autoComplete="false" name="email" required/>
+                                          </div>
+                                          <div className="col-12">
+                                            <div className="form-group file-area">
+                                              <input type="file" name="" id="" required="required" multiple="multiple" className="h-100"/>
+                                                <div className="file-dummy resume-upload">
+                                                  <div className="default">Resume Upload (PDF/DOC)*</div>
+                                                </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div className="sumbit text-center mt-sm-0 mt-4">
+                                          <button type="submit" className="btn-secondary">Submit</button>
+                                        </div>  
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>

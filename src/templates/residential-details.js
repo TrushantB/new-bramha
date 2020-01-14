@@ -113,6 +113,7 @@ class VerticalPage extends React.Component {
                             <div key={value}>
                               <div  className="slider-img " onClick={() => this.setState({ isOpenOne: true ,photoIndex:value})}>
                                 <Img fluid={item.image1.localFile.childImageSharp.fluid} alt=" Showcase slidwer" className="life-at-bramha-slider-image" />
+                                <p className="showcase-slide-caption">{item.caption}</p>
                               </div>
                             </div>
                           )
@@ -121,6 +122,7 @@ class VerticalPage extends React.Component {
                     </Slider>
                     {
                       isOpenOne &&
+                      
                       <Lightbox
                         mainSrc={verticalData.data.showcase[photoIndex].image1.localFile.childImageSharp.fluid.src}
                         nextSrc={verticalData.data.showcase[(photoIndex + 1) % verticalData.data.showcase.length].image1.localFile.childImageSharp.fluid.src}
@@ -136,6 +138,8 @@ class VerticalPage extends React.Component {
                             photoIndex: (photoIndex + 1) % verticalData.data.showcase.length,
                           })
                         }
+                        imageCaption={verticalData.data.showcase[photoIndex].caption}
+                        animationDuration={700}
                       />
                       }
                     <p className=" text-left text-sm-center pages mb-0">

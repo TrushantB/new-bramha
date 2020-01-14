@@ -561,7 +561,7 @@ button:focus{
           .nav-item{
               padding:15px 0;
           }
-        }
+        
         .tab{
             font-size: 12px;
             i{
@@ -569,8 +569,11 @@ button:focus{
             }
         &::before{
             content: '\f111';
+            font-family: "Font Awesome 5 Free";
+            font-size:10px;
         }
-        }   
+        }
+    }
         .contact-section{
             .contact-form{
                 margin-top: 80px;
@@ -603,6 +606,9 @@ button:focus{
                     margin-bottom: 12px;
                 }
             }
+        }
+        .our-verticals-tabs .tab span{
+            padding-left: 4px;
         }
     //Knowledge Hub
      .knowledge-hub{
