@@ -128,7 +128,7 @@ class Contacts extends React.Component {
                         </div>
                     </div>
                 </form>                     
-                    {
+                    {/* {
                       this.state.customer && 
                       <form name="customer" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
                         <div className="contact-form-bg pt-4 pb-4 pt-sm-5 pb-sm-5" id="customer">
@@ -178,7 +178,7 @@ class Contacts extends React.Component {
                           </div> 
                         </div>
                     </form>
-                    }
+                    } */}
                     {
                       this.state.channel && 
                       <form name="channel-partner" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
