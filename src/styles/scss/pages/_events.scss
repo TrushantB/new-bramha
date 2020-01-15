@@ -35,6 +35,7 @@
         padding-top:12px;
       }
       .slick-arrow{
+        padding: 20px 36px;
         top:auto;
         &:hover,
         &:focus{
@@ -51,9 +52,9 @@
         left: auto;
         z-index: 1;
         right: 277px;
-        bottom: -68px;
+        bottom: -77px;
         background: #333;
-        padding: 5px 50px 30px 17px;
+        // padding: 5px 50px 30px 17px;
         &:before{
             content: "←";
             font-family: "Font Awesome 5 Free";
@@ -61,7 +62,7 @@
             // padding: 12px 0px 16px 38px;
             font-size: 40px;
             position: absolute;
-            top: -10px;
+            top: -8px;
             left: 15px;
         }
       }
@@ -70,16 +71,16 @@
       .slick-next {
         transform: rotate(180deg);
         right: 183px;
-        bottom: -50px;
+        bottom: -57px;
         background: #333;
-        padding: 5px 50px 30px 15px;
+        // padding: 5px 50px 30px 15px;
         &:before{
           content: "←";
           font-family: "Font Awesome 5 Free";
           // background: url('../../images/left.png') no-repeat center center;
           // padding: 12px 0px 16px 38px;
           position: absolute;
-          top: -10px;
+          top: -8px;
           left: 15px;
           font-size: 40px;
         }
@@ -177,11 +178,10 @@
 }
 @media (max-width:420px){
   .events{
-    .slick-prev,
-    .slick-next{
-      padding: 5px 30px 22px 17px;
-    }
      .event-slider{
+      .slick-arrow{
+        padding: 5px 30px 22px 17px;
+      }
       .slider-wrapper{
         .pages{
           margin-top: 12px;
