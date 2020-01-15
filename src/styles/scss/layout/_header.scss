@@ -232,7 +232,11 @@
   .nav-trigger:hover span::after {
     background: #ccc;
   }
-  
+  .nav-open .nav-trigger{
+    position: fixed;
+    right:20px;
+    top:5px;
+  }
   .nav-open .nav-trigger span {
     background: transparent;
   }
