@@ -99,12 +99,21 @@
   }
 @media (max-width:580px){
     .knowledge-hub{
+        #index0{
+            .about-loan{
+                margin:68px 0 0 0;
+            }
+        }
         #index2{
             display: none;
         }
         #index3{
             .section-title,p{
                 display: none;
+ 
+            }
+            .about-loan {
+                margin:52px 0 0 0 ;
             }
             .know-more {
                 align-self: flex-end;
@@ -149,7 +158,7 @@
                 }
             }
         }
-        .about-loan.card-primary.mt-84{
+        .about-loan.card-primary {
             display: block !important;
         }
         .guidelines-nris {

@@ -38,6 +38,15 @@
         .tab{
             color: theme-color("primary");
             // font-weight: 500;
+            &::before{
+                content: "";
+                background: theme-color("primary");
+                &a:hover{
+                    content: "";
+                    background: theme-color("primary");
+                }
+            }
+          
         }
     }
 }
