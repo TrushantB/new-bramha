@@ -29,12 +29,13 @@
       }
       .slider-wrapper{
         background-color: theme-color("bg-color");
-        padding:12px 0 16px 0;
+        padding:12px 0 20px 0;
       }
       .slick-slide{
         padding-top:12px;
       }
       .slick-arrow{
+        padding: 20px 36px;
         top:auto;
         &:hover,
         &:focus{
@@ -51,13 +52,18 @@
         left: auto;
         z-index: 1;
         right: 277px;
-        bottom: -68px;
+        bottom: -77px;
         background: #333;
-        padding: 5px 50px 30px 17px;
+        // padding: 5px 50px 30px 17px;
         &:before{
-            content: "";
-            background: url('../../images/left.png') no-repeat center center;
-            padding: 12px 0px 16px 38px;
+            content: "←";
+            font-family: "Font Awesome 5 Free";
+            // background: url('../../images/left.png') no-repeat center center;
+            // padding: 12px 0px 16px 38px;
+            font-size: 40px;
+            position: absolute;
+            top: -8px;
+            left: 15px;
         }
       }
     
@@ -65,13 +71,18 @@
       .slick-next {
         transform: rotate(180deg);
         right: 183px;
-        bottom: -50px;
+        bottom: -57px;
         background: #333;
-        padding: 5px 50px 30px 15px;
+        // padding: 5px 50px 30px 15px;
         &:before{
-          content: "";
-          background: url('../../images/left.png') no-repeat center center;
-          padding: 12px 0px 16px 38px;
+          content: "←";
+          font-family: "Font Awesome 5 Free";
+          // background: url('../../images/left.png') no-repeat center center;
+          // padding: 12px 0px 16px 38px;
+          position: absolute;
+          top: -8px;
+          left: 15px;
+          font-size: 40px;
         }
       }
     } 
@@ -90,7 +101,7 @@
         padding:18px 0 36px 0
       }
       .slick-prev{
-        right:190px
+        right:180px
       }
       .slick-next{
         right:90px
@@ -128,32 +139,32 @@
           text-align: left !important;
         }
         .slick-next{
-          bottom: -41px;
-          right: 53px;
+          // bottom: -41px;
+          right: 31px;
           top: auto;
           z-index: 1;
-          transform: rotate(0deg);
-          padding: 0;
-          background: transparent;
-          &:before{
-              content: "";
-              background: url('../../images/right.jpg') no-repeat center center;
-              padding: 0 0 0 36px;
-            }
+         
+        //   padding: 0;
+        //   background: transparent;
+        //   &:before{
+        //       content: "";
+        //       background: url('../../images/right.jpg') no-repeat center center;
+        //       padding: 0 0 0 36px;
+        //     }
         }
         .slick-prev{
-          top: auto;
-          bottom: -50px;
+          // top: auto;
+          // bottom: -50px;
           right: 120px;
-          left: auto;
+          // left: auto;
           z-index: 1;
-          padding: 0;
-          background: transparent;
-            &:before{
-              content: "";
-              background: url('../../images/left.jpg') no-repeat center center;
-              padding: 0 0 0 36px;
-            }
+          // padding: 0;
+          // background: transparent;
+          //   &:before{
+          //     content: "";
+          //     background: url('../../images/left.jpg') no-repeat center center;
+          //     padding: 0 0 0 36px;
+          //   }
         }
         
       }
@@ -164,4 +175,36 @@
       padding: 0 10px;
     }
   }
+}
+@media (max-width:420px){
+  .events{
+     .event-slider{
+      .slick-arrow{
+        padding: 5px 30px 22px 17px;
+      }
+      .slider-wrapper{
+        .pages{
+          margin-top: 12px;
+        }
+        .slick-next{
+          right: 39px;
+          top: auto;
+          bottom: -39px;
+          &::before{
+            top: -15px;
+            left: 6px;
+          }
+        }
+        .slick-prev{
+          right: 97px;
+          top: auto;
+          bottom: -53px;
+           &::before{
+            top: -15px;
+            left: 5px;
+          }
+        }
+      }
+     }  
+  } 
 }
