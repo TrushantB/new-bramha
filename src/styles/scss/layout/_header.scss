@@ -291,6 +291,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    &::-webkit-scrollbar{
+      display:none;
+    }
   }
   .nav-container .nav{
     flex-direction: column;

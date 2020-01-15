@@ -20,19 +20,23 @@ class IndexPage extends React.Component {
         {
           id:'residential',
           name:'residential',
+          icon: 'far fa-building',
           class:'active'
         },
         {
           id:'commercial',
           name:'Commercial',
+          icon: 'fas fa-city'
         },
         {
           id:'hospitality',
-          name:'Hospitality'
+          name:'Hospitality',
+          icon: 'far fa-hospital'
         },
         {
           id:'leisure',
-          name:'Leisure'
+          name:'Leisure',
+          icon: 'fas fa-archway'
         }
       ]
     }
@@ -98,7 +102,7 @@ class IndexPage extends React.Component {
                     return(
                       <li key={item.id} className={`nav-item d-flex align-items-center ${item.class}`} id={item.id} data-toggle="tab" href={`#{item.id}`} role="tab" aria-controls={item.id} aria-selected="true" onClick={()=> {this.handleVerticals(item)}}>
                         <Link to='/' className="tab d-flex align-items-center">
-                          <i className="far fa-building"></i>
+                          <i className={item.icon}></i>
                           <span >{item.name}</span>
                       </Link>
                       </li>
