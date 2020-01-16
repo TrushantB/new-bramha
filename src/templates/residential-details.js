@@ -20,6 +20,7 @@ class VerticalPage extends React.Component {
   render(){
     const { photoIndex, isOpenOne ,isOpenTwo,isOpenThree} = this.state;
     const verticalData = this.props.data.prismicOurVerticalsArticle;
+    console.log('verticalData', verticalData);
     let settings = {
       photoIndex: 0,
       isOpen: false,  
@@ -543,6 +544,9 @@ export const verticalViewData = graphql`
         }
         description1 {
           text
+        }
+        image1{
+          url
         }
         icon
       }
