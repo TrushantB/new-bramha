@@ -270,7 +270,7 @@ class VerticalPage extends React.Component {
                   </h2>
                   <p className="text-center mx-5 mx-sm-0">{verticalData.data.proximities_description.text}</p>
                 </div>
-                <ul className="nav nav-pills row padding-sm-0" id="pills-tab" role="tablist">
+                <ul className="nav nav-pills row" id="pills-tab" role="tablist">
                       {
                         verticalData.data.proximites.map((item, index)=>{
                           return(
@@ -356,7 +356,7 @@ class VerticalPage extends React.Component {
             {/* <!--   ------------------- Floor Plan section end here ------------------- --> */}
             {/* <!--   ------------------- Antity And Fact Files section start here ------------------- --> */}
             <section className="antity-sections container"  id={verticalData.uid}>
-              <ul className="nav nav-pills row" id="factfile-tab" role="tablist">
+              <ul className="nav nav-pills row padding-sm-0" id="factfile-tab" role="tablist">
                 <li className="nav-item col-6 p-0">
                   <a className="nav-link text-center text-uppercase section-title pb-1 active" id="pills-amenities-tab" data-toggle="pill" href="#amenities" role="tab" aria-controls="pills-amenities" aria-selected="true">
                     {verticalData.data.amenities1.text}
