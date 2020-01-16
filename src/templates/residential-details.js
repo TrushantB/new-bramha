@@ -18,6 +18,7 @@ class VerticalPage extends React.Component {
     isOpenOne:false,
     isOpenTwo:false,
     isOpenTHree:false,
+    imageUrl: null
   };
 
   render(){
@@ -376,7 +377,7 @@ class VerticalPage extends React.Component {
                           {
                             verticalData.data.amenities.map((item, index) => {
                               return(
-                                <button key={index} className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
+                                <button key={index} className={`d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left ${this.state.imageUrl===item.image1.url || !index && !this.state.imageUrl ? 'active': ''}`} onClick={() => this.setState({imageUrl:  item.image1.url})} >
                                   <i className={item.icon}></i>
                                     {item.title1.text}
                                 </button>
@@ -387,7 +388,11 @@ class VerticalPage extends React.Component {
                         <div className="d-flex"></div>
                       </div>
                       <div className="image-wrapper">
-                        <img src={verticalData.data.amenities_banner.url} alt="select image" className="w-100 h-100"/>
+                        {
+                          this.state.imageUrl ?
+                         <img src={this.state.imageUrl} alt="select image" className="w-100 h-100"/>
+                         :<img src={verticalData.data.amenities[0].image1.url} alt="select image" className="w-100 h-100"/>
+                        }
                       </div>
                     </div>
                   </div>
@@ -649,6 +654,9 @@ export const verticalViewData = graphql`
         }
         description1 {
           text
+        }
+        image1{
+          url
         }
         icon
       }

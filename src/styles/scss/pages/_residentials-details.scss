@@ -81,7 +81,14 @@
               }
           }
       }
+      .active {
+        color:theme-color(primary);
+        i{
+            color:theme-color(primary);
+        }
+     }
   }
+ 
   .detail-page{
     .proximities-section{
         margin-top: 126px;
