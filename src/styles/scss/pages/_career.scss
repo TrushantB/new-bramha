@@ -341,29 +341,55 @@
 }
 
 @media (max-width:580px){
-    .career-center .slick-prev {
-        &:before{
-            content: "";
-            background: url('../../images/left.jpg') no-repeat center center;
-            padding: 12px 0px 16px 38px;
-          }
-        left: auto;
-        z-index: 1;
-        right: 100px;
-        top: auto;
-        bottom: -36px;
+    .career-page{
+        .slider-page {
+            .slider-wrapper{
+                .slick-prev:before{
+                    position: absolute;
+                    top: -29px;
+                    content: "\2190";
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                    font-size: 44px;
+                    color: #b2a585;
+                }
+               
+                .slick-next:before{
+                    content: "\2190";
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                    font-size: 44px;
+                    color: #b2a585;
+                    position: absolute;
+                    top: -13px;
+                    right: 0px;
+                }
+            }
+        } 
     }
-    .career-center .slick-next {
-        transform: rotate(0deg);
-        &:before{
-            content: "";
-            background: url('../../images/right.jpg') no-repeat center center;
-            padding: 12px 0px 16px 38px;
-          }
-        right: 40px;
-        bottom: -27px;
-        top: auto;
-    }
+    // .career-center .slick-prev {
+    //     &:before{
+    //         content: "";
+    //         background: url('../../images/left.jpg') no-repeat center center;
+    //         padding: 12px 0px 16px 38px;
+    //       }
+    //     left: auto;
+    //     z-index: 1;
+    //     right: 100px;
+    //     top: auto;
+    //     bottom: -36px;
+    // }
+    // .career-center .slick-next {
+    //     transform: rotate(0deg);
+    //     &:before{
+    //         content: "";
+    //         background: url('../../images/right.jpg') no-repeat center center;
+    //         padding: 12px 0px 16px 38px;
+    //       }
+    //     right: 40px;
+    //     bottom: -27px;
+    //     top: auto;
+    // }
     .life-at-bramha .slider-wrapper {
         background-color: transparent;
         padding: 0px 0 40px;
