@@ -51,7 +51,7 @@ class KnoweldgeHub extends React.Component {
           </div>
           <div className="buyer-tips-info">
             <div className="container">
-              <div className="row">
+              <div className="row mt-48">
                 {
                   knowledgeData.knowledge_topics.map((item,index)=>{
                     return(
@@ -71,7 +71,7 @@ class KnoweldgeHub extends React.Component {
                               <div className="col-md-12 col-lg-6  col-6 pl-0 pl-md-3 pl-lg-0 pr-0 pr-sm-3">
                                 <div className=" important-notice-section d-flex justify-content-between flex-column bg-light-gray">
                                   <p>{item.topics.document[0].data.short_description.text}</p>
-                                  <h3 className="inner-section-title  text-right text-sm-center d-block d-sm-none">Important Notices</h3>
+                                  <h3 className="inner-section-title  text-center text-sm-center d-block d-sm-none">Important Notices</h3>
                                   <div className="know-more">
                                     <a href="#" className="link-text">
                                       <span className="mr-3">Know More</span>
@@ -91,7 +91,7 @@ class KnoweldgeHub extends React.Component {
                                 <Img fluid={item.topics.document[0].data.banner.localFile.childImageSharp.fluid } alt="" width="100%"/>
                               </div>
                               <div className="guidelines-nris-info position-absolute">
-                                <p className="mb-0 mb-sm-2 text-white">{item.topics.document[0].data.heading.text}</p>
+                                <p className="mb-0 text-white">{item.topics.document[0].data.heading.text}</p>
                                 <div className="know-more pt-0">
                                   <Link to="/nri" className="link-text">
                                     <span className="mr-sm-5 mr-3">Read More</span>

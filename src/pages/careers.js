@@ -163,7 +163,7 @@ class Careers extends React.Component {
               </h3>
             </div>
             <div className="slider-wrapper">
-              <div className="container">
+              <div className="container-md container-fluid">
                 <Slider {...settings}>
                   {
                     careerData.showcase.map((item,value)=>{
@@ -196,14 +196,14 @@ class Careers extends React.Component {
                     }
                   />
                 }
-                <p className=" text-left text-sm-center pages mb-0">
+                <p className=" text-left text-sm-center pages mb-0 d-none d-sm-block">
                     {this.state.activeSlide + 1} of {careerData.showcase.length}
                 </p>
               </div>
             </div>
           </section>
-          <section className="container">
-            <div className="row">
+          <section className="container accordions">
+            <div className="row m-0">
               <div className="padding-block-60 section-title-wrapper d-flex justify-content-center flex-column w-100 align-items-center">
                 <h3 className="section-title text-center">
                   {careerData.looking_for_a_job_opening.text}
@@ -220,11 +220,11 @@ class Careers extends React.Component {
                    placeholder="Search by title or Department" className="form-control search-bar rounded-0 pl-5"/>
                   <i className="fas fa-search search-btn"></i>
                 </form>
-                <div className="career-tabs py-4 d-flex flex-wrap justify-content-between align-content-between">
+                <div className="career-tabs  d-flex flex-wrap justify-content-between align-content-between">
                   {this.state.jobOpenningButtons.map((item) => {
                     return (
-                      <div className="btn-wraper mb-3" key={item.id}>
-                        <button onClick={() => this.handleJobOpening(item)} className={`button-tertiary w-100 mt-2 ${item.class}`}>
+                      <div className="btn-wraper" key={item.id}>
+                        <button onClick={() => this.handleJobOpening(item)} className={`button-tertiary w-100  ${item.class}`}>
                          {item.name}
                         </button>
                       </div>
@@ -260,7 +260,7 @@ class Careers extends React.Component {
                                   {item.description2.text}
                                 </p>
                               </div>
-                              <button className="btn-secondary" data-toggle="modal" data-target="#exampleModal">
+                              <button className="btn-secondary " data-toggle="modal" data-target="#exampleModal">
                                 Apply For Job
                               </button>
                               {/* ------------- Modal ----------------- */}
@@ -293,7 +293,7 @@ class Careers extends React.Component {
                                           </div>
                                         </div>
                                         <div className="sumbit text-center mt-sm-0 mt-4">
-                                          <button type="submit" className="btn-secondary">Submit</button>
+                                          <button type="submit" className="btn-secondary ">Submit</button>
                                         </div>  
                                       </div>
                                     </div>
@@ -309,13 +309,13 @@ class Careers extends React.Component {
                 </div>
               </div>
             </section>
-          <section className="upload-cv-scetion text-center padding-block-60">
+          <section className="upload-cv-scetion text-center ">
             <div>
-              <h2 className=" section-title text-left text-sm-center">
+              <h2 className=" section-title text-center">
                 Cant find what you are looking for?
               </h2>
             </div>
-            <p className="text py-3 text-left text-sm-center">
+            <p className="text m-0 ">
               <span className="d-block">Upload your CV to our portal.</span>
               <span className="d-block">We will get back to you once suitable position is open</span>
             </p>
