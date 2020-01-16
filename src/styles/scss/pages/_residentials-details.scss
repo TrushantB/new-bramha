@@ -466,11 +466,14 @@
         font-size: 12px;
     }
     .amenities button:hover,
-    .amenities .active {
+    .amenities .active,
+    .amenities .active i {
         color: #7f7f7f;
     }
     
 }
 @media(max-width:420px){
-
+    .slider-wrapper .slick-active .slider-img .showcase-slide-caption{
+        font-size: 10px;
+    }
 }
