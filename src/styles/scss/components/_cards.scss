@@ -60,6 +60,7 @@
           opacity: 0.35;
           font-size: 12px;
           color:theme-color("text-black"); 
+          letter-spacing: -0.22px;
     }
 }
 .project-location{
@@ -100,16 +101,16 @@
         box-shadow: 3px 3px 13px 0 rgba(227, 227, 227, 0.65);
         background-color: #FFFFFF;
         padding: 20px 20px 16px 20px;
-        bottom: -50px;
+        bottom: -64px;
         left: 10px;
         .inner-section-title{
-            font-size: 14px;
+            font-size: 16px;
             color: theme-color("headig-secondary");;
             letter-spacing: 0.14px;
         }
         .project-location,
         .apartment-size{
-            font-size: 10px;
+            font-size: 12px;
             color: #000;
             font-stretch: normal;
             font-style: normal;

@@ -113,6 +113,7 @@ class CommercialDetails extends React.Component {
                         <div key={value}>
                           <div  className="slider-img image-ratio" onClick={() => this.setState({ isOpen: true ,photoIndex:value})}>
                             <Img fluid={item.image1.localFile.childImageSharp.fluid} alt=" Showcase slidwer" className="life-at-bramha-slider-image" />
+                            <p className="showcase-slide-caption">{item.caption}</p>
                           </div>
                         </div>
                       )
@@ -136,6 +137,8 @@ class CommercialDetails extends React.Component {
                           photoIndex: (photoIndex + 1) % commercialData.data.showcase.length,
                         })
                       }
+                      imageCaption={commercialData.data.showcase[photoIndex].caption}
+                      animationDuration={700}
                     />
                   }
                   <p className=" text-left text-sm-center pages mb-0">

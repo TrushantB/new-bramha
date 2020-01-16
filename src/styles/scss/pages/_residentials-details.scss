@@ -81,7 +81,14 @@
               }
           }
       }
+      .active {
+        color:theme-color(primary);
+        i{
+            color:theme-color(primary);
+        }
+     }
   }
+ 
   .detail-page{
     .proximities-section{
         margin-top: 126px;
@@ -96,7 +103,7 @@
             margin-bottom: 52px;
         }
         .slider-img {
-            margin:60px 50px;
+            margin:60px 56px;
             border: solid 1px #9999;
         }
     }
@@ -135,6 +142,35 @@
             }
         }
     }
+}
+// ------------- Slider css start here -------------
+.slider-wrapper{
+    .slider-img{
+        outline: 0;
+        position: relative;
+        .showcase-slide-caption{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            margin: 0;
+            background: rgba(00,00,00,0.7);
+            padding: 8px 12px;
+            color: #fff;
+            display: none;
+        }
+    }
+    .slick-active{
+        .slider-img{
+            .showcase-slide-caption{
+                display: block;
+                transition: 0.3s ease-in-out;
+            }
+        }
+    }
+}
+.ril__captionContent{
+    text-align: center;
+    width:100%;
 }
 // ------------- Contact Start Here ----------------
   .contact-section{

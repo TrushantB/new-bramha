@@ -42,6 +42,16 @@
         margin-top: 0;
     }
     .guidelines-nris {
+        height: calc(100% - 77px) !important;
+        .guidelines-nris-img{
+            height: 100%;
+            .gatsby-image-wrapper{
+                height: 100%;
+            }
+        }
+        .guidelines-nris-wrapper{
+            height: calc(100% - 77px) !important;
+        }
         .guidelines-nris-info{
             width: 247px;
             padding: 16px 24px;
@@ -68,6 +78,15 @@
             bottom: 12px;
         }
      }
+     .about-loan.card-primary{
+        height: calc(100% - 77px) !important;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: start;
+        .row{
+            height: inherit;
+        }
+     }
   }
  
   .guidelines-nris {
@@ -80,12 +99,21 @@
   }
 @media (max-width:580px){
     .knowledge-hub{
+        #index0{
+            .about-loan{
+                margin:68px 0 0 0;
+            }
+        }
         #index2{
             display: none;
         }
         #index3{
             .section-title,p{
                 display: none;
+ 
+            }
+            .about-loan {
+                margin:52px 0 0 0 ;
             }
             .know-more {
                 align-self: flex-end;
@@ -128,6 +156,21 @@
                     padding-left: 24px;
                    }
                 }
+            }
+        }
+        .about-loan.card-primary {
+            display: block !important;
+        }
+        .guidelines-nris {
+            height: auto !important;
+            .guidelines-nris-img{
+                height: auto;
+                .gatsby-image-wrapper{
+                    height: auto;
+                }
+            }
+            .guidelines-nris-wrapper{
+                height:auto !important;
             }
         }
     }

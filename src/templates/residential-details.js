@@ -12,23 +12,27 @@ import 'react-image-lightbox/style.css';
 class VerticalPage extends React.Component {
   state = {
     activeSlide:null,
+    floorPlanActive:null,
+    showCaseActive:null,
+    siteProcessActive:null,
     isOpenOne:false,
     isOpenTwo:false,
     isOpenTHree:false,
+    imageUrl: null
   };
 
   render(){
     const { photoIndex, isOpenOne ,isOpenTwo,isOpenThree} = this.state;
     const verticalData = this.props.data.prismicOurVerticalsArticle;
-    console.log('verticalData', verticalData);
-    let settings = {
+
+    let showCase = {
       photoIndex: 0,
       isOpen: false,  
       centerMode: true,
       centerPadding: '200px',
       slidesToShow: 1,
       speed:1000,
-      afterChange: current => this.setState({ activeSlide: current }),
+      afterChange: current => this.setState({ showCaseActive: current }),
       responsive: [
         {
           breakpoint: 992,
@@ -68,6 +72,102 @@ class VerticalPage extends React.Component {
         }
       ]
     };
+  
+    let floorPlan = {
+      photoIndex: 0,
+      isOpen: false,  
+      centerMode: true,
+      centerPadding: '200px',
+      slidesToShow: 1,
+      speed:1000,
+      afterChange: current => this.setState({ floorPlanActive: current }),
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            arrows: true,
+            centerMode: true,
+            centerPadding: '100px',
+            slidesToShow: 1
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            arrows: true,
+            centerMode: true,
+            centerPadding: '100px',
+            slidesToShow: 1
+          }
+        },
+        {
+          breakpoint: 580,
+          settings: {
+            arrows: true,
+            centerMode: true,
+            centerPadding: '45px',
+            slidesToShow: 1
+          }
+        },
+        {
+          breakpoint: 500,
+          settings: {
+            arrows: true,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 1
+          }
+        }
+      ]
+    };
+    let siteProcess = {
+      photoIndex: 0,
+      isOpen: false,  
+      centerMode: true,
+      centerPadding: '200px',
+      slidesToShow: 1,
+      speed:1000,
+      afterChange: current => this.setState({ siteProcessActive: current }),
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            arrows: true,
+            centerMode: true,
+            centerPadding: '100px',
+            slidesToShow: 1
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            arrows: true,
+            centerMode: true,
+            centerPadding: '100px',
+            slidesToShow: 1
+          }
+        },
+        {
+          breakpoint: 580,
+          settings: {
+            arrows: true,
+            centerMode: true,
+            centerPadding: '45px',
+            slidesToShow: 1
+          }
+        },
+        {
+          breakpoint: 500,
+          settings: {
+            arrows: true,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 1
+          }
+        }
+      ]
+    };
+   
     return(
       <Layout>
         <SEO title={verticalData.data.sub_title.text}/>
@@ -107,13 +207,14 @@ class VerticalPage extends React.Component {
               </h2>
               <div className="slider-wrapper">
                 <div className="container">
-                <Slider {...settings}>
+                <Slider {...showCase}>
                       {
                         verticalData.data.showcase.map((item,value) => {
                           return(
                             <div key={value}>
                               <div  className="slider-img " onClick={() => this.setState({ isOpenOne: true ,photoIndex:value})}>
                                 <Img fluid={item.image1.localFile.childImageSharp.fluid} alt=" Showcase slidwer" className="life-at-bramha-slider-image" />
+                                <p className="showcase-slide-caption">{item.caption}</p>
                               </div>
                             </div>
                           )
@@ -122,6 +223,7 @@ class VerticalPage extends React.Component {
                     </Slider>
                     {
                       isOpenOne &&
+                      
                       <Lightbox
                         mainSrc={verticalData.data.showcase[photoIndex].image1.localFile.childImageSharp.fluid.src}
                         nextSrc={verticalData.data.showcase[(photoIndex + 1) % verticalData.data.showcase.length].image1.localFile.childImageSharp.fluid.src}
@@ -137,10 +239,12 @@ class VerticalPage extends React.Component {
                             photoIndex: (photoIndex + 1) % verticalData.data.showcase.length,
                           })
                         }
+                        imageCaption={verticalData.data.showcase[photoIndex].caption}
+                        animationDuration={700}
                       />
                       }
                     <p className=" text-left text-sm-center pages mb-0">
-                      {this.state.activeSlide + 1} of {verticalData.data.showcase.length}
+                      {this.state.showCaseActive + 1} of {verticalData.data.showcase.length}
                     </p>
                 </div>
               </div>
@@ -205,12 +309,13 @@ class VerticalPage extends React.Component {
             </section>  
             {/* <!--   ------------------- Proximities section end here ------------------- --> */}
             {/* <!--   ------------------- Floor Plan section start here ------------------- --> */}
-            <div className="slider-page container-fluid d-none d-sm-block floor-plan">
+            <div className="slider-page d-none d-sm-block floor-plan">
+              <div className="container-fluid">
               <h2 className="section-title text-uppercase text-center">
                   {verticalData.data.floor_plans1.text}
               </h2>
               <div className="showcase-slider">
-                <Slider {...settings}>
+                <Slider {...floorPlan}>
                   {
                     verticalData.data.floor_plans.map((item,value) => {
                       return(
@@ -243,9 +348,10 @@ class VerticalPage extends React.Component {
                   />
                 }
               <p className=" text-left text-sm-center pages mb-0">
-              {this.state.activeSlide + 1} of {verticalData.data.floor_plans.length}
+              {this.state.floorPlanActive + 1} of {verticalData.data.floor_plans.length}
               </p>
             </div>
+            </div>    
             </div>
             {/* <!--   ------------------- Floor Plan section end here ------------------- --> */}
             {/* <!--   ------------------- Antity And Fact Files section start here ------------------- --> */}
@@ -271,7 +377,7 @@ class VerticalPage extends React.Component {
                           {
                             verticalData.data.amenities.map((item, index) => {
                               return(
-                                <button key={index} className="d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left">
+                                <button key={index} className={`d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left ${this.state.imageUrl===item.image1.url || !index && !this.state.imageUrl ? 'active': ''}`} onClick={() => this.setState({imageUrl:  item.image1.url})} >
                                   <i className={item.icon}></i>
                                     {item.title1.text}
                                 </button>
@@ -282,7 +388,11 @@ class VerticalPage extends React.Component {
                         <div className="d-flex"></div>
                       </div>
                       <div className="image-wrapper">
-                        <img src={verticalData.data.amenities_banner.url} alt="select image" className="w-100 h-100"/>
+                        {
+                          this.state.imageUrl ?
+                         <img src={this.state.imageUrl} alt="select image" className="w-100 h-100"/>
+                         :<img src={verticalData.data.amenities[0].image1.url} alt="select image" className="w-100 h-100"/>
+                        }
                       </div>
                     </div>
                   </div>
@@ -300,7 +410,7 @@ class VerticalPage extends React.Component {
               </h2>
               <div className="slider-wrapper-gray ">
                 <div className="container showcase-slider slider-wrapper">
-                  <Slider {...settings}>
+                  <Slider {...siteProcess}>
                     {
                       verticalData.data.site_progress.map((item,value) => {
                         return(
@@ -333,7 +443,7 @@ class VerticalPage extends React.Component {
                   />
                 }
                 <p className=" text-left text-sm-center pages mb-0">
-                  {this.state.activeSlide + 1} of {verticalData.data.site_progress.length}
+                  {this.state.siteProcessActive + 1} of {verticalData.data.site_progress.length}
                 </p>
               </div>
               </div>

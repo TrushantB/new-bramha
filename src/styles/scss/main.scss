@@ -402,7 +402,7 @@ button:focus{
                    .know-more{
                        align-self: flex-end;
                        position: absolute;
-                       bottom: -34px;
+                       bottom: -36px;
                    }
                }
            }
@@ -458,7 +458,7 @@ button:focus{
        .residences-card {
         .rectangle{
             width: 90%;
-            left: 10px;
+            left: 13px;
         }
       }
 
@@ -561,16 +561,25 @@ button:focus{
           .nav-item{
               padding:15px 0;
           }
-        }
+        
         .tab{
             font-size: 12px;
             i{
                 display: none;
             }
         &::before{
-            content: '\f111';
+            content: '';
+            font-family: "Font Awesome 5 Free";
+            font-size:10px;
+            height: 8px;
+            width:8px;
+            background: #7f7f7f;
+            border-radius: 50%;
+            
         }
-        }   
+
+        }
+    }
         .contact-section{
             .contact-form{
                 margin-top: 80px;
@@ -603,6 +612,9 @@ button:focus{
                     margin-bottom: 12px;
                 }
             }
+        }
+        .our-verticals-tabs .tab span{
+            padding-left: 4px;
         }
     //Knowledge Hub
      .knowledge-hub{
@@ -643,7 +655,7 @@ button:focus{
             }
         }
         .guidelines-nris{
-            margin: 92px 0 80px 0;  
+            margin: 92px 0 72px 0;  
             .heading{
                 display: none;       
             }
@@ -657,7 +669,7 @@ button:focus{
                 .know-more{
                     position: absolute;
                     right: 18px;
-                    bottom: -33px;
+                    bottom: -36px;
                 }
             }
         }

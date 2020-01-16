@@ -46,14 +46,17 @@ Menu <span></span>
       <li className="nav-item">
         <Link className="nav-link" to="/partners" onClick={classHandle}>Partners</Link>
       </li>
-      <li className="nav-item dropdown">
+      <li className="nav-item">
+        <Link className="nav-link" to="/knoweldge-hub" onClick={classHandle}>Knoweldge Hub</Link>
+      </li>
+      {/* <li className="nav-item dropdown">
         <Link className="nav-link dropdown-toggle" to='/knoweldge-hub' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Knoweldge Hub
         </Link>
         <div className="dropdown-menu border-0" aria-labelledby="navbarDropdown">
           <Link className="dropdown-item" to='/knoweldge-hub' onClick={classHandle}>Inner</Link>
         </div>
-      </li>
+      </li> */}
       <li className="nav-item">
         <Link className="nav-link" to="/careers" onClick={classHandle}>Careers</Link>
       </li>
@@ -64,7 +67,7 @@ Menu <span></span>
         <Link className="nav-link" to="/contact-us" onClick={classHandle}>Contact Us</Link>
       </li>
     </ul>
-    <div className="nav-footer text-center py-2 bg-white w-100">
+    <div className="nav-footer text-center py-2 w-100">
       <small> BramhaCorp Ltd @2020. All rights reserved.</small>
     </div>
   </nav>

@@ -83,3 +83,24 @@
 .bottom-border{
     border-bottom: 1px solid #525252;
 }
+@media (max-width:580px){
+    .footer{
+        .footer-menu{
+            margin: 40px 0 32px 0;
+        }
+    } 
+}
+@media (max-width:420px){
+    .footer{
+        .footer-menu{
+            ul{
+                .nav-item {
+                    margin-bottom: 20px;
+                    a{
+                        padding: 0 18px 0 18px;
+                    } 
+                }
+            }
+        }
+    }  
+}
