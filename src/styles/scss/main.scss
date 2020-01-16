@@ -332,9 +332,6 @@ button:focus{
         .pages{
             margin-top: 20px;
         }
-        .our-verticals-tabs .nav-item{
-            padding:16px 8px;
-        }
         .contact-section {
             form{
                 .customer {
@@ -557,29 +554,6 @@ button:focus{
                     padding: 0 15px;
                 }
             }
-        .our-verticals-tabs{
-          .nav-item{
-              padding:15px 0;
-          }
-        
-        .tab{
-            font-size: 12px;
-            i{
-                display: none;
-            }
-        &::before{
-            content: '';
-            font-family: "Font Awesome 5 Free";
-            font-size:10px;
-            height: 8px;
-            width:8px;
-            background: #7f7f7f;
-            border-radius: 50%;
-            
-        }
-
-        }
-    }
         .contact-section{
             .contact-form{
                 margin-top: 80px;
@@ -613,9 +587,7 @@ button:focus{
                 }
             }
         }
-        .our-verticals-tabs .tab span{
-            padding-left: 4px;
-        }
+        
     //Knowledge Hub
      .knowledge-hub{
          margin-bottom: 124px;
