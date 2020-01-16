@@ -268,7 +268,7 @@ class VerticalPage extends React.Component {
                   <h2 className="section-title text-uppercase text-center">
                       Proximities
                   </h2>
-                  <p className="text-center mx-5 mx-sm-0">{verticalData.data.proximities_description.text}</p>
+                  <p className="text-center">{verticalData.data.proximities_description.text}</p>
                 </div>
                 <ul className="nav nav-pills row" id="pills-tab" role="tablist">
                       {

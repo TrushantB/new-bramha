@@ -37,9 +37,23 @@
         }
       }
   }
+  .proximities-section{
+    .section-title-wrapper{
+        p{
+            margin:0 32px;
+        }
+    }
+      .nav-pills{
+          .nav-link{
+            font-size: 13px;
+            i{
+                font-size: 32px;
+            }
+          }
+      }
+  }
   .nav-pills .nav-link{
       color:theme-color(text-tertiary);
-      font-size: 13px;
   }
   .nav-pills .nav-link.active{
     //   border:1px solid theme-color(border-color);
@@ -356,7 +370,7 @@
           }
       }
       .amenities button {
-          flex: 1 140px;
+          flex: 1 35%;
           margin: 8px 4px;
       }
 }
@@ -407,14 +421,29 @@
         padding-bottom: 8px;
     }
     .proximities-section{
+        .section-title-wrapper{
+            p{
+                margin:0;
+            }
+        }
         .nav-pills{
             .col-3{
                 &:first-child{
                     flex: 0 0 32%;
                     max-width: 32%;
+                    a{
+                        height:auto;
+                    }
                 }
                 max-width: 22%;
                 width:100%;
+                &:last-child{
+                    flex: 0 0 24%;
+                    max-width: 24%;
+                }
+                a{
+                    height:110%;
+                }
             }
         }
     }
@@ -428,6 +457,18 @@
             padding: 5px 24px;
         }
     }
+    .amenities-inner-wrapper {
+        width: 730px;
+        margin-bottom: 12px;
+    }
+    .slider-wrapper .slick-active .slider-img .showcase-slide-caption{
+        font-size: 12px;
+    }
+    .amenities button:hover,
+    .amenities .active {
+        color: #7f7f7f;
+    }
+    
 }
 @media(max-width:420px){
 
