@@ -32,7 +32,7 @@
                 a{
                     color:rgba(255,255,255,0.8);
                     padding:0 24px 0 24px;
-                    border-right: 1px solid rgba(255,255,255,0.8);
+                    border-left: 1px solid rgba(255,255,255,0.8);
                     font-size: 15px;
                     font-weight: 300;
                     line-height: normal;
@@ -43,9 +43,9 @@
                         text-decoration: none;
                     }
                 }
-                &:last-child{
+                &:first-child{
                    a{
-                    border-right: none;
+                    border-left: none;
                    }
                 }
             }
@@ -87,6 +87,21 @@
     .footer{
         .footer-menu{
             margin: 40px 0 32px 0;
+            ul{
+                .nav-item{
+                     &:nth-child(6){
+                        a{
+                            border-right: 1px solid rgba(255,255,255,0.8);
+                        }
+                    }
+                    &:nth-child(7){
+                        a{
+                            border-left: none;
+                        }
+                    }
+                
+                }
+            }
         }
     } 
 }
@@ -97,7 +112,7 @@
                 .nav-item {
                     margin-bottom: 20px;
                     a{
-                        padding: 0 18px 0 18px;
+                        padding: 0 16px 0 16px;
                     } 
                 }
             }

@@ -114,9 +114,9 @@ button:focus{
     }
 }
 
-.section-title-wrapper{
-    padding-bottom:48px;
-}
+// .section-title-wrapper{
+//     padding-bottom:48px;
+// }
 .inner-section-title{
     font-family: georgia;
     font-size: 20px;
@@ -376,11 +376,13 @@ button:focus{
                    bottom: 0;
                    padding: 20px 20px;
                    .section-title,
-
                    .know-more{
                        align-self: flex-end;
                        position: absolute;
-                       bottom: -36px;
+                       bottom: -40px;
+                   }
+                   p{
+                       margin-top: 0;
                    }
                }
            }
@@ -557,7 +559,7 @@ button:focus{
          .section-title::after{
             content: "";
             margin: 0 auto;
-            width:40px;
+            width:32px;
             padding: 4px 0;
         }
             // .col-6{
