@@ -122,7 +122,9 @@
         }
         .tab{
             padding: 0 0 0 4px;
-            font-size: 12px;
+            span{
+              font-size: 12px;
+            }
             i{
                 display: none;
             }
@@ -149,20 +151,13 @@
 }
 
 @media (max-width:400px){
-    // .home-slider .banner-section{
-    //     height: calc(100vh - 130px);
-    // }
-    // .our-verticals-tabs{
-    //     height:70px;
-    //     .nav-item{
-    //         padding:0px !important;
-    //         flex-basis: 49%;
-    //     }
-    //     .tab{
-    //         padding: 0 0 0 16px;
-    //         span{
-    //             padding-left:16px !important;
-    //         }
-    //     }
-    // }
+    .our-verticals-tabs .tab:before{
+        width:6px;
+        height:6px;
+    }
+}
+@media (max-width:350px){
+    .our-verticals-tabs .tab span{
+        font-size: 10px;
+    }
 }
