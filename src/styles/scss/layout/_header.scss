@@ -339,13 +339,23 @@
     animation: slide-in 0.8s 0.2s backwards;
   }
   
-  .nav-open .nav-container .nav li:nth-of-type(2) a {
-    animation-delay: 0.22s;
+  .nav-open .nav-container .nav li:nth-of-type(2){
+    a {
+     animation-delay: 0.22s;
+    }
+    .dropdown-menu{
+      animation-delay: 0.1s;
+    }
   }
   
-  .nav-open .nav-container .nav li:nth-of-type(3) a {
-    animation-delay: 0.28s;
-  }
+  .nav-open .nav-container .nav li:nth-of-type(3){
+    a {
+      animation-delay: 0.28s;
+    }
+    .dropdown-menu{
+      animation-delay: 0.1s;
+    }
+  } 
   
   .nav-open .nav-container .nav li:nth-of-type(4) a {
     animation-delay: 0.32s;
