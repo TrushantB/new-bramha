@@ -10,8 +10,7 @@ export default class Residential extends React.Component {
   constructor(){
     super();
     this.state = {
-      activeSlide: 1,
-      activeSlide2: 0,
+      completeChange: null,
       allType: null,
       allAddress: null,
       dataSource: null,
@@ -136,7 +135,7 @@ export default class Residential extends React.Component {
             infinite: true,
             dots: false,
             speed: 1000,
-           
+            afterChange: current => this.setState({ completeChange: current }),
             autoplaySpeed: 0
           }
         },
@@ -295,7 +294,7 @@ export default class Residential extends React.Component {
                       }
                     </Slider>
                     <span className="d-inline-block d-sm-none position-absolute pagination">
-                      {this.state.activeSlide} of 4
+                      {this.state.completeChange + 1} of {this.state.completedProject.length}
                     </span>
                   </div>
                 </section>
