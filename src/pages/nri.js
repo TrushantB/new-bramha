@@ -23,13 +23,13 @@ class NRI extends React.Component {
     return(
       <Layout>
         <SEO title="NRI"/>
-        <div>
+        <div  className="guideline-nri">
           <section className="banner-section">
             <Img fluid={nriData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
           </section>
           <section className="career-info container-md bg-color">
             <div className="row padding-block-60">
-              <h2 className="col-12 page-heading">Guidlines for NRIs</h2> 
+              <h2 className="col-12 page-heading">Guidlines for NRI's</h2> 
             </div>
             <div className="row">
               <div className="col-12">
@@ -60,7 +60,7 @@ class NRI extends React.Component {
                       return(
                         <div key={value} className="card border-0">
                           <div className="card-header" id="headingOne">
-                            <h5 className="mb-0 d-flex justify-content-between align-items-center section-title-secondary border-0" data-toggle="collapse" data-target={`#collapseOne${value}`} aria-expanded="true" aria-controls="collapseOne">
+                            <h5 className="mb-0 d-flex justify-content-between align-items-center section-title-secondary border-0" data-toggle="collapse" data-target={`#collapseOne${value}`} aria-expanded="false" aria-controls="collapseOne">
                               {item.heading1.text}
                               <button className="btn btn-link">
                                 <i className="fas fa-chevron-down"></i>
