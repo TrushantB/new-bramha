@@ -205,10 +205,6 @@
              width:90%;
          }
      }
-
-     .vertical-card .vertical-card-body {
-        padding: 4px;
-    }
     .vertical-card {
         .vertical-card-body {
             .vertical-card-link {
@@ -226,7 +222,11 @@
     .about-content {
         margin-bottom: 48px;
     }
-    
+    .management-card-body{
+        .link-text{
+            font-size: 16px;
+        }
+    }
     /*========= our legacy css start =========*/
     .our-legacy{
       .slider-wrapper{
@@ -297,13 +297,14 @@
         height:20px;
         border:6px solid #fff;
     }
+    
  }
- @media (max-width:330px){
-    .our-legacy .slider-wrapper .slick-dots{
-        display: block !important;
-        li{
-            top: -12px;
-            margin: 0 4px;
-        }
-    }
- }
+//  @media (max-width:330px){
+//     .our-legacy .slider-wrapper .slick-dots{
+//         display: block !important;
+//         li{
+//             top: -12px;
+//             margin: 0 4px;
+//         }
+//     }
+//  }
