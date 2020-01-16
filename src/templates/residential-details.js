@@ -182,7 +182,7 @@ class VerticalPage extends React.Component {
                 <div className="logo-card">
                   <picture className="d-flex justify-content-start justify-content-sm-center align-items-center">
                     <source media="(min-width: 581px)" srcSet={verticalData.data.logo.url}/>
-                    <img src={verticalData.data.logo.url} alt="Residency Logo" className="w-50" />
+                    <img src={verticalData.data.logo.url} alt="Residency Logo" />
                   </picture>
                 </div>
               <div className="padding-block-60 page-heading-section">
@@ -268,15 +268,15 @@ class VerticalPage extends React.Component {
                   <h2 className="section-title text-uppercase text-center">
                       Proximities
                   </h2>
-                  <p className="text-center mx-5">{verticalData.data.proximities_description.text}</p>
+                  <p className="text-center mx-5 mx-sm-0">{verticalData.data.proximities_description.text}</p>
                 </div>
-                <ul className="nav nav-pills row" id="pills-tab" role="tablist">
+                <ul className="nav nav-pills row padding-sm-0" id="pills-tab" role="tablist">
                       {
                         verticalData.data.proximites.map((item, index)=>{
                           return(
                           <li className="nav-item col-3 p-0" key={index}>
                             <a className={ index ? "nav-link d-flex flex-column align-items-center text-center" : "nav-link d-flex flex-column align-items-center text-center active"} id={`tab${index}`} data-toggle="pill" href={`#id${index}`} role="tab" aria-controls="pills-home" aria-selected="true">
-                                <i className={item.icon_name} style={{fontSize:'40px'}}></i>
+                                <i className={item.icon_name}></i>
                                 <span className="mt-2 text-capitalize">{item.title1.text}</span>
                             </a>
                           </li>
@@ -356,7 +356,7 @@ class VerticalPage extends React.Component {
             {/* <!--   ------------------- Floor Plan section end here ------------------- --> */}
             {/* <!--   ------------------- Antity And Fact Files section start here ------------------- --> */}
             <section className="antity-sections container"  id={verticalData.uid}>
-              <ul className="nav nav-pills mb-3 row" id="factfile-tab" role="tablist">
+              <ul className="nav nav-pills row" id="factfile-tab" role="tablist">
                 <li className="nav-item col-6 p-0">
                   <a className="nav-link text-center text-uppercase section-title pb-1 active" id="pills-amenities-tab" data-toggle="pill" href="#amenities" role="tab" aria-controls="pills-amenities" aria-selected="true">
                     {verticalData.data.amenities1.text}
@@ -379,7 +379,7 @@ class VerticalPage extends React.Component {
                               return(
                                 <button key={index} className={`d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left ${this.state.imageUrl===item.image1.url || !index && !this.state.imageUrl ? 'active': ''}`} onClick={() => this.setState({imageUrl:  item.image1.url})} >
                                   <i className={item.icon}></i>
-                                    {item.title1.text}
+                                    <span>{item.title1.text}</span>
                                 </button>
                               )
                             })

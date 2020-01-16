@@ -6,8 +6,8 @@
     margin-top: -32px;
     position: relative;
     z-index: 99;
-    .w-50{
-        width: 38%!important;
+    img{
+        width: 35%;
     }
   }
   .slider-wrapper-gray{
@@ -39,6 +39,7 @@
   }
   .nav-pills .nav-link{
       color:theme-color(text-tertiary);
+      font-size: 13px;
   }
   .nav-pills .nav-link.active{
     //   border:1px solid theme-color(border-color);
@@ -64,14 +65,14 @@
   .amenities{
       button{
           flex: 1 200px;
-          margin: 12px 8px;
+          margin: 12px 0;
           border: 0;
           background: transparent;
           color:theme-color(text-tertiary);
           outline: 0;
           i{
             font-size: 32px;
-            padding: 5px 24px 5px;
+            padding: 5px 24px 5px 0;
              color:theme-color(text-tertiary);
           }
           &:hover{
@@ -115,9 +116,21 @@
   }
 
   .amenities-inner-wrapper{
-      .icon-wrapper,
+      .icon-wrapper{
+        flex: 50%;
+      }
       .image-wrapper{
           flex: 50%;
+          position: relative;
+          overflow: hidden;
+          object-fit: contain;
+          img{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            object-fit: cover;
+            object-position: center center;
+          }
       }
   }
 
@@ -306,9 +319,116 @@
          -o-filter: grayscale(100%);
             filter: grayscale(100%);
 }
+@media(max-width:1200px){}
+@media(max-width:992px){
+    //------------- Residencial detail page ---------------
+    #amenities{
+        .container{
+            overflow-x: scroll;
+            &::-webkit-scrollbar {
+                height:6px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: theme-color(border-color);
+                border-radius:30px;
+            }
+            &::-webkit-scrollbar-thumb:hover {
+                background: theme-color(text-secondary); 
+            }
+        }
+    }
+    .amenities-inner-wrapper{
+        width:900px;
+        margin-bottom:12px;
+    }
+}
+@media(max-width:768px){
+      //------------- Residencial detail page ---------------
+      .nav-pills .nav-link, 
+      .nav-pills .nav-link.active{
+        padding: 10px 0;
+      }
+      .amenities-inner-wrapper {
+          .image-wrapper{
+              width: 100%;
+              display: flex;
+              align-items: center;
+          }
+      }
+      .amenities button {
+          flex: 1 140px;
+          margin: 8px 4px;
+      }
+}
 @media(max-width:580px){
     .detail-maharera-sections{
         margin-top: 40px;
         margin-bottom: 52px; 
   }
+   /*Residencial media query start*/
+   .logo-card{
+        box-shadow: none;
+        margin-top: 28px;
+        width:280px;
+        .w-50{
+            width: 70%!important;
+        }
+    }
+    .detail-page-sections{
+        padding-top:36px;
+        padding-bottom:36px;
+    }
+    .residencial-details .page-heading-section div {
+    padding-top: 36px;
+    padding-bottom: 32px;
+    .page-heading{
+        border:0;    
+        padding: 0;
+        font-size: 20px;
+        line-height: 32px;
+    }
+    }
+    #pills-tab,
+    #factfile-tab{
+        padding: 0 15px;
+    }
+    .nav-pills .nav-link{
+        padding: 10px 5px 0;
+        i{
+            font-size: 24px;
+        }
+    }
+    #pills-tabContent,
+    #pills-tab {
+        border-bottom:0;    
+    }   
+    #pills-tabContent ul {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    .proximities-section{
+        .nav-pills{
+            .col-3{
+                &:first-child{
+                    flex: 0 0 32%;
+                    max-width: 32%;
+                }
+                max-width: 22%;
+                width:100%;
+            }
+        }
+    }
+    .amenities-inner-wrapper .image-wrapper{
+        display: none;
+    }
+    .amenities button {
+        flex: 1 23%;
+        margin: 8px 4px;
+        i{
+            padding: 5px 24px;
+        }
+    }
+}
+@media(max-width:420px){
+
 }

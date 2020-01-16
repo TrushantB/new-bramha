@@ -303,25 +303,6 @@ button:focus{
             width: 90%;   
         }
       }
-      //------------- Residencial detail page ---------------
-        #amenities{
-            .container{
-                overflow-x: scroll;
-                &::-webkit-scrollbar {
-                    height:6px;
-                }
-                &::-webkit-scrollbar-thumb {
-                    background: theme-color(border-color);
-                    border-radius:30px;
-                }
-                &::-webkit-scrollbar-thumb:hover {
-                    background: theme-color(text-secondary); 
-                }
-            }
-        }
-        .amenities-inner-wrapper{
-            width:160%;
-        }
     }
 
     @media (max-width:768px){
@@ -458,24 +439,6 @@ button:focus{
             left: 13px;
         }
       }
-
-      //------------- Residencial detail page ---------------
-    .nav-pills .nav-link, 
-    .nav-pills .nav-link.active{
-      padding: 10px 0;
-    }
-    .amenities-inner-wrapper {
-        width: 200%;
-        .image-wrapper{
-            width: 100%;
-            display: flex;
-            align-items: center;
-        }
-    }
-    .amenities button {
-        flex: 1 140px;
-        margin: 8px 4px;
-    }
       .residential-projects{
         .complete-project {
             .secondary-card {
@@ -766,50 +729,6 @@ button:focus{
         }
         
     }
-
-    /*Residencial media query start*/
-        .logo-card{
-            box-shadow: none;
-            margin-top: 28px;
-            width:280px;
-            .w-50{
-                width: 70%!important;
-            }
-        }
-        .detail-page-sections{
-            padding-top:36px;
-            padding-bottom:36px;
-        }
-        .residencial-details .page-heading-section div {
-        padding-top: 36px;
-        padding-bottom: 32px;
-        .page-heading{
-            border:0;    
-            padding: 0;
-            font-size: 20px;
-            line-height: 32px;
-        }
-        }
-        #pills-tab,
-        #factfile-tab{
-        padding: 0 15px;
-        }
-        .nav-pills .nav-link{
-        padding: 10px 5px 0;
-        height: 100%;
-        }
-        #pills-tabContent,
-        #pills-tab {
-        border-bottom:0;
-        }
-
-        // .contact-section .contact-form-bg button{
-        // width: 265px;
-        // }
-        #pills-tabContent ul {
-        padding-top: 8px;
-        padding-bottom: 8px;
-        }
         .contact-section .contact-form-bg .form-row .form-group{
         padding: 0;
         }
