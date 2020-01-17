@@ -102,7 +102,7 @@ class IndexPage extends React.Component {
         <SEO title="Home"/>
         <div>
           { this.state.selectedVertical}      
-          <div className="drawer-container">
+          {/* <div className="drawer-container">
             <div className="drawer-toggle" id="toggle" onClick={() => this.setState({contactFlag:!this.state.contactFlag})}>
               <i className="fas fa-phone"></i>
             </div>
@@ -112,7 +112,7 @@ class IndexPage extends React.Component {
             <div className="drawer-toggle" onClick={() => this.setState({chatFlag:!this.state.chatFlag})}>
               <i className="fas fa-comment-alt"></i>
             </div>
-          </div>
+          </div> */}
           {
               this.state.contactFlag && 
             <div className="drawer-field" id="navigation" >
