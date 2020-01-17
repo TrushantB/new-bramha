@@ -18,7 +18,7 @@ body{
     }
 }
 .drawer-field{
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     z-index: 106;
@@ -47,6 +47,7 @@ body{
 .hide{
     padding: 12px 24px 0;
     font-size: 24px;
+    cursor: pointer;
 }
 .mail{
     height: 100%;
