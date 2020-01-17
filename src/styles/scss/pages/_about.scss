@@ -200,8 +200,11 @@
      .about-description ,
      .about-heading {
          background: #f7f7f7;
+         padding-top: 0;
      }
-
+     .about-years{
+         margin-bottom: 0;
+     }
      .slider-wrapper {
          .container {
              width:90%;
@@ -232,6 +235,7 @@
     /*========= our legacy css start =========*/
     .our-legacy{
       .slider-wrapper{
+          padding-bottom: 0;
         .slider-container{
             margin-top: 60px;
         }

@@ -40,7 +40,10 @@
   'pages/career',
   'pages/hospitality-projects',
   'pages/hospitality-details',
-  'pages/leisure-club';
+  'pages/leisure-club',
+  'pages/nri',
+  'pages/award';
+
   
 
 
@@ -186,6 +189,7 @@ button:focus{
 // }
 
 
+// ------------- guideline nri details page Start Here ----------------
 
 
 // ------------- Media Query Start Here ----------------
@@ -750,7 +754,12 @@ button:focus{
         width: 85px;
         display: block;
     }
-
+// =========== guidelines-nri's css ============ 
+.guideline-nri{
+    .bg-color{
+        padding:0 15px;
+    }
+}
 }
 
 @media (max-width:420px){

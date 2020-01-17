@@ -136,7 +136,7 @@ export default class Residential extends React.Component {
             infinite: true,
             dots: false,
             speed: 1000,
-           
+            afterChange: current => this.setState({ completeChange: current }),
             autoplaySpeed: 0
           }
         },

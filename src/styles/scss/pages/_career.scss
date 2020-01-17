@@ -228,22 +228,7 @@
     }
     
 }
-.accordions-sect {
-    .section-title::after {
-        display: none;
-    }   
-    .btn-secondary{
-        font-size: 14px;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: -0.31px
-    }
-    .card-body{
-        padding: 0 20px 48px 20px;
-    }
-}
+
 .career-page {
     .upload-cv-scetion {
         padding: 68px 15px 60px 15px;
@@ -258,6 +243,22 @@
     }
     .input-file-btn {
         padding-left: 0;
+    }
+    .accordions-sect {
+        .section-title::after {
+            display: none;
+        }   
+        .btn-secondary{
+            font-size: 14px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: -0.31px
+        }
+        .card-body{
+            padding: 0 20px 48px 20px;
+        }
     }
 }
 
