@@ -10,7 +10,7 @@ class KnoweldgeHub extends React.Component {
     const knowledgeData = this.props.data.prismicKnowledgehub.data;
     const buyerData = this.props.data.prismicBuyersTips.data;
     return(
-      <Layout>
+      <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title={knowledgeData.title.text}/>
         <section className="page-heading-section container container-sm-fluid bg-color">
           <div className="padding-block-60">

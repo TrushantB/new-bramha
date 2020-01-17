@@ -10,7 +10,7 @@ class Hospitality extends React.Component {
     const hospitalityData = this.props.data.allPrismicHospitality.edges;
     const data = hospitalityData[0].node.data;
     return(
-      <Layout>
+      <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title={data.sub_title.text}/>
         <section className=" page-heading-section container container-sm-fluid bg-color">
           <div className="padding-block-60">

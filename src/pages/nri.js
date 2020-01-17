@@ -21,7 +21,7 @@ class NRI extends React.Component {
   render(){
     const nriData = this.props.data.prismicNri.data;
     return(
-      <Layout>
+      <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title="NRI"/>
         <div  className="guideline-nri-detail">
           <section className="banner-section">

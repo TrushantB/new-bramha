@@ -9,7 +9,7 @@ class Partners extends React.Component {
   render(){
     const parnersData = this.props.data.prismicPartners.data;
     return(
-      <Layout>
+      <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title={parnersData.title.text}/>
           <div className="container mt-5 mb-5">
             <h1 className="text-center mb-5">{parnersData.title.text} </h1>

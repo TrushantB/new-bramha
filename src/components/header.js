@@ -5,7 +5,7 @@ import '../styles/css/custom.css';
 import '../styles/scss/main.scss';
 import img1 from '../images/logo.png';
 import $ from 'jquery';
-const Header = ({ siteTitle }) => {
+const Header = ({ siteTitle ,pathname}) => {
 function classHandle() {
   $("body").removeClass("nav-open");
  }
@@ -20,10 +20,10 @@ Menu <span></span>
 </a>
 <nav className="nav-container pb-0" id="navigation">
   <ul className="nav navbar-nav">
-      <li className="nav-item active">
+      <li className={`nav-item ${pathname=='/' ? 'active':''}`}>
         <Link className="nav-link" to="/" onClick={classHandle}>Home</Link>
       </li>
-      <li className="nav-item dropdown border-0">
+      <li className={`nav-item dropdown border-0 ${pathname=='/about-us' || pathname=='/management-team' ? 'active':''}`} >
         <Link className="nav-link dropdown-toggle" to="/about-us" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           About Us
         </Link>
@@ -32,7 +32,7 @@ Menu <span></span>
           <Link className="dropdown-item" to='/management-team'  onClick={classHandle}>Management Team</Link>
         </div>
       </li>
-      <li className="nav-item dropdown">
+      <li className={`nav-item dropdown ${pathname=='/residential' || pathname=='/commercial' || pathname=='/hospitality' || pathname=='/leisure-club' ? 'active':''}`}>
         <Link className="nav-link dropdown-toggle" to='/' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Our Verticals
         </Link>
@@ -43,10 +43,10 @@ Menu <span></span>
           <Link className="dropdown-item" to='/leisure-club' onClick={classHandle}>Leisure</Link>
         </div>
       </li>
-      <li className="nav-item">
+      <li className={`nav-item ${pathname=='/partners' ? 'active':''}`}>
         <Link className="nav-link" to="/partners" onClick={classHandle}>Partners</Link>
       </li>
-      <li className="nav-item">
+      <li className={`nav-item ${pathname=='/knoweldge-hub' ? 'active':''}`}>
         <Link className="nav-link" to="/knoweldge-hub" onClick={classHandle}>Knoweldge Hub</Link>
       </li>
       {/* <li className="nav-item dropdown">
@@ -57,13 +57,13 @@ Menu <span></span>
           <Link className="dropdown-item" to='/knoweldge-hub' onClick={classHandle}>Inner</Link>
         </div>
       </li> */}
-      <li className="nav-item">
+      <li className={`nav-item ${pathname=='/careers' ? 'active':''}`}>
         <Link className="nav-link" to="/careers" onClick={classHandle}>Careers</Link>
       </li>
-      <li className="nav-item">
+      <li className={`nav-item ${pathname=='/media-and-events' ? 'active':''}`}>
         <Link className="nav-link" to="/media-and-events" onClick={classHandle}>Media & Events</Link>
       </li>
-      <li className="nav-item">
+      <li className={`nav-item ${pathname=='/contact-us' ? 'active':''}`}>
         <Link className="nav-link" to="/contact-us" onClick={classHandle}>Contact Us</Link>
       </li>
     </ul>

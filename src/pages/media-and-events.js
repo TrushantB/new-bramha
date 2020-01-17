@@ -64,7 +64,7 @@ class MediaAndEvents extends React.Component {
       ]
     };
     return(
-      <Layout>
+      <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
       <SEO title="Media And Events"/>
         <section className="events" >
           <section className="page-heading-section container container-sm-fluid bg-color">

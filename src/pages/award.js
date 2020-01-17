@@ -7,7 +7,7 @@ class Award extends React.Component {
     render(){
         const awardData = this.props.data.prismicAwardAndRecognition.data;
         return(
-            <Layout>
+            <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
                 <SEO title={awardData.title.text}/>
                 <section className="award-wrapper">
                     <section className="page-heading-section container container-sm-fluid bg-color">

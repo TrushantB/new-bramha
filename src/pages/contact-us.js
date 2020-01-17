@@ -34,7 +34,7 @@ class Contacts extends React.Component {
   render(){
     const contactData = this.props.data.prismicCompanyDetails.data;
     return(
-      <Layout>
+      <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title="Contacts"/>
         <section className="contact-section">
           <div className="contact-page-image">

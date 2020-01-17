@@ -4,7 +4,7 @@ import Footer from '../components/footer'
 class OurVerticals extends React.Component {
     render(){
         return(
-            <Layout>
+            <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
                 <h3>
                     Hello, This Is OurVerticals Page...
                 </h3>

@@ -35,7 +35,8 @@ class AboutUs extends React.Component {
     const data = this.props.data.prismicAboutus.data;
     const verticalsData = this.props.data.prismicOurVerticals.data;
     return(
-      <Layout>
+      <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
+        {/* <p>This won't work at all {alert(this.props.location.pathname)}</p> */}
         <SEO title="About Us"/>
         <div>
           <section className="banner-section">

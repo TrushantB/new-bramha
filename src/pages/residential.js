@@ -171,7 +171,7 @@ export default class Residential extends React.Component {
     console.log('lookingForMe', lookingForMe);
     
     return(
-      <Layout>
+      <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title="Residential Project"/>
           {residentialData.map((item,value) => {
             return(

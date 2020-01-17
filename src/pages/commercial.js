@@ -9,7 +9,7 @@ class Commercial extends React.Component {
   render(){
     const commercialData = this.props.data.allPrismicCommercial.edges[0].node.data;
     return(
-      <Layout>
+      <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title={commercialData.sub_title.text}/>
         <section className=" page-heading-section container container-sm-fluid bg-color">
           <div className="padding-block-60">

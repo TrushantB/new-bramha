@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 import Footer from "../components/footer"
 
 const NotFoundPage = () => (
-  <Layout>
+  <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
     <SEO title="404: Not found" />
     <h1>NOT FOUND</h1>
     <p>You just hit a route that doesn&#39;t exist... the sadness.</p>

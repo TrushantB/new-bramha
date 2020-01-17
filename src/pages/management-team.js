@@ -9,7 +9,7 @@ class ManagementTeam extends React.Component {
   render(){
     const mgntData = this.props.data.prismicManagementTeam.data;
     return(
-      <Layout>
+      <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title={mgntData.sub_title.text}/>
         <div className="container mt-5 mb-5">
           <h1 className="text-center mb-5">{mgntData.sub_title.text} </h1>

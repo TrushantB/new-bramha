@@ -138,7 +138,7 @@ class Careers extends React.Component {
       ]
     };
     return(
-      <Layout>
+      <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title="Careers"/>
         <div className="career-page">
           <section className="banner-section">

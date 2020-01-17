@@ -9,7 +9,7 @@ class LeisureClub extends React.Component {
   render(){
     const leisureData = this.props.data.allPrismicLeisureClub.edges[0].node.data;    
     return(
-      <Layout>
+      <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title={leisureData.sub_title.text}/>
         <section className=" page-heading-section container container-sm-fluid bg-color">
           <div className="padding-block-60">

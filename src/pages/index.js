@@ -98,7 +98,7 @@ class IndexPage extends React.Component {
     //   $("body").removeClass("drewer-open");
     //  }
     return (
-      <Layout>
+      <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title="Home"/>
         <div>
           { this.state.selectedVertical}      
