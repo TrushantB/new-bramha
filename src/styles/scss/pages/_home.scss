@@ -1,3 +1,59 @@
+body{
+    position: relative;
+}
+.drawer-container{
+    position: fixed;
+    top: 340px;
+    right: 0;
+    color:#fff;
+        .drawer-toggle{
+        width: 46px;
+        height: 46px;
+        background-color: #333333;
+        margin-top: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+}
+.drawer-field{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 106;
+    height: 100vh;
+    width: 25%;
+    max-width: 100%;
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+    animation: slide-in 0.3s 0.2s backwards;
+    overflow-x: hidden;
+    &::-webkit-scrollbar{
+        display:none;
+    }
+}
+@keyframes slide-in {
+    0% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+.hide{
+    padding: 12px 24px 0;
+    font-size: 24px;
+    cursor: pointer;
+}
+.mail{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
 .navbar{
     .nav-footer{
         background-color: #fff;
@@ -99,6 +155,7 @@
         }
     }
 }
+
 @media (max-width:768px){
     .our-verticals-tabs .nav-item{
         padding:16px 8px;
@@ -107,6 +164,9 @@
         .container{
             max-width: 600px;
         }
+    }
+    .drawer-field{
+        width:50%;
     }
 }
 @media (max-width:580px){
@@ -147,6 +207,9 @@
             background-color: #333333;
             color:rgba(255, 255, 255, 0.8);
         }
+    }
+    .drawer-field{
+        width:80%;
     }
 }
 
