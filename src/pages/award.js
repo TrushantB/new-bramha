@@ -29,7 +29,7 @@ class Award extends React.Component {
                                 {
                                     awardData.awards.map((item, index) => {
                                         return(
-                                            <div key={index} className="col-lg-4 col-sm-6 mb-120">
+                                            <div key={index} className="col-lg-4 col-sm-6 my-120">
                                             <div className="award-bg">
                                                 <div className="award-details">
                                                     <p className="inner-section-title text-center">
@@ -38,7 +38,7 @@ class Award extends React.Component {
                                                 </div>
                                             </div>
                                             <div className="company-name">
-                                                <h5 className="inner-section-title text-center text-uppercase">
+                                                <h5 className="inner-section-title text-center text-uppercase mb-0">
                                                     {item.title1.text}
                                                 </h5>
                                                 <p className="award-by text-center text-uppercase">

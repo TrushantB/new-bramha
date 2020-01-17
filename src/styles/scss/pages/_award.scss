@@ -1,5 +1,5 @@
-.mb-120{
-    margin-bottom: 120px;
+.my-120{
+    margin: 120px 0;
 }
 .award-wrapper{
     .inner-section-title{
@@ -29,33 +29,61 @@
         margin-top:100px;
     }
     .award-bg{
-        background: url('../../images/award-1.png') no-repeat center;
-        background-size: contain; 
-        width: 100%;
-        padding: 68px 84px;
+        position: relative;
+        height:100%;
+        // background: url('../../images/award-1.png') no-repeat center;
+     
+        &::after{
+            content: "";
+            background: url('../../images/award-1.png') no-repeat center center;
+            background-size: contain;
+            width: 100%;
+            position: absolute;
+            padding-bottom: 66%;
+            top: -100px;
+            left: 0;
+            // height: 100%;
+        }
+        .award-details{
+           
+            height:100%;
+            padding:0 88px;
+            width: 100%;
+        }
       }
       .company-name{
-          margin-top: 20px;
+          margin-top: 8px;
       }
 }
 
 @media (max-width:1200px){
     .award-wrapper{
         .company-name{
-            margin-top: 0;
+            margin-top: 56px;
         }
         .award-bg{
-            padding: 52px 84px;
+            top: 64px;
+            .award-details{
+                height: 100%;
+                padding: 0 50px;
+                width: 100%;
+                position: absolute;
+                top: -35px;
+            }
         }
     }
 }
 @media (max-width:992px){
     .award-wrapper{
-        // .award-bg{
-        //     // padding: 90px 80px;
-        // }
-        .company-name{
-            margin-top: 20px;
+        .award-bg{
+            top: 40px;
+            .award-details{
+                height: 100%;
+                padding: 0 70px;
+                width: 100%;
+                position: absolute;
+                top: -26px;
+            }   
         }
     }
     .mb-120{
@@ -71,12 +99,14 @@
         // }
     .container{
         max-width: 720px;
+        }
+        .company-name{
+            margin-top: 8px;
+        }
+        .award-bg {
+            top: -54px;
+        }
     }
-    .company-name{
-        margin-top: 8px;
-    }
- }
-  
 }
 @media (max-width:580px){
    
@@ -84,34 +114,48 @@
         .award-name{
             margin-top: 40px;
         }
-        .award-bg{
-           padding:108px 134px;
-        }
-        .mb-120{
-            margin-bottom: 40px;
+        .my-120{
+            margin: 150px 0;
         }
         // .company-name{
-        //     margin-top: 20px;
+        //     margin-top: 40px;
         // }
+        .award-bg{
+            &::after{
+                content: "";
+                padding-bottom: 55%;
+            }
+            .award-details{
+                padding: 0 113px;
+                top: 0;
+            }
+        } 
     }  
   
 }
 @media (max-width:420px){
     .award-wrapper{
-        .award-bg{
-            padding: 100px 80px;
+        .company-name{
+            margin-top: 20px;
         }
-
+        .award-bg{
+            top: 0;
+            // &::after{
+            //     content: "";
+            //     padding-bottom: 66%;
+            // }
+            .award-details{
+                padding: 0 84px;
+                top: -33px;
+            }
+        } 
+        .my-120{
+            margin: 90px 0;
+        }
     }
 }
 @media (max-width:370px){
     .award-wrapper{
-        .award-bg{
-            padding: 58px 80px;
-        }
-        .company-name{
-            margin-top: 8px;
-        }
         .mb-120{
             margin-bottom: 24px;
         }
