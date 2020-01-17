@@ -23,15 +23,15 @@ export default class Residential extends React.Component {
     }
 
   addressSelect = (e) => {
-    let ongoing = this.state.ongoingProject.length > 0 && this.state.ongoingProjectStore.filter(res => res.residential_links.document[0].data.flat_address.text==e.target.value)
-    let completed =  this.state.completedProject.length > 0 && this.state.completedProjectStore.filter(res => res.completed_links.document[0].data.flat_address.text==e.target.value)
+    let ongoing = this.state.ongoingProject.length > 0 && this.state.ongoingProjectStore.filter(res => res.residential_links.document[0].data.flat_address.text===e.target.value)
+    let completed =  this.state.completedProject.length > 0 && this.state.completedProjectStore.filter(res => res.completed_links.document[0].data.flat_address.text===e.target.value)
     this.setState({ongoingProject:ongoing,completedProject:completed,activeAddress:e,activeType:''})
   }
 
 
   typeSelect = (e) => {
-    let ongoing = this.state.ongoingProject.length > 0 && this.state.ongoingProjectStore.filter(res => res.residential_links.document[0].data.flat_bhk.text==e.target.value)
-    let completed =  this.state.completedProject.length > 0 && this.state.completedProjectStore.filter(res => res.completed_links.document[0].data.flat_bhk.text==e.target.value)
+    let ongoing = this.state.ongoingProject.length > 0 && this.state.ongoingProjectStore.filter(res => res.residential_links.document[0].data.flat_bhk.text===e.target.value)
+    let completed =  this.state.completedProject.length > 0 && this.state.completedProjectStore.filter(res => res.completed_links.document[0].data.flat_bhk.text===e.target.value)
     this.setState({ongoingProject:ongoing,completedProject:completed,activeAddress:'',activeType:e})
   }
   
@@ -53,7 +53,7 @@ export default class Residential extends React.Component {
     let address = [];
     this.setState({activeAddress:'',activeType:''});
     let project = this.state.dataSource[0].node.data[e.target.value];
-    if(e.target.value == 'ongoing_projects'){
+    if(e.target.value === 'ongoing_projects'){
       this.setState({ongoingProject: project, completedProject: []});
       project.map((item)=>{
         type.push(item.residential_links.document[0].data.flat_bhk.text);
@@ -61,7 +61,7 @@ export default class Residential extends React.Component {
       }) 
       this.setState({allType: type, allAddress: address})
     }
-    else if(e.target.value == 'completed_project'){
+    else if(e.target.value === 'completed_project'){
       this.setState({completedProject: project, ongoingProject: []});
       project.map((item)=>{
         type.push(item.completed_links.document[0].data.flat_bhk.text);
@@ -136,7 +136,7 @@ export default class Residential extends React.Component {
             infinite: true,
             dots: false,
             speed: 1000,
-           
+            afterChange: current => this.setState({ completeChange: current }),
             autoplaySpeed: 0
           }
         },

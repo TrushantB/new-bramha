@@ -116,6 +116,9 @@
            padding-left:28px;
        }
      }
+     .gatsby-image-wrapper{
+         height: 100%;
+     }
  }
  .management-team-sect{
      .section-title{
@@ -222,7 +225,10 @@
         margin-bottom: 48px;
     }
     .about-sections {
-        margin-bottom: 48px;
+        margin-bottom: 68px;
+        .page-heading{
+            padding-top: 12px;
+        }
     }
     .about-content {
         margin-bottom: 48px;
@@ -282,7 +288,18 @@
         padding-bottom: 48px;
     }
     .our-vertivcal-sect .section-title {
-        margin-bottom: 36px;
+        margin-bottom: 28px;
+    }
+    .management-team-sect .section-title{
+        margin-bottom: 28px;
+    }
+    // .management-card{
+    //     margin-bottom: 40px;
+    // }
+
+    .vertical-card .vertical-card-body .vertical-card-link,
+    .management-card-link {
+        justify-content: space-evenly!important;
     }
  }
  @media (max-width:420px){
