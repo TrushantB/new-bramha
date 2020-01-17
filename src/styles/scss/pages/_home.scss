@@ -2,12 +2,11 @@ body{
     position: relative;
 }
 .drawer-container{
-    position: absolute;
-    top: 60%;
+    position: fixed;
+    top: 340px;
     right: 0;
     color:#fff;
-    transform: translate(0,-60%);
-    .drawer-toggle{
+        .drawer-toggle{
         width: 46px;
         height: 46px;
         background-color: #333333;
@@ -19,11 +18,11 @@ body{
     }
 }
 .drawer-field{
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     z-index: 106;
-    height: 100%;
+    height: 100vh;
     width: 25%;
     max-width: 100%;
     background: #FFF;
@@ -48,6 +47,7 @@ body{
 .hide{
     padding: 12px 24px 0;
     font-size: 24px;
+    cursor: pointer;
 }
 .mail{
     height: 100%;
