@@ -22,7 +22,7 @@ class Award extends React.Component {
                     <section className="award-name">
                         <div className="container">
                             <div className="row">
-                                <div className="col-lg-4 col-sm-6">
+                                <div className="col-lg-4 col-sm-6 mb-120">
                                    <div className="award-bg">
                                       <div className="award-details">
                                         <p className="inner-section-title text-center">
@@ -40,7 +40,7 @@ class Award extends React.Component {
                                    </div>
                                 </div>
 
-                                <div className="col-lg-4 col-sm-6">
+                                <div className="col-lg-4 col-sm-6 mb-120">
                                    <div className="award-bg">
                                       <div className="award-details">
                                         <p className="inner-section-title text-center">
@@ -58,7 +58,7 @@ class Award extends React.Component {
                                    </div>
                                 </div>
 
-                                <div className="col-lg-4 col-sm-6">
+                                <div className="col-lg-4 col-sm-6 mb-120">
                                    <div className="award-bg">
                                       <div className="award-details">
                                         <p className="inner-section-title text-center">
