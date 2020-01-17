@@ -74,14 +74,14 @@ class NRI extends React.Component {
                       
                           <div id={`collapseOne${value}`} className="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                             <div className="card-body" dangerouslySetInnerHTML={{__html: item.description1.html}} />
-                            {
+                            {/* {
                               item.description2.html && 
                                 <div className="card-body" dangerouslySetInnerHTML={{__html: item.description2.html}}/>
                             }
                             {
                               item.description3.html &&  
                                 <div className="card-body" dangerouslySetInnerHTML={{__html: item.description3.html}} />
-                            }
+                            } */}
                           </div>
                         </div>
                       )
