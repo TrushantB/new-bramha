@@ -23,25 +23,29 @@ class NRI extends React.Component {
     return(
       <Layout>
         <SEO title="NRI"/>
-        <div  className="guideline-nri">
+        <div  className="guideline-nri-detail">
           <section className="banner-section">
             <Img fluid={nriData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
           </section>
-          <section className="career-info container-md bg-color">
-            <div className="row padding-block-60">
-              <h2 className="col-12 page-heading">Guidlines for NRI's</h2> 
+
+          <section className="page-heading-section container container-sm-fluid bg-color">
+          <div className="padding-block-60">
+            <h2 className="page-heading">Guidlines for NRI's</h2>
+          </div>
+         <div className="row mr-0">
+          <div className="col-12 ">
+            <div className="main-paragraph ">
+              <p className="m-0">
+              {nriData.description.text}
+              </p>
             </div>
-            <div className="row">
-              <div className="col-12">
-                <p className="mb-4">
-                  {nriData.description.text}
-                </p>  
-              </div>
-            </div>
-          </section>
+          </div>
+         </div>
+        </section>
+
           <section className="container">
-            <div className="row">
-              <div className="col-sm-6 my-5">
+            <div className="row ">
+              <div className="col-sm-12 col-md-6 search-box">
                 <form action="">
                  <input type="search" onChange={(e) => {
                    let data =  nriData.group.filter(res => {
@@ -53,7 +57,7 @@ class NRI extends React.Component {
                    <i className="fas fa-search search-btn"></i>
                 </form>
               </div>
-              <div className="col-12 accordions-sect padding-block-60 pt-0">
+              <div className="col-12 accordions-sect pt-0">
                 <div className="accordion" id="accordionExample">
                   {
                     this.state.collapseDescription && this.state.collapseDescription.map((item,value)=>{
