@@ -127,12 +127,7 @@ export const nriPage = graphql`{
         description1 {
           html
         }
-        description2 {
-          html
-        }
-        description3 {
-          html
-        }
+        
       }
     }  
   }
