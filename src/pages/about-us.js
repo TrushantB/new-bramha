@@ -36,7 +36,7 @@ class AboutUs extends React.Component {
     const verticalsData = this.props.data.prismicOurVerticals.data;
     return(
       <Layout>
-        <SEO title="AboutUs"/>
+        <SEO title="About Us"/>
         <div>
           <section className="banner-section">
             <Img fluid={data.image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
