@@ -78,6 +78,9 @@
 @media (max-width:580px){
    
     .award-wrapper{
+        .award-name{
+            margin-top: 40px;
+        }
         .award-bg{
            padding:108px 134px;
         }
@@ -104,7 +107,10 @@
             padding: 58px 80px;
         }
         .company-name{
-            margin-top: 0;
+            margin-top: 8px;
+        }
+        .mb-120{
+            margin-bottom: 24px;
         }
     }
 }
