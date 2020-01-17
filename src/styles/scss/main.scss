@@ -435,9 +435,9 @@ button:focus{
    .about-sect-4{
        height:auto !important;
    }
-   .management-card{
-       height: 200px;
-   }
+//    .management-card{
+//        height: 200px;
+//    }
        // Residence Card
        .residences-card {
         .rectangle{
@@ -500,9 +500,9 @@ button:focus{
        .about-sect-4{
            height:auto !important;
        }
-       .management-card{
-           height: 200px;
-       }  
+    //    .management-card{
+    //        height: 200px;
+    //    }  
     }
 
     @media (max-width:580px){
@@ -871,5 +871,9 @@ button:focus{
     //         }
     //     }
     // }
+    .vertical-card .vertical-card-body .vertical-card-link,
+     .management-card-link{
+         justify-content: space-between!important;
+     }
     
 }
