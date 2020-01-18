@@ -187,6 +187,10 @@ body{
     }
 }
 @media (max-width:580px){
+    .drawer-container .drawer-toggle {
+        width: 36px;
+        height: 36px;
+    }
     .our-verticals-tabs {
         .nav-item{
             padding:15px 0;
