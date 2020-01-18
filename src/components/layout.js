@@ -44,8 +44,18 @@ const Layout = ({ children ,pathname}) => {
           <div className="hide text-right" onClick={contactFlagTrueFalse}>
             <i className="fas fa-times"></i>
           </div>
-          <div class="contact-feild"> 
-            
+          <div className="contact-feild"> 
+            <i className="far fa-user-circle"></i>
+            <h4> Direct call to our consultunt</h4>
+            <p>
+              Project Inquiry:<a href="tel:91204142330">91204142330</a>
+            </p>
+            <p>
+              Head Office: <a href="tel:912041442333">912041442333</a>
+            </p>
+            <p>
+              Fax Number: <a href="tel:912041442333">912026353333</a>
+            </p>
           </div>
         </div>
       }
@@ -55,6 +65,7 @@ const Layout = ({ children ,pathname}) => {
           <i className="fas fa-times"></i>
         </div>
         <div className="mail">
+        <h4 className="text-center mb-3"> BramhaCorp Enquiry</h4>
           <form name="customer" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
             <div className="contact-form-bg" id="customer">
                 <div className="container">
@@ -92,7 +103,11 @@ const Layout = ({ children ,pathname}) => {
         <div className="hide text-right" onClick={chatFlagTrueFalse}>
           <i className="fas fa-times"></i>
         </div>
-        Plugin for chat goes here...!
+        <div className="chat-feild">
+            <i className="far fa-user-circle"></i>
+            <h4> Live chat with our consultunt</h4>
+            <p className="text-center">Coming Soon...</p>
+        </div>
       </div>
       }
     </div>

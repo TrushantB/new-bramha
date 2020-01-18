@@ -54,6 +54,23 @@ body{
     font-size: 24px;
     cursor: pointer;
 }
+.contact-feild,
+.chat-feild{
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    i{
+        font-size: 54px;
+    }
+    h4{
+        text-align: center;
+        margin:24px 0; 
+    }
+    p{
+            font-size: 16px;
+    }
+}
 .navbar{
     .nav-footer{
         background-color: #fff;
