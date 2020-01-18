@@ -48,13 +48,13 @@ const Layout = ({ children ,pathname}) => {
             <i className="far fa-user-circle"></i>
             <h4> Direct call to our consultunt</h4>
             <p>
-              Project Inquiry:<a href="tel:91204142330">91204142330</a>
+              Project Inquiry:<Link to="tel:91204142330">91204142330</Link>
             </p>
             <p>
-              Head Office: <a href="tel:912041442333">912041442333</a>
+              Head Office: <Link to="tel:912041442333">912041442333</Link>
             </p>
             <p>
-              Fax Number: <a href="tel:912041442333">912026353333</a>
+              Fax Number: <Link to="tel:912041442333">912026353333</Link>
             </p>
           </div>
         </div>
