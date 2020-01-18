@@ -131,6 +131,15 @@ class Careers extends React.Component {
           breakpoint: 768,
           settings: {
             arrows: true,
+            centerMode: true,
+            slideToScroll: 1,
+            centerPadding: '80px'
+          }
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            arrows: true,
             centerMode: false,
             slidesToShow: 2,
             slideToScroll: 1,
