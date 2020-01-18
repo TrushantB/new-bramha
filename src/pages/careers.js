@@ -132,7 +132,8 @@ class Careers extends React.Component {
           settings: {
             arrows: true,
             centerMode: false,
-            slidesToShow: 2
+            slidesToShow: 2,
+            slideToScroll: 1
           }
         }
       ]

@@ -44,7 +44,9 @@ const Layout = ({ children ,pathname}) => {
           <div className="hide text-right" onClick={contactFlagTrueFalse}>
             <i className="fas fa-times"></i>
           </div>
-          Hi this is contact
+          <div class="contact-feild"> 
+            
+          </div>
         </div>
       }
       {mailFlag && 
