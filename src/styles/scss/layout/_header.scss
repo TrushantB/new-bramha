@@ -297,9 +297,9 @@
     justify-content: space-between;
     overflow-x:hidden;
   }
-  .nav-container .nav{
-    flex-direction: column;
-  }
+  // .nav-container .nav{
+  //   flex-direction: column;
+  // }
   .nav-container .navbar-brand{
       width:70%;
       padding: 10px 0 15px;
@@ -410,6 +410,7 @@
     .nav-container .nav {
       width: 100%;
       max-width: 100%;
+      display:block;
       .dropdown-toggle::after{
         margin-right:24px;
       }
