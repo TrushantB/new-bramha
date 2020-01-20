@@ -30,6 +30,10 @@
             background-color: theme-color("tertiary");
             color: #ffffff;
         }
+        &:active{
+          background-color: theme-color("tertiary");
+          color: #ffffff;
+        }
     }
     .dropdown{
         &.show{
@@ -123,11 +127,10 @@
     border-left:0.5rem solid theme-color("primary");
 }
 .navbar-nav{
-    .active{
-        a{
+    .active > a{
             border-left:0.5rem solid theme-color("primary") !important;
-        }
     }
+    
 }
 
 // Toggle Icon CSS
@@ -390,7 +393,7 @@
       opacity: 1;
       transform: translateX(0);
     }
-  }
+  } 
   @media (max-width:768px){
     .nav-container {
       width: 100%;
