@@ -311,46 +311,54 @@ class VerticalPage extends React.Component {
             {/* <!--   ------------------- Floor Plan section start here ------------------- --> */}
             <div className="slider-page d-none d-sm-block floor-plan">
               <div className="container-fluid">
-              <h2 className="section-title text-uppercase text-center">
-                  {verticalData.data.floor_plans1.text}
-              </h2>
-              <div className="showcase-slider">
-                <Slider {...floorPlan}>
-                  {
-                    verticalData.data.floor_plans.map((item,value) => {
-                      return(
-                        <div key={value}>
-                          <div className="slider-img " onClick={() => this.setState({ isOpenTwo: true ,photoIndex:value})}>
-                            <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt="Floor Plans" className="w-100 h-100" />
+                <div className="section-title-wrap d-flex flex-column align-items-center">
+                  <h2 className="section-title text-uppercase text-center">
+                      {verticalData.data.floor_plans1.text}
+                  </h2>
+                  <select className="border-0 layout-select">
+                    <option value="layout-1">Tower 1 Layout</option>
+                    <option value="layout-2">Tower 2 Layout</option>
+                    <option value="layout-3">Tower 3 Layout</option>
+                    <option value="layout-4">Tower 4 Layout</option>
+                  </select>
+                </div>
+                <div className="showcase-slider">
+                  <Slider {...floorPlan}>
+                    {
+                      verticalData.data.floor_plans.map((item,value) => {
+                        return(
+                          <div key={value}>
+                            <div className="slider-img " onClick={() => this.setState({ isOpenTwo: true ,photoIndex:value})}>
+                              <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt="Floor Plans" className="w-100 h-100" />
+                            </div>
                           </div>
-                        </div>
-                      )
-                    })
+                        )
+                      })
+                    }
+                  </Slider>
+                  {
+                    isOpenTwo &&
+                    <Lightbox
+                      mainSrc={verticalData.data.floor_plans[photoIndex].image1.localFile.childImageSharp.fluid.src}
+                      nextSrc={verticalData.data.floor_plans[(photoIndex + 1) % verticalData.data.floor_plans.length].image1.localFile.childImageSharp.fluid.src}
+                      prevSrc={verticalData.data.floor_plans[(photoIndex + verticalData.data.floor_plans.length - 1) % verticalData.data.floor_plans.length].image1.localFile.childImageSharp.fluid.src}
+                      onCloseRequest={() => this.setState({ isOpenTwo: false })}
+                      onMovePrevRequest={() =>
+                        this.setState({
+                          photoIndex: (photoIndex + verticalData.data.floor_plans.length - 1) % verticalData.data.floor_plans.length,
+                        })
+                      }
+                      onMoveNextRequest={() =>
+                        this.setState({
+                          photoIndex: (photoIndex + 1) % verticalData.data.floor_plans.length,
+                        })
+                      }
+                    />
                   }
-                </Slider>
-                {
-                  isOpenTwo &&
-                  <Lightbox
-                    mainSrc={verticalData.data.floor_plans[photoIndex].image1.localFile.childImageSharp.fluid.src}
-                    nextSrc={verticalData.data.floor_plans[(photoIndex + 1) % verticalData.data.floor_plans.length].image1.localFile.childImageSharp.fluid.src}
-                    prevSrc={verticalData.data.floor_plans[(photoIndex + verticalData.data.floor_plans.length - 1) % verticalData.data.floor_plans.length].image1.localFile.childImageSharp.fluid.src}
-                    onCloseRequest={() => this.setState({ isOpenTwo: false })}
-                    onMovePrevRequest={() =>
-                      this.setState({
-                        photoIndex: (photoIndex + verticalData.data.floor_plans.length - 1) % verticalData.data.floor_plans.length,
-                      })
-                    }
-                    onMoveNextRequest={() =>
-                      this.setState({
-                        photoIndex: (photoIndex + 1) % verticalData.data.floor_plans.length,
-                      })
-                    }
-                  />
-                }
-              <p className=" text-left text-sm-center pages mb-0">
-              {this.state.floorPlanActive + 1} of {verticalData.data.floor_plans.length}
-              </p>
-            </div>
+                <p className=" text-left text-sm-center pages mb-0">
+                {this.state.floorPlanActive + 1} of {verticalData.data.floor_plans.length}
+                </p>
+              </div>
             </div>    
             </div>
             {/* <!--   ------------------- Floor Plan section end here ------------------- --> */}

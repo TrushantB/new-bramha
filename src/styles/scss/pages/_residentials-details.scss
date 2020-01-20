@@ -121,6 +121,15 @@
             margin:60px 56px;
             border: solid 1px #9999;
         }
+        .layout-select{
+            appearance:none;
+            option{
+                &::after{
+                    content:"1";
+                    color:red;
+                }
+            }
+        }
     }
     .enquiry-form{
         p{
