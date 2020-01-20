@@ -453,10 +453,10 @@ button:focus{
                     width: 90%;
                 }
             }
-             .slick-next,
-             .slick-prev{
-                 top: 180px;
-             }
+            //  .slick-next,
+            //  .slick-prev{
+            //      top: 180px;
+            //  }
              .image-ratio{
                 .gatsby-image-wrapper{
                     padding-bottom: 133.33%;
@@ -705,25 +705,6 @@ button:focus{
             .slick-list{
                 padding-bottom: 40px!important;
             }
-         .slick-next{
-            bottom: -35px;
-            right: 16px;
-            top: auto;
-            &:before{
-                background: url('../images/left.jpg') no-repeat center center;
-                padding: 0 0 0 36px;
-              }
-          }
-          .slick-prev{
-              top: auto;
-              bottom: -45px;
-              right: 90px;
-              left: auto;
-              &:before{
-                background: url('../images/left.jpg') no-repeat center center;
-                padding: 0 0 0 36px;
-              }
-          }
           .pagination{
               bottom: -40px;
               left: 70px;
