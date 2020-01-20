@@ -54,6 +54,11 @@
           margin-top: 16px;
       }
 }
+@media (max-width:768px){
+    .my-120{
+        margin: 40px 0;
+    }
+}
 @media (max-width:580px){
     .award-wrapper{
         .award-details{
@@ -65,9 +70,6 @@
     .award-wrapper{
         .award-details{
             padding: 0 80px;
-        }
-        .award-name{
-            margin:0 0 60px;
         }
     } 
     .my-120{
