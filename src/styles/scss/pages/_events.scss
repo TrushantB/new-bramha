@@ -125,10 +125,14 @@
   } 
   @media (max-width:767px){
     .events{
-      .location{
-        padding: 0 16px 16px 16px;
+      .event-slider{
+        .slider-wrapper{
+          .location{
+            padding: 0 16px 16px 16px;
+          }
+        }
       }
-    }
+    } 
   }
   @media(max-width:580px){
 

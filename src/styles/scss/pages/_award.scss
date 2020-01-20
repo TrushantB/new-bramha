@@ -58,106 +58,29 @@
 
 @media (max-width:1200px){
     .award-wrapper{
-        .company-name{
-            margin-top: 56px;
-        }
-        .award-bg{
-            top: 64px;
+        .award-bg {
+            &::after{
+                top: -38px;
+            }
             .award-details{
-                height: 100%;
-                padding: 0 50px;
-                width: 100%;
-                position: absolute;
-                top: -35px;
+                padding: 0 70px;
             }
         }
     }
 }
 @media (max-width:992px){
     .award-wrapper{
-        .award-bg{
-            top: 40px;
-            .award-details{
-                height: 100%;
-                padding: 0 70px;
-                width: 100%;
-                position: absolute;
-                top: -26px;
-            }   
+        .award-bg {
+            &::after{
+                top: -75px;
+            }
         }
     }
-    .mb-120{
-        margin-bottom: 40px;
-    }
 }
-
-
 @media (max-width:768px){
     .award-wrapper{
-        // .award-bg{
-        //     // padding: 48px 90px;
-        // }
-    .container{
-        max-width: 720px;
-        }
-        .company-name{
-            margin-top: 8px;
-        }
-        .award-bg {
-            top: -54px;
-        }
-    }
-}
-@media (max-width:580px){
-   
-    .award-wrapper{
-        .award-name{
-            margin-top: 40px;
-        }
-        .my-120{
-            margin: 150px 0;
-        }
-        // .company-name{
-        //     margin-top: 40px;
-        // }
-        .award-bg{
-            &::after{
-                content: "";
-                padding-bottom: 55%;
-            }
-            .award-details{
-                padding: 0 113px;
-                top: 0;
-            }
-        } 
-    }  
-  
-}
-@media (max-width:420px){
-    .award-wrapper{
-        .company-name{
-            margin-top: 20px;
-        }
-        .award-bg{
-            top: 0;
-            // &::after{
-            //     content: "";
-            //     padding-bottom: 66%;
-            // }
-            .award-details{
-                padding: 0 84px;
-                top: -33px;
-            }
-        } 
-        .my-120{
-            margin: 90px 0;
-        }
-    }
-}
-@media (max-width:370px){
-    .award-wrapper{
-        .mb-120{
-            margin-bottom: 24px;
+        .container{
+            max-width: 750px;
         }
     }
 }

@@ -207,7 +207,7 @@ class Careers extends React.Component {
                     }
                   />
                 }
-                <p className=" text-left text-sm-center pages mb-0 d-none d-sm-block">
+                <p className=" text-left text-sm-center pages mb-0 ">
                     {this.state.activeSlide + 1} of {careerData.showcase.length}
                 </p>
               </div>

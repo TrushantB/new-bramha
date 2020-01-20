@@ -346,6 +346,10 @@
     .career-page{
         .slider-page {
             .slider-wrapper{
+                .pages{
+                    margin-top: 8px;
+                    font-size: 14px;
+                }
                 .slick-prev:before{
                     position: absolute;
                     top: -29px;
@@ -462,7 +466,7 @@
 
     .modal-dialog{
         .modal-content{
-            width: 96%;;
+            width: 100%;;
         }
     }
     .accordions{
