@@ -30,6 +30,10 @@
             background-color: theme-color("tertiary");
             color: #ffffff;
         }
+        &:active{
+          background-color: theme-color("tertiary");
+          color: #ffffff;
+        }
     }
     .dropdown{
         &.show{
@@ -123,11 +127,10 @@
     border-left:0.5rem solid theme-color("primary");
 }
 .navbar-nav{
-    .active{
-        a{
+    .active > a{
             border-left:0.5rem solid theme-color("primary") !important;
-        }
     }
+    
 }
 
 // Toggle Icon CSS
@@ -279,7 +282,8 @@
     top: 0;
     right: 0;
     z-index: 105;
-    height: 100%;
+    // height: 100%;
+    bottom: 0;
     width: 25%;
     max-width: 100%;
     padding: 2em 0;
@@ -307,6 +311,10 @@
   
   .nav-open .nav-container {
     transform: translateX(0);
+    overflow-y: scroll;
+    &::-webkit-scrollbar{
+      display: none;
+    }
   }
   
   .nav-container h2 {
@@ -389,7 +397,7 @@
       opacity: 1;
       transform: translateX(0);
     }
-  }
+  } 
   @media (max-width:768px){
     .nav-container {
       width: 100%;
@@ -400,7 +408,14 @@
   }
   @media (max-width:580px){
     .nav-container .nav {
-      width: 90%;
+      width: 100%;
+      max-width: 100%;
+      .dropdown-toggle::after{
+        margin-right:24px;
+      }
+      .dropdown-item{
+        width:75%;
+      }
   }
     .navbar {
         .navbar-collapse {
