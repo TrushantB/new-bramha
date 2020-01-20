@@ -30,18 +30,18 @@ class Award extends React.Component {
                                     awardData.awards.map((item, index) => {
                                         return(
                                             <div key={index} className="col-lg-4 col-sm-6 my-120">
-                                            <div className="award-bg">
-                                                <div className="award-details">
+                                            
+                                                <div className="award-details d-flex justify-content-center align-items-center">
                                                     <p className="inner-section-title text-center">
                                                         {item.description1.text}
                                                     </p>
                                                 </div>
-                                            </div>
+                                            
                                             <div className="company-name">
                                                 <h5 className="inner-section-title text-center text-uppercase mb-0">
                                                     {item.title1.text}
                                                 </h5>
-                                                <p className="award-by text-center text-uppercase">
+                                                <p className="award-by text-center text-uppercase m-0">
                                                    {item.tagline.text}
                                                 </p>
                                             </div>
