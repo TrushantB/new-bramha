@@ -408,7 +408,14 @@
   }
   @media (max-width:580px){
     .nav-container .nav {
-      width: 90%;
+      width: 100%;
+      max-width: 100%;
+      .dropdown-toggle::after{
+        margin-right:24px;
+      }
+      .dropdown-item{
+        width:75%;
+      }
   }
     .navbar {
         .navbar-collapse {
