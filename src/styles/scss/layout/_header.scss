@@ -292,7 +292,6 @@
     flex-direction: column;
     justify-content: space-between;
     overflow-x:hidden;
-    overflow-y: scroll;
   }
   .nav-container .nav{
     flex-direction: column;
@@ -308,6 +307,7 @@
   
   .nav-open .nav-container {
     transform: translateX(0);
+    overflow-y: scroll;
   }
   
   .nav-container h2 {
