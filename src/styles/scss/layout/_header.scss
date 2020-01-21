@@ -126,11 +126,22 @@
 .navbar-nav .nav-link:hover{
     border-left:0.5rem solid theme-color("primary");
 }
-.navbar-nav{
-    .active > a{
-            border-left:0.5rem solid theme-color("primary") !important;
-    }
-    
+.navbar-light{
+  .navbar-nav{
+    .active{
+      a{
+            border-left:0.5rem solid theme-color("primary");
+      }
+      .custom-toggle{
+        border:0;
+      }
+      .dropdown-menu{
+        a{
+          border:0;
+        }
+      }
+    }   
+  }
 }
 
 // Toggle Icon CSS
@@ -329,7 +340,14 @@
     list-style: none;
     padding: 0;
   } */
-  
+  .navbar-nav .active > .custom-toggle{
+    border:0;
+  }
+  .custom-toggle{
+    position: absolute;
+    right:16px;
+    top:16px;
+  }
   .navbar-nav a {
     display: block;
     padding: 0.4em 0;
@@ -349,8 +367,8 @@
     a {
      animation-delay: 0.22s;
     }
-    .dropdown-menu{
-      animation-delay: 0.1s;
+    .custom-toggle{
+      animation-delay: 0.40s;
     }
   }
   

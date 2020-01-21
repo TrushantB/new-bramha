@@ -24,11 +24,12 @@ Menu <span></span>
         <Link className="nav-link" to="/" onClick={classHandle}>Home</Link>
       </li>
       <li className={`nav-item dropdown border-0 ${pathname=='/about-us' || pathname=='/management-team' ? 'active':''}`} >
-        <Link className="nav-link dropdown-toggle" to="/about-us" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <Link className="nav-link d-inline-block w-100" to="/about-us">
           About Us
         </Link>
+        <Link className="dropdown-toggle d-inline-block custom-toggle" to="/" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span className="caret"></span></Link>
         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-          <Link className="dropdown-item" to="/about-us"  onClick={classHandle}>Our Legacy</Link>
+          {/* <Link className="dropdown-item" to="/about-us"  onClick={classHandle}>Our Legacy</Link> */}
           <Link className="dropdown-item" to='/management-team'  onClick={classHandle}>Management Team</Link>
         </div>
       </li>
