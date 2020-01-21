@@ -52,17 +52,29 @@
 
       .company-name{
           margin-top: 16px;
+ 
       }
 }
 @media (max-width:768px){
     .my-120{
-        margin: 40px 0;
+        margin: 16px 0;
     }
 }
 @media (max-width:580px){
     .award-wrapper{
         .award-details{
             padding: 0 152px;
+        }
+        .company-name{
+            margin-top: 16px;
+            &::after{
+              content: "";
+              border-bottom: 2px solid theme-color("primary");
+              padding: 8px 0;
+              width: 85px;
+              display: block;
+              margin: 28px auto;
+          }
         }
     } 
 }
@@ -72,7 +84,4 @@
             padding: 0 80px;
         }
     } 
-    .my-120{
-        margin:40px 0;
-    }
 }
