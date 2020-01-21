@@ -24,7 +24,7 @@ Menu <span></span>
         <Link className="nav-link" to="/" onClick={classHandle}>Home</Link>
       </li>
       <li className={`nav-item dropdown border-0 ${pathname=='/about-us' || pathname=='/management-team' ? 'active':''}`} >
-        <Link className="nav-link d-inline-block w-100" to="/about-us">
+        <Link className="nav-link d-inline-block w-100" to="/about-us" onClick={classHandle}>
           About Us
         </Link>
         <Link className="dropdown-toggle d-inline-block custom-toggle" to="/" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span className="caret"></span></Link>
