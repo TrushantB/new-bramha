@@ -297,7 +297,7 @@ class Contacts extends React.Component {
             </div>
             </section>
             <section className="locate-us"> 
-              <div className="container">
+              <div className="container p-sm-0">
                 <h3 className="text-center text-uppercase mb-4 section-title ">Locate Us</h3>
                 <div className="map-image map">
                   <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15131.933349805166!2d73.8796209!3d18.5296551!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x10c8d7103151a095!2sBRAMHACORP%20LTD.!5e0!3m2!1sen!2sin!4v1578749393535!5m2!1sen!2sin" style={{width:"100%", height:"450px", frameborder:"0", border:"0", allowfullscreen:""}}></iframe>
