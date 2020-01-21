@@ -19,21 +19,17 @@
         border: none;
         background: transparent;
         margin-left: 35px;
-    }
-    .dropdown-item{
-        font-family: 'Graphik', sans-serif;
-        font-size: 14px;
-        color: #333333;
-        opacity: 0.8;
-        padding-left: 12px;
-        &:hover{
-            background-color: theme-color("tertiary");
-            color: #ffffff;
-        }
-        &:active{
-          background-color: theme-color("tertiary");
-          color: #ffffff;
-        }
+      .dropdown-item{
+          font-family: 'Graphik', sans-serif;
+          font-size: 14px;
+          color: #333333;
+          opacity: 0.8;
+          padding-left: 12px;
+          &:hover{
+              background-color: theme-color("tertiary");
+              color: #ffffff;
+          }
+      }
     }
     .dropdown{
         &.show{
@@ -60,6 +56,20 @@
             opacity: 0.6;    
         }
     }
+}
+.navbar-light{
+  .nav-container{
+    .navbar-nav{
+      .nav-item{
+        .dropdown-menu{
+          .dropdown-item.active{
+            color:#fff;
+            background-color: theme-color('tertiary');
+          }
+        }
+      }
+    }
+  }
 }
 .logo-img{
     width:60%;
