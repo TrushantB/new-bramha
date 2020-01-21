@@ -1,9 +1,9 @@
 .about-sections{
-    margin-bottom: 128px;
+    margin-bottom: 162px;
  }
  .about-description{
     padding-top: 48px;
-    margin-bottom: 104px;
+    margin-bottom: 72px;
 
  }
  .about-content{
@@ -85,7 +85,8 @@
                  bottom: 60px;
                  left:0;
                  background:rgba(00,00,00,0.7);
-                 padding:30px;
+                 padding: 20px 30px;
+                 min-width: 60%;
              }
          }
      }
@@ -287,6 +288,11 @@
     }
     .about-para {
         padding-bottom: 48px;
+        p{
+          &:last-of-type{
+              margin-bottom: 0;
+          }
+        }
     }
     .our-vertivcal-sect .section-title {
         margin-bottom: 28px;
