@@ -21,6 +21,7 @@ class MediaAndEvents extends React.Component {
     let settings = {
       centerMode: true,
       centerPadding: '200px',
+      focusOnSelect: false,
       slidesToShow: 1,
       speed:1000,
       afterChange: current => this.setState({ activeSlide: current }),
@@ -31,6 +32,7 @@ class MediaAndEvents extends React.Component {
             arrows: true,
             centerMode: true,
             centerPadding: '100px',
+            focusOnSelect: false,
             slidesToShow: 1
           }
         },
@@ -40,6 +42,7 @@ class MediaAndEvents extends React.Component {
             arrows: true,
             centerMode: true,
             centerPadding: '100px',
+            focusOnSelect: false,
             slidesToShow: 1
           }
         },
@@ -49,6 +52,7 @@ class MediaAndEvents extends React.Component {
             arrows: true,
             centerMode: true,
             centerPadding: '45px',
+            focusOnSelect: false,
             slidesToShow: 1
           }
         },
@@ -58,6 +62,7 @@ class MediaAndEvents extends React.Component {
             arrows: true,
             centerMode: true,
             centerPadding: '40px',
+            focusOnSelect: false,
             slidesToShow: 1
           }
         }

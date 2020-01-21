@@ -104,7 +104,7 @@ class AboutUs extends React.Component {
                               <h3 className="section-title text-white">
                                 {item.title.text}
                               </h3>
-                              <p className="text text-white"> 
+                              <p className="text text-white m-0"> 
                                 {item.description.text}
                               </p>
                             </div>

@@ -144,8 +144,12 @@
         .resume-upload {
           width: 100%;
           padding: 30px;;
-          border: 1px dashed !important;
+          border: 1px dashed #ced4da !important;
           text-align: center;
+          .default{
+              font-weight: 300;
+              color: #929292;
+          }
         }
         
         &:hover .resume-upload {

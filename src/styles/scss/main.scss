@@ -416,9 +416,10 @@ button:focus{
     // Hospitality Project
        .hospitality-projects{
         .residences{
-            padding-bottom: 0;}
+            padding-bottom: 140px;
+        }
             .residences-card{
-                margin-bottom: 140px;
+                margin-bottom: 80px;
             }
         }
    .career-tabs{
@@ -643,6 +644,9 @@ button:focus{
             .residences{
                 background-color: #fff;
                 padding: 0;
+                .residences-card{
+                    margin-bottom:140px;
+                }
         
              }
         }   
