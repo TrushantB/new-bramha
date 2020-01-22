@@ -91,7 +91,7 @@
                 border-color: #999999;
             }
             .form-group{
-                margin-bottom: 32px;
+                margin-bottom: 28px;
                 padding: 0 20px 0 20px;
             }
         }
@@ -165,7 +165,17 @@
         }
       } 
 }
-
+// @media (max-width:1200px){
+//     .contact-section{
+//         form {
+//             .customer{
+//                 select{
+//                     flex-basis:40%;
+//                 }
+//             }
+//         }
+//     }  
+// }
 @media (max-width:580px) {
     .contact-section {
         .bg-color {

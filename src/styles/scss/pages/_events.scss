@@ -136,52 +136,56 @@
   }
   @media(max-width:580px){
 
-    .events .event-slider{
-      margin-bottom: 80px;
-      .slider-wrapper {
-        // background-color: transparent;
-        padding: 20px 0 20px;
-        .pages{
-          margin-left: 36px;
-          text-align: left !important;
+    .events{
+      .event-slider{
+        &:last-child{
+          margin-bottom: 80px;
         }
-        .slick-next{
-          // bottom: -41px;
-          right: 31px;
-          top: auto;
-          z-index: 1;
-         
-        //   padding: 0;
-        //   background: transparent;
-        //   &:before{
-        //       content: "";
-        //       background: url('../../images/right.jpg') no-repeat center center;
-        //       padding: 0 0 0 36px;
-        //     }
-        }
-        .slick-prev{
-          // top: auto;
-          // bottom: -50px;
-          right: 120px;
-          // left: auto;
-          z-index: 1;
-          // padding: 0;
-          // background: transparent;
+        .slider-wrapper {
+          // background-color: transparent;
+          padding: 20px 0 20px;
+          .pages{
+            margin-left: 36px;
+            text-align: left !important;
+          }
+          .slick-next{
+            // bottom: -41px;
+            right: 31px;
+            top: auto;
+            z-index: 1;
+           
+          //   padding: 0;
+          //   background: transparent;
           //   &:before{
-          //     content: "";
-          //     background: url('../../images/left.jpg') no-repeat center center;
-          //     padding: 0 0 0 36px;
-          //   }
+          //       content: "";
+          //       background: url('../../images/right.jpg') no-repeat center center;
+          //       padding: 0 0 0 36px;
+          //     }
+          }
+          .slick-prev{
+            // top: auto;
+            // bottom: -50px;
+            right: 120px;
+            // left: auto;
+            z-index: 1;
+            // padding: 0;
+            // background: transparent;
+            //   &:before{
+            //     content: "";
+            //     background: url('../../images/left.jpg') no-repeat center center;
+            //     padding: 0 0 0 36px;
+            //   }
+          }
+          
         }
-        
+      //   .padding-block-60 {
+      //     padding: 52px 0 10px;
+      // } 
+      .section-title{
+        padding: 0 10px;
       }
-    //   .padding-block-60 {
-    //     padding: 52px 0 10px;
-    // } 
-    .section-title{
-      padding: 0 10px;
     }
-  }
+    } 
 }
 @media (max-width:420px){
   .events{

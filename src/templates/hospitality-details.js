@@ -81,7 +81,7 @@ class HospitalityDetails extends React.Component {
               <div className="logo-card">
                 <picture className="d-flex justify-content-start justify-content-sm-center align-items-center">
                   <source media="(min-width: 581px)" srcSet={hospitalityData.data.logo.url} />
-                  <img src={hospitalityData.data.logo.url} alt="hospital Logo" className="w-50" />
+                  <img src={hospitalityData.data.logo.url} alt="hospital Logo"  />
                 </picture>
               </div>
               <div className="padding-block-60">

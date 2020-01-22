@@ -18,8 +18,16 @@ class VerticalPage extends React.Component {
     isOpenOne:false,
     isOpenTwo:false,
     isOpenTHree:false,
-    imageUrl: null
+    imageUrl: null,
+    floorPlanSelect: null
   };
+
+
+  componentWillMount() {
+    const verticalData = this.props.data.prismicOurVerticalsArticle;
+    this.setState({ floorPlanSelect : verticalData.data.floor_plans})
+  }
+  
 
   render(){
     const { photoIndex, isOpenOne ,isOpenTwo,isOpenThree} = this.state;
@@ -271,18 +279,18 @@ class VerticalPage extends React.Component {
                   <p className="text-center">{verticalData.data.proximities_description.text}</p>
                 </div>
                 <ul className="nav nav-pills row" id="pills-tab" role="tablist">
-                      {
-                        verticalData.data.proximites.map((item, index)=>{
-                          return(
-                          <li className="nav-item col-3 p-0" key={index}>
-                            <a className={ index ? "nav-link d-flex flex-column align-items-center text-center" : "nav-link d-flex flex-column align-items-center text-center active"} id={`tab${index}`} data-toggle="pill" href={`#id${index}`} role="tab" aria-controls="pills-home" aria-selected="true">
-                                <i className={item.icon_name}></i>
-                                <span className="mt-2 text-capitalize">{item.title1.text}</span>
-                            </a>
-                          </li>
-                          )
-                        })
-                      }
+                    {
+                      verticalData.data.proximites.map((item, index) => {
+                        return(
+                        <li className="nav-item col-3 p-0" key={index}>
+                          <a className={ index ? "nav-link d-flex flex-column align-items-center text-center" : "nav-link d-flex flex-column align-items-center text-center active"} id={`tab${index}`} data-toggle="pill" href={`#id${index}`} role="tab" aria-controls="pills-home" aria-selected="true">
+                              <i className={item.icon_name}></i>
+                              <span className="mt-2 text-capitalize">{item.title1.text}</span>
+                          </a>
+                        </li>
+                        )
+                      })
+                    }
                   </ul>
                   <div className="tab-content" id="pills-tabContent">
                       {
@@ -315,27 +323,54 @@ class VerticalPage extends React.Component {
                   <h2 className="section-title text-uppercase text-center">
                       {verticalData.data.floor_plans1.text}
                   </h2>
-                  <select className="border-0 layout-select">
-                    <option value="layout-1">Tower 1 Layout</option>
-                    <option value="layout-2">Tower 2 Layout</option>
-                    <option value="layout-3">Tower 3 Layout</option>
-                    <option value="layout-4">Tower 4 Layout</option>
+                  <select className="border-0 layout-select" onChange={(e)=> {
+                    let floor = verticalData.data.floor_plans.filter(value => value.title1.text === e.target.value)
+                    this.setState({floorPlanSelect: floor})
+                    if(e.target.value === "allLayout"){
+                      this.setState({floorPlanSelect: verticalData.data.floor_plans})
+                    }
+                   }}>
+                     <option value="allLayout"> All Layout </option>
+                    {
+                      verticalData.data.floor_plans.map((data, index) => {
+                        return(
+                          <option value={data.title1.text} key={index}>{data.title1.text}</option>
+                        )
+                      })
+                    }
                   </select>
                 </div>
                 <div className="showcase-slider">
-                  <Slider {...floorPlan}>
-                    {
-                      verticalData.data.floor_plans.map((item,value) => {
+
+                  {
+                    this.state.floorPlanSelect.length == 1 ?
+                    <div>
+                      {
+                      this.state.floorPlanSelect.map((item,value) => {
                         return(
                           <div key={value}>
-                            <div className="slider-img " onClick={() => this.setState({ isOpenTwo: true ,photoIndex:value})}>
+                            <div className="slider-img ">
                               <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt="Floor Plans" className="w-100 h-100" />
                             </div>
                           </div>
                         )
-                      })
-                    }
-                  </Slider>
+                      })}
+                      </div>:
+                      <Slider {...floorPlan}>
+                        {
+                          this.state.floorPlanSelect.map((item,value) => {
+                            return(
+                              <div key={value}>
+                                <div className="slider-img " onClick={() => this.setState({ isOpenTwo: true ,photoIndex:value})}>
+                                  <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt="Floor Plans" className="w-100 h-100" />
+                                </div>
+                              </div>
+                            )
+                          })
+                        }
+                      </Slider>
+                  }
+                  
                   {
                     isOpenTwo &&
                     <Lightbox
@@ -355,9 +390,13 @@ class VerticalPage extends React.Component {
                       }
                     />
                   }
-                <p className=" text-left text-sm-center pages mb-0">
-                {this.state.floorPlanActive + 1} of {verticalData.data.floor_plans.length}
-                </p>
+                  {
+                  this.state.floorPlanSelect.length !==1 &&
+                    <p className=" text-left text-sm-center pages mb-0">
+                    {this.state.floorPlanActive + 1} of {verticalData.data.floor_plans.length}
+                  </p>
+                  }
+                
               </div>
             </div>    
             </div>

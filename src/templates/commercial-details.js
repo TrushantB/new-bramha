@@ -78,7 +78,7 @@ class CommercialDetails extends React.Component {
               <div className="logo-card">
                 <picture className="d-flex justify-content-start justify-content-sm-center align-items-center">
                   <source media="(min-width: 581px)" srcSet={commercialData.data.logo.url} />
-                  <img src={commercialData.data.logo.url} alt="hospital Logo" className="w-50" />
+                  <img src={commercialData.data.logo.url} alt="hospital Logo"/>
                 </picture>
               </div>
               <div className=" padding-block-60">
