@@ -229,28 +229,30 @@ export default class Residential extends React.Component {
                       <div className="row">
                         {this.state.ongoingProject.map((item,value) => {
                           return(
-                            <Link to={`residential/${item.residential_links.uid}`}  key={value} className="col-md-6 col-lg-4 col-sm-12 p-0 pl-sm-3 pr-sm-3">
-                              <div className="residences-card position-relative">
-                                <div className="residences-img">
-                                  <Img fluid={item.residential_links.document[0].data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%"/>
-                                </div>
-                                <div className="rectangle position-absolute d-flex flex-column justify-content-around">
-                                  <div className="rectangle-title">
-                                      <h4 className="text-uppercase m-0 inner-section-title">{item.residential_links.document[0].data.title.text}</h4>
+                            <div key={value} className="col-md-6 col-lg-4 col-sm-12 p-0 pl-sm-3 pr-sm-3">
+                              <Link to={`residential/${item.residential_links.uid}`} >
+                                <div className="residences-card position-relative">
+                                  <div className="residences-img">
+                                    <Img fluid={item.residential_links.document[0].data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%"/>
                                   </div>
-                                  <div className="apartment-size d-flex justify-content-between align-items-center">
-                                    <span className="text-uppercase">{item.residential_links.document[0].data.flat_bhk.text}</span>
-                                    <div>
-                                      <i className="fas fa-arrow-right"></i>
+                                  <div className="rectangle position-absolute d-flex flex-column justify-content-around">
+                                    <div className="rectangle-title">
+                                        <h4 className="text-uppercase m-0 inner-section-title">{item.residential_links.document[0].data.title.text}</h4>
+                                    </div>
+                                    <div className="apartment-size d-flex justify-content-between align-items-center">
+                                      <span className="text-uppercase">{item.residential_links.document[0].data.flat_bhk.text}</span>
+                                      <div>
+                                        <i className="fas fa-arrow-right"></i>
+                                      </div>
+                                    </div>
+                                    <div className="project-location">
+                                      <i className="fas fa-map-marker-alt"></i>
+                                      <span>{item.residential_links.document[0].data.flat_address.text}</span>
                                     </div>
                                   </div>
-                                  <div className="project-location">
-                                    <i className="fas fa-map-marker-alt"></i>
-                                    <span>{item.residential_links.document[0].data.flat_address.text}</span>
-                                  </div>
                                 </div>
-                              </div>
-                            </Link>
+                              </Link>
+                            </div>
                           )})
                         }
                       </div> 
@@ -269,28 +271,30 @@ export default class Residential extends React.Component {
                     <Slider  {...settings}>
                       {this.state.completedProject.map((item, value) => {
                         return(
-                          <Link to={`residential/${item.completed_links.uid}`} className="row"  key={value}> 
-                            <div className="secondary-card position-relative ">
-                              <div className="secondary-card-img image-ratio">
-                                <Img fluid={item.completed_links.document[0].data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%"/>
-                              </div>
-                              <div className="secondary-card-rectangle position-absolute d-flex flex-column justify-content-around">
-                                <div className="title">
-                                  <h4 className="text-uppercase m-0 inner-section-title">{item.completed_links.document[0].data.title.text}</h4>
+                          <div className="row"  key={value}> 
+                            <Link to={`residential/${item.completed_links.uid}`}>
+                              <div className="secondary-card position-relative ">
+                                <div className="secondary-card-img image-ratio">
+                                  <Img fluid={item.completed_links.document[0].data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%"/>
                                 </div>
-                                <div className="apartment-size d-flex justify-content-between align-items-center">
-                                  <span className="text-uppercase">{item.completed_links.document[0].data.flat_bhk.text}</span>
-                                  <div>
-                                    <i className="fas fa-arrow-right"></i>
+                                <div className="secondary-card-rectangle position-absolute d-flex flex-column justify-content-around">
+                                  <div className="title">
+                                    <h4 className="text-uppercase m-0 inner-section-title">{item.completed_links.document[0].data.title.text}</h4>
+                                  </div>
+                                  <div className="apartment-size d-flex justify-content-between align-items-center">
+                                    <span className="text-uppercase">{item.completed_links.document[0].data.flat_bhk.text}</span>
+                                    <div>
+                                      <i className="fas fa-arrow-right"></i>
+                                    </div>
+                                  </div>
+                                  <div className="project-location">
+                                    <i className="fas fa-map-marker-alt"></i>
+                                    <span>{item.completed_links.document[0].data.flat_address.text}</span>
                                   </div>
                                 </div>
-                                <div className="project-location">
-                                  <i className="fas fa-map-marker-alt"></i>
-                                  <span>{item.completed_links.document[0].data.flat_address.text}</span>
-                                </div>
                               </div>
-                            </div>
-                          </Link>
+                            </Link>
+                          </div>
                         )})
                       }
                     </Slider>

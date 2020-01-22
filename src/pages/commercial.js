@@ -34,28 +34,30 @@ class Commercial extends React.Component {
                     return(
                       item2.verticals.document.map((item, index) => {
                         return(
-                          <Link to={`commercial/${item2.verticals.uid}`}className="col-md-4 p-0 pl-sm-3 pr-sm-3" key={index}>
-                            <div className="residences-card position-relative">
-                              <div className="residences-img ">
-                                <Img fluid={item.data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%"/>
-                              </div>
-                              <div className="rectangle position-absolute d-flex flex-column justify-content-around">
-                                <div className="rectangle-title">
-                                  <h4 className="text-uppercase m-0 inner-section-title">{item.data.title.text}</h4>
+                          <div className="col-md-4 p-0 pl-sm-3 pr-sm-3" key={index}>
+                            <Link to={`commercial/${item2.verticals.uid}`}>
+                              <div className="residences-card position-relative">
+                                <div className="residences-img ">
+                                  <Img fluid={item.data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%"/>
                                 </div>
-                                <div className="apartment-size d-flex justify-content-between align-items-center">
-                                  <span className="text-uppercase">{item.data.flat_bhk.text}</span>
-                                  <div>
-                                    <i className="fas fa-arrow-right"></i>
+                                <div className="rectangle position-absolute d-flex flex-column justify-content-around">
+                                  <div className="rectangle-title">
+                                    <h4 className="text-uppercase m-0 inner-section-title">{item.data.title.text}</h4>
+                                  </div>
+                                  <div className="apartment-size d-flex justify-content-between align-items-center">
+                                    <span className="text-uppercase">{item.data.flat_bhk.text}</span>
+                                    <div>
+                                      <i className="fas fa-arrow-right"></i>
+                                    </div>
+                                  </div>
+                                  <div className="project-location">
+                                    <i className="fas fa-map-marker-alt"></i>
+                                    <span>{item.data.flat_address.text}</span>
                                   </div>
                                 </div>
-                                <div className="project-location">
-                                  <i className="fas fa-map-marker-alt"></i>
-                                  <span>{item.data.flat_address.text}</span>
-                                </div>
                               </div>
-                            </div>
-                          </Link>
+                            </Link>
+                          </div>
                         )
                       })
                     )
