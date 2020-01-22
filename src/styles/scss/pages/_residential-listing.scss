@@ -20,7 +20,7 @@
       margin-top: -40px;
         .heading{
           font-size: 18px;
-          font-weight: 200;
+          font-weight: 300;
           font-stretch: normal;
           font-style: normal;
           line-height: normal;
@@ -28,6 +28,11 @@
           color: #ffffff;
           margin-left: 20px;
         
+        }
+    }
+    .ongoing-project{
+        .residences{
+            padding: 0 0 170px;
         }
     }
     .complete-project{
@@ -110,8 +115,12 @@
     .residences-card{
         margin-top: 48px;
     }
-    .residences{
-        padding: 0 0 120px;
+    .residential-projects {
+        .ongoing-project{
+            .residences{
+                padding: 0 0 120px;
+            }
+        }
     }
     .residential-projects .complete-project .slick-next{
         top: auto;

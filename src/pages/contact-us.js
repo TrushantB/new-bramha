@@ -66,7 +66,7 @@ class Contacts extends React.Component {
                     {
                       contactData.address.map((item,value) => {
                         return(
-                          <address className="text mt-0  mb-0" key={value}>{item.contact_address.text}</address>
+                          <address className="text mt-0 pr-lg-5 mb-0" key={value}>{item.contact_address.text}</address>
                         )
                       })
                     }
