@@ -345,7 +345,17 @@
          -o-filter: grayscale(100%);
             filter: grayscale(100%);
 }
-@media(max-width:1200px){}
+@media(max-width:1200px){
+    .contact-section{
+        form {
+            .customer{
+                select{
+                    flex-basis:40%;
+                }
+            }
+        }
+    }
+}
 @media(max-width:992px){
     //------------- Residencial detail page ---------------
     #amenities{
