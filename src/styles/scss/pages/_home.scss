@@ -116,7 +116,7 @@ body{
         transition: .5s ease-in-out;
         .tab{
             color: theme-color("primary");
-            // font-weight: 500;
+            font-weight: 500;
             &::before{
                 content: "";
                 background: theme-color("primary");
@@ -192,6 +192,7 @@ body{
         width: 36px;
         height: 36px;
     }
+
     .our-verticals-tabs {
         .nav-item{
             padding:15px 0;
@@ -221,6 +222,14 @@ body{
             }
             span{
                 padding-left: 4px;
+            }
+        }
+        .active{
+            .tab{
+                font-weight:400;
+                &::before{
+                    background-color: theme-color('primary');
+                }
             }
         }
     }
