@@ -223,6 +223,11 @@ body{
             span{
                 padding-left: 4px;
             }
+            &:hover{
+                &::before{
+                    background-color: theme-color('primary');
+                }
+            }
         }
         .active{
             .tab{
