@@ -46,7 +46,7 @@ const Layout = ({ children ,pathname}) => {
           </div>
           <div className="contact-feild"> 
             <i className="far fa-user-circle"></i>
-            <h4> Direct call to our consultunt</h4>
+            <h4> Direct call to our consultant</h4>
             <p>
               Project Inquiry:<Link to="tel:91204142330">91204142330</Link>
             </p>
@@ -105,7 +105,7 @@ const Layout = ({ children ,pathname}) => {
         </div>
         <div className="chat-feild">
             <i className="far fa-user-circle"></i>
-            <h4> Live chat with our consultunt</h4>
+            <h4> Live chat with our consultant</h4>
             <p className="text-center">Coming Soon...</p>
         </div>
       </div>
