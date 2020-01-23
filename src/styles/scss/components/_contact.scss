@@ -82,10 +82,12 @@
                 border: solid 0.5px rgba(153, 153, 153, 0.5);
                 border-radius: 0;
                 color: #929292;
+                line-height: 3;
                     &::placeholder{
                         color: #929292;
                         font-weight: 300;
                         font-size: 14px;
+                        
                     }
             }
             input,select{
