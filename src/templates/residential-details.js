@@ -179,7 +179,7 @@ class VerticalPage extends React.Component {
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title={verticalData.data.sub_title.text}/>
-        <main className="detail-page">
+        <main className="detail-page" id="residential-details">
             {/* <!--   ---------------- banner start here ---------------- --> */}
               <section className="banner-section">
                 <Img fluid={verticalData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
@@ -323,22 +323,24 @@ class VerticalPage extends React.Component {
                   <h2 className="section-title text-uppercase text-center">
                       {verticalData.data.floor_plans1.text}
                   </h2>
-                  <select className="border-0 layout-select" onChange={(e)=> {
-                    let floor = verticalData.data.floor_plans.filter(value => value.title1.text === e.target.value)
-                    this.setState({floorPlanSelect: floor})
-                    if(e.target.value === "allLayout"){
-                      this.setState({floorPlanSelect: verticalData.data.floor_plans})
-                    }
-                   }}>
-                     <option value="allLayout"> All Layout </option>
-                    {
-                      verticalData.data.floor_plans.map((data, index) => {
-                        return(
-                          <option value={data.title1.text} key={index}>{data.title1.text}</option>
-                        )
-                      })
-                    }
-                  </select>
+                  <label className="wrap">
+                    <select className="border-0 layout-select" onChange={(e)=> {
+                      let floor = verticalData.data.floor_plans.filter(value => value.title1.text === e.target.value)
+                      this.setState({floorPlanSelect: floor})
+                      if(e.target.value === "allLayout"){
+                        this.setState({floorPlanSelect: verticalData.data.floor_plans})
+                      }
+                    }}>
+                      <option value="allLayout"> All Layout </option>
+                      {
+                        verticalData.data.floor_plans.map((data, index) => {
+                          return(
+                            <option value={data.title1.text} key={index}>{data.title1.text}</option>
+                          )
+                        })
+                      }
+                    </select>
+                  </label>
                 </div>
                 <div className="showcase-slider">
 
@@ -401,32 +403,32 @@ class VerticalPage extends React.Component {
             </div>    
             </div>
             {/* <!--   ------------------- Floor Plan section end here ------------------- --> */}
-            {/* <!--   ------------------- Antity And Fact Files section start here ------------------- --> */}
-            <section className="antity-sections container"  id={verticalData.uid}>
+            {/* <!--   ------------------- Amenities And Fact Files section start here ------------------- --> */}
+            <section className="amenity-sections container"  id={verticalData.uid}>
               <ul className="nav nav-pills row padding-sm-0" id="factfile-tab" role="tablist">
                 <li className="nav-item col-6 p-0">
-                  <a className="nav-link text-center text-uppercase section-title pb-1 active" id="pills-amenities-tab" data-toggle="pill" href="#amenities" role="tab" aria-controls="pills-amenities" aria-selected="true">
+                  <a className="nav-link text-center text-uppercase tab-title active" id="pills-amenities-tab" data-toggle="pill" href="#amenities" role="tab" aria-controls="pills-amenities" aria-selected="true">
                     {verticalData.data.amenities1.text}
                   </a>
                 </li>
                 <li className="nav-item col-6 p-0">
-                  <a className="nav-link text-center text-uppercase section-title pb-1" id="pills-factfile-tab" data-toggle="pill" href="#fact-file" role="tab" aria-controls="pills-factfile" aria-selected="false">
+                  <a className="nav-link text-center text-uppercase tab-title" id="pills-factfile-tab" data-toggle="pill" href="#fact-file" role="tab" aria-controls="pills-factfile" aria-selected="false">
                     {verticalData.data.fact_file_heading.text}
                   </a>
                 </li>
               </ul>
               <div className="tab-content" id="factfiles-tabContent">
                 <div className="tab-pane fade show active" id="amenities" role="tabpanel" aria-labelledby="pills-amenities-tab">
-                  <div className="container">
+                  <div className="container p-0">
                     <div className="amenities-inner-wrapper d-flex">
                       <div className="icon-wrapper">
                         <div className="d-flex flex-wrap amenities" id="myTab" role="tablist">
                           {
                             verticalData.data.amenities.map((item, index) => {
                               return(
-                                <button key={index} className={`d-flex flex-column flex-md-row align-items-center justify-content-start text-center text-md-left ${this.state.imageUrl===item.image1.url || !index && !this.state.imageUrl ? 'active': ''}`} onClick={() => this.setState({imageUrl:  item.image1.url})} >
-                                  <i className={item.icon}></i>
-                                    <span>{item.title1.text}</span>
+                                <button key={index} className={`d-flex align-items-center justify-content-start text-center text-md-left ${this.state.imageUrl===item.image1.url || !index && !this.state.imageUrl ? 'active': ''}`} onClick={() => this.setState({imageUrl:  item.image1.url})} >
+                                  <span className="icon-wrap"><i className={item.icon}></i></span>
+                                  <span className="icon-description"><span>{item.title1.text}</span></span>
                                 </button>
                               )
                             })
@@ -451,11 +453,11 @@ class VerticalPage extends React.Component {
             </section>
             {/* <!--   ------------------- Antity And Fact Files section end here ------------------- --> */}
             {/* <!--   ------------------- Site-progress section start here ------------------- --> */}
-            <section className="slider-page mb-0">
+            <section className="slider-page site-progress-wrap mb-0">
               <h2 className="section-title text-uppercase text-center">
                 Site Progress
               </h2>
-              <div className="slider-wrapper-gray ">
+              <div className="slider-wrapper-gray">
                 <div className="container showcase-slider slider-wrapper">
                   <Slider {...siteProcess}>
                     {
@@ -498,7 +500,7 @@ class VerticalPage extends React.Component {
             {/* <!--   ------------------- progress section end here ------------------- --> */}
             {/* <!--   ------------------- Download Brouchure section start here ------------------- --> */}
             <div className="container detail-page-sections d-flex justify-content-center download-btn">
-              <a href="#pdf-link" download="Brouchure.pdf" className="btn-secondary text-center">Download Brouchure</a>
+              <a href="#pdf-link" download="Brouchure.pdf" className="btn-secondary text-center">Download Brochure</a>
             </div>
             {/* <!--   ------------------- Download Brouchure section end here ------------------- --> */}
             {/* <!--   ------------------- Enquiry section start here ------------------- --> */}
