@@ -17,6 +17,9 @@ body{
         align-items: center;
         justify-content: center;
         cursor: pointer;
+        &:last-child{
+            box-shadow: 8px 8px 20px 4px rgba(181, 181, 181, 0.22);
+        }
     }
 }
 .drawer-field{
@@ -36,8 +39,27 @@ body{
     &::-webkit-scrollbar{
         display:none;
     }
-    div:nth-child(2){
-        margin-top:24px;
+    // div:nth-child(2){
+    //     margin-top:24px;
+    // }
+        form{
+            .form-group{
+                margin-bottom: 30px;
+                input,textarea{
+                    width: 100%;
+                }
+            }
+           .btn-secondary{
+               width: 100%;
+               padding: 12px 0;
+           }
+        }
+    .section-title{
+        &::after{
+            margin: 0 auto;
+            margin-bottom: 24px;
+
+        }
     }
 }
 @keyframes slide-in {

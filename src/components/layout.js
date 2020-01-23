@@ -65,28 +65,28 @@ const Layout = ({ children ,pathname}) => {
           <i className="fas fa-times"></i>
         </div>
         <div className="mail">
-        <h4 className="text-center mb-3"> BramhaCorp Enquiry</h4>
+        <h4 className="text-center mb-3 section-title"> BramhaCorp Enquiry</h4>
           <form name="customer" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
             <div className="contact-form-bg" id="customer">
                 <div className="container">
                   <div className="form-row">
                     <div className="col-sm-12 form-group  ">
-                        <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" autoComplete="false" required/>
+                        <input type="text"  id="name" placeholder="Your Name*" name="name" autoComplete="false" required/>
                     </div>
                     <div className="col-sm-12 form-group  ">
-                      <input type="text" className="form-control" id="email" placeholder="Your Email*" autoComplete="false" name="email" required/>
+                      <input type="text"  id="email" placeholder="Your Email*" autoComplete="false" name="email" required/>
                     </div>
                     <div className="col-sm-12 form-group  ">
-                      <input type="number" className="form-control" id="phone-number" placeholder="Your Phone Number*" name="phone-number" required/>
+                      <input type="number"  id="phone-number" placeholder="Your Phone Number*" name="phone-number" required/>
                     </div>
                     <div className="col-sm-12 form-group  ">
-                      <input type="number" className="form-control" id="budget" placeholder="Budget" name="budget" required/>
+                      <input type="number"  id="budget" placeholder="Budget" name="budget" required/>
                     </div>
                     <div className="col-sm-12 form-group  ">
-                      <input type="text" className="form-control" id="city" placeholder="City" name="city" required/>
+                      <input type="text"  id="city" placeholder="City" name="city" required/>
                     </div>
                     <div className="form-group col-md-12">
-                      <textarea className="form-control" rows="5" id="message" placeholder="Additional Message" name="message" required></textarea>
+                      <textarea  rows="4" id="message" placeholder="Additional Message" name="message" required></textarea>
                     </div>
                   </div>
                   <div className="sumbit text-center mt-sm-0 mt-4">
