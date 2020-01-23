@@ -66,6 +66,7 @@
     .slick-next{       
         right: 66px;
         top:50%;
+        transform: translate(0 , -50%);
         &:before{
             content: "\F054";
             font-family: "Font Awesome 5 Free";
@@ -78,6 +79,7 @@
           left: 60px;
           z-index:1;
           top:50%;
+          transform: translate(0 , -50%);
         &:before{
             content: "\F053";
             font-family: "Font Awesome 5 Free";

@@ -285,7 +285,7 @@ class VerticalPage extends React.Component {
                         <li className="nav-item col-3 p-0" key={index}>
                           <a className={ index ? "nav-link d-flex flex-column align-items-center text-center" : "nav-link d-flex flex-column align-items-center text-center active"} id={`tab${index}`} data-toggle="pill" href={`#id${index}`} role="tab" aria-controls="pills-home" aria-selected="true">
                               <i className={item.icon_name}></i>
-                              <span className="mt-2 text-capitalize">{item.title1.text}</span>
+                              <span className="text-capitalize">{item.title1.text}</span>
                           </a>
                         </li>
                         )
