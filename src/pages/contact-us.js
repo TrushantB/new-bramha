@@ -92,7 +92,7 @@ class Contacts extends React.Component {
                 <div className="col-md-4">
                   <div className="contact-info mb-5 mb-md-0">
                     <div className="d-md-flex align-items-baseline mb-10">  
-                      <h3 className=" section-title mb-md-0 text-center text-capitalize"> <i className="fas fa-phone-volume mr-0 mr-md-1"></i>Contact Info
+                      <h3 className=" section-title mb-md-0 text-center text-capitalize"> <i className="fas fa-phone-volume mr-0 mr-md-2"></i>Contact Info
                       </h3>          
                     </div>
                     {
@@ -172,11 +172,11 @@ class Contacts extends React.Component {
                                 </select>
                               </div> 
                               <div className="form-group col-md-12">
-                                <textarea className="form-control" rows="5" id="message" placeholder="Additional Message" name="message" required></textarea>
+                                <textarea className="form-control" rows="4" id="message" placeholder="Additional Message" name="message" required></textarea>
                               </div>
                             </div>
                             <div className="sumbit text-center mt-sm-0 mt-4">
-                              <button type="submit" className="btn-secondary">Submit</button>
+                              <button type="submit" className="btn-secondary">Download Brochure</button>
                             </div>  
                           </div> 
                         </div>
@@ -209,11 +209,11 @@ class Contacts extends React.Component {
                               </div> 
     
                               <div className="form-group col-md-12">
-                                <textarea className="form-control" rows="5" id="message" placeholder="Additional Message" name="message" required></textarea>
+                                <textarea className="form-control" rows="4" id="message" placeholder="Additional Message" name="message" required></textarea>
                               </div>
                             </div>
                             <div className="sumbit text-center mt-sm-0 mt-4">
-                              <button type="submit" className="btn-secondary">Submit</button>
+                              <button type="submit" className="btn-secondary">Download Brochure</button>
                             </div>  
                           </div> 
                         </div>
@@ -244,11 +244,11 @@ class Contacts extends React.Component {
                                   <input type="text" className="form-control" id="city" placeholder="City" name="city" required/>
                               </div> 
                               <div className="form-group col-md-12">
-                                <textarea className="form-control" rows="5" id="message" placeholder="Additional Message" name="message" required></textarea>
+                                <textarea className="form-control" rows="4" id="message" placeholder="Additional Message" name="message" required></textarea>
                               </div>
                             </div>
                             <div className="sumbit text-center mt-sm-0 mt-4">
-                              <button type="submit" className="btn-secondary">Submit</button>
+                              <button type="submit" className="btn-secondary">Download Brochure</button>
                             </div>  
                           </div> 
                         </div>  
@@ -284,11 +284,11 @@ class Contacts extends React.Component {
                               </div>
     
                             <div className="form-group col-md-12">
-                              <textarea className="form-control" rows="5" id="message" placeholder="Additional Message" name="message" required></textarea>
+                              <textarea className="form-control" rows="4" id="message" placeholder="Additional Message" name="message" required></textarea>
                             </div>
                           </div>
                           <div className="sumbit text-center mt-sm-0 mt-4">
-                            <button type="submit" className="btn-secondary">Submit</button>
+                            <button type="submit" className="btn-secondary">Download Brochure</button>
                           </div>  
                         </div> 
                       </div>  
@@ -300,7 +300,7 @@ class Contacts extends React.Component {
               <div className="container p-sm-0">
                 <h3 className="text-center text-uppercase mb-4 section-title ">Locate Us</h3>
                 <div className="map-image map">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15131.933349805166!2d73.8796209!3d18.5296551!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x10c8d7103151a095!2sBRAMHACORP%20LTD.!5e0!3m2!1sen!2sin!4v1578749393535!5m2!1sen!2sin" style={{width:"100%", height:"450px", frameborder:"0", border:"0", allowfullscreen:""}}></iframe>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15131.933349805166!2d73.8796209!3d18.5296551!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x10c8d7103151a095!2sBRAMHACORP%20LTD.!5e0!3m2!1sen!2sin!4v1578749393535!5m2!1sen!2sin" style={{width:"100%", height:"404px", frameborder:"0", border:"0", allowfullscreen:""}}></iframe>
                 </div>
               </div>
             </section>

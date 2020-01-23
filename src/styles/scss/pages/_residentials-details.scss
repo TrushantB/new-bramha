@@ -244,10 +244,10 @@
           }
           .customer{
               select{
-                  flex-basis: 23%;
+                  flex-basis: 23.4%;
                   background: transparent;
                   color: #fff;
-                  border: solid 0.5px #ffffff;
+                  border: solid 0.5px rgba(255,255,255,0.5);
                   border-radius: 0;
                   padding: 4px;
                   font-weight: 300;
@@ -259,7 +259,7 @@
                       &:focus{
                       box-shadow: none;
                       outline: none;
-                      border-color: #fff;
+                      border: solid 0.5px rgba(255,255,255,0.5);;
                   }
               }
           }
@@ -281,7 +281,7 @@
                   padding-right: 8px;
                   font-size: 14px;
                   background: transparent;
-                  border: solid 0.5px #999999;
+                  border: solid 0.5px rgba(153, 153, 153, 0.5);
                   border-radius: 0;
                   color: #929292;
                       &::placeholder{
@@ -296,7 +296,7 @@
               .form-control:focus{
                   box-shadow: none;
                   outline: none;
-                  border-color: #999999;
+                  border: solid 0.5px rgba (153, 153, 153, 0.5);
               }
               .form-group{
                   margin-bottom: 32px;
@@ -304,9 +304,9 @@
               }
           }
           button{
-              padding: 12px 88px;
+              padding: 12px 60px;
               border-radius: 0;
-              font-weight: 300;
+              font-weight: normal;
               background: theme-color("tertiary");
               border-color:theme-color("tertiary") ;
               &:focus{

@@ -38,10 +38,10 @@ class KnoweldgeHub extends React.Component {
                 </div>
                 <div className="buyer-tips-box position-absolute  d-flex justify-content-between flex-column">
                   <h3 className=" text-uppercase m-0 section-title d-none d-md-block">{buyerData.title.text}</h3>
-                  <p className="mb-0 text-white">{buyerData.short_description.text}</p>
+                  <p className=" text-white">{buyerData.short_description.text}</p>
                   <div className="know-more">
                     <a href="#" className="link-text">
-                      <span className="mr-3">Read More</span>
+                      <span className="mr-2">Read More</span>
                       <i className="fas fa-arrow-right"></i>
                     </a>
                   </div>
@@ -94,7 +94,7 @@ class KnoweldgeHub extends React.Component {
                                 <p className="mb-0 text-white">{item.topics.document[0].data.heading.text}</p>
                                 <div className="know-more pt-0">
                                   <Link to="/nri" className="link-text">
-                                    <span className="mr-sm-5 mr-3">Read More</span>
+                                    <span className="mr-sm-5 mr-3">Know More</span>
                                     <i className="fas fa-arrow-right"></i>
                                   </Link>
                                 </div>
