@@ -96,7 +96,7 @@
             .form-control:focus{
                 box-shadow: none;
                 outline: none;
-                border-color: #999999;
+                border: solid 0.5px rgba(153, 153, 153, 0.5);
             }
             .form-group{
                 margin-bottom: 28px;

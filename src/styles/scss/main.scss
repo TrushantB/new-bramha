@@ -152,14 +152,7 @@ button:focus{
 }
 
 // ------------- Award Start Here ----------------
-.award-recogniation{
-  .title{
-      h2{
-        @include border-left;
-        font-weight: 400;
-      }
-  }
-}
+
     
 .vertical-img-wrapper {
     .w-100.gatsby-image-wrapper {
@@ -178,15 +171,7 @@ button:focus{
     }
 }
 
-// @media (max-width:580px) {
-//     .leisure-club-detail-page {
-//         .page-heading{
-//             font-size: 16px;
-//             font-weight: 500;
-//             padding-left: 0;
-//         }
-//     }
-// }
+
 
 
 // ------------- guideline nri details page Start Here ----------------
@@ -194,11 +179,7 @@ button:focus{
 
 // ------------- Media Query Start Here ----------------
 @media (max-width:1200px){
-        //  // slider
-        //  .slider-img{
-        //     margin: 42px 44px 32px;
-        // }
-    // Hospitality project
+
     .hospitality-projects{
         margin-bottom: 0;
      }
@@ -239,10 +220,7 @@ button:focus{
         .management-card .management-card-body {
             padding: 20px 38px;
         }
-        // slider
-        // .slider-img{
-        //     margin: 42px 43px 32px;
-        // }
+ 
         // Card Primary
         .card-primary{
             .card-primary-img{
@@ -310,10 +288,6 @@ button:focus{
     }
 
     @media (max-width:768px){
-        // slider
-        // .slider-img{
-        //     margin: 20px 26px 16px;
-        // }
         .pages{
             margin-top: 20px;
         }
@@ -404,14 +378,7 @@ button:focus{
                     }
                 }
             }
-            // .buyer-tips-info{
-            //     .about-loan ,
-            //     .guidelines-nris ,
-            //     .maha-rera ,
-            //     .important-notices{
-            //         margin-top: 24px;
-            //     }
-            //   }
+
        } 
     // Hospitality Project
        .hospitality-projects{
@@ -436,9 +403,7 @@ button:focus{
    .about-sect-4{
        height:auto !important;
    }
-//    .management-card{
-//        height: 200px;
-//    }
+
        // Residence Card
        .residences-card {
         .rectangle{
@@ -454,10 +419,7 @@ button:focus{
                     width: 90%;
                 }
             }
-            //  .slick-next,
-            //  .slick-prev{
-            //      top: 180px;
-            //  }
+
              .image-ratio{
                 .gatsby-image-wrapper{
                     padding-bottom: 133.33%;
@@ -786,13 +748,7 @@ button:focus{
         }
        }     
     }
-        // Residence Card
-        // .residences-card {
-        //     .rectangle{
-        //         width: 280px;
-        //         left: 10px;
-        //     }
-        //   }
+
     .residential-projects {
         .complete-project {
             .secondary-card{
@@ -842,20 +798,7 @@ button:focus{
             padding: 12px 18px;
         }
     }
-    // .knowledge-hub{
-    //     .image-ratio33{
-    //         .gatsby-image-wrapper {
-    //             div{
-    //                 padding: 0!important;
-    //             }
-    //             padding-bottom:133%;
-    //             img{
-    //                 position: absolute;
-    //                 height: 100%;
-    //             }
-    //         }
-    //     }
-    // }
+
     .vertical-card .vertical-card-body .vertical-card-link,
      .management-card-link{
          justify-content: space-between!important;
