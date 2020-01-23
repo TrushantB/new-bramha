@@ -163,7 +163,7 @@ class HospitalityDetails extends React.Component {
           {/* <!-- ------------------- Location section end here ------------------- --> */}
           {/* <!-- ------------------- Download Brouchure section start here ------------------- --> */}
             <div className="container detail-page-sections d-flex justify-content-center download-btn">
-              <a href="#pdf-link" download="Brouchure.pdf" className="btn-secondary text-center">Download Brouchure</a>
+              <a href="#pdf-link" download="Brouchure.pdf" className="btn-secondary text-center">Download Brochure</a>
             </div>
           {/* <!-- ------------------- Download Brouchure section end here ------------------- --> */}
           </main>
