@@ -53,7 +53,7 @@ class NRI extends React.Component {
                     })
                     this.setState({collapseDescription : data })
                     }}
-                    placeholder="Search by title or Department" className="form-control search-bar rounded-0 pl-5"/>
+                    placeholder="Search by title or Department" className="form-control search-bar rounded-0 "/>
                    <i className="fas fa-search search-btn"></i>
                 </form>
               </div>

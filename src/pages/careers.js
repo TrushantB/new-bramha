@@ -228,7 +228,7 @@ class Careers extends React.Component {
                     })
                     this.setState({jobOpening : data })
                     }}
-                   placeholder="Search by title or Department" className="form-control search-bar rounded-0 pl-5"/>
+                   placeholder="Search by title or Department" className="form-control search-bar rounded-0 pl-5 h-40"/>
                   <i className="fas fa-search search-btn"></i>
                 </form>
                 <div className="career-tabs  d-flex flex-wrap justify-content-between align-content-between">
