@@ -128,7 +128,7 @@ class AboutUs extends React.Component {
                   <div className="vertical-img-wrapper w-100">
                     <Img fluid={verticalsData.vertical1.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
                   </div>
-                  <div className="vertical-card-body d-flex flex-column justify-content-around"> 
+                  <div className="vertical-card-body d-flex flex-column justify-content-between"> 
                     <h2 className="inner-section-title">
                       {verticalsData.vertical1.document[0].data.title.text}
                     </h2>
@@ -144,7 +144,7 @@ class AboutUs extends React.Component {
                   <div className="vertical-img-wrapper w-100">
                     <Img fluid={verticalsData.vertical2.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
                   </div>
-                  <div className="vertical-card-body d-flex flex-column justify-content-around"> 
+                  <div className="vertical-card-body d-flex flex-column justify-content-between"> 
                     <h2 className="inner-section-title">
                       {verticalsData.vertical3.document[0].data.title.text}
                     </h2>
@@ -157,7 +157,7 @@ class AboutUs extends React.Component {
               </div>
               <div className="col-md-6 mt-5 padding-sm-0 ">
                 <Link to='commercial' className="vertical-card d-flex flex-row-reverse flex-md-row text-decoration-none">
-                  <div className="vertical-card-body d-flex flex-column justify-content-around"> 
+                  <div className="vertical-card-body d-flex flex-column justify-content-between"> 
                     <h2 className="inner-section-title">
                       {verticalsData.vertical2.document[0].data.title.text}
                     </h2>
@@ -173,7 +173,7 @@ class AboutUs extends React.Component {
               </div>
               <div className="col-md-6 mt-5 padding-sm-0">
                   <Link to='/leisure-club' className="vertical-card d-flex text-decoration-none">
-                    <div className="vertical-card-body d-flex flex-column justify-content-around"> 
+                    <div className="vertical-card-body d-flex flex-column justify-content-between"> 
                       <h2 className="inner-section-title">
                         {verticalsData.vertical4.document[0].data.title.text}
                       </h2>
