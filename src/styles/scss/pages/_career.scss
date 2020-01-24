@@ -174,37 +174,8 @@
       }
 }
 .input-file-btn{
-    color:transparent;
-    outline: 0;
+    display: none;
 }
-.input-file-btn::-webkit-file-upload-button {
-    visibility: hidden;
-  }
-.input-file-btn::before {
-    content: 'Upload Your CV';
-    display: block;
-    padding: 12px;
-    background:theme-color("tertiary");
-    color:theme-color("text-white");    
-    font-size: 14px;
-    font-family: 'Graphik', sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.4px;
-    text-align: center;
-    outline: none;
-    -webkit-user-select: none;
-    cursor: pointer;
-    // border:1px solid theme-color("tertiary");
-    border: solid 0.5px rgba(153, 153, 153, 0.5);
-    color:#fff; 
-  }
-  .input-file-btn:hover::before {
-    text-decoration: none;
-    background-color: transparent;
-    color:theme-color("tertiary");
-    -webkit-transition: .5s ease-in-out;
-    transition: .5s ease-in-out;
-  }
   .description {
       margin-top: 12px;
       .black-text {

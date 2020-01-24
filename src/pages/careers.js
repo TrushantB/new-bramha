@@ -330,7 +330,8 @@ class Careers extends React.Component {
               <span className="d-block">Upload your CV to our portal.</span>
               <span className="d-block">We will get back to you once suitable position is open</span>
             </p>
-              <input type="file" className="input-file-btn border-0" placeholder="Upload your CV"/>
+              <input type="file" className="border-0 input-file-btn" id="choose-file" placeholder="Upload your CV"/>
+              <label for="choose-file" className="btn-secondary">Upload your CV</label>
           </section>
         </div>
         <Footer />
