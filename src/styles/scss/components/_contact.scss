@@ -48,7 +48,7 @@
                 border: solid 0.5px rgba(255,255,255,0.5);
                 border-radius: 0;
                 padding: 4px;
-                font-weight: 300;
+                font-weight: normal;
                 font-size: 14px;
                 height: 30px;
                 option{
@@ -74,7 +74,7 @@
                 font-size: 14px; 
             }
             input,textarea,select,.resume-upload{
-                font-weight: 300;
+                font-weight: normal;
                 padding-left: 8px;
                 padding-right: 8px;
                 font-size: 14px;
@@ -82,16 +82,17 @@
                 border: solid 0.5px rgba(153, 153, 153, 0.5);
                 border-radius: 0;
                 color: #929292;
-                line-height: 3;
+                // line-height: 3;
                     &::placeholder{
                         color: #929292;
-                        font-weight: 300;
+                        font-weight: normal;
                         font-size: 14px;
                         
                     }
             }
             input,select{
                 height: 30px;
+                line-height: 3;
             }
             .form-control:focus{
                 box-shadow: none;
@@ -104,7 +105,7 @@
             }
         }
         button{
-            padding: 12px 80px;
+            padding: 14px 80px;
             color: #fff;
             background: #b2a585;
             border: 1px solid #b2a585;
