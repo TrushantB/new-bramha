@@ -1,5 +1,10 @@
 
 .detail-page{
+  .banner-section{
+      .banner-img{
+          height: calc(100vh - 60px); 
+      }
+  }
     .padding-block-60{
         padding: 78px 0 24px;
     }
