@@ -138,6 +138,14 @@
         .section-title{
             margin-bottom: 52px;
         }
+        .showcase-slider{
+            .slick-prev:before{
+                color:#b2b2b2;
+            }
+            .slick-next:before{
+                color:#b2b2b2;
+            }
+        }
         .slider-img {
             margin:60px 56px;
             border: solid 1px #9999;
