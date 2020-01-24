@@ -162,13 +162,7 @@
         .slider-page{
             margin-top: 40px;
         }
-        .download-btn{
-            padding-bottom: 0;
-            .btn-secondary{
-                width:100%;
-                margin: 80px 0;
-            }
-        }
+  
         .location-sections,
         .proximities-section{
             margin-top:80px;
@@ -244,6 +238,16 @@
             margin-top: 20px;
         }
     }
+    .detail-page{
+        .download-btn{
+            padding-bottom: 0;
+            .btn-secondary{
+                width:100%;
+                margin: 80px 0;
+            }
+        }
+    }
+
 }
 @media (max-width:320px){
     .slider-img {

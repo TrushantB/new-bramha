@@ -183,6 +183,9 @@
             padding-top: 44px;
         }
     }
+    .site-progress-wrap{
+        margin-top: 140px;
+    }
   }
   .amenity-sections{
       .tab-title{
@@ -307,7 +310,7 @@
                   border: solid 0.5px rgba(255,255,255,0.5);
                   border-radius: 0;
                   padding: 4px;
-                  font-weight: 300;
+                  font-weight: normal;
                   font-size: 14px;
                   height: 30px;
                   option{
@@ -333,7 +336,7 @@
                   font-size: 14px; 
               }
               input,textarea,select{
-                  font-weight: 300;
+                  font-weight: normal;
                   padding-left: 8px;
                   padding-right: 8px;
                   font-size: 14px;
@@ -343,12 +346,13 @@
                   color: #929292;
                       &::placeholder{
                           color: #929292;
-                          font-weight: 300;
+                          font-weight: normal;
                           font-size: 14px;
                       }
               }
               input,select{
                   height: 30px;
+                  line-height: 3;
               }
               .form-control:focus{
                   box-shadow: none;
@@ -389,6 +393,12 @@
   .detail-maharera-sections{
       margin-top: 78px;
       margin-bottom: 110px; 
+      img{
+          margin-bottom: 12px;
+      }
+      p{
+          font-size: 12px;
+      }
       a{
           color: #7f7f7f;
       }
@@ -467,9 +477,17 @@
             width: 70%!important;
         }
     }
-    .detail-page .page-heading{
-        line-height:24px;
+    .detail-page {
+        .enquiry-form{
+            p{
+                padding-top: 0;
+            }  
+        } 
+        .page-heading{
+            line-height:24px;
+        }
     }
+
     .detail-page-sections{
         padding-top:36px;
         padding-bottom:36px;

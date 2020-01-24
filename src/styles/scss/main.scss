@@ -497,10 +497,7 @@ button:focus{
               
             }
             .contact-form-bg{
-                button{
-                    width: 100%;
-                    padding: 15px 0;
-                }
+
                 .form-row{
                     .form-group{
                         padding: 0;
@@ -784,6 +781,12 @@ button:focus{
     }
     .management-card .management-card-body{
         padding: 20px 16px;
+    }
+    .contact-form-bg{
+        button{
+            width: 100%;
+            padding: 15px 0;
+        }
     }
 }
 

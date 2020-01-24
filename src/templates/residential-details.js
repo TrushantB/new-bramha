@@ -544,11 +544,11 @@ class VerticalPage extends React.Component {
                           </select>
                         </div>  
                         <div className="form-group col-md-12">
-                          <textarea className="form-control" rows="5" id="message" placeholder="Additional Message" name="message" required></textarea>
+                          <textarea className="form-control" rows="4" id="message" placeholder="Additional Message" name="message" required></textarea>
                         </div>
                       </div>
                       <div className="sumbit text-center mt-sm-0 mt-4">
-                        <button type="submit" className="btn-secondary btn">Submit</button>
+                        <button type="submit" className="btn-secondary btn">Download Brochure</button>
                       </div>  
                     </div> 
                   </div>
