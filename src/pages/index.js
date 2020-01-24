@@ -211,11 +211,29 @@ export const pageDataResidential = graphql` {
           }
         }
       }
+      banner_caption_logo {
+        localFile {
+          childImageSharp {
+            fluid(maxWidth: 1150) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
     }
   }
   prismicCommercial {
     data {
       banner {
+        localFile {
+          childImageSharp {
+            fluid(maxWidth: 1150) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+      banner_caption_logo {
         localFile {
           childImageSharp {
             fluid(maxWidth: 1150) {
@@ -237,11 +255,29 @@ export const pageDataResidential = graphql` {
           }
         }
       }
+      banner_caption_logo {
+        localFile {
+          childImageSharp {
+            fluid(maxWidth: 1150) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
     }
   }
   prismicLeisureClub {
     data {
       banner {
+        localFile {
+          childImageSharp {
+            fluid(maxWidth: 1150) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+      banner_logo_caption {
         localFile {
           childImageSharp {
             fluid(maxWidth: 1150) {
