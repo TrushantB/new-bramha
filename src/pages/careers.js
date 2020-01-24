@@ -97,13 +97,13 @@ class Careers extends React.Component {
       this.setState({jobOpening})
       this.state.jobOpenningButtons.map((item) => {
         if(item.id==event.id) {
-          item.className="active";
+          item.class="active";
         }
-        else item.className="";
+        else item.class="";
       })
     }
     else {
-      event.className="";
+      event.class="";
       this.setState({jobOpening:this.state.jobOpeningStore})
     }
   }
