@@ -21,7 +21,12 @@
         box-shadow: none;
     }
     &:hover{
-        color: #fff;
+        background-color: transparent;
+        color: theme-color("tertiary");
+        text-decoration: none;
+        -webkit-transition: .5s ease-in-out;
+        transition: .5s ease-in-out;
+        border-color:theme-color("tertiary");
     }
 }
 .button-tertiary{
