@@ -14,7 +14,7 @@ class Commerical extends React.Component {
           <section className="banner-section">
             <Img fluid={this.props.gallery.data.banner.localFile.childImageSharp.fluid} className="banner-img" style={{width:'100%'}}/>
             <div className="banner-caption">
-              Commerical
+            <img src={this.props.gallery.data.banner_caption_logo.localFile.childImageSharp.fluid.src}/>
             </div>
           </section>  
         }

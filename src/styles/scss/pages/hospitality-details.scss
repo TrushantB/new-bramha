@@ -26,21 +26,7 @@
           }
       }
 }
-.hospitality-viewmore{
-    width:196px;
-    color:theme-color("tertiary");
-    padding:12px 20px;
-    background:transparent;
-    border:1px solid theme-color("tertiary");
-    margin-top: 64px;
-    &:hover{
-        text-decoration: none;
-        background-color: theme-color("tertiary");
-        color:#fff;
-        -webkit-transition: .5s ease-in-out;
-        transition: .5s ease-in-out;
-    }
-}
+
 .btn-secondary{            
     color: #fff;
     background: theme-color("tertiary");
