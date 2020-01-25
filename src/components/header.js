@@ -40,7 +40,7 @@ return(
         </div>
       </li>
       <li className={`nav-item dropdown ${pathname=='/residential' || pathname=='/commercial' || pathname=='/hospitality' || pathname=='/leisure-club' ? 'active':''}`}>
-        <Link className="nav-link d-inline-block w-100" onClick={onClick}>
+        <Link className="nav-link d-inline-block w-100" to="/" onClick={onClick}>
           Our Verticals
         </Link>
         <Link className="dropdown-toggle d-inline-block custom-toggle" id="navbarDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span className="caret"></span></Link>

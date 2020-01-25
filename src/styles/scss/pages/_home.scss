@@ -236,7 +236,7 @@ body{
             padding: 0;
         }
         .tab{
-            padding: 0 0 0 4px;
+            padding: 0 0 0 8px;
             span{
               font-size: 12px;
             }
@@ -247,8 +247,8 @@ body{
                 content: '';
                 font-family: "Font Awesome 5 Free";
                 font-size:10px;
-                height: 8px;
-                width:8px;
+                height: 6px;
+                width:6px;
                 background: #7f7f7f;
                 border-radius: 50%;
             }
@@ -283,8 +283,8 @@ body{
 
 @media (max-width:400px){
     .our-verticals-tabs .tab:before{
-        width:6px;
-        height:6px;
+        width:5px;
+        height:5px;
     }
 }
 @media (max-width:350px){
