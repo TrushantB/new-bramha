@@ -103,15 +103,15 @@ button:focus{
 }
 .section-title{
     font-family: georgia;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 500;
     letter-spacing: -0.44px;
     color: #988a63;
     text-align:left;
     &::after{
         content: "";
-        border-bottom: 2px solid theme-color("primary");
-        padding: 8px 0;
+        border-bottom: 2px solid #A53130;
+        padding: 6px 0;
         width: 85px;
         display: block;
     }
@@ -152,14 +152,7 @@ button:focus{
 }
 
 // ------------- Award Start Here ----------------
-.award-recogniation{
-  .title{
-      h2{
-        @include border-left;
-        font-weight: 400;
-      }
-  }
-}
+
     
 .vertical-img-wrapper {
     .w-100.gatsby-image-wrapper {
@@ -178,15 +171,7 @@ button:focus{
     }
 }
 
-// @media (max-width:580px) {
-//     .leisure-club-detail-page {
-//         .page-heading{
-//             font-size: 16px;
-//             font-weight: 500;
-//             padding-left: 0;
-//         }
-//     }
-// }
+
 
 
 // ------------- guideline nri details page Start Here ----------------
@@ -194,11 +179,7 @@ button:focus{
 
 // ------------- Media Query Start Here ----------------
 @media (max-width:1200px){
-        //  // slider
-        //  .slider-img{
-        //     margin: 42px 44px 32px;
-        // }
-    // Hospitality project
+
     .hospitality-projects{
         margin-bottom: 0;
      }
@@ -239,10 +220,7 @@ button:focus{
         .management-card .management-card-body {
             padding: 20px 38px;
         }
-        // slider
-        // .slider-img{
-        //     margin: 42px 43px 32px;
-        // }
+ 
         // Card Primary
         .card-primary{
             .card-primary-img{
@@ -310,10 +288,6 @@ button:focus{
     }
 
     @media (max-width:768px){
-        // slider
-        // .slider-img{
-        //     margin: 20px 26px 16px;
-        // }
         .pages{
             margin-top: 20px;
         }
@@ -404,14 +378,7 @@ button:focus{
                     }
                 }
             }
-            // .buyer-tips-info{
-            //     .about-loan ,
-            //     .guidelines-nris ,
-            //     .maha-rera ,
-            //     .important-notices{
-            //         margin-top: 24px;
-            //     }
-            //   }
+
        } 
     // Hospitality Project
        .hospitality-projects{
@@ -436,9 +403,7 @@ button:focus{
    .about-sect-4{
        height:auto !important;
    }
-//    .management-card{
-//        height: 200px;
-//    }
+
        // Residence Card
        .residences-card {
         .rectangle{
@@ -454,10 +419,7 @@ button:focus{
                     width: 90%;
                 }
             }
-            //  .slick-next,
-            //  .slick-prev{
-            //      top: 180px;
-            //  }
+
              .image-ratio{
                 .gatsby-image-wrapper{
                     padding-bottom: 133.33%;
@@ -535,10 +497,7 @@ button:focus{
               
             }
             .contact-form-bg{
-                button{
-                    width: 100%;
-                    padding: 15px 0;
-                }
+
                 .form-row{
                     .form-group{
                         padding: 0;
@@ -679,7 +638,7 @@ button:focus{
 //residential projects
     .residential-section {
         .main-paragraph{
-            padding: 0 16px 60px;
+            padding: 0 16px 80px;
         }   
     }
     .residential-projects{
@@ -691,7 +650,7 @@ button:focus{
         }
         .ongoing-project{
             .listing-heading {
-                transform: translate(-15px, 0px);
+                transform: translate(-15px, -15px);
             }
          }
         .complete-project {
@@ -786,13 +745,7 @@ button:focus{
         }
        }     
     }
-        // Residence Card
-        // .residences-card {
-        //     .rectangle{
-        //         width: 280px;
-        //         left: 10px;
-        //     }
-        //   }
+
     .residential-projects {
         .complete-project {
             .secondary-card{
@@ -829,6 +782,12 @@ button:focus{
     .management-card .management-card-body{
         padding: 20px 16px;
     }
+    .contact-form-bg{
+        button{
+            width: 100%;
+            padding: 15px 0;
+        }
+    }
 }
 
 
@@ -842,20 +801,7 @@ button:focus{
             padding: 12px 18px;
         }
     }
-    // .knowledge-hub{
-    //     .image-ratio33{
-    //         .gatsby-image-wrapper {
-    //             div{
-    //                 padding: 0!important;
-    //             }
-    //             padding-bottom:133%;
-    //             img{
-    //                 position: absolute;
-    //                 height: 100%;
-    //             }
-    //         }
-    //     }
-    // }
+
     .vertical-card .vertical-card-body .vertical-card-link,
      .management-card-link{
          justify-content: space-between!important;

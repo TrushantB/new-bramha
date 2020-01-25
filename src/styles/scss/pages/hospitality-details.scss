@@ -1,5 +1,10 @@
 
 .detail-page{
+  .banner-section{
+      .banner-img{
+          height: calc(100vh - 60px); 
+      }
+  }
     .padding-block-60{
         padding: 78px 0 24px;
     }
@@ -21,21 +26,7 @@
           }
       }
 }
-.hospitality-viewmore{
-    width:196px;
-    color:theme-color("tertiary");
-    padding:12px 20px;
-    background:transparent;
-    border:1px solid theme-color("tertiary");
-    margin-top: 64px;
-    &:hover{
-        text-decoration: none;
-        background-color: theme-color("tertiary");
-        color:#fff;
-        -webkit-transition: .5s ease-in-out;
-        transition: .5s ease-in-out;
-    }
-}
+
 .btn-secondary{            
     color: #fff;
     background: theme-color("tertiary");
@@ -66,6 +57,7 @@
     .slick-next{       
         right: 66px;
         top:50%;
+        transform: translate(0 , -50%);
         &:before{
             content: "\F054";
             font-family: "Font Awesome 5 Free";
@@ -78,6 +70,7 @@
           left: 60px;
           z-index:1;
           top:50%;
+          transform: translate(0 , -50%);
         &:before{
             content: "\F053";
             font-family: "Font Awesome 5 Free";
@@ -153,15 +146,9 @@
             padding-top: 0;
         }
         .slider-page{
-            margin-top: 20px;
+            margin-top: 40px;
         }
-        .download-btn{
-            padding-bottom: 0;
-            .btn-secondary{
-                width:100%;
-                margin: 80px 0;
-            }
-        }
+  
         .location-sections,
         .proximities-section{
             margin-top:80px;
@@ -237,6 +224,16 @@
             margin-top: 20px;
         }
     }
+    .detail-page{
+        .download-btn{
+            padding-bottom: 0;
+            .btn-secondary{
+                width:100%;
+                margin: 80px 0;
+            }
+        }
+    }
+
 }
 @media (max-width:320px){
     .slider-img {

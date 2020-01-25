@@ -24,7 +24,13 @@
         i{
             font-size: 26px;
             color:theme-color("icon-color");
-        }   
+        }  
+        .section-title{
+            &::after{
+                content: "";
+                padding: 8px 0;
+            }
+        } 
     }
     form{
         .form-bg-color{
@@ -36,13 +42,13 @@
         }
         .customer{
             select{
-                flex-basis: 23%;
+                flex-basis: 23.4%;
                 background: transparent;
                 color: #fff;
-                border: solid 0.5px #ffffff;
+                border: solid 0.5px rgba(255,255,255,0.5);
                 border-radius: 0;
                 padding: 4px;
-                font-weight: 300;
+                font-weight: normal;
                 font-size: 14px;
                 height: 30px;
                 option{
@@ -51,7 +57,7 @@
                     &:focus{
                     box-shadow: none;
                     outline: none;
-                    border-color: #fff;
+                    border: solid 0.5px rgba(255,255,255,0.5);
                 }
             }
         }
@@ -68,27 +74,30 @@
                 font-size: 14px; 
             }
             input,textarea,select,.resume-upload{
-                font-weight: 300;
+                font-weight: normal;
                 padding-left: 8px;
                 padding-right: 8px;
                 font-size: 14px;
                 background: transparent;
-                border: solid 0.5px #999999;
+                border: solid 0.5px rgba(153, 153, 153, 0.5);
                 border-radius: 0;
                 color: #929292;
+                // line-height: 3;
                     &::placeholder{
                         color: #929292;
-                        font-weight: 300;
+                        font-weight: normal;
                         font-size: 14px;
+                        
                     }
             }
             input,select{
                 height: 30px;
+                line-height: 3;
             }
             .form-control:focus{
                 box-shadow: none;
                 outline: none;
-                border-color: #999999;
+                border: solid 0.5px rgba(153, 153, 153, 0.5);
             }
             .form-group{
                 margin-bottom: 28px;
@@ -96,7 +105,7 @@
             }
         }
         button{
-            padding: 12px 88px;
+            padding: 14px 80px;
             color: #fff;
             background: #b2a585;
             border: 1px solid #b2a585;
@@ -152,7 +161,7 @@
         .resume-upload {
           width: 100%;
           padding: 30px;;
-          border: 1px dashed !important;
+          border: 1px dashed rgba(153, 153, 153, 0.5) !important;
           text-align: center;
         }
         
@@ -164,6 +173,11 @@
           outline: 0;
         }
       } 
+      .contact-details{
+          .section-title{
+              font-size: 20px;
+          }
+      }
 }
 // @media (max-width:1200px){
 //     .contact-section{

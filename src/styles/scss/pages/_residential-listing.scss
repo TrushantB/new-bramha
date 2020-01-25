@@ -5,6 +5,9 @@
           width: 271px;
           height: 40px;
           margin-right: 24px;
+          border: solid 0.5px rgba(153, 153, 153, 0.5); 
+          font-weight: normal;
+     
       }
     }
     .residences{
@@ -31,8 +34,15 @@
         }
     }
     .ongoing-project{
+        padding: 36px 0 0 0;
         .residences{
             padding: 0 0 170px;
+        }
+        .listing-heading{
+            transform: translate(0 ,-15px);
+        }
+        .residences-card{
+            margin: 56px 0 72px;
         }
     }
     .complete-project{
@@ -54,7 +64,7 @@
           line-height: 1.71;
           letter-spacing: -0.31px;
           color: #000000;
-          margin: 32px 0 56px 0;
+          margin: 40px 0 48px 0;
         }
         .listing-heading{
             margin-top: -23px;
@@ -119,6 +129,9 @@
         .ongoing-project{
             .residences{
                 padding: 0 0 120px;
+            }
+            .residences-card{
+                margin:36px 0 100px;
             }
         }
     }

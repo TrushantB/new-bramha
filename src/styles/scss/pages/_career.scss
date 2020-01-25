@@ -1,3 +1,4 @@
+
 .career-page{
     .section-title-wrapper{
         padding: 64px 0 24px 0;
@@ -17,6 +18,9 @@
             }
         }
       } 
+      .h-40{
+          height: 40px;
+      }
 }
 .life-at-bramha{
     .padding-block-60{
@@ -45,7 +49,8 @@
 }
 .search-bar{
     position: relative;
-    border:1px solid #979797;
+    border: solid 0.5px rgba(153, 153, 153, 0.5);
+    padding-left: 40px;
     &:focus{
         outline: 0;
          box-shadow: none;
@@ -169,36 +174,8 @@
       }
 }
 .input-file-btn{
-    color:transparent;
-    outline: 0;
+    display: none;
 }
-.input-file-btn::-webkit-file-upload-button {
-    visibility: hidden;
-  }
-.input-file-btn::before {
-    content: 'Upload Your CV';
-    display: block;
-    padding: 12px;
-    background:theme-color("tertiary");
-    color:theme-color("text-white");    
-    font-size: 14px;
-    font-family: 'Graphik', sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.4px;
-    text-align: center;
-    outline: none;
-    -webkit-user-select: none;
-    cursor: pointer;
-    border:1px solid theme-color("tertiary");
-    color:#fff; 
-  }
-  .input-file-btn:hover::before {
-    text-decoration: none;
-    background-color: transparent;
-    color:theme-color("tertiary");
-    -webkit-transition: .5s ease-in-out;
-    transition: .5s ease-in-out;
-  }
   .description {
       margin-top: 12px;
       .black-text {
@@ -263,6 +240,9 @@
         .card-body{
             padding: 0 20px 48px 20px;
         }
+    }
+    .button-tertiary {
+        border: solid 0.5px rgba(153, 153, 153, 0.5);
     }
 }
 

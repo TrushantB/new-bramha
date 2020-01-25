@@ -29,7 +29,7 @@
   #pills-tabContent{
       border-bottom:1px solid theme-color(border-color);
       ul{
-        padding:44px 0;
+        padding:44px 0 64px;
         margin-bottom: 0;
         li{
             font-size: 20px;
@@ -40,7 +40,7 @@
   .proximities-section{
     .section-title-wrapper{
         p{
-            margin:0 32px 18px;
+            margin:0 32px 52px;
         }
     }
       .nav-pills{
@@ -48,6 +48,10 @@
             font-size: 13px;
             i{
                 font-size: 32px;
+            }
+            span{
+              margin-top: 14px;
+              line-height: 1; 
             }
           }
       }
@@ -77,25 +81,41 @@
       box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.08);
   }
   .amenities{
-      button{
-          flex: 1 200px;
-          margin: 12px 0;
-          border: 0;
-          background: transparent;
-          color:theme-color(text-tertiary);
-          outline: 0;
-          i{
-            font-size: 32px;
-            padding: 5px 24px 5px 0;
-             color:theme-color(text-tertiary);
-          }
-          &:hover{
-              color:theme-color(primary);
-              i{
-                  color:theme-color(primary);
-              }
-          }
-      }
+    //   button{
+    //       flex: 1 200px;
+    //       margin: 12px 0;
+    //       border: 0;
+    //       background: transparent;
+    //       color:theme-color(text-tertiary);
+    //       outline: 0;
+    //       i{
+    //         font-size: 32px;
+    //         padding: 5px 24px 5px 0;
+    //          color:theme-color(text-tertiary);
+    //       }
+    //       &:hover{
+    //           color:theme-color(primary);
+    //           i{
+    //               color:theme-color(primary);
+    //           }
+    //       }
+    button{
+        flex:1 44%;
+        border:0;
+        margin:12px 24px 12px 0;
+        background:transparent;
+        color: theme-color(text-tertiary);
+        outline:0;
+        padding:0;
+
+        .icon-wrap{
+          flex-basis:24%;
+          font-size: 28px;
+        }
+        .icon-description{
+            flex-basis:75%;
+        }
+    }
       .active {
         color:theme-color(primary);
         i{
@@ -106,7 +126,7 @@
  
   .detail-page{
     .proximities-section{
-        margin-top: 126px;
+        margin-top: 128px;
         .section-title-wrapper{
             .section-title{
                 margin-bottom: 12px;
@@ -114,14 +134,34 @@
         }
     }
     .floor-plan{
+        margin:128px 0 148px;
         .section-title{
             margin-bottom: 52px;
+        }
+        .showcase-slider{
+            .slick-prev:before{
+                color:#b2b2b2;
+            }
+            .slick-next:before{
+                color:#b2b2b2;
+            }
         }
         .slider-img {
             margin:60px 56px;
             border: solid 1px #9999;
         }
-        .layout-select{
+        label.wrap {
+            overflow: hidden;
+            position: relative;
+            display: block;
+        }
+        select.layout-select{
+            padding: 10px;
+            border: 0;
+            width: 110px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
             opacity: 0.7;
             font-family: Graphik;
             font-size: 16px;
@@ -131,7 +171,19 @@
             line-height: normal;
             letter-spacing: -0.27px;
             color: #333333;
-            margin-bottom:16px;
+        }
+        label.wrap:after {
+            content:"\f078 ";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: #b2b2b2;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            z-index: 1;
+            width: 10%;
+            pointer-events: none;
+            transform: translate(-10px, -50%);
         }
     }
     .enquiry-form{
@@ -139,9 +191,25 @@
             padding-top: 44px;
         }
     }
+    .site-progress-wrap{
+        margin-top: 140px;
+    }
   }
-
+  .amenity-sections{
+      .tab-title{
+        font-family: Georgia;
+        font-size: 22px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #988a63;
+        padding:16px 0;
+      }
+  }
   .amenities-inner-wrapper{
+      margin-top:40px;
       .icon-wrapper{
         flex: 50%;
       }
@@ -244,13 +312,13 @@
           }
           .customer{
               select{
-                  flex-basis: 23%;
+                  flex-basis: 23.4%;
                   background: transparent;
                   color: #fff;
-                  border: solid 0.5px #ffffff;
+                  border: solid 0.5px rgba(255,255,255,0.5);
                   border-radius: 0;
                   padding: 4px;
-                  font-weight: 300;
+                  font-weight: normal;
                   font-size: 14px;
                   height: 30px;
                   option{
@@ -259,7 +327,7 @@
                       &:focus{
                       box-shadow: none;
                       outline: none;
-                      border-color: #fff;
+                      border: solid 0.5px rgba(255,255,255,0.5);
                   }
               }
           }
@@ -276,27 +344,28 @@
                   font-size: 14px; 
               }
               input,textarea,select{
-                  font-weight: 300;
+                  font-weight: normal;
                   padding-left: 8px;
                   padding-right: 8px;
                   font-size: 14px;
                   background: transparent;
-                  border: solid 0.5px #999999;
+                  border: solid 0.5px rgba(153, 153, 153, 0.5);
                   border-radius: 0;
                   color: #929292;
                       &::placeholder{
                           color: #929292;
-                          font-weight: 300;
+                          font-weight: normal;
                           font-size: 14px;
                       }
               }
               input,select{
                   height: 30px;
+                  line-height: 3;
               }
               .form-control:focus{
                   box-shadow: none;
                   outline: none;
-                  border-color: #999999;
+                  border: solid 0.5px rgba (153, 153, 153, 0.5);
               }
               .form-group{
                   margin-bottom: 32px;
@@ -304,9 +373,9 @@
               }
           }
           button{
-              padding: 12px 88px;
+              padding: 16px 60px;
               border-radius: 0;
-              font-weight: 300;
+              font-weight: normal;
               background: theme-color("tertiary");
               border-color:theme-color("tertiary") ;
               &:focus{
@@ -332,6 +401,12 @@
   .detail-maharera-sections{
       margin-top: 78px;
       margin-bottom: 110px; 
+      img{
+          margin-bottom: 12px;
+      }
+      p{
+          font-size: 12px;
+      }
       a{
           color: #7f7f7f;
       }
@@ -410,9 +485,17 @@
             width: 70%!important;
         }
     }
-    .detail-page .page-heading{
-        line-height:24px;
+    .detail-page {
+        .enquiry-form{
+            p{
+                padding-top: 0;
+            }  
+        } 
+        .page-heading{
+            line-height:24px;
+        }
     }
+
     .detail-page-sections{
         padding-top:36px;
         padding-bottom:36px;
@@ -432,7 +515,6 @@
         padding: 0 15px;
     }
     .nav-pills .nav-link{
-        padding: 10px 5px 0;
         i{
             font-size: 24px;
         }
@@ -473,19 +555,22 @@
             }
         }
     }
+    .amenity-sections{
+        margin-top:80px;
+    }
     .amenities-inner-wrapper .image-wrapper{
         display: none;
     }
     .amenities button {
-        flex: 1 23%;
-        margin: 8px 4px;
-        i{
-            padding: 5px 24px;
-        }
+        flex: 1 1 23%;
+        flex-direction: column;
     }
     .amenities-inner-wrapper {
         width: 730px;
         margin-bottom: 12px;
+    }
+    #residential-details .site-progress-wrap{
+        margin-top: 80px;
     }
     .slider-wrapper .slick-active .slider-img .showcase-slide-caption{
         font-size: 12px;

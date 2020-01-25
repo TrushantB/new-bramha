@@ -78,9 +78,7 @@ class CommercialDetails extends React.Component {
               <div className="logo-card">
                 <picture className="d-flex justify-content-start justify-content-sm-center align-items-center">
                   <source media="(max-width: 581px)" srcSet={commercialData.data.logo.mobile.url} />
-                  <img src={commercialData.data.logo.url} alt="hospital Logo" className="w-50" />
-                  {console.log('{commercialData.data.logo.mobile.url}', commercialData.data.logo.mobile.url)}
-                  
+                  <img src={commercialData.data.logo.url} alt="hospital Logo"/>
                 </picture>
               </div>
               <div className=" padding-block-60">
@@ -162,7 +160,7 @@ class CommercialDetails extends React.Component {
           {/* <!-- ------------------- Location section end here ------------------- --> */}
           {/* <!-- ------------------- Download Brouchure section start here ------------------- --> */}
             <div className="container detail-page-sections d-flex justify-content-center download-btn">
-              <a href="#pdf-link" download="Brouchure.pdf" className="btn-secondary text-center">Download Brouchure</a>
+              <a href="#pdf-link" download="Brouchure.pdf" className="btn-secondary text-center">Download Brochure</a>
             </div>
           {/* <!-- ------------------- Download Brouchure section end here ------------------- --> */}
           </main>

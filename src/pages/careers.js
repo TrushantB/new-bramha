@@ -97,13 +97,13 @@ class Careers extends React.Component {
       this.setState({jobOpening})
       this.state.jobOpenningButtons.map((item) => {
         if(item.id==event.id) {
-          item.className="active";
+          item.class="active";
         }
-        else item.className="";
+        else item.class="";
       })
     }
     else {
-      event.className="";
+      event.class="";
       this.setState({jobOpening:this.state.jobOpeningStore})
     }
   }
@@ -228,7 +228,7 @@ class Careers extends React.Component {
                     })
                     this.setState({jobOpening : data })
                     }}
-                   placeholder="Search by title or Department" className="form-control search-bar rounded-0 pl-5"/>
+                   placeholder="Search by title or Department" className="form-control search-bar rounded-0 pl-5 h-40"/>
                   <i className="fas fa-search search-btn"></i>
                 </form>
                 <div className="career-tabs  d-flex flex-wrap justify-content-between align-content-between">
@@ -330,7 +330,8 @@ class Careers extends React.Component {
               <span className="d-block">Upload your CV to our portal.</span>
               <span className="d-block">We will get back to you once suitable position is open</span>
             </p>
-              <input type="file" className="input-file-btn border-0" placeholder="Upload your CV"/>
+              <input type="file" className="border-0 input-file-btn" id="choose-file" placeholder="Upload your CV"/>
+              <label for="choose-file" className="btn-secondary">Upload your CV</label>
           </section>
         </div>
         <Footer />
