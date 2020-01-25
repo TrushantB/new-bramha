@@ -23,30 +23,29 @@ export default class Residential extends React.Component {
     }
 
   addressSelect = (e) => {
-    let ongoing = this.state.ongoingProject.length > 0 && this.state.ongoingProjectStore.filter(res => res.residential_links.document[0].data.flat_address.text===e.target.value)
-    let completed =  this.state.completedProject.length > 0 && this.state.completedProjectStore.filter(res => res.completed_links.document[0].data.flat_address.text===e.target.value)
-    this.setState({ongoingProject:ongoing,completedProject:completed,activeAddress:e,activeType:''})
+    let ongoing = this.state.ongoingProject.length > 0 && this.state.ongoingProjectStore.filter(res => res.residential_links.document[0].data.flat_address.text === e.target.value)
+    let completed =  this.state.completedProject.length > 0 && this.state.completedProjectStore.filter(res => res.completed_links.document[0].data.flat_address.text === e.target.value)
+    this.setState({ongoingProject:ongoing, completedProject:completed, activeAddress:e.target.value, activeType:''})
   }
-
 
   typeSelect = (e) => {
-    let ongoing = this.state.ongoingProject.length > 0 && this.state.ongoingProjectStore.filter(res => res.residential_links.document[0].data.flat_bhk.text===e.target.value)
-    let completed =  this.state.completedProject.length > 0 && this.state.completedProjectStore.filter(res => res.completed_links.document[0].data.flat_bhk.text===e.target.value)
-    this.setState({ongoingProject:ongoing,completedProject:completed,activeAddress:'',activeType:e})
+    let ongoing = this.state.ongoingProject.length > 0 && this.state.ongoingProjectStore.filter(res => res.residential_links.document[0].data.flat_bhk.text === e.target.value)
+    let completed =  this.state.completedProject.length > 0 && this.state.completedProjectStore.filter(res => res.completed_links.document[0].data.flat_bhk.text === e.target.value)
+    this.setState({ongoingProject:ongoing,completedProject:completed,activeAddress:'',activeType:e.target.value})
   }
   
-  sortAddress = (e) => {
-    let type = [];
-    let address = [];
-    e.map((item)=>{
-      type.push(item.residential_links.document[0].data.flat_bhk.text);
-      address.push(item.residential_links.document[0].data.flat_address.text);
-   }) 
-    let allType = [...new Set(type)];
-    let allAddress = [...new Set(address)];
-    this.setState({allType});
-    this.setState({allAddress});
-  }
+  // sortAddress = (e) => {
+  //   let type = [];
+  //   let address = [];
+  //   e.map((item)=>{
+  //     type.push(item.residential_links.document[0].data.flat_bhk.text);
+  //     address.push(item.residential_links.document[0].data.flat_address.text);
+  //  }) 
+  //   let allType = [...new Set(type)];
+  //   let allAddress = [...new Set(address)];
+  //   this.setState({allType});
+  //   this.setState({allAddress});
+  // }
 
   handleProjects = (e) => {
     let type = [];
@@ -59,6 +58,8 @@ export default class Residential extends React.Component {
         type.push(item.residential_links.document[0].data.flat_bhk.text);
         address.push(item.residential_links.document[0].data.flat_address.text);
       }) 
+      type= [...new Set(type)];
+      address= [...new Set(address)];
       this.setState({allType: type, allAddress: address})
     }
     else if(e.target.value === 'completed_project'){
@@ -67,6 +68,8 @@ export default class Residential extends React.Component {
         type.push(item.completed_links.document[0].data.flat_bhk.text);
         address.push(item.completed_links.document[0].data.flat_address.text);
      }) 
+     address= [...new Set(address)];
+     type= [...new Set(type)];
      this.setState({allType: type, allAddress: address})
     }
     else {
@@ -77,13 +80,17 @@ export default class Residential extends React.Component {
            address.push(item.residential_links.document[0].data.flat_address.text);
         }) 
       })
+      
 
       this.state.dataSource.map((item,index) => {
         this.setState({completedProject: item.node.data.completed_project, completedProjectStore:item.node.data.completed_project});
          item.node.data.completed_project.map((item)=>{
            type.push(item.completed_links.document[0].data.flat_bhk.text);
            address.push(item.completed_links.document[0].data.flat_address.text);
-        }) 
+          }) 
+          address= [...new Set(address)];
+          type= [...new Set(type)];
+          this.setState({allType: type, allAddress: address})
       })
     }
   }
@@ -168,7 +175,7 @@ export default class Residential extends React.Component {
     };
     const residentialData = this.props.data.allPrismicResidential.edges;
     const lookingForMe = residentialData[0].node.data
-    console.log('lookingForMe', lookingForMe);
+    console.log('ongoingProject', this.state.ongoingProject);
     
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
