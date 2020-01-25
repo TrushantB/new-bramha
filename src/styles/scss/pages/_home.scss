@@ -92,6 +92,12 @@ body{
     }
     p{
             font-size: 16px;
+            .link-text{
+                color:theme-color(text-tertiary);
+                &:hover{
+                    color:theme-color(primary);
+                }
+            }
     }
 }
 .navbar{

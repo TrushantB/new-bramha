@@ -46,15 +46,15 @@ const Layout = ({ children ,pathname}) => {
           </div>
           <div className="contact-feild"> 
             <i className="far fa-user-circle"></i>
-            <h4> Direct call to our consultant</h4>
+            <h4 className="text-center mb-3 section-title">  Direct call to our consultant</h4>
             <p>
-              Project Inquiry:<Link to="tel:91204142330">91204142330</Link>
+              Project Inquiry :<Link to="tel:91204142330"  className="link-text"> 91204142330</Link>
             </p>
             <p>
-              Head Office: <Link to="tel:912041442333">912041442333</Link>
+              Head Office : <Link to="tel:912041442333" className="link-text"> 912041442333</Link>
             </p>
             <p>
-              Fax Number: <Link to="tel:912041442333">912026353333</Link>
+              Fax Number : <Link to="tel:912041442333"  className="link-text"> 912026353333</Link>
             </p>
           </div>
         </div>
@@ -89,7 +89,7 @@ const Layout = ({ children ,pathname}) => {
                       <textarea  rows="4" id="message" placeholder="Additional Message" name="message" required></textarea>
                     </div>
                   </div>
-                  <div className="sumbit text-center mt-sm-0 mt-4">
+                  <div className="sumbit text-center ">
                     <button type="submit" className="btn-secondary">Submit</button>
                   </div>  
                 </div> 
@@ -105,7 +105,7 @@ const Layout = ({ children ,pathname}) => {
         </div>
         <div className="chat-feild">
             <i className="far fa-user-circle"></i>
-            <h4> Live chat with our consultant</h4>
+            <h4 className="text-center mb-3 section-title">Live chat with our consultant</h4>
             <p className="text-center">Coming Soon...</p>
         </div>
       </div>
