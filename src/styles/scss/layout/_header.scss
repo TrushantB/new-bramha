@@ -39,6 +39,7 @@
         }
     }
     .dropdown-toggle{
+      padding:0;
         &::after{
             border: none;
             content: "\F067";
@@ -53,7 +54,8 @@
             font-weight: 900;
             font-size: 12px;
             color: #333333;
-            opacity: 0.6;    
+            opacity: 0.6;   
+            padding:0 12px 12px 12px ; 
         }
     }
 }
@@ -130,7 +132,7 @@
 }
 .navbar-light .navbar-nav .nav-link{
     color: theme-color("text-primary");
-    padding: 0.4rem 1rem 0.4rem 1.4rem;
+    padding: 0.4rem 0 0.4rem 1.4rem;
     border-left: 0.5rem solid transparent;
     display: flex;
     justify-content: space-between;
@@ -308,7 +310,7 @@
     z-index: 105;
     // height: 100%;
     bottom: 0;
-    width: 25%;
+    width: 35%;
     max-width: 100%;
     padding: 2em 0;
     background: #FFF;
@@ -379,18 +381,32 @@
   .nav-open .nav-container .nav li:nth-of-type(2){
     a {
      animation-delay: 0.22s;
+
     }
     .custom-toggle{
       animation-delay: 0.40s;
+    }
+    .dropdown-menu{
+      animation-delay: 0.1;
+      a{        
+        animation-delay: 0.2s;
+      }
     }
   }
   
   .nav-open .nav-container .nav li:nth-of-type(3){
     a {
-      animation-delay: 0.28s;
-    }
+      animation-delay: 0.24s;
+ 
+     }
+     .custom-toggle{
+       animation-delay: 0.44s;
+     }
     .dropdown-menu{
       animation-delay: 0.1s;
+      a{        
+        animation-delay: 0.2s;
+      }
     }
   } 
   

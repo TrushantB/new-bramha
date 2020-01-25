@@ -6,9 +6,15 @@ import '../styles/scss/main.scss';
 import img1 from '../images/logo.png';
 import $ from 'jquery';
 const Header = ({ siteTitle ,pathname}) => {
+
 function classHandle() {
   $("body").removeClass("nav-open");
  }
+
+ function onClick(e) {
+  e.preventDefault()
+}
+
 return(
 <header className="header">
   <nav className="navbar navbar-light container" >
@@ -16,8 +22,8 @@ return(
     <img src={img1} alt="BramhaCorp Logo" className="logo-img" />
   </Link>
   <a className="nav-trigger" id="toggle" onClick={() => $("body").toggleClass("nav-open")} >
-Menu <span></span>
-</a>
+  Menu <span></span>
+  </a>
 <nav className="nav-container pb-0" id="navigation">
   <ul className="nav navbar-nav">
       <li className={`nav-item ${pathname=='/' ? 'active':''}`}>
@@ -34,10 +40,11 @@ Menu <span></span>
         </div>
       </li>
       <li className={`nav-item dropdown ${pathname=='/residential' || pathname=='/commercial' || pathname=='/hospitality' || pathname=='/leisure-club' ? 'active':''}`}>
-        <Link className="nav-link dropdown-toggle" to='/' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <Link className="nav-link d-inline-block w-100" onClick={onClick}>
           Our Verticals
         </Link>
-        <div className="dropdown-menu  border-0" aria-labelledby="navbarDropdown">
+        <Link className="dropdown-toggle d-inline-block custom-toggle" id="navbarDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span className="caret"></span></Link>
+        <div className="dropdown-menu  border-0" aria-labelledby="navbarDropdown1">
           <Link className={`dropdown-item ${pathname=='/residential' ? 'active' : ''}`} to='/residential' onClick={classHandle}>Residential</Link>
           <Link className={`dropdown-item ${pathname=='/commercial' ? 'active' : ''}`} to='/commercial' onClick={classHandle}>Commercial</Link>
           <Link className={`dropdown-item ${pathname=='/hospitality' ? 'active' : ''}`} to='/hospitality' onClick={classHandle}>Hospitality</Link>
