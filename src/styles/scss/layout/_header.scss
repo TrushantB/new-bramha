@@ -310,7 +310,7 @@
     z-index: 105;
     // height: 100%;
     bottom: 0;
-    width: 35%;
+    width: 25%;
     max-width: 100%;
     padding: 2em 0;
     background: #FFF;
@@ -445,6 +445,11 @@
       transform: translateX(0);
     }
   } 
+  @media (max-width:992px){
+    .nav-container{
+      width:35%;
+    }
+  }
   @media (max-width:768px){
     .nav-container {
       width: 100%;
