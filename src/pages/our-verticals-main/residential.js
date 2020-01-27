@@ -19,6 +19,7 @@ class Residential extends React.Component {
             <div className="banner-caption">
               <img src={this.props.gallery.data.banner_caption_logo.localFile.childImageSharp.fluid.src}/>
             </div>
+            
           </section>  
         }
       </div>

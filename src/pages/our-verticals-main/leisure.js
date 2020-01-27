@@ -19,6 +19,7 @@ class Leisure extends React.Component {
             <div className="banner-caption">
               <img src={this.props.gallery.data.banner_logo_caption.localFile.childImageSharp.fluid.src}/>
             </div>
+            
           </section>  
         }
       </div>
