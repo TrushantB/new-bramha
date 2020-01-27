@@ -265,7 +265,7 @@ export const pageDataResidential = graphql` {
           url
         }
       }
-      banner_logo_caption {
+      banner_caption_logo {
         localFile {
           childImageSharp {
             fluid(maxWidth: 1150) {

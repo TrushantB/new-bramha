@@ -578,7 +578,9 @@ class VerticalPage extends React.Component {
                 }
               </p>
               <p className="text-left text-sm-center">
-                Flats in Kalyani Nagar Available at : Website <a href={verticalData.data.tag_line.text}>https://maharera.mahaonline.gov.in </a>
+                {console.log(verticalData.data.tag_line.text)
+                }
+                Available at : Website <a href={verticalData.data.tag_line.text} target="_blank">{verticalData.data.tag_line.text} </a>
               </p>
             </section>
             {/* <!--   ------------------- Maharera section end here ------------------- --> */}
