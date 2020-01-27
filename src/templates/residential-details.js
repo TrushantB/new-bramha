@@ -271,7 +271,6 @@ class VerticalPage extends React.Component {
                   Location
               </h2> 
               <div className="map-image map">
-                
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15130.20482232911!2d73.9169759!3d18.5491723!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfa889adcc4f893bd!2sF-Residences%20by%20BramhaCorp%20at%20New%20Kalyani%20Nagar!5e0!3m2!1sen!2sin!4v1578749234432!5m2!1sen!2sin" style={{ width:"100%", height:"375px", frameborder:"0", border:"0", allowFullScreen:"0"}}></iframe>
               </div>
             </section>
@@ -578,10 +577,14 @@ class VerticalPage extends React.Component {
                 }
               </p>
               <p className="text-left text-sm-center">
-                {console.log(verticalData.data.tag_line.text)
-                }
                 Available at : Website <a href={verticalData.data.tag_line.text} target="_blank">{verticalData.data.tag_line.text} </a>
               </p>
+              {
+                verticalData.data.maharera_important &&
+                  <p>
+                    {verticalData.data.maharera_important.text}
+                  </p>
+              }
             </section>
             {/* <!--   ------------------- Maharera section end here ------------------- --> */}
             {/* <!--  -------------------- middle section end here ------------------------> */}
@@ -736,6 +739,9 @@ export const verticalViewData = graphql`
             }
           }
         }
+      }
+      maharera_important{
+        text
       }
     }
   }
