@@ -228,6 +228,7 @@
     .accordions-sect {
         .section-title::after {
             display: none;
+
         }   
         .btn-secondary{
             font-size: 14px;
@@ -479,8 +480,8 @@
     } 
     .upload-cv-scetion {
         padding-top: 52px;
-        text-align: left!important;
-        .section-title{
+        .section-title,
+        p{
             text-align: left!important;
         }
     }
