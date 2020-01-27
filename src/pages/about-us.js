@@ -40,10 +40,10 @@ class AboutUs extends React.Component {
         <SEO title="About Us"/>
         <div>
           <section className="banner-section">
-          <picture>
-            <source media="(min-width: 581px)" srcSet={data.image.localFile.childImageSharp.url}/>
-            <Img fluid={data.image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
-          </picture>
+            <picture>
+              <source media="(min-width: 581px)" srcSet={data.image.localFile.childImageSharp.url}/>
+              <Img fluid={data.image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
+            </picture>
             {/* <Img fluid={data.image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
           </section>
           <section className="about-sections pb-0 pt-sm-0 page-heading-section container container-sm-fluid">

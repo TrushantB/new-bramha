@@ -70,7 +70,11 @@ class CommercialDetails extends React.Component {
         <main className="detail-page">
           {/* <!-- ---------------- banner start here ---------------- --> */}
             <section className="banner-section">
-              <Img fluid={commercialData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
+              <picture>
+                <source media="(min-width: 581px)" srcSet={commercialData.data.banner[0].image.localFile.childImageSharp.url}/>
+                <Img fluid={commercialData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img"/>
+              </picture>
+              {/* <Img fluid={commercialData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
             </section>
           {/* <!-- ---------------- banner end here ---------------- --> */}
           {/*  {/* <!------------------ middle section start here ----------------------> */}

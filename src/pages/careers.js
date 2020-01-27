@@ -153,7 +153,11 @@ class Careers extends React.Component {
         <SEO title="Careers"/>
         <div className="career-page">
           <section className="banner-section">
-            <Img fluid={careerData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
+            <picture>
+              <source media="(min-width: 581px)" srcSet={careerData.banner.localFile.childImageSharp.url}/>
+              <Img fluid={careerData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
+            </picture>
+            {/* <Img fluid={careerData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
           </section>
           <section className="career-info container-md bg-color pb-5 pb-sm-0">
             <div className="padding-block-60 career-info-row">

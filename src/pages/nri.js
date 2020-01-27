@@ -25,7 +25,11 @@ class NRI extends React.Component {
         <SEO title="NRI"/>
         <div  className="guideline-nri-detail">
           <section className="banner-section">
-            <Img fluid={nriData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
+            <picture>
+              <source media="(min-width: 581px)" srcSet={nriData.banner.localFile.childImageSharp.url}/>
+              <Img fluid={nriData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
+            </picture>
+            {/* <Img fluid={nriData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
           </section>
 
           <section className="page-heading-section container container-sm-fluid bg-color">

@@ -38,7 +38,11 @@ class Commercial extends React.Component {
                             <Link to={`commercial/${item2.verticals.uid}`}>
                               <div className="residences-card position-relative">
                                 <div className="residences-img ">
-                                  <Img fluid={item.data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%"/>
+                                  <picture>
+                                    <source media="(min-width: 581px)" srcSet={item.data.thumbnail.localFile.childImageSharp.url}/>
+                                    <Img fluid={item.data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%" />
+                                  </picture>
+                                  {/* <Img fluid={item.data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%"/> */}
                                 </div>
                                 <div className="rectangle position-absolute d-flex flex-column justify-content-around">
                                   <div className="rectangle-title">

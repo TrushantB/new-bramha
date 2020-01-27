@@ -240,7 +240,11 @@ export default class Residential extends React.Component {
                               <Link to={`residential/${item.residential_links.uid}`} >
                                 <div className="residences-card position-relative">
                                   <div className="residences-img">
-                                    <Img fluid={item.residential_links.document[0].data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%"/>
+                                  <picture>
+                                    <source media="(min-width: 581px)" srcSet={item.residential_links.document[0].data.thumbnail.localFile.childImageSharp.url}/>
+                                    <Img fluid={item.residential_links.document[0].data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%" />
+                                  </picture>
+                                    {/* <Img fluid={item.residential_links.document[0].data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%"/> */}
                                   </div>
                                   <div className="rectangle position-absolute d-flex flex-column justify-content-around">
                                     <div className="rectangle-title">

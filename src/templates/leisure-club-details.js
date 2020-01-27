@@ -70,7 +70,11 @@ class LeisureDetails extends React.Component {
         <main className="detail-page">
           {/* <!-- ---------------- banner start here ---------------- --> */}
             <section className="banner-section">
-              <Img fluid={leisureData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
+              <picture>
+                <source media="(min-width: 581px)" srcSet={leisureData.data.banner[0].image.localFile.childImageSharp.url}/>
+                <Img fluid={leisureData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img"/>
+              </picture>
+              {/* <Img fluid={leisureData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
             </section>
           {/* <!-- ---------------- banner end here ---------------- --> */}
           {/*  {/* <!------------------ middle section start here ----------------------> */}

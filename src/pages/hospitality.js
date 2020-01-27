@@ -39,7 +39,11 @@ class Hospitality extends React.Component {
                               <Link to={`hospitality/${item.vertical_links.uid}`} >
                                 <div className="residences-card position-relative" key={value}>
                                   <div className="residences-img ">
-                                    <Img fluid={datas.data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%"/>
+                                    <picture>
+                                      <source media="(min-width: 581px)" srcSet={datas.data.thumbnail.localFile.childImageSharp.url}/>
+                                      <Img fluid={datas.data.thumbnail.localFile.childImageSharp.fluid} alt="Hospital Image" width="100%" />
+                                    </picture>
+                                    {/* <Img fluid={datas.data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%"/> */}
                                   </div>
                                   <div className="rectangle position-absolute d-flex flex-column justify-content-around">
                                     <div className="rectangle-title">

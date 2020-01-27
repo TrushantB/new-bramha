@@ -38,7 +38,11 @@ class Contacts extends React.Component {
         <SEO title="Contacts"/>
         <section className="contact-section">
           <div className="contact-page-image">
-            <Img fluid={contactData.banner.localFile.childImageSharp.fluid} alt="" width="100%"/>
+            <picture>
+              <source media="(min-width: 581px)" srcSet={contactData.banner.localFile.childImageSharp.url}/>
+              <Img fluid={contactData.banner.localFile.childImageSharp.fluid} alt="" width="100%" />
+            </picture>
+            {/* <Img fluid={contactData.banner.localFile.childImageSharp.fluid} alt="" width="100%"/> */}
           </div>
           <section className="page-heading-section container container-sm-fluid bg-color">
             <div className="contact-us-title padding-block-60">
