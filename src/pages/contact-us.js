@@ -39,7 +39,7 @@ class Contacts extends React.Component {
         <section className="contact-section">
           <div className="contact-page-image">
             <picture>
-              <source media="(max-width: 581px)" srcSet={contactData.banner.mobile.url}/>
+              <source media="(max-width: 581px)" srcSet={contactData.banner.Mobile.url}/>
               <img src={contactData.banner.url} alt="" width="100%" />
             </picture>
             {/* <Img fluid={contactData.banner.localFile.childImageSharp.fluid} alt="" width="100%"/> */}
