@@ -38,6 +38,7 @@ class Hospitality extends React.Component {
                             <div className="col-md-6 col-lg-4 p-0 pl-sm-3 pr-sm-3" key={value}>
                               <Link to={`hospitality/${item.vertical_links.uid}`} >
                                 <div className="residences-card position-relative" key={value}>
+                                  
                                   <div className="residences-img ">
                                     <picture>
                                        <source media="(max-width: 581px)" srcSet={datas.data.thumbnail.mobile.url}/>

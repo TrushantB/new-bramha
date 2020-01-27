@@ -39,8 +39,8 @@ class Commercial extends React.Component {
                               <div className="residences-card position-relative">
                                 <div className="residences-img ">
                                   <picture>
-                                    <source media="(min-width: 581px)" srcSet={item.data.thumbnail.localFile.childImageSharp.url}/>
-                                    <Img fluid={item.data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%" />
+                                    <source media="(min-width: 581px)" srcSet={item.data.thumbnail.url}/>
+                                    <img src={item.data.thumbnail.url} alt="" width="100%" />
                                   </picture>
                                   {/* <Img fluid={item.data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%"/> */}
                                 </div>
@@ -111,13 +111,7 @@ export const commercialPage = graphql` {
                     text
                   }
                   thumbnail {
-                    localFile {
-                      childImageSharp {
-                        fluid(maxWidth: 1150) {
-                          ...GatsbyImageSharpFluid
-                        }
-                      }
-                    }
+                    url
                   }
                   banner {
                     image {

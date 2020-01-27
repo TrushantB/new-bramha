@@ -38,6 +38,7 @@ class LeisureClub extends React.Component {
                             <Link to={`leisure-club/${item2.verticals.uid}`}>
                               <div className="residences-card position-relative mt-0 mt-sm-5">
                                 <div className="residences-img ">
+                                  
                                   <picture>
                                     <source media="(min-width: 581px)" srcSet={item.data.thumbnail.localFile.childImageSharp.url}/>
                                     <Img fluid={item.data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%" />
