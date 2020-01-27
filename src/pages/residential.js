@@ -153,7 +153,7 @@ export default class Residential extends React.Component {
             
             centerMode: true,
             infinite: true,
-            centerPadding: "50px",
+            centerPadding: "60px",
             slidesToShow: 1,
            
            
@@ -165,7 +165,7 @@ export default class Residential extends React.Component {
           settings: {
             centerMode: true,
             infinite: true,
-            centerPadding: "60px",
+            centerPadding: "30px",
             slidesToShow: 1,
            
             autoplaySpeed: 0
