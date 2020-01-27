@@ -115,6 +115,9 @@
         .icon-description{
             flex-basis:75%;
         }
+        &::last-child{
+            max-width: 50%;
+        }
     }
       .active {
         color:theme-color(primary);
@@ -122,6 +125,7 @@
             color:theme-color(primary);
         }
      }
+
   }
  
   .detail-page{
