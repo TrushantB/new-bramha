@@ -88,7 +88,11 @@ class KnoweldgeHub extends React.Component {
                             </div>
                             <div className="guidelines-nris-wrapper position-relative mt-30">
                               <div className=" guidelines-nris-img">
+                              <picture>
+                                {console.log('item.topics.document[0].data.banner.mobile.url', item.topics.document[0].data.banner.mobile.url)}
+                                <source media="(max-width: 581px)" srcSet={item.topics.document[0].data.banner.mobile.url} />
                                 <Img fluid={item.topics.document[0].data.banner.localFile.childImageSharp.fluid } alt="" width="100%"/>
+                              </picture>
                               </div>
                               <div className="guidelines-nris-info position-absolute">
                                 <p className="mb-0 text-white">{item.topics.document[0].data.heading.text}</p>
@@ -251,6 +255,9 @@ export const knowledgePage = graphql` {
                         presentationWidth
                       }
                     }
+                  }
+                  mobile{
+                    url
                   }
                 }
               }

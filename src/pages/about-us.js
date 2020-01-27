@@ -41,8 +41,8 @@ class AboutUs extends React.Component {
         <div>
           <section className="banner-section">
             <picture>
-              <source media="(min-width: 581px)" srcSet={data.image.localFile.childImageSharp.url}/>
-              <Img fluid={data.image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
+              <source media="(max-width: 581px)" srcSet={data.image.mobile.url}/>
+              <img src={data.image.url} alt="banner image here" className="banner-img" />
             </picture>
             {/* <Img fluid={data.image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
           </section>
@@ -231,12 +231,9 @@ export const AboutPage = graphql` {
         text
       }
       image {
-        localFile {
-          childImageSharp {
-            fluid(maxWidth: 1150) {
-              ...GatsbyImageSharpFluid
-            }
-          }
+        url
+        mobile{
+          url
         }
       }
       banner {
