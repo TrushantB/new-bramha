@@ -43,7 +43,7 @@ return(
         <Link className="nav-link d-inline-block w-100" to="/" onClick={onClick}>
           Our Verticals
         </Link>
-        <Link className="dropdown-toggle d-inline-block custom-toggle" id="navbarDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span className="caret"></span></Link>
+        <Link className="dropdown-toggle d-inline-block custom-toggle" to="/" id="navbarDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span className="caret"></span></Link>
         <div className="dropdown-menu  border-0" aria-labelledby="navbarDropdown1">
           <Link className={`dropdown-item ${pathname=='/residential' ? 'active' : ''}`} to='/residential' onClick={classHandle}>Residential</Link>
           <Link className={`dropdown-item ${pathname=='/commercial' ? 'active' : ''}`} to='/commercial' onClick={classHandle}>Commercial</Link>
