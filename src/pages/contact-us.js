@@ -39,8 +39,8 @@ class Contacts extends React.Component {
         <section className="contact-section">
           <div className="contact-page-image">
             <picture>
-              <source media="(min-width: 581px)" srcSet={contactData.banner.localFile.childImageSharp.url}/>
-              <Img fluid={contactData.banner.localFile.childImageSharp.fluid} alt="" width="100%" />
+              <source media="(man-width: 581px)" srcSet={contactData.banner.mobile.url}/>
+              <img src={contactData.banner.url} alt="" width="100%" />
             </picture>
             {/* <Img fluid={contactData.banner.localFile.childImageSharp.fluid} alt="" width="100%"/> */}
           </div>
@@ -58,7 +58,6 @@ class Contacts extends React.Component {
               </div>
             </div>
           </section>
-          
           <section className="contact-details">
             <div className="container">
               <div className="row">
@@ -327,12 +326,9 @@ export const contactPage = graphql`{
         text
       }
       banner {
-        localFile {
-            childImageSharp {
-              fluid(maxWidth: 1150) {
-                ...GatsbyImageSharpFluid
-              }
-            }
+        url
+        Mobile{
+          url
         }
       }
       contactus {

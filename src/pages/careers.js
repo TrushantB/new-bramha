@@ -154,8 +154,8 @@ class Careers extends React.Component {
         <div className="career-page">
           <section className="banner-section">
             <picture>
-              <source media="(min-width: 581px)" srcSet={careerData.banner.localFile.childImageSharp.url}/>
-              <Img fluid={careerData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
+              <source media="(max-width: 581px)" srcSet={careerData.banner.mobile.url}/>
+              <img src={careerData.banner.url} alt="banner image here" className="banner-img" />
             </picture>
             {/* <Img fluid={careerData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
           </section>
@@ -355,12 +355,9 @@ export const careerPage = graphql` {
         text
       }
       banner {
-        localFile {
-          childImageSharp {
-            fluid(maxWidth: 1150) {
-              ...GatsbyImageSharpFluid
-            }
-          }
+        url
+        mobile{
+          url
         }
       }
       life_at_bramha {
