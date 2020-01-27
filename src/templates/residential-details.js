@@ -183,8 +183,11 @@ class VerticalPage extends React.Component {
             {/* <!--   ---------------- banner start here ---------------- --> */}
               <section className="banner-section">
               <picture>
-                <source media="(min-width: 581px)" srcSet={verticalData.data.banner[0].image.localFile.childImageSharp.url}/>
-                <Img fluid={verticalData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img"/>
+                {
+                  verticalData.data.banner[0].image.mobile &&
+                  <source media="(max-width: 581px)" srcSet={verticalData.data.banner[0].image.mobile.url}/>
+                }
+                <img src={verticalData.data.banner[0].image.url} alt="banner image here" className="banner-img"/>
               </picture>
                 {/* <Img fluid={verticalData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
               </section>
@@ -601,13 +604,9 @@ export const verticalViewData = graphql`
       }
       banner {
         image {
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 1150) {
-                ...GatsbyImageSharpFluid
-                presentationWidth
-              }
-            }
+          url
+          mobile{
+            url
           }
         }
       }

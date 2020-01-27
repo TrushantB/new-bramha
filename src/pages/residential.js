@@ -241,8 +241,8 @@ export default class Residential extends React.Component {
                                 <div className="residences-card position-relative">
                                   <div className="residences-img">
                                   <picture>
-                                    <source media="(min-width: 581px)" srcSet={item.residential_links.document[0].data.thumbnail.localFile.childImageSharp.url}/>
-                                    <Img fluid={item.residential_links.document[0].data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%" />
+                                    <source media="(max-width: 581px)" srcSet={item.residential_links.document[0].data.thumbnail.mobile.url}/>
+                                    <img src={item.residential_links.document[0].data.thumbnail.url} alt="" width="100%" />
                                   </picture>
                                     {/* <Img fluid={item.residential_links.document[0].data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%"/> */}
                                   </div>
@@ -286,7 +286,10 @@ export default class Residential extends React.Component {
                             <Link to={`residential/${item.completed_links.uid}`}>
                               <div className="secondary-card position-relative ">
                                 <div className="secondary-card-img image-ratio">
-                                  <Img fluid={item.completed_links.document[0].data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%"/>
+                                <picture>
+                                  <source media="(max-width: 581px)" srcSet={item.completed_links.document[0].data.thumbnail.mobile.url}/>
+                                    <img src={item.completed_links.document[0].data.thumbnail.url} alt="" width="100%"/>
+                                  </picture>
                                 </div>
                                 <div className="secondary-card-rectangle position-absolute d-flex flex-column justify-content-around">
                                   <div className="title">
@@ -360,12 +363,9 @@ export const residentialPage = graphql` {
                     text
                   }
                   thumbnail {
-                    localFile {
-                      childImageSharp {
-                        fluid(maxWidth: 1150) {
-                          ...GatsbyImageSharpFluid
-                        }
-                      }
+                    url
+                    mobile{
+                      url
                     }
                   }
                   banner{
@@ -401,13 +401,10 @@ export const residentialPage = graphql` {
                     text
                   }
                   thumbnail {
-                    localFile {
-                      childImageSharp {
-                        fluid(maxWidth: 1150) {
-                          ...GatsbyImageSharpFluid
-                        }
-                      }
-                    }
+                   url
+                   mobile{
+                     url
+                   }
                   }
                   banner {
                     image {
