@@ -17,13 +17,8 @@
     }
     margin: 0 0 72px;
     .residences-img {
-        // position: relative;
-        // padding-bottom: 133.33%;
-          .gatsby-image-wrapper{
-              padding-bottom: 133.33%;
-              div{
-                  padding: 0!important;
-              }
+        position: relative;
+        padding-bottom: 133.33%;
             img{
                 position: absolute;
                 object-fit: cover;
