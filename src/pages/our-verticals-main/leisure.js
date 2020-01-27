@@ -12,8 +12,8 @@ class Leisure extends React.Component {
         this.props.gallery &&
           <section className="banner-section">
             <picture>
-              <source media="(min-width: 581px)" srcSet={this.props.gallery.data.banner.localFile.childImageSharp.url}/>
-              <Img fluid={this.props.gallery.data.banner.localFile.childImageSharp.fluid} className="banner-img" style={{width:'100%'}} />
+              <source media="(max-width: 581px)" srcSet={this.props.gallery.data.banner.mobile.url}/>
+              <img src={this.props.gallery.data.banner.url} className="banner-img" style={{width:'100%'}} />
             </picture>
             {/* <Img fluid={this.props.gallery.data.banner.localFile.childImageSharp.fluid} className="banner-img" style={{width:'100%'}}/> */}
             <div className="banner-caption">

@@ -203,12 +203,9 @@ export const pageDataResidential = graphql` {
   prismicResidential {
     data {
       banner {
-        localFile {
-          childImageSharp {
-            fluid(maxWidth: 1150) {
-              ...GatsbyImageSharpFluid
-            }
-          }
+        url
+        mobile{
+          url
         }
       }
       banner_caption_logo {
@@ -225,12 +222,9 @@ export const pageDataResidential = graphql` {
   prismicCommercial {
     data {
       banner {
-        localFile {
-          childImageSharp {
-            fluid(maxWidth: 1150) {
-              ...GatsbyImageSharpFluid
-            }
-          }
+        url
+        mobile{
+          url
         }
       }
       banner_caption_logo {
@@ -247,12 +241,9 @@ export const pageDataResidential = graphql` {
   prismicHospitality {
     data {
       banner {
-        localFile {
-          childImageSharp {
-            fluid(maxWidth: 1150) {
-              ...GatsbyImageSharpFluid
-            }
-          }
+        url
+        mobile{
+          url
         }
       }
       banner_caption_logo {
@@ -269,12 +260,9 @@ export const pageDataResidential = graphql` {
   prismicLeisureClub {
     data {
       banner {
-        localFile {
-          childImageSharp {
-            fluid(maxWidth: 1150) {
-              ...GatsbyImageSharpFluid
-            }
-          }
+        url
+        mobile{
+          url
         }
       }
       banner_logo_caption {
