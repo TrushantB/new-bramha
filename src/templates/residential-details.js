@@ -581,7 +581,7 @@ class VerticalPage extends React.Component {
               </p>
               {
                 verticalData.data.maharera_important &&
-                  <p>
+                  <p className="maharera_important">
                     {verticalData.data.maharera_important.text}
                   </p>
               }
