@@ -40,8 +40,8 @@ class Hospitality extends React.Component {
                                 <div className="residences-card position-relative" key={value}>
                                   <div className="residences-img ">
                                     <picture>
-                                      <source media="(min-width: 581px)" srcSet={datas.data.thumbnail.localFile.childImageSharp.url}/>
-                                      <Img fluid={datas.data.thumbnail.localFile.childImageSharp.fluid} alt="Hospital Image" width="100%" />
+                                       <source media="(max-width: 581px)" srcSet={datas.data.thumbnail.mobile.url}/>
+                                      <img src={datas.data.thumbnail.url} alt="Hospital Image" width="100%" />
                                     </picture>
                                     {/* <Img fluid={datas.data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%"/> */}
                                   </div>
@@ -104,12 +104,9 @@ export const hospitalityPage = graphql`{
                     text
                   }
                   thumbnail{
-                    localFile {
-                      childImageSharp {
-                        fluid(maxWidth: 1150) {
-                          ...GatsbyImageSharpFluid
-                        }
-                      }
+                    url
+                    mobile {
+                      url
                     }
                   }
                   banner{
