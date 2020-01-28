@@ -61,7 +61,7 @@
   }
   .nav-pills .nav-link.active{
     //   border:1px solid theme-color(border-color);
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.09);
       border-bottom:7px solid theme-color(tertiary);
       border-radius: 5px 5px 0 0;
       background-color: transparent;
@@ -138,7 +138,8 @@
         }
     }
     .floor-plan{
-        margin:128px 0 148px;
+        margin:128px auto 148px;
+        max-width: 1600px;
         .section-title{
             margin-bottom: 52px;
         }

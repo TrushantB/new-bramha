@@ -91,6 +91,24 @@ class VerticalPage extends React.Component {
       afterChange: current => this.setState({ floorPlanActive: current }),
       responsive: [
         {
+          breakpoint: 2100,
+          settings: {
+            arrows: true,
+            centerMode: true,
+            centerPadding: '260px',
+            slidesToShow: 1
+          }
+        },
+        {
+          breakpoint: 1440,
+          settings: {
+            arrows: true,
+            centerMode: true,
+            centerPadding: '200px',
+            slidesToShow: 1
+          }
+        },
+        {
           breakpoint: 992,
           settings: {
             arrows: true,
