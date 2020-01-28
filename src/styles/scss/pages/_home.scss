@@ -257,6 +257,27 @@ body{
         }
         ul{
             justify-content: space-between!important;
+            li{
+                &:nth-child(1){
+                    order:1;
+                    flex-basis: 26%;
+                    a{
+                        padding-left: 12px;
+                    }
+                }
+                &:nth-child(2){
+                    order:2;
+                    flex-basis: 26%;
+                }
+                &:nth-child(3){
+                    order:4;
+                    flex-basis: 26%;
+                }
+                &:nth-child(4){
+                    order:3;
+                    flex-basis: 18%;
+                }
+            }
         }
         .container{
             padding: 0;
@@ -316,5 +337,8 @@ body{
 @media (max-width:350px){
     .our-verticals-tabs .tab span{
         font-size: 10px;
+    }
+    .our-verticals-tabs .tab:nth-child(1){
+        padding-left:8px;
     }
 }
