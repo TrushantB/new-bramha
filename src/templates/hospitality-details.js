@@ -114,7 +114,7 @@ class HospitalityDetails extends React.Component {
               <h2 className="section-title text-uppercase text-center">
                 Showcase
               </h2>
-              <div className="slider-wrapper">
+              <div className="slider-wrapper slider-bg">
                 <div className="container">
                   <Slider {...settings}>
                     {

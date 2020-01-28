@@ -39,11 +39,10 @@
       // }
       .slick-arrow{
         padding: 20px 36px;
-        top:auto;
-        &:hover,
-        &:focus{
-          background: #000;
-        }
+        // &:hover,
+        // &:focus{
+        //   background: #000;
+        // }
         
       }
       &:last-child{
@@ -52,44 +51,65 @@
     }
     
       .slick-prev {
-        left: auto;
         z-index: 1;
-        right: 277px;
-        bottom: -77px;
-        background: #333;
+        left: 50px;
+        bottom: auto;
+        transform: translate(0px, -50%);
+        top: 50%;
         // padding: 5px 50px 30px 17px;
         &:before{
-            content: "←";
+            content: "\f053";
             font-family: "Font Awesome 5 Free";
             // background: url('../../images/left.png') no-repeat center center;
             // padding: 12px 0px 16px 38px;
+            font-weight: 900;
             font-size: 40px;
             position: absolute;
-            top: -8px;
-            left: 15px;
+            top: 0;
+            left: 0;
         }
       }
     
     
       .slick-next {
-        transform: rotate(180deg);
-        right: 183px;
-        bottom: -57px;
-        background: #333;
+        right: 10px;
+        bottom: auto;
+        top:50%;
+        transform: translate(0px , -50%);
         // padding: 5px 50px 30px 15px;
         &:before{
-          content: "←";
+          content: "\f054";
           font-family: "Font Awesome 5 Free";
           // background: url('../../images/left.png') no-repeat center center;
           // padding: 12px 0px 16px 38px;
+          font-weight:900;
           position: absolute;
-          top: -8px;
-          left: 15px;
+          top: 0;
+          left: 0;
           font-size: 40px;
         }
       }
     } 
-
+.slider-bg{
+  .slider-img{
+    &::after{
+      content: "";
+      position: absolute;
+      background: rgba(00,00,00,0.3);
+      bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+  .slick-active{
+    .slider-img{
+      &::after{
+        display: none;
+      }
+    }
+  }
+}
 //================Media query============//
   //  @media (max-width:1200px){
   //   .events{
@@ -101,18 +121,17 @@
   @media (max-width:992px) {
     .events{
       .event-slider .slider-wrapper{
-        padding:18px 0 36px 0
+        padding:18px 0 36px 0;
       }
       .slick-prev{
-        right:180px
+        left:20px;
       }
       .slick-next{
-        right:90px
+        right:-30px;
       }
       .pages{
         margin-top:20px;
-        margin-left: 98px;
-        text-align: left !important;
+        margin-left: 0;
       }
       .mr-32{
         margin-right:12px;
@@ -152,6 +171,7 @@
             // bottom: -41px;
             right: 31px;
             top: auto;
+            bottom:-70px;
             z-index: 1;
            
           //   padding: 0;
@@ -161,13 +181,28 @@
           //       background: url('../../images/right.jpg') no-repeat center center;
           //       padding: 0 0 0 36px;
           //     }
+            &:before{
+              content: "\2190";
+              font-family: "Font Awesome 5 Free";
+              // background: url('../../images/left.png') no-repeat center center;
+              // padding: 12px 0px 16px 38px;
+              font-weight:900;
+              position: absolute;
+              top: 0;
+              left: auto;
+              right:0;
+              font-size: 40px;
+              color:theme-color('tertiary');
+            }
           }
           .slick-prev{
             // top: auto;
             // bottom: -50px;
-            right: 120px;
-            // left: auto;
+            right: 50px;
+            left: auto;
             z-index: 1;
+            top: auto;
+            bottom: -70px;
             // padding: 0;
             // background: transparent;
             //   &:before{
@@ -175,6 +210,19 @@
             //     background: url('../../images/left.jpg') no-repeat center center;
             //     padding: 0 0 0 36px;
             //   }
+            &:before{
+              content: "\2190";
+              font-family: "Font Awesome 5 Free";
+              // background: url('../../images/left.png') no-repeat center center;
+              // padding: 12px 0px 16px 38px;
+              transform: rotate(180deg);  
+              font-weight: 900;
+              font-size: 40px;
+              position: absolute;
+              color:theme-color('tertiary');
+              top: 0;
+              left: 0;
+            }
           }
           
         }
@@ -198,18 +246,18 @@
           margin-top: 12px;
         }
         .slick-next{
-          right: 39px;
           top: auto;
-          bottom: -39px;
+          bottom: -60px;
+          right: 40px;
           &::before{
             top: -15px;
             left: 6px;
           }
         }
         .slick-prev{
-          right: 97px;
+          right: 80px;
           top: auto;
-          bottom: -53px;
+          bottom: -60px;
            &::before{
             top: -15px;
             left: 5px;

@@ -177,7 +177,7 @@ class Careers extends React.Component {
                {careerData.life_at_bramha.text}
               </h3>
             </div>
-            <div className="slider-wrapper">
+            <div className="slider-wrapper slider-bg">
               <div className="container-md container-fluid">
                 <Slider {...settings}>
                   {

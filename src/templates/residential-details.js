@@ -220,7 +220,7 @@ class VerticalPage extends React.Component {
               <h2 className="section-title text-uppercase text-center">
                   Showcase
               </h2>
-              <div className="slider-wrapper">
+              <div className="slider-wrapper slider-bg">
                 <div className="container">
                 <Slider {...showCase}>
                       {
@@ -348,7 +348,7 @@ class VerticalPage extends React.Component {
                     </select>
                   </label>
                 </div>
-                <div className="showcase-slider">
+                <div className="showcase-slider slider-bg">
 
                   {
                     this.state.floorPlanSelect.length == 1 ?
@@ -463,7 +463,7 @@ class VerticalPage extends React.Component {
               <h2 className="section-title text-uppercase text-center">
                 Site Progress
               </h2>
-              <div className="slider-wrapper-gray">
+              <div className="slider-wrapper-gray slider-bg">
                 <div className="container showcase-slider slider-wrapper">
                   <Slider {...siteProcess}>
                     {
