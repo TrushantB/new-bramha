@@ -12,23 +12,27 @@ class Contacts extends React.Component {
         customer: true,
         channel: false,
         constructors: false,
-        career: false
+        career: false,
+        LandOwner:false
       };
     }
     optionSelect = (e) =>{
       this.setState({visible:!this.state.visible})
       console.log("e.target.value",e.target.value);
       if(e.target.value === 'customer'){
-        this.setState({ customer : true, channel : false, constructors : false ,  career : false })
+        this.setState({ customer : true, channel : false, constructors : false ,  career : false , LandOwner : false })
       }
       else if(e.target.value === 'channel'){
-        this.setState({ channel : true, customer : false, constructors : false ,  career : false })
+        this.setState({ channel : true, customer : false, constructors : false ,  career : false , LandOwner : false })
       }
       else if(e.target.value === 'constructors'){
-        this.setState({ constructors : true, channel : false, customer : false,  career : false  })
+        this.setState({ constructors : true, channel : false, customer : false,  career : false, LandOwner : false   })
       }
       else if(e.target.value === 'career'){
-        this.setState({ career : true , constructors : false, channel : false, customer : false })
+        this.setState({ career : true , constructors : false, channel : false, customer : false, LandOwner : false  })
+      }
+      else if(e.target.value === 'LandOwner'){
+        this.setState({ career : false , constructors : false, channel : false, customer : false , LandOwner : true  })
       }
     }
   render(){
@@ -124,8 +128,9 @@ class Contacts extends React.Component {
                                 <select name="I am :" className="form-control rounded-0" onChange={(e) => this.optionSelect(e)}>
                                     <option value="customer">Customer</option>
                                     <option value="channel">Channel Partner</option>
-                                    <option value="constructors">Constructors & Suppliers</option>
+                                    <option value="constructors">Contractors & Suppliers</option>
                                     <option value="career">Career</option>
+                                    <option value="LandOwner">Land Owner</option>
                                 </select>
                             </div>
                         </div>
@@ -149,33 +154,48 @@ class Contacts extends React.Component {
                                   <input type="number" className="form-control" id="phone-number" placeholder="Your Phone Number*" name="phone-number" required/>
                               </div>
                               <div className="col-sm-6 form-group ">
-                                <select className="form-control rounded-0" id="aboutus" placeholder="Budget" name="project-intrested" required >
-                                  <option>Project Intrested</option>
+                                <select className="form-control rounded-0" id="aboutus" placeholder="project-list" name="project-intrested" required >
+                                <option selected disabled> Project List</option>
+                                  <option> The collection</option>
                                   <option>F-Residences</option>
                                   <option>whaterbay</option>
-                                  <option>Vantage+</option>
-                                  <option>Vantage Tower</option>
-                                  <option>Exuberance Elite</option>
-                                  <option>Meander</option>
+                                  <option>Vantage c</option>
+                                  <option> Boulevard Towers</option>
+                                  <option>Business park</option>
                                 </select>
                               </div> 
 
-                              <div className="col-sm-6 form-group  ">
-                                  <input type="number" className="form-control" id="budget" placeholder="Budget" name="budget" required/>
-                              </div>
+                              <div className="col-sm-6 form-group ">
+                                <select className="form-control rounded-0" id="" name="source" required >
+                                  <option selected disabled>Budget</option>
+                                  <option>50 Lakh</option>
+                                  <option>50-80 Lakh</option>
+                                  <option> 80 Lakh-1Crore</option>
+                                  <option>1 Crore</option>
+                                  
+                                </select>
+                              </div> 
                               <div className="col-sm-6 form-group  ">
                                   <input type="text" className="form-control" id="city" placeholder="City" name="city" required/>
                               </div>
                               <div className="col-sm-12 form-group ">
                                 <select className="form-control rounded-0" id="aboutus" placeholder="source" name="source" required >
-                                  <option>source</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
+                                  <option selected disabled >source</option>
+                                  <option>Newspaper</option>
+                                  <option>Hoarding</option>
+                                  <option>Email</option>
+                                  <option>SMS</option>
+                                  <option>Google</option>
+                                  <option>Facebook</option>
+                                  <option>Cinema Ad</option>
+                                  <option>Broker</option>
+                                  <option>Property Portal</option>
+                                  <option>Word of Mouth</option>
+                                  <option>Others</option>
                                 </select>
                               </div> 
                               <div className="form-group col-md-12">
-                                <textarea className="form-control" rows="4" id="message" placeholder="Additional Message" name="message" required></textarea>
+                                <textarea className="form-control" rows="4" id="message" placeholder="Message" name="message" required></textarea>
                               </div>
                             </div>
                             <div className="sumbit text-center mt-sm-0 mt-4">
@@ -201,18 +221,13 @@ class Contacts extends React.Component {
                               </div>
                               <div className="col-sm-6 form-group  ">
                                   <input type="number" className="form-control" id="phone-number" placeholder="Your Phone Number*" name="phone-number" required/>
-                              </div>
-                              <div className="col-sm-6 form-group ">
-                                <select className="form-control" id="aboutus" placeholder="Budget" name="rera-registration-number" required >
-                                  <option>RERA Registration Number</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                </select>
                               </div> 
+                              <div className="col-sm-6 form-group  ">
+                                  <input type="number" className="form-control" id="" placeholder="RERA Registration Number" name="" required/>
+                              </div>
     
                               <div className="form-group col-md-12">
-                                <textarea className="form-control" rows="4" id="message" placeholder="Additional Message" name="message" required></textarea>
+                                <textarea className="form-control" rows="4" id="message" placeholder="Message" name="message" required></textarea>
                               </div>
                             </div>
                             <div className="sumbit text-center mt-sm-0 mt-4">
@@ -247,7 +262,7 @@ class Contacts extends React.Component {
                                   <input type="text" className="form-control" id="city" placeholder="City" name="city" required/>
                               </div> 
                               <div className="form-group col-md-12">
-                                <textarea className="form-control" rows="4" id="message" placeholder="Additional Message" name="message" required></textarea>
+                                <textarea className="form-control" rows="4" id="message" placeholder="Message" name="message" required></textarea>
                               </div>
                             </div>
                             <div className="sumbit text-center mt-sm-0 mt-4">
@@ -287,7 +302,7 @@ class Contacts extends React.Component {
                               </div>
     
                             <div className="form-group col-md-12">
-                              <textarea className="form-control" rows="4" id="message" placeholder="Additional Message" name="message" required></textarea>
+                              <textarea className="form-control" rows="4" id="message" placeholder="Message" name="message" required></textarea>
                             </div>
                           </div>
                           <div className="sumbit text-center mt-sm-0 mt-4">
@@ -296,6 +311,42 @@ class Contacts extends React.Component {
                         </div> 
                       </div>  
                     </form>
+                    }
+                    {
+                      this.state.LandOwner &&
+                      <form name="LandOwner" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+                        <div className="contact-form-bg pt-4 pb-4 pt-sm-5 pb-sm-5" id="LandOwner">
+                          <div className="container">
+                            <div className="form-row">
+                            <input type="hidden" name="form-name" value="LandOwner" />
+                            <div className="col-sm-6 form-group  ">
+                                  <input type="text" className="form-control" id="name" placeholder="Company*" name="company-name" autoComplete="false" required/>
+                              </div>
+                              <div className="col-sm-6 form-group  ">
+                                  <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" autoComplete="false" required/>
+                              </div>
+                            
+                              <div className="col-sm-6 form-group  ">
+                                  <input type="text" className="form-control" id="email" placeholder="Your Email*" autoComplete="false" name="email" required/>
+                              </div>
+                              <div className="col-sm-6 form-group  ">
+                                  <input type="number" className="form-control" id="phone-number" placeholder="Your Phone Number*" name="phone-number" required/>
+                              </div>
+
+                              <div className="col-sm-12 form-group  ">
+                                  <input type="text" className="form-control" id="city" placeholder="City" name="city" required/>
+                              </div> 
+                              <div className="form-group col-md-12">
+                                <textarea className="form-control" rows="4" id="message" placeholder="Message" name="message" required></textarea>
+                              </div>
+                            </div>
+                            <div className="sumbit text-center mt-sm-0 mt-4">
+                              <button type="submit" className="btn-secondary">Submit</button>
+                            </div>  
+                          </div> 
+                        </div>  
+                      </form>
+ 
                     }
             </div>
             </section>
