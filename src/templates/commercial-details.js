@@ -112,11 +112,12 @@ class CommercialDetails extends React.Component {
                 <div className="container">
                 <Slider {...settings}>
                   {
-                    commercialData.data.showcase.map((item,value)=>{
+                    commercialData.data.showcase.map((item,value) => {
+                      console.log('item', item)
                       return(
                         <div key={value}>
-                          <div  className="slider-img image-ratio" onClick={() => this.setState({ isOpen: true ,photoIndex:value})}>
-                            <Img fluid={item.image1.localFile.childImageSharp.fluid} alt=" Showcase slidwer" className="life-at-bramha-slider-image" />
+                          <div className="slider-img image-ratio" onClick={() => this.setState({ isOpen: true ,photoIndex:value})}>
+                              <img src={item.image1.url} alt=" Showcase slidwer" className="life-at-bramha-slider-image" />
                             <p className="showcase-slide-caption">{item.caption}</p>
                           </div>
                         </div>
@@ -127,9 +128,9 @@ class CommercialDetails extends React.Component {
                   {
                     isOpen &&
                     <Lightbox
-                      mainSrc={commercialData.data.showcase[photoIndex].image1.localFile.childImageSharp.fluid.src}
-                      nextSrc={commercialData.data.showcase[(photoIndex + 1) % commercialData.data.showcase.length].image1.localFile.childImageSharp.fluid.src}
-                      prevSrc={commercialData.data.showcase[(photoIndex + commercialData.data.showcase.length - 1) % commercialData.data.showcase.length].image1.localFile.childImageSharp.fluid.src}
+                      mainSrc={commercialData.data.showcase[photoIndex].image1.url}
+                      nextSrc={commercialData.data.showcase[(photoIndex + 1) % commercialData.data.showcase.length].image1.url}
+                      prevSrc={commercialData.data.showcase[(photoIndex + commercialData.data.showcase.length - 1) % commercialData.data.showcase.length].image1.url}
                       onCloseRequest={() => this.setState({ isOpen: false })}
                       onMovePrevRequest={() =>
                         this.setState({
@@ -257,21 +258,8 @@ export const hospitalityPage = graphql`
         text
       }
       showcase {
-        title1 {
-          text
-        }
-        short_description1 {
-          text
-        }
-        image1 {
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 1150, quality: 100) {
-                ...GatsbyImageSharpFluid
-                presentationWidth
-              }
-            }
-          }
+        image1{
+          url
         }
         caption
       }
