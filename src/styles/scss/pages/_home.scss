@@ -35,7 +35,9 @@ body{
     display: flex;
     flex-direction: column;
     animation: slide-in 0.3s 0.2s backwards;
+    padding-bottom: 24px;
     overflow-x: hidden;
+    overflow-y: scroll;
     &::-webkit-scrollbar{
         display:none;
     }
