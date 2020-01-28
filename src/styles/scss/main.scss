@@ -433,20 +433,6 @@ button:focus{
     .navbar-collapse{
         width:96%;
     }
-    .bg-color {
-        margin-top: 0;
-        background: theme-color("bg-color");
-            .padding-block-60{
-                padding: 25px 0 25px 0;
-            }
-            .page-heading{
-                font-size: 24px;  
-                margin: 0;
-            }
-            .text{
-                padding: 0 15px;
-            }
-        }
        .career-tabs{
         .btn-wraper{
             flex-basis: 23%;
@@ -472,9 +458,10 @@ button:focus{
         }
         .bg-color {
             margin-top: 0;
+            padding:0;
             background: theme-color("bg-color");
                 .padding-block-60{
-                    padding: 25px 0 25px 0;
+                    padding: 84px 0 24px 0;
                 }
                 .page-heading{
                     font-size: 24px;  
@@ -607,18 +594,7 @@ button:focus{
         
              }
         }   
-        .bg-color {
-            margin-top: 0;
-            padding:0;
-            background: theme-color("bg-color");
-                .padding-block-60{
-                    padding: 24px 0 24px 0;
-                }
-                .page-heading{
-                    font-size: 24px;  
-                    margin: 0;
-                }
-        }
+        
         //Page heading
         .page-heading-section{
             .main-paragraph{

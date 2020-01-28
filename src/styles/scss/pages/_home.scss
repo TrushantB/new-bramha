@@ -165,7 +165,7 @@ body{
     }
     .banner-section{
         width: 100%;
-        height: calc(100vh - 120px);
+        height: calc(100vh - 60px);
         -o-object-fit: cover;
         object-fit: cover;
         position: relative;
@@ -188,6 +188,7 @@ body{
                 opacity: 0;
                 transition-delay: 500ms;
             }
+            
         }
         .banner-caption{
             position: absolute;

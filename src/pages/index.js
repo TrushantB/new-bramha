@@ -41,12 +41,12 @@ class IndexPage extends React.Component {
     const leisureData  = this.props.data.prismicLeisureClub;
     const residentialData = this.props.data.prismicResidential;
     var settings = {
-      dots: true,
+      dots: false,
       infinite: true,
       speed: 1000,
-      autoplay: true,
+      autoplay: false,
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1  
     };
     
     
@@ -62,7 +62,7 @@ class IndexPage extends React.Component {
           {
             this.state.selectedVertical && 
             <section className="banner-section">
-            {/* <picture>
+            <picture>
               <source media="(max-width: 581px)" srcSet={this.state.selectedVertical.banner.mobile.url}/>
             {
              <img src={this.state.selectedVertical.banner.url} className="banner-img" style={{width:'100%'}} />
@@ -70,12 +70,12 @@ class IndexPage extends React.Component {
             </picture>
             <div className="banner-caption">
               <img src={this.state.selectedVertical.banner_caption_logo.localFile.childImageSharp.fluid.src}/>
-            </div> */}
-            <Slider {...settings}>
+            </div>
+            {/* <Slider {...settings}>
               {
                 this.state.selectedVertical.gallery.map((item, index) => {
                   return(
-                      <img src={item.image.url} key={index}/>
+                      <img src={item.image.url} key={index} className="banner-img" style={{width:'100%'}} />
                   )
                 })
               }
@@ -83,7 +83,7 @@ class IndexPage extends React.Component {
             </Slider>
             <div className="banner-caption">
               <img src={this.state.selectedVertical.banner_caption_logo.localFile.childImageSharp.fluid.src}/>
-            </div>
+            </div> */}
           </section>  
           }
         </div>
@@ -96,28 +96,28 @@ class IndexPage extends React.Component {
                 <li className={`nav-item d-flex align-items-center ${this.state.selectedVertical==residentialData.data?'active':''}`} onClick={()=>this.handleOurVerticals(residentialData)}>
                   <div className="tab d-flex align-items-center">
                     <i className="far fa-building"> </i>
-                    Residential
+                    <span>Residential</span>
                   </div>
                 </li>
 
                 <li className={`nav-item d-flex align-items-center ${this.state.selectedVertical==commercialData.data?'active':''}`} onClick={()=>this.handleOurVerticals(commercialData)}>
                   <div className="tab d-flex align-items-center">
                     <i className="fas fa-city"></i>
-                    Commercial
+                    <span> Commercial </span>
                   </div>
                 </li>
 
                 <li className={`nav-item d-flex align-items-center ${this.state.selectedVertical==hospitalityData.data?'active':''}`} onClick={()=>this.handleOurVerticals(hospitalityData)}>
                   <div className="tab d-flex align-items-center">
                     <i className="far fa-hospital"></i>
-                    Hospitality
+                    <span>Hospitality</span>
                   </div>
                 </li>
 
                 <li className={`nav-item d-flex align-items-center ${this.state.selectedVertical==leisureData.data?'active':''}`} onClick={()=>this.handleOurVerticals(leisureData)}>
                   <div className="tab d-flex align-items-center">
                     <i className="fas fa-archway"></i>
-                    Leisure
+                    <span>Leisure</span>
                   </div>
                 </li>
               </ul>
