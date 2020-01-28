@@ -95,7 +95,7 @@ class MediaAndEvents extends React.Component {
                           {datas.data.title.text}
                         </h3>
                       </div>
-                      <div className="slider-wrapper">
+                      <div className="slider-wrapper slider-bg">
                         <div className="container-fluid container-sm p-0 px-sm-3">
                           <p className="location text-center mb-0">
                             <span className="mr-32  text-capitalize">Location: {datas.data.location.text}</span> | <span className="ml-32">Date: {datas.data.date}</span>

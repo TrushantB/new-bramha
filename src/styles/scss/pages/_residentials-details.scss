@@ -61,7 +61,7 @@
   }
   .nav-pills .nav-link.active{
     //   border:1px solid theme-color(border-color);
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.09);
       border-bottom:7px solid theme-color(tertiary);
       border-radius: 5px 5px 0 0;
       background-color: transparent;
@@ -115,6 +115,9 @@
         .icon-description{
             flex-basis:75%;
         }
+        &:last-child{
+            max-width: 50%;
+        }
     }
       .active {
         color:theme-color(primary);
@@ -122,6 +125,7 @@
             color:theme-color(primary);
         }
      }
+
   }
  
   .detail-page{
@@ -134,7 +138,8 @@
         }
     }
     .floor-plan{
-        margin:128px 0 148px;
+        margin:128px auto 148px;
+        max-width: 1600px;
         .section-title{
             margin-bottom: 52px;
         }
@@ -419,6 +424,9 @@
         -ms-filter: grayscale(100%);
          -o-filter: grayscale(100%);
             filter: grayscale(100%);
+}
+.maharera_important{
+    font-size: 10px;
 }
 @media(max-width:1200px){
     .contact-section{

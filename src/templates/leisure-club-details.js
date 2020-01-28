@@ -104,7 +104,7 @@ class LeisureDetails extends React.Component {
             </section>
           {/*  {/* <!------------------ middle section end here ------------------------> */}
           {/* <!-- ------------------- Showcase section start here ------------------- --> */}
-            <section className="slider-page">
+            <section className="slider-page slider-bg">
               <h2 className="section-title text-uppercase text-center">
                 Showcase
               </h2>

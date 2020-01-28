@@ -377,7 +377,12 @@
   .nav-open .nav-container .nav a {
     animation: slide-in 0.8s 0.2s backwards;
   }
-  
+  .nav-open .nav-container .nav li:nth-of-type(2) .dropdown-menu {
+    animation: slide-in 0.4s 0.2s backwards;
+  }
+  .nav-open .nav-container .nav li:nth-of-type(3) .dropdown-menu {
+    animation: slide-in 0.4s 0.2s backwards;
+  }
   .nav-open .nav-container .nav li:nth-of-type(2){
     a {
      animation-delay: 0.22s;
@@ -389,7 +394,7 @@
     .dropdown-menu{
       animation-delay: 0.1;
       a{        
-        animation-delay: 0.2s;
+        animation-delay: 0.1s;
       }
     }
   }
@@ -405,7 +410,7 @@
     .dropdown-menu{
       animation-delay: 0.1s;
       a{        
-        animation-delay: 0.2s;
+        animation-delay: 0.1s;
       }
     }
   } 
