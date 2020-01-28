@@ -121,7 +121,7 @@ class Contacts extends React.Component {
                         <div className="container">
                             <div className="d-flex customer justify-content-center align-items-baseline">
                                 <label className=" text-white mb-0 font-weight-light">I am A</label>
-                                <select name="I am :" className="form-control" onChange={(e) => this.optionSelect(e)}>
+                                <select name="I am :" className="form-control rounded-0" onChange={(e) => this.optionSelect(e)}>
                                     <option value="customer">Customer</option>
                                     <option value="channel">Channel Partner</option>
                                     <option value="constructors">Constructors & Suppliers</option>
@@ -149,7 +149,7 @@ class Contacts extends React.Component {
                                   <input type="number" className="form-control" id="phone-number" placeholder="Your Phone Number*" name="phone-number" required/>
                               </div>
                               <div className="col-sm-6 form-group ">
-                                <select className="form-control" id="aboutus" placeholder="Budget" name="project-intrested" required >
+                                <select className="form-control rounded-0" id="aboutus" placeholder="Budget" name="project-intrested" required >
                                   <option>Project Intrested</option>
                                   <option>F-Residences</option>
                                   <option>whaterbay</option>
@@ -167,7 +167,7 @@ class Contacts extends React.Component {
                                   <input type="text" className="form-control" id="city" placeholder="City" name="city" required/>
                               </div>
                               <div className="col-sm-12 form-group ">
-                                <select className="form-control" id="aboutus" placeholder="source" name="source" required >
+                                <select className="form-control rounded-0" id="aboutus" placeholder="source" name="source" required >
                                   <option>source</option>
                                   <option>2</option>
                                   <option>3</option>
