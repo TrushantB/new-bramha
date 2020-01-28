@@ -348,7 +348,7 @@ class VerticalPage extends React.Component {
                     </select>
                   </label>
                 </div>
-                <div className="showcase-slider slider-bg">
+                <div className="showcase-slider">
 
                   {
                     this.state.floorPlanSelect.length == 1 ?
