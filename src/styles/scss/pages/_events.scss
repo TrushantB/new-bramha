@@ -247,21 +247,21 @@
         }
         .slick-next{
           top: auto;
-          bottom: -60px;
-          right: 40px;
-          &::before{
-            top: -15px;
-            left: 6px;
-          }
+          bottom: -35px;
+          right: 60px;
+          // &::before{
+          //   top: -15px;
+          //   left: 6px;
+          // }
         }
         .slick-prev{
-          right: 80px;
+          right: 20px;
           top: auto;
-          bottom: -60px;
-           &::before{
-            top: -15px;
-            left: 5px;
-          }
+          bottom: -51px;
+          //  &::before{
+          //   top: -15px;
+          //   left: 5px;
+          // }
         }
       }
      }  
