@@ -171,8 +171,13 @@ button:focus{
     }
 }
 
-
-
+// Up  Arrow
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    // display: none;
+}
 
 // ------------- guideline nri details page Start Here ----------------
 

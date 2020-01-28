@@ -110,7 +110,9 @@ const Layout = ({ children ,pathname}) => {
         </div>
       </div>
       }
+      <a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>
     </div>
+    
   )
 }
 
