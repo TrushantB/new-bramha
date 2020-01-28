@@ -166,12 +166,12 @@ class Contacts extends React.Component {
                               </div> 
 
                               <div className="col-sm-6 form-group ">
-                                <select className="form-control rounded-0" id="aboutus" name="source" required >
+                                <select className="form-control rounded-0" id="" name="source" required >
                                   <option selected disabled>Budget</option>
-                                  <option>50Lakh</option>
-                                  <option>50-80Lakh,</option>
-                                  <option> 80Lakh-1Crore</option>
-                                  <option>1Crore</option>
+                                  <option>50 Lakh</option>
+                                  <option>50-80 Lakh</option>
+                                  <option> 80 Lakh-1Crore</option>
+                                  <option>1 Crore</option>
                                   
                                 </select>
                               </div> 
@@ -182,7 +182,7 @@ class Contacts extends React.Component {
                                 <select className="form-control rounded-0" id="aboutus" placeholder="source" name="source" required >
                                   <option selected disabled >source</option>
                                   <option>Newspaper</option>
-                                  <option>Hoarding,</option>
+                                  <option>Hoarding</option>
                                   <option>Email</option>
                                   <option>SMS</option>
                                   <option>Google</option>
@@ -195,7 +195,7 @@ class Contacts extends React.Component {
                                 </select>
                               </div> 
                               <div className="form-group col-md-12">
-                                <textarea className="form-control" rows="4" id="message" placeholder="Additional Message" name="message" required></textarea>
+                                <textarea className="form-control" rows="4" id="message" placeholder="Message" name="message" required></textarea>
                               </div>
                             </div>
                             <div className="sumbit text-center mt-sm-0 mt-4">
@@ -227,7 +227,7 @@ class Contacts extends React.Component {
                               </div>
     
                               <div className="form-group col-md-12">
-                                <textarea className="form-control" rows="4" id="message" placeholder="Additional Message" name="message" required></textarea>
+                                <textarea className="form-control" rows="4" id="message" placeholder="Message" name="message" required></textarea>
                               </div>
                             </div>
                             <div className="sumbit text-center mt-sm-0 mt-4">
@@ -262,7 +262,7 @@ class Contacts extends React.Component {
                                   <input type="text" className="form-control" id="city" placeholder="City" name="city" required/>
                               </div> 
                               <div className="form-group col-md-12">
-                                <textarea className="form-control" rows="4" id="message" placeholder="Additional Message" name="message" required></textarea>
+                                <textarea className="form-control" rows="4" id="message" placeholder="Message" name="message" required></textarea>
                               </div>
                             </div>
                             <div className="sumbit text-center mt-sm-0 mt-4">
@@ -302,7 +302,7 @@ class Contacts extends React.Component {
                               </div>
     
                             <div className="form-group col-md-12">
-                              <textarea className="form-control" rows="4" id="message" placeholder="Additional Message" name="message" required></textarea>
+                              <textarea className="form-control" rows="4" id="message" placeholder="Message" name="message" required></textarea>
                             </div>
                           </div>
                           <div className="sumbit text-center mt-sm-0 mt-4">
@@ -337,7 +337,7 @@ class Contacts extends React.Component {
                                   <input type="text" className="form-control" id="city" placeholder="City" name="city" required/>
                               </div> 
                               <div className="form-group col-md-12">
-                                <textarea className="form-control" rows="4" id="message" placeholder="Additional Message" name="message" required></textarea>
+                                <textarea className="form-control" rows="4" id="message" placeholder="Message" name="message" required></textarea>
                               </div>
                             </div>
                             <div className="sumbit text-center mt-sm-0 mt-4">
