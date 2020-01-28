@@ -61,8 +61,8 @@ class IndexPage extends React.Component {
         <div className="home-slider">
           {
             this.state.selectedVertical && 
-            <section className="banner-section">
-            <picture>
+            <section>
+            {/* <picture>
               <source media="(max-width: 581px)" srcSet={this.state.selectedVertical.banner.mobile.url}/>
             {
              <img src={this.state.selectedVertical.banner.url} className="banner-img" style={{width:'100%'}} />
@@ -70,20 +70,27 @@ class IndexPage extends React.Component {
             </picture>
             <div className="banner-caption">
               <img src={this.state.selectedVertical.banner_caption_logo.localFile.childImageSharp.fluid.src}/>
-            </div>
-            {/* <Slider {...settings}>
+            </div> */}
+            <Slider {...settings}>
               {
                 this.state.selectedVertical.gallery.map((item, index) => {
                   return(
-                      <img src={item.image.url} key={index} className="banner-img" style={{width:'100%'}} />
+                    <div key={index} className="banner-section">
+                      <picture>
+                        <source media="(max-width: 581px)" srcSet={this.state.selectedVertical.banner.mobile.url}/>
+                          {
+                          <img src={item.image.url} className="banner-img" style={{width:'100%'}} />
+                          }  
+                      </picture>
+                      <div className="banner-caption">
+                        <img src={this.state.selectedVertical.banner_caption_logo.localFile.childImageSharp.fluid.src}/>
+                      </div>
+                    </div>
                   )
                 })
               }
 
             </Slider>
-            <div className="banner-caption">
-              <img src={this.state.selectedVertical.banner_caption_logo.localFile.childImageSharp.fluid.src}/>
-            </div> */}
           </section>  
           }
         </div>
@@ -95,28 +102,28 @@ class IndexPage extends React.Component {
                 
                 <li className={`nav-item d-flex align-items-center ${this.state.selectedVertical==residentialData.data?'active':''}`} onClick={()=>this.handleOurVerticals(residentialData)}>
                   <div className="tab d-flex align-items-center">
-                    <i className="far fa-building"> </i>
+                  <span className="icon-Residential_inactive icon"></span>
                     <span>Residential</span>
                   </div>
                 </li>
 
                 <li className={`nav-item d-flex align-items-center ${this.state.selectedVertical==commercialData.data?'active':''}`} onClick={()=>this.handleOurVerticals(commercialData)}>
                   <div className="tab d-flex align-items-center">
-                    <i className="fas fa-city"></i>
+                  <span className="icon-Commercial_inactive icon"></span>
                     <span> Commercial </span>
                   </div>
                 </li>
 
                 <li className={`nav-item d-flex align-items-center ${this.state.selectedVertical==hospitalityData.data?'active':''}`} onClick={()=>this.handleOurVerticals(hospitalityData)}>
                   <div className="tab d-flex align-items-center">
-                    <i className="far fa-hospital"></i>
+                  <span className="icon-Hospitality_inactive icon"></span>
                     <span>Hospitality</span>
                   </div>
                 </li>
 
                 <li className={`nav-item d-flex align-items-center ${this.state.selectedVertical==leisureData.data?'active':''}`} onClick={()=>this.handleOurVerticals(leisureData)}>
                   <div className="tab d-flex align-items-center">
-                    <i className="fas fa-archway"></i>
+                  <span className="icon-Leisure_inactive icon"></span>
                     <span>Leisure</span>
                   </div>
                 </li>

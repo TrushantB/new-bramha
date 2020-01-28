@@ -1,0 +1,133 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?8ko28p');
+  src:  url('fonts/icomoon.eot?8ko28p#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?8ko28p') format('truetype'),
+    url('fonts/icomoon.woff?8ko28p') format('woff'),
+    url('fonts/icomoon.svg?8ko28p#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-basketball-court:before {
+  content: "\e900";
+  color: #979797;
+}
+.icon-CCTV-surveillance:before {
+  content: "\e901";
+  color: #979797;
+}
+.icon-Electricity-Backup:before {
+  content: "\e902";
+  color: #979797;
+}
+.icon-elevator:before {
+  content: "\e903";
+  color: #979797;
+}
+.icon-Entrance-Lobby:before {
+  content: "\e904";
+  color: #979797;
+}
+.icon-fire-alarm:before {
+  content: "\e905";
+  color: #979797;
+}
+.icon-Group-28-Copy-3:before {
+  content: "\e906";
+  color: #979797;
+}
+.icon-Gym:before {
+  content: "\e907";
+  color: #979797;
+}
+.icon-Jogging-Track:before {
+  content: "\e908";
+  color: #979797;
+}
+.icon-Kids-Pool:before {
+  content: "\e909";
+  color: #979797;
+}
+.icon-swimming-pool:before {
+  content: "\e90a";
+  color: #979797;
+}
+.icon-tennis-court:before {
+  content: "\e90b";
+  color: #979797;
+}
+.icon-arrow:before {
+  content: "\e90c";
+}
+.icon-Commercial_active:before {
+  content: "\e90d";
+  color: #b7292f;
+}
+.icon-Commercial_inactive:before {
+  content: "\e90e";
+}
+.icon-Hospitality_active:before {
+  content: "\e90f";
+  color: #b7292f;
+}
+.icon-Hospitality_inactive:before {
+  content: "\e910";
+}
+.icon-Leisure_active:before {
+  content: "\e911";
+  color: #b7292f;
+}
+.icon-Leisure_inactive:before {
+  content: "\e912";
+}
+.icon-location_icon:before {
+  content: "\e913";
+}
+.icon-Proximities_Hotels:before {
+  content: "\e914";
+}
+.icon-Proximities_Malls:before {
+  content: "\e915";
+}
+.icon-Proximities_Map:before {
+  content: "\e916";
+}
+.icon-Proximities_Schools:before {
+  content: "\e917";
+}
+.icon-Residential_active:before {
+  content: "\e918";
+  color: #b7292f;
+}
+.icon-Residential_inactive:before {
+  content: "\e919";
+}
+.icon-sticky_chat:before {
+  content: "\e91a";
+  color: #fff;
+}
+.icon-sticky_form:before {
+  content: "\e91b";
+  color: #fff;
+}
+.icon-sticky_phone:before {
+  content: "\e91c";
+  color: #fff;
+}
