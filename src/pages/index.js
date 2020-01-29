@@ -78,15 +78,15 @@ class IndexPage extends React.Component {
                 this.state.selectedVertical.gallery.map((item, index) => {
                   return(
                     <div key={index} className="banner-section">
-                      <picture>
-                        <source media="(max-width: 581px)" srcSet={item.image.mobile.url}/>
-                          {
-                          <img src={item.image.url} className="banner-img" style={{width:'100%'}} />
-                          }  
-                      </picture>
-                      <div className="banner-caption">
-                        <img src={this.state.selectedVertical.banner_caption_logo.localFile.childImageSharp.fluid.src}/>
-                      </div>
+                        <picture>
+                          <source media="(max-width: 581px)" srcSet={item.image.mobile.url}/>
+                            {
+                            <img src={item.image.url} className="banner-img" style={{width:'100%'}} />
+                            }  
+                        </picture>
+                        <div className="banner-caption">
+                          <img src={this.state.selectedVertical.banner_caption_logo.localFile.childImageSharp.fluid.src}/>
+                        </div>
                     </div>
                   )
                 })
