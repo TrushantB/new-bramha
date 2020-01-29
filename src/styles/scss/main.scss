@@ -432,6 +432,9 @@ button:focus{
       }
 }
 @media (max-width:580px){
+    .back-to-top {
+        display: none;
+    }
     .padding-sm-0{
         padding:0 !important;
     }

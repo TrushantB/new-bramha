@@ -283,31 +283,31 @@ export default class Residential extends React.Component {
                       {this.state.completedProject.map((item, value) => {
                         return(
                           <div className="row"  key={value}> 
-                            <Link to={`residential/${item.completed_links.uid}`}>
-                              <div className="secondary-card position-relative ">
-                                <div className="secondary-card-img image-ratio">
-                                <picture>
-                                  <source media="(max-width: 581px)" srcSet={item.completed_links.document[0].data.thumbnail.mobile.url}/>
-                                    <img src={item.completed_links.document[0].data.thumbnail.url} alt="" width="100%"/>
-                                  </picture>
+                          <Link to={`residential/${item.completed_links.uid}`}>
+                            <div className="secondary-card position-relative ">
+                              <div className="secondary-card-img image-ratio">
+                              <picture>
+                                <source media="(max-width: 581px)" srcSet={item.completed_links.document[0].data.thumbnail.mobile.url}/>
+                                  <img src={item.completed_links.document[0].data.thumbnail.url} alt="" width="100%"/>
+                                </picture>
+                              </div>
+                              <div className="secondary-card-rectangle position-absolute d-flex flex-column justify-content-around">
+                                <div className="title">
+                                  <h4 className="text-uppercase m-0 inner-section-title">{item.completed_links.document[0].data.title.text}</h4>
                                 </div>
-                                <div className="secondary-card-rectangle position-absolute d-flex flex-column justify-content-around">
-                                  <div className="title">
-                                    <h4 className="text-uppercase m-0 inner-section-title">{item.completed_links.document[0].data.title.text}</h4>
+                                <div className="apartment-size d-flex justify-content-between align-items-center">
+                                  <span className="text-uppercase">{item.completed_links.document[0].data.flat_bhk.text}</span>
+                                  <div>
+                                    <i className="fas fa-arrow-right"></i>
                                   </div>
-                                  <div className="apartment-size d-flex justify-content-between align-items-center">
-                                    <span className="text-uppercase">{item.completed_links.document[0].data.flat_bhk.text}</span>
-                                    <div>
-                                      <i className="fas fa-arrow-right"></i>
-                                    </div>
-                                  </div>
-                                  <div className="project-location">
-                                    <i className="fas fa-map-marker-alt"></i>
-                                    <span>{item.completed_links.document[0].data.flat_address.text}</span>
-                                  </div>
+                                </div>
+                                <div className="project-location">
+                                  <i className="fas fa-map-marker-alt"></i>
+                                  <span>{item.completed_links.document[0].data.flat_address.text}</span>
                                 </div>
                               </div>
-                            </Link>
+                            </div>
+                          </Link>
                           </div>
                         )})
                       }
