@@ -107,13 +107,17 @@
         color: theme-color(text-tertiary);
         outline:0;
         padding:0;
-
-        .icon-wrap{
-          flex-basis:24%;
-          font-size: 28px;
+        .amenities-icon-wrap{
+            width: 42px;
+            text-align: center;
+          i {
+              font-size: 28px;
+            }
         }
-        .icon-description{
+        .amenities-icon-description{
             flex-basis:75%;
+            margin-left: 10%;
+            font-size: 16px;
         }
         &:last-child{
             max-width: 50%;
@@ -215,11 +219,11 @@
   }
   .amenities-inner-wrapper{
       margin-top:40px;
-      .icon-wrapper{
-        flex: 50%;
+    .amenities-icon-wrapper {
+        flex: 1;
       }
       .image-wrapper{
-          flex: 50%;
+          flex: 1;
           position: relative;
           overflow: hidden;
           object-fit: contain;
