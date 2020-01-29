@@ -45,7 +45,9 @@ class IndexPage extends React.Component {
       infinite: true,
       speed: 3000,
       autoplay: true,
+      autoplaySpeed: 7000,
       slidesToShow: 1,
+      arrows: true,
       slidesToScroll: 1  
     };
     
