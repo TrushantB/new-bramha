@@ -30,13 +30,13 @@ const Layout = ({ children ,pathname}) => {
       <main>{children}</main>
       <div className="drawer-container">
         <div className="drawer-toggle" id="toggle" onClick={() => setContactFlag({contactFlag: !true})}>
-          <i className="fas fa-phone"></i>
+          <span className="icon-sticky_phone"></span>
         </div>
         <div className="drawer-toggle" onClick={() => setMailFlag({mailFlag: !mailFlag})}>
-          <i className="fas fa-envelope-open-text"></i>
+          <span className="icon-sticky_form"></span>
         </div>
         <div className="drawer-toggle" onClick={() => setChatFlag({chatFlag: !chatFlag})}>
-          <i className="fas fa-comment-alt"></i>
+          <span className="icon-sticky_chat"></span>
         </div>
       </div>
       {contactFlag && 
