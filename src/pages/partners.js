@@ -12,7 +12,7 @@ class Partners extends React.Component {
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title={parnersData.title.text}/>
           <div className="container mt-5 mb-5">
-            <h1 className="text-center mb-5">{parnersData.title.text} </h1>
+            <h1 className="text-center mb-5 partners-heading">{parnersData.title.text} </h1>
             <div className="row ">
               <div className="col-lg-6">
               <p>

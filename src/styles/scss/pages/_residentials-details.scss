@@ -10,6 +10,14 @@
         width: 35%;
     }
   }
+  #the-collection-residential{
+      .logo-card{
+          img{
+            width:75%;
+            margin: 30px 0;
+          }
+      }
+  }
   .slider-wrapper-gray{
       background: theme-color(bg-color);
     //   .showcase-slider{
@@ -165,7 +173,7 @@
             margin-bottom:12px;
         }
         select.layout-select{
-            padding: 10px;
+            // padding: 10px;
             border: 0;
             width: 110px;
             -webkit-appearance: none;
@@ -228,7 +236,6 @@
           overflow: hidden;
           object-fit: contain;
           img{
-            position: absolute;
             top: 0px;
             left: 0px;
             object-fit: cover;
@@ -489,10 +496,10 @@
         margin-bottom: 52px; 
   }
    /*Residencial media query start*/
-   .logo-card{
-        box-shadow: none;
-        margin-top: 28px;
-        width:280px;
+.logo-card{
+    box-shadow: none;
+    margin: 28px auto 0;
+    max-width: initial;
         .w-50{
             width: 70%!important;
         }

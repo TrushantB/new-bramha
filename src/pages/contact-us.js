@@ -4,6 +4,8 @@ import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image';
 import Footer from '../components/footer';
 import SEO from '../components/seo';
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
 
 class Contacts extends React.Component {
   constructor(props){
@@ -13,7 +15,8 @@ class Contacts extends React.Component {
         channel: false,
         constructors: false,
         career: false,
-        LandOwner:false
+        LandOwner:false,
+        value:""
       };
     }
     optionSelect = (e) =>{
@@ -151,7 +154,9 @@ class Contacts extends React.Component {
                                   <input type="text" className="form-control" id="email" placeholder="Your Email*" autoComplete="false" name="email" required/>
                               </div>
                               <div className="col-sm-6 form-group  ">
-                                  <input type="number" className="form-control" id="phone-number" placeholder="Your Phone Number*" name="phone-number" required/>
+                              <PhoneInput className="form-control" id="phone-number"  placeholder="Your Phone Number*" name="phone-number" required
+                              value={this.state.value}
+                                onChange={(e) => this.setState({value:e})}/>
                               </div>
                               <div className="col-sm-6 form-group ">
                                 <select className="form-control rounded-0" id="aboutus" placeholder="project-list" name="project-intrested" required >
@@ -220,7 +225,9 @@ class Contacts extends React.Component {
                                   <input type="text" className="form-control" id="email" placeholder="Your Email*" autoComplete="false" name="email" required/>
                               </div>
                               <div className="col-sm-6 form-group  ">
-                                  <input type="number" className="form-control" id="phone-number" placeholder="Your Phone Number*" name="phone-number" required/>
+                              <PhoneInput className="form-control" id="phone-number"  placeholder="Your Phone Number*" name="phone-number" required
+                                value={this.state.value}
+                                onChange={(e) => this.setState({value:e})}/>
                               </div> 
                               <div className="col-sm-6 form-group  ">
                                   <input type="text" className="form-control" id="" placeholder="RERA Registration Number" name="" required/>
@@ -255,7 +262,9 @@ class Contacts extends React.Component {
                                   <input type="text" className="form-control" id="email" placeholder="Your Email*" autoComplete="false" name="email" required/>
                               </div>
                               <div className="col-sm-6 form-group  ">
-                                  <input type="number" className="form-control" id="phone-number" placeholder="Your Phone Number*" name="phone-number" required/>
+                              <PhoneInput className="form-control" id="phone-number"  placeholder="Your Phone Number*" name="phone-number" required
+                                value={this.state.value}
+                                onChange={(e) => this.setState({value:e})}/>
                               </div>
 
                               <div className="col-sm-12 form-group  ">
@@ -288,7 +297,9 @@ class Contacts extends React.Component {
                                 <input type="text" className="form-control" id="email" placeholder="Your Email*" autoComplete="false" name="email" required/>
                             </div>
                             <div className="col-sm-6 form-group  ">
-                                <input type="number" className="form-control" id="phone-number" placeholder="Your Phone Number*" name="phone-number" required/>
+                            <PhoneInput className="form-control" id="phone-number"  placeholder="Your Phone Number*" name="phone-number" required
+                                value={this.state.value}
+                                onChange={(e) => this.setState({value:e})}/>
                             </div>
 
                             <div className="col-sm-6 form-group  ">
@@ -330,8 +341,11 @@ class Contacts extends React.Component {
                                   <input type="text" className="form-control" id="email" placeholder="Your Email*" autoComplete="false" name="email" required/>
                               </div>
                               <div className="col-sm-6 form-group  ">
-                                  <input type="number" className="form-control" id="phone-number" placeholder="Your Phone Number*" name="phone-number" required/>
+                              <PhoneInput className="form-control" id="phone-number"  placeholder="Your Phone Number*" name="phone-number" required
+                                value={this.state.value}
+                                onChange={(e) => this.setState({value:e})}/>
                               </div>
+                             
 
                               <div className="col-sm-12 form-group  ">
                                   <input type="text" className="form-control" id="city" placeholder="City" name="city" required/>
