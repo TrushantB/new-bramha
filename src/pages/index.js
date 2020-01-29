@@ -79,7 +79,7 @@ class IndexPage extends React.Component {
                   return(
                     <div key={index} className="banner-section">
                       <picture>
-                        <source media="(max-width: 581px)" srcSet={this.state.selectedVertical.banner.mobile.url}/>
+                        <source media="(max-width: 581px)" srcSet={item.image.mobile.url}/>
                           {
                           <img src={item.image.url} className="banner-img" style={{width:'100%'}} />
                           }  
@@ -152,6 +152,9 @@ export const pageDataResidential = graphql` {
       gallery {
         image {
           url
+          mobile{
+            url
+          }
         }
       }
       banner_caption_logo {
@@ -176,6 +179,9 @@ export const pageDataResidential = graphql` {
       gallery {
         image {
           url
+          mobile{
+            url
+          }
         }
       }
       banner_caption_logo {
@@ -200,6 +206,9 @@ export const pageDataResidential = graphql` {
       gallery {
         image {
           url
+          mobile{
+            url
+          }
         }
       }
       banner_caption_logo {
@@ -224,6 +233,9 @@ export const pageDataResidential = graphql` {
       gallery {
         image {
           url
+          mobile{
+            url
+          }
         }
       }
       banner_caption_logo {

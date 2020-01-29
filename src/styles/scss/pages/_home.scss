@@ -347,6 +347,29 @@ body{
     .drawer-field{
         width:80%;
     }
+    .home-slider{
+        .slick-prev{
+            left:20px;
+            z-index: 9;
+            &:before{
+                content: "\F053";
+                font-family: Font Awesome\ 5 Free;
+                font-weight: 900;
+                font-size: 44px;
+            }
+        }
+        .slick-next{
+            right:20px;
+            z-index: 9;
+            transform: rotate(180deg);
+            &:before{
+                content: "\F053";
+                font-family: "Font Awesome\ 5 Free";
+                font-weight: 900;
+                font-size: 44px;
+            }
+        }
+    }
 }
 
 @media (max-width:400px){
