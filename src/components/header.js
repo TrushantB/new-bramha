@@ -21,7 +21,7 @@ return(
   <Link className="navbar-brand" to='/'  >
     <img src={img1} alt="BramhaCorp Logo" className="logo-img" />
   </Link>
-  <a className="nav-trigger" id="toggle" onClick={() => $("body").toggleClass("nav-open")} >
+  <a className="nav-trigger" id="toggle" onClick={() => $("body").toggleClass("nav-open")}>
   Menu <span></span>
   </a>
 <nav className="nav-container pb-0" id="navigation">
@@ -99,7 +99,7 @@ return(
       <small> BramhaCorp Ltd @2020. All rights reserved.</small>
     </div>
   </nav>
-  <div className="overlay"></div>
+  <div className="overlay" onClick={() => $("body").toggleClass("nav-open")}></div>
 </nav>
 </header>
 )
