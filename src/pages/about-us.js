@@ -53,7 +53,7 @@ class AboutUs extends React.Component {
               </div> 
             </div>
             <div className="row about-description d-flex">
-              <div className="col-md-3 col-sm-12 about-years">
+              <div className="col-md-3 col-sm-8 col-sm-offset-1 about-years">
                 <img src={data.banner.url} alt="35 Years image" className="about-years-img"/>
               </div>
               <div className="about-para col-md-9 col-sm-12 mb-sm-3">
@@ -146,7 +146,7 @@ class AboutUs extends React.Component {
               <div className="col-md-6 mt-5 mt-md-0 padding-sm-0">
                 <Link to='/hospitality' className="vertical-card d-flex flex-row-reverse flex-md-row text-decoration-none">
                   <div className="vertical-img-wrapper w-100">
-                    <Img fluid={verticalsData.vertical2.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
+                    <Img fluid={verticalsData.vertical3.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
                   </div>
                   <div className="vertical-card-body d-flex flex-column justify-content-between"> 
                     <h2 className="inner-section-title">
@@ -171,7 +171,7 @@ class AboutUs extends React.Component {
                     </div>
                   </div>
                   <div className="vertical-img-wrapper w-100">
-                    <Img fluid={verticalsData.vertical3.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
+                    <Img fluid={verticalsData.vertical2.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
                   </div>
                 </Link>
               </div>

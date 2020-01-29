@@ -67,7 +67,7 @@ class CommercialDetails extends React.Component {
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title={commercialData.data.sub_title.text} />
-        <main className="detail-page">
+        <main className="detail-page commercial-detail-page">
           {/* <!-- ---------------- banner start here ---------------- --> */}
             <section className="banner-section">
               <picture>
