@@ -385,11 +385,7 @@ body{
             z-index: 9;
             height: 0;
             &:before{
-                content: "\2190";
-                font-family: "Font Awesome 5 Free";
-                font-weight: 900;
-                font-size: 44px;
-                color: #fff;
+                font-size: 32px;
             }
         }
         .slick-next{
@@ -398,11 +394,7 @@ body{
             height: 0;
             transform: rotate(180deg);
             &:before{
-                content: "\2190";
-                font-family: "Font Awesome 5 Free";
-                font-weight: 900;
-                font-size: 44px;
-                color: #fff;
+               font-size: 32px;
             }
         }
     }
