@@ -308,14 +308,14 @@ class VerticalPage extends React.Component {
                           return(
                             <div key={index} className={ index ? "tab-pane fade show" : "tab-pane fade show active"} id={`id${index}`} role="tabpanel" aria-labelledby={`tab${index}`}>
                               <div className="container">
-                                <div className="row">
-                                  <div className="col-md-4 mt-5 mt-sm-0">
-                                    <ul>
-                                      <li>
-                                          {item.description1.text}
-                                      </li>
+                                <div >
+                                    <ul className="row">
+                                      {item.description1 && <li dangerouslySetInnerHTML={{__html:item.description1.html }}  className="col-md-4 mt-5 mt-sm-0"/>}
+                                      {item.description2 && <li dangerouslySetInnerHTML={{__html:item.description2.html }}  className="col-md-4 mt-5 mt-sm-0"/>}
+                                      {item.description3 && <li dangerouslySetInnerHTML={{__html:item.description3.html }}  className="col-md-4 mt-5 mt-sm-0"/>}
+                                      {item.description4.length > 0 && <li dangerouslySetInnerHTML={{__html:item.description4.html }}  className="col-md-4 mt-5 mt-sm-0"/>}
+                                      
                                     </ul>
-                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -716,8 +716,17 @@ export const verticalViewData = graphql`
         title1 {
           text
         }
-        description1 {
-          text
+        description1{
+          html
+        }
+        description2{
+          html
+        }
+        description3{
+          html
+        }
+        description4{
+          html
         }
         icon {
           url

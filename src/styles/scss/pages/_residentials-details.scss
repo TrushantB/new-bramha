@@ -63,6 +63,21 @@
             }
           }
       }
+      .tab-content{
+        li{
+            list-style: none;
+            p{
+                &:before{
+                    content: "";
+                    font-size: 10px;
+                    height: 5px;
+                    width: 5px;
+                    background: #7f7f7f;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
   }
   .nav-pills .nav-link{
       color:theme-color(text-tertiary);
@@ -116,16 +131,23 @@
         outline:0;
         padding:0;
         .amenities-icon-wrap{
-            width: 42px;
+            width: 30px;
             text-align: center;
           i {
-              font-size: 28px;
+              font-size: 32px;
             }
         }
         .amenities-icon-description{
             flex-basis:75%;
             margin-left: 10%;
-            font-size: 16px;
+            font-size: 14px;
+            font-family: Graphik;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.71;
+            letter-spacing: -0.31px;
+            color:rgba(00,00,00,0.5);
         }
         &:last-child{
             max-width: 50%;
@@ -227,7 +249,7 @@
   }
   .amenities-inner-wrapper{
       margin-top:40px;
-    .amenities-icon-wrapper {
+      .amenities-icon-wrapper {
         flex: 1;
       }
       .image-wrapper{
@@ -486,7 +508,7 @@
           }
       }
       .amenities button {
-          flex: 1 35%;
+          flex:0 1 48%;
           margin: 8px 4px;
       }
 }
@@ -581,11 +603,15 @@
         display: none;
     }
     .amenities button {
-        flex: 1 1 23%;
+        flex: 0 1 23%;
+        margin: 14px 4px;
         flex-direction: column;
+        .amenities-icon-description{
+            margin-left:0;
+        }
     }
     .amenities-inner-wrapper {
-        width: 730px;
+        width: 650px;
         margin-bottom: 12px;
     }
     #residential-details .site-progress-wrap{
