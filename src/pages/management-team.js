@@ -12,7 +12,7 @@ class ManagementTeam extends React.Component {
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title={mgntData.sub_title.text}/>
         <div className="container mt-5 mb-5">
-          <h1 className="text-center mb-5">{mgntData.sub_title.text} </h1>
+          <h1 className="text-center mb-5 management-heading">{mgntData.sub_title.text} </h1>
           <div className="row ">
             <div className="col-lg-6">
               <p>

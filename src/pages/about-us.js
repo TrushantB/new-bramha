@@ -54,7 +54,7 @@ class AboutUs extends React.Component {
             </div>
             <div className="row about-description d-flex">
               <div className="col-md-3 col-sm-8 col-sm-offset-1 about-years">
-                <img src={data.banner.url} alt="35 Years image" className="about-years-img"/>
+                {/* <img src={data.banner.url} alt="35 Years image" className="about-years-img"/> */}
               </div>
               <div className="about-para col-md-9 col-sm-12 mb-sm-3">
                 <div className="" dangerouslySetInnerHTML={{__html:data.description.html }}/>
@@ -130,7 +130,7 @@ class AboutUs extends React.Component {
               <div className="col-md-6 padding-sm-0">
                 <Link to='/residential' className="vertical-card d-flex text-decoration-none">
                   <div className="vertical-img-wrapper w-100">
-                    <Img fluid={verticalsData.vertical1.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
+                    {/* <Img fluid={verticalsData.vertical1.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/> */}
                   </div>
                   <div className="vertical-card-body d-flex flex-column justify-content-between"> 
                     <h2 className="inner-section-title">
