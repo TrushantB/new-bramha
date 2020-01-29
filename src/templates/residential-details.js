@@ -197,7 +197,7 @@ class VerticalPage extends React.Component {
               </section>
             {/* <!--   ---------------- banner end here ---------------- --> */}
             {/* <!--  -------------------- middle section start here ----------------------> */}
-            <section className="detail-page-sections pb-0 pt-sm-0 container container-sm-fluid ">
+            <section className="detail-page-sections pb-0 pt-sm-0 container container-sm-fluid " id={verticalData.uid}>
                 <div className="logo-card">
                   <picture className="d-flex justify-content-start justify-content-sm-center align-items-center">
                     <source media="(min-width: 581px)" srcSet={verticalData.data.logo.url}/>
