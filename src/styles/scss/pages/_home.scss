@@ -188,7 +188,7 @@ body{
         &:after{
             content: "";
             position: absolute;
-            background-image: linear-gradient(to right, #000 , transparent);
+            background-image: linear-gradient(to right, rgba(00,00,00,0.3), transparent);
             top: 0;
             bottom: 0;
             width: 60px;
@@ -200,7 +200,7 @@ body{
         &:before{
             content:"";
             position: absolute;
-            background-image: linear-gradient(to right, #000 , transparent);
+            background-image: linear-gradient(to right, rgba(00,00,00,0.3), transparent);
             top: 0;
             bottom: 0;
             width: 60px;
