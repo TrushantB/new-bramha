@@ -76,6 +76,7 @@ class IndexPage extends React.Component {
             <Slider {...settings}>
               {
                 this.state.selectedVertical.gallery.map((item, index) => {
+                  console.log(item);
                   return(
                     <div key={index} className="banner-section">
                       <picture>
@@ -85,13 +86,12 @@ class IndexPage extends React.Component {
                           }  
                       </picture>
                       <div className="banner-caption">
-                        <img src={this.state.selectedVertical.banner_caption_logo.localFile.childImageSharp.fluid.src}/>
+                        <img src={item.image.logo.url}/>
                       </div>
                     </div>
                   )
                 })
               }
-
             </Slider>
           </section>  
           }
@@ -152,9 +152,17 @@ export const pageDataResidential = graphql` {
       gallery {
         image {
           url
-          mobile{
+          mobile {
             url
           }
+          logo {
+            url
+          }
+        }
+      }
+      ongoing_projects{
+        residential_links{
+          uid
         }
       }
       banner_caption_logo {
@@ -180,6 +188,9 @@ export const pageDataResidential = graphql` {
         image {
           url
           mobile{
+            url
+          }
+          logo {
             url
           }
         }
@@ -209,6 +220,9 @@ export const pageDataResidential = graphql` {
           mobile{
             url
           }
+          logo {
+            url
+          }
         }
       }
       banner_caption_logo {
@@ -234,6 +248,9 @@ export const pageDataResidential = graphql` {
         image {
           url
           mobile{
+            url
+          }
+          logo {
             url
           }
         }

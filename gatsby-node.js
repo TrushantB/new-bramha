@@ -20,8 +20,22 @@ exports.createPages=({graphql,actions}) => {
                             }
                         }
                     }
+
+                    allPrismicResidential {
+                        edges {
+                            node {
+                                data {
+                                    ongoing_projects {
+                                        residential_links {
+                                            slug
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
-            `).then((result) =>{
+            `).then((result) => {
                 console.log(result);
                 if(result.errors) {
                     reject(result.errors)
