@@ -8,6 +8,9 @@ import Footer from '../components/footer';
 import SEO from '../components/seo';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
+import 'react-phone-number-input/style.css';
+import PhoneInput from 'react-phone-number-input';
+
 
 class VerticalPage extends React.Component {
   state = {
@@ -19,7 +22,8 @@ class VerticalPage extends React.Component {
     isOpenTwo:false,
     isOpenTHree:false,
     imageUrl: null,
-    floorPlanSelect: null
+    floorPlanSelect: null,
+    value:""
   };
 
 
@@ -533,8 +537,10 @@ class VerticalPage extends React.Component {
                           <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" required/>
                         </div>
                         <div className="col-sm-6 form-group  ">
-                          <input type="" className="form-control" id="phone-number" placeholder="Your Phone Number*" name="phone-number" required/>
-                        </div>
+                              <PhoneInput className="form-control" id="phone-number"  placeholder="Your Phone Number*" name="phone-number" required
+                              value={this.state.value}
+                                onChange={(e) => this.setState({value:e})}/>
+                              </div>
                         <div className="col-sm-6 form-group  ">
                           <input type="text" className="form-control" id="email" placeholder="Your Email*" name="email" required/>
                         </div>
