@@ -54,7 +54,7 @@ class AboutUs extends React.Component {
             </div>
             <div className="row about-description d-flex">
               <div className="col-md-3 col-sm-12 about-years">
-                <Img fluid={data.banner.localFile.childImageSharp.fluid} alt="35 Years image" className="about-years-img"/>
+                <img src={data.banner.url} alt="35 Years image" className="about-years-img"/>
               </div>
               <div className="about-para col-md-9 col-sm-12 mb-sm-3">
                 <div className="" dangerouslySetInnerHTML={{__html:data.description.html }}/>
@@ -237,13 +237,7 @@ export const AboutPage = graphql` {
         }
       }
       banner {
-        localFile {
-          childImageSharp {
-            fluid(maxWidth: 1150) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+        url
       }
       description {
         html

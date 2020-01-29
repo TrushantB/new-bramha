@@ -43,7 +43,7 @@ class IndexPage extends React.Component {
     var settings = {
       dots: false,
       infinite: true,
-      speed: 1000,
+      speed: 2000,
       autoplay: false,
       slidesToShow: 1,
       slidesToScroll: 1  
