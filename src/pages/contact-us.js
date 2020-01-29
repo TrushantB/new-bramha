@@ -230,7 +230,7 @@ class Contacts extends React.Component {
                                 onChange={(e) => this.setState({value:e})}/>
                               </div> 
                               <div className="col-sm-6 form-group  ">
-                                  <input type="number" className="form-control" id="" placeholder="RERA Registration Number" name="" required/>
+                                  <input type="text" className="form-control" id="" placeholder="RERA Registration Number" name="" required/>
                               </div>
     
                               <div className="form-group col-md-12">

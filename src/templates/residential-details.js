@@ -434,14 +434,14 @@ class VerticalPage extends React.Component {
                 <div className="tab-pane fade show active" id="amenities" role="tabpanel" aria-labelledby="pills-amenities-tab">
                   <div className="container p-0">
                     <div className="amenities-inner-wrapper d-flex">
-                      <div className="icon-wrapper">
+                      <div className="amenities-icon-wrapper">
                         <div className="d-flex flex-wrap amenities" id="myTab" role="tablist">
                           {
                             verticalData.data.amenities.map((item, index) => {
                               return(
                                 <button key={index} className={`d-flex align-items-center justify-content-start text-center text-md-left ${this.state.imageUrl===item.image1.url || !index && !this.state.imageUrl ? 'active': ''}`} onClick={() => this.setState({imageUrl:  item.image1.url})} >
-                                  <span className="icon-wrap"><i className={item.icon}></i></span>
-                                  <span className="icon-description"><span>{item.title1.text}</span></span>
+                                  <span className="amenities-icon-wrap"><i className={item.icon}></i></span>
+                                  <span className="amenities-icon-description"><span>{item.title1.text}</span></span>
                                 </button>
                               )
                             })
