@@ -165,6 +165,8 @@ body{
         z-index: 9;
         top: 50%;
         transform: translate(0, -50%);
+        width: 28px;
+        height: 45px;
         &:before{
             content: "\F053";
             font-family: Font Awesome\ 5 Free;
@@ -177,10 +179,10 @@ body{
         z-index: 9;
         top: 50%;
         transform: translate(0, -50%);
-        transform: rotate(180deg);
-        
+        width: 28px;
+        height: 45px;
         &:before{
-            content: "\F053";
+            content: "\f054";
             font-family: "Font Awesome\ 5 Free";
             font-weight: 900;
             font-size: 44px;
@@ -190,25 +192,23 @@ body{
         &:after{
             content: "";
             position: absolute;
-            background-image: linear-gradient(to right, #000 , transparent);
+            background-image: linear-gradient(to right, rgba(00,00,00,0.4), transparent);
             top: 0;
             bottom: 0;
-            width: 60px;
+            width: 80px;
             height: 100%;
             z-index: 9;
-            opacity: 0.3;
 
         }
         &:before{
             content:"";
             position: absolute;
-            background-image: linear-gradient(to right, #000 , transparent);
+            background-image: linear-gradient(to right, rgba(00,00,00,0.4), transparent);
             top: 0;
             bottom: 0;
-            width: 60px;
+            width: 80px;
             height: 100%;
             z-index: 9;
-            opacity: 0.3;
             right: 0;
             transform: rotate(180deg);
         }
@@ -392,7 +392,6 @@ body{
             right:20px;
             z-index: 9;
             height: 0;
-            transform: rotate(180deg);
             &:before{
                font-size: 32px;
             }

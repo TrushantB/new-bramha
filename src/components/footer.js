@@ -6,7 +6,9 @@ import $ from 'jquery';
 
 const Footer = ({ siteTitle }) => { 
   function scrollTo() {
-    window.scrollTo(0, 0);
+         $('body,html').animate({
+          scrollTop: 0
+        }, 400);
 
   }
   // $(document).ready(function(){
@@ -82,7 +84,7 @@ const Footer = ({ siteTitle }) => {
         </div>
       </div>
     </div>
-    <a id="back-to-top"  className="btn btn-light btn-lg back-to-top" role="button" onClick={scrollTo}><i class="fas fa-chevron-up"></i></a>
+    <a id="back-to-top"  className="btn btn-light btn-lg back-to-top" role="button" onClick={scrollTo}><i className="fas fa-chevron-up"></i></a>
   </footer>
   
 
