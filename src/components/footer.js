@@ -2,7 +2,30 @@ import { Link } from "gatsby"
 import React from "react"
 import '../styles/css/custom.css';
 import '../styles/scss/main.scss';
-const Footer = ({ siteTitle }) => (
+import $ from 'jquery';
+
+const Footer = ({ siteTitle }) => { 
+  function scrollTo() {
+    window.scrollTo(0, 0);
+
+  }
+  $(document).ready(function(){
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 50) {
+          $('#back-to-top').fadeIn();
+        } else {
+          $('#back-to-top').fadeOut();
+        }
+      });
+      // scroll body to 0px on click
+      $('#back-to-top').click(function () {
+        $('body,html').animate({
+          scrollTop: 0
+        }, 400);
+        return false;
+      });
+  });
+  return(
   <footer className="footer">
     <div className="container">
       <div className="row">
@@ -59,8 +82,11 @@ const Footer = ({ siteTitle }) => (
         </div>
       </div>
     </div>
+    <a id="back-to-top"  className="btn btn-light btn-lg back-to-top" role="button" onClick={scrollTo}><i class="fas fa-chevron-up"></i></a>
   </footer>
+  
 
 )
+  }
 
 export default Footer
