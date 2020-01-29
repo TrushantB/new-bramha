@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Slider from 'react-slick';
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 // import Commerical from '../pages/our-verticals-main/commercial';
 // import Residential from "../pages/our-verticals-main/residential";
 // import Hospitality from "../pages/our-verticals-main/hospitality";
@@ -20,7 +20,7 @@ class IndexPage extends React.Component {
       contactFlag:false,
       mailFlag:false,
       chatFlag:false,
-     
+      verticalsName: 'residential'
     }
   }
 
@@ -31,11 +31,13 @@ class IndexPage extends React.Component {
   }
 
 
-  handleOurVerticals = (event) => {
-    this.setState({selectedVertical: event.data})
+  handleOurVerticals = (event, vertical) => {
+    this.setState({selectedVertical: event.data, verticalsName: vertical})
   }
 
   render() {
+    console.log('selectedVertical', this.state.selectedVertical);
+    
     const commercialData = this.props.data.prismicCommercial;
     const hospitalityData = this.props.data.prismicHospitality;
     const leisureData  = this.props.data.prismicLeisureClub;
@@ -59,7 +61,6 @@ class IndexPage extends React.Component {
     return (
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title="Home"/>
-
         <div className="home-slider">
           {
             this.state.selectedVertical && 
@@ -78,7 +79,7 @@ class IndexPage extends React.Component {
                 this.state.selectedVertical.gallery.map((item, index) => {
                   return(
                     <div key={index} className="banner-section">
-                      <a href="#">
+                      <Link to={`${this.state.verticalsName}/${item.image.alt}`}>
                         <picture>
                           <source media="(max-width: 581px)" srcSet={item.image.mobile.url}/>
                             {
@@ -86,14 +87,13 @@ class IndexPage extends React.Component {
                             }  
                         </picture>
                         <div className="banner-caption">
-                          <img src={this.state.selectedVertical.banner_caption_logo.localFile.childImageSharp.fluid.src}/>
+                          <img src={item.image.logo.url}/>
                         </div>
-                      </a>
+                      </Link>
                     </div>
                   )
                 })
               }
-
             </Slider>
           </section>  
           }
@@ -104,28 +104,28 @@ class IndexPage extends React.Component {
             <div className="container d-flex">
               <ul className="p-0 d-flex w-100 justify-content-around list-style-none text-uppercase nav nav-tabs border-0" id="myTab" role="tablist">
                 
-                <li className={`nav-item d-flex align-items-center ${this.state.selectedVertical==residentialData.data?'active':''}`} onClick={()=>this.handleOurVerticals(residentialData)}>
+                <li className={`nav-item d-flex align-items-center ${this.state.selectedVertical==residentialData.data?'active':''}`} onClick={()=>this.handleOurVerticals(residentialData,'residential')}>
                   <div className="tab d-flex align-items-center">
                   <span className="icon-Residential_inactive icon"></span>
                     <span>Residential</span>
                   </div>
                 </li>
 
-                <li className={`nav-item d-flex align-items-center ${this.state.selectedVertical==commercialData.data?'active':''}`} onClick={()=>this.handleOurVerticals(commercialData)}>
+                <li className={`nav-item d-flex align-items-center ${this.state.selectedVertical==commercialData.data?'active':''}`} onClick={()=>this.handleOurVerticals(commercialData, 'commercial')}>
                   <div className="tab d-flex align-items-center">
                   <span className="icon-Commercial_inactive icon"></span>
                     <span> Commercial </span>
                   </div>
                 </li>
 
-                <li className={`nav-item d-flex align-items-center ${this.state.selectedVertical==hospitalityData.data?'active':''}`} onClick={()=>this.handleOurVerticals(hospitalityData)}>
+                <li className={`nav-item d-flex align-items-center ${this.state.selectedVertical==hospitalityData.data?'active':''}`} onClick={()=>this.handleOurVerticals(hospitalityData, 'hospitality')}>
                   <div className="tab d-flex align-items-center">
                   <span className="icon-Hospitality_inactive icon"></span>
                     <span>Hospitality</span>
                   </div>
                 </li>
 
-                <li className={`nav-item d-flex align-items-center ${this.state.selectedVertical==leisureData.data?'active':''}`} onClick={()=>this.handleOurVerticals(leisureData)}>
+                <li className={`nav-item d-flex align-items-center ${this.state.selectedVertical==leisureData.data?'active':''}`} onClick={()=>this.handleOurVerticals(leisureData, 'leisure-club')}>
                   <div className="tab d-flex align-items-center">
                   <span className="icon-Leisure_inactive icon"></span>
                     <span>Leisure</span>
@@ -145,31 +145,23 @@ export default IndexPage
 export const pageDataResidential = graphql` {
   prismicResidential {
     data {
-      banner {
-        url
-        mobile{
-          url
-        }
-      }
       gallery {
         image {
           url
-          mobile{
+          alt
+          mobile {
             url
+            alt
           }
-        }
-      }
-      banner_caption_logo {
-        localFile {
-          childImageSharp {
-            fluid(maxWidth: 1150) {
-              ...GatsbyImageSharpFluid
-            }
+          logo {
+            url
+            alt
           }
         }
       }
     }
   }
+  
   prismicCommercial {
     data {
       banner {
@@ -181,17 +173,14 @@ export const pageDataResidential = graphql` {
       gallery {
         image {
           url
+          alt
           mobile{
+            alt
             url
           }
-        }
-      }
-      banner_caption_logo {
-        localFile {
-          childImageSharp {
-            fluid(maxWidth: 1150) {
-              ...GatsbyImageSharpFluid
-            }
+          logo {
+            alt
+            url
           }
         }
       }
@@ -208,17 +197,14 @@ export const pageDataResidential = graphql` {
       gallery {
         image {
           url
+          alt
           mobile{
             url
+            alt
           }
-        }
-      }
-      banner_caption_logo {
-        localFile {
-          childImageSharp {
-            fluid(maxWidth: 1150) {
-              ...GatsbyImageSharpFluid
-            }
+          logo {
+            url
+            alt
           }
         }
       }
@@ -235,17 +221,14 @@ export const pageDataResidential = graphql` {
       gallery {
         image {
           url
+          alt
           mobile{
             url
+            alt
           }
-        }
-      }
-      banner_caption_logo {
-        localFile {
-          childImageSharp {
-            fluid(maxWidth: 1150) {
-              ...GatsbyImageSharpFluid
-            }
+          logo {
+            url
+            alt
           }
         }
       }

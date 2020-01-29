@@ -548,9 +548,9 @@ class VerticalPage extends React.Component {
                           <input type="" className="form-control" id="city" placeholder="City" name="city" required/>
                         </div>
                         <div className="col-sm-6 form-group  ">
-                        <select className="form-control rounded-0" id="" name="source" required >
-                            <option selected disabled>Budget</option>
-                            <option>50 Lakh</option>
+                        <select defaultValue="" className="form-control rounded-0" id="" name="source" required >
+                            <option value="" disabled>Budget</option>
+                            <option >50 Lakh</option>
                             <option>50-80 Lakh</option>
                             <option> 80 Lakh-1Crore</option>
                             <option>1 Crore</option>
@@ -558,8 +558,8 @@ class VerticalPage extends React.Component {
                           </select>
                         </div>
                         <div className="col-sm-6 form-group ">
-                        <select className="form-control rounded-0" id="" placeholder="source" name="source" required >
-                            <option selected disabled >source</option>
+                        <select defaultValue="" className="form-control rounded-0" id="" placeholder="source" name="source" required >
+                            <option value="" disabled >source</option>
                             <option>Newspaper</option>
                             <option>Hoarding</option>
                             <option>Email</option>
