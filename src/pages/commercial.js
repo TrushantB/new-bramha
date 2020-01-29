@@ -34,9 +34,9 @@ class Commercial extends React.Component {
                     return(
                       item2.verticals.document.map((item, index) => {
                         return(
-                          <div className="col-md-4 p-0 pl-sm-3 pr-sm-3" key={index}>
+                          <div className="col-md-6 col-lg-4 col-sm-12 p-0 pl-sm-3 pr-sm-3" key={index}>
                             <Link to={`commercial/${item2.verticals.uid}`}>
-                              <div className="residences-card position-relative">
+                              <div className="residences-card position-relative mt-0 mt-sm-5">
                                 <div className="residences-img ">
                                   <picture>
                                     <source media="(min-width: 581px)" srcSet={item.data.thumbnail.url}/>

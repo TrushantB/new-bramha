@@ -132,7 +132,7 @@ body{
         color: theme-color("text-tertiary");
         transition: 0.3s;
         text-decoration: none;
-        i {
+        .icon {
             font-size: 24px;
         }
         span{
@@ -215,8 +215,8 @@ body{
         }
     }
 }
-.home-slider{
-        img{
+.slick-active{
+        .banner-img{
             width:100%;
             animation: kenburns 18s ease-in-out;
     
@@ -290,7 +290,7 @@ body{
             span{
               font-size: 12px;
             }
-            i{
+            .icon{
                 display: none;
             }
             &::before{

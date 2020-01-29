@@ -30,12 +30,10 @@ class LeisureClub extends React.Component {
             <div className="container">
               <div className="row">
                 {
-                  leisureData.all_verticals.map((item2) => {
-                    return(
-                      item2.verticals.document.map((item, index) => {
+                  leisureData.all_verticals[0].verticals.document.map((item, index) => {
                         return(
                           <div className="col-md-6 col-lg-4 p-0 pl-sm-3 pr-sm-3" key={index}>
-                            <Link to={`leisure-club/${item2.verticals.uid}`}>
+                            <Link to={`leisure-club/${leisureData.all_verticals[0].verticals.uid}`}>
                               <div className="residences-card position-relative mt-0 mt-sm-5">
                                 <div className="residences-img ">
                                   
@@ -64,8 +62,6 @@ class LeisureClub extends React.Component {
                             </Link>
                           </div>
                         )
-                      })
-                    )
                   })
                 }
               </div>

@@ -542,18 +542,33 @@ class VerticalPage extends React.Component {
                           <input type="" className="form-control" id="city" placeholder="City" name="city" required/>
                         </div>
                         <div className="col-sm-6 form-group  ">
-                          <input type="text" className="form-control" id="budget" placeholder="Budget" name="budget" required/>
+                        <select className="form-control rounded-0" id="" name="source" required >
+                            <option selected disabled>Budget</option>
+                            <option>50 Lakh</option>
+                            <option>50-80 Lakh</option>
+                            <option> 80 Lakh-1Crore</option>
+                            <option>1 Crore</option>
+                            
+                          </select>
                         </div>
                         <div className="col-sm-6 form-group ">
-                          <select className="form-control" id="aboutus" placeholder="Budget" name="aboutus" required >
-                            <option>Where did you here about us?</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
+                        <select className="form-control rounded-0" id="" placeholder="source" name="source" required >
+                            <option selected disabled >source</option>
+                            <option>Newspaper</option>
+                            <option>Hoarding</option>
+                            <option>Email</option>
+                            <option>SMS</option>
+                            <option>Google</option>
+                            <option>Facebook</option>
+                            <option>Cinema Ad</option>
+                            <option>Broker</option>
+                            <option>Property Portal</option>
+                            <option>Word of Mouth</option>
+                            <option>Others</option>
                           </select>
                         </div>  
                         <div className="form-group col-md-12">
-                          <textarea className="form-control" rows="4" id="message" placeholder="Additional Message" name="message" required></textarea>
+                          <textarea className="form-control" rows="4" id="message" placeholder="Message" name="message" required></textarea>
                         </div>
                       </div>
                       <div className="sumbit text-center mt-sm-0 mt-4">
