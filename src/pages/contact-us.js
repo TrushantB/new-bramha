@@ -44,7 +44,7 @@ class Contacts extends React.Component {
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title="Contacts"/>
         <section className="contact-section">
-          <div className="contact-page-image">
+          <div className="contact-page-image mt-60">
             <picture>
               <source media="(max-width: 581px)" srcSet={contactData.banner.Mobile.url}/>
               <img src={contactData.banner.url} alt="" width="100%" />
