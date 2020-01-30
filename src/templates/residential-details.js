@@ -312,10 +312,11 @@ class VerticalPage extends React.Component {
                               <div className="container">
                                 <div >
                                     <ul className="row">
-                                      {item.description1 && <li dangerouslySetInnerHTML={{__html:item.description1.html }}  className="col-md-4 mt-5 mt-sm-0"/>}
-                                      {item.description2 && <li dangerouslySetInnerHTML={{__html:item.description2.html }}  className="col-md-4 mt-5 mt-sm-0"/>}
-                                      {item.description3 && <li dangerouslySetInnerHTML={{__html:item.description3.html }}  className="col-md-4 mt-5 mt-sm-0"/>}
-                                      {item.description4.length > 0 && <li dangerouslySetInnerHTML={{__html:item.description4.html }}  className="col-md-4 mt-5 mt-sm-0"/>}
+                                      {item.description1 && <li dangerouslySetInnerHTML={{__html:item.description1.html }}  className="col-sm-4 mt-2"/>}
+                                      {item.description2 && <li dangerouslySetInnerHTML={{__html:item.description2.html }}  className="col-sm-4 mt-2"/>}
+                                      {item.description3 && <li dangerouslySetInnerHTML={{__html:item.description3.html }}  className="col-sm-4 mt-2"/>}
+                                      {item.description4.length > 0 && <li dangerouslySetInnerHTML={{__html:item.description4.html }}  className="col-sm-4 mt-2"/>}
+                                      
                                     </ul>
                                 </div>
                               </div>

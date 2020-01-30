@@ -18,13 +18,15 @@ img{
 }
 input,textarea,select,.PhoneInput{
     font-weight: 300;
-    padding-left: 8px;
+    padding:4px 8px;
     font-size: 14px;
     background: transparent;
     border: solid 0.5px rgba(153, 153, 153, 0.5);
     border-radius: 0;
     color: #929292;
     height: 30px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
         &::placeholder{
             color: #929292;
             font-weight: 300;
@@ -36,6 +38,9 @@ input,textarea,select,.PhoneInput{
         outline: none;
         border-color: rgba(153, 153, 153, 0.5);
     }
+}
+.PhoneInputCountryIconImg{
+    display: block;
 }
 textarea{
     resize: none;

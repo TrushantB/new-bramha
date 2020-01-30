@@ -3,6 +3,8 @@ import React from "react"
 import '../styles/css/custom.css';
 import '../styles/scss/main.scss';
 import $ from 'jquery';
+import {TinyButton as ScrollUpButton} from "react-scroll-up-button"; 
+
 
 const Footer = ({ siteTitle }) => { 
   function scrollTo() {
@@ -84,7 +86,9 @@ const Footer = ({ siteTitle }) => {
         </div>
       </div>
     </div>
-    <a id="back-to-top"  className="btn btn-light btn-lg back-to-top" role="button" onClick={scrollTo}><i className="fas fa-chevron-up"></i></a>
+   <ScrollUpButton ContainerClassName="back-to-top" />
+   
+    {/*   <a id="back-to-top"  className="btn btn-light btn-lg back-to-top" role="button" onClick={scrollTo}><i className="fas fa-chevron-up"></i></a> */}
   </footer>
   
 
