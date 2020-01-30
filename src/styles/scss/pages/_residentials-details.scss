@@ -417,6 +417,14 @@
                   border: solid 0.5px rgba(153, 153, 153, 0.5);
                   border-radius: 0;
                   color: #929292;
+                  -webkit-font-weight: 300;
+                  
+                  -webkit-font-size: 14px;
+                  -webkit-background: transparent;
+                  -webkit-border: solid 0.5px rgba(153, 153, 153, 0.5);
+                  -webkit-border-radius: 0;
+                  -webkit-color: #929292;
+                  
                       &::placeholder{
                           color: #929292;
                           font-weight: normal;
