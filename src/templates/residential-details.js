@@ -23,7 +23,7 @@ class VerticalPage extends React.Component {
     isOpenTHree:false,
     imageUrl: null,
     floorPlanSelect: null,
-    value:""
+    value:"+91"
   };
 
 
