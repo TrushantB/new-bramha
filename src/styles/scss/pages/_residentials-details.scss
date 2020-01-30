@@ -10,6 +10,13 @@
         width: 35%;
     }
   }
+  .tab-pane{
+      ul{
+          p{
+              margin: 0;
+          }
+      }
+  }
   #the-collection-residential{
       .logo-card{
           img{
@@ -159,9 +166,11 @@
         }
     }
       .active {
-        color:theme-color(primary);
-        i{
+        span{
             color:theme-color(primary);
+            i::before{
+                color:theme-color(primary);
+            }
         }
      }
 
@@ -201,6 +210,7 @@
         }
         select.layout-select{
             // padding: 10px;
+            cursor: pointer;
             border: 0;
             width: 110px;
             -webkit-appearance: none;
