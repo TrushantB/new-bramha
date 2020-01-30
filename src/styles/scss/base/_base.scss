@@ -17,16 +17,7 @@ img{
     object-fit: cover;
 }
 
-select{ 
-    /* needed */
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-image: url('../../images/drop.png');
-  background-size: .6em;
-  background-position: calc(100% - 1.3em) center;
-  background-repeat: no-repeat;     
-}
+
 input,textarea,select,.PhoneInput{
     font-weight: 300;
     padding:4px 8px;
@@ -50,6 +41,16 @@ input,textarea,select,.PhoneInput{
         outline: none;
         border-color: rgba(153, 153, 153, 0.5);
     }
+}
+select{ 
+    /* needed */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('../../images/drop.png');
+  background-size: .4em;
+  background-position: calc(100% - 1.1em) center;
+  background-repeat: no-repeat;     
 }
 .PhoneInputCountryIconImg{
     display: block;
