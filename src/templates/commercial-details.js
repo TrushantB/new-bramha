@@ -113,7 +113,6 @@ class CommercialDetails extends React.Component {
                 <Slider {...settings}>
                   {
                     commercialData.data.showcase.map((item,value) => {
-                      console.log('item', item)
                       return(
                         <div key={value}>
                           <div className="slider-img image-ratio" onClick={() => this.setState({ isOpen: true ,photoIndex:value})}>
