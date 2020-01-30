@@ -164,8 +164,17 @@
         &:last-child{
             max-width: 50%;
         }
+  
     }
-      .active {
+    .active{
+        span{
+            color:theme-color(primary);
+                 i::before{
+                     color:theme-color(primary);
+                 }
+         }
+       }
+    button:hover {
         span{
             color:theme-color(primary);
             i::before{
