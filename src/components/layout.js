@@ -1,9 +1,9 @@
-import React, { useState } from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql, Link } from "gatsby"
-
-import Header from "./header"
-import "./layout.css"
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { useStaticQuery, graphql, Link } from "gatsby";
+import PhoneInput from 'react-phone-number-input';
+import Header from "./header";
+import "./layout.css";
 
 const Layout = ({ children ,pathname}) => {
   const [contactFlag, setContactFlag] = useState(false);
@@ -13,7 +13,9 @@ const Layout = ({ children ,pathname}) => {
   const contactFlagTrueFalse = () => setContactFlag(!contactFlag);
   const mailFlagTrueFalse = () => setMailFlag(!mailFlag);
   const chatFlagTrueFalse = () => setChatFlag(!chatFlag);
-  
+
+  const [value, setValue] = useState("+91");
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -23,6 +25,7 @@ const Layout = ({ children ,pathname}) => {
       }
     }
   `)
+
 
   return (
     <div>
@@ -77,16 +80,28 @@ const Layout = ({ children ,pathname}) => {
                       <input type="text"  id="email" placeholder="Your Email*" autoComplete="false" name="email" required/>
                     </div>
                     <div className="col-sm-12 form-group  ">
-                      <input type="number"  id="phone-number" placeholder="Your Phone Number*" name="phone-number" required/>
+                      <PhoneInput className="form-control" id="phone-number"  placeholder="Your Phone Number*" name="phone-number" required
+                        value={value}
+                        onChange={setValue}
+                      />
                     </div>
-                    <div className="col-sm-12 form-group  ">
-                      <input type="number"  id="budget" placeholder="Budget" name="budget" required/>
+                    <div className="col-sm-12 form-group">
+                      <select defaultValue="" className="w-100" id="" name="source" required >
+                        <option value="" disabled>Budget</option>
+                        <option >50 Lakh</option>
+                        <option>50-80 Lakh</option>
+                        <option> 80 Lakh-1Crore</option>
+                        <option>1 Crore</option>
+                      </select>
                     </div>
+
+                         
+
                     <div className="col-sm-12 form-group  ">
                       <input type="text"  id="city" placeholder="City" name="city" required/>
                     </div>
                     <div className="form-group col-md-12">
-                      <textarea  rows="4" id="message" placeholder="Additional Message" name="message" required></textarea>
+                      <textarea  rows="3" id="message" placeholder="Message" name="message" required></textarea>
                     </div>
                   </div>
                   <div className="sumbit text-center ">
