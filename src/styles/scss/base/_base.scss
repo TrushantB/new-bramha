@@ -16,6 +16,17 @@ body{
 img{
     object-fit: cover;
 }
+
+select{ 
+    /* needed */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('../../images/drop.png');
+  background-size: .6em;
+  background-position: calc(100% - 1.3em) center;
+  background-repeat: no-repeat;     
+}
 input,textarea,select,.PhoneInput{
     font-weight: 300;
     padding:4px 8px;
@@ -25,17 +36,9 @@ input,textarea,select,.PhoneInput{
     border-radius: 0;
     color: #929292;
     height: 30px;
-    // -moz-appearance: none;
-    // -webkit-appearance: none;
-    -webkit-font-weight: 300;
-    -webkit-padding:4px 8px;
-    -webkit-font-size: 14px;
-    -webkit-background: transparent;
-    -webkit-border: solid 0.5px rgba(153, 153, 153, 0.5);
-    -webkit-border-radius: 0;
-    -webkit-color: #929292;
-    -webkit-height: 30px;
-       
+    -moz-appearance: none;
+    -webkit-appearance: none;
+      
         &::placeholder{
             color: #929292;
             font-weight: 300;
