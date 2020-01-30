@@ -47,6 +47,12 @@
             transform: scaleY(1);
         }
     }
+    &:active ,&:focus{
+        background:theme-color("tertiary")!important;
+        border-color:theme-color("tertiary")!important;
+        color:#fff!important; 
+        box-shadow: none!important;
+    }
 }
 .btn-tertiary{
     width: 196px;
