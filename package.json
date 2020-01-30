@@ -34,6 +34,7 @@
     "react-helmet": "^5.2.1",
     "react-image-lightbox": "^5.1.1",
     "react-phone-number-input": "^3.0.15",
+    "react-scroll-up-button": "^1.6.4",
     "react-slick": "^0.25.2"
   },
   "devDependencies": {
