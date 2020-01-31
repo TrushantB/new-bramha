@@ -54,6 +54,14 @@
                 font-weight: normal;
                 font-size: 14px;
                 height: 30px;
+                -webkit-appearance: none;
+                  -moz-appearance: none;
+                  appearance: none;
+                  background-image: url('../../images/drop.png');
+                  background-size: .4em;
+                  background-position: calc(100% - 1.1em) center;
+                  background-repeat: no-repeat; 
+
                 option{
                     color: #929292;
                 }
