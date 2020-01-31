@@ -335,12 +335,16 @@
         .slider-page {
             .slider-wrapper{
                 .pages{
-                    margin-top: 8px;
+                    margin: 8px 0 0 10px;
                     font-size: 14px;
                 }
                 .slick-next,
                 .slick-prev{
                     bottom: -52px;
+                    right: 0;
+                }
+                .slick-prev{
+                    right: 60px;
                 }
                 // .slick-prev:before{
                 //     position: absolute;
