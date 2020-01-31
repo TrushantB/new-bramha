@@ -194,13 +194,13 @@
                 padding: 0;
             }
             .slick-next{
-                bottom: -66px;
+                
                 right: 35px;
                 top: auto;
                 z-index: 1;
                 // transform: rotate(180deg);
                 width: 50px;
-                height: max-content;
+                // height: max-content;
                 &:before{
                     content: "\2190";
                     font-family: "Font Awesome 5 Free";
@@ -213,10 +213,10 @@
               }
               .slick-prev{
                 top: auto;
-                bottom: -66px;
+               
                 right: 95px;
                 width: 50px;
-                height: max-content;
+                // height: max-content;
                 left: auto;
                 z-index: 1;
                   &:before{
@@ -226,6 +226,11 @@
                     font-size: 44px;
                     color:#b3b3b3;
                   }
+              }
+              .slick-prev,
+              .slick-next{
+                  height: 30px;
+                  bottom: -50px;
               }
         }
     
