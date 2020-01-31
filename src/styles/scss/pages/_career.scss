@@ -391,10 +391,8 @@
     //     bottom: -27px;
     //     top: auto;
     // }
-    .life-at-bramha{
-        .container{
-            padding: 0;
-        }
+    .life-at-bramha .container{   
+        padding: 0;
         .slider-wrapper {
             background-color: transparent;
             padding: 0px 0 40px;
@@ -466,7 +464,8 @@
 
     .modal-dialog{
         .modal-content{
-            width: 100%;;
+            width: 100%;
+            margin: 8px;
         }
     }
     .accordions{
