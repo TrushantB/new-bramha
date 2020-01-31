@@ -315,16 +315,16 @@
             margin:18px;
         }
       }
-        .slider-page {
-            .slider-wrapper {
-                .slick-next{
-                    right: 30px;
-                }
-                .slick-prev{
-                    left: 30px;
-                }
-           }
-        }
+        // .slider-page {
+        //     .slider-wrapper {
+        //         // .slick-next{
+        //         //     right: 30px;
+        //         // }
+        //         // .slick-prev{
+        //         //     left: 30px;
+        //         // }
+        //    }
+        // }
    
   }
    
@@ -338,26 +338,26 @@
                     margin-top: 8px;
                     font-size: 14px;
                 }
-                .slick-prev:before{
-                    position: absolute;
-                    top: -29px;
-                    content: "\2190";
-                    font-family: "Font Awesome 5 Free";
-                    font-weight: 900;
-                    font-size: 44px;
-                    color: #b2a585;
-                }
+                // .slick-prev:before{
+                //     position: absolute;
+                //     top: -29px;
+                //     content: "\2190";
+                //     font-family: "Font Awesome 5 Free";
+                //     font-weight: 900;
+                //     font-size: 44px;
+                //     color: #b2a585;
+                // }
                
-                .slick-next:before{
-                    content: "\2190";
-                    font-family: "Font Awesome 5 Free";
-                    font-weight: 900;
-                    font-size: 44px;
-                    color: #b2a585;
-                    position: absolute;
-                    top: -13px;
-                    right: 0px;
-                }
+                // .slick-next:before{
+                //     content: "\2190";
+                //     font-family: "Font Awesome 5 Free";
+                //     font-weight: 900;
+                //     font-size: 44px;
+                //     color: #b2a585;
+                //     position: absolute;
+                //     top: -13px;
+                //     right: 0px;
+                // }
             }
         } 
     }
@@ -419,15 +419,15 @@
                 .container-fluid{
                     padding: 0 4px;
                 }
-                .slick-next{
-                    right: 30px;
-                    bottom: -40px;
-                }
-                .slick-prev{
-                    bottom: -50px;
-                    left: auto;
-                    right: 100px;
-                }
+                // .slick-next{
+                //     right: 30px;
+                //     bottom: -40px;
+                // }
+                // .slick-prev{
+                //     bottom: -50px;
+                //     left: auto;
+                //     right: 100px;
+                // }
            }
         }
 

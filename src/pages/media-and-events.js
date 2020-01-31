@@ -89,7 +89,7 @@ class MediaAndEvents extends React.Component {
               return(
                 item.events.document.map((datas, index) => {
                   return(
-                    <section className="event-slider" key={index}>
+                    <section className="event-slider slider-page" key={index}>
                       <div className="padding-block-60 d-flex justify-content-center flex-column w-100 ">
                         <h3 className="section-title text-center text-uppercase">
                           {datas.data.title.text}

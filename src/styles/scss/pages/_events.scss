@@ -37,58 +37,58 @@
       // .slick-slide{
       //   padding-top:12px;
       // }
-      .slick-arrow{
-        padding: 20px 36px;
-        // &:hover,
-        // &:focus{
-        //   background: #000;
-        // }
+      // .slick-arrow{
+      //   padding: 20px 36px;
+      //   // &:hover,
+      //   // &:focus{
+      //   //   background: #000;
+      //   // }
         
-      }
+      // }
       &:last-child{
         margin-bottom: 124px;
       }
     }
     
-      .slick-prev {
-        z-index: 1;
-        left: 50px;
-        bottom: auto;
-        transform: translate(0px, -50%);
-        top: 50%;
-        // padding: 5px 50px 30px 17px;
-        &:before{
-            content: "\f053";
-            font-family: "Font Awesome 5 Free";
-            // background: url('../../images/left.png') no-repeat center center;
-            // padding: 12px 0px 16px 38px;
-            font-weight: 900;
-            font-size: 40px;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-      }
+      // .slick-prev {
+      //   z-index: 1;
+      //   left: 50px;
+      //   bottom: auto;
+      //   transform: translate(0px, -50%);
+      //   top: 50%;
+      //   // padding: 5px 50px 30px 17px;
+      //   &:before{
+      //       content: "\f053";
+      //       font-family: "Font Awesome 5 Free";
+      //       // background: url('../../images/left.png') no-repeat center center;
+      //       // padding: 12px 0px 16px 38px;
+      //       font-weight: 900;
+      //       font-size: 40px;
+      //       position: absolute;
+      //       top: 0;
+      //       left: 0;
+      //   }
+      // }
     
     
-      .slick-next {
-        right: 10px;
-        bottom: auto;
-        top:50%;
-        transform: translate(0px , -50%);
-        // padding: 5px 50px 30px 15px;
-        &:before{
-          content: "\f054";
-          font-family: "Font Awesome 5 Free";
-          // background: url('../../images/left.png') no-repeat center center;
-          // padding: 12px 0px 16px 38px;
-          font-weight:900;
-          position: absolute;
-          top: 0;
-          left: 0;
-          font-size: 40px;
-        }
-      }
+      // .slick-next {
+      //   right: 10px;
+      //   bottom: auto;
+      //   top:50%;
+      //   transform: translate(0px , -50%);
+      //   // padding: 5px 50px 30px 15px;
+      //   &:before{
+      //     content: "\f054";
+      //     font-family: "Font Awesome 5 Free";
+      //     // background: url('../../images/left.png') no-repeat center center;
+      //     // padding: 12px 0px 16px 38px;
+      //     font-weight:900;
+      //     position: absolute;
+      //     top: 0;
+      //     left: 0;
+      //     font-size: 40px;
+      //   }
+      // }
     } 
 .slider-bg{
   .slider-img{
@@ -167,63 +167,63 @@
             margin-left: 36px;
             text-align: left !important;
           }
-          .slick-next{
-            // bottom: -41px;
-            right: 70px;
-            top: auto;
-            bottom:-70px;
-            z-index: 1;
+          // .slick-next{
+          //   // bottom: -41px;
+          //   right: 70px;
+          //   top: auto;
+          //   bottom:-70px;
+          //   z-index: 1;
            
-          //   padding: 0;
-          //   background: transparent;
+          // //   padding: 0;
+          // //   background: transparent;
+          // //   &:before{
+          // //       content: "";
+          // //       background: url('../../images/right.jpg') no-repeat center center;
+          // //       padding: 0 0 0 36px;
+          // //     }
           //   &:before{
-          //       content: "";
-          //       background: url('../../images/right.jpg') no-repeat center center;
-          //       padding: 0 0 0 36px;
-          //     }
-            &:before{
-              content: "\2190";
-              font-family: "Font Awesome 5 Free";
-              // background: url('../../images/left.png') no-repeat center center;
-              // padding: 12px 0px 16px 38px;
-              font-weight:900;
-              position: absolute;
-              top: 0;
-              left: auto;
-              right:0;
-              font-size: 40px;
-              color:theme-color('tertiary');
-            }
-          }
-          .slick-prev{
-            // top: auto;
-            // bottom: -50px;
-            right: 0px;
-            left: auto;
-            z-index: 1;
-            top: auto;
-            bottom: -70px;
-            // padding: 0;
-            // background: transparent;
-            //   &:before{
-            //     content: "";
-            //     background: url('../../images/left.jpg') no-repeat center center;
-            //     padding: 0 0 0 36px;
-            //   }
-            &:before{
-              content: "\2190";
-              font-family: "Font Awesome 5 Free";
-              // background: url('../../images/left.png') no-repeat center center;
-              // padding: 12px 0px 16px 38px;
-              transform: rotate(180deg);  
-              font-weight: 900;
-              font-size: 40px;
-              position: absolute;
-              color:theme-color('tertiary');
-              top: 0;
-              left: 0;
-            }
-          }
+          //     content: "\2190";
+          //     font-family: "Font Awesome 5 Free";
+          //     // background: url('../../images/left.png') no-repeat center center;
+          //     // padding: 12px 0px 16px 38px;
+          //     font-weight:900;
+          //     position: absolute;
+          //     top: 0;
+          //     left: auto;
+          //     right:0;
+          //     font-size: 40px;
+          //     color:theme-color('tertiary');
+          //   }
+          // }
+          // .slick-prev{
+          //   // top: auto;
+          //   // bottom: -50px;
+          //   right: 0px;
+          //   left: auto;
+          //   z-index: 1;
+          //   top: auto;
+          //   bottom: -70px;
+          //   // padding: 0;
+          //   // background: transparent;
+          //   //   &:before{
+          //   //     content: "";
+          //   //     background: url('../../images/left.jpg') no-repeat center center;
+          //   //     padding: 0 0 0 36px;
+          //   //   }
+          //   &:before{
+          //     content: "\2190";
+          //     font-family: "Font Awesome 5 Free";
+          //     // background: url('../../images/left.png') no-repeat center center;
+          //     // padding: 12px 0px 16px 38px;
+          //     transform: rotate(180deg);  
+          //     font-weight: 900;
+          //     font-size: 40px;
+          //     position: absolute;
+          //     color:theme-color('tertiary');
+          //     top: 0;
+          //     left: 0;
+          //   }
+          // }
           
         }
       //   .padding-block-60 {
@@ -236,34 +236,34 @@
     } 
 }
 @media (max-width:420px){
-  .events{
-     .event-slider{
-      .slick-arrow{
-        padding: 5px 30px 22px 17px;
-      }
-      .slider-wrapper{
-        .pages{
-          margin-top: 12px;
-        }
-        .slick-next{
-          top: auto;
-          bottom: -35px;
-          right: 60px;
-          // &::before{
-          //   top: -15px;
-          //   left: 6px;
-          // }
-        }
-        .slick-prev{
-          right: 20px;
-          top: auto;
-          bottom: -51px;
-          //  &::before{
-          //   top: -15px;
-          //   left: 5px;
-          // }
-        }
-      }
-     }  
-  } 
+  // .events{
+  //    .event-slider{
+  //     // .slick-arrow{
+  //     //   padding: 5px 30px 22px 17px;
+  //     // }
+  //     .slider-wrapper{
+  //       .pages{
+  //         margin-top: 12px;
+  //       }
+  //       .slick-next{
+  //         top: auto;
+  //         bottom: -35px;
+  //         right: 60px;
+  //         // &::before{
+  //         //   top: -15px;
+  //         //   left: 6px;
+  //         // }
+  //       }
+  //       .slick-prev{
+  //         right: 20px;
+  //         top: auto;
+  //         bottom: -51px;
+  //         //  &::before{
+  //         //   top: -15px;
+  //         //   left: 5px;
+  //         // }
+  //       }
+  //     }
+  //    }  
+  // } 
 }
