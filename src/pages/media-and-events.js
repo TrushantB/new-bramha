@@ -13,6 +13,7 @@ class MediaAndEvents extends React.Component {
     activeSlide: null,
     photoIndex: 0,
     isOpen: false, 
+    locateMatch: ''
   };
 
   render(){
@@ -105,7 +106,7 @@ class MediaAndEvents extends React.Component {
                               datas.data.showcase.map((item,value) => {
                                 return(
                                   <div key={value}>
-                                    <div className="slider-img image-ratio" onClick={() => this.setState({ isOpen: true ,photoIndex:value})}>
+                                    <div className="slider-img image-ratio" onClick={() => this.setState({ isOpen: true ,photoIndex:value, locateMatch: datas.data.locate_match})}>
                                       <Img fluid={item.image.localFile.childImageSharp.fluid} width="100%"/>
                                     </div>
                                   </div>
@@ -114,7 +115,7 @@ class MediaAndEvents extends React.Component {
                               }
                           </Slider>
                           {
-                            isOpen &&
+                            isOpen && this.state.locateMatch==datas.data.locate_match &&
                             <Lightbox
                               mainSrc={datas.data.showcase[photoIndex].image.localFile.childImageSharp.fluid.src}
                               nextSrc={datas.data.showcase[(photoIndex + 1) % datas.data.showcase.length].image.localFile.childImageSharp.fluid.src}
@@ -171,6 +172,7 @@ export const eventPage = graphql` {
               location {
                 text
               }
+              locate_match
               date
               showcase {
                 image {
