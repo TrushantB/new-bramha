@@ -308,25 +308,25 @@
         }
       } 
   }
-  .career-page{
-    .slider-img {
-        .gatsby-image-wrapper{
-            padding-bottom: 100%;
-            margin:18px;
-        }
-      }
-        // .slider-page {
-        //     .slider-wrapper {
-        //         // .slick-next{
-        //         //     right: 30px;
-        //         // }
-        //         // .slick-prev{
-        //         //     left: 30px;
-        //         // }
-        //    }
-        // }
+//   .career-page{
+//     .slider-img {
+//         .gatsby-image-wrapper{
+//             padding-bottom: 100%;
+//             margin:18px;
+//         }
+//       }
+//         // .slider-page {
+//         //     .slider-wrapper {
+//         //         // .slick-next{
+//         //         //     right: 30px;
+//         //         // }
+//         //         // .slick-prev{
+//         //         //     left: 30px;
+//         //         // }
+//         //    }
+//         // }
    
-  }
+//   }
    
 }
 
@@ -337,6 +337,10 @@
                 .pages{
                     margin-top: 8px;
                     font-size: 14px;
+                }
+                .slick-next,
+                .slick-prev{
+                    bottom: -52px;
                 }
                 // .slick-prev:before{
                 //     position: absolute;

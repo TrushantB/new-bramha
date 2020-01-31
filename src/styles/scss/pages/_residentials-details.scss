@@ -237,7 +237,9 @@
             line-height: normal;
             letter-spacing: -0.27px;
             color: #333333;
+            background-image: none;
         }
+
         label.wrap:after {
             content:"\f078 ";
             font-family: "Font Awesome 5 Free";
@@ -375,27 +377,27 @@
                    margin-right: 8px;
                }
           }
-          .customer{
-              select{
-                  flex-basis: 23.4%;
-                  background: transparent;
-                  color: #fff;
-                  border: solid 0.5px rgba(255,255,255,0.5);
-                  border-radius: 0;
-                  padding: 4px;
-                  font-weight: normal;
-                  font-size: 14px;
-                  height: 30px;
-                  option{
-                      color: #929292;
-                  }
-                      &:focus{
-                      box-shadow: none;
-                      outline: none;
-                      border: solid 0.5px rgba(255,255,255,0.5);
-                  }
-              }
-          }
+        //   .customer{
+        //       select{
+        //           flex-basis: 23.4%;
+        //           background: transparent;
+        //           color: #fff;
+        //           border: solid 0.5px rgba(255,255,255,0.5);
+        //           border-radius: 0;
+        //           padding: 4px;
+        //           font-weight: normal;
+        //           font-size: 14px;
+        //           height: 30px;
+        //           option{
+        //               color: #929292;
+        //           }
+        //               &:focus{
+        //               box-shadow: none;
+        //               outline: none;
+        //               border: solid 0.5px rgba(255,255,255,0.5);
+        //           }
+        //       }
+        //   }
       }
       .contact-form-bg {
           background: #fafafa;
