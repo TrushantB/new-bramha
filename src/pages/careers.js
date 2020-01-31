@@ -133,7 +133,7 @@ class Careers extends React.Component {
             arrows: true,
             centerMode: true,
             slideToScroll: 1,
-            centerPadding: '150px'
+            centerPadding: '100px'
           }
         },
         {
@@ -159,7 +159,7 @@ class Careers extends React.Component {
             </picture>
             {/* <Img fluid={careerData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
           </section>
-          <section className="career-info container-md bg-color pb-5 pb-sm-0">
+          <section className="career-info container container-sm-fluid bg-color pb-5 pb-sm-0">
             <div className="padding-block-60 career-info-row">
               <h2 className="page-heading">{careerData.title.text}</h2> 
             </div>
@@ -171,7 +171,8 @@ class Careers extends React.Component {
               </div>
             </div>
           </section>
-          <section className="life-at-bramha slider-page mt-5 m-sm-0">
+          <div className="container life-at-bramha">
+          <section className=" slider-page mt-5 m-sm-0">
             <div className="padding-block-60 d-flex justify-content-center flex-column w-100 ">
               <h3 className="section-title text-center text-uppercase mb-0" >
                {careerData.life_at_bramha.text}
@@ -217,6 +218,7 @@ class Careers extends React.Component {
               </div>
             </div>
           </section>
+          </div>
           <section className="container accordions">
             <div className="row m-0">
               <div className="padding-block-60 section-title-wrapper d-flex justify-content-center flex-column w-100 align-items-center">
@@ -275,11 +277,11 @@ class Careers extends React.Component {
                                   {item.description2.text}
                                 </p>
                               </div>
-                              <button className="btn-secondary " data-toggle="modal" data-target="#exampleModal">
+                              <button className="btn-secondary " data-toggle="modal" data-target={`#exampleModal${value}`}>
                                 Apply For Job
                               </button>
                               {/* ------------- Modal ----------------- */}
-                              <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div className="modal fade" id={`exampleModal${value}`} tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div className="modal-dialog" role="document">
                                   <div className="modal-content">
                                     <div className="modal-header">
@@ -335,7 +337,7 @@ class Careers extends React.Component {
               <span className="d-block">We will get back to you once suitable position is open</span>
             </p>
               <input type="file" className="border-0 input-file-btn" id="choose-file" placeholder="Upload your CV"/>
-              <label for="choose-file" className="btn-secondary">Upload your CV</label>
+              <label htmlFor="choose-file" className="btn-secondary">Upload your CV</label>
           </section>
         </div>
         <Footer />

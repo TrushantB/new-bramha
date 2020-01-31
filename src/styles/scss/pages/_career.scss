@@ -339,7 +339,7 @@
                 }
                 .slick-next,
                 .slick-prev{
-                    bottom: -52px;
+                    bottom: -38px;
                     right: 0;
                 }
                 .slick-prev{
@@ -391,10 +391,15 @@
     //     bottom: -27px;
     //     top: auto;
     // }
-    .life-at-bramha .slider-wrapper {
-        background-color: transparent;
-        padding: 0px 0 40px;
-    }
+    .life-at-bramha{
+        .container{
+            padding: 0;
+        }
+        .slider-wrapper {
+            background-color: transparent;
+            padding: 0px 0 40px;
+        }
+    } 
     .career-info-row {
         margin-right: 0;
     }
