@@ -257,7 +257,7 @@ class VerticalPage extends React.Component {
                           })
                         }
                         imageCaption={verticalData.data.showcase[photoIndex].caption}
-                        animationDuration={700}
+                        animationDuration={800}
                       />
                       }
                     <p className=" text-left text-sm-center pages mb-0">
@@ -404,6 +404,8 @@ class VerticalPage extends React.Component {
                             photoIndex: (photoIndex + 1) % verticalData.data.floor_plans.length,
                           })
                         }
+                      animationDuration={800}
+
                       />
                     }
                     {
@@ -504,6 +506,8 @@ class VerticalPage extends React.Component {
                         photoIndex: (photoIndex + 1) % verticalData.data.site_progress.length,
                       })
                     }
+                    animationDuration={800}
+
                   />
                 }
                 <p className=" text-left text-sm-center pages mb-0">

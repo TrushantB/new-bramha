@@ -209,6 +209,8 @@ class Careers extends React.Component {
                         photoIndex: (photoIndex + 1) % careerData.showcase.length,
                       })
                     }
+                    animationDuration={800}
+
                   />
                 }
                 <p className=" text-left text-sm-center pages mb-0 ">
