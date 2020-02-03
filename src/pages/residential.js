@@ -313,6 +313,9 @@ export default class Residential extends React.Component {
                       {this.state.activeSlide + 1} of {this.state.completedProject.length}
                     </span>
                   </div>
+                  <div className="sumbit text-center mt-4">
+                    <button type="submit" className="btn-secondary">View All</button>
+                  </div> 
                 </section>
             }
             <section className="give-details text-center">

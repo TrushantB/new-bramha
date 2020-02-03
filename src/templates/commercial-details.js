@@ -142,7 +142,7 @@ class CommercialDetails extends React.Component {
                         })
                       }
                       imageCaption={commercialData.data.showcase[photoIndex].caption}
-                      animationDuration={700}
+                      animationDuration={800}
                     />
                   }
                   <p className=" text-left text-sm-center pages mb-0">

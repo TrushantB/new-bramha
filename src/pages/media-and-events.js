@@ -131,6 +131,7 @@ class MediaAndEvents extends React.Component {
                                   photoIndex: (photoIndex + 1) % datas.data.showcase.length,
                                 })
                               }
+                              animationDuration={800}
                               />
                             }
                           <p className="text-left text-sm-center pages mb-0">

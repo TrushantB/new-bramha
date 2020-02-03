@@ -171,7 +171,7 @@ class Careers extends React.Component {
               </div>
             </div>
           </section>
-          <div className="container life-at-bramha">
+          <div className="container life-at-bramha p-0 px-md-3">
           <section className=" slider-page mt-5 m-sm-0">
             <div className="padding-block-60 d-flex justify-content-center flex-column w-100 ">
               <h3 className="section-title text-center text-uppercase mb-0" >
@@ -210,6 +210,8 @@ class Careers extends React.Component {
                         photoIndex: (photoIndex + 1) % careerData.showcase.length,
                       })
                     }
+                    animationDuration={800}
+
                   />
                 }
                 <p className=" text-left text-sm-center pages mb-0 ">
