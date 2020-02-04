@@ -381,6 +381,25 @@ class VerticalPage extends React.Component {
                             </div>
                           )
                         })}
+                            {
+                      isOpenOneSlide && verticalData.data.floor_plans &&
+                      <Lightbox
+                        mainSrc={verticalData.data.floor_plans[photoIndex].image1.localFile.childImageSharp.fluid.src}
+                        onCloseRequest={() => this.setState({ isOpenOneSlide: false })}
+                        // onMovePrevRequest={() =>
+                        //   this.setState({
+                        //     photoIndex: (photoIndex + verticalData.data.floor_plans.length - 1) % verticalData.data.floor_plans.length,
+                        //   })
+                        // }
+                        // onMoveNextRequest={() =>
+                        //   this.setState({
+                        //     photoIndex: (photoIndex + 1) % verticalData.data.floor_plans.length,
+                        //   })
+                        // }
+                      animationDuration={800}
+
+                      />
+                    }
                         </div>:
                         <Slider {...floorPlan}>
                           {
@@ -418,25 +437,7 @@ class VerticalPage extends React.Component {
 
                       />
                     }
-                    {
-                      isOpenOneSlide && verticalData.data.floor_plans &&
-                      <Lightbox
-                        mainSrc={verticalData.data.floor_plans[photoIndex].image1.localFile.childImageSharp.fluid.src}
-                        onCloseRequest={() => this.setState({ isOpenOneSlide: false })}
-                        onMovePrevRequest={() =>
-                          this.setState({
-                            photoIndex: (photoIndex + verticalData.data.floor_plans.length - 1) % verticalData.data.floor_plans.length,
-                          })
-                        }
-                        // onMoveNextRequest={() =>
-                        //   this.setState({
-                        //     photoIndex: (photoIndex + 1) % verticalData.data.floor_plans.length,
-                        //   })
-                        // }
-                      animationDuration={800}
-
-                      />
-                    }
+                
                     {
                     this.state.floorPlanSelect.length !==1 &&
                       <p className=" text-left text-sm-center pages mb-0">
