@@ -25,7 +25,7 @@
      }
      .section-title{
          &::after{
-             display:none;
+             margin: 0 auto;
          }
      }
      .slider-wrapper{
@@ -123,9 +123,9 @@
      .vertical-card-body{
        padding:28px;
        flex-basis: 50%;
-       .vertical-card-link{
-           padding-left:28px;
-       }
+    //    .vertical-card-link{
+    //        padding-left:28px;
+    //    }
      }
      .gatsby-image-wrapper{
          height: 100%;
