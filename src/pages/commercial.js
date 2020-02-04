@@ -172,20 +172,20 @@ class Commercial extends React.Component {
             </Slider>
           </div>
           <div className="sumbit text-center mt-4">
-            <Link to="residential/completed-projects/" className="btn-secondary">View All</Link>
+            <Link to="commercial/completed-projects/" className="btn-secondary">View All</Link>
           </div> 
         </section>
-        <section className="give-details text-center">
-          <div className="container">    
-            <h4 className="text-uppercase text-center section-title">Looking for more option?</h4>  
-            <p>
-              Tell us your requirement and we will let you know when there is a match.
-            </p>
-            <div className="sumbit text-center mt-sm-0 mt-4">
-              <button type="submit" className="btn-secondary">Give Details</button>
-            </div> 
-          </div>
-        </section>
+          <section className="give-details text-center">
+            <div className="container">    
+              <h4 className="text-uppercase text-center section-title">Looking for more option?</h4>  
+              <p>
+                Tell us your requirement and we will let you know when there is a match.
+              </p>
+              <div className="sumbit text-center mt-sm-0 mt-4">
+                <button type="submit" className="btn-secondary">Give Details</button>
+              </div> 
+            </div>
+          </section>
         </section>
         <Footer/>   
       </Layout>

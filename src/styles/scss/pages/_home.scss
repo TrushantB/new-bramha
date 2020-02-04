@@ -1,5 +1,6 @@
 body{
     position: relative;
+    padding-top: 60px;
 }
 .drawer-container{
     position: fixed;
@@ -218,7 +219,7 @@ body{
     }
     .banner-section{
         width: 100%;
-        height: calc(100vh - 60px);
+        height: calc(100vh - 120px);
         -o-object-fit: cover;
         object-fit: cover;
         position: relative;

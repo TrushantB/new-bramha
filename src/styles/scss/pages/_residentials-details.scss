@@ -2,12 +2,12 @@
     width:320px;
     box-shadow: 0 2px 13px 0 rgba(0, 0, 0, 0.18);
     background-color: #ffffff;
-    padding:8px 0;
+    padding: 16px 0;
     margin-top: -32px;
     position: relative;
     z-index: 99;
     img{
-        width: 35%;
+        max-height: 100px;
     }
   }
   .tab-pane{
