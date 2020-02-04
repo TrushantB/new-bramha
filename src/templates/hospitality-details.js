@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import 'lazysizes';
 import Slider from 'react-slick';
@@ -69,7 +69,7 @@ class HospitalityDetails extends React.Component {
 
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
-        <SEO title={hospitalityData.data.sub_title.text} />
+        <SEO title={hospitalityData.data.title.text} />
         <main className="detail-page">
           {/* <!-- ---------------- banner start here ---------------- --> */}
             <section className="banner-section">
@@ -90,6 +90,16 @@ class HospitalityDetails extends React.Component {
                   <source media="(min-width: 581px)" srcSet={hospitalityData.data.logo.url} />
                   <img src={hospitalityData.data.logo.url} alt="hospital Logo"  />
                 </picture>
+              </div>
+              <div className="row mt-0 mt-sm-5">
+                <div className="col-12">
+                  <nav aria-label="breadcrumb">
+                    <ol className="breadcrumb">
+                      <li className="breadcrumb-item"><Link to="/hospitality">Hospitality</Link></li>
+                      <li className="breadcrumb-item active" aria-current="page">{hospitalityData.data.title.text}</li>
+                    </ol>
+                  </nav>
+                </div>
               </div>
               <div className="padding-block-60">
                 <h2 className="page-heading text-uppercase"> 

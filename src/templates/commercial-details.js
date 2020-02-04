@@ -4,7 +4,7 @@ import SEO from '../components/seo';
 import Footer from '../components/footer';
 import Img from 'gatsby-image';
 import Slider from 'react-slick';
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 
@@ -66,7 +66,7 @@ class CommercialDetails extends React.Component {
 
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
-        <SEO title={commercialData.data.sub_title.text} />
+        <SEO title={commercialData.data.title.text} />
         <main className="detail-page commercial-detail-page">
           {/* <!-- ---------------- banner start here ---------------- --> */}
             <section className="banner-section">
@@ -84,6 +84,16 @@ class CommercialDetails extends React.Component {
                   <source media="(max-width: 581px)" srcSet={commercialData.data.logo.mobile.url} />
                   <img src={commercialData.data.logo.url} alt="hospital Logo" className="w-50" />
                 </picture>
+              </div>
+              <div className="row mt-0 mt-sm-5">
+                <div className="col-12">
+                  <nav aria-label="breadcrumb">
+                    <ol className="breadcrumb">
+                      <li className="breadcrumb-item"><Link to="/commercial">Commercial</Link></li>
+                      <li className="breadcrumb-item active" aria-current="page">{commercialData.data.title.text}</li>
+                    </ol>
+                  </nav>
+                </div>
               </div>
               <div className=" padding-block-60">
                 <h2 className="page-heading text-uppercase"> 

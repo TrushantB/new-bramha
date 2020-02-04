@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import 'lazysizes';
 import Img from 'gatsby-image';
 import Slider from 'react-slick';
@@ -182,7 +182,7 @@ class VerticalPage extends React.Component {
    
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
-        <SEO title={verticalData.data.sub_title.text}/>
+        <SEO title={verticalData.data.title.text}/>
         <main className="detail-page" id="residential-details">
             {/* <!--   ---------------- banner start here ---------------- --> */}
               <section className="banner-section">
@@ -203,6 +203,16 @@ class VerticalPage extends React.Component {
                     <source media="(min-width: 581px)" srcSet={verticalData.data.logo.url}/>
                     <img src={verticalData.data.logo.url} alt="Residency Logo" />
                   </picture>
+                </div>
+                <div className="row mt-0 mt-sm-5">
+                  <div className="col-12">
+                    <nav aria-label="breadcrumb">
+                      <ol className="breadcrumb">
+                        <li className="breadcrumb-item"><Link to="/residential">Residential</Link></li>
+                        <li className="breadcrumb-item active" aria-current="page">{verticalData.data.title.text}</li>
+                      </ol>
+                    </nav>
+                  </div>
                 </div>
               <div className="padding-block-60 page-heading-section">
                   <div className="col-12 padding-sm-0">
