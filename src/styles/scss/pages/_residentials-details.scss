@@ -189,6 +189,14 @@
       .banner-section{
           padding-top: 60px;
       }
+    .breadcrumb{
+      background-color: theme-color('bg-color');
+      .breadcrumb-item{
+          a{
+              color:theme-color('primary');
+          }
+      }
+    }
     .proximities-section{
         margin-top: 128px;
         .section-title-wrapper{

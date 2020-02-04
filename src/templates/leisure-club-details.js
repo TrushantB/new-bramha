@@ -1,10 +1,10 @@
 import React from 'react';
+import { graphql, Link } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Footer from '../components/footer';
 import Img from 'gatsby-image';
 import Slider from 'react-slick';
-import { graphql } from 'gatsby';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 
@@ -66,7 +66,7 @@ class LeisureDetails extends React.Component {
     }; 
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
-        <SEO title={leisureData.data.sub_title.text}/>
+        <SEO title={leisureData.data.title.text}/>
         <main className="detail-page">
           {/* <!-- ---------------- banner start here ---------------- --> */}
             <section className="banner-section">
@@ -85,6 +85,16 @@ class LeisureDetails extends React.Component {
                   <img src={leisureData.data.logo.url} alt="hospital Logo" />
                 </picture>
               </div>
+                <div className="row mt-0 mt-sm-5">
+                  <div className="col-12">
+                    <nav aria-label="breadcrumb">
+                      <ol className="breadcrumb">
+                        <li className="breadcrumb-item"><Link to="/leisure-club">Leisure</Link></li>
+                        <li className="breadcrumb-item active" aria-current="page">{leisureData.data.title.text}</li>
+                      </ol>
+                    </nav>
+                  </div>
+                </div>
               <div className="padding-block-60">
                 <h2 className="page-heading text-uppercase"> 
                   {leisureData.data.heading.text}     
