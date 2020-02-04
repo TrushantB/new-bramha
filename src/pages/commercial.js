@@ -84,7 +84,7 @@ class Commercial extends React.Component {
             </div>
           </div>
         </section>
-        <section className="hospitality-projects">
+        <section className="residential-projects">
           <div className="residences">
             <div className="container">
               <div className="row">
@@ -129,8 +129,7 @@ class Commercial extends React.Component {
               </div>
             </div>
           </div>
-        </section>
-        
+      
         <section className="complete-project position-relative">
           <div className="container">
             <div className="listing-heading d-flex align-items-center">
@@ -172,6 +171,18 @@ class Commercial extends React.Component {
               }
             </Slider>
           </div>
+        </section>
+        <section className="give-details text-center">
+          <div className="container">    
+            <h4 className="text-uppercase text-center section-title">Looking for more option?</h4>  
+            <p>
+              Tell us your requirement and we will let you know when there is a match.
+            </p>
+            <div className="sumbit text-center mt-sm-0 mt-4">
+              <button type="submit" className="btn-secondary">Give Details</button>
+            </div> 
+          </div>
+        </section>
         </section>
         <Footer/>   
       </Layout>

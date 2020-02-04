@@ -1,5 +1,11 @@
 
 .career-page{
+    .banner-section{
+        img{
+            width: 100%;
+            height: calc(100vh - 60px);
+        }
+    }
     .padding-block-60{
         padding: 52px 0 24px;
     }

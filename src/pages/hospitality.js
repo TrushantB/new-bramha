@@ -134,6 +134,8 @@ export const hospitalityPage = graphql`{
               }
             }
           }
+
+          
         }
       }
     }
