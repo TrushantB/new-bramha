@@ -384,7 +384,7 @@ class VerticalPage extends React.Component {
                         </div>:
                         <Slider {...floorPlan}>
                           {
-                            this.state.floorPlanSelect.map((item,value) => {
+                            this.state.floorPlanSelect && this.state.floorPlanSelect.map((item,value) => {
                               return(
                                 <div key={value}>
                                   <div className="slider-img " onClick={() => this.setState({ isOpenTwo: true ,photoIndex:value})}>
