@@ -17,7 +17,7 @@
           }
       }
   }
-  #the-collection-residential{
+  #the-collection{
       .logo-card{
           img{
             width:75%;
@@ -186,9 +186,9 @@
   }
  
   .detail-page{
-      .banner-section{
-          padding-top: 60px;
-      }
+    //   .banner-section{
+    //       padding-top: 60px;
+    //   }
     .breadcrumb{
       background-color: theme-color('bg-color');
       .breadcrumb-item{
@@ -304,7 +304,7 @@
   }
 
 //   ------------ facility tab hide on f residency -----------
-#f-residences-phase-2-residential{
+#f-residences-phase-2{
     .nav-pills{
         .col-6{
             flex: 0 0 100%;

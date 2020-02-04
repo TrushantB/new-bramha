@@ -18,6 +18,12 @@ class NRI extends React.Component {
     this.setState({collapseDescription: nriData.group})
   }
   
+  scrollWin() {
+    window.scrollBy({
+      top: 500,
+      behavior: 'smooth'
+    });
+  }
   render(){
     const nriData = this.props.data.prismicNri.data;
     return(
@@ -29,6 +35,7 @@ class NRI extends React.Component {
               <source media="(min-width: 581px)" srcSet={nriData.banner.localFile.childImageSharp.url}/>
               <Img fluid={nriData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
             </picture>
+            <button onClick={this.scrollWin} className="scrolldown-btn"><i className="fas fa-chevron-down"></i></button>
             {/* <Img fluid={nriData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
           </section>
 

@@ -38,17 +38,25 @@ class Contacts extends React.Component {
         this.setState({ career : false , constructors : false, channel : false, customer : false , LandOwner : true  })
       }
     }
+    
+  scrollWin() {
+    window.scrollBy({
+      top: 500,
+      behavior: 'smooth'
+    });
+  }
   render(){
     const contactData = this.props.data.prismicCompanyDetails.data;
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title="Contacts"/>
         <section className="contact-section">
-          <div className="contact-page-image mt-60">
+          <div className="contact-page-image banner-section mt-60">
             <picture>
               <source media="(max-width: 581px)" srcSet={contactData.banner.Mobile.url}/>
               <img src={contactData.banner.url} alt="" width="100%" />
             </picture>
+            <button onClick={this.scrollWin} className="scrolldown-btn"><i className="fas fa-chevron-down"></i></button>
             {/* <Img fluid={contactData.banner.localFile.childImageSharp.fluid} alt="" width="100%"/> */}
           </div>
           <section className="page-heading-section container container-sm-fluid bg-color">

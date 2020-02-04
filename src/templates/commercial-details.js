@@ -14,7 +14,12 @@ class CommercialDetails extends React.Component {
     photoIndex: 0,
     isOpen: false, 
   };
-
+  scrollWin() {
+    window.scrollBy({
+      top: 500,
+      behavior: 'smooth'
+    });
+  }
   render(){
     const { photoIndex, isOpen } = this.state;
     const commercialData = this.props.data.prismicOurVerticalsArticle;
@@ -74,6 +79,7 @@ class CommercialDetails extends React.Component {
                 <source media="(min-width: 581px)" srcSet={commercialData.data.banner[0].image.localFile.childImageSharp.url}/>
                 <Img fluid={commercialData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img"/>
               </picture>
+              <button onClick={this.scrollWin} className="scrolldown-btn"><i className="fas fa-chevron-down"></i></button>
               {/* <Img fluid={commercialData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
             </section>
           {/* <!-- ---------------- banner end here ---------------- --> */}

@@ -107,7 +107,12 @@ class Careers extends React.Component {
       this.setState({jobOpening:this.state.jobOpeningStore})
     }
   }
-
+  scrollWin() {
+    window.scrollBy({
+      top: 500,
+      behavior: 'smooth'
+    });
+  }
   render(){
     const { photoIndex, isOpen } = this.state;
     const careerData = this.props.data.prismicCareers.data;
@@ -157,6 +162,7 @@ class Careers extends React.Component {
               <source media="(max-width: 581px)" srcSet={careerData.banner.mobile.url}/>
               <img src={careerData.banner.url} alt="banner image here" className="banner-img" />
             </picture>
+            <button onClick={this.scrollWin} className="scrolldown-btn"><i className="fas fa-chevron-down"></i></button>
             {/* <Img fluid={careerData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
           </section>
           <section className="career-info container container-sm-fluid bg-color pb-5 pb-sm-0">

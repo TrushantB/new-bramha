@@ -32,6 +32,12 @@ class VerticalPage extends React.Component {
     this.setState({ floorPlanSelect : verticalData.data.floor_plans})
   }
   
+  scrollWin() {
+    window.scrollBy({
+      top: 500,
+      behavior: 'smooth'
+    });
+  }
 
   render(){
     const { photoIndex, isOpenOne ,isOpenTwo,isOpenThree,isOpenOneSlide} = this.state;
@@ -193,6 +199,7 @@ class VerticalPage extends React.Component {
                 }
                 <img src={verticalData.data.banner[0].image.url} alt="banner image here" className="banner-img"/>
               </picture>
+            <button onClick={this.scrollWin} className="scrolldown-btn"><i className="fas fa-chevron-down"></i></button>
                 {/* <Img fluid={verticalData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
               </section>
             {/* <!--   ---------------- banner end here ---------------- --> */}

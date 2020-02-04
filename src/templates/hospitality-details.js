@@ -15,7 +15,12 @@ class HospitalityDetails extends React.Component {
     photoIndex: 0,
     isOpen: false, 
   }
-
+  scrollWin() {
+    window.scrollBy({
+      top: 500,
+      behavior: 'smooth'
+    });
+  }
   render(){
     const { photoIndex, isOpen } = this.state;
     const hospitalityData = this.props.data.prismicOurVerticalsArticle;
@@ -80,6 +85,7 @@ class HospitalityDetails extends React.Component {
                 }
                 <img src={hospitalityData.data.banner[0].image.url} alt="banner image here" className="banner-img"/>
               </picture>
+              <button onClick={this.scrollWin} className="scrolldown-btn"><i className="fas fa-chevron-down"></i></button>
               {/* <Img fluid={hospitalityData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
             </section>
           {/* <!-- ---------------- banner end here ---------------- --> */}
