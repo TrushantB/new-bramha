@@ -1,13 +1,72 @@
 import React from 'react';
+import Slider from "react-slick";
+
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Footer from '../components/footer';
-import Img from 'gatsby-image';
 import { graphql, Link } from 'gatsby';
 
 class Commercial extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      activeSlide: null,
+
+    }
+  }
+  
   render(){
+    let settings = {
+      className: "project-carousel",
+      centerPadding: "60px",
+      dots: false,
+      infinite: false,
+      speed: 1000,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      initialSlide: 0,
+      autoplaySpeed: 0,
+      nfinite:true,
+      afterChange: current => this.setState({ activeSlide: current }),
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            infinite: true,
+            dots: false,
+            speed: 1000,
+            afterChange: current => this.setState({ completeChange: current }),
+            autoplaySpeed: 0
+          }
+        },
+        {
+          breakpoint: 580,
+          settings: {
+            
+            centerMode: true,
+            infinite: true,
+            centerPadding: "60px",
+            slidesToShow: 1,
+            autoplaySpeed: 0
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            centerMode: true,
+            infinite: true,
+            centerPadding: "30px",
+            slidesToShow: 1,
+            autoplaySpeed: 0
+          }
+        }
+      ]
+    };
     const commercialData = this.props.data.allPrismicCommercial.edges[0].node.data;
+    console.log('commercialData', commercialData);
+    
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title={commercialData.sub_title.text}/>
@@ -71,22 +130,23 @@ class Commercial extends React.Component {
             </div>
           </div>
         </section>
-        {/* <section className="complete-project position-relative">
+        
+        <section className="complete-project position-relative">
           <div className="container">
             <div className="listing-heading d-flex align-items-center">
               <h4 className="text-uppercase heading mb-0">Completed Projects</h4>
             </div>
-            <p className="text-left d-none d-sm-block">{residentialData[0].node.data.completed_description.text}
+            <p className="text-left d-none d-sm-block">{commercialData.completed_project_description.text}
             </p>
             <Slider  {...settings}>
-              {this.state.completedProject.map((item, value) => {
+              {  commercialData.completed_projects.map((item, index)=>{
                 return(
-                  <div className="row"  key={value}> 
-                  <Link to={`residential/${item.completed_links.uid}`}>
+                  <div className="row"  key={index}> 
+                  <Link to={`commercial/${item.completed_links.uid}`} >
                     <div className="secondary-card position-relative ">
                       <div className="secondary-card-img image-ratio">
                       <picture>
-                          <source media="(max-width: 581px)" srcSet={item.completed_links.document[0].data.thumbnail.mobile.url}/>
+                          {/* <source media="(max-width: 581px)" srcSet={item.completed_links.document[0].data.thumbnail.mobile.url}/> */}
                           <img src={item.completed_links.document[0].data.thumbnail.url} alt="" width="100%"/>
                         </picture>
                       </div>
@@ -111,11 +171,8 @@ class Commercial extends React.Component {
                 )})
               }
             </Slider>
-            <span className="d-inline-block d-sm-none position-absolute pagination">
-              {this.state.activeSlide + 1} of {this.state.completedProject.length}
-            </span>
           </div>
-        </section> */}
+        </section>
         <Footer/>   
       </Layout>
     )
@@ -123,7 +180,7 @@ class Commercial extends React.Component {
 }
 export default Commercial;
 
-export const commercialPage = graphql` {
+export const commercialPageData = graphql` {
   allPrismicCommercial {
     edges {
       node {
@@ -173,7 +230,34 @@ export const commercialPage = graphql` {
               }
             }
           }
+        completed_project_description{
+          text
         }
+        completed_projects{
+          completed_links{
+            uid
+            document{
+              data{
+                title{
+                  text
+                }
+                flat_bhk{
+                  text
+                }
+                flat_address{
+                  text
+                }
+                thumbnail{
+                  url
+                  mobile{
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
       }
     }
   }
