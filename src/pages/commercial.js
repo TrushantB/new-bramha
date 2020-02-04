@@ -146,7 +146,7 @@ class Commercial extends React.Component {
                     <div className="secondary-card position-relative ">
                       <div className="secondary-card-img image-ratio">
                       <picture>
-                          {/* <source media="(max-width: 581px)" srcSet={item.completed_links.document[0].data.thumbnail.mobile.url}/> */}
+                          <source media="(max-width: 581px)" srcSet={item.completed_links.document[0].data.thumbnail.mobile.url}/>
                           <img src={item.completed_links.document[0].data.thumbnail.url} alt="" width="100%"/>
                         </picture>
                       </div>
