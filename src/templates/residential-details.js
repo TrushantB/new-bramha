@@ -369,7 +369,7 @@ class VerticalPage extends React.Component {
                   </div>
                   <div className="showcase-slider">
                     {
-                      this.state.floorPlanSelect.length == 1 ?
+                      this.state.floorPlanSelect && this.state.floorPlanSelect.length == 1 ?
                       <div>
                         {
                         this.state.floorPlanSelect && this.state.floorPlanSelect.map((item,value) => {
