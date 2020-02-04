@@ -171,6 +171,9 @@ class Commercial extends React.Component {
               }
             </Slider>
           </div>
+          <div className="sumbit text-center mt-4">
+            <Link to="residential/completed-projects/" className="btn-secondary">View All</Link>
+          </div> 
         </section>
         <section className="give-details text-center">
           <div className="container">    
