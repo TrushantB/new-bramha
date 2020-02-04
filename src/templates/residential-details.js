@@ -34,7 +34,7 @@ class VerticalPage extends React.Component {
   
 
   render(){
-    const { photoIndex, isOpenOne ,isOpenTwo,isOpenThree} = this.state;
+    const { photoIndex, isOpenOne ,isOpenTwo,isOpenThree,isOpenOneSlide} = this.state;
     const verticalData = this.props.data.prismicOurVerticalsArticle;
 
     let showCase = {
@@ -365,7 +365,7 @@ class VerticalPage extends React.Component {
                         this.state.floorPlanSelect.map((item,value) => {
                           return(
                             <div key={value}>
-                              <div className="slider-img ">
+                              <div className="slider-img" onClick={() => this.setState({ isOpenOneSlide: true ,photoIndex:value})}>
                                 <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt="Floor Plans" className="w-100 h-100" />
                               </div>
                             </div>
@@ -404,6 +404,25 @@ class VerticalPage extends React.Component {
                             photoIndex: (photoIndex + 1) % verticalData.data.floor_plans.length,
                           })
                         }
+                      animationDuration={800}
+
+                      />
+                    }
+                    {
+                      isOpenOneSlide &&
+                      <Lightbox
+                        mainSrc={verticalData.data.floor_plans[photoIndex].image1.localFile.childImageSharp.fluid.src}
+                        onCloseRequest={() => this.setState({ isOpenOneSlide: false })}
+                        onMovePrevRequest={() =>
+                          this.setState({
+                            photoIndex: (photoIndex + verticalData.data.floor_plans.length - 1) % verticalData.data.floor_plans.length,
+                          })
+                        }
+                        // onMoveNextRequest={() =>
+                        //   this.setState({
+                        //     photoIndex: (photoIndex + 1) % verticalData.data.floor_plans.length,
+                        //   })
+                        // }
                       animationDuration={800}
 
                       />
