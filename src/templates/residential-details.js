@@ -236,7 +236,7 @@ class VerticalPage extends React.Component {
                 <div className="container">
                 <Slider {...showCase}>
                       {
-                        verticalData.data.showcase.map((item,value) => {
+                        verticalData.data.showcase.length > 0 && verticalData.data.showcase.map((item,value) => {
                           return(
                             <div key={value}>
                               <div  className="slider-img " onClick={() => this.setState({ isOpenOne: true ,photoIndex:value})}>
@@ -403,7 +403,7 @@ class VerticalPage extends React.Component {
                         </div>:
                         <Slider {...floorPlan}>
                           {
-                            this.state.floorPlanSelect && this.state.floorPlanSelect.map((item,value) => {
+                            this.state.floorPlanSelect.length > 0 && this.state.floorPlanSelect.map((item,value) => {
                               return(
                                 <div key={value}>
                                   <div className="slider-img " onClick={() => this.setState({ isOpenTwo: true ,photoIndex:value})}>
@@ -508,7 +508,7 @@ class VerticalPage extends React.Component {
                 <div className="container showcase-slider slider-wrapper">
                   <Slider {...siteProcess}>
                     {
-                      verticalData.data.site_progress.map((item,value) => {
+                      verticalData.data.site_progress.length > 0 && verticalData.data.site_progress.map((item,value) => {
                         return(
                           <div key={value}>
                             <div  className="slider-img " onClick={() => this.setState({ isOpenThree: true ,photoIndex:value})}>
