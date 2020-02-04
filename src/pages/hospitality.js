@@ -77,7 +77,7 @@ class Hospitality extends React.Component {
             <div className="row our-vertivcal-sect about-sections">
               <div className="d-flex justify-content-center align-items-center flex-column section-title-wrapper w-100 ">
                 <h3 className="section-title text-center text-uppercase">
-                  {verticalsData.title.text}
+                  Others verticals
                 </h3>
               </div>
               <div className="col-md-6 padding-sm-0">
