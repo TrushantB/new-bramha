@@ -243,7 +243,7 @@ class VerticalPage extends React.Component {
                 <div className="container">
                 <Slider {...showCase}>
                       {
-                        verticalData.data.showcase.map((item,value) => {
+                        verticalData.data.showcase.length > 0 && verticalData.data.showcase.map((item,value) => {
                           return(
                             <div key={value}>
                               <div  className="slider-img " onClick={() => this.setState({ isOpenOne: true ,photoIndex:value})}>
@@ -388,10 +388,29 @@ class VerticalPage extends React.Component {
                             </div>
                           )
                         })}
+                            {
+                      isOpenOneSlide && verticalData.data.floor_plans &&
+                      <Lightbox
+                        mainSrc={verticalData.data.floor_plans[photoIndex].image1.localFile.childImageSharp.fluid.src}
+                        onCloseRequest={() => this.setState({ isOpenOneSlide: false })}
+                        // onMovePrevRequest={() =>
+                        //   this.setState({
+                        //     photoIndex: (photoIndex + verticalData.data.floor_plans.length - 1) % verticalData.data.floor_plans.length,
+                        //   })
+                        // }
+                        // onMoveNextRequest={() =>
+                        //   this.setState({
+                        //     photoIndex: (photoIndex + 1) % verticalData.data.floor_plans.length,
+                        //   })
+                        // }
+                      animationDuration={800}
+
+                      />
+                    }
                         </div>:
                         <Slider {...floorPlan}>
                           {
-                            this.state.floorPlanSelect && this.state.floorPlanSelect.map((item,value) => {
+                            this.state.floorPlanSelect.length > 0 && this.state.floorPlanSelect.map((item,value) => {
                               return(
                                 <div key={value}>
                                   <div className="slider-img " onClick={() => this.setState({ isOpenTwo: true ,photoIndex:value})}>
@@ -425,25 +444,7 @@ class VerticalPage extends React.Component {
 
                       />
                     }
-                    {
-                      isOpenOneSlide && verticalData.data.floor_plans &&
-                      <Lightbox
-                        mainSrc={verticalData.data.floor_plans[photoIndex].image1.localFile.childImageSharp.fluid.src}
-                        onCloseRequest={() => this.setState({ isOpenOneSlide: false })}
-                        onMovePrevRequest={() =>
-                          this.setState({
-                            photoIndex: (photoIndex + verticalData.data.floor_plans.length - 1) % verticalData.data.floor_plans.length,
-                          })
-                        }
-                        // onMoveNextRequest={() =>
-                        //   this.setState({
-                        //     photoIndex: (photoIndex + 1) % verticalData.data.floor_plans.length,
-                        //   })
-                        // }
-                      animationDuration={800}
-
-                      />
-                    }
+                
                     {
                     this.state.floorPlanSelect.length !==1 &&
                       <p className=" text-left text-sm-center pages mb-0">
@@ -514,7 +515,7 @@ class VerticalPage extends React.Component {
                 <div className="container showcase-slider slider-wrapper">
                   <Slider {...siteProcess}>
                     {
-                      verticalData.data.site_progress.map((item,value) => {
+                      verticalData.data.site_progress.length > 0 && verticalData.data.site_progress.map((item,value) => {
                         return(
                           <div key={value}>
                             <div  className="slider-img " onClick={() => this.setState({ isOpenThree: true ,photoIndex:value})}>
