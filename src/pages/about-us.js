@@ -12,7 +12,7 @@ class AboutUs extends React.Component {
     activeSlide: 0,
     activeSlide2: 0,
   }
-
+  
   render(){
     let settings = {
       dots: true,
