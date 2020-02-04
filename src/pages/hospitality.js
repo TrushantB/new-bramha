@@ -73,7 +73,7 @@ class Hospitality extends React.Component {
                 </div>
               </div>
             </div>
-            <section className="container">
+            <section className="container mt-5">
             <div className="row our-vertivcal-sect about-sections">
               <div className="d-flex justify-content-center align-items-center flex-column section-title-wrapper w-100 ">
                 <h3 className="section-title text-center text-uppercase">
@@ -98,7 +98,7 @@ class Hospitality extends React.Component {
               </div>
 
               <div className="col-md-6 mt-5 mt-md-0 padding-sm-0">
-                <Link to='/commercial' className="vertical-card d-flex flex-row-reverse flex-md-row text-decoration-none">
+                <Link to='/commercial' className="vertical-card d-flex text-decoration-none">
                   <div className="vertical-img-wrapper w-100">
                     <Img fluid={verticalsData.vertical2.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
                   </div>
@@ -115,7 +115,10 @@ class Hospitality extends React.Component {
               </div>
 
               <div className="col-md-6 mt-5 padding-sm-0">
-                <Link to='/leisure-club' className="vertical-card d-flex text-decoration-none">
+                <Link to='/leisure-club' className="vertical-card d-flex text-decoration-none"> 
+                  <div className="vertical-img-wrapper w-100">
+                    <Img fluid={verticalsData.vertical4.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
+                  </div>
                   <div className="vertical-card-body d-flex flex-column justify-content-between"> 
                     <h2 className="inner-section-title">
                       {verticalsData.vertical4.document[0].data.title.text}
@@ -124,9 +127,6 @@ class Hospitality extends React.Component {
                         <span> View Projects </span> 
                         <i className="fas fa-arrow-right"></i>
                     </div>
-                  </div> 
-                  <div className="vertical-img-wrapper w-100">
-                    <Img fluid={verticalsData.vertical4.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
                   </div>
                 </Link>
               </div>
@@ -196,6 +196,8 @@ export const hospitalityPage = graphql`{
               }
             }
           }
+
+          
         }
       }
     }

@@ -1,3 +1,11 @@
+.about-page{
+    .banner-section{
+        img{
+            width: 100%;
+            height: calc(100vh - 60px);
+        }
+    }
+}
 .banner-section{
     img{
         width:100%;
@@ -139,6 +147,30 @@
          }
      }  
  }
+ .our-vertivcal-sect{
+    div:nth-child(4){
+      .vertical-card{
+        flex-direction: row-reverse;
+      }
+     }
+
+     div:nth-child(5){
+      .vertical-card{
+        flex-direction: row-reverse;
+      }
+     }
+     div:nth-child(8){
+        .vertical-card{
+        flex-direction: row-reverse;
+        }
+    }
+
+    div:nth-child(9){
+        .vertical-card{
+        flex-direction: row-reverse;
+        }
+    }
+ }
  .management-card{
      background-color: theme-color("bg-color");
      overflow: hidden;
@@ -210,6 +242,31 @@
             }
         }
     }
+    /*============ Our Verticals ============*/
+    .our-vertivcal-sect{
+        div:nth-child(3){
+          .vertical-card{
+            flex-direction: row-reverse;
+          }
+         }
+    
+         div:nth-child(4){
+          .vertical-card{
+            flex-direction: row;
+          }
+         }
+         div:nth-child(7){
+            .vertical-card{
+            flex-direction: row-reverse;
+            }
+        }
+    
+        div:nth-child(8){
+            .vertical-card{
+            flex-direction: row;
+            }
+        }
+     }
  }
  @media (max-width:580px) {
      .about-description ,
