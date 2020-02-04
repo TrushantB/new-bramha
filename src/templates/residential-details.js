@@ -419,7 +419,7 @@ class VerticalPage extends React.Component {
                       />
                     }
                     {
-                      isOpenOneSlide &&
+                      isOpenOneSlide && verticalData.data.floor_plans &&
                       <Lightbox
                         mainSrc={verticalData.data.floor_plans[photoIndex].image1.localFile.childImageSharp.fluid.src}
                         onCloseRequest={() => this.setState({ isOpenOneSlide: false })}

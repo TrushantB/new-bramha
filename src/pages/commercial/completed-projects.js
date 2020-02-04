@@ -34,7 +34,7 @@ class CompletedProjects extends React.Component {
                                     item.completed_links.document.map((datas, value) => {
                                     return(
                                         <div className="col-md-6 col-lg-4 p-0 pl-sm-3 pr-sm-3" key={value}>
-                                        <Link to={`residential/${datas.uid}`} >
+                                        <Link to={`commercial/${item.completed_links.uid}`} >
                                             <div className="residences-card position-relative mt-0 mt-sm-5" key={value}>
                                             
                                             <div className="residences-img ">
