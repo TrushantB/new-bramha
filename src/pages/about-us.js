@@ -12,7 +12,12 @@ class AboutUs extends React.Component {
     activeSlide: 0,
     activeSlide2: 0,
   }
-  
+  scrollWin() {
+    window.scrollBy({
+      top: 500,
+      behavior: 'smooth'
+    });
+  }
   render(){
     let settings = {
       dots: true,
@@ -44,6 +49,7 @@ class AboutUs extends React.Component {
               <source media="(max-width: 581px)" srcSet={data.image.mobile.url}/>
               <img src={data.image.url} alt="banner image here" className="banner-img" />
             </picture>
+            <button onClick={this.scrollWin} className="scrolldown-btn"><i className="fas fa-chevron-down"></i></button>
             {/* <Img fluid={data.image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
           </section>
           <section className="about-sections pb-0 pt-sm-0 page-heading-section container container-sm-fluid">
