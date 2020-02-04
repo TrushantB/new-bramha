@@ -314,7 +314,7 @@ export default class Residential extends React.Component {
                     </span>
                   </div>
                   <div className="sumbit text-center mt-4">
-                    <button type="submit" className="btn-secondary">View All</button>
+                    <Link to="residential/completed-projects/" className="btn-secondary">View All</Link>
                   </div> 
                 </section>
             }
