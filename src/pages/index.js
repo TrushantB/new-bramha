@@ -25,19 +25,35 @@ class IndexPage extends React.Component {
   }
 
   componentWillMount() {
+    let scrollHandle = this;
     const residentialData = this.props.data.prismicResidential;
     this.setState({selectedVertical: residentialData.data})
+    const commercialData = this.props.data.prismicCommercial;
+    const hospitalityData = this.props.data.prismicHospitality;
+    const leisureData  = this.props.data.prismicLeisureClub;
 
+    setTimeout(function(){
+      scrollHandle.handleOurVerticals(commercialData, 'commercial') 
+      }, 12000);
+
+    setTimeout(function(){
+      scrollHandle.handleOurVerticals(hospitalityData, 'hospitality') 
+      }, 24000);
+  
+    setTimeout(function(){
+      scrollHandle.handleOurVerticals(leisureData, 'leisure-club') 
+      }, 36000);
+    
+    setTimeout(function(){
+      scrollHandle.handleOurVerticals(residentialData,'residential') 
+      }, 48000);
   }
-
 
   handleOurVerticals = (event, vertical) => {
     this.setState({selectedVertical: event.data, verticalsName: vertical})
   }
 
   render() {
-    console.log('selectedVertical', this.state.selectedVertical);
-    
     const commercialData = this.props.data.prismicCommercial;
     const hospitalityData = this.props.data.prismicHospitality;
     const leisureData  = this.props.data.prismicLeisureClub;
@@ -53,11 +69,7 @@ class IndexPage extends React.Component {
       slidesToScroll: 1  
     };
     
-    
-    // let contactFlag=false;
-    // function classHandle() {
-    //   $("body").removeClass("drewer-open");
-    //  }
+  
     return (
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title="Home"/>
