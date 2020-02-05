@@ -31,7 +31,7 @@ class HospitalityDetails extends React.Component {
       centerPadding: '200px',
       slidesToShow: 1,
       infinite: true,
-      speed:2000,
+      speed:1000,
       afterChange: current => this.setState({ activeSlide: current }),
       responsive: [
         {
