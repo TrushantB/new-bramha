@@ -18,9 +18,8 @@ body{
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        &:last-child{
-            box-shadow: 8px 8px 20px 4px rgba(181, 181, 181, 0.22);
-        }
+        box-shadow: 0px 2px 15px 0px rgba(255,255,255,0.1);
+
     }
 }
 .drawer-field{
@@ -296,7 +295,7 @@ body{
             transform: scale(1.0);
         }
         51%{
-            transform: scale(1.1);
+            transform: scale(1.06);
         }
         100%{
             transform: scale(1.0);
