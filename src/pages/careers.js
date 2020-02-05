@@ -97,13 +97,13 @@ class Careers extends React.Component {
       this.setState({jobOpening})
       this.state.jobOpenningButtons.map((item) => {
         if(item.id==event.id) {
-          item.class="active";
+          item.className="active";
         }
-        else item.class="";
+        else item.className="";
       })
     }
     else {
-      event.class="";
+      event.className="";
       this.setState({jobOpening:this.state.jobOpeningStore})
     }
   }
@@ -163,9 +163,9 @@ class Careers extends React.Component {
               <source media="(max-width: 581px)" srcSet={careerData.banner.mobile.url}/>
               <img src={careerData.banner.url} alt="banner image here" className="banner-img" />
             </picture>
-            <div class="scroll-downs">
-              <div onClick={this.scrollWin} class="mousey">
-                <div class="scroller"></div>
+            <div className="scroll-downs">
+              <div onClick={this.scrollWin} className="mousey">
+                <div className="scroller"></div>
               </div>
             </div>
             {/* <Img fluid={careerData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}

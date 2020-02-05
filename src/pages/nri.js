@@ -36,9 +36,9 @@ class NRI extends React.Component {
               <source media="(min-width: 581px)" srcSet={nriData.banner.localFile.childImageSharp.url}/>
               <Img fluid={nriData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
             </picture>
-            <div class="scroll-downs">
-              <div onClick={this.scrollWin} class="mousey">
-                <div class="scroller"></div>
+            <div className="scroll-downs">
+              <div onClick={this.scrollWin} className="mousey">
+                <div className="scroller"></div>
               </div>
             </div>
             {/* <Img fluid={nriData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
