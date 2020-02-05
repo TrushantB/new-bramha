@@ -313,11 +313,11 @@ export default class Residential extends React.Component {
                       {this.state.activeSlide + 1} of {this.state.completedProject.length}
                     </span>
                   </div>
-                  <div className="sumbit text-center mt-4">
-                    <Link to="residential/completed-projects/" className="btn-secondary">View All</Link>
-                  </div> 
                 </section>
             }
+            <div className="view-all text-center mt-5 mt-sm-4 mb-5">
+              <Link to="residential/completed-projects/" className="btn-secondary">View All</Link>
+            </div> 
             <section className="give-details text-center">
               <div className="container">    
                 <h4 className="text-uppercase text-center section-title">Looking for more option?</h4>  

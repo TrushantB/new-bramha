@@ -46,7 +46,7 @@
         }
     }
     .complete-project{
-        margin-bottom: 72px;
+        margin-bottom: 52px;
         .container{
             text-align: center;
         }
@@ -68,10 +68,6 @@
         }
         .listing-heading{
             margin-top: -23px;
-        }
-        .btn-secondary{
-          width:230px;
-          display: inline-block;
         }
     }
     .slick-list{
@@ -123,6 +119,12 @@
         }
     }
 } 
+.view-all{
+    .btn-secondary{
+        width:230px;
+        display: inline-block;
+    }
+}
 @media (max-width:580px){
     .residential-section .main-paragraph{
         padding-bottom: 80px;
