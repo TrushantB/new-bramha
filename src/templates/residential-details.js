@@ -200,9 +200,9 @@ class VerticalPage extends React.Component {
                 }
                 <img src={verticalData.data.banner[0].image.url} alt="banner image here" className="banner-img"/>
               </picture>
-            <div class="scroll-downs">
-              <div onClick={this.scrollWin} class="mousey">
-                <div class="scroller"></div>
+            <div className="scroll-downs">
+              <div onClick={this.scrollWin} className="mousey">
+                <div className="scroller"></div>
               </div>
             </div>
                 {/* <Img fluid={verticalData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}

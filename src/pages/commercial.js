@@ -171,10 +171,10 @@ class Commercial extends React.Component {
               }
             </Slider>
           </div>
-          <div className="sumbit text-center mt-4">
+        </section>
+          <div className="view-all text-center mt-5 mt-sm-4 mb-5">
             <Link to="commercial/completed-projects/" className="btn-secondary">View All</Link>
           </div> 
-        </section>
           <section className="give-details text-center">
             <div className="container">    
               <h4 className="text-uppercase text-center section-title">Looking for more option?</h4>  

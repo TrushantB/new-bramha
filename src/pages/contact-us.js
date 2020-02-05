@@ -57,9 +57,9 @@ class Contacts extends React.Component {
               <source media="(max-width: 581px)" srcSet={contactData.banner.Mobile.url}/>
               <img src={contactData.banner.url} alt="" width="100%" />
             </picture>
-            <div class="scroll-downs">
-              <div onClick={this.scrollWin} class="mousey">
-                <div class="scroller"></div>
+            <div className="scroll-downs">
+              <div onClick={this.scrollWin} className="mousey">
+                <div className="scroller"></div>
               </div>
             </div>
             {/* <Img fluid={contactData.banner.localFile.childImageSharp.fluid} alt="" width="100%"/> */}

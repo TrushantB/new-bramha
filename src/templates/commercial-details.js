@@ -80,22 +80,23 @@ class CommercialDetails extends React.Component {
                 <source media="(min-width: 581px)" srcSet={commercialData.data.banner[0].image.localFile.childImageSharp.url}/>
                 <Img fluid={commercialData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img"/>
               </picture>
-              <div class="scroll-downs">
-                <div onClick={this.scrollWin} class="mousey">
-                  <div class="scroller"></div>
+              <div className="scroll-downs">
+                <div onClick={this.scrollWin} className="mousey">
+                  <div className="scroller"></div>
                 </div>
               </div>
               {/* <Img fluid={commercialData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
             </section>
           {/* <!-- ---------------- banner end here ---------------- --> */}
           {/*  {/* <!------------------ middle section start here ----------------------> */}
-            <section className="detail-page-sections pt-sm-0 container">
+            <section className="detail-page-sections pt-sm-0 container" id={commercialData.uid}>
               <div className="logo-card">
                 <picture className="d-flex justify-content-start justify-content-sm-center align-items-center">
                   <source media="(max-width: 581px)" srcSet={commercialData.data.logo.mobile.url} />
-                  <img src={commercialData.data.logo.url} alt="hospital Logo" className="w-50" />
+                  <img src={commercialData.data.logo.url} alt="hospital Logo" />
                 </picture>
               </div>
+
               <div className="row mt-0 mt-sm-5">
                 <div className="col-12">
                   <nav aria-label="breadcrumb">
@@ -199,6 +200,7 @@ export default CommercialDetails;
 export const hospitalityPage = graphql`
   query commercialData($uid: String!) {
     prismicOurVerticalsArticle(uid: { eq: $uid }) {
+    uid
     data {
       title {
         text
