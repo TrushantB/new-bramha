@@ -11,7 +11,9 @@
     }
   }
   #f-residences,
-  #f-residences-phase-2{
+  #f-residences-phase-2,
+  #residency-club,
+  #suncity-club{
     .logo-card img{
         width:30%;
     }
@@ -229,16 +231,14 @@
             border: solid 1px #9999;
         }
         label.wrap {
-            overflow: hidden;
             position: relative;
-            display: block;
+            display: inline-block;
             margin-bottom:12px;
         }
         select.layout-select{
             // padding: 10px;
             cursor: pointer;
             border: 0;
-            width: 110px;
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
@@ -252,6 +252,10 @@
             letter-spacing: -0.27px;
             color: #333333;
             background-image: none;
+            text-align: center;
+            option{
+                text-align: center;
+            }
         }
 
         label.wrap:after {
@@ -260,12 +264,13 @@
             font-weight: 900;
             color: #b2b2b2;
             position: absolute;
-            right: 0;
+            right: -28px;
             top: 50%;
             z-index: 1;
             width: 10%;
             pointer-events: none;
             transform: translate(-10px, -50%);
+            margin-left: 4px;
         }
     }
     .enquiry-form{

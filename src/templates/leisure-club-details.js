@@ -89,9 +89,9 @@ class LeisureDetails extends React.Component {
             </section>
           {/* <!-- ---------------- banner end here ---------------- --> */}
           {/*  {/* <!------------------ middle section start here ----------------------> */}
-            <section className="detail-page-sections pt-sm-0 container">
+            <section className="detail-page-sections pt-sm-0 container" id={leisureData.uid}>
               <div className="logo-card">
-                <picture className="d-flex justify-content-start justify-content-sm-center align-items-center">
+                <picture className="d-flex justify-content-center justify-content-sm-center align-items-center">
                   <source media="(min-width: 581px)" srcSet={leisureData.data.logo.url} />
                   <img src={leisureData.data.logo.url} alt="hospital Logo" />
                 </picture>
@@ -199,6 +199,7 @@ export default LeisureDetails;
 export const leisurePage = graphql` 
   query leisureData($uid: String!) {
   prismicOurVerticalsArticle(uid: { eq: $uid }) {
+    uid
     data {
       title {
         text

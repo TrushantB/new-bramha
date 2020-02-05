@@ -91,7 +91,7 @@ class CommercialDetails extends React.Component {
           {/*  {/* <!------------------ middle section start here ----------------------> */}
             <section className="detail-page-sections pt-sm-0 container" id={commercialData.uid}>
               <div className="logo-card">
-                <picture className="d-flex justify-content-start justify-content-sm-center align-items-center">
+                <picture className="d-flex justify-content-center justify-content-sm-center align-items-center">
                   <source media="(max-width: 581px)" srcSet={commercialData.data.logo.mobile.url} />
                   <img src={commercialData.data.logo.url} alt="hospital Logo" />
                 </picture>

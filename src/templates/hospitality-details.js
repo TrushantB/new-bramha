@@ -31,7 +31,7 @@ class HospitalityDetails extends React.Component {
       centerPadding: '200px',
       slidesToShow: 1,
       infinite: true,
-      speed:2000,
+      speed:1000,
       afterChange: current => this.setState({ activeSlide: current }),
       responsive: [
         {
@@ -97,7 +97,7 @@ class HospitalityDetails extends React.Component {
           {/*  {/* <!------------------ middle section start here ----------------------> */}
             <section className="detail-page-sections pt-sm-0 container ">
               <div className="logo-card">
-                <picture className="d-flex justify-content-start justify-content-sm-center align-items-center">
+                <picture className="d-flex justify-content-center justify-content-sm-center align-items-center">
                   <source media="(min-width: 581px)" srcSet={hospitalityData.data.logo.url} />
                   <img src={hospitalityData.data.logo.url} alt="hospital Logo"  />
                 </picture>
