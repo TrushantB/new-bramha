@@ -335,10 +335,16 @@
             bottom: 0;
             right: 0;
             margin: 0;
-            background: rgba(00,00,00,0.7);
-            padding: 8px 12px;
+            background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.6)));
+            background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+            background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+            background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+            padding: 18px 12px 8px 12px;
             color: #fff;
             display: none;
+            width: 100%;
+            font-size: 12px;
+            text-align: right;
         }
     }
     .slick-active{

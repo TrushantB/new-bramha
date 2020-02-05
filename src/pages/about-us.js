@@ -13,8 +13,9 @@ class AboutUs extends React.Component {
     activeSlide2: 0,
   }
   scrollWin() {
+    var offsetHeight = document.querySelector('.banner-section').offsetHeight;
     window.scrollBy({
-      top: 500,
+      top: offsetHeight,
       behavior: 'smooth'
     });
   }
@@ -49,7 +50,11 @@ class AboutUs extends React.Component {
               <source media="(max-width: 581px)" srcSet={data.image.mobile.url}/>
               <img src={data.image.url} alt="banner image here" className="banner-img" />
             </picture>
-            <button onClick={this.scrollWin} className="scrolldown-btn"><i className="fas fa-chevron-down"></i></button>
+            <div class="scroll-downs">
+              <div onClick={this.scrollWin} class="mousey">
+                <div class="scroller"></div>
+              </div>
+            </div>
             {/* <Img fluid={data.image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
           </section>
           <section className="about-sections pb-0 pt-sm-0 page-heading-section container container-sm-fluid">

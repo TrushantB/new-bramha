@@ -33,8 +33,9 @@ class VerticalPage extends React.Component {
   }
   
   scrollWin() {
+    var offsetHeight = document.querySelector('.banner-section').offsetHeight;
     window.scrollBy({
-      top: 500,
+      top: offsetHeight,
       behavior: 'smooth'
     });
   }
@@ -199,7 +200,11 @@ class VerticalPage extends React.Component {
                 }
                 <img src={verticalData.data.banner[0].image.url} alt="banner image here" className="banner-img"/>
               </picture>
-            <button onClick={this.scrollWin} className="scrolldown-btn"><i className="fas fa-chevron-down"></i></button>
+            <div class="scroll-downs">
+              <div onClick={this.scrollWin} class="mousey">
+                <div class="scroller"></div>
+              </div>
+            </div>
                 {/* <Img fluid={verticalData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
               </section>
             {/* <!--   ---------------- banner end here ---------------- --> */}
