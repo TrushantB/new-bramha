@@ -240,7 +240,7 @@
             // padding: 10px;
             cursor: pointer;
             border: 0;
-            width: 110px;
+            width: 163px;
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
@@ -254,6 +254,10 @@
             letter-spacing: -0.27px;
             color: #333333;
             background-image: none;
+            text-align: center;
+            option{
+                text-align: center;
+            }
         }
 
         label.wrap:after {
@@ -268,6 +272,7 @@
             width: 10%;
             pointer-events: none;
             transform: translate(-10px, -50%);
+            margin-left: 4px;
         }
     }
     .enquiry-form{
