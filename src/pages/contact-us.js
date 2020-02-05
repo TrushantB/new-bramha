@@ -40,8 +40,9 @@ class Contacts extends React.Component {
     }
     
   scrollWin() {
+    var offsetHeight = document.querySelector('.banner-section').offsetHeight;
     window.scrollBy({
-      top: 500,
+      top: offsetHeight,
       behavior: 'smooth'
     });
   }
@@ -56,7 +57,11 @@ class Contacts extends React.Component {
               <source media="(max-width: 581px)" srcSet={contactData.banner.Mobile.url}/>
               <img src={contactData.banner.url} alt="" width="100%" />
             </picture>
-            <button onClick={this.scrollWin} className="scrolldown-btn"><i className="fas fa-chevron-down"></i></button>
+            <div class="scroll-downs">
+              <div onClick={this.scrollWin} class="mousey">
+                <div class="scroller"></div>
+              </div>
+            </div>
             {/* <Img fluid={contactData.banner.localFile.childImageSharp.fluid} alt="" width="100%"/> */}
           </div>
           <section className="page-heading-section container container-sm-fluid bg-color">

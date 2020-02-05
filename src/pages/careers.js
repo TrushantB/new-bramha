@@ -108,8 +108,9 @@ class Careers extends React.Component {
     }
   }
   scrollWin() {
+    var offsetHeight = document.querySelector('.banner-section').offsetHeight;
     window.scrollBy({
-      top: 500,
+      top: offsetHeight,
       behavior: 'smooth'
     });
   }
@@ -162,7 +163,11 @@ class Careers extends React.Component {
               <source media="(max-width: 581px)" srcSet={careerData.banner.mobile.url}/>
               <img src={careerData.banner.url} alt="banner image here" className="banner-img" />
             </picture>
-            <button onClick={this.scrollWin} className="scrolldown-btn"><i className="fas fa-chevron-down"></i></button>
+            <div class="scroll-downs">
+              <div onClick={this.scrollWin} class="mousey">
+                <div class="scroller"></div>
+              </div>
+            </div>
             {/* <Img fluid={careerData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
           </section>
           <section className="career-info container container-sm-fluid bg-color pb-5 pb-sm-0">

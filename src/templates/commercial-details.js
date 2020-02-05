@@ -15,8 +15,9 @@ class CommercialDetails extends React.Component {
     isOpen: false, 
   };
   scrollWin() {
+    var offsetHeight = document.querySelector('.banner-section').offsetHeight;
     window.scrollBy({
-      top: 500,
+      top: offsetHeight,
       behavior: 'smooth'
     });
   }
@@ -79,7 +80,11 @@ class CommercialDetails extends React.Component {
                 <source media="(min-width: 581px)" srcSet={commercialData.data.banner[0].image.localFile.childImageSharp.url}/>
                 <Img fluid={commercialData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img"/>
               </picture>
-              <button onClick={this.scrollWin} className="scrolldown-btn"><i className="fas fa-chevron-down"></i></button>
+              <div class="scroll-downs">
+                <div onClick={this.scrollWin} class="mousey">
+                  <div class="scroller"></div>
+                </div>
+              </div>
               {/* <Img fluid={commercialData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
             </section>
           {/* <!-- ---------------- banner end here ---------------- --> */}
