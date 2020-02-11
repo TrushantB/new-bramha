@@ -198,7 +198,8 @@
     //       padding-top: 60px;
     //   }
     .breadcrumb{
-      background-color: theme-color('bg-color');
+        background-color: transparent;
+        padding: 0;
       .breadcrumb-item{
           a{
               color:theme-color('primary');
@@ -214,16 +215,17 @@
         }
     }
     .floor-plan{
-        margin:128px 0 148px;
-        .slider-wrapper-gray{
-            padding: 48px 0 60px 0;
-        }
-        .showcase-slider{
-            .slick-prev:before{
-                color:#b2b2b2;
-            }
-            .slick-next:before{
-                color:#b2b2b2;
+        .slider-page{
+            margin: 40px 0 0px 0;
+            .slider-wrapper {
+               background-color: transparent;
+               padding: 16px 0 20px 0;
+               .slick-prev:before{
+                   color:#b2b2b2;
+               }
+               .slick-next:before{
+                   color:#b2b2b2;
+               }
             }
         }
         .slider-img {
@@ -283,9 +285,10 @@
     }
   }
   .amenity-sections{
+      margin-top: 108px;
       .tab-title{
         font-family: Georgia;
-        font-size: 22px;
+        font-size: 18px;
         font-weight: normal;
         font-stretch: normal;
         font-style: normal;
@@ -314,28 +317,28 @@
       }
   }
 
-//   ------------ facility tab hide on f residency -----------
-#f-residences-phase-2{
-    .nav-pills{
-        .col-6{
-            flex: 0 0 100%;
-            max-width: 100%;
-        }
-        .nav-item:nth-child(2){
-            display:none;
-        }
-        .nav-item:nth-child(1){
-            .nav-link{
-                border: 0;
-                box-shadow: none;
-                background-color: transparent;
-                .avtive{
-                    box-shadow: none;
-                }
-            }
-        }
-    }
-}
+// //   ------------ facility tab hide on f residency -----------
+// #f-residences-phase-2{
+//     .nav-pills{
+//         .col-6{
+//             flex: 0 0 100%;
+//             max-width: 100%;
+//         }
+//         .nav-item:nth-child(2){
+//             display:none;
+//         }
+//         .nav-item:nth-child(1){
+//             .nav-link{
+//                 border: 0;
+//                 box-shadow: none;
+//                 background-color: transparent;
+//                 .avtive{
+//                     box-shadow: none;
+//                 }
+//             }
+//         }
+//     }
+// }
 // ------------- Slider css start here -------------
 .slider-wrapper{
     .slider-img{
@@ -505,15 +508,15 @@
   .detail-maharera-sections{
       margin-top: 78px;
       margin-bottom: 110px; 
-      img{
-          margin-bottom: 12px;
+      .maharera_important{
+        height:20px;
+        overflow: hidden;
       }
-      p{
-          font-size: 12px;
-      }
-      a{
-          color: #7f7f7f;
-      }
+      .maharera_showmore{
+          font-size: 14px;
+          color:#000;
+          opacity: 0.9;
+      }    
   }
 
 
@@ -523,6 +526,34 @@
         -ms-filter: grayscale(100%);
          -o-filter: grayscale(100%);
             filter: grayscale(100%);
+}
+.imp-note-btn{
+    display: block;
+    margin: 0 auto;
+    background: no-repeat;
+    border: 0;
+    font-size: 12px;
+    font-family: 'Graphik', sans-serif;
+    font-weight: 400;
+    /* font-size: 14px; */
+    text-transform: uppercase;
+    color: #7f7f7f;
+    i{
+        margin-left: 4px;
+        font-size: 13px;
+    }
+}
+
+.imp-note-btn[aria-expanded="true"]{
+    i{
+        transform: rotate(180deg);
+        transition: 0.3s ease-in-out;
+    }
+}
+.imp-note-btn[aria-expanded="false"]{
+    i{
+        transition: 0.3s ease-in-out;
+    }
 }
 .maharera_important{
     font-size: 10px;
@@ -537,6 +568,10 @@
             }
         }
     }
+    
+    .detail-page .floor-plan .slider-img {
+        margin: 40px 40px;
+  }
 }
 @media(max-width:992px){
     //------------- Residencial detail page ---------------
@@ -577,6 +612,9 @@
           flex:0 1 48%;
           margin: 8px 4px;
       }
+      .detail-page .floor-plan .slider-img {
+        margin: 40px 32px;
+    }
 }
 @media(max-width:580px){
     .detail-maharera-sections{
@@ -669,15 +707,18 @@
         display: none;
     }
     .amenities button {
-        flex: 0 1 30%;
+        flex: 0 1 45%;
         margin: 14px 8px;
         flex-direction: column;
         .amenities-icon-description{
             margin-left:0;
         }
+        .amenities-icon-wrap{
+            width: auto;
+        }
     }
     .amenities-inner-wrapper {
-        width: 650px;
+        width: auto;
         margin-bottom: 12px;
     }
     #residential-details .site-progress-wrap{
@@ -691,7 +732,13 @@
     .amenities .active i {
         color: #7f7f7f;
     }
-    
+    .detail-page{
+        .floor-plan{
+            .slider-img {
+                margin: 8px 24px;
+            }
+        }
+    }
 }
 @media(max-width:420px){
     .slider-wrapper .slick-active .slider-img .showcase-slide-caption{

@@ -6,13 +6,13 @@ import Header from "./header";
 import "./layout.css";
 
 const Layout = ({ children ,pathname}) => {
-  const [contactFlag, setContactFlag] = useState(false);
-  const [mailFlag, setMailFlag] = useState(false);
-  const [chatFlag, setChatFlag] = useState(false);
+  // const [contactFlag, setContactFlag] = useState(false);
+  // const [mailFlag, setMailFlag] = useState(false);
+  // const [chatFlag, setChatFlag] = useState(false);
 
-  const contactFlagTrueFalse = () => setContactFlag(!contactFlag);
-  const mailFlagTrueFalse = () => setMailFlag(!mailFlag);
-  const chatFlagTrueFalse = () => setChatFlag(!chatFlag);
+  // const contactFlagTrueFalse = () => setContactFlag(!contactFlag);
+  // const mailFlagTrueFalse = () => setMailFlag(!mailFlag);
+  // const chatFlagTrueFalse = () => setChatFlag(!chatFlag);
 
   const [value, setValue] = useState("+91");
 
@@ -31,8 +31,8 @@ const Layout = ({ children ,pathname}) => {
     <div>
       <Header siteTitle={data.site.siteMetadata.title} pathname={pathname}/>
       <main>{children}</main>
-      <div className="drawer-container">
-        <div className="drawer-toggle" id="toggle" onClick={() => setContactFlag({contactFlag: !true})}>
+      {/* <div className="drawer-container">
+        <div className="drawer-toggle"  onClick={() => setContactFlag(false)}>
           <span className="icon-sticky_phone"></span>
         </div>
         <div className="drawer-toggle" onClick={() => setMailFlag({mailFlag: !mailFlag})}>
@@ -41,9 +41,9 @@ const Layout = ({ children ,pathname}) => {
         <div className="drawer-toggle" onClick={() => setChatFlag({chatFlag: !chatFlag})}>
           <span className="icon-sticky_chat"></span>
         </div>
-      </div>
-      {contactFlag && 
-        <div className="drawer-field" id="navigation" >
+      </div> */}
+      {/* {contactFlag && 
+        <div className="drawer-field" id="navigation1" >
           <div className="hide text-right" onClick={contactFlagTrueFalse}>
             <i className="fas fa-times"></i>
           </div>
@@ -61,8 +61,8 @@ const Layout = ({ children ,pathname}) => {
             </p>
           </div>
         </div>
-      }
-      {mailFlag && 
+      } */}
+      {/* {mailFlag && 
       <div className="drawer-field" id="navigation" >
         <div className="hide text-right" onClick={mailFlagTrueFalse}>
           <i className="fas fa-times"></i>
@@ -124,7 +124,7 @@ const Layout = ({ children ,pathname}) => {
             <p className="text-center">Coming Soon...</p>
         </div>
       </div>
-      }
+      } */}
      
     </div>
     

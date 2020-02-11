@@ -61,7 +61,7 @@ class IndexPage extends React.Component {
     var settings = {
       dots: false,
       infinite: true,
-      speed: 3000,
+      speed: 500,
       autoplay: true,
       autoplaySpeed: 7000,
       slidesToShow: 1,
@@ -98,8 +98,11 @@ class IndexPage extends React.Component {
                             <img src={item.image.url} className="banner-img" style={{width:'100%'}} />
                             }  
                         </picture>
-                        <div className="banner-caption">
+                        {/* <div className="banner-caption">
                           <img src={item.image.logo.url}/>
+                        </div> */}
+                        <div className="banner-caption-1">
+                          <h3 className="section-title"> Project Name </h3>
                         </div>
                       </Link>
                     </div>

@@ -124,9 +124,9 @@ body{
         cursor: pointer;
         transition: 0.3s;
         &:hover{
-            box-shadow: 0px -5px 0 theme-color("primary") inset;
+            box-shadow: 0px -5px 0 theme-color("tertiary-gold") inset;
             .tab{
-                color: theme-color("primary");
+                color: theme-color("tertiary-gold");
               
             }            
         }
@@ -145,17 +145,17 @@ body{
         }
     }
     .active{
-        box-shadow: 0px -5px 0 theme-color("primary") inset;
+        box-shadow: 0px -5px 0 theme-color("tertiary-gold") inset;
         transition: .5s ease-in-out;
         .tab{
-            color: theme-color("primary");
+            color: theme-color("tertiary-gold");
             font-weight: 500;
             &::before{
                 content: "";
-                background: theme-color("primary");
+                background: theme-color("tertiary-gold");
                 &a:hover{
                     content: "";
-                    background: theme-color("primary");
+                    background: theme-color("tertiary-gold");
                 }
             }
           
@@ -281,6 +281,30 @@ body{
                 width:auto;
             }
         }
+        .banner-caption-1{
+            position: absolute;
+            bottom: 32px;
+            display: flex;
+            justify-content: center;
+            background: rgba(255,255,255,0.9);
+            padding: 8px 12px;
+            font-family: Graphik;
+            font-weight: 500;
+            top: auto;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 72px;
+            width:240px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .section-title{
+                margin:0;
+                &:after{
+                    display: none;
+                }
+            }
+        }
     }
 }
 .slick-active{
@@ -312,6 +336,9 @@ body{
             max-width: 600px;
         }
     }
+    .our-verticals-tabs .tab span{
+        padding-left: 8px;
+    }
     .drawer-field{
         width:50%;
     }
@@ -341,11 +368,11 @@ body{
                     flex-basis: 26%;
                 }
                 &:nth-child(3){
-                    order:4;
+                    order:3;
                     flex-basis: 26%;
                 }
                 &:nth-child(4){
-                    order:3;
+                    order:4;
                     flex-basis: 18%;
                 }
             }
@@ -375,7 +402,7 @@ body{
             }
             &:hover{
                 &::before{
-                    background-color: theme-color('primary');
+                    background-color: theme-color("tertiary-gold");
                 }
             }
         }
@@ -383,7 +410,7 @@ body{
             .tab{
                 font-weight:400;
                 &::before{
-                    background-color: theme-color('primary');
+                    background-color: theme-color("tertiary-gold");
                 }
             }
         }
@@ -413,6 +440,12 @@ body{
             &:before{
                font-size: 32px;
             }
+        }
+    }
+    .banner-caption-1{
+        width:200px;
+        .section-title{
+            font-size: 18px;
         }
     }
 }
