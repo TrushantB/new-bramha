@@ -9,8 +9,10 @@
         padding: 48px 0 24px;
     }
     .download-btn{
+        margin: 100px auto 120px;
         .btn-secondary{
-            margin: 100px 0 120px 0;
+            margin: 0px 10px;
+            max-width:200px;
         }
     }
     .section-title{
@@ -122,9 +124,6 @@
     .slider-img {
         margin: 28px 36px;
     }
-    .detail-page .floor-plan .slider-img {
-        margin: 40px 40px;
-  }
 }
 @media (max-width:992px){
     .slider-page {
@@ -143,9 +142,7 @@
     .slider-img {
         margin: 8px 20px;
     } 
-    .detail-page .floor-plan .slider-img {
-        margin: 40px 32px;
-    }
+    
 }
 @media (max-width:580px){
     .detail-page {
@@ -164,6 +161,13 @@
         }
         .detail-page-sections{
             padding-top: 0;
+        }
+        .download-btn{
+            align-items: center;
+            flex-direction: column;
+            .btn-secondary{
+                margin:12px 0;
+            }
         }
         .slider-page{
             margin-top: 40px;
@@ -259,8 +263,7 @@
         .download-btn{
             padding-bottom: 0;
             .btn-secondary{
-                width:100%;
-                margin: 80px 0;
+                max-width:100%;
             }
         }
     }

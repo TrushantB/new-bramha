@@ -19,16 +19,15 @@
     }
     .copyright{
         margin-bottom: 28px;
-        opacity: 0.6;
         p{
-            color: #f6f5f2;
+            color: rgba(192,168,101,0.8);
             font-size: 12px;
             a{
                 @extend p
             }
         }
         a:hover{
-                color: #fff;
+                color: #c0a865;
                 text-decoration: none;
                 transition: .5s ease-in-out;  
                 
@@ -42,16 +41,16 @@
             .nav-item{
                 margin-bottom: 28px;
                 a{
-                    color:rgba(255,255,255,0.8);
+                    color:rgba(192,168,101,0.8);
                     padding:0 24px 0 24px;
-                    border-left: 1px solid rgba(255,255,255,0.8);
+                    border-left: 1px solid rgba(192,168,101,0.8);
                     font-size: 15px;
                     font-weight: 300;
                     line-height: normal;
                     letter-spacing: normal;
                     text-transform: capitalize;
                     &:hover{
-                        color:#fff;
+                        color:#c0a865;
                         text-decoration: none;
                     }
                 }
@@ -104,7 +103,7 @@
                 .nav-item{
                      &:nth-child(6){
                         a{
-                            border-right: 1px solid rgba(255,255,255,0.8);
+                            border-right: 1px solid rgba(192,168,101,0.8);
                         }
                     }
                     &:nth-child(7){

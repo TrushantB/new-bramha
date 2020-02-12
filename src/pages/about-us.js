@@ -24,10 +24,11 @@ class AboutUs extends React.Component {
       dots: true,
       dotsClass: "slick-dots slick-thumb",
       infinite: true,
-      speed: 1000,
+      speed: 400,
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay : true,
+      autoplaySpeed:3000,
       arrows:false,
       customPaging: i => (
         <div>
@@ -52,7 +53,8 @@ class AboutUs extends React.Component {
             </picture>
             <div className="scroll-downs">
               <div onClick={this.scrollWin} className="mousey">
-                <div className="scroller"></div>
+                {/* <div className=""></div> */}
+                <i className="fas fa-long-arrow-alt-down scroller"></i>
               </div>
             </div>
             {/* <Img fluid={data.image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
@@ -116,10 +118,10 @@ class AboutUs extends React.Component {
                           <div key={value} className="legacy-slide">
                             <Img fluid={item.image.localFile.childImageSharp.fluid} alt="slider image" className="legacy-slider-image" />
                             <div className="slide-caption">
-                              <h3 className="section-title text-white">
+                              <h3 className="slide-title text-white">
                                 {item.title.text}
                               </h3>
-                              <p className="text text-white m-0"> 
+                              <p className="slide-description text-white m-0"> 
                                 {item.description.text}
                               </p>
                             </div>
