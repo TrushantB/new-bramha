@@ -81,7 +81,7 @@ const Footer = ({ siteTitle }) => {
             </ul>
           </div>
           <div className="text-center text-white copyright">
-            <p className="m-0"><Link to="/">BramhaCorp Ltd</Link>&copy; {new Date().getFullYear()}. All right reserved.</p>
+            <p className="m-0"><Link to="/">BramhaCorp Ltd</Link> &copy; {new Date().getFullYear()}. All right reserved.</p>
           </div>
         </div>
       </div>
