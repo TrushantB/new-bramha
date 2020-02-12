@@ -29,7 +29,7 @@ return(
   </Link>
   <div className="header-icons-wrapper">
   <div className="whats-app-icon">
-    <a href="https://wa.me/+919168841157" target="_blank"><i className="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/" target="_blank"><i className="fab fa-whatsapp"></i></a>
   </div>
   <div className="drawer-toggle d-flex align-items-center"  onClick={() =>  setContactFlag(!contactFlag)}>
     <span className="icon-sticky_phone"></span>
