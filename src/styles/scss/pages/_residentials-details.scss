@@ -516,6 +516,7 @@
           font-size: 14px;
           color:#000;
           opacity: 0.9;
+          cursor: pointer;
       }    
   }
 
@@ -743,5 +744,11 @@
 @media(max-width:420px){
     .slider-wrapper .slick-active .slider-img .showcase-slide-caption{
         font-size: 10px;
+    }
+    .amenities button{
+        flex: 1 0 36%;
+        .amenities-icon-description{
+            font-size: 12px;
+        }
     }
 }

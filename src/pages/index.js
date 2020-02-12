@@ -103,6 +103,8 @@ class IndexPage extends React.Component {
                         </div> */}
                         <div className="banner-caption-1">
                           <h3 className="section-title"> Project Name </h3>
+                          {console.log("item", item)
+                          }
                         </div>
                       </Link>
                     </div>
