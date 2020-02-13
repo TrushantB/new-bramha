@@ -18,7 +18,7 @@ class CompletedProjects extends React.Component {
                 <div className="col-12">
                 <div className="main-paragraph"> 
                     <p>
-                        {completedData.completed_project_description.text}
+                      {completedData.completed_project_description.text}
                     </p>
                 </div>  
                 </div>
@@ -29,43 +29,43 @@ class CompletedProjects extends React.Component {
                     <div className="container">
                         <div className="row">
                             {
-                                completedData.completed_projects.map((item) => {
+                              completedData.completed_projects.map((item) => {
+                              return(
+                                item.completed_links.document.map((datas, value) => {
                                 return(
-                                    item.completed_links.document.map((datas, value) => {
-                                    return(
-                                        <div className="col-md-6 col-lg-4 p-0 pl-sm-3 pr-sm-3" key={value}>
-                                        <Link to={`commercial/${item.completed_links.uid}`} >
-                                            <div className="residences-card position-relative mt-0 mt-sm-5" key={value}>
-                                            
-                                            <div className="residences-img ">
-                                                <picture>
-                                                <source media="(max-width: 581px)" srcSet={datas.data.thumbnail.mobile.url}/>
-                                                <img src={datas.data.thumbnail.url} alt="Hospital Image" width="100%" />
-                                                </picture>
-                                                {/* <Img fluid={datas.data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%"/> */}
-                                            </div>
-                                            <div className="rectangle position-absolute d-flex flex-column justify-content-around">
-                                                <div className="rectangle-title">
-                                                <h4 className="text-uppercase m-0 inner-section-title">{datas.data.title.text}</h4>
-                                                </div>
-                                                <div className="apartment-size d-flex justify-content-between align-items-center">
-                                                <span className="text-uppercase">{datas.data.flat_bhk.text}</span>
-                                                <div>
-                                                    <i className="fas fa-arrow-right"></i>
-                                                </div>
-                                                </div>
-                                                <div className="project-location">
-                                                <i className="fas fa-map-marker-alt"></i>
-                                                <span>{datas.data.flat_address.text}</span>
-                                                </div>
-                                            </div>
-                                            </div>
-                                        </Link>
+                                  <div className="col-md-6 col-lg-4 p-0 pl-sm-3 pr-sm-3" key={value}>
+                                    <Link to={`commercial/${item.completed_links.uid}`} >
+                                      <div className="residences-card position-relative mt-0 mt-sm-5" key={value}>
+                                      
+                                      <div className="residences-img ">
+                                          <picture>
+                                          <source media="(max-width: 581px)" srcSet={datas.data.thumbnail.mobile.url}/>
+                                          <img src={datas.data.thumbnail.url} alt="Hospital Image" width="100%" />
+                                          </picture>
+                                          {/* <Img fluid={datas.data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%"/> */}
+                                      </div>
+                                      <div className="rectangle position-absolute d-flex flex-column justify-content-around">
+                                        <div className="rectangle-title">
+                                        <h4 className="text-uppercase m-0 inner-section-title">{datas.data.title.text}</h4>
                                         </div>
-                                    )
-                                    })
+                                        <div className="apartment-size d-flex justify-content-between align-items-center">
+                                        <span className="text-uppercase">{datas.data.flat_bhk.text}</span>
+                                        <div>
+                                            <i className="fas fa-arrow-right"></i>
+                                        </div>
+                                        </div>
+                                        <div className="project-location">
+                                        <i className="fas fa-map-marker-alt"></i>
+                                        <span>{datas.data.flat_address.text}</span>
+                                        </div>
+                                      </div>
+                                      </div>
+                                    </Link>
+                                  </div>
                                 )
                                 })
+                              )
+                              })
                             }
                         </div>
                     </div>

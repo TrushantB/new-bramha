@@ -1,9 +1,9 @@
 import React from 'react';
 import Slider from "react-slick";
 import { graphql, Link } from 'gatsby';
-import Layout from '../components/layout';
-import Footer from '../components/footer';
-import SEO from '../components/seo';
+import Layout from '../../components/layout';
+import Footer from '../../components/footer';
+import SEO from '../../components/seo';
 import { navigate } from "gatsby"
 
 export default class Residential extends React.Component {
@@ -22,26 +22,43 @@ export default class Residential extends React.Component {
       };
     }
 
-  addressSelect = (e) => {
-    if(e.target.value === 'all_address'){
-      this.setState({ongoingProject:this.state.ongoingProjectStore, completedProject:this.state.completedProjectStore, activeAddress:e.target.value, activeType:''})
+    addressSelect = (e) => {
+      if(e.target.value === 'all_address'){
+        this.setState({ongoingProject:this.state.ongoingProjectStore, completedProject:this.state.completedProjectStore, activeAddress:e.target.value, activeType:''})
+      }
+      else{
+        // let ongoing = this.state.ongoingProject.length > 0 && this.state.ongoingProjectStore.filter(res => res.residential_links.document[0].data.flat_address.text === e.target.value)
+        let completed =  this.state.completedProject.length > 0 && this.state.completedProjectStore.filter(res => res.completed_links.document[0].data.flat_address.text === e.target.value)
+        this.setState({completedProject:completed, activeAddress:e.target.value, activeType:''})
+      }
     }
-    else{
-      let ongoing = this.state.ongoingProject.length > 0 && this.state.ongoingProjectStore.filter(res => res.residential_links.document[0].data.flat_address.text === e.target.value)
-      let completed =  this.state.completedProject.length > 0 && this.state.completedProjectStore.filter(res => res.completed_links.document[0].data.flat_address.text === e.target.value)
-      this.setState({ongoingProject:ongoing, completedProject:completed, activeAddress:e.target.value, activeType:''})
-    }
-  }
 
   typeSelect = (e) => {
     if(e.target.value === 'all_type'){
       this.setState({ongoingProject:this.state.ongoingProjectStore,completedProject:this.state.completedProjectStore,activeAddress:'',activeType:e.target.value})
     }
     else{
-      let ongoing = this.state.ongoingProject.length > 0 && this.state.ongoingProjectStore.filter(res => res.residential_links.document[0].data.flat_bhk.text === e.target.value)
+      // let ongoing = this.state.ongoingProject.length > 0 && this.state.ongoingProjectStore.filter(res => res.residential_links.document[0].data.flat_bhk.text === e.target.value)
       let completed =  this.state.completedProject.length > 0 && this.state.completedProjectStore.filter(res => res.completed_links.document[0].data.flat_bhk.text === e.target.value)
-      this.setState({ongoingProject:ongoing,completedProject:completed,activeAddress:'',activeType:e.target.value})
-    }   
+      this.setState({completedProject:completed,activeAddress:'',activeType:e.target.value})
+    }
+  }
+
+  handleCompleted(e, dataSource){
+    let type = [];
+    let address = [];
+    this.setState({activeAddress:'',activeType:''});
+    let project = dataSource[0].node.data[e];
+    if(e === 'completed_project'){
+      this.setState({completedProject: project, ongoingProject: []});
+      project.map((item)=>{
+        type.push(item.completed_links.document[0].data.flat_bhk.text);
+        address.push(item.completed_links.document[0].data.flat_address.text);
+     }) 
+     address= [...new Set(address)];
+     type= [...new Set(type)];
+     this.setState({allType: type, allAddress: address})
+    }
   }
 
   handleProjects = (e) => {
@@ -52,8 +69,8 @@ export default class Residential extends React.Component {
     if(e.target.value === 'ongoing_projects'){
       navigate("/residential/ongoing-project")
     }
-    else if(e.target.value === 'completed_project'){
-      navigate("/residential/completed-project")
+    else if(e.target.value === 'all_projects' ){
+        navigate("/residential")
     }
     else {
       this.state.dataSource.map((item,index) => {
@@ -64,14 +81,15 @@ export default class Residential extends React.Component {
         }) 
       })
       
+
       this.state.dataSource.map((item,index) => {
         this.setState({completedProject: item.node.data.completed_project, completedProjectStore:item.node.data.completed_project});
          item.node.data.completed_project.map((item) => {
            type.push(item.completed_links.document[0].data.flat_bhk.text);
            address.push(item.completed_links.document[0].data.flat_address.text);
           }) 
-          address= [...new Set(address)];
-          type= [...new Set(type)];
+          address = [...new Set(address)];
+          type = [...new Set(type)];
           this.setState({allType: type, allAddress: address})
       })
     }
@@ -83,15 +101,8 @@ export default class Residential extends React.Component {
     const allData = this.props.data.allPrismicResidential.edges;
     this.setState({dataSource: allData});
       allData.map((item,index) => {
-        this.setState({ongoingProject: item.node.data.ongoing_projects, ongoingProjectStore:item.node.data.ongoing_projects});
-         item.node.data.ongoing_projects.map((item) => {
-           type.push(item.residential_links.document[0].data.flat_bhk.text);
-           address.push(item.residential_links.document[0].data.flat_address.text);
-        }) 
-      })
-
-      allData.map((item,index) => {
         this.setState({completedProject: item.node.data.completed_project, completedProjectStore:item.node.data.completed_project});
+        allData.length > 0 && this.handleCompleted('completed_project',allData);
          item.node.data.completed_project.map((item) => {
            type.push(item.completed_links.document[0].data.flat_bhk.text);
            address.push(item.completed_links.document[0].data.flat_address.text);
@@ -154,7 +165,6 @@ export default class Residential extends React.Component {
     };
     const residentialData = this.props.data.allPrismicResidential.edges;
     const lookingForMe = residentialData[0].node.data
-    
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title="Residential Project"/>
@@ -177,7 +187,7 @@ export default class Residential extends React.Component {
           <section className="residential-projects">
             <div className="container">
               <div className="projects">
-                <select defaultValue=""  onChange={(e) => {this.handleProjects(e)}}>
+                <select defaultValue="completed_project"  onChange={(e) => {this.handleProjects(e)}}>
                   <option value="all_projects" >All Projects</option>
                   <option value="ongoing_projects">Ongoing Project</option>
                   <option value="completed_project">Completed Project</option>
@@ -199,58 +209,13 @@ export default class Residential extends React.Component {
                   {
                     this.state.allType.map((data, index) => {
                       return(
-                      <option value={data} key={index}>{data}</option>
+                        <option value={data} key={index}>{data}</option>
                       );
                     })
                   }
                 </select>
               </div>
             </div>
-            {this.state.ongoingProject.length > 0 && 
-              <section className="ongoing-project">
-                <div className="residences">
-                  <div className="container">
-                    <div className="listing-heading d-flex align-items-center">
-                      <h4 className="text-uppercase heading mb-0">Ongoing Projects</h4>
-                    </div>
-                      <div className="row">
-                        {this.state.ongoingProject.map((item,value) => {
-                          return(
-                            <div key={value} className="col-md-6 col-lg-4 col-sm-12 p-0 pl-sm-3 pr-sm-3">
-                              <Link to={`residential/${item.residential_links.uid}`} >
-                                <div className="residences-card position-relative">
-                                  <div className="residences-img">
-                                  <picture>
-                                    <source media="(max-width: 581px)" srcSet={item.residential_links.document[0].data.thumbnail.mobile.url}/>
-                                    <img src={item.residential_links.document[0].data.thumbnail.url} alt="" width="100%" />
-                                  </picture>
-                                    {/* <Img fluid={item.residential_links.document[0].data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%"/> */}
-                                  </div>
-                                  <div className="rectangle position-absolute d-flex flex-column justify-content-around">
-                                    <div className="rectangle-title">
-                                        <h4 className="text-uppercase m-0 inner-section-title">{item.residential_links.document[0].data.title.text}</h4>
-                                    </div>
-                                    <div className="apartment-size d-flex justify-content-between align-items-center">
-                                      <span className="text-uppercase">{item.residential_links.document[0].data.flat_bhk.text}</span>
-                                      <div>
-                                        <i className="fas fa-arrow-right"></i>
-                                      </div>
-                                    </div>
-                                    <div className="project-location">
-                                      <i className="fas fa-map-marker-alt"></i>
-                                      <span>{item.residential_links.document[0].data.flat_address.text}</span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </Link>
-                            </div>
-                          )})
-                        }
-                      </div> 
-                    </div>
-                  </div>
-                </section>
-              }
               {this.state.completedProject.length > 0 && 
                 <section className="complete-project position-relative">
                   <div className="container">
@@ -319,7 +284,7 @@ export default class Residential extends React.Component {
   }
 }
 
-export const residentialPage = graphql` {
+export const completedResidentialPage = graphql` {
   allPrismicResidential {
     edges {
       node {

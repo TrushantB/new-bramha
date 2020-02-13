@@ -102,9 +102,7 @@ class IndexPage extends React.Component {
                           <img src={item.image.logo.url}/>
                         </div> */}
                         <div className="banner-caption-1">
-                          <h3 className="section-title"> Project Name </h3>
-                          {console.log("item", item)
-                          }
+                          <h3 className="section-title"> {item.project_name} </h3>
                         </div>
                       </Link>
                     </div>
@@ -163,6 +161,7 @@ export const pageDataResidential = graphql` {
   prismicResidential {
     data {
       gallery {
+        project_name
         image {
           url
           alt
@@ -188,6 +187,7 @@ export const pageDataResidential = graphql` {
         }
       }
       gallery {
+        project_name
         image {
           url
           alt
@@ -212,6 +212,7 @@ export const pageDataResidential = graphql` {
         }
       }
       gallery {
+        project_name
         image {
           url
           alt
@@ -236,6 +237,7 @@ export const pageDataResidential = graphql` {
         }
       }
       gallery {
+        project_name
         image {
           url
           alt
