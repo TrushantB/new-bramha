@@ -60,6 +60,7 @@ class VerticalPage extends React.Component {
         message: e.target.message.value,
         projectName: e.target.projectName.value
       })
+      this.setState({ value: '+91'});
       document.querySelector('.residentialCustomer').reset();
   }
 
