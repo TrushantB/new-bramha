@@ -3,11 +3,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Slider from 'react-slick';
 import { graphql, Link } from "gatsby";
-// import Commerical from '../pages/our-verticals-main/commercial';
-// import Residential from "../pages/our-verticals-main/residential";
-// import Hospitality from "../pages/our-verticals-main/hospitality";
-// import Leisure from "../pages/our-verticals-main/leisure";
-import $ from 'jquery';
+
 class IndexPage extends React.Component {
   constructor() {
     super();

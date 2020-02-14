@@ -74,7 +74,9 @@ class Contacts extends React.Component {
         message: e.target.message.value,
         city: e.target.city.value
       })
+      document.querySelector('.contactConstructors').reset();
   }
+
   submitCareer = (e) => {
     e.preventDefault();
     firebase
@@ -89,7 +91,6 @@ class Contacts extends React.Component {
         city: e.target.city.value
       })
       document.querySelector('.contactCareer').reset();
-
   }
 
   submitLandOwner = (e) => {
@@ -144,6 +145,8 @@ class Contacts extends React.Component {
       .child(filename)
       .getDownloadURL()
       .then(url => this.setState({ avatarURL: url }));
+      console.log('filename', filename);
+      
   };
 
   render(){
@@ -427,7 +430,7 @@ class Contacts extends React.Component {
                           <FileUploader
                             accept="pdf/*"
                             name="avatar"
-                            randomizeFilename
+                            // randomizeFilename
                             storageRef={firebase.storage().ref("Resume")}
                             onUploadSuccess={this.handleUploadSuccess}
                           />
