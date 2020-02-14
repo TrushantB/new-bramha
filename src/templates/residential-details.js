@@ -57,10 +57,10 @@ class VerticalPage extends React.Component {
         budget: e.target.budget.value,
         city: e.target.city.value,
         source: e.target.source.value,
-        message: e.target.message.value
+        message: e.target.message.value,
+        projectName: e.target.projectName.value
       })
       document.querySelector('.residentialCustomer').reset();
-
   }
 
   render(){
@@ -711,15 +711,15 @@ class VerticalPage extends React.Component {
                   <div className="contact-form-bg pt-4 pb-4 pt-sm-5 pb-sm-5">
                     <div className="container">
                       <div className="form-row">
-                        <input type="hidden" name="form-name" value="Residential Customer" />
+                        <input type="hidden" id="projectName" name="form-name" value={verticalData.data.title.text} />
                         <div className="col-sm-6 form-group  ">
                           <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" required/>
                         </div>
                         <div className="col-sm-6 form-group  ">
-                              <PhoneInput className="form-control" id="phoneNumber"  placeholder="Your Phone Number*" maxLength="15" name="phone-number" required
-                                value={this.state.value}
-                                onChange={(e) => this.setState({value:e})}/>
-                              </div>
+                          <PhoneInput className="form-control" id="phoneNumber"  placeholder="Your Phone Number*" maxLength="15" name="phone-number" required
+                            value={this.state.value}
+                            onChange={(e) => this.setState({value:e})}/>
+                          </div>
                         <div className="col-sm-6 form-group  ">
                           <input type="text" className="form-control" id="email" placeholder="Your Email*" name="email" required/>
                         </div>
