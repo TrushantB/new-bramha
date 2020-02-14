@@ -109,7 +109,7 @@ export default class Residential extends React.Component {
       centerPadding: "60px",
       dots: false,
       infinite: false,
-      speed: 1000,
+      speed: 400,
       slidesToShow: 3,
       slidesToScroll: 1,
       initialSlide: 0,
@@ -124,7 +124,6 @@ export default class Residential extends React.Component {
             slidesToScroll: 2,
             infinite: true,
             dots: false,
-            speed: 1000,
             afterChange: current => this.setState({ completeChange: current }),
             autoplaySpeed: 0
           }
@@ -292,7 +291,7 @@ export default class Residential extends React.Component {
                         )})
                       }
                     </Slider>
-                    <span className="d-inline-block d-sm-none position-absolute pagination">
+                    <span className="d-inline-block position-absolute pagination">
                       {this.state.activeSlide + 1} of {this.state.completedProject.length}
                     </span>
                   </div>

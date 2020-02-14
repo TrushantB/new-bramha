@@ -121,7 +121,7 @@ class Careers extends React.Component {
       centerMode: true,
       centerPadding: '200px',
       slidesToShow: 1,
-      speed:1000,
+      speed:400,
       afterChange: current => this.setState({ activeSlide: current }),
       responsive: [
         {
@@ -166,7 +166,7 @@ class Careers extends React.Component {
             <div className="scroll-downs">
               <div onClick={this.scrollWin} className="mousey">
                 {/* <div className=""></div> */}
-                <i className="fas fa-long-arrow-alt-down scroller"></i>
+                <span className="icon-arrow-down d-inline-block scroller"></span>
               </div>
             </div>
             {/* <Img fluid={careerData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
@@ -183,7 +183,7 @@ class Careers extends React.Component {
               </div>
             </div>
           </section>
-          <div className="container life-at-bramha p-0 px-md-3">
+          <div className="life-at-bramha p-0">
           <section className=" slider-page mt-5 m-sm-0">
             <div className="padding-block-60 d-flex justify-content-center flex-column w-100 ">
               <h3 className="section-title text-center text-uppercase mb-0" >

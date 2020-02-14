@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?8ko28p');
-  src:  url('fonts/icomoon.eot?8ko28p#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?8ko28p') format('truetype'),
-    url('fonts/icomoon.woff?8ko28p') format('woff'),
-    url('fonts/icomoon.svg?8ko28p#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?i2wk9s');
+  src:  url('fonts/icomoon.eot?i2wk9s#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?i2wk9s') format('truetype'),
+    url('fonts/icomoon.woff?i2wk9s') format('woff'),
+    url('fonts/icomoon.svg?i2wk9s#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -26,108 +26,149 @@
 }
 
 .icon-basketball-court:before {
-  content: "\e900";
-  color: #979797;
-}
-.icon-CCTV-surveillance:before {
-  content: "\e901";
-  color: #979797;
-}
-.icon-Electricity-Backup:before {
-  content: "\e902";
-  color: #979797;
-}
-.icon-elevator:before {
-  content: "\e903";
-  color: #979797;
-}
-.icon-Entrance-Lobby:before {
-  content: "\e904";
-  color: #979797;
-}
-.icon-fire-alarm:before {
-  content: "\e905";
-  color: #979797;
-}
-.icon-Group-28-Copy-3:before {
   content: "\e906";
   color: #979797;
 }
-.icon-Gym:before {
+.icon-CCTV-surveillance:before {
   content: "\e907";
   color: #979797;
 }
-.icon-Jogging-Track:before {
+.icon-Electricity-Backup:before {
   content: "\e908";
   color: #979797;
 }
-.icon-Kids-Pool:before {
+.icon-elevator:before {
   content: "\e909";
   color: #979797;
 }
-.icon-swimming-pool:before {
+.icon-Entrance-Lobby:before {
   content: "\e90a";
   color: #979797;
 }
-.icon-tennis-court:before {
+.icon-fire-alarm:before {
   content: "\e90b";
   color: #979797;
 }
-.icon-arrow:before {
+.icon-Group-28-Copy-3:before {
   content: "\e90c";
+  color: #979797;
+}
+.icon-Gym:before {
+  content: "\e90d";
+  color: #979797;
+}
+.icon-Jogging-Track:before {
+  content: "\e90e";
+  color: #979797;
+}
+.icon-Kids-Pool:before {
+  content: "\e90f";
+  color: #979797;
+}
+.icon-swimming-pool:before {
+  content: "\e910";
+  color: #979797;
+}
+.icon-tennis-court:before {
+  content: "\e911";
+  color: #979797;
 }
 .icon-Commercial_active:before {
-  content: "\e90d";
+  content: "\e912";
   color: #b7292f;
 }
 .icon-Commercial_inactive:before {
-  content: "\e90e";
+  content: "\e913";
 }
 .icon-Hospitality_active:before {
-  content: "\e90f";
+  content: "\e914";
   color: #b7292f;
 }
 .icon-Hospitality_inactive:before {
-  content: "\e910";
+  content: "\e915";
 }
 .icon-Leisure_active:before {
-  content: "\e911";
+  content: "\e916";
   color: #b7292f;
 }
 .icon-Leisure_inactive:before {
-  content: "\e912";
-}
-.icon-location_icon:before {
-  content: "\e913";
-}
-.icon-Proximities_Hotels:before {
-  content: "\e914";
-}
-.icon-Proximities_Malls:before {
-  content: "\e915";
-}
-.icon-Proximities_Map:before {
-  content: "\e916";
-}
-.icon-Proximities_Schools:before {
   content: "\e917";
 }
-.icon-Residential_active:before {
+.icon-location_icon:before {
   content: "\e918";
+}
+.icon-Proximities_Hotels:before {
+  content: "\e919";
+}
+.icon-Proximities_Malls:before {
+  content: "\e91a";
+}
+.icon-Proximities_Map:before {
+  content: "\e91b";
+}
+.icon-Proximities_Schools:before {
+  content: "\e91c";
+}
+.icon-Residential_active:before {
+  content: "\e91d";
   color: #b7292f;
 }
 .icon-Residential_inactive:before {
-  content: "\e919";
+  content: "\e91e";
 }
 .icon-sticky_chat:before {
-  content: "\e91a";
+  content: "\e91f";
   color: #fff;
 }
 .icon-sticky_form:before {
-  content: "\e91b";
+  content: "\e920";
   color: #fff;
 }
 .icon-sticky_phone:before {
-  content: "\e91c";
+  content: "\e921";
   color: #fff;
+}
+.icon-arrow_scroller-left:before {
+  content: "\e900";
+  color: #b1a585;
+}
+.icon-arrow_scroller-right:before {
+  content: "\e901";
+  color: #b1a585;
+}
+.icon-arrow-down:before {
+  content: "\e902";
+  color: #ffffff;
+}
+.icon-arrow-left:before {
+  content: "\e903";
+  color: #b1a585;
+}
+.icon-arrow-right:before {
+  content: "\e904";
+  color: #b1a585;
+}
+.icon-icons8-whatsapp .path1:before {
+  content: "\e905";
+  color: rgb(255, 255, 255);
+}
+.icon-icons8-whatsapp .path2:before {
+  content: "\e922";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-icons8-whatsapp .path3:before {
+  content: "\e923";
+  margin-left: -1em;
+  color: rgb(207, 216, 220);
+}
+.icon-icons8-whatsapp .path4:before {
+  content: "\e924";
+  margin-left: -1em;
+  color: rgb(64, 195, 81);
+}
+.icon-icons8-whatsapp .path5:before {
+  content: "\e925";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
 }
