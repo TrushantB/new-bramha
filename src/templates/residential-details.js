@@ -10,6 +10,8 @@ import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
+import '../firebase/config';
+import * as firebase from 'firebase';
 
 
 class VerticalPage extends React.Component {
@@ -40,6 +42,25 @@ class VerticalPage extends React.Component {
       top: offsetHeight,
       behavior: 'smooth'
     });
+  }
+
+  submitResidentialCustomer = (e) => {
+    e.preventDefault();
+    firebase
+      .database()
+      .ref("Residential Customer")
+      .push()
+      .set({
+        name: e.target.name.value,
+        email: e.target.email.value,
+        phoneNumber: e.target.phoneNumber.value,
+        budget: e.target.budget.value,
+        city: e.target.city.value,
+        source: e.target.source.value,
+        message: e.target.message.value
+      })
+      document.querySelector('.residentialCustomer').reset();
+
   }
 
   render(){
@@ -685,7 +706,8 @@ class VerticalPage extends React.Component {
                   </span>
                   <span className="d-block text-left text-sm-center">Let us help you in making up your mind.</span>
                 </p>
-                <form name="residential customer" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+                
+                <form  className="residentialCustomer" onSubmit={(e) => this.submitResidentialCustomer(e)} name="residential customer" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
                   <div className="contact-form-bg pt-4 pb-4 pt-sm-5 pb-sm-5">
                     <div className="container">
                       <div className="form-row">
@@ -694,8 +716,8 @@ class VerticalPage extends React.Component {
                           <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" required/>
                         </div>
                         <div className="col-sm-6 form-group  ">
-                              <PhoneInput className="form-control" id="phone-number"  placeholder="Your Phone Number*" name="phone-number" required
-                              value={this.state.value}
+                              <PhoneInput className="form-control" id="phoneNumber"  placeholder="Your Phone Number*" maxLength="15" name="phone-number" required
+                                value={this.state.value}
                                 onChange={(e) => this.setState({value:e})}/>
                               </div>
                         <div className="col-sm-6 form-group  ">
@@ -705,7 +727,7 @@ class VerticalPage extends React.Component {
                           <input type="" className="form-control" id="city" placeholder="City" name="city" required/>
                         </div>
                         <div className="col-sm-6 form-group  ">
-                          <select defaultValue="" className="form-control rounded-0" id="" name="source" required >
+                          <select defaultValue="" className="form-control rounded-0" id="budget" name="budget" required >
                             <option value="" disabled>Budget</option>
                             <option >50 Lakh</option>
                             <option>50-80 Lakh</option>
@@ -714,7 +736,7 @@ class VerticalPage extends React.Component {
                           </select>
                         </div>
                         <div className="col-sm-6 form-group ">
-                        <select defaultValue="" className="form-control rounded-0" id="" placeholder="source" name="source" required >
+                        <select defaultValue="" className="form-control rounded-0" id="source" placeholder="source" name="source" required >
                             <option value="" disabled >source</option>
                             <option>Newspaper</option>
                             <option>Hoarding</option>
@@ -741,6 +763,7 @@ class VerticalPage extends React.Component {
                 </form>
               </div>
             </section>
+
             {/* <!--   ------------------- Enquiry section end here ------------------- --> */}
             {/* <!--   ------------------- Maharera section start here ------------------- --> */}
             <section className="container d-flex flex-column align-items-center detail-maharera-sections">
