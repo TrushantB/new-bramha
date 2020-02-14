@@ -28,6 +28,7 @@ class CommercialDetails extends React.Component {
       centerMode: true,
       centerPadding: '200px',
       slidesToShow: 1,
+      speed:400,
       afterChange: current => this.setState({ activeSlide: current }),
       responsive: [
         {
@@ -37,7 +38,6 @@ class CommercialDetails extends React.Component {
             centerMode: true,
             centerPadding: '100px',
             slidesToShow: 1,
-            speed:1000
           }
         },
         {
@@ -83,7 +83,7 @@ class CommercialDetails extends React.Component {
               <div className="scroll-downs">
                 <div onClick={this.scrollWin} className="mousey">
                   {/* <div className=""></div> */}
-                  <i className="fas fa-long-arrow-alt-down scroller"></i>
+                <span className="icon-arrow-down d-inline-block scroller"></span>
                 </div>
               </div>
               {/* <Img fluid={commercialData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}

@@ -24,7 +24,7 @@ class MediaAndEvents extends React.Component {
       centerPadding: '200px',
       focusOnSelect: false,
       slidesToShow: 1,
-      speed:1000,
+      speed:400,
       afterChange: current => this.setState({ activeSlide: current }),
       responsive: [
         {

@@ -171,12 +171,13 @@ body{
         width: 28px;
         height: 45px;
         &:before{
-            content: "\F053";
-            font-family: Font Awesome\ 5 Free;
-            font-weight: 900;
+            content: "\e900";
+            font-family: 'icomoon' !important;
             font-size: 44px;
+            color:#fff;
         }
     }
+
     .slick-next{
         right:20px;
         z-index: 9;
@@ -185,10 +186,10 @@ body{
         width: 28px;
         height: 45px;
         &:before{
-            content: "\f054";
-            font-family: "Font Awesome\ 5 Free";
-            font-weight: 900;
+            content: "\e901";
+            font-family: 'icomoon' !important;
             font-size: 44px;
+            color:#fff;
         }
     }
     .slick-list{
@@ -224,19 +225,22 @@ body{
         position: relative;
         overflow: hidden;
 
-        &:after {
-            position: absolute;
-            height: 150px;
-            content: '';
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            z-index: 0;
-            background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.6)));
-            background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
-            background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
-            background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
-            left: 0;
+        // &:after {
+        //     position: absolute;
+        //     height: 150px;
+        //     content: '';
+        //     position: absolute;
+        //     bottom: 0;
+        //     width: 100%;
+        //     z-index: 0;
+        //     background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.6)));
+        //     background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+        //     background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+        //     background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+        //     left: 0;
+        // }
+        &:after{
+            display: none;
         }
         .banner-img{
             position: relative;
@@ -299,6 +303,7 @@ body{
             justify-content: center;
             align-items: center;
             z-index: 1;
+            box-shadow: 0 2px 13px 0 rgba(0, 0, 0, 0.18);
             .section-title{
                 margin:0;
                 &:after{
@@ -431,7 +436,10 @@ body{
             z-index: 9;
             height: 0;
             &:before{
-                font-size: 32px;
+                content: "\E903";
+                font-family: 'icomoon' !important;
+                color: #fff;
+               font-size: 22px;
             }
         }
         .slick-next{
@@ -439,7 +447,10 @@ body{
             z-index: 9;
             height: 0;
             &:before{
-               font-size: 32px;
+                content: "\E904";
+                font-family: 'icomoon' !important;
+                color: #fff;
+               font-size: 22px;
             }
         }
     }

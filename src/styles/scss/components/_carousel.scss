@@ -21,7 +21,6 @@
 } 
 .project-carousel, .career-center, .center{
   .slick-next {
-    transform: rotate(180deg);
     right: 50px;
     &:before{
       content: "";

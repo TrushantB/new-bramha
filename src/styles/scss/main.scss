@@ -659,7 +659,9 @@ button:focus{
             }
           .pagination{
             bottom: -44px;
-            left: 25px;
+            left: 30px;
+            top: auto;
+            right: auto;
           }
         }
         .slick-center{
@@ -810,9 +812,12 @@ button:focus{
     width :34px;
     height: 30px;
     z-index: 1;
+    
     &:hover{
-        i{
-            color:theme-color("tertiary");
+        span{
+            &:before{
+                color:#ecd394;
+            }
         }
     }
   }
@@ -826,8 +831,8 @@ button:focus{
     box-sizing: content-box;
   }
   .scroller {
-    width: 3px;
-    height: 10px;
+    // width: 3px;
+    // height: 10px;
     border-radius: 25%;
     // background-color: #fff;
     animation-name: scroll;
@@ -836,6 +841,9 @@ button:focus{
     animation-iteration-count: infinite;
     font-size: 22px;
     color:#fff;
+    &:before{
+        box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.18);
+    }
   }
   @keyframes scroll {
     0% { opacity: 1; }

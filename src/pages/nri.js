@@ -39,7 +39,7 @@ class NRI extends React.Component {
             <div className="scroll-downs">
               <div onClick={this.scrollWin} className="mousey">
                 {/* <div className=""></div> */}
-                <i className="fas fa-long-arrow-alt-down scroller"></i>
+                <span className="icon-arrow-down d-inline-block scroller"></span>
               </div>
             </div>
             {/* <Img fluid={nriData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
