@@ -145,10 +145,9 @@ class Contacts extends React.Component {
       .child(filename)
       .getDownloadURL()
       .then(url => this.setState({ avatarURL: url }));
-      console.log('filename', filename);
-      
-  };
 
+  };
+  
   render(){
     const contactData = this.props.data.prismicCompanyDetails.data;
     return(
@@ -426,14 +425,21 @@ class Contacts extends React.Component {
                       <div className="col-sm-6 form-group  ">
                           <input type="text" className="form-control" id="city" placeholder="City" name="city" required/>
                       </div> 
-                      <label>Avatar:</label>
-                          <FileUploader
-                            accept="pdf/*"
-                            name="avatar"
-                            // randomizeFilename
-                            storageRef={firebase.storage().ref("Resume")}
-                            onUploadSuccess={this.handleUploadSuccess}
-                          />
+                      <div className="col-md-12 form-group file-area">
+                            <FileUploader
+                              className="w-100 resume-upload-input h-100"
+                              accept="pdf/*"
+                              name="resume-upload"
+                              storageRef={firebase.storage().ref("Resume")}
+                              onUploadSuccess={this.handleUploadSuccess}
+                            />
+                          <div className="file-dummy resume-upload">
+                            {
+                              this.state.avatar && this.state.avatar ? this.state.avatar: 
+                              <div className="default">Resume Upload (PDF/DOC)*</div>
+                            }
+                          </div>
+                      </div>
 
                       {/* <div className="form-group file-area">
                         <input type="file" name="" id="resumeUpload" multiple="multiple" name="resume-upload" className="h-100"/>
