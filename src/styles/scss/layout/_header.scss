@@ -39,13 +39,12 @@
   }
   .whats-app-icon{
     cursor: pointer;
-    font-size:22px;
-    opacity: 0.6;
+    span{
+      font-size:28px;
+    }
     a{
-      color:#000;
-      
       &:hover{
-        color: #ccc;
+        text-decoration: none;
       }
     }
   }
