@@ -21,7 +21,8 @@ class Contacts extends React.Component {
         LandOwner:false,
         value:"+91",
         avatar: "",
-        avatarURL: ""
+        avatarURL: "",
+        url: ''
       };
     }
 
@@ -41,6 +42,7 @@ class Contacts extends React.Component {
         source: e.target.source.value,
         message: e.target.message.value
       })
+      this.setState({ value: '+91'});
       document.querySelector('.contactCustomer').reset();
   }
 
@@ -57,6 +59,7 @@ class Contacts extends React.Component {
         rera: e.target.rera.value,
         message: e.target.message.value
       })
+      this.setState({ value: '+91'});
       document.querySelector('.contactChannel').reset();
   }
 
@@ -74,7 +77,10 @@ class Contacts extends React.Component {
         message: e.target.message.value,
         city: e.target.city.value
       })
+      this.setState({ value: '+91'});
+      document.querySelector('.contactConstructors').reset();
   }
+
   submitCareer = (e) => {
     e.preventDefault();
     firebase
@@ -86,10 +92,12 @@ class Contacts extends React.Component {
         email: e.target.email.value,
         phoneNumber: e.target.phoneNumber.value,
         message: e.target.message.value,
-        city: e.target.city.value
+        city: e.target.city.value,
+        resumeUrl: this.state.url
       })
+      this.setState({avatar: ''});
+      this.setState({ value: '+91'});
       document.querySelector('.contactCareer').reset();
-
   }
 
   submitLandOwner = (e) => {
@@ -106,6 +114,7 @@ class Contacts extends React.Component {
         message: e.target.message.value,
         city: e.target.city.value
       })
+      this.setState({ value: '+91'});
       document.querySelector('.contactLandOwner').reset();
   }
 
@@ -143,9 +152,11 @@ class Contacts extends React.Component {
       .ref("Resume")
       .child(filename)
       .getDownloadURL()
-      .then(url => this.setState({ avatarURL: url }));
+      .then(url => {
+        this.setState({ url: url})
+      });
   };
-
+  
   render(){
     const contactData = this.props.data.prismicCompanyDetails.data;
     return(
@@ -423,14 +434,22 @@ class Contacts extends React.Component {
                       <div className="col-sm-6 form-group  ">
                           <input type="text" className="form-control" id="city" placeholder="City" name="city" required/>
                       </div> 
-                      <label>Avatar:</label>
+                      <div className="col-md-12 form-group file-area">
                           <FileUploader
+                            id="file"
+                            className="w-100 resume-upload-input h-100"
                             accept="pdf/*"
-                            name="avatar"
-                            randomizeFilename
+                            name="resume-upload"
                             storageRef={firebase.storage().ref("Resume")}
                             onUploadSuccess={this.handleUploadSuccess}
                           />
+                        <div className="file-dummy resume-upload">
+                          {
+                            this.state.avatar && this.state.avatar ? this.state.avatar: 
+                            <div className="default">Resume Upload (PDF/DOC)*</div>
+                          }
+                        </div>
+                      </div>
 
                       {/* <div className="form-group file-area">
                         <input type="file" name="" id="resumeUpload" multiple="multiple" name="resume-upload" className="h-100"/>

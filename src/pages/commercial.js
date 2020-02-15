@@ -65,8 +65,6 @@ class Commercial extends React.Component {
       ]
     };
     const commercialData = this.props.data.allPrismicCommercial.edges[0].node.data;
-    console.log('commercialData', commercialData);
-    
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title={commercialData.sub_title.text}/>
