@@ -12,7 +12,7 @@ import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
 import '../firebase/config';
 import * as firebase from 'firebase';
-
+import queryString from 'query-string';
 
 class VerticalPage extends React.Component {
   
@@ -27,13 +27,22 @@ class VerticalPage extends React.Component {
     imageUrl: null,
     floorPlanSelect: null,
     value:"+91",
-    styleData:{height: 20, overflow: 'hidden'}
+    styleData:{height: 20, overflow: 'hidden'},
+    utmSource: null,
+    utmMedium: null,
+    utmCampaign: null
   };
 
 
   componentWillMount() {
     const verticalData = this.props.data.prismicOurVerticalsArticle;
-    this.setState({ floorPlanSelect : verticalData.data.floor_plans})
+    const queryParams = queryString.parseUrl(this.props.location.search);
+    this.setState({ 
+      floorPlanSelect : verticalData.data.floor_plans,
+      utmSource: queryParams && queryParams.query.utm_source,
+      utmMedium: queryParams && queryParams.query.utm_medium,
+      utmCampaign: queryParams && queryParams.query.utm_campaign
+    });
   }
   
   scrollWin() {
@@ -58,7 +67,10 @@ class VerticalPage extends React.Component {
         city: e.target.city.value,
         source: e.target.source.value,
         message: e.target.message.value,
-        projectName: e.target.projectName.value
+        projectName: e.target.projectName.value,
+        utmSource: e.target.utmSource.value,
+        utmCampaign: e.target.utmCampaign.value,
+        utmMedium: e.target.utmMedium.value
       })
       this.setState({ value: '+91'});
       document.querySelector('.residentialCustomer').reset();
@@ -713,6 +725,9 @@ class VerticalPage extends React.Component {
                     <div className="container">
                       <div className="form-row">
                         <input type="hidden" id="projectName" name="form-name" value={verticalData.data.title.text} />
+                        <input type="hidden" id="utmSource" name="utmSource" value={this.state.utmSource} />
+                        <input type="hidden" id="utmMedium" name="utmMedium" value={this.state.utmMedium} />
+                        <input type="hidden" id="utmCampaign" name="utmCampaign" value={this.state.utmCampaign} />
                         <div className="col-sm-6 form-group  ">
                           <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" required/>
                         </div>
