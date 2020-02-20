@@ -21,28 +21,28 @@ class IndexPage extends React.Component {
   }
 
   componentWillMount() {
-    let scrollHandle = this;
+    // let scrollHandle = this;
     const residentialData = this.props.data.prismicResidential;
     this.setState({selectedVertical: residentialData.data})
-    const commercialData = this.props.data.prismicCommercial;
-    const hospitalityData = this.props.data.prismicHospitality;
-    const leisureData  = this.props.data.prismicLeisureClub;
+    // const commercialData = this.props.data.prismicCommercial;
+    // const hospitalityData = this.props.data.prismicHospitality;
+    // const leisureData  = this.props.data.prismicLeisureClub;
 
-    setTimeout(function(){
-      scrollHandle.handleOurVerticals(commercialData, 'commercial') 
-      }, 12000);
+    // setTimeout(function(){
+    //   scrollHandle.handleOurVerticals(commercialData, 'commercial') 
+    //   }, 12000);
 
-    setTimeout(function(){
-      scrollHandle.handleOurVerticals(hospitalityData, 'hospitality') 
-      }, 24000);
+    // setTimeout(function(){
+    //   scrollHandle.handleOurVerticals(hospitalityData, 'hospitality') 
+    //   }, 24000);
   
-    setTimeout(function(){
-      scrollHandle.handleOurVerticals(leisureData, 'leisure-club') 
-      }, 36000);
+    // setTimeout(function(){
+    //   scrollHandle.handleOurVerticals(leisureData, 'leisure-club') 
+    //   }, 36000);
     
-    setTimeout(function(){
-      scrollHandle.handleOurVerticals(residentialData,'residential') 
-      }, 48000);
+    // setTimeout(function(){
+    //   scrollHandle.handleOurVerticals(residentialData,'residential') 
+    //   }, 48000);
   }
 
   handleOurVerticals = (event, vertical) => {
@@ -54,11 +54,11 @@ class IndexPage extends React.Component {
     const hospitalityData = this.props.data.prismicHospitality;
     const leisureData  = this.props.data.prismicLeisureClub;
     const residentialData = this.props.data.prismicResidential;
-    var settings = {
+    let settings = {
       dots: false,
       infinite: true,
       speed: 500,
-      autoplay: true,
+      // autoplay: true,
       autoplaySpeed: 7000,
       slidesToShow: 1,
       arrows: true,

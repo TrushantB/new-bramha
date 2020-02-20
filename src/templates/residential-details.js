@@ -26,7 +26,7 @@ class VerticalPage extends React.Component {
     isOpenTHree:false,
     imageUrl: null,
     floorPlanSelect: null,
-    value:"+91",
+    value:"+91 ",
     styleData:{height: 20, overflow: 'hidden'},
     utmSource: null,
     utmMedium: null,

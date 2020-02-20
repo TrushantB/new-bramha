@@ -112,12 +112,16 @@ class AboutUs extends React.Component {
             <div className="slider-wrapper">
                 <div className="slider-border"></div>
                 <div className="container-fluid container-md slider-container padding-sm-0">
-                  <Slider {...settings}>
+                <Slider {...settings}>
                     {
                       data.our_legacy.document[0].data.our_legacy.map((item,value) => {
                         return(
                           <div key={value} className="legacy-slide">
-                            <Img fluid={item.image.localFile.childImageSharp.fluid} alt="slider image" className="legacy-slider-image" />
+                            <picture>
+                            <source media="(max-width: 581px)" srcSet={item.image.mobile.url} className="legacy-slider-image" />
+                              <img src={item.image.url} alt="hospital Logo" className="legacy-slider-image" />
+                            </picture>
+                            {/* <Img fluid={item.image.localFile.childImageSharp.fluid} alt="slider image" className="legacy-slider-image" /> */}
                             <div className="slide-caption">
                               <h3 className="slide-title text-white">
                                 {item.title.text}
@@ -278,12 +282,9 @@ export const AboutPage = graphql` {
                 text
               }
               image {
-                localFile {
-                  childImageSharp {
-                    fluid(maxWidth: 1150) {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
+                url
+              	mobile{
+                  url
                 }
               }
               year
