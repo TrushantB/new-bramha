@@ -8,7 +8,7 @@ import PhoneInput from 'react-phone-number-input'
 import '../firebase/config';
 import * as firebase from 'firebase';
 import FileUploader from "react-firebase-file-uploader";
-
+import queryString from 'query-string';
 
 class Contacts extends React.Component {
   constructor(props){
@@ -22,7 +22,10 @@ class Contacts extends React.Component {
         value:"+91",
         avatar: "",
         avatarURL: "",
-        url: ''
+        url: '',
+        utmSource: null,
+        utmMedium: null,
+        utmCampaign: null
       };
     }
 
@@ -40,7 +43,10 @@ class Contacts extends React.Component {
         budget: e.target.budget.value,
         city: e.target.city.value,
         source: e.target.source.value,
-        message: e.target.message.value
+        message: e.target.message.value,
+        utmSource: e.target.utmSource.value,
+        utmCampaign: e.target.utmCampaign.value,
+        utmMedium: e.target.utmMedium.value
       })
       this.setState({ value: '+91'});
       document.querySelector('.contactCustomer').reset();
@@ -57,7 +63,10 @@ class Contacts extends React.Component {
         email: e.target.email.value,
         phoneNumber: e.target.phoneNumber.value,
         rera: e.target.rera.value,
-        message: e.target.message.value
+        message: e.target.message.value,
+        utmSource: e.target.utmSource.value,
+        utmCampaign: e.target.utmCampaign.value,
+        utmMedium: e.target.utmMedium.value
       })
       this.setState({ value: '+91'});
       document.querySelector('.contactChannel').reset();
@@ -75,7 +84,10 @@ class Contacts extends React.Component {
         phoneNumber: e.target.phoneNumber.value,
         company: e.target.company.value,
         message: e.target.message.value,
-        city: e.target.city.value
+        city: e.target.city.value,
+        utmSource: e.target.utmSource.value,
+        utmCampaign: e.target.utmCampaign.value,
+        utmMedium: e.target.utmMedium.value
       })
       this.setState({ value: '+91'});
       document.querySelector('.contactConstructors').reset();
@@ -93,7 +105,10 @@ class Contacts extends React.Component {
         phoneNumber: e.target.phoneNumber.value,
         message: e.target.message.value,
         city: e.target.city.value,
-        resumeUrl: this.state.url
+        resumeUrl: this.state.url,
+        utmSource: e.target.utmSource.value,
+        utmCampaign: e.target.utmCampaign.value,
+        utmMedium: e.target.utmMedium.value
       })
       this.setState({avatar: ''});
       this.setState({ value: '+91'});
@@ -112,7 +127,10 @@ class Contacts extends React.Component {
         phoneNumber: e.target.phoneNumber.value,
         company: e.target.company.value,
         message: e.target.message.value,
-        city: e.target.city.value
+        city: e.target.city.value,
+        utmSource: e.target.utmSource.value,
+        utmCampaign: e.target.utmCampaign.value,
+        utmMedium: e.target.utmMedium.value
       })
       this.setState({ value: '+91'});
       document.querySelector('.contactLandOwner').reset();
@@ -157,6 +175,15 @@ class Contacts extends React.Component {
       });
   };
   
+  componentWillMount() {
+    const queryParams = queryString.parseUrl(this.props.location.search);
+    this.setState({ 
+      utmSource: queryParams && queryParams.query.utm_source,
+      utmMedium: queryParams && queryParams.query.utm_medium,
+      utmCampaign: queryParams && queryParams.query.utm_campaign
+    });
+  }  
+
   render(){
     const contactData = this.props.data.prismicCompanyDetails.data;
     return(
@@ -270,7 +297,10 @@ class Contacts extends React.Component {
                   <div className="contact-form-bg pt-4 pb-4 pt-sm-5 pb-sm-5" id="customer">
                     <div className="container">
                       <div className="form-row">
-                      <input type="hidden" name="form-name" value="customer" />
+                        <input type="hidden" name="form-name" value="customer" />
+                        <input type="hidden" id="utmSource" name="utmSource" value={this.state.utmSource} />
+                        <input type="hidden" id="utmMedium" name="utmMedium" value={this.state.utmMedium} />
+                        <input type="hidden" id="utmCampaign" name="utmCampaign" value={this.state.utmCampaign} />
                         <div className="col-sm-6 form-group  ">
                             <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" autoComplete="false" required/>
                         </div>
@@ -342,7 +372,10 @@ class Contacts extends React.Component {
                   <div className="contact-form-bg pt-4 pb-4 pt-sm-5 pb-sm-5" id="channel">
                     <div className="container">
                       <div className="form-row">
-                      <input type="hidden" name="form-name" value="channel" />
+                        <input type="hidden" name="form-name" value="channel" />
+                        <input type="hidden" id="utmSource" name="utmSource" value={this.state.utmSource} />
+                        <input type="hidden" id="utmMedium" name="utmMedium" value={this.state.utmMedium} />
+                        <input type="hidden" id="utmCampaign" name="utmCampaign" value={this.state.utmCampaign} />
                         <div className="col-sm-6 form-group  ">
                             <input type="text" className="form-control" id="name" placeholder="Individual Name*" name="name" autoComplete="false" required/>
                         </div>
@@ -377,7 +410,10 @@ class Contacts extends React.Component {
                   <div className="contact-form-bg pt-4 pb-4 pt-sm-5 pb-sm-5" id="constructors">
                     <div className="container">
                       <div className="form-row">
-                      <input type="hidden" name="form-name" value="constructors" />
+                        <input type="hidden" name="form-name" value="constructors" />
+                        <input type="hidden" id="utmSource" name="utmSource" value={this.state.utmSource} />
+                        <input type="hidden" id="utmMedium" name="utmMedium" value={this.state.utmMedium} />
+                        <input type="hidden" id="utmCampaign" name="utmCampaign" value={this.state.utmCampaign} />
                       <div className="col-sm-6 form-group  ">
                             <input type="text" className="form-control" id="company" placeholder="Company*" name="company-name" autoComplete="false" required/>
                         </div>
@@ -416,7 +452,10 @@ class Contacts extends React.Component {
                   <div className="contact-form-bg pt-4 pb-4 pt-sm-5 pb-sm-5" id="career">
                   <div className="container">
                     <div className="form-row">
-                    <input type="hidden" name="form-name" value="career"/>
+                      <input type="hidden" name="form-name" value="career"/>
+                      <input type="hidden" id="utmSource" name="utmSource" value={this.state.utmSource} />
+                      <input type="hidden" id="utmMedium" name="utmMedium" value={this.state.utmMedium} />
+                      <input type="hidden" id="utmCampaign" name="utmCampaign" value={this.state.utmCampaign} />
                       <div className="col-sm-6 form-group  ">
                           <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" autoComplete="false" required/>
                       </div>
@@ -476,6 +515,9 @@ class Contacts extends React.Component {
                     <div className="container">
                       <div className="form-row">
                       <input type="hidden" name="form-name" value="LandOwner" />
+                      <input type="hidden" id="utmSource" name="utmSource" value={this.state.utmSource} />
+                      <input type="hidden" id="utmMedium" name="utmMedium" value={this.state.utmMedium} />
+                      <input type="hidden" id="utmCampaign" name="utmCampaign" value={this.state.utmCampaign} />
                       <div className="col-sm-6 form-group  ">
                             <input type="text" className="form-control" id="company" placeholder="Company*" name="company-name" autoComplete="false" required/>
                         </div>
