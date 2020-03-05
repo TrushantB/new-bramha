@@ -7,6 +7,7 @@ import { graphql, Link } from 'gatsby'
 class CompletedProjects extends React.Component {
     render(){
         const completedData = this.props.data.allPrismicCommercial.edges[0].node.data;
+        console.log('completedData', completedData);
         return(
         <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
             <SEO title="Completed Projects"/>
@@ -17,9 +18,7 @@ class CompletedProjects extends React.Component {
             <div className="row  mr-0">
                 <div className="col-12">
                 <div className="main-paragraph"> 
-                    <p>
-                      {completedData.completed_project_description.text}
-                    </p>
+                    <p dangerouslySetInnerHTML={{__html:completedData.completed_project_description.html }} />
                 </div>  
                 </div>
             </div>
@@ -84,7 +83,7 @@ export const completedProjects = graphql`{
           node{
             data{
               completed_project_description{
-                text
+                html
               }
               completed_projects{
                 completed_links{

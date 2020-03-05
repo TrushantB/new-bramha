@@ -17,9 +17,7 @@ class CompletedProjects extends React.Component {
             <div className="row  mr-0">
                 <div className="col-12">
                 <div className="main-paragraph"> 
-                    <p>
-                        {completedData.completed_description.text}
-                    </p>
+                    <p dangerouslySetInnerHTML={{__html:completedData.completed_description.html }}/>
                 </div>  
                 </div>
             </div>
@@ -85,7 +83,7 @@ export const completedProjects = graphql`{
                 uid
                 data {
                     completed_description {
-                        text
+                        html
                     }
                     completed_project {
                         completed_links {
@@ -93,9 +91,6 @@ export const completedProjects = graphql`{
                                 uid
                                 data {
                                     title {
-                                        text
-                                    }
-                                    description {
                                         text
                                     }
                                     flat_bhk {

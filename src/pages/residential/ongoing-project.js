@@ -117,9 +117,7 @@ export default class OngoingResidential extends React.Component {
                 </div>
                 <div className="row  mr-0">
                   <div className="col-12">
-                    <div className="main-paragraph">
-                      {item.node.data.description.text}
-                    </div>   
+                    <div className="main-paragraph" dangerouslySetInnerHTML={{__html:item.node.data.description.html }} />
                   </div>
                 </div>
               </section>
@@ -233,7 +231,7 @@ export const ongoingResidentialPage = graphql` {
             text
           }
           description {
-            text
+            html
           }
           looking_for_more{
             text
@@ -254,44 +252,6 @@ export const ongoingResidentialPage = graphql` {
                   }
                   banner{
                     image{
-                      localFile {
-                        childImageSharp {
-                          fluid(maxWidth: 1150) {
-                            ...GatsbyImageSharpFluid
-                          }
-                        }
-                      }
-                    }
-                  }
-                  flat_bhk {
-                    text
-                  }
-                  flat_address {
-                    text
-                  }
-                }
-              }
-            }
-          }
-            completed_description {
-              text
-            }
-            completed_project {
-              completed_links {
-                uid
-                document {
-                  data {
-                    title {
-                    text
-                  }
-                  thumbnail {
-                   url
-                   mobile{
-                     url
-                   }
-                  }
-                  banner {
-                    image {
                       localFile {
                         childImageSharp {
                           fluid(maxWidth: 1150) {
