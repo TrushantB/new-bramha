@@ -254,9 +254,6 @@ export const leisurePage = graphql`
       thumbnail {
         url
       }
-      photo_gallery {
-        text
-      }
       showcase {
         image1 {
           localFile {
@@ -270,14 +267,8 @@ export const leisurePage = graphql`
         }
         caption
       }
-      floor_plans1 {
-        text
-      }
       floor_plans {
         title1 {
-          text
-        }
-        short_description1 {
           text
         }
         image1 {
@@ -293,9 +284,6 @@ export const leisurePage = graphql`
       }
       amenities1 {
         text
-      }
-      amenities_banner {
-        url
       }
       amenities {
         title1 {
