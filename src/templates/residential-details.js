@@ -883,9 +883,6 @@ export const verticalViewData = graphql`
         text
       }
       showcase {
-        title1 {
-          text
-        }
         image1 {
           localFile {
             childImageSharp {
