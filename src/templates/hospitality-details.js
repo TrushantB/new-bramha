@@ -120,9 +120,7 @@ class HospitalityDetails extends React.Component {
               </div>
               <div className="row">
                 <div className="col-12 d-flex d-sm-block flex-wrap justify-content-end">
-                  <p className="mb-4">
-                    {hospitalityData.data.description.text}
-                  </p>
+                  <p className="mb-4" dangerouslySetInnerHTML={{__html:hospitalityData.data.description.html }}/>
                   {/* <a href="#" className="d-flex justify-content-between align-items-center btn-tertiary hospitality-viewmore">
                     <span> View Website </span> 
                     <i className="fas fa-arrow-right"></i>
@@ -231,7 +229,7 @@ export const hospitalityPage = graphql`
         text
       }
       description {
-        text
+        html
       }
       phase {
         title1 {

@@ -19,9 +19,7 @@ class KnoweldgeHub extends React.Component {
          <div className="row mr-0">
           <div className="col-12 knoweldge-hub-title">
             <div className="main-paragraph ">
-              <p className="m-0">
-                {knowledgeData.description.text}
-              </p>
+              <p className="m-0" dangerouslySetInnerHTML={{__html:knowledgeData.description.html }}/>
             </div>
           </div>
          </div>
@@ -154,7 +152,7 @@ export const knowledgePage = graphql` {
          text
       }
       description {
-        text
+        html
       }
       knowledge_topics {
         topics {

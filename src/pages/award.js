@@ -16,9 +16,7 @@ class Award extends React.Component {
                         </div>
                         <div className="row mr-0">
                             <div className="col-12">
-                            <p className="main-paragraph mb-0">
-                                {awardData.short_description.text}
-                            </p>   
+                            <p className="main-paragraph mb-0" dangerouslySetInnerHTML={{__html:awardData.short_description.html }} />
                             </div>
                         </div>
                     </section>
@@ -67,7 +65,7 @@ export const awardPage = graphql`{
                 text
             }
             short_description {
-                text
+                html
             }
             awards {
                 title1 {

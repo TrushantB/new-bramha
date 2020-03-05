@@ -19,9 +19,7 @@ class LeisureClub extends React.Component {
           <div className="row  mr-0">
             <div className="col-12">
               <div className="main-paragraph"> 
-                <p>
-                  {leisureData.description.text}
-                </p>  
+                <p dangerouslySetInnerHTML={{__html:leisureData.description.html }} />
               </div>  
             </div>
           </div>
@@ -147,7 +145,7 @@ export const leisurePage = graphql` {
             text
           }
           description {
-            text
+            html
           }
           all_verticals {
             verticals {

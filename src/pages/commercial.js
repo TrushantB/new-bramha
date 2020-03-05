@@ -75,9 +75,7 @@ class Commercial extends React.Component {
           <div className="row  mr-0">
             <div className="col-12">
               <div className="main-paragraph"> 
-                <p>
-                  {commercialData.description.text}
-                </p>
+                <p dangerouslySetInnerHTML={{__html:commercialData.description.html }} />
               </div>  
             </div>
           </div>
@@ -93,7 +91,7 @@ class Commercial extends React.Component {
                         return(
                           <div className="col-md-6 col-lg-4 col-sm-12 p-0 pl-sm-3 pr-sm-3" key={index}>
                             <Link to={`commercial/${item2.verticals.uid}`}>
-                              <div className="residences-card position-relative">
+                              <div className="residences-card position-r elative">
                                 <div className="residences-img ">
                                   <picture>
                                     <source media="(min-width: 581px)" srcSet={item.data.thumbnail.url}/>
@@ -133,8 +131,7 @@ class Commercial extends React.Component {
             <div className="listing-heading d-flex align-items-center">
               <h4 className="text-uppercase heading mb-0">Completed Projects</h4>
             </div>
-            <p className="text-left d-none d-sm-block">{commercialData.completed_project_description.text}
-            </p>
+            <p className="text-left d-none d-sm-block" dangerouslySetInnerHTML={{__html:commercialData.completed_project_description.html }} />
             <Slider  {...settings}>
               {  commercialData.completed_projects.map((item, index)=>{
                 return(
@@ -205,7 +202,7 @@ export const commercialPageData = graphql` {
             text
           }
           description {
-            text
+            html
           }
           banner {
             url
@@ -243,7 +240,7 @@ export const commercialPageData = graphql` {
             }
           }
         completed_project_description{
-          text
+          html
         }
         completed_projects{
           completed_links{

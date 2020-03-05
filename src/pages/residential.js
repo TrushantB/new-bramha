@@ -165,9 +165,7 @@ export default class Residential extends React.Component {
                 </div>
                 <div className="row  mr-0">
                   <div className="col-12">
-                    <div className="main-paragraph">
-                      {item.node.data.description.text}
-                    </div>   
+                    <div className="main-paragraph" dangerouslySetInnerHTML={{__html:item.node.data.description.html }}/>
                   </div>
                 </div>
               </section>
@@ -256,8 +254,7 @@ export default class Residential extends React.Component {
                     <div className="listing-heading d-flex align-items-center">
                       <h4 className="text-uppercase heading mb-0">Completed Projects</h4>
                     </div>
-                    <p className="text-left d-none d-sm-block">{residentialData[0].node.data.completed_description.text}
-                    </p>
+                    <p className="text-left d-none d-sm-block" dangerouslySetInnerHTML={{__html:residentialData[0].node.data.completed_description.html }} />
                     <Slider  {...settings}>
                       {this.state.completedProject.map((item, value) => {
                         return(
@@ -331,7 +328,7 @@ export const residentialPage = graphql` {
             text
           }
           description {
-            text
+            html
           }
           looking_for_more{
             text
@@ -372,7 +369,7 @@ export const residentialPage = graphql` {
             }
           }
             completed_description {
-              text
+              html
             }
             completed_project {
               completed_links {

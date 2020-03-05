@@ -177,9 +177,7 @@ class Careers extends React.Component {
             </div>
             <div className="row career-info-row">
               <div className="col-12">
-                <p className="text mb-0">
-                  {careerData.description.text}
-                </p>
+                <p className="text mb-0" dangerouslySetInnerHTML={{__html:careerData.description.html }} />
               </div>
             </div>
           </section>
@@ -368,7 +366,7 @@ export const careerPage = graphql` {
         text
       }
       description {
-        text
+        html
       }
       banner {
         url

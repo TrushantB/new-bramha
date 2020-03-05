@@ -52,9 +52,7 @@ class NRI extends React.Component {
          <div className="row mr-0">
           <div className="col-12 ">
             <div className="main-paragraph ">
-              <p className="m-0">
-              {nriData.description.text}
-              </p>
+              <p className="m-0" dangerouslySetInnerHTML={{__html:nriData.description.html }} />
             </div>
           </div>
          </div>
@@ -126,7 +124,7 @@ export const nriPage = graphql`{
         text
       }
       description {
-        text
+        html
       }
       banner {
         localFile {

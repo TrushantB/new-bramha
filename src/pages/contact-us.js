@@ -210,9 +210,7 @@ class Contacts extends React.Component {
             <div className="row mr-0">
               <div className="col-12">
                 <div className="main-paragraph">
-                  <p className=" m-0">
-                    {contactData.description.text}
-                  </p>
+                  <p className=" m-0" dangerouslySetInnerHTML={{__html:contactData.description.html }} />
                 </div>
               </div>
             </div>
@@ -575,7 +573,7 @@ export const contactPage = graphql`{
         text
       }
       description {
-        text
+        html
       }
       banner {
         url
