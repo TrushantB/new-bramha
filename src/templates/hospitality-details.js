@@ -239,9 +239,6 @@ export const hospitalityPage = graphql`
           text
         }
       }
-      short_description {
-        text
-      }
       flat_bhk {
         text
       }

@@ -239,9 +239,6 @@ export const leisurePage = graphql`
           text
         }
       }
-      short_description {
-        text
-      }
       flat_bhk {
         text
       }
