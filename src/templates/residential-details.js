@@ -859,6 +859,14 @@ export const verticalViewData = graphql`
       description {
         html
       }
+      phase {
+        title1 {
+          text
+        }
+        description1 {
+          text
+        }
+      }
       short_description {
         text
       }
@@ -875,6 +883,9 @@ export const verticalViewData = graphql`
         text
       }
       showcase {
+        title1 {
+          text
+        }
         image1 {
           localFile {
             childImageSharp {
@@ -937,7 +948,7 @@ export const verticalViewData = graphql`
       }
       amenities {
         title1 {
-          text
+            text
         }
         description1 {
           text

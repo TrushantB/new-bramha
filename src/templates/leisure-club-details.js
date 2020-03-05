@@ -233,7 +233,14 @@ export const leisurePage = graphql`
       description {
         text
       }
-      
+      phase {
+        title1 {
+          text
+        }
+        description1 {
+          text
+        }
+      }
       short_description {
         text
       }
