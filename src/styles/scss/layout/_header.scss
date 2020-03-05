@@ -20,7 +20,7 @@
   }
 }
 .header-icons-wrapper{
-  width: 15%;
+  width: 12%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,7 +40,7 @@
   .whats-app-icon{
     cursor: pointer;
     span{
-      font-size:28px;
+      font-size:26px;
     }
     a{
       &:hover{
@@ -58,7 +58,7 @@
       text-align: center;
       span{
         &:before{
-          font-size:24px;
+          font-size:22px;
           color: #7f7f7f;
         }
       }

@@ -87,7 +87,7 @@ class IndexPage extends React.Component {
                 this.state.selectedVertical.gallery.map((item, index) => {
                   return(
                     <div key={index} className="banner-section">
-                      <Link to={`${this.state.verticalsName}/${item.image.alt}`}>
+                      <Link to={`${this.state.verticalsName}`}>
                         <picture>
                           <source media="(max-width: 581px)" srcSet={item.image.mobile.url}/>
                             {
@@ -160,14 +160,11 @@ export const pageDataResidential = graphql` {
         project_name
         image {
           url
-          alt
           mobile {
             url
-            alt
           }
           logo {
             url
-            alt
           }
         }
       }
@@ -186,13 +183,10 @@ export const pageDataResidential = graphql` {
         project_name
         image {
           url
-          alt
           mobile{
-            alt
             url
           }
           logo {
-            alt
             url
           }
         }
@@ -211,14 +205,11 @@ export const pageDataResidential = graphql` {
         project_name
         image {
           url
-          alt
           mobile{
             url
-            alt
           }
           logo {
             url
-            alt
           }
         }
       }
@@ -236,14 +227,11 @@ export const pageDataResidential = graphql` {
         project_name
         image {
           url
-          alt
           mobile{
             url
-            alt
           }
           logo {
             url
-            alt
           }
         }
       }

@@ -236,14 +236,6 @@ export const hospitalityPage = graphql`
       description {
         text
       }
-      phase {
-        title1 {
-          text
-        }
-        description1 {
-          text
-        }
-      }
       short_description {
         text
       }
@@ -261,21 +253,6 @@ export const hospitalityPage = graphql`
       }
       thumbnail {
         url
-      }
-      certificate {
-        title1 {
-          text
-        }
-        image {
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 1150, quality: 100) {
-                ...GatsbyImageSharpFluid
-                presentationWidth
-              }
-            }
-          }
-        }
       }
       photo_gallery {
         text
@@ -345,11 +322,6 @@ export const hospitalityPage = graphql`
               }
             }
           }
-        }
-      }
-      locate_us {
-        title1 {
-          text
         }
       }
     }

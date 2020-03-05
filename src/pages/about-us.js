@@ -32,7 +32,7 @@ class AboutUs extends React.Component {
       arrows:false,
       customPaging: i => (
         <div>
-          <div key={i}> {data.our_legacy.document[0].data.our_legacy[i].year}</div>
+          <div key={i}> {ourLegacy.data.our_legacy[i].year}</div>
         </div>
       ),
       beforeChange: (current, next) => this.setState({ activeSlide: next }),
@@ -40,7 +40,9 @@ class AboutUs extends React.Component {
       adaptiveHeight : true,
     };
     const data = this.props.data.prismicAboutus.data;
+    const ourLegacy = this.props.data.prismicOurLegacy;
     const verticalsData = this.props.data.prismicOurVerticals.data;
+    const mgntTeam = this.props.data.prismicManagementTeam;
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         {/* <p>This won't work at all {alert(this.props.location.pathname)}</p> */}
@@ -114,7 +116,7 @@ class AboutUs extends React.Component {
                 <div className="container-fluid container-md slider-container padding-sm-0">
                 <Slider {...settings}>
                     {
-                      data.our_legacy.document[0].data.our_legacy.map((item,value) => {
+                      ourLegacy.data.our_legacy.map((item,value) => {
                         return(
                           <div key={value} className="legacy-slide">
                             <picture>
@@ -217,19 +219,19 @@ class AboutUs extends React.Component {
             <div className="row management-team-sect about-sections">
               <div className="d-flex justify-content-center align-items-center flex-column section-title-wrapper w-100 ">
                 <h3 className="section-title text-center text-uppercase">
-                  {data.management_team.document[0].data.sub_title.text}
+                  {mgntTeam.data.sub_title.text}
                 </h3>
               </div>
               <div className="col-12 padding-sm-0">
                 <div className="management-card d-flex">
                   <div className="management-img-wrapper w-100">
-                    <Img fluid={data.management_team.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100 h-100"/>
+                    <Img fluid={mgntTeam.data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100 h-100"/>
                   </div>
                   <div className="management-card-body d-flex flex-column justify-content-around"> 
                     <p className="d-none d-md-block">
-                      {data.management_team.document[0].data.description.text}
+                      {mgntTeam.data.description.text}
                     </p>
-                    <Link to={data.management_team.uid} className="link-text management-card-link d-flex justify-content-between align-items-center">
+                    <Link to={mgntTeam.uid} className="link-text management-card-link d-flex justify-content-between align-items-center">
                       <span> Our Team </span> 
                       <i className="fas fa-arrow-right"></i>
                     </Link>
@@ -272,48 +274,31 @@ export const AboutPage = graphql` {
           text
         }
       }
+    }
+  }
 
-      our_legacy {
-        slug
-        document {
-          data {
-            our_legacy {
-              title {
-                text
-              }
-              image {
+      prismicOurLegacy {
+        data {
+          our_legacy {
+            image {
+              url
+              mobile {
                 url
-              	mobile{
-                  url
-                }
-              }
-              year
-              description {
-                text
               }
             }
-             banner {
-              localFile {
-                childImageSharp {
-                  fluid(maxWidth: 1150) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-            }
-            title {
+            year
+            description {
               text
             }
-            sub_title {
+            title {
               text
             }
           }
         }
       }
       
-      management_team {
-        uid
-        document {
+      prismicManagementTeam {
+          uid
           data {
             sub_title {
               text
@@ -332,9 +317,6 @@ export const AboutPage = graphql` {
             }
           }
         }
-      }
-    }
-  }
 
   prismicOurVerticals {
     data {

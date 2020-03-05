@@ -233,14 +233,7 @@ export const leisurePage = graphql`
       description {
         text
       }
-      phase {
-        title1 {
-          text
-        }
-        description1 {
-          text
-        }
-      }
+      
       short_description {
         text
       }
@@ -259,31 +252,10 @@ export const leisurePage = graphql`
       thumbnail {
         url
       }
-      certificate {
-        title1 {
-          text
-        }
-        image {
-          localFile {
-            childImageSharp {
-                fluid(maxWidth: 1150) {
-                    ...GatsbyImageSharpFluid
-                    presentationWidth
-                }
-            }
-          }
-        }
-      }
       photo_gallery {
         text
       }
       showcase {
-        title1 {
-          text
-        }
-        short_description1 {
-          text
-        }
         image1 {
           localFile {
             childImageSharp {
@@ -355,11 +327,6 @@ export const leisurePage = graphql`
                   }
               }
           }
-        }
-      }
-      locate_us {
-        title1 {
-          text
         }
       }
     }
