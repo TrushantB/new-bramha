@@ -14,7 +14,7 @@ class Commercial extends React.Component {
 
     }
   }
-  
+
   render(){
     let settings = {
       className: "project-carousel",
@@ -44,7 +44,7 @@ class Commercial extends React.Component {
         {
           breakpoint: 580,
           settings: {
-            
+
             centerMode: true,
             infinite: true,
             centerPadding: "60px",
@@ -70,13 +70,13 @@ class Commercial extends React.Component {
         <SEO title={commercialData.sub_title.text}/>
         <section className=" page-heading-section container container-sm-fluid bg-color">
           <div className="padding-block-60">
-            <h2 className="page-heading">{commercialData.sub_title.text}</h2> 
+            <h2 className="page-heading">{commercialData.sub_title.text}</h2>
           </div>
           <div className="row  mr-0">
             <div className="col-12">
-              <div className="main-paragraph"> 
+              <div className="main-paragraph">
                 <p dangerouslySetInnerHTML={{__html:commercialData.description.html }} />
-              </div>  
+              </div>
             </div>
           </div>
         </section>
@@ -91,7 +91,7 @@ class Commercial extends React.Component {
                         return(
                           <div className="col-md-6 col-lg-4 col-sm-12 p-0 pl-sm-3 pr-sm-3" key={index}>
                             <Link to={`commercial/${item2.verticals.uid}`}>
-                              <div className="residences-card position-r elative">
+                              <div className="residences-card position-relative">
                                 <div className="residences-img ">
                                   <picture>
                                     <source media="(min-width: 581px)" srcSet={item.data.thumbnail.url}/>
@@ -125,7 +125,7 @@ class Commercial extends React.Component {
               </div>
             </div>
           </div>
-      
+
         <section className="complete-project position-relative">
           <div className="container">
             <div className="listing-heading d-flex align-items-center">
@@ -135,7 +135,7 @@ class Commercial extends React.Component {
             <Slider  {...settings}>
               {  commercialData.completed_projects.map((item, index)=>{
                 return(
-                  <div className="row"  key={index}> 
+                  <div className="row"  key={index}>
                   <Link to={`commercial/${item.completed_links.uid}`} >
                     <div className="secondary-card position-relative ">
                       <div className="secondary-card-img image-ratio">
@@ -169,20 +169,20 @@ class Commercial extends React.Component {
         </section>
           <div className="view-all text-center mt-5 mt-sm-4 mb-5">
             <Link to="commercial/completed-projects/" className="btn-secondary">View All</Link>
-          </div> 
+          </div>
           <section className="give-details text-center">
-            <div className="container">    
-              <h4 className="text-uppercase text-center section-title">Looking for more option?</h4>  
+            <div className="container">
+              <h4 className="text-uppercase text-center section-title">Looking for more option?</h4>
               <p>
                 Tell us your requirement and we will let you know when there is a match.
               </p>
               <div className="sumbit text-center mt-sm-0 mt-4">
                 <button type="submit" className="btn-secondary">Give Details</button>
-              </div> 
+              </div>
             </div>
           </section>
         </section>
-        <Footer/>   
+        <Footer/>
       </Layout>
     )
   }
