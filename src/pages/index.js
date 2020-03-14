@@ -29,19 +29,19 @@ class IndexPage extends React.Component {
     // const leisureData  = this.props.data.prismicLeisureClub;
 
     // setTimeout(function(){
-    //   scrollHandle.handleOurVerticals(commercialData, 'commercial') 
+    //   scrollHandle.handleOurVerticals(commercialData, 'commercial')
     //   }, 12000);
 
     // setTimeout(function(){
-    //   scrollHandle.handleOurVerticals(hospitalityData, 'hospitality') 
+    //   scrollHandle.handleOurVerticals(hospitalityData, 'hospitality')
     //   }, 24000);
-  
+
     // setTimeout(function(){
-    //   scrollHandle.handleOurVerticals(leisureData, 'leisure-club') 
+    //   scrollHandle.handleOurVerticals(leisureData, 'leisure-club')
     //   }, 36000);
-    
+
     // setTimeout(function(){
-    //   scrollHandle.handleOurVerticals(residentialData,'residential') 
+    //   scrollHandle.handleOurVerticals(residentialData,'residential')
     //   }, 48000);
   }
 
@@ -62,22 +62,22 @@ class IndexPage extends React.Component {
       autoplaySpeed: 7000,
       slidesToShow: 1,
       arrows: true,
-      slidesToScroll: 1  
+      slidesToScroll: 1
     };
-    
-  
+
+
     return (
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title="Home"/>
         <div className="home-slider">
           {
-            this.state.selectedVertical && 
+            this.state.selectedVertical &&
             <section>
             {/* <picture>
               <source media="(max-width: 581px)" srcSet={this.state.selectedVertical.banner.mobile.url}/>
             {
              <img src={this.state.selectedVertical.banner.url} className="banner-img" style={{width:'100%'}} />
-            }  
+            }
             </picture>
             <div className="banner-caption">
               <img src={this.state.selectedVertical.banner_caption_logo.localFile.childImageSharp.fluid.src}/>
@@ -92,21 +92,23 @@ class IndexPage extends React.Component {
                           <source media="(max-width: 581px)" srcSet={item.image.mobile.url}/>
                             {
                             <img src={item.image.url} className="banner-img" style={{width:'100%'}} />
-                            }  
+                            }
                         </picture>
                         {/* <div className="banner-caption">
                           <img src={item.image.logo.url}/>
                         </div> */}
-                        <div className="banner-caption-1">
-                          <h3 className="section-title text-center"> {item.project_name} </h3>
-                        </div>
+                        {item.project_name &&
+                          <div className="banner-caption-1">
+                            <h3 className="section-title text-center"> {item.project_name} </h3>
+                          </div>
+                        }
                       </Link>
                     </div>
                   )
                 })
               }
             </Slider>
-          </section>  
+          </section>
           }
         </div>
 
@@ -114,7 +116,7 @@ class IndexPage extends React.Component {
           <footer className="our-verticals-tabs d-flex">
             <div className="container d-flex">
               <ul className="p-0 d-flex w-100 justify-content-around list-style-none text-uppercase nav nav-tabs border-0" id="myTab" role="tablist">
-                
+
                 <li className={`nav-item d-flex align-items-center ${this.state.selectedVertical==residentialData.data?'active':''}`} onClick={()=>this.handleOurVerticals(residentialData,'residential')}>
                   <div className="tab d-flex align-items-center">
                   <span className="icon-Residential_inactive icon"></span>
@@ -157,7 +159,6 @@ export const pageDataResidential = graphql` {
   prismicResidential {
     data {
       gallery {
-        project_name
         image {
           url
           mobile {
@@ -170,7 +171,7 @@ export const pageDataResidential = graphql` {
       }
     }
   }
-  
+
   prismicCommercial {
     data {
       banner {
@@ -180,7 +181,6 @@ export const pageDataResidential = graphql` {
         }
       }
       gallery {
-        project_name
         image {
           url
           mobile{
@@ -202,7 +202,6 @@ export const pageDataResidential = graphql` {
         }
       }
       gallery {
-        project_name
         image {
           url
           mobile{
@@ -224,7 +223,6 @@ export const pageDataResidential = graphql` {
         }
       }
       gallery {
-        project_name
         image {
           url
           mobile{
