@@ -98,11 +98,6 @@ class IndexPage extends React.Component {
                         {/* <div className="banner-caption">
                           <img src={item.image.logo.url}/>
                         </div> */}
-                        {item.project_name &&
-                          <div className="banner-caption-1">
-                            <h3 className="section-title text-center"> {item.project_name} </h3>
-                          </div>
-                        }
                       </Link>
                     </div>
                   )
