@@ -355,8 +355,15 @@ body {
     padding: 16px 8px;
   }
   .our-verticals-tabs {
+    height: 52px;
     .container {
       max-width: 600px;
+    }
+  }
+  .home-slider {
+    .slick-slide,
+    .banner-section {
+      height: calc(100vh - 113px);
     }
   }
   .our-verticals-tabs .tab span {
@@ -422,6 +429,7 @@ body {
       }
       span {
         padding-left: 4px;
+        margin: 0;
       }
       &:hover {
         &::before {

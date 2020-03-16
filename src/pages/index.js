@@ -155,7 +155,6 @@ export const pageDataResidential = graphql` {
   prismicResidential {
     data {
       gallery {
-        project_name
         project_url
         image {
           url

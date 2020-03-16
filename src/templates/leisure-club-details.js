@@ -12,7 +12,7 @@ class LeisureDetails extends React.Component {
   state = {
     activeSlide:null,
     photoIndex: 0,
-    isOpen: false, 
+    isOpen: false,
   };
   scrollWin() {
     var offsetHeight = document.querySelector('.banner-section').offsetHeight;
@@ -39,7 +39,7 @@ class LeisureDetails extends React.Component {
             centerMode: true,
             centerPadding: '100px',
             slidesToShow: 1,
-            
+
         }
         },
         {
@@ -70,7 +70,7 @@ class LeisureDetails extends React.Component {
         }
         }
     ]
-    }; 
+    };
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title={leisureData.data.title.text}/>
@@ -82,10 +82,10 @@ class LeisureDetails extends React.Component {
                 <Img fluid={leisureData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img"/>
               </picture>
               <div className="scroll-downs">
-                <div onClick={this.scrollWin} className="mousey">
+                <button onClick={this.scrollWin} className="mousey">
                   {/* <div className=""></div> */}
                 <span className="icon-arrow-down d-inline-block scroller"></span>
-                </div>
+                </button>
               </div>
               {/* <Img fluid={leisureData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
             </section>
@@ -109,15 +109,15 @@ class LeisureDetails extends React.Component {
                   </div>
                 </div>
               <div className="padding-block-60">
-                <h2 className="page-heading text-uppercase"> 
-                  {leisureData.data.heading.text}     
-                </h2> 
+                <h2 className="page-heading text-uppercase">
+                  {leisureData.data.heading.text}
+                </h2>
               </div>
               <div className="row">
                 <div className="col-12 d-flex d-sm-block flex-wrap justify-content-end">
                   <p className="mb-4" dangerouslySetInnerHTML={{__html:leisureData.data.description.html }}/>
                   {/* <a href="#" className="d-flex justify-content-between align-items-center btn-tertiary hospitality-viewmore">
-                    <span> View Website </span> 
+                    <span> View Website </span>
                     <i className="fas fa-arrow-right"></i>
                   </a> */}
                 </div>
@@ -196,7 +196,7 @@ class LeisureDetails extends React.Component {
 }
 export default LeisureDetails;
 
-export const leisurePage = graphql` 
+export const leisurePage = graphql`
   query leisureData($uid: String!) {
   prismicOurVerticalsArticle(uid: { eq: $uid }) {
     uid
