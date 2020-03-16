@@ -85,9 +85,10 @@ class IndexPage extends React.Component {
             <Slider {...settings}>
               {
                 this.state.selectedVertical.gallery.map((item, index) => {
+                  console.log(item);
                   return(
                     <div key={index} className="banner-section">
-                      <Link to={`${this.state.verticalsName}`}>
+                      <Link to={`${this.state.verticalsName}/${item.project_url}`}>
                         <picture>
                           <source media="(max-width: 581px)" srcSet={item.image.mobile.url}/>
                             {
@@ -159,6 +160,8 @@ export const pageDataResidential = graphql` {
   prismicResidential {
     data {
       gallery {
+        project_name
+        project_url
         image {
           url
           mobile {
@@ -181,6 +184,8 @@ export const pageDataResidential = graphql` {
         }
       }
       gallery {
+        project_name
+        project_url
         image {
           url
           mobile{
@@ -202,6 +207,8 @@ export const pageDataResidential = graphql` {
         }
       }
       gallery {
+        project_name
+        project_url
         image {
           url
           mobile{
@@ -223,6 +230,8 @@ export const pageDataResidential = graphql` {
         }
       }
       gallery {
+        project_name
+        project_url
         image {
           url
           mobile{
