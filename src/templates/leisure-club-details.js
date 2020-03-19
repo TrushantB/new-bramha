@@ -81,6 +81,7 @@ class LeisureDetails extends React.Component {
                 <source media="(min-width: 581px)" srcSet={leisureData.data.banner[0].image.localFile.childImageSharp.url}/>
                 <Img fluid={leisureData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img"/>
               </picture>
+
               <div className="scroll-downs">
                 <button onClick={this.scrollWin} className="mousey">
                   {/* <div className=""></div> */}
