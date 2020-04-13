@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import React,{ useState } from "react"
 import '../styles/css/custom.css';
 import '../styles/scss/main.scss';
+import '../styles/css/ios_vh_fix.css';
 import img1 from '../images/logo.png';
 import $ from 'jquery';
 const Header = ({ siteTitle ,pathname}) => {
@@ -29,7 +30,7 @@ return(
   </Link>
   <div className="header-icons-wrapper">
   <div className="whats-app-icon">
-    <a href="https://wa.me/" target="_blank" className="d-flex align-items-center justify-content-center"> 
+    <a href="https://wa.me/" target="_blank" className="d-flex align-items-center justify-content-center">
     <span className="icon-icons8-whatsapp">
       <span className="path1"></span>
       <span className="path2"></span>
@@ -46,12 +47,12 @@ return(
       Menu <span></span>
     </a>
   </div>
-  {contactFlag && 
+  {contactFlag &&
         <div className="drawer-field" id="navigation1" >
           <div className="hide text-right" onClick={contactFlagTrueFalse}>
             <i className="fas fa-times"></i>
           </div>
-          {/* <div className="contact-feild"> 
+          {/* <div className="contact-feild">
             <i className="far fa-user-circle"></i>
             <h4 className="text-center mb-3 section-title">  Direct call to our consultant</h4>
             <p>
@@ -83,7 +84,7 @@ return(
           </ul>
           <div className="tab-content" id="myTabContent">
             <div className="tab-pane fade show active" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                <div className="contact-feild"> 
+                <div className="contact-feild">
                   <i className="far fa-user-circle"></i>
                   <h4 className="text-center mb-3 section-title">  Direct call to our consultant</h4>
                   <p>
@@ -128,8 +129,8 @@ return(
                         </div>
                         <div className="sumbit text-center ">
                           <button type="submit" className="btn-secondary">Submit</button>
-                        </div>  
-                      </div> 
+                        </div>
+                      </div>
                     </div>
                 </form>
               </div>
@@ -144,7 +145,7 @@ return(
           </div>
         </div>
       }
-      {/* {mailFlag && 
+      {/* {mailFlag &&
       <div className="drawer-field" id="navigation" >
         <div className="hide text-right" onClick={mailFlagTrueFalse}>
           <i className="fas fa-times"></i>
@@ -177,7 +178,7 @@ return(
                       </select>
                     </div>
 
-                         
+
 
                     <div className="col-sm-12 form-group  ">
                       <input type="text"  id="city" placeholder="City" name="city" required/>
@@ -188,14 +189,14 @@ return(
                   </div>
                   <div className="sumbit text-center ">
                     <button type="submit" className="btn-secondary">Submit</button>
-                  </div>  
-                </div> 
+                  </div>
+                </div>
               </div>
           </form>
         </div>
       </div>
       }
-      {chatFlag && 
+      {chatFlag &&
       <div className="drawer-field" id="navigation" >
         <div className="hide text-right" onClick={chatFlagTrueFalse}>
           <i className="fas fa-times"></i>
