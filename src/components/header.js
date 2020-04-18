@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import React,{ useState } from "react"
 import '../styles/css/custom.css';
 import '../styles/scss/main.scss';
-import '../styles/css/ios_vh_fix.css';
 import img1 from '../images/logo.png';
 import $ from 'jquery';
 const Header = ({ siteTitle ,pathname}) => {

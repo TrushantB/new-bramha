@@ -29,6 +29,7 @@
     "gatsby-source-prismic": "^2.3.0-alpha.3",
     "gatsby-transformer-remark": "^2.6.50",
     "gatsby-transformer-sharp": "^2.3.6",
+    "ios-inner-height": "^1.1.1",
     "jquery": "^3.4.1",
     "lazysizes": "^5.2.0",
     "node-sass": "^4.13.1",

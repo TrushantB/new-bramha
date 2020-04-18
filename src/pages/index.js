@@ -3,6 +3,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Slider from 'react-slick';
 import { graphql, Link } from "gatsby";
+import innerHeight from 'ios-inner-height';
 
 class IndexPage extends React.Component {
   constructor() {
@@ -64,6 +65,10 @@ class IndexPage extends React.Component {
       arrows: true,
       slidesToScroll: 1
     };
+    const bannerHeight =  {
+      height: innerHeight() - 120,
+      overflow: 'hidden'
+    };
 
 
     return (
@@ -82,17 +87,19 @@ class IndexPage extends React.Component {
             <div className="banner-caption">
               <img src={this.state.selectedVertical.banner_caption_logo.localFile.childImageSharp.fluid.src}/>
             </div> */}
+              <div style={bannerHeight}>
             <Slider {...settings}>
               {
                 this.state.selectedVertical.gallery.map((item, index) => {
                   console.log(item);
+
                   return(
                     <div key={index} className="banner-section fullheight">
                       <Link to={`${this.state.verticalsName}/${item.project_url}`}>
                         <picture>
                           <source media="(max-width: 581px)" srcSet={item.image.mobile.url}/>
                             {
-                            <img src={item.image.url} className="banner-img" style={{width:'100%'}} />
+                              <img src={item.image.url} className="banner-img" style={{width:'100%'}} />
                             }
                         </picture>
                         {/* <div className="banner-caption">
@@ -104,6 +111,7 @@ class IndexPage extends React.Component {
                 })
               }
             </Slider>
+              </div>
           </section>
           }
         </div>
