@@ -76,7 +76,7 @@ class IndexPage extends React.Component {
         <SEO title="Home"/>
         {innerHeight()}
          <br />
-        {bannerHeight}
+        {bannerHeight.height}
         <div className="home-slider">
           {
             this.state.selectedVertical &&
