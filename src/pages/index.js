@@ -3,8 +3,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Slider from 'react-slick';
 import { graphql, Link } from "gatsby";
-import innerHeight from 'ios-inner-height';
-
+import Div100vh from 'react-div-100vh';
 class IndexPage extends React.Component {
   constructor() {
     super();
@@ -65,22 +64,13 @@ class IndexPage extends React.Component {
       arrows: true,
       slidesToScroll: 1
     };
-    const bannerHeight =  {
-      height: innerHeight() - 120,
-      overflow: 'hidden'
-    };
-
-
     return (
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title="Home"/>
-        {innerHeight()}
-         <br />
-        {bannerHeight.height}
         <div className="home-slider">
           {
             this.state.selectedVertical &&
-            <section>
+            <Div100vh style={{ height: 'calc(100rvh - 120px)', overflow: 'hidden'}}>
             {/* <picture>
               <source media="(max-width: 581px)" srcSet={this.state.selectedVertical.banner.mobile.url}/>
             {
@@ -90,12 +80,9 @@ class IndexPage extends React.Component {
             <div className="banner-caption">
               <img src={this.state.selectedVertical.banner_caption_logo.localFile.childImageSharp.fluid.src}/>
             </div> */}
-              <div style={bannerHeight}>
             <Slider {...settings}>
               {
                 this.state.selectedVertical.gallery.map((item, index) => {
-                  console.log(item);
-
                   return(
                     <div key={index} className="banner-section fullheight">
                       <Link to={`${this.state.verticalsName}/${item.project_url}`}>
@@ -114,8 +101,7 @@ class IndexPage extends React.Component {
                 })
               }
             </Slider>
-              </div>
-          </section>
+          </Div100vh>
           }
         </div>
 

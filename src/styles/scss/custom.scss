@@ -1,55 +1,49 @@
-
 /*================================
 -------- Common Basic css start
-================================*/ 
-body {
-    padding-top: 60px;
-    background: red !important;
-}
+================================*/
 // -------- Input Box Css start Here ----------
 
-.page-heading{
-    border-left: 10px solid theme-color("tertiary");
-    font-family: 'Graphik', sans-serif;
-    font-weight: 400;
-    padding:4px 12px;
-    opacity: 0.8;
-    font-size:30px;
-    color: theme-color("text-black");
-    align-items: center;
-    display: flex;
-   
+.page-heading {
+  border-left: 10px solid theme-color("tertiary");
+  font-family: "Graphik", sans-serif;
+  font-weight: 400;
+  padding: 4px 12px;
+  opacity: 0.8;
+  font-size: 30px;
+  color: theme-color("text-black");
+  align-items: center;
+  display: flex;
 }
-.section-title{
-    font-family: georgia;
-    font-size: 20px;
-    font-weight: 500;
-    letter-spacing: -0.44px;
-    color: theme-color("tertiary");
-    text-align:left;
-    &::after{
-        content: "";
-        border-bottom: 2px solid theme-color("primary");
-        padding: 8px 0;
-        width: 85px;
-        display: block;
-    }
+.section-title {
+  font-family: georgia;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.44px;
+  color: theme-color("tertiary");
+  text-align: left;
+  &::after {
+    content: "";
+    border-bottom: 2px solid theme-color("primary");
+    padding: 8px 0;
+    width: 85px;
+    display: block;
+  }
 }
-.section-title-wrapper{
-    padding-bottom:48px;
+.section-title-wrapper {
+  padding-bottom: 48px;
 }
-.inner-section-title{
-    font-family: georgia;
-    font-size: 20px;
-    font-weight: 500;
-    letter-spacing: -0.4px;
-    color: theme-color("headig-primary");
-    text-align:left;
-    color: #333;
-    text-transform: capitalize;
+.inner-section-title {
+  font-family: georgia;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.4px;
+  color: theme-color("headig-primary");
+  text-align: left;
+  color: #333;
+  text-transform: capitalize;
 }
-.section-title-secondary{
-  font-family: 'Graphik', sans-serif;
+.section-title-secondary {
+  font-family: "Graphik", sans-serif;
   font-size: 14px;
   font-weight: 500;
   font-stretch: normal;
@@ -60,22 +54,22 @@ body {
 }
 
 //Page heading
-.page-heading-section{
-    .main-description{
-        padding: 0 16px 32px;
-    }
+.page-heading-section {
+  .main-description {
+    padding: 0 16px 32px;
+  }
 }
-.pages{
-    margin-top: 28px;
+.pages {
+  margin-top: 28px;
 }
 
 // ------------- Award Start Here ----------------
-.award-recogniation{
-  .title{
-      h2{
-        @include border-left;
-        font-weight: 400;
-      }
+.award-recogniation {
+  .title {
+    h2 {
+      @include border-left;
+      font-weight: 400;
+    }
   }
 }
 
@@ -92,751 +86,746 @@ body {
 // --------- Residential Projects css start here ----------
 
 // -------------   Hospitality Projects Start Here ----------------
-    
+
 // ------------- Media Query Start Here ----------------
-@media (max-width:1200px){
-         // slider
-         .slider-img{
-            margin: 42px 44px 32px;
-        }
-    // Hospitality project
-    .hospitality-projects{
-        margin-bottom: 0;
-     }
-    
-    // Residence Card
-    .residences-card {
-        .rectangle{
-            width: 90%
-        }
-     }
-     .residential-projects{
-        .projects{
-            select{
-                margin-bottom: 16px;
-            }
-        }
-     }
-        .career-tabs{
-            .btn-tertiary{
-                padding:16px 8px;
-            }
-        }
-        .residential-projects{
-            .complete-project{
-                margin-bottom:100px ;
-            }
-            .slick-prev {
-                left: -31px;
-            }
-            .slick-next {
-                right: -31px;
-            }
-        }
-        //slider
-        .center{
-            .slick-next{
-                right: 28%;
-                bottom: -51px;
-            }
-            .slick-prev{
-                bottom: -66px;
-                right: 19%;
-            }
-        }
+@media (max-width: 1200px) {
+  // slider
+  .slider-img {
+    margin: 42px 44px 32px;
+  }
+  // Hospitality project
+  .hospitality-projects {
+    margin-bottom: 0;
+  }
+
+  // Residence Card
+  .residences-card {
+    .rectangle {
+      width: 90%;
     }
-    @media (max-width:992px){
-        //------- about us ----
-        .management-card .management-card-body {
-            padding: 20px 38px;
-        }
-        // slider
-        // .slider-img{
-        //     margin: 42px 43px 32px;
-        // }
-        // Card Primary
-        .card-primary{
-            .card-primary-img{
-               img{
-                height: 210px;
-                object-fit: cover;
-               }
-           }
-        }  
-        
-        .knowledge-hub{
-            .mt-100{
-                margin-top: 0;
-            }
-            .heading{
-                margin-top: 80px;
-            }
-            .buyer-tips-banner-img{
-                .buyer-tips-box{
-                    width: 535px;
-                    height: 180px;
-                    bottom: 40px;
-                    left: 48px;
-                    padding: 15px 30px;    
-                }
-            }
-    
-         }
-            .guidelines-nris {
-                .guidelines-nris-img{
-                    img{
-                        height: 390px;
-                        object-fit: cover;
-                    }
-                }
-            }
-    // Hospitality project
-    .hospitality-projects{
-        margin-bottom: 0;
-     }
-    
-    // Residence Card
-    .residences-card {
-        .rectangle{
-            width: 90%;   
-        }
+  }
+  .residential-projects {
+    .projects {
+      select {
+        margin-bottom: 16px;
       }
-      //------------- Residencial detail page ---------------
-        #amenities{
-            .container{
-                overflow-x: scroll;
-                &::-webkit-scrollbar {
-                    height:6px;
-                }
-                &::-webkit-scrollbar-thumb {
-                    background: theme-color(border-color);
-                    border-radius:30px;
-                }
-                &::-webkit-scrollbar-thumb:hover {
-                    background: theme-color(text-secondary); 
-                }
-            }
-        }
-        .amenities-inner-wrapper{
-            width:160%;
-        }
+    }
+  }
+  .career-tabs {
+    .btn-tertiary {
+      padding: 16px 8px;
+    }
+  }
+  .residential-projects {
+    .complete-project {
+      margin-bottom: 100px;
+    }
+    .slick-prev {
+      left: -31px;
+    }
+    .slick-next {
+      right: -31px;
+    }
+  }
   //slider
-    .center{
-        .slick-next{
-            right: 22%;
-            bottom: -51px;
-        }
-        .slick-prev{
-            bottom: -64px;
-            right: 12%;
-        }
-     }    
- }
-
-    @media (max-width:767px){
-        // slider
-         .slider-img{
-            margin: 20px 28px 16px;
-         }
-        .pages{
-            margin-top: 12px;
-        }
-        .our-verticals-tabs .nav-item{
-            padding:16px 8px;
-        }
-        .contact-section {
-            .locate-us{
-                margin-bottom: 50px;
-            }
-            form{
-                .customer {
-                    select{
-                        flex-basis: 84%;
-                    }
-                }
-            } 
-            .contact-details{
-                text-align: center;
-                .sub-heading {
-                    display: block;
-                    margin-bottom: 16px ;
-                }
-                .description{
-                    margin: 16px 0  40px 0;
-                }
-            }
-            .contact-details{
-                text-align: center;
-                .section-title::after{
-                    content: "";
-                    margin: 0 auto;
-                }
-            }   
-        }
-
-        footer{
-            .copyright{
-                margin-top: 12px;
-            }
-        }
-        // Knowledge Hub
-        .knowledge-hub{
-            .mt-92{
-                margin-top: 0;
-            }
-            .heading{
-                margin-top: 60px;
-            }
-            .section-title{
-                margin-top: 0;
-            }
-            .knowledge-hub-heading{
-                .title{
-                    padding-top: 24px;
-                }
-            }
-           .buyer-tips-banner{
-               margin-bottom: 32px;
-               .container{
-                   padding: 0;
-               }
-               .buyer-tips-box{
-                   width: 100%;
-                   height: auto;
-                   left: 0;
-                   bottom: 0;
-                   padding: 20px 20px;
-                   .section-title,
-
-                   .know-more{
-                       align-self: flex-end;
-                       position: absolute;
-                       bottom: -34px;
-                   }
-               }
-           }
-           .guidelines-nris {
-               margin-top: 0;
-                .guidelines-nris-img{
-                img{
-                    height: auto;
-                    object-fit: cover;
-                    }
-               }
-            }
-            .buyer-tips-info{
-                .about-loan{
-                    margin-top: 24px;
-                }
-              }
-       } 
-    // Hospitality Project
-       .hospitality-projects{
-        .residences{
-            padding-bottom: 0;}
-            .residences-card{
-                margin-bottom: 140px;
-            }
-        }
-   .career-tabs{
-    .btn-wraper{
-        flex-basis: 23%;
+  .center {
+    .slick-next {
+      right: 28%;
+      bottom: -51px;
     }
-    .btn-wraper-big{
-        flex-basis: 30%;
+    .slick-prev {
+      bottom: -66px;
+      right: 19%;
     }
-    .btn-tertiary{
-        padding:16px 0;
-    }
+  }
 }
-   .about-sect-4{
-       height:auto !important;
-   }
-   .management-card{
-       height: 200px;
-   }
-       // Residence Card
-       .residences-card {
-        .rectangle{
-            width: 90%;
-            left: 10px;
+@media (max-width: 992px) {
+  //------- about us ----
+  .management-card .management-card-body {
+    padding: 20px 38px;
+  }
+  // slider
+  // .slider-img{
+  //     margin: 42px 43px 32px;
+  // }
+  // Card Primary
+  .card-primary {
+    .card-primary-img {
+      img {
+        height: 210px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .knowledge-hub {
+    .mt-100 {
+      margin-top: 0;
+    }
+    .heading {
+      margin-top: 80px;
+    }
+    .buyer-tips-banner-img {
+      .buyer-tips-box {
+        width: 535px;
+        height: 180px;
+        bottom: 40px;
+        left: 48px;
+        padding: 15px 30px;
+      }
+    }
+  }
+  .guidelines-nris {
+    .guidelines-nris-img {
+      img {
+        height: 390px;
+        object-fit: cover;
+      }
+    }
+  }
+  // Hospitality project
+  .hospitality-projects {
+    margin-bottom: 0;
+  }
+
+  // Residence Card
+  .residences-card {
+    .rectangle {
+      width: 90%;
+    }
+  }
+  //------------- Residencial detail page ---------------
+  #amenities {
+    .container {
+      overflow-x: scroll;
+      &::-webkit-scrollbar {
+        height: 6px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: theme-color(border-color);
+        border-radius: 30px;
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        background: theme-color(text-secondary);
+      }
+    }
+  }
+  .amenities-inner-wrapper {
+    width: 160%;
+  }
+  //slider
+  .center {
+    .slick-next {
+      right: 22%;
+      bottom: -51px;
+    }
+    .slick-prev {
+      bottom: -64px;
+      right: 12%;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  // slider
+  .slider-img {
+    margin: 20px 28px 16px;
+  }
+  .pages {
+    margin-top: 12px;
+  }
+  .our-verticals-tabs .nav-item {
+    padding: 16px 8px;
+  }
+  .contact-section {
+    .locate-us {
+      margin-bottom: 50px;
+    }
+    form {
+      .customer {
+        select {
+          flex-basis: 84%;
         }
       }
-
-      //------------- Residencial detail page ---------------
-    .nav-pills .nav-link, 
-    .nav-pills .nav-link.active{
-      padding: 10px 0;
     }
-    .amenities-inner-wrapper {
-        width: 200%;
-        .image-wrapper{
-            width: 100%;
-            display: flex;
-            align-items: center;
-        }
-    }
-    .amenities button {
-        flex: 1 140px;
-        margin: 8px 4px;
-    }
-      .residential-projects{
-        .complete-project {
-            .slick-slider{
-                margin-top: 28px;
-            }
-            .secondary-card {
-                margin: 0 15px;
-                .secondary-card-rectangle{
-                    width: 90%;
-                }
-            }
-             .slick-next,
-             .slick-prev{
-                 top: 180px;
-             }
-        }
+    .contact-details {
+      text-align: center;
+      .sub-heading {
+        display: block;
+        margin-bottom: 16px;
       }
-      .image-ratio{
-        .gatsby-image-wrapper{
-            padding-bottom: 133.33%;
-        }
+      .description {
+        margin: 16px 0 40px 0;
+      }
     }
-      //slider
-    .center{
-        .slick-next{
-            right: 26%;
-            bottom: -31px;
-        }
-        .slick-prev{
-            bottom: -40px;
-            right: 17%;
-        }
-     }
-}
-@media (max-width:580px){
-    .padding-sm-0{
-        padding:0 !important;
+    .contact-details {
+      text-align: center;
+      .section-title::after {
+        content: "";
+        margin: 0 auto;
+      }
     }
-    .navbar-collapse{
-        width:96%;
-    }
-    .bg-color {
-        margin-top: 0;
-        background: theme-color("bg-color");
-            .padding-block-60{
-                padding: 25px 0 25px 0;
-            }
-            .page-heading{
-                font-size: 24px;  
-                margin: 0;
-            }
-            .text{
-                padding: 0 15px;
-            }
-        }
-       .career-tabs{
-        .btn-wraper{
-            flex-basis: 23%;
-        }
-        .btn-wraper-big{
-            flex-basis: 30%;
-        }
-        .btn-tertiary{
-            padding:16px 0;
-        }
-    }
-       .about-sect-4{
-           height:auto !important;
-       }
-       .management-card{
-           height: 200px;
-       }  
-    }
+  }
 
-    @media (max-width:580px){
-        .navbar-collapse{
-            width:96%;
-        }
-        .bg-color {
-            margin-top: 0;
-            background: theme-color("bg-color");
-                .padding-block-60{
-                    padding: 25px 0 25px 0;
-                }
-                .page-heading{
-                    font-size: 24px;  
-                    margin:0;
-                }
-                .text{
-                    padding: 0 15px;
-                }
-            }
-        .our-verticals-tabs{
-          .nav-item{
-              padding:15px 0;
-          }
-        }
-        .tab{
-            font-size: 12px;
-            i{
-                display: none;
-            }
-        &::before{
-            content: '\f111';
-        }
-        }   
-        .contact-section{
-            .bg-color {
-                .form-control{
-                    flex: 75%;
-                }
-              
-            }
-            .contact-form-bg{
-                button{
-                    width: 100%;
-                    padding: 15px 0;
-                }
-                .form-row{
-                    .form-group{
-                        padding: 0;
-                    }
-                }
-               
-            }
-            .contact-details{
-                .section-title::after{
-                    content: "";
-                    margin: 0 auto;
-                }
-                i{
-                    display: block;
-                    margin-bottom: 12px;
-                }
-            }
-        }
-    //Knowledge Hub
-     .knowledge-hub{
-         margin-bottom: 124px;
-         .section-title::after{
-            content: "";
-            margin: 0 auto;
-            width:40px;
-            padding: 4px 0;
-        }
-            .col-6{
-                padding: 0;
-            }
-            .important-notices{
-                margin-top: 60px;
-                .section-title,p{
-                    display: none;
-                }   
-                .inner-section-title{
-                    display: block;
-                }
-                .card-primary-img{
-                   img{
-                    height: 115px;
-                   }
-                }
-                .bg-light-gray{
-                    padding: 24px 24px;
-                    .know-more{
-                        align-self: flex-end;
-                    }
-                }
-            }
-        .buyer-tips-banner{
-            margin:80px 0 80px 0;
-            .container{
-                padding: 0;
-            }
-        }
-        .guidelines-nris {
-            margin: 92px 0 80px 0;  
-            .heading{
-                display: none;       
-            }
-            .guidelines-nris-info{
-                width: 100%;
-                height: auto;
-                bottom: 0;
-                position: unset!important;
-                background: #333;
-                
-                .know-more{
-                    position: absolute;
-                    right: 18px;
-                    bottom: -33px;
-                }
-            }
-        }
-        .maha-rera{
-            margin: 0;  
-        }
-        .maha-rera-mb{
-            img{
-                height: 115px;
-            }
-        }
-     }
-     //card-primary
-     .card-primary{
-        .bg-light-gray{
-            padding: 16px 26px;
-        }
-        .section-title{
-            margin-top: 0;
-            text-align: center;
-      
-        }
-        .heading {
-            margin-top: 0;
-        }
+  footer {
+    .copyright {
+      margin-top: 12px;
     }
-    //Hospitality Project
-       .hospitality-projects{
-            margin-bottom: 0;
-            .residences{
-                background-color: #fff;
-                padding: 0;
-        
-             }
-        }   
-        .bg-color {
-            margin-top: 0;
-            padding:0;
-            background: theme-color("bg-color");
-                .padding-block-60{
-                    padding: 24px 0 24px 0;
-                }
-                .page-heading{
-                    font-size: 24px;  
-                    margin: 0;
-                }
-        }
-        //Page heading
-        .page-heading-section{
-            .main-paragraph{
-                padding: 0 16px 32px;
-            }
-        }
-        .year-img-wrap {
-            width: 60% !important;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 12px 0;
-            margin: 0 auto 28px;
-            }
-//residential projects
-    .residential-section {
-        .main-paragraph{
-            padding: 0 16px 60px;
-        }   
+  }
+  // Knowledge Hub
+  .knowledge-hub {
+    .mt-92 {
+      margin-top: 0;
     }
-    .residential-projects{
-        .projects{
-             display: none;
-        }
-        .residences{
-            background: #fff;
-        }
-        .complete-project {
-            .container{
-                background-color:theme-color("bg-color"); 
-                padding: 0;
-            }
-            .listing-heading {
-                transform: translate(0px,-18px);
-            }
-            .secondary-card {
-                margin: 40px  24px;
-            }
-            .slick-list{
-                padding-bottom: 124px!important;
-            }
-         .slick-next{
-            bottom: -35px;
-            right: 16px;
-            top: auto;
-            &:before{
-                background: url('../images/left.jpg') no-repeat center center;
-                padding: 0 0 0 36px;
-              }
-          }
-          .slick-prev{
-              top: auto;
-              bottom: -45px;
-              right: 90px;
-              left: auto;
-              &:before{
-                background: url('../images/left.jpg') no-repeat center center;
-                padding: 0 0 0 36px;
-              }
-          }
-          .pagination{
-              bottom: -40px;
-              left: 70px;
-          }
-        }
-        .slick-center{
-            transform: scale(1.2);
-            transition: transform .5s ease;
-        }
+    .heading {
+      margin-top: 60px;
     }
-
-    /*Residencial media query start*/
-        .logo-card{
-            box-shadow: none;
-            margin-top: 28px;
-            width:280px;
-            img{
-            width: 70% !important;
-            }
-        }
-        .detail-page-sections{
-            padding-top:36px;
-            padding-bottom:36px;
-        }
-        .residencial-details .page-heading-section div {
-        padding-top: 36px;
-        padding-bottom: 32px;
-        .page-heading{
-            border:0;    
-            padding: 0;
-            font-size: 20px;
-            line-height: 32px;
-        }
-        }
-        #pills-tab,
-        #factfile-tab{
-        padding: 0 15px;
-        }
-        .nav-pills .nav-link{
-        padding: 10px 5px 0;
-        height: 100%;
-        }
-        #pills-tabContent,
-        #pills-tab {
-        border-bottom:0;
-        }
-
-        .contact-section .contact-form-bg button{
-        width: 265px;
-        }
-        #pills-tabContent ul {
-        padding-top: 8px;
-        padding-bottom: 8px;
-        }
-        .contact-section .contact-form-bg .form-row .form-group{
+    .section-title {
+      margin-top: 0;
+    }
+    .knowledge-hub-heading {
+      .title {
+        padding-top: 24px;
+      }
+    }
+    .buyer-tips-banner {
+      margin-bottom: 32px;
+      .container {
         padding: 0;
+      }
+      .buyer-tips-box {
+        width: 100%;
+        height: auto;
+        left: 0;
+        bottom: 0;
+        padding: 20px 20px;
+        .section-title,
+        .know-more {
+          align-self: flex-end;
+          position: absolute;
+          bottom: -34px;
         }
-        .center .slick-prev{
-            right: 12%;
+      }
+    }
+    .guidelines-nris {
+      margin-top: 0;
+      .guidelines-nris-img {
+        img {
+          height: auto;
+          object-fit: cover;
         }
-        .center .slick-next{
-            right: 22%;
-            bottom: -30px;
-        }
-   
-        .detail-page{
-            .page-heading{
-                border:0;
-            }
-        }
+      }
+    }
+    .buyer-tips-info {
+      .about-loan {
+        margin-top: 24px;
+      }
+    }
+  }
+  // Hospitality Project
+  .hospitality-projects {
+    .residences {
+      padding-bottom: 0;
+    }
+    .residences-card {
+      margin-bottom: 140px;
+    }
+  }
+  .career-tabs {
+    .btn-wraper {
+      flex-basis: 23%;
+    }
+    .btn-wraper-big {
+      flex-basis: 30%;
+    }
+    .btn-tertiary {
+      padding: 16px 0;
+    }
+  }
+  .about-sect-4 {
+    height: auto !important;
+  }
+  .management-card {
+    height: 200px;
+  }
+  // Residence Card
+  .residences-card {
+    .rectangle {
+      width: 90%;
+      left: 10px;
+    }
+  }
 
+  //------------- Residencial detail page ---------------
+  .nav-pills .nav-link,
+  .nav-pills .nav-link.active {
+    padding: 10px 0;
+  }
+  .amenities-inner-wrapper {
+    width: 200%;
+    .image-wrapper {
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+  }
+  .amenities button {
+    flex: 1 140px;
+    margin: 8px 4px;
+  }
+  .residential-projects {
+    .complete-project {
+      .slick-slider {
+        margin-top: 28px;
+      }
+      .secondary-card {
+        margin: 0 15px;
+        .secondary-card-rectangle {
+          width: 90%;
+        }
+      }
+      .slick-next,
+      .slick-prev {
+        top: 180px;
+      }
+    }
+  }
+  .image-ratio {
+    .gatsby-image-wrapper {
+      padding-bottom: 133.33%;
+    }
+  }
+  //slider
+  .center {
+    .slick-next {
+      right: 26%;
+      bottom: -31px;
+    }
+    .slick-prev {
+      bottom: -40px;
+      right: 17%;
+    }
+  }
+}
+@media (max-width: 580px) {
+  .padding-sm-0 {
+    padding: 0 !important;
+  }
+  .navbar-collapse {
+    width: 96%;
+  }
+  .bg-color {
+    margin-top: 0;
+    background: theme-color("bg-color");
+    .padding-block-60 {
+      padding: 25px 0 25px 0;
+    }
+    .page-heading {
+      font-size: 24px;
+      margin: 0;
+    }
+    .text {
+      padding: 0 15px;
+    }
+  }
+  .career-tabs {
+    .btn-wraper {
+      flex-basis: 23%;
+    }
+    .btn-wraper-big {
+      flex-basis: 30%;
+    }
+    .btn-tertiary {
+      padding: 16px 0;
+    }
+  }
+  .about-sect-4 {
+    height: auto !important;
+  }
+  .management-card {
+    height: 200px;
+  }
 }
 
-@media (max-width:420px){
-    .residential-projects .listing-heading{
-        width: 90%;
+@media (max-width: 580px) {
+  .navbar-collapse {
+    width: 96%;
+  }
+  .bg-color {
+    margin-top: 0;
+    background: theme-color("bg-color");
+    .padding-block-60 {
+      padding: 25px 0 25px 0;
     }
-    .slider-img {
-        margin: 20px 24px 16px;
+    .page-heading {
+      font-size: 24px;
+      margin: 0;
     }
-    .pages{
-        margin-top: 0;
+    .text {
+      padding: 0 15px;
     }
-    .bg-light-gray{
-        margin-top: 0;
-        padding: 36px 0 36px 0;
+  }
+  .our-verticals-tabs {
+    .nav-item {
+      padding: 15px 0;
     }
-    .navbar-collapse{
-        width:95%;
+  }
+  .tab {
+    font-size: 12px;
+    i {
+      display: none;
     }
-    .contact-section{
-        .bg-color {
-            select{
-                flex: 100%;
-            }
+    &::before {
+      content: "\f111";
+    }
+  }
+  .contact-section {
+    .bg-color {
+      .form-control {
+        flex: 75%;
+      }
+    }
+    .contact-form-bg {
+      button {
+        width: 100%;
+        padding: 15px 0;
+      }
+      .form-row {
+        .form-group {
+          padding: 0;
         }
+      }
+    }
+    .contact-details {
+      .section-title::after {
+        content: "";
+        margin: 0 auto;
+      }
+      i {
+        display: block;
+        margin-bottom: 12px;
+      }
+    }
+  }
+  //Knowledge Hub
+  .knowledge-hub {
+    margin-bottom: 124px;
+    .section-title::after {
+      content: "";
+      margin: 0 auto;
+      width: 40px;
+      padding: 4px 0;
+    }
+    .col-6 {
+      padding: 0;
+    }
+    .important-notices {
+      margin-top: 60px;
+      .section-title,
+      p {
+        display: none;
+      }
+      .inner-section-title {
+        display: block;
+      }
+      .card-primary-img {
+        img {
+          height: 115px;
+        }
+      }
+      .bg-light-gray {
+        padding: 24px 24px;
+        .know-more {
+          align-self: flex-end;
+        }
+      }
+    }
+    .buyer-tips-banner {
+      margin: 80px 0 80px 0;
+      .container {
+        padding: 0;
+      }
+    }
+    .guidelines-nris {
+      margin: 92px 0 80px 0;
+      .heading {
+        display: none;
+      }
+      .guidelines-nris-info {
+        width: 100%;
+        height: auto;
+        bottom: 0;
+        position: unset !important;
+        background: #333;
+
+        .know-more {
+          position: absolute;
+          right: 18px;
+          bottom: -33px;
+        }
+      }
+    }
+    .maha-rera {
+      margin: 0;
+    }
+    .maha-rera-mb {
+      img {
+        height: 115px;
+      }
+    }
+  }
+  //card-primary
+  .card-primary {
+    .bg-light-gray {
+      padding: 16px 26px;
+    }
+    .section-title {
+      margin-top: 0;
+      text-align: center;
+    }
+    .heading {
+      margin-top: 0;
+    }
+  }
+  //Hospitality Project
+  .hospitality-projects {
+    margin-bottom: 0;
+    .residences {
+      background-color: #fff;
+      padding: 0;
+    }
+  }
+  .bg-color {
+    margin-top: 0;
+    padding: 0;
+    background: theme-color("bg-color");
+    .padding-block-60 {
+      padding: 24px 0 24px 0;
+    }
+    .page-heading {
+      font-size: 24px;
+      margin: 0;
+    }
+  }
+  //Page heading
+  .page-heading-section {
+    .main-paragraph {
+      padding: 0 16px 32px;
+    }
+  }
+  .year-img-wrap {
+    width: 60% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 0;
+    margin: 0 auto 28px;
+  }
+  //residential projects
+  .residential-section {
+    .main-paragraph {
+      padding: 0 16px 60px;
+    }
+  }
+  .residential-projects {
+    .projects {
+      display: none;
+    }
+    .residences {
+      background: #fff;
+    }
+    .complete-project {
+      .container {
+        background-color: theme-color("bg-color");
+        padding: 0;
+      }
+      .listing-heading {
+        transform: translate(0px, -18px);
+      }
+      .secondary-card {
+        margin: 40px 24px;
+      }
+      .slick-list {
+        padding-bottom: 124px !important;
+      }
+      .slick-next {
+        bottom: -35px;
+        right: 16px;
+        top: auto;
+        &:before {
+          background: url("../images/left.jpg") no-repeat center center;
+          padding: 0 0 0 36px;
+        }
+      }
+      .slick-prev {
+        top: auto;
+        bottom: -45px;
+        right: 90px;
+        left: auto;
+        &:before {
+          background: url("../images/left.jpg") no-repeat center center;
+          padding: 0 0 0 36px;
+        }
+      }
+      .pagination {
+        bottom: -40px;
+        left: 70px;
+      }
+    }
+    .slick-center {
+      transform: scale(1.2);
+      transition: transform 0.5s ease;
+    }
+  }
+
+  /*Residencial media query start*/
+  .logo-card {
+    box-shadow: none;
+    margin-top: 28px;
+    width: 280px;
+    img {
+      width: 70% !important;
+    }
+  }
+  .detail-page-sections {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+  .residencial-details .page-heading-section div {
+    padding-top: 36px;
+    padding-bottom: 32px;
+    .page-heading {
+      border: 0;
+      padding: 0;
+      font-size: 20px;
+      line-height: 32px;
+    }
+  }
+  #pills-tab,
+  #factfile-tab {
+    padding: 0 15px;
+  }
+  .nav-pills .nav-link {
+    padding: 10px 5px 0;
+    height: 100%;
+  }
+  #pills-tabContent,
+  #pills-tab {
+    border-bottom: 0;
+  }
+
+  .contact-section .contact-form-bg button {
+    width: 265px;
+  }
+  #pills-tabContent ul {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .contact-section .contact-form-bg .form-row .form-group {
+    padding: 0;
+  }
+  .center .slick-prev {
+    right: 12%;
+  }
+  .center .slick-next {
+    right: 22%;
+    bottom: -30px;
+  }
+
+  .detail-page {
+    .page-heading {
+      border: 0;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .residential-projects .listing-heading {
+    width: 90%;
+  }
+  .slider-img {
+    margin: 20px 24px 16px;
+  }
+  .pages {
+    margin-top: 0;
+  }
+  .bg-light-gray {
+    margin-top: 0;
+    padding: 36px 0 36px 0;
+  }
+  .navbar-collapse {
+    width: 95%;
+  }
+  .contact-section {
+    .bg-color {
+      select {
+        flex: 100%;
+      }
+    }
     //knowledge Hub
-        .knowledge-hub{
-            .important-notices{
-                .bg-light-gray{
-                    padding: 16px 26px;
-                }
-            }
-        }  
+    .knowledge-hub {
+      .important-notices {
+        .bg-light-gray {
+          padding: 16px 26px;
+        }
+      }
+    }
     //Card Primary
-       .card-primary{
-         .card-primary-img{
-            height: 100%;
-            img{
-              height: 100%;
-            }
+    .card-primary {
+      .card-primary-img {
+        height: 100%;
+        img {
+          height: 100%;
         }
-       }     
+      }
     }
-        // Residence Card
-        // .residences-card {
-        //     .rectangle{
-        //         width: 280px;
-        //         left: 10px;
-        //     }
-        //   }
-    .residential-projects {
-        .complete-project {
-            .secondary-card{
-                margin: 16px 20px;
-            }
-        }
-        // .listing-heading{
-        //     width: 100%;
-        // }
-        .residences{
-            .residences-card{
-                margin: 44px 0 72px;
-            }
-        } 
-    }  
-    .center .slick-prev{
-        right: 8%;
-        bottom: -29px;
+  }
+  // Residence Card
+  // .residences-card {
+  //     .rectangle{
+  //         width: 280px;
+  //         left: 10px;
+  //     }
+  //   }
+  .residential-projects {
+    .complete-project {
+      .secondary-card {
+        margin: 16px 20px;
+      }
     }
-    .center .slick-next{
-        right: 18%;
-        bottom: -21px;
+    // .listing-heading{
+    //     width: 100%;
+    // }
+    .residences {
+      .residences-card {
+        margin: 44px 0 72px;
+      }
     }
-    .btn-secondary{
-        width:280px;
-    }
+  }
+  .center .slick-prev {
+    right: 8%;
+    bottom: -29px;
+  }
+  .center .slick-next {
+    right: 18%;
+    bottom: -21px;
+  }
+  .btn-secondary {
+    width: 280px;
+  }
 }
-@media (max-width:350px){
-    .slider-img {
-        margin: 20px 16px 16px;
+@media (max-width: 350px) {
+  .slider-img {
+    margin: 20px 16px 16px;
+  }
+  .center {
+    .slick-next {
+      right: 20%;
+      bottom: -15px;
     }
-    .center {
-        .slick-next{
-            right: 20%;
-            bottom: -15px;
-        }
-        .slick-prev {
-            right: 9%;
-            bottom: -22px;
-        }
-    }   
-}   
+    .slick-prev {
+      right: 9%;
+      bottom: -22px;
+    }
+  }
+}
