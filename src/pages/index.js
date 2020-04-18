@@ -74,6 +74,9 @@ class IndexPage extends React.Component {
     return (
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title="Home"/>
+        {innerHeight()}
+         <br />
+        {bannerHeight}
         <div className="home-slider">
           {
             this.state.selectedVertical &&
