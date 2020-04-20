@@ -12,7 +12,7 @@ class Award extends React.Component {
                 <section className="award-wrapper">
                     <section className="page-heading-section container container-sm-fluid bg-color">
                         <div className="padding-block-60">
-                            <h2 className="page-heading">{awardData.title.text}</h2> 
+                            <h2 className="page-heading">{awardData.title.text}</h2>
                         </div>
                         <div className="row mr-0">
                             <div className="col-12">
@@ -21,6 +21,7 @@ class Award extends React.Component {
                         </div>
                     </section>
 
+
                     <section className="award-name">
                         <div className="container">
                             <div className="row">
@@ -28,13 +29,13 @@ class Award extends React.Component {
                                     awardData.awards.map((item, index) => {
                                         return(
                                             <div key={index} className="col-lg-4 col-sm-6 my-120">
-                                            
+
                                                 <div className="award-details d-flex justify-content-center align-items-center">
                                                     <p className="inner-section-title text-center">
                                                         {item.description1.text}
                                                     </p>
                                                 </div>
-                                            
+
                                             <div className="company-name">
                                                 <h5 className="inner-section-title text-center text-uppercase mb-0">
                                                     {item.title1.text}
@@ -51,7 +52,7 @@ class Award extends React.Component {
                         </div>
                     </section>
                 </section>
-            <Footer />    
+            <Footer />
             </Layout>
         )
     }
