@@ -14,6 +14,7 @@ import '../firebase/config';
 import * as firebase from 'firebase';
 import queryString from 'query-string';
 import chevron_down from '../images/chevron_down.svg';
+import Div100vh from 'react-div-100vh/lib/Div100vh';
 
 class VerticalPage extends React.Component {
 
@@ -229,7 +230,7 @@ class VerticalPage extends React.Component {
         <SEO title={verticalData.data.title.text}/>
         <main className="detail-page" id="residential-details">
             {/* <!--   ---------------- banner start here ---------------- --> */}
-              <section className="banner-section">
+            <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section">
               <picture>
                 {
                   verticalData.data.banner[0].image.mobile &&
@@ -245,7 +246,7 @@ class VerticalPage extends React.Component {
                 </div>
               </div>
                 {/* <Img fluid={verticalData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
-              </section>
+              </Div100vh>
             {/* <!--   ---------------- banner end here ---------------- --> */}
             {/* <!--  -------------------- middle section start here ----------------------> */}
             <section className="detail-page-sections pb-0 pt-sm-0 container container-sm-fluid " id={verticalData.uid}>

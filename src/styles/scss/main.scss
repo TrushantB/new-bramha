@@ -770,17 +770,22 @@ button:focus {
   margin: auto;
   z-index: 1;
   font-size: 12px;
-  font-weight: 600;
   color: #fff;
-  width: 32px;
+  background: #0000007a;
+  padding: 15px 0;
+  width: 50px;
+  border-radius: 100px;
+  text-align: center;
+  letter-spacing: 0.3px;
   animation-name: scroll;
   animation-duration: 2.2s;
+  animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
   animation-iteration-count: infinite;
   .mousey {
     border-radius: 50%;
     text-align: center;
     justify-content: center;
-    padding: 10px 0 0 0;
+    padding: 7px 0 0 0;
     display: flex;
   }
   img {
