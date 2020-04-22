@@ -230,7 +230,7 @@ class AboutUs extends React.Component {
                     <p className="d-none d-md-block">
                       {mgntTeam.data.description.text}
                     </p>
-                    <Link to={mgntTeam.uid} className="link-text management-card-link d-flex justify-content-between align-items-center">
+                    <Link to={`/${mgntTeam.uid}`} className="link-text management-card-link d-flex justify-content-between align-items-center">
                       <span> Our Team </span>
                       <i className="fas fa-arrow-right"></i>
                     </Link>

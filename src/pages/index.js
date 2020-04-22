@@ -86,7 +86,7 @@ class IndexPage extends React.Component {
                 this.state.selectedVertical.gallery.map((item, index) => {
                   return(
                     <div key={index} className="banner-section fullheight">
-                      <Link to={`${this.state.verticalsName}/${item.project_url}`}>
+                      <Link to={`/${this.state.verticalsName}/${item.project_url}`}>
                         <picture>
                           <source media="(max-width: 581px)" srcSet={item.image.mobile.url}/>
                             {

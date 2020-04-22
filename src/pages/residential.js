@@ -214,7 +214,7 @@ export default class Residential extends React.Component {
                         {this.state.ongoingProject.map((item,value) => {
                           return(
                             <div key={value} className="col-md-6 col-lg-4 col-sm-12 p-0 pl-sm-3 pr-sm-3">
-                              <Link to={`residential/${item.residential_links.uid}`} >
+                              <Link to={`/residential/${item.residential_links.uid}`} >
                                 <div className="residences-card position-relative">
                                   <div className="residences-img">
                                   <picture>
@@ -259,7 +259,7 @@ export default class Residential extends React.Component {
                       {this.state.completedProject.map((item, value) => {
                         return(
                           <div className="row"  key={value}>
-                          <Link to={`residential/${item.completed_links.uid}`}>
+                          <Link to={`/residential/${item.completed_links.uid}`}>
                             <div className="secondary-card position-relative ">
                               <div className="secondary-card-img image-ratio">
                               <picture>
@@ -295,7 +295,7 @@ export default class Residential extends React.Component {
                 </section>
             }
             <div className="view-all text-center mt-5 mt-sm-4 mb-5">
-              <Link to="residential/completed-projects/" className="btn-secondary">View All</Link>
+              <Link to={`/residential/completed-projects`} className="btn-secondary">View All</Link>
             </div>
             <section className="give-details text-center">
               <div className="container">

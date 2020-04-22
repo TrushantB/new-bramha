@@ -307,10 +307,10 @@ class Careers extends React.Component {
                                         <div className="form-row">
                                         <input type="hidden" name="form-name" value="career" />
                                           <div className="col-sm-6 form-group  ">
-                                              <input type="text" className="form-control rounded-0" id="name" placeholder="Your Name*" name="name" autoComplete="false" required/>
+                                              <input type="text" className="form-control rounded-0" placeholder="Your Name*" name="name" autoComplete="false" required/>
                                           </div>
                                           <div className="col-sm-6 form-group  ">
-                                              <input type="text" className="form-control rounded-0" id="email" placeholder="Your Email*" autoComplete="false" name="email" required/>
+                                              <input type="text" className="form-control rounded-0" placeholder="Your Email*" autoComplete="false" name="email" required/>
                                           </div>
                                           <div className="col-12">
                                             <div className="form-group file-area">
