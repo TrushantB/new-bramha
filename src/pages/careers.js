@@ -19,7 +19,7 @@ class Careers extends React.Component {
       jobOpeningStore:[],
       activeButton:null,
       photoIndex: 0,
-      isOpen: false,  
+      isOpen: false,
       jobOpenningButtons:[
         {
           id:'sales',
@@ -173,7 +173,7 @@ class Careers extends React.Component {
           </section>
           <section className="career-info container container-sm-fluid bg-color pb-5 pb-sm-0">
             <div className="padding-block-60 career-info-row">
-              <h2 className="page-heading">{careerData.title.text}</h2> 
+              <h2 className="page-heading">{careerData.title.text}</h2>
             </div>
             <div className="row career-info-row">
               <div className="col-12">
@@ -323,7 +323,7 @@ class Careers extends React.Component {
                                         </div>
                                         <div className="sumbit text-center mt-sm-0 mt-4">
                                           <button type="submit" className="btn-secondary ">Submit</button>
-                                        </div>  
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
