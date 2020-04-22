@@ -116,7 +116,7 @@ class LeisureDetails extends React.Component {
               </div>
               <div className="row">
                 <div className="col-12 d-flex d-sm-block flex-wrap justify-content-end">
-                  <p className="mb-4" dangerouslySetInnerHTML={{__html:leisureData.data.description.html }}/>
+                  <div className="mb-4" dangerouslySetInnerHTML={{__html:leisureData.data.description.html }}/>
                   {/* <a href="#" className="d-flex justify-content-between align-items-center btn-tertiary hospitality-viewmore">
                     <span> View Website </span>
                     <i className="fas fa-arrow-right"></i>

@@ -75,7 +75,7 @@ class Commercial extends React.Component {
           <div className="row  mr-0">
             <div className="col-12">
               <div className="main-paragraph">
-                <p dangerouslySetInnerHTML={{__html:commercialData.description.html }} />
+                <div dangerouslySetInnerHTML={{__html:commercialData.description.html }} />
               </div>
             </div>
           </div>
@@ -131,7 +131,7 @@ class Commercial extends React.Component {
             <div className="listing-heading d-flex align-items-center">
               <h4 className="text-uppercase heading mb-0">Completed Projects</h4>
             </div>
-            <p className="text-left d-none d-sm-block" dangerouslySetInnerHTML={{__html:commercialData.completed_project_description.html }} />
+            <div className="text-left d-none d-sm-block" dangerouslySetInnerHTML={{__html:commercialData.completed_project_description.html }} />
             <Slider  {...settings}>
               {  commercialData.completed_projects.map((item, index)=>{
                 return(

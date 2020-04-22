@@ -275,7 +275,7 @@ class VerticalPage extends React.Component {
               </div>
               <div className="row">
                   <div className="col-12">
-                      <p className="mb-4" dangerouslySetInnerHTML={{__html:verticalData.data.description.html }}/>
+                      <div className="mb-4" dangerouslySetInnerHTML={{__html:verticalData.data.description.html }}/>
                           </div>
                         </div>
                     </section>

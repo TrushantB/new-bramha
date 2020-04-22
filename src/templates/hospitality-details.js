@@ -13,7 +13,7 @@ class HospitalityDetails extends React.Component {
   state = {
     activeSlide:null,
     photoIndex: 0,
-    isOpen: false, 
+    isOpen: false,
   }
   scrollWin() {
     var offsetHeight = document.querySelector('.banner-section').offsetHeight;
@@ -71,7 +71,7 @@ class HospitalityDetails extends React.Component {
           }
         }
       ]
-    }; 
+    };
 
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
@@ -114,15 +114,15 @@ class HospitalityDetails extends React.Component {
                 </div>
               </div>
               <div className="padding-block-60">
-                <h2 className="page-heading text-uppercase"> 
-                  {hospitalityData.data.heading.text}     
-                </h2> 
+                <h2 className="page-heading text-uppercase">
+                  {hospitalityData.data.heading.text}
+                </h2>
               </div>
               <div className="row">
                 <div className="col-12 d-flex d-sm-block flex-wrap justify-content-end">
-                  <p className="mb-4" dangerouslySetInnerHTML={{__html:hospitalityData.data.description.html }}/>
+                  <div className="mb-4" dangerouslySetInnerHTML={{__html:hospitalityData.data.description.html }}/>
                   {/* <a href="#" className="d-flex justify-content-between align-items-center btn-tertiary hospitality-viewmore">
-                    <span> View Website </span> 
+                    <span> View Website </span>
                     <i className="fas fa-arrow-right"></i>
                   </a> */}
                 </div>
@@ -201,7 +201,7 @@ class HospitalityDetails extends React.Component {
 }
 export default HospitalityDetails;
 
-export const hospitalityPage = graphql` 
+export const hospitalityPage = graphql`
   query hospitalityData($uid: String!) {
   prismicOurVerticalsArticle(uid: { eq: $uid }) {
     data{

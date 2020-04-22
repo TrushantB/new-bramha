@@ -68,6 +68,7 @@ class IndexPage extends React.Component {
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title="Home"/>
         <div className="home-slider">
+          {console.log(this.state.selectedVertical)}
           {
             this.state.selectedVertical &&
             <Div100vh style={{ height: 'calc(100rvh - 120px)', overflow: 'hidden'}}>

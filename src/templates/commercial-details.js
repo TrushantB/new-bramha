@@ -12,7 +12,7 @@ class CommercialDetails extends React.Component {
   state = {
     activeSlide: null,
     photoIndex: 0,
-    isOpen: false, 
+    isOpen: false,
   };
   scrollWin() {
     var offsetHeight = document.querySelector('.banner-section').offsetHeight;
@@ -109,15 +109,15 @@ class CommercialDetails extends React.Component {
                 </div>
               </div>
               <div className=" padding-block-60">
-                <h2 className="page-heading text-uppercase"> 
-                  {commercialData.data.heading.text}     
-                </h2> 
+                <h2 className="page-heading text-uppercase">
+                  {commercialData.data.heading.text}
+                </h2>
               </div>
               <div className="row">
                 <div className="col-12 d-flex d-sm-block flex-wrap justify-content-end">
-                  <p className="mb-4" dangerouslySetInnerHTML={{__html:commercialData.data.description.html }} />
+                  <div className="mb-4" dangerouslySetInnerHTML={{__html:commercialData.data.description.html }} />
                   {/* <a href="#" className="d-flex justify-content-between align-items-center btn-tertiary hospitality-viewmore">
-                    <span> View Website </span> 
+                    <span> View Website </span>
                     <i className="fas fa-arrow-right"></i>
                   </a> */}
                 </div>

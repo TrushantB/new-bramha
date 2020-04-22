@@ -17,7 +17,7 @@ class NRI extends React.Component {
     const nriData = this.props.data.prismicNri.data;
     this.setState({collapseDescription: nriData.group})
   }
-  
+
   scrollWin() {
     var offsetHeight = document.querySelector('.banner-section').offsetHeight;
     window.scrollBy({
@@ -52,7 +52,7 @@ class NRI extends React.Component {
          <div className="row mr-0">
           <div className="col-12 ">
             <div className="main-paragraph ">
-              <p className="m-0" dangerouslySetInnerHTML={{__html:nriData.description.html }} />
+              <div className="m-0" dangerouslySetInnerHTML={{__html:nriData.description.html }} />
             </div>
           </div>
          </div>
@@ -86,15 +86,15 @@ class NRI extends React.Component {
                               </button>
                             </h5>
                           </div>
-                      
+
                           <div id={`collapseOne${value}`} className="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                             <div className="card-body" dangerouslySetInnerHTML={{__html: item.description1.html}} />
                             {/* {
-                              item.description2.html && 
+                              item.description2.html &&
                                 <div className="card-body" dangerouslySetInnerHTML={{__html: item.description2.html}}/>
                             }
                             {
-                              item.description3.html &&  
+                              item.description3.html &&
                                 <div className="card-body" dangerouslySetInnerHTML={{__html: item.description3.html}} />
                             } */}
                           </div>
@@ -105,7 +105,7 @@ class NRI extends React.Component {
                 </div>
               </div>
             </div>
-          </section>  
+          </section>
         </div>
         <Footer />
       </Layout>
@@ -142,8 +142,8 @@ export const nriPage = graphql`{
         description1 {
           html
         }
-        
+
       }
-    }  
+    }
   }
 }`

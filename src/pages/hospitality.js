@@ -15,13 +15,13 @@ class Hospitality extends React.Component {
         <SEO title={data.sub_title.text}/>
         <section className=" page-heading-section container container-sm-fluid bg-color">
           <div className="padding-block-60">
-            <h2 className="page-heading">{data.sub_title.text}</h2> 
+            <h2 className="page-heading">{data.sub_title.text}</h2>
           </div>
           <div className="row  mr-0">
             <div className="col-12">
-              <div className="main-paragraph"> 
-                <p dangerouslySetInnerHTML={{__html:data.description.html }}/>
-              </div>  
+              <div className="main-paragraph">
+                <div dangerouslySetInnerHTML={{__html:data.description.html }}/>
+              </div>
             </div>
           </div>
           </section>
@@ -37,7 +37,7 @@ class Hospitality extends React.Component {
                             <div className="col-md-6 col-lg-4 p-0 pl-sm-3 pr-sm-3" key={value}>
                               <Link to={`hospitality/${item.vertical_links.uid}`} >
                                 <div className="residences-card position-relative mt-0 mt-sm-5" key={value}>
-                                  
+
                                   <div className="residences-img ">
                                     <picture>
                                        <source media="(max-width: 581px)" srcSet={datas.data.thumbnail.mobile.url}/>
@@ -83,15 +83,15 @@ class Hospitality extends React.Component {
                   <div className="vertical-img-wrapper w-100">
                     <Img fluid={verticalsData.vertical1.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
                   </div>
-                  <div className="vertical-card-body d-flex flex-column justify-content-between"> 
+                  <div className="vertical-card-body d-flex flex-column justify-content-between">
                     <h2 className="inner-section-title">
                       {verticalsData.vertical1.document[0].data.title.text}
                     </h2>
                     <div className="link-text vertical-card-link d-flex justify-content-between align-items-center">
-                      <span> View Projects </span> 
+                      <span> View Projects </span>
                       <i className="fas fa-arrow-right"></i>
                     </div>
-                  </div> 
+                  </div>
                 </Link>
               </div>
 
@@ -100,35 +100,35 @@ class Hospitality extends React.Component {
                   <div className="vertical-img-wrapper w-100">
                     <Img fluid={verticalsData.vertical2.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
                   </div>
-                  <div className="vertical-card-body d-flex flex-column justify-content-between"> 
+                  <div className="vertical-card-body d-flex flex-column justify-content-between">
                     <h2 className="inner-section-title">
                       {verticalsData.vertical2.document[0].data.title.text}
                     </h2>
                     <div className="link-text vertical-card-link d-flex justify-content-between align-items-center">
-                      <span> View Projects </span> 
+                      <span> View Projects </span>
                       <i className="fas fa-arrow-right"></i>
                     </div>
-                  </div> 
+                  </div>
                 </Link>
               </div>
 
               <div className="col-md-6 mt-5 padding-sm-0">
-                <Link to='/leisure-club' className="vertical-card d-flex text-decoration-none"> 
+                <Link to='/leisure-club' className="vertical-card d-flex text-decoration-none">
                   <div className="vertical-img-wrapper w-100">
                     <Img fluid={verticalsData.vertical4.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
                   </div>
-                  <div className="vertical-card-body d-flex flex-column justify-content-between"> 
+                  <div className="vertical-card-body d-flex flex-column justify-content-between">
                     <h2 className="inner-section-title">
                       {verticalsData.vertical4.document[0].data.title.text}
                     </h2>
                     <div className="link-text vertical-card-link d-flex justify-content-between align-items-center">
-                        <span> View Projects </span> 
+                        <span> View Projects </span>
                         <i className="fas fa-arrow-right"></i>
                     </div>
                   </div>
                 </Link>
               </div>
-              
+
             </div>
           </section>
           </section>
@@ -195,7 +195,7 @@ export const hospitalityPage = graphql`{
             }
           }
 
-          
+
         }
       }
     }

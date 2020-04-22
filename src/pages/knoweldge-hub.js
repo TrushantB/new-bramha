@@ -19,7 +19,7 @@ class KnoweldgeHub extends React.Component {
          <div className="row mr-0">
           <div className="col-12 knoweldge-hub-title">
             <div className="main-paragraph ">
-              <p className="m-0" dangerouslySetInnerHTML={{__html:knowledgeData.description.html }}/>
+              <div className="m-0" dangerouslySetInnerHTML={{__html:knowledgeData.description.html }}/>
             </div>
           </div>
          </div>
@@ -109,7 +109,7 @@ class KnoweldgeHub extends React.Component {
                               return(
                                 <div className="col-md-6 d-sm-none p-0" key={index} id={`maharera${index}`}>
                                   <div className="maha-rera-mb d-flex position-relative ">
-                                    <Img fluid={item.topics.document[0].data.mobile_view.localFile.childImageSharp.fluid } alt="" width="100%"/>  
+                                    <Img fluid={item.topics.document[0].data.mobile_view.localFile.childImageSharp.fluid } alt="" width="100%"/>
                                     <div className="ml-3 ">
                                       <h3 className="inner-section-title mb-1">Maha <span className="text-uppercase">Rera</span> </h3>
                                       <p className="m-0">Rules and regulations</p>
@@ -121,7 +121,7 @@ class KnoweldgeHub extends React.Component {
                                       </a>
                                     </div>
                                   </div>
-                                </div> 
+                                </div>
                               )
                             }
                           })

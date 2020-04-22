@@ -177,7 +177,7 @@ class Careers extends React.Component {
             </div>
             <div className="row career-info-row">
               <div className="col-12">
-                <p className="text mb-0" dangerouslySetInnerHTML={{__html:careerData.description.html }} />
+                <div className="text mb-0" dangerouslySetInnerHTML={{__html:careerData.description.html }} />
               </div>
             </div>
           </section>
