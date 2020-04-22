@@ -396,6 +396,10 @@ div {
   justify-content: space-between;
   overflow-y: auto;
   overflow-x: hidden;
+  .nav {
+    display: flex;
+    flex-direction: column;
+  }
 }
 // .nav-container .nav{
 //   flex-direction: column;
@@ -551,7 +555,6 @@ div {
   .nav-container .nav {
     width: 100%;
     max-width: 100%;
-    display: block;
     .dropdown-toggle::after {
       margin-right: 20px;
     }
