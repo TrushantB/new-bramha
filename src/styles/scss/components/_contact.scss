@@ -1,203 +1,200 @@
-.contact-section{
-    .contact-page-image{
-        img{
-            width: 100%;
-            height: calc(100vh - 60px);
+.contact-section {
+  .padding-block-60 {
+    padding: 52px 0 24px;
+  }
+  .contact-form {
+    margin: 106px 0 0 0;
+  }
+  .contact-details {
+    margin-top: 60px;
+    p,
+    address {
+      opacity: 0.5;
+      font-family: Graphik;
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.71;
+      letter-spacing: -0.31px;
+      color: #000000;
+      a {
+        color: #000000;
+        &:hover {
+          text-decoration: none;
         }
-    }
-    .padding-block-60{
-        padding: 52px 0 24px;
-    }
-    .contact-form{
-        margin: 106px 0 0 0;
-    }
-    .contact-details{
-        margin-top: 60px;
-        p,address{
-            opacity: 0.5;
-            font-family: Graphik;
-            font-size: 14px;
-            font-weight: normal;
-            font-stretch: normal;
-            font-style: normal;
-            line-height: 1.71;
-            letter-spacing: -0.31px;
-            color: #000000;
-            a{
-                color: #000000;
-                &:hover{
-                    text-decoration: none;
-                }
-            }
-        }
-        i{
-            font-size: 26px;
-            color:theme-color("icon-color");
-        }  
-        .section-title{
-            &::after{
-                content: "";
-                padding: 8px 0;
-            }
-        } 
-    }
-    form{
-        .form-bg-color{
-            background: #b2a585;
-            padding: 16px 0;
-             label{
-                 margin-right: 8px;
-             }
-        }
-        .customer{
-            select{
-                flex-basis: 23.4%;
-                background: transparent;
-                color: #fff;
-                border: solid 0.5px rgba(255,255,255,0.5);
-                border-radius: 0;
-                padding: 4px;
-                font-weight: normal;
-                font-size: 14px;
-                height: 30px;
-                -webkit-appearance: none;
-                  -moz-appearance: none;
-                  appearance: none;
-                  background-image: url('../../images/drop.png');
-                  background-size: .4em;
-                  background-position: calc(100% - 1.1em) center;
-                  background-repeat: no-repeat; 
-
-                option{
-                    color: #929292;
-                }
-                    &:focus{
-                    box-shadow: none;
-                    outline: none;
-                    border: solid 0.5px rgba(255,255,255,0.5);
-                }
-            }
-        }
-    }
-    .contact-form-bg {
-        background: #fafafa;
-        padding: 40px 0 40px 0;
-        .container{
-            max-width: 740px;
-        }
-        .form-row{
-            select{
-                font-weight: 300;
-                font-size: 14px; 
-            }
-            input,textarea,select,.resume-upload{
-                font-weight: normal;
-                padding-left: 8px;
-                padding-right: 8px;
-                font-size: 14px;
-                background: transparent;
-                border: solid 0.5px rgba(153, 153, 153, 0.5);
-                border-radius: 0;
-                color: #929292;
-                -moz-appearance: none;
-                -webkit-appearance: none;
-                // line-height: 3;
-                    &::placeholder{
-                        color: #929292;
-                        font-weight: normal;
-                        font-size: 14px;
-                        
-                    }
-            }
-            
-            input,select{
-                height: 30px;
-                line-height: 1.5;
-            }
-            .form-control:focus{
-                box-shadow: none;
-                outline: none;
-                border: solid 0.5px rgba(153, 153, 153, 0.5);
-            }
-            .form-group{
-                margin-bottom: 28px;
-                padding: 0 20px 0 20px;
-            }
-        }
-        button{
-            padding: 14px 80px;
-            color: #fff;
-            background: #b2a585;
-            border: 1px solid #b2a585;
-            font-size: 18px;
-            font-weight: normal;
-            line-height: normal;
-            letter-spacing: -0.4px;
-            &:hover{
-                background-color: transparent;
-                color: #b2a585;
-                text-decoration: none;
-                -webkit-transition: .5s ease-in-out;
-                transition: .5s ease-in-out;
-            }
-        }
-    }
-    .locate-us{
-        margin: 130px 0 116px 0;
-    } 
-    .locate-us,
-    .contact-form{
-        .section-title{
-            margin-bottom: 26px;
-            &::after{
-                display: none;
-            }
-        }
-
-    }
-    .map {
-        -webkit-filter: grayscale(100%);
-           -moz-filter: grayscale(100%);
-            -ms-filter: grayscale(100%);
-             -o-filter: grayscale(100%);
-                filter: grayscale(100%);
-    }
-    .file-area {
-        width: 100%;
-        position: relative;
-        
-        .resume-upload-input {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          opacity: 0;
-          cursor: pointer;
-        }
-        
-        .resume-upload {
-          width: 100%;
-          padding: 30px;;
-          border: 1px dashed rgba(153, 153, 153, 0.5) !important;
-          text-align: center;
-        }
-        
-        &:hover .resume-upload {
-          background: rgba(255,255,255,0.1);
-        }
-        
-        input[type=file]:focus + .resume-upload {
-          outline: 0;
-        }
-      } 
-      .contact-details{
-          .section-title{
-              font-size: 20px;
-          }
       }
+    }
+    i {
+      font-size: 26px;
+      color: theme-color("icon-color");
+    }
+    .section-title {
+      &::after {
+        content: "";
+        padding: 8px 0;
+      }
+    }
+  }
+  form {
+    .form-bg-color {
+      background: #b2a585;
+      padding: 16px 0;
+      label {
+        margin-right: 8px;
+      }
+    }
+    .customer {
+      select {
+        flex-basis: 23.4%;
+        background: transparent;
+        color: #fff;
+        border: solid 0.5px rgba(255, 255, 255, 0.5);
+        border-radius: 0;
+        padding: 4px;
+        font-weight: normal;
+        font-size: 14px;
+        height: 30px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-image: url("../../images/drop.png");
+        background-size: 0.4em;
+        background-position: calc(100% - 1.1em) center;
+        background-repeat: no-repeat;
+
+        option {
+          color: #929292;
+        }
+        &:focus {
+          box-shadow: none;
+          outline: none;
+          border: solid 0.5px rgba(255, 255, 255, 0.5);
+        }
+      }
+    }
+  }
+  .contact-form-bg {
+    background: #fafafa;
+    padding: 40px 0 40px 0;
+    .container {
+      max-width: 740px;
+    }
+    .form-row {
+      select {
+        font-weight: 300;
+        font-size: 14px;
+      }
+      input,
+      textarea,
+      select,
+      .resume-upload {
+        font-weight: normal;
+        padding-left: 8px;
+        padding-right: 8px;
+        font-size: 14px;
+        background: transparent;
+        border: solid 0.5px rgba(153, 153, 153, 0.5);
+        border-radius: 0;
+        color: #929292;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        // line-height: 3;
+        &::placeholder {
+          color: #929292;
+          font-weight: normal;
+          font-size: 14px;
+        }
+      }
+
+      input,
+      select {
+        height: 30px;
+        line-height: 1.5;
+      }
+      .form-control:focus {
+        box-shadow: none;
+        outline: none;
+        border: solid 0.5px rgba(153, 153, 153, 0.5);
+      }
+      .form-group {
+        margin-bottom: 28px;
+        padding: 0 20px 0 20px;
+      }
+    }
+    button {
+      padding: 14px 80px;
+      color: #fff;
+      background: #b2a585;
+      border: 1px solid #b2a585;
+      font-size: 18px;
+      font-weight: normal;
+      line-height: normal;
+      letter-spacing: -0.4px;
+      &:hover {
+        background-color: transparent;
+        color: #b2a585;
+        text-decoration: none;
+        -webkit-transition: 0.5s ease-in-out;
+        transition: 0.5s ease-in-out;
+      }
+    }
+  }
+  .locate-us {
+    margin: 130px 0 116px 0;
+  }
+  .locate-us,
+  .contact-form {
+    .section-title {
+      margin-bottom: 26px;
+      &::after {
+        display: none;
+      }
+    }
+  }
+  .map {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }
+  .file-area {
+    width: 100%;
+    position: relative;
+
+    .resume-upload-input {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .resume-upload {
+      width: 100%;
+      padding: 30px;
+      border: 1px dashed rgba(153, 153, 153, 0.5) !important;
+      text-align: center;
+    }
+
+    &:hover .resume-upload {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    input[type="file"]:focus + .resume-upload {
+      outline: 0;
+    }
+  }
+  .contact-details {
+    .section-title {
+      font-size: 20px;
+    }
+  }
 }
 // @media (max-width:1200px){
 //     .contact-section{
@@ -208,16 +205,14 @@
 //                 }
 //             }
 //         }
-//     }  
+//     }
 // }
-@media (max-width:580px) {
-    .contact-section {
-        .bg-color {
-            .contact-us-title {
-                padding-top: 0;
-            }
-        }
-      
-    } 
-  
+@media (max-width: 580px) {
+  .contact-section {
+    .bg-color {
+      .contact-us-title {
+        padding-top: 0;
+      }
+    }
+  }
 }

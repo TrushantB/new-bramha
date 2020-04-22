@@ -78,7 +78,7 @@ class LeisureDetails extends React.Component {
         <SEO title={leisureData.data.title.text}/>
         <main className="detail-page">
           {/* <!-- ---------------- banner start here ---------------- --> */}
-          <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section">
+          <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section" id="banner-section">
               <picture>
                 <source media="(min-width: 581px)" srcSet={leisureData.data.banner[0].image.localFile.childImageSharp.url}/>
                 <Img fluid={leisureData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img"/>

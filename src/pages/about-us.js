@@ -50,7 +50,7 @@ class AboutUs extends React.Component {
         {/* <p>This won't work at all {alert(this.props.location.pathname)}</p> */}
         <SEO title="About Us"/>
         <div className="about-page">
-          <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section mt-60">
+          <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section mt-60" id="banner-section">
             <picture>
               <source media="(max-width: 581px)" srcSet={data.image.mobile.url}/>
               <img src={data.image.url} alt="banner image here" className="banner-img" />

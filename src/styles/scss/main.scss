@@ -823,3 +823,11 @@ button:focus {
     opacity: 0.8;
   }
 }
+
+#banner-section {
+  picture,
+  img {
+    display: block;
+    height: 100%;
+  }
+}
