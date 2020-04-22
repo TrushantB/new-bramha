@@ -4,6 +4,8 @@ import Img from 'gatsby-image';
 import Layout from '../components/layout';
 import Footer from '../components/footer';
 import SEO from '../components/seo';
+import chevron_down from '../images/chevron_down.svg';
+import Div100vh from 'react-div-100vh/lib/Div100vh';
 
 class NRI extends React.Component {
   constructor(){
@@ -31,19 +33,17 @@ class NRI extends React.Component {
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title="NRI"/>
         <div  className="guideline-nri-detail">
-          <section className="banner-section">
+          <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section">
             <picture>
               <source media="(min-width: 581px)" srcSet={nriData.banner.localFile.childImageSharp.url}/>
               <Img fluid={nriData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
             </picture>
-            <div className="scroll-downs">
-              <div onClick={this.scrollWin} className="mousey">
-                {/* <div className=""></div> */}
-                <span className="icon-arrow-down d-inline-block scroller"></span>
-              </div>
+            <div className="scroll-downs" onClick={this.scrollWin}>
+              <span>Scroll</span>
+              <div className="mousey"><img src={chevron_down} /></div>
             </div>
             {/* <Img fluid={nriData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
-          </section>
+          </Div100vh>
 
           <section className="page-heading-section container container-sm-fluid bg-color">
           <div className="padding-block-60">

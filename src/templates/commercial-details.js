@@ -7,6 +7,8 @@ import Img from 'gatsby-image';
 import Slider from 'react-slick';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
+import chevron_down from '../images/chevron_down.svg';
+import Div100vh from 'react-div-100vh/lib/Div100vh';
 
 class CommercialDetails extends React.Component {
   state = {
@@ -75,19 +77,17 @@ class CommercialDetails extends React.Component {
         <SEO title={commercialData.data.title.text} />
         <main className="detail-page commercial-detail-page">
           {/* <!-- ---------------- banner start here ---------------- --> */}
-            <section className="banner-section">
+          <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section">
               <picture>
                 <source media="(min-width: 581px)" srcSet={commercialData.data.banner[0].image.localFile.childImageSharp.url}/>
                 <Img fluid={commercialData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img"/>
               </picture>
-              <div className="scroll-downs">
-                <div onClick={this.scrollWin} className="mousey">
-                  {/* <div className=""></div> */}
-                <span className="icon-arrow-down d-inline-block scroller"></span>
-                </div>
+              <div className="scroll-downs" onClick={this.scrollWin}>
+                <span>Scroll</span>
+                <div className="mousey"><img src={chevron_down} /></div>
               </div>
               {/* <Img fluid={commercialData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
-            </section>
+            </Div100vh>
           {/* <!-- ---------------- banner end here ---------------- --> */}
           {/*  {/* <!------------------ middle section start here ----------------------> */}
             <section className="detail-page-sections pt-sm-0 container" id={commercialData.uid}>

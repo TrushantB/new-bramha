@@ -9,6 +9,8 @@ import '../firebase/config';
 import * as firebase from 'firebase';
 import FileUploader from "react-firebase-file-uploader";
 import queryString from 'query-string';
+import chevron_down from '../images/chevron_down.svg';
+import Div100vh from 'react-div-100vh/lib/Div100vh';
 
 class Contacts extends React.Component {
   constructor(props){
@@ -190,19 +192,17 @@ class Contacts extends React.Component {
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title="Contacts"/>
         <section className="contact-section">
-          <div className="contact-page-image banner-section mt-60">
+          <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="contact-page-image banner-section mt-60">
             <picture>
               <source media="(max-width: 581px)" srcSet={contactData.banner.Mobile.url}/>
               <img src={contactData.banner.url} alt="" width="100%" />
             </picture>
-            <div className="scroll-downs">
-              <div onClick={this.scrollWin} className="mousey">
-                {/* <div className=""></div> */}
-                <span className="icon-arrow-down d-inline-block scroller"></span>
-              </div>
+            <div className="scroll-downs" onClick={this.scrollWin}>
+              <span>Scroll</span>
+              <div className="mousey"><img src={chevron_down} /></div>
             </div>
             {/* <Img fluid={contactData.banner.localFile.childImageSharp.fluid} alt="" width="100%"/> */}
-          </div>
+          </Div100vh>
           <section className="page-heading-section container container-sm-fluid bg-color">
             <div className="contact-us-title padding-block-60">
               <h2 className="page-heading"> {contactData.contactus.text}</h2>

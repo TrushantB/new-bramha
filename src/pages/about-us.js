@@ -5,6 +5,8 @@ import Img from 'gatsby-image';
 import Layout from '../components/layout';
 import Footer from '../components/footer';
 import SEO from '../components/seo';
+import chevron_down from '../images/chevron_down.svg';
+import Div100vh from 'react-div-100vh/lib/Div100vh';
 
 class AboutUs extends React.Component {
   state = {
@@ -48,25 +50,22 @@ class AboutUs extends React.Component {
         {/* <p>This won't work at all {alert(this.props.location.pathname)}</p> */}
         <SEO title="About Us"/>
         <div className="about-page">
-          <section className="banner-section mt-60">
+          <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section mt-60">
             <picture>
               <source media="(max-width: 581px)" srcSet={data.image.mobile.url}/>
               <img src={data.image.url} alt="banner image here" className="banner-img" />
             </picture>
-            <div className="scroll-downs">
-              <div onClick={this.scrollWin} className="mousey">
-                {/* <div className=""></div> */}
-                {/* <i className="fas fa-long-arrow-alt-down scroller"></i> */}
-                <span className="icon-arrow-down d-inline-block scroller"></span>
-              </div>
+            <div className="scroll-downs" onClick={this.scrollWin}>
+              <span>Scroll</span>
+              <div className="mousey"><img src={chevron_down} /></div>
             </div>
             {/* <Img fluid={data.image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
-          </section>
+          </Div100vh>
           <section className="about-sections pb-0 pt-sm-0 page-heading-section container container-sm-fluid">
             <div className="row padding-block-60 pb-0 about-heading">
               <div className="col-12 padding-sm-0">
                 <h2 className="page-heading">{data.sub_title.text} </h2>
-              </div> 
+              </div>
             </div>
             <div className="row about-description d-flex">
               <div className="col-md-3 col-sm-8 col-sm-offset-1 about-years">
@@ -93,7 +92,7 @@ class AboutUs extends React.Component {
                   })}
                 {/* <div className="d-none d-md-flex justify-content-center align-items-center p-3 w-100">
                   {
-                    this.state.styleData ? 
+                    this.state.styleData ?
                     <div className="link-text" onClick={() => {
                       this.setState({styleData:null})
                       }}>Show More <i className="fas fa-chevron-down"></i></div> :
@@ -128,7 +127,7 @@ class AboutUs extends React.Component {
                               <h3 className="slide-title text-white">
                                 {item.title.text}
                               </h3>
-                              <p className="slide-description text-white m-0"> 
+                              <p className="slide-description text-white m-0">
                                 {item.description.text}
                               </p>
                             </div>
@@ -153,15 +152,15 @@ class AboutUs extends React.Component {
                   <div className="vertical-img-wrapper w-100">
                     <Img fluid={verticalsData.vertical1.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
                   </div>
-                  <div className="vertical-card-body d-flex flex-column justify-content-between"> 
+                  <div className="vertical-card-body d-flex flex-column justify-content-between">
                     <h2 className="inner-section-title">
                       {verticalsData.vertical1.document[0].data.title.text}
                     </h2>
                     <div className="link-text vertical-card-link d-flex justify-content-between align-items-center">
-                      <span> View Projects </span> 
+                      <span> View Projects </span>
                       <i className="fas fa-arrow-right"></i>
                     </div>
-                  </div> 
+                  </div>
                 </Link>
               </div>
 
@@ -170,15 +169,15 @@ class AboutUs extends React.Component {
                   <div className="vertical-img-wrapper w-100">
                     <Img fluid={verticalsData.vertical2.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
                   </div>
-                  <div className="vertical-card-body d-flex flex-column justify-content-between"> 
+                  <div className="vertical-card-body d-flex flex-column justify-content-between">
                     <h2 className="inner-section-title">
                       {verticalsData.vertical2.document[0].data.title.text}
                     </h2>
                     <div className="link-text vertical-card-link d-flex justify-content-between align-items-center">
-                      <span> View Projects </span> 
+                      <span> View Projects </span>
                       <i className="fas fa-arrow-right"></i>
                     </div>
-                  </div> 
+                  </div>
                 </Link>
               </div>
 
@@ -187,12 +186,12 @@ class AboutUs extends React.Component {
                   <div className="vertical-img-wrapper w-100">
                     <Img fluid={verticalsData.vertical3.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
                   </div>
-                  <div className="vertical-card-body d-flex flex-column justify-content-between"> 
+                  <div className="vertical-card-body d-flex flex-column justify-content-between">
                     <h2 className="inner-section-title">
                       {verticalsData.vertical3.document[0].data.title.text}
                     </h2>
                     <div className="link-text vertical-card-link d-flex justify-content-between align-items-center">
-                      <span> View Projects </span> 
+                      <span> View Projects </span>
                       <i className="fas fa-arrow-right"></i>
                     </div>
                   </div>
@@ -200,16 +199,16 @@ class AboutUs extends React.Component {
               </div>
 
               <div className="col-md-6 mt-5 padding-sm-0">
-                <Link to='/leisure-club' className="vertical-card d-flex text-decoration-none"> 
+                <Link to='/leisure-club' className="vertical-card d-flex text-decoration-none">
                   <div className="vertical-img-wrapper w-100">
                     <Img fluid={verticalsData.vertical4.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
                   </div>
-                  <div className="vertical-card-body d-flex flex-column justify-content-between"> 
+                  <div className="vertical-card-body d-flex flex-column justify-content-between">
                     <h2 className="inner-section-title">
                       {verticalsData.vertical4.document[0].data.title.text}
                     </h2>
                     <div className="link-text vertical-card-link d-flex justify-content-between align-items-center">
-                        <span> View Projects </span> 
+                        <span> View Projects </span>
                         <i className="fas fa-arrow-right"></i>
                     </div>
                   </div>
@@ -227,15 +226,15 @@ class AboutUs extends React.Component {
                   <div className="management-img-wrapper w-100">
                     <Img fluid={mgntTeam.data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100 h-100"/>
                   </div>
-                  <div className="management-card-body d-flex flex-column justify-content-around"> 
+                  <div className="management-card-body d-flex flex-column justify-content-around">
                     <p className="d-none d-md-block">
                       {mgntTeam.data.description.text}
                     </p>
                     <Link to={mgntTeam.uid} className="link-text management-card-link d-flex justify-content-between align-items-center">
-                      <span> Our Team </span> 
+                      <span> Our Team </span>
                       <i className="fas fa-arrow-right"></i>
                     </Link>
-                  </div> 
+                  </div>
                 </div>
               </div>
             </div>
@@ -296,7 +295,7 @@ export const AboutPage = graphql` {
           }
         }
       }
-      
+
       prismicManagementTeam {
           uid
           data {
