@@ -235,7 +235,6 @@ class VerticalPage extends React.Component {
                 {
                   verticalData.data.banner[0].image.mobile &&
                   <source media="(max-width: 581px)" srcSet={verticalData.data.banner[0].image.mobile.url}/>
-
                 }
                 <img src={verticalData.data.banner[0].image.url} alt="banner image here" className="banner-img"/>
               </picture>
