@@ -177,7 +177,7 @@ class Contacts extends React.Component {
       });
   };
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     const queryParams = queryString.parseUrl(this.props.location.search);
     this.setState({
       utmSource: queryParams && queryParams.query.utm_source,

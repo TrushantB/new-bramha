@@ -77,7 +77,7 @@ export default class Residential extends React.Component {
     }
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     let type = [];
     let address = [];
     const allData = this.props.data.allPrismicResidential.edges;

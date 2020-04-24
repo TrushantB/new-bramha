@@ -15,7 +15,7 @@ class NRI extends React.Component {
     }
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     const nriData = this.props.data.prismicNri.data;
     this.setState({collapseDescription: nriData.group})
   }

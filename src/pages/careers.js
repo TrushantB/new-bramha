@@ -59,7 +59,7 @@ class Careers extends React.Component {
     }
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     let jobOpening = [];
     const careerData = this.props.data.prismicCareers.data;
     careerData.architect.map((item) => {

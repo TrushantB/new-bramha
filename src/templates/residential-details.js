@@ -36,7 +36,7 @@ class VerticalPage extends React.Component {
   };
 
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     const verticalData = this.props.data.prismicOurVerticalsArticle;
     const queryParams = queryString.parseUrl(this.props.location.search);
     this.setState({

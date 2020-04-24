@@ -31,8 +31,8 @@ function HomeGallery(props) {
           })
         }
       </Swiper>
-      <button className="slick-prev" onClick={props.goPrev}>Prev</button>
-      <button className="slick-next" onClick={props.goNext}>Next</button>
+      <button className="slick-prev" onClick={() => props.goPrev()}>Prev</button>
+      <button className="slick-next" onClick={() => props.goNext()}>Next</button>
     </div>
 
   )
