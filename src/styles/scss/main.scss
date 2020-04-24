@@ -831,3 +831,64 @@ button:focus {
     height: 100%;
   }
 }
+
+.home-gallery {
+  display: flex;
+  flex-direction: column;
+  .bramha-swiper {
+    flex: 1;
+  }
+  .swiper-container {
+    background: #ddd;
+    overflow: hidden;
+    &:after {
+      content: "";
+      position: absolute;
+      background-image: linear-gradient(
+        to right,
+        rgba(00, 00, 00, 0.4),
+        transparent
+      );
+      top: 0;
+      bottom: 0;
+      width: 80px;
+      height: 100%;
+      z-index: 9;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      background-image: linear-gradient(
+        to right,
+        rgba(00, 00, 00, 0.4),
+        transparent
+      );
+      top: 0;
+      bottom: 0;
+      width: 80px;
+      height: 100%;
+      z-index: 9;
+      right: 0;
+      transform: rotate(180deg);
+    }
+  }
+  .banner-wrapper {
+    width: 100%;
+    height: calc(100vh - 120px);
+    -o-object-fit: cover;
+    object-fit: cover;
+    position: relative;
+    overflow: hidden;
+    img {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+  }
+  .tabs {
+    text-align: center;
+  }
+}

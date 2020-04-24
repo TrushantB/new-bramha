@@ -17,9 +17,6 @@ const Header = ({ siteTitle ,pathname}) => {
 function classHandle() {
   $("body").removeClass("nav-open");
  }
- function onClick(e) {
-  e.preventDefault()
-}
 
 return(
 <header className="header">

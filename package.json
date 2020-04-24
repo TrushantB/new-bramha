@@ -36,16 +36,18 @@
     "popper.js": "^1.14.3",
     "prop-types": "^15.7.2",
     "query-string": "^6.11.0",
-    "react": "^16.12.0",
+    "react": "^16.13.1",
     "react-div-100vh": "^0.3.8",
-    "react-dom": "^16.12.0",
+    "react-dom": "^16.13.1",
     "react-firebase-file-uploader": "^2.4.3",
     "react-helmet": "^5.2.1",
+    "react-id-swiper": "^3.0.0",
     "react-image-lightbox": "^5.1.1",
     "react-phone-number-input": "^3.0.15",
     "react-scroll": "^1.7.16",
     "react-scroll-up-button": "^1.6.4",
-    "react-slick": "^0.25.2"
+    "react-slick": "^0.25.2",
+    "swiper": "^5.3.7"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
