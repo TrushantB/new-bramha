@@ -327,77 +327,55 @@ body {
 }
 
 @media (max-width: 768px) {
-  .our-verticals-tabs .nav-item {
-    padding: 16px 8px;
+  .home-gallery .banner-wrapper {
+    height: calc(100vh - 60px) !important;
   }
   .our-verticals-tabs {
-    height: 52px;
-    .container {
-      max-width: 600px;
-    }
-  }
-  .home-slider {
-    .slick-slide,
-    .banner-section {
-      height: calc(100vh - 113px);
-    }
-  }
-  .our-verticals-tabs .tab span {
-    padding-left: 8px;
-  }
-  .drawer-field {
-    width: 50%;
-  }
-
-  .our-verticals-tabs {
-    background: linear-gradient(to top, rgba(00, 00, 00, 0.4), transparent);
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
     position: fixed;
+    bottom: 15px;
+    left: 10px;
+    right: 10px;
+    height: 44px;
+    padding: 0 10px;
+    width: auto;
+    overflow: hidden;
     z-index: 1;
-    bottom: 0;
-    .nav-item {
+    &::after {
+      position: absolute;
+      content: "";
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      filter: blur(25px);
+      background: #000;
+      z-index: 0;
+    }
+    .container {
+      max-width: none;
       padding: 0;
+      z-index: 1;
+    }
+    .nav-tabs {
+      display: flex;
+    }
+    .nav-item {
       flex: 1;
       justify-content: center;
     }
-    ul {
-      justify-content: space-between !important;
-    }
-    .container {
-      padding: 0;
-    }
     .tab {
-      flex-direction: column;
-      color: #c3c3c3;
-      span {
-        font-size: 10px;
-        letter-spacing: 0.3px;
-      }
+      color: #fff;
       .icon {
-        display: block;
-      }
-      span {
-        padding-left: 4px;
-        margin: 0;
-        box-shadow: none !important;
-      }
-      &:hover {
-        &::before {
-          background-color: #fff;
+        display: none;
+        + span {
+          font-size: 11px;
+          margin: 0;
+          box-shadow: none !important;
         }
       }
     }
-    .active {
-      .tab {
-        font-weight: 400;
-        color: #fff;
-        &::before {
-          background-color: theme-color("tertiary-gold");
-        }
-      }
-    }
-  }
-  .banner-wrapper {
-    height: calc(100vh - 60px) !important;
   }
 }
 @media (max-width: 580px) {
@@ -405,12 +383,7 @@ body {
     width: 36px;
     height: 36px;
   }
-  .navbar {
-    .nav-footer {
-      background-color: #333333;
-      color: rgba(255, 255, 255, 0.8);
-    }
-  }
+
   .drawer-field {
     width: 80%;
   }
@@ -442,12 +415,6 @@ body {
   }
 }
 
-@media (max-width: 400px) {
-  .our-verticals-tabs .tab:before {
-    width: 4px;
-    height: 4px;
-  }
-}
 @media (max-width: 350px) {
   .our-verticals-tabs .tab span {
     font-size: 10px;
