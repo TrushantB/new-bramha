@@ -53,7 +53,9 @@ function IndexPage(props) {
     <Layout location="/" noHeader="true"  pathname={props.location.pathname}>
       <SEO title="Home"/>
       <Div100vh className="home-gallery home-slider" style={{ height: 'calc(100rvh - 60px)'}}>
-       <HomeGallery verticals={reducedVerticals} getSwiper={setSwiper} slideKey={currentSlideKey} params={params} goNext={goNext} goPrev={goPrev} />
+        {reducedVerticals &&
+        <HomeGallery verticals={reducedVerticals} getSwiper={setSwiper} slideKey={currentSlideKey} params={params} goNext={goNext} goPrev={goPrev} />
+        }
         <footer className="our-verticals-tabs d-flex">
             <div className="container d-flex">
               <ul className="p-0 d-flex w-100 justify-content-around list-style-none text-uppercase nav nav-tabs border-0" id="myTab" role="tablist">
