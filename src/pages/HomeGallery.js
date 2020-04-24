@@ -15,7 +15,7 @@ function HomeGallery(props) {
     <div className="bramha-swiper">
       <Swiper getSwiper={props.getSwiper} {...params} activeSlideKey={props.slideKey}>
         {
-          props.verticals.map((item) => {
+          (props.verticals && props.verticals.length > 0) && props.verticals.map((item) => {
             return (
               <div key={item.itemIndex} className="banner-wrapper">
                 <Link to={`/residential/${item.project_url}`}>
