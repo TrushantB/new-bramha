@@ -3,32 +3,10 @@ import React from "react"
 import '../styles/css/custom.css';
 import '../styles/scss/main.scss';
 import $ from 'jquery';
-import {TinyButton as ScrollUpButton} from "react-scroll-up-button"; 
+import {TinyButton as ScrollUpButton} from "react-scroll-up-button";
 
 
-const Footer = ({ siteTitle }) => { 
-  function scrollTo() {
-         $('body,html').animate({
-          scrollTop: 0
-        }, 400);
-
-  }
-  // $(document).ready(function(){
-  //   $(window).scroll(function () {
-  //       if ($(this).scrollTop() > 50) {
-  //         $('#back-to-top').fadeIn();
-  //       } else {
-  //         $('#back-to-top').fadeOut();
-  //       }
-  //     });
-  //     // scroll body to 0px on click
-  //     $('#back-to-top').click(function () {
-  //       $('body,html').animate({
-  //         scrollTop: 0
-  //       }, 400);
-  //       return false;
-  //     });
-  // });
+const Footer = ({ siteTitle }) => {
   return(
   <footer className="footer">
     <div className="container">
@@ -87,10 +65,8 @@ const Footer = ({ siteTitle }) => {
       </div>
     </div>
    <ScrollUpButton ContainerClassName="back-to-top" />
-   
-    {/*   <a id="back-to-top"  className="btn btn-light btn-lg back-to-top" role="button" onClick={scrollTo}><i className="fas fa-chevron-up"></i></a> */}
   </footer>
-  
+
 
 )
   }
