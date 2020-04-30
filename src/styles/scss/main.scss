@@ -27,7 +27,9 @@
 /*================================
 -------- Common Basic css start
 ================================*/
-
+body {
+  overflow-x: hidden;
+}
 .mb-10 {
   margin-bottom: 10px;
 }
@@ -190,9 +192,11 @@ button:focus {
     }
     .slick-prev {
       left: -31px;
+      z-index: 10;
     }
     .slick-next {
       right: -31px;
+      z-index: 10;
     }
   }
 }
@@ -902,5 +906,25 @@ button:focus {
     background: none;
     border: none;
     cursor: pointer;
+  }
+}
+
+.banner-img {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    opacity: 0;
+    transition-delay: 500ms;
   }
 }
