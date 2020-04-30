@@ -236,12 +236,12 @@ class VerticalPage extends React.Component {
                   verticalData.data.banner[0].image.mobile &&
                   <source media="(max-width: 581px)" srcSet={verticalData.data.banner[0].image.mobile.url}/>
                 }
-                <img src={verticalData.data.banner[0].image.url} alt="banner image here" className="banner-img"/>
+                <img src={verticalData.data.banner[0].image.url} alt={verticalData.data.title.text} className="banner-img"/>
               </picture>
-              <div className="scroll-downs" onClick={this.scrollWin}>
+              <button className="scroll-downs" onClick={this.scrollWin}>
                 <span>Scroll</span>
-                <div className="mousey"><img src={chevron_down} /></div>
-              </div>
+                <div className="mousey"><img src={chevron_down} alt="Scroll to content" /></div>
+              </button>
                 {/* <Img fluid={verticalData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
               </Div100vh>
             {/* <!--   ---------------- banner end here ---------------- --> */}
@@ -288,8 +288,8 @@ class VerticalPage extends React.Component {
                         verticalData.data.showcase.length > 0 && verticalData.data.showcase.map((item,value) => {
                           return(
                             <div key={value}>
-                              <div  className="slider-img " onClick={() => this.setState({ isOpenOne: true ,photoIndex:value})}>
-                                <Img fluid={item.image1.localFile.childImageSharp.fluid} alt=" Showcase slidwer" className="life-at-bramha-slider-image" />
+                              <div role="link" tabIndex="0" className="slider-img" onClick={() => this.setState({ isOpenOne: true ,photoIndex:value})}>
+                                <Img fluid={item.image1.localFile.childImageSharp.fluid} alt={verticalData.data.title.text} className="life-at-bramha-slider-image" />
                                 <p className="showcase-slide-caption">{item.caption}</p>
                               </div>
                             </div>
@@ -534,8 +534,8 @@ class VerticalPage extends React.Component {
                       <div className="image-wrapper">
                         {
                           this.state.imageUrl ?
-                         <img src={this.state.imageUrl} alt="select image" className="w-100 h-100"/>
-                         :<img src={verticalData.data.amenities[0].image1.url} alt="select image" className="w-100 h-100"/>
+                         <img src={this.state.imageUrl} alt={verticalData.data.title.text} className="w-100 h-100"/>
+                         :<img src={verticalData.data.amenities[0].image1.url} alt={verticalData.data.title.text} className="w-100 h-100"/>
                         }
                       </div>
                     </div>
@@ -572,7 +572,7 @@ class VerticalPage extends React.Component {
                             this.state.floorPlanSelect && this.state.floorPlanSelect.map((item,value) => {
                               return(
                                 <div key={value}>
-                                  <div className="slider-img" onClick={() => this.setState({ isOpenOneSlide: true ,photoIndex:value})}>
+                                  <div role="link" tabIndex="0" className="slider-img" onClick={() => this.setState({ isOpenOneSlide: true ,photoIndex:value})}>
                                     <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt="Floor Plans" className="w-100 h-100" />
                                   </div>
                                 </div>
@@ -603,7 +603,7 @@ class VerticalPage extends React.Component {
                                 this.state.floorPlanSelect.length > 0 && this.state.floorPlanSelect.map((item,value) => {
                                   return(
                                     <div key={value}>
-                                      <div className="slider-img " onClick={() => this.setState({ isOpenTwo: true ,photoIndex:value})}>
+                                      <div role="link" tabIndex="0" className="slider-img " onClick={() => this.setState({ isOpenTwo: true ,photoIndex:value})}>
                                         <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt="Floor Plans" className="w-100 h-100" />
                                       </div>
                                     </div>
@@ -661,7 +661,7 @@ class VerticalPage extends React.Component {
                       verticalData.data.site_progress.length > 0 && verticalData.data.site_progress.map((item,value) => {
                         return(
                           <div key={value}>
-                            <div  className="slider-img " onClick={() => this.setState({ isOpenThree: true ,photoIndex:value})}>
+                            <div role="link" tabIndex="0" className="slider-img " onClick={() => this.setState({ isOpenThree: true ,photoIndex:value})}>
                               <Img fluid={item.images.localFile.childImageSharp.fluid} key={value} alt=" Floor Plans" className="w-100 h-100" />
                             </div>
                           </div>

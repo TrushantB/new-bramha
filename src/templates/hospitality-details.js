@@ -141,7 +141,7 @@ class HospitalityDetails extends React.Component {
                       hospitalityData.data.showcase.map((item,value) => {
                         return(
                           <div key={value}>
-                            <div  className="slider-img " onClick={() => this.setState({ isOpen: true ,photoIndex:value})}>
+                            <div role="link" tabIndex="0" className="slider-img " onClick={() => this.setState({ isOpen: true ,photoIndex:value})}>
                               <Img fluid={item.image1.localFile.childImageSharp.fluid} alt=" Showcase slidwer" className="life-at-bramha-slider-image" />
                               <p className="showcase-slide-caption">{item.caption}</p>
                             </div>

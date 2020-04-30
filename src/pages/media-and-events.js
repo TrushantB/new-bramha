@@ -104,7 +104,7 @@ class MediaAndEvents extends React.Component {
                               datas.data.showcase.map((item,value) => {
                                 return(
                                   <div key={value}>
-                                    <div className="slider-img image-ratio" onClick={() => this.setState({ isOpen: true ,photoIndex:value, locateMatch: datas.data.locate_match})}>
+                                    <div role="link" tabIndex="0" className="slider-img image-ratio" onClick={() => this.setState({ isOpen: true ,photoIndex:value, locateMatch: datas.data.locate_match})}>
                                       <Img fluid={item.image.localFile.childImageSharp.fluid} width="100%"/>
                                     </div>
                                   </div>

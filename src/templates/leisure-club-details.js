@@ -140,7 +140,7 @@ class LeisureDetails extends React.Component {
                       leisureData.data.showcase.map((item,value)=>{
                         return(
                           <div key={value}>
-                            <div  className="slider-img image-ratio" onClick={() => this.setState({ isOpen: true ,photoIndex:value})}>
+                            <div role="link" tabIndex="0" className="slider-img image-ratio" onClick={() => this.setState({ isOpen: true ,photoIndex:value})}>
                               <Img fluid={item.image1.localFile.childImageSharp.fluid} alt=" Showcase slider" className="life-at-bramha-slider-image" />
                               <p className="showcase-slide-caption">{item.caption}</p>
                             </div>

@@ -762,6 +762,7 @@ button:focus {
 }
 
 .scroll-downs {
+  border: none;
   position: absolute;
   cursor: pointer;
   right: 0;
@@ -830,6 +831,10 @@ button:focus {
     display: block;
     height: 100%;
   }
+  img {
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
 }
 
 .home-gallery {
@@ -837,8 +842,10 @@ button:focus {
   flex-direction: column;
   .bramha-swiper {
     flex: 1;
+    overflow: hidden;
   }
   .swiper-container {
+    height: 100%;
     background: #ddd;
     overflow: hidden;
     &:after {
@@ -874,15 +881,13 @@ button:focus {
   }
   .banner-wrapper {
     width: 100%;
-    height: calc(100vh - 120px);
-    -o-object-fit: cover;
-    object-fit: cover;
     position: relative;
     overflow: hidden;
     img {
       position: relative;
       overflow: hidden;
-      width: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
       height: 100%;
       left: 0;
       top: 0;
@@ -890,5 +895,12 @@ button:focus {
   }
   .tabs {
     text-align: center;
+  }
+}
+.slider-img {
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
   }
 }

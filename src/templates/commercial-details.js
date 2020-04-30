@@ -140,7 +140,7 @@ class CommercialDetails extends React.Component {
                     commercialData.data.showcase.map((item,value) => {
                       return(
                         <div key={value}>
-                          <div className="slider-img image-ratio" onClick={() => this.setState({ isOpen: true ,photoIndex:value})}>
+                          <div role="link" tabIndex="0" className="slider-img image-ratio" onClick={() => this.setState({ isOpen: true ,photoIndex:value})}>
                               <img src={item.image1.url} alt=" Showcase slidwer" className="life-at-bramha-slider-image" />
                             <p className="showcase-slide-caption">{item.caption}</p>
                           </div>

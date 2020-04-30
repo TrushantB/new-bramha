@@ -222,7 +222,6 @@ body {
   }
   .banner-section {
     width: 100%;
-    height: calc(100vh - 120px);
     -o-object-fit: cover;
     object-fit: cover;
     position: relative;
@@ -327,9 +326,6 @@ body {
 }
 
 @media (max-width: 768px) {
-  .home-gallery .banner-wrapper {
-    height: calc(100vh - 60px) !important;
-  }
   .our-verticals-tabs {
     background: rgba(0, 0, 0, 0.5);
     border-radius: 30px;
