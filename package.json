@@ -52,6 +52,7 @@
   "devDependencies": {
     "@hot-loader/react-dom": "^16.13.0",
     "dotenv": "^8.2.0",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.9",
     "prettier": "^1.19.1",
     "resolve-url-loader": "^3.1.1"
   },
