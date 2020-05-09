@@ -509,9 +509,9 @@ class VerticalPage extends React.Component {
                   </a>
                 </li>
                 <li className="nav-item col-6 p-0">
-                  <a className="nav-link text-center text-uppercase tab-title" id="pills-factfile-tab" data-toggle="pill" href="#fact-file" role="tab" aria-controls="pills-factfile" aria-selected="false">
+                  {/* <a className="nav-link text-center text-uppercase tab-title" id="pills-factfile-tab" data-toggle="pill" href="#fact-file" role="tab" aria-controls="pills-factfile" aria-selected="false">
                   {verticalData.data.floor_plans1.text}
-                  </a>
+                  </a> */}
                 </li>
               </ul>
               <div className="tab-content" id="factfiles-tabContent">
@@ -867,9 +867,6 @@ export const verticalViewData = graphql`
           text
         }
       }
-      short_description {
-        text
-      }
       flat_bhk {
         text
       }
@@ -894,9 +891,6 @@ export const verticalViewData = graphql`
           }
         }
         caption
-      }
-      floor_plans1 {
-        text
       }
       floor_plans {
         title1 {
@@ -939,9 +933,6 @@ export const verticalViewData = graphql`
       }
       amenities1 {
         text
-      }
-      amenities_banner {
-        url
       }
       amenities {
         title1 {

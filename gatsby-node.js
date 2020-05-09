@@ -10,8 +10,7 @@ exports.createPages=({graphql,actions}) => {
         const leisure = path.resolve('src/templates/leisure-club-details.js');
 
         resolve(
-            graphql(`
-                {
+            graphql(`query HomePageQuery {
                     allPrismicOurVerticalsArticle{
                         edges {
                             node {
