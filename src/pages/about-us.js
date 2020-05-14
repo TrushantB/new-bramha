@@ -224,7 +224,7 @@ class AboutUs extends React.Component {
               <div className="col-12 padding-sm-0">
                 <div className="management-card d-flex">
                   <div className="management-img-wrapper w-100">
-                    <Img fluid={mgntTeam.data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100 h-100"/>
+                    <img src={mgntTeam.data.banner.url} alt="verticals image" className="w-100 h-100"/>
                   </div>
                   <div className="management-card-body d-flex flex-column justify-content-around">
                     <p className="d-none d-md-block">
@@ -306,13 +306,7 @@ export const AboutPage = graphql` {
               text
             }
             banner {
-              localFile {
-                childImageSharp {
-                  fluid(maxWidth: 1150) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
+              url
             }
           }
         }

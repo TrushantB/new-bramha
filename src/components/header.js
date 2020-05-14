@@ -254,6 +254,9 @@ return(
       <li className={`nav-item ${pathname=='/partners' ? 'active':''}`}>
         <Link className="nav-link" to="/partners" onClick={classHandle}>Partners</Link>
       </li>
+      <li className={`nav-item ${pathname=='/awards&recognition' ? 'active':''}`}>
+        <Link className="nav-link" to="/awards&recognition" onClick={classHandle}>Awards & Recognition</Link>
+      </li>
       <li className={`nav-item ${pathname=='/knoweldge-hub' ? 'active':''}`}>
         <Link className="nav-link" to="/knoweldge-hub" onClick={classHandle}>Knoweldge Hub</Link>
       </li>
