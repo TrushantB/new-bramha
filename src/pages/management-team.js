@@ -8,7 +8,7 @@ class ManagementTeam extends React.Component {
   render(){
     const mgntData = this.props.data.prismicManagementTeam.data;
     return(
-      <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
+      <Layout location="/" noHeader="true" pathname={this.props.location.pathname}>
         <SEO title={mgntData.sub_title.text}/>
           <section className="award-wrapper">
             <section className="page-heading-section container container-sm-fluid bg-color">
@@ -183,7 +183,6 @@ export const managementPage = graphql`{
       strategy_team_title{
         text
       }
-      
       strategy_team{
        	image{
         	url
