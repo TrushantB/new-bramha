@@ -8,12 +8,14 @@ import Footer from '../components/footer';
 import SEO from '../components/seo';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
+import chevron_down from '../images/chevron_down.svg';
+import Div100vh from 'react-div-100vh/lib/Div100vh';
 
 class HospitalityDetails extends React.Component {
   state = {
     activeSlide:null,
     photoIndex: 0,
-    isOpen: false, 
+    isOpen: false,
   }
   scrollWin() {
     var offsetHeight = document.querySelector('.banner-section').offsetHeight;
@@ -71,14 +73,14 @@ class HospitalityDetails extends React.Component {
           }
         }
       ]
-    }; 
+    };
 
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title={hospitalityData.data.title.text} />
         <main className="detail-page">
           {/* <!-- ---------------- banner start here ---------------- --> */}
-            <section className="banner-section">
+          <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section">
               <picture>
                 {
                   hospitalityData.data.banner[0].image.mobile &&
@@ -86,14 +88,12 @@ class HospitalityDetails extends React.Component {
                 }
                 <img src={hospitalityData.data.banner[0].image.url} alt="banner image here" className="banner-img"/>
               </picture>
-              <div className="scroll-downs">
-                <div onClick={this.scrollWin} className="mousey">
-                  {/* <div className=""></div> */}
-                <span className="icon-arrow-down d-inline-block scroller"></span>
-                </div>
+              <div className="scroll-downs" onClick={this.scrollWin}>
+                <span>Scroll</span>
+                <div className="mousey"><img src={chevron_down} /></div>
               </div>
               {/* <Img fluid={hospitalityData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
-            </section>
+            </Div100vh>
           {/* <!-- ---------------- banner end here ---------------- --> */}
           {/*  {/* <!------------------ middle section start here ----------------------> */}
             <section className="detail-page-sections pt-sm-0 container ">
@@ -114,15 +114,15 @@ class HospitalityDetails extends React.Component {
                 </div>
               </div>
               <div className="padding-block-60">
-                <h2 className="page-heading text-uppercase"> 
-                  {hospitalityData.data.heading.text}     
-                </h2> 
+                <h2 className="page-heading text-uppercase">
+                  {hospitalityData.data.heading.text}
+                </h2>
               </div>
               <div className="row">
                 <div className="col-12 d-flex d-sm-block flex-wrap justify-content-end">
-                  <p className="mb-4" dangerouslySetInnerHTML={{__html:hospitalityData.data.description.html }}/>
+                  <div className="mb-4" dangerouslySetInnerHTML={{__html:hospitalityData.data.description.html }}/>
                   {/* <a href="#" className="d-flex justify-content-between align-items-center btn-tertiary hospitality-viewmore">
-                    <span> View Website </span> 
+                    <span> View Website </span>
                     <i className="fas fa-arrow-right"></i>
                   </a> */}
                 </div>
@@ -141,7 +141,7 @@ class HospitalityDetails extends React.Component {
                       hospitalityData.data.showcase.map((item,value) => {
                         return(
                           <div key={value}>
-                            <div  className="slider-img " onClick={() => this.setState({ isOpen: true ,photoIndex:value})}>
+                            <div role="link" tabIndex="0" className="slider-img " onClick={() => this.setState({ isOpen: true ,photoIndex:value})}>
                               <Img fluid={item.image1.localFile.childImageSharp.fluid} alt=" Showcase slidwer" className="life-at-bramha-slider-image" />
                               <p className="showcase-slide-caption">{item.caption}</p>
                             </div>
@@ -201,7 +201,7 @@ class HospitalityDetails extends React.Component {
 }
 export default HospitalityDetails;
 
-export const hospitalityPage = graphql` 
+export const hospitalityPage = graphql`
   query hospitalityData($uid: String!) {
   prismicOurVerticalsArticle(uid: { eq: $uid }) {
     data{

@@ -4,6 +4,8 @@ import Img from 'gatsby-image';
 import Layout from '../components/layout';
 import Footer from '../components/footer';
 import SEO from '../components/seo';
+import chevron_down from '../images/chevron_down.svg';
+import Div100vh from 'react-div-100vh/lib/Div100vh';
 
 class NRI extends React.Component {
   constructor(){
@@ -13,11 +15,11 @@ class NRI extends React.Component {
     }
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     const nriData = this.props.data.prismicNri.data;
     this.setState({collapseDescription: nriData.group})
   }
-  
+
   scrollWin() {
     var offsetHeight = document.querySelector('.banner-section').offsetHeight;
     window.scrollBy({
@@ -31,19 +33,17 @@ class NRI extends React.Component {
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title="NRI"/>
         <div  className="guideline-nri-detail">
-          <section className="banner-section">
+          <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section" id="banner-section">
             <picture>
               <source media="(min-width: 581px)" srcSet={nriData.banner.localFile.childImageSharp.url}/>
               <Img fluid={nriData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
             </picture>
-            <div className="scroll-downs">
-              <div onClick={this.scrollWin} className="mousey">
-                {/* <div className=""></div> */}
-                <span className="icon-arrow-down d-inline-block scroller"></span>
-              </div>
+            <div className="scroll-downs" onClick={this.scrollWin}>
+              <span>Scroll</span>
+              <div className="mousey"><img src={chevron_down} /></div>
             </div>
             {/* <Img fluid={nriData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
-          </section>
+          </Div100vh>
 
           <section className="page-heading-section container container-sm-fluid bg-color">
           <div className="padding-block-60">
@@ -52,7 +52,7 @@ class NRI extends React.Component {
          <div className="row mr-0">
           <div className="col-12 ">
             <div className="main-paragraph ">
-              <p className="m-0" dangerouslySetInnerHTML={{__html:nriData.description.html }} />
+              <div className="m-0" dangerouslySetInnerHTML={{__html:nriData.description.html }} />
             </div>
           </div>
          </div>
@@ -86,15 +86,15 @@ class NRI extends React.Component {
                               </button>
                             </h5>
                           </div>
-                      
+
                           <div id={`collapseOne${value}`} className="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                             <div className="card-body" dangerouslySetInnerHTML={{__html: item.description1.html}} />
                             {/* {
-                              item.description2.html && 
+                              item.description2.html &&
                                 <div className="card-body" dangerouslySetInnerHTML={{__html: item.description2.html}}/>
                             }
                             {
-                              item.description3.html &&  
+                              item.description3.html &&
                                 <div className="card-body" dangerouslySetInnerHTML={{__html: item.description3.html}} />
                             } */}
                           </div>
@@ -105,7 +105,7 @@ class NRI extends React.Component {
                 </div>
               </div>
             </div>
-          </section>  
+          </section>
         </div>
         <Footer />
       </Layout>
@@ -142,8 +142,8 @@ export const nriPage = graphql`{
         description1 {
           html
         }
-        
+
       }
-    }  
+    }
   }
 }`

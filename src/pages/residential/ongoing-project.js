@@ -40,9 +40,9 @@ export default class OngoingResidential extends React.Component {
       let ongoing = this.state.ongoingProject.length > 0 && this.state.ongoingProjectStore.filter(res => res.residential_links.document[0].data.flat_bhk.text === e.target.value)
       // let completed =  this.state.completedProject.length > 0 && this.state.completedProjectStore.filter(res => res.completed_links.document[0].data.flat_bhk.text === e.target.value)
       this.setState({ongoingProject:ongoing, activeAddress:'',activeType:e.target.value})
-    }  
+    }
   }
- 
+
   handleOngoing(e, dataSource){
     let type = [];
     let address = [];
@@ -53,7 +53,7 @@ export default class OngoingResidential extends React.Component {
       project.map((item)=>{
         type.push(item.residential_links.document[0].data.flat_bhk.text);
         address.push(item.residential_links.document[0].data.flat_address.text);
-      }) 
+      })
       type= [...new Set(type)];
       address= [...new Set(address)];
       this.setState({allType: type, allAddress: address})
@@ -70,7 +70,7 @@ export default class OngoingResidential extends React.Component {
       project.map((item)=>{
         type.push(item.residential_links.document[0].data.flat_bhk.text);
         address.push(item.residential_links.document[0].data.flat_address.text);
-      }) 
+      })
       type = [...new Set(type)];
       address = [...new Set(address)];
       this.setState({allType: type, allAddress: address})
@@ -83,7 +83,7 @@ export default class OngoingResidential extends React.Component {
     }
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     let type = [];
     let address = [];
     const allData = this.props.data.allPrismicResidential.edges;
@@ -102,7 +102,7 @@ export default class OngoingResidential extends React.Component {
       this.setState({allType});
       this.setState({allAddress});
   }
-  
+
   render(){
     const residentialData = this.props.data.allPrismicResidential.edges;
     const lookingForMe = residentialData[0].node.data
@@ -113,7 +113,7 @@ export default class OngoingResidential extends React.Component {
             return(
               <section key={value} className="residential-section page-heading-section container container-sm-fluid bg-color">
                 <div className="padding-block-60">
-                  <h2 className="page-heading">{item.node.data.sub_title.text}</h2> 
+                  <h2 className="page-heading">{item.node.data.sub_title.text}</h2>
                 </div>
                 <div className="row  mr-0">
                   <div className="col-12">
@@ -155,7 +155,7 @@ export default class OngoingResidential extends React.Component {
                 </select>
               </div>
             </div>
-            {this.state.ongoingProject.length > 0 && 
+            {this.state.ongoingProject.length > 0 &&
               <section className="ongoing-project">
                 <div className="residences">
                   <div className="container">
@@ -195,20 +195,20 @@ export default class OngoingResidential extends React.Component {
                             </div>
                           )})
                         }
-                      </div> 
+                      </div>
                     </div>
                   </div>
                 </section>
               }
             <section className="give-details text-center">
-              <div className="container">    
-                <h4 className="text-uppercase text-center section-title">Looking for more option?</h4>  
+              <div className="container">
+                <h4 className="text-uppercase text-center section-title">Looking for more option?</h4>
                 <p>
                   {lookingForMe.looking_for_more.text}
                 </p>
                 <div className="sumbit text-center mt-sm-0 mt-4">
                   <button type="submit" className="btn-secondary">Give Details</button>
-                </div> 
+                </div>
               </div>
             </section>
           </section>

@@ -7,12 +7,14 @@ import Img from 'gatsby-image';
 import Slider from 'react-slick';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
+import chevron_down from '../images/chevron_down.svg';
+import Div100vh from 'react-div-100vh/lib/Div100vh';
 
 class LeisureDetails extends React.Component {
   state = {
     activeSlide:null,
     photoIndex: 0,
-    isOpen: false, 
+    isOpen: false,
   };
   scrollWin() {
     var offsetHeight = document.querySelector('.banner-section').offsetHeight;
@@ -39,7 +41,7 @@ class LeisureDetails extends React.Component {
             centerMode: true,
             centerPadding: '100px',
             slidesToShow: 1,
-            
+
         }
         },
         {
@@ -70,25 +72,27 @@ class LeisureDetails extends React.Component {
         }
         }
     ]
-    }; 
+    };
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title={leisureData.data.title.text}/>
         <main className="detail-page">
           {/* <!-- ---------------- banner start here ---------------- --> */}
-            <section className="banner-section">
-              <picture>
-                <source media="(min-width: 581px)" srcSet={leisureData.data.banner[0].image.localFile.childImageSharp.url}/>
-                <Img fluid={leisureData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img"/>
+          <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section" id="banner-section">
+            <picture>
+                {
+                  leisureData.data.banner[0].image.mobile &&
+                  <source media="(max-width: 581px)" srcSet={leisureData.data.banner[0].image.mobile.url}/>
+                }
+                <img src={leisureData.data.banner[0].image.url} alt="banner image here" className="banner-img"/>
               </picture>
-              <div className="scroll-downs">
-                <div onClick={this.scrollWin} className="mousey">
-                  {/* <div className=""></div> */}
-                <span className="icon-arrow-down d-inline-block scroller"></span>
-                </div>
+
+              <div className="scroll-downs" onClick={this.scrollWin}>
+                <span>Scroll</span>
+                <div className="mousey"><img src={chevron_down} /></div>
               </div>
               {/* <Img fluid={leisureData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
-            </section>
+            </Div100vh>
           {/* <!-- ---------------- banner end here ---------------- --> */}
           {/*  {/* <!------------------ middle section start here ----------------------> */}
             <section className="detail-page-sections pt-sm-0 container" id={leisureData.uid}>
@@ -109,15 +113,15 @@ class LeisureDetails extends React.Component {
                   </div>
                 </div>
               <div className="padding-block-60">
-                <h2 className="page-heading text-uppercase"> 
-                  {leisureData.data.heading.text}     
-                </h2> 
+                <h2 className="page-heading text-uppercase">
+                  {leisureData.data.heading.text}
+                </h2>
               </div>
               <div className="row">
                 <div className="col-12 d-flex d-sm-block flex-wrap justify-content-end">
-                  <p className="mb-4" dangerouslySetInnerHTML={{__html:leisureData.data.description.html }}/>
+                  <div className="mb-4" dangerouslySetInnerHTML={{__html:leisureData.data.description.html }}/>
                   {/* <a href="#" className="d-flex justify-content-between align-items-center btn-tertiary hospitality-viewmore">
-                    <span> View Website </span> 
+                    <span> View Website </span>
                     <i className="fas fa-arrow-right"></i>
                   </a> */}
                 </div>
@@ -136,7 +140,7 @@ class LeisureDetails extends React.Component {
                       leisureData.data.showcase.map((item,value)=>{
                         return(
                           <div key={value}>
-                            <div  className="slider-img image-ratio" onClick={() => this.setState({ isOpen: true ,photoIndex:value})}>
+                            <div role="link" tabIndex="0" className="slider-img image-ratio" onClick={() => this.setState({ isOpen: true ,photoIndex:value})}>
                               <Img fluid={item.image1.localFile.childImageSharp.fluid} alt=" Showcase slider" className="life-at-bramha-slider-image" />
                               <p className="showcase-slide-caption">{item.caption}</p>
                             </div>
@@ -196,7 +200,7 @@ class LeisureDetails extends React.Component {
 }
 export default LeisureDetails;
 
-export const leisurePage = graphql` 
+export const leisurePage = graphql`
   query leisureData($uid: String!) {
   prismicOurVerticalsArticle(uid: { eq: $uid }) {
     uid
@@ -209,13 +213,9 @@ export const leisurePage = graphql`
       }
       banner {
         image {
-          localFile {
-            childImageSharp {
-                fluid(maxWidth: 1150) {
-                  ...GatsbyImageSharpFluid
-                  presentationWidth
-                }
-            }
+          url
+          mobile{
+            url
           }
         }
       }

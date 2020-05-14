@@ -12,7 +12,7 @@ class MediaAndEvents extends React.Component {
   state = {
     activeSlide: null,
     photoIndex: 0,
-    isOpen: false, 
+    isOpen: false,
     locateMatch: ''
   };
 
@@ -75,11 +75,11 @@ class MediaAndEvents extends React.Component {
         <section className="events" >
           <section className="page-heading-section container container-sm-fluid bg-color">
             <div className="padding-block-60">
-              <h2 className="page-heading">{eventwiseData.title.text}</h2> 
+              <h2 className="page-heading">{eventwiseData.title.text}</h2>
             </div>
             <div className="row mr-0">
               <div className="col-12">
-                <p className="main-paragraph mb-0" dangerouslySetInnerHTML={{__html:eventwiseData.description.html }} />
+                <div className="main-paragraph mb-0" dangerouslySetInnerHTML={{__html:eventwiseData.description.html }} />
               </div>
             </div>
           </section>
@@ -104,7 +104,7 @@ class MediaAndEvents extends React.Component {
                               datas.data.showcase.map((item,value) => {
                                 return(
                                   <div key={value}>
-                                    <div className="slider-img image-ratio" onClick={() => this.setState({ isOpen: true ,photoIndex:value, locateMatch: datas.data.locate_match})}>
+                                    <div role="link" tabIndex="0" className="slider-img image-ratio" onClick={() => this.setState({ isOpen: true ,photoIndex:value, locateMatch: datas.data.locate_match})}>
                                       <Img fluid={item.image.localFile.childImageSharp.fluid} width="100%"/>
                                     </div>
                                   </div>
@@ -137,7 +137,7 @@ class MediaAndEvents extends React.Component {
                           </p>
                         </div>
                       </div>
-                    </section>   
+                    </section>
                   )
                 })
               )

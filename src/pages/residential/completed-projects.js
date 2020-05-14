@@ -12,13 +12,13 @@ class CompletedProjects extends React.Component {
             <SEO title="Completed Projects"/>
             <section className=" page-heading-section container container-sm-fluid bg-color">
             <div className="padding-block-60">
-                <h2 className="page-heading">Completed Projects</h2> 
+                <h2 className="page-heading">Completed Projects</h2>
             </div>
             <div className="row  mr-0">
                 <div className="col-12">
-                <div className="main-paragraph"> 
-                    <p dangerouslySetInnerHTML={{__html:completedData.completed_description.html }}/>
-                </div>  
+                <div className="main-paragraph">
+                    <div dangerouslySetInnerHTML={{__html:completedData.completed_description.html }}/>
+                </div>
                 </div>
             </div>
             </section>
@@ -34,7 +34,7 @@ class CompletedProjects extends React.Component {
                                         <div className="col-md-6 col-lg-4 p-0 pl-sm-3 pr-sm-3" key={value}>
                                         <Link to={`residential/${datas.uid}`} >
                                             <div className="residences-card position-relative mt-0 mt-sm-5" key={value}>
-                                            
+
                                             <div className="residences-img ">
                                                 <picture>
                                                 <source media="(max-width: 581px)" srcSet={datas.data.thumbnail.mobile.url}/>

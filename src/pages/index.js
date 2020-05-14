@@ -1,142 +1,86 @@
 import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import Slider from 'react-slick';
 import { graphql, Link } from "gatsby";
+import Div100vh from 'react-div-100vh';
+import HomeGallery from "./HomeGallery";
 
-class IndexPage extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      selectedVertical: null,
-      residential: null,
-      commercial: null,
-      hospitality: null,
-      leisure: null,
-      contactFlag:false,
-      mailFlag:false,
-      chatFlag:false,
-      verticalsName: 'residential'
+
+function IndexPage(props) {
+
+  const [currentSlideKey, setSlideKey] = React.useState();
+  const [activeSlideIndex, setActiveSlideIndex] = React.useState();
+  const [activeTab, setActiveTab] = React.useState('residential');
+
+  const [swiper, setSwiper] = React.useState();
+
+
+  const updateSlideKey = (key, type) => {
+    setSlideKey(key);
+    setActiveTab(type);
+  }
+  const params = {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    updateOnWindowResize: true
+  }
+
+  const residential = props.data.prismicResidential.data.gallery.map((item, index) => ({...item, type:'residential', itemIndex:`residential-${index}`}));
+  const commercial = props.data.prismicCommercial.data.gallery.map((item, index) => ({...item, type:'commercial', itemIndex:`commercial-${index}`}));;
+  const hospitality = props.data.prismicHospitality.data.gallery.map((item, index) => ({...item, type:'hospitality', itemIndex:`hospitality-${index}`}));;
+  const leisure = props.data.prismicLeisureClub.data.gallery.map((item, index) => ({...item, type:'leisure-club', itemIndex:`leisure-club-${index}`}));;
+  const verticals = [residential, commercial, hospitality, leisure];
+  const reducedVerticals = verticals.reduce((a, b) => [...a, ...b], []);
+
+
+  const goNext = () => {
+    if (swiper !== null) {
+      swiper.slideNext();
     }
-  }
+    const currentActiveSlide = reducedVerticals.find((item, index) => swiper.realIndex == index );
+    updateSlideKey(currentActiveSlide.itemIndex, currentActiveSlide.type)
+  };
+  const goPrev = () => {
+    if (swiper !== null) {
+      swiper.slidePrev();
+      const currentActiveSlide = reducedVerticals.find((item, index) => swiper.realIndex == index );
+      updateSlideKey(currentActiveSlide.itemIndex, currentActiveSlide.type)
+    }
+  };
 
-  componentWillMount() {
-    // let scrollHandle = this;
-    const residentialData = this.props.data.prismicResidential;
-    this.setState({selectedVertical: residentialData.data})
-    // const commercialData = this.props.data.prismicCommercial;
-    // const hospitalityData = this.props.data.prismicHospitality;
-    // const leisureData  = this.props.data.prismicLeisureClub;
-
-    // setTimeout(function(){
-    //   scrollHandle.handleOurVerticals(commercialData, 'commercial') 
-    //   }, 12000);
-
-    // setTimeout(function(){
-    //   scrollHandle.handleOurVerticals(hospitalityData, 'hospitality') 
-    //   }, 24000);
-  
-    // setTimeout(function(){
-    //   scrollHandle.handleOurVerticals(leisureData, 'leisure-club') 
-    //   }, 36000);
-    
-    // setTimeout(function(){
-    //   scrollHandle.handleOurVerticals(residentialData,'residential') 
-    //   }, 48000);
-  }
-
-  handleOurVerticals = (event, vertical) => {
-    this.setState({selectedVertical: event.data, verticalsName: vertical})
-  }
-
-  render() {
-    const commercialData = this.props.data.prismicCommercial;
-    const hospitalityData = this.props.data.prismicHospitality;
-    const leisureData  = this.props.data.prismicLeisureClub;
-    const residentialData = this.props.data.prismicResidential;
-    let settings = {
-      dots: false,
-      infinite: true,
-      speed: 500,
-      // autoplay: true,
-      autoplaySpeed: 7000,
-      slidesToShow: 1,
-      arrows: true,
-      slidesToScroll: 1  
-    };
-    
-  
     return (
-      <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
-        <SEO title="Home"/>
-        <div className="home-slider">
-          {
-            this.state.selectedVertical && 
-            <section>
-            {/* <picture>
-              <source media="(max-width: 581px)" srcSet={this.state.selectedVertical.banner.mobile.url}/>
-            {
-             <img src={this.state.selectedVertical.banner.url} className="banner-img" style={{width:'100%'}} />
-            }  
-            </picture>
-            <div className="banner-caption">
-              <img src={this.state.selectedVertical.banner_caption_logo.localFile.childImageSharp.fluid.src}/>
-            </div> */}
-            <Slider {...settings}>
-              {
-                this.state.selectedVertical.gallery.map((item, index) => {
-                  return(
-                    <div key={index} className="banner-section">
-                      <Link to={`${this.state.verticalsName}`}>
-                        <picture>
-                          <source media="(max-width: 581px)" srcSet={item.image.mobile.url}/>
-                            {
-                            <img src={item.image.url} className="banner-img" style={{width:'100%'}} />
-                            }  
-                        </picture>
-                        {/* <div className="banner-caption">
-                          <img src={item.image.logo.url}/>
-                        </div> */}
-                        <div className="banner-caption-1">
-                          <h3 className="section-title text-center"> {item.project_name} </h3>
-                        </div>
-                      </Link>
-                    </div>
-                  )
-                })
-              }
-            </Slider>
-          </section>  
-          }
-        </div>
-
-        <div>
-          <footer className="our-verticals-tabs d-flex">
+    <Layout location="/" noHeader="true"  pathname={props.location.pathname}>
+      <SEO title="Home"/>
+      <Div100vh className="home-gallery home-slider" style={{ height: 'calc(100rvh - 60px)'}}>
+        {(reducedVerticals && reducedVerticals.length > 0) &&
+        <HomeGallery verticals={reducedVerticals} getSwiper={setSwiper} slideKey={currentSlideKey} params={params} goNext={goNext} goPrev={goPrev} />
+        }
+        <footer className="our-verticals-tabs d-flex">
             <div className="container d-flex">
               <ul className="p-0 d-flex w-100 justify-content-around list-style-none text-uppercase nav nav-tabs border-0" id="myTab" role="tablist">
-                
-                <li className={`nav-item d-flex align-items-center ${this.state.selectedVertical==residentialData.data?'active':''}`} onClick={()=>this.handleOurVerticals(residentialData,'residential')}>
+                <li className={`nav-item d-flex align-items-center ${activeTab == `residential` && 'active'}`} onClick={() => updateSlideKey('residential-0', 'residential')}>
                   <div className="tab d-flex align-items-center">
                   <span className="icon-Residential_inactive icon"></span>
                     <span>Residential</span>
                   </div>
                 </li>
 
-                <li className={`nav-item d-flex align-items-center ${this.state.selectedVertical==commercialData.data?'active':''}`} onClick={()=>this.handleOurVerticals(commercialData, 'commercial')}>
+                <li className={`nav-item d-flex align-items-center ${activeTab == `commercial` && 'active'}`} onClick={() => updateSlideKey('commercial-0', 'commercial')}>
                   <div className="tab d-flex align-items-center">
                   <span className="icon-Commercial_inactive icon"></span>
                     <span> Commercial </span>
                   </div>
                 </li>
 
-                <li className={`nav-item d-flex align-items-center ${this.state.selectedVertical==hospitalityData.data?'active':''}`} onClick={()=>this.handleOurVerticals(hospitalityData, 'hospitality')}>
+                <li className={`nav-item d-flex align-items-center ${activeTab == `hospitality` && 'active'}`} onClick={() => updateSlideKey('hospitality-0', 'hospitality')}>
                   <div className="tab d-flex align-items-center">
                   <span className="icon-Hospitality_inactive icon"></span>
                     <span>Hospitality</span>
                   </div>
                 </li>
 
-                <li className={`nav-item d-flex align-items-center ${this.state.selectedVertical==leisureData.data?'active':''}`} onClick={()=>this.handleOurVerticals(leisureData, 'leisure-club')}>
+                <li className={`nav-item d-flex align-items-center ${activeTab == `leisure-club` && 'active'}`} onClick={() => updateSlideKey('leisure-club-0', 'leisure-club')}>
                   <div className="tab d-flex align-items-center">
                   <span className="icon-Leisure_inactive icon"></span>
                     <span>Leisure</span>
@@ -145,19 +89,19 @@ class IndexPage extends React.Component {
               </ul>
             </div>
           </footer>
-        </div>
-      </Layout>
-    )
-  }
+      </Div100vh>
+    </Layout>
+  )
 }
 
 export default IndexPage
 
 export const pageDataResidential = graphql` {
   prismicResidential {
+    type
     data {
       gallery {
-        project_name
+        project_url
         image {
           url
           mobile {
@@ -170,8 +114,9 @@ export const pageDataResidential = graphql` {
       }
     }
   }
-  
+
   prismicCommercial {
+    type
     data {
       banner {
         url
@@ -181,6 +126,7 @@ export const pageDataResidential = graphql` {
       }
       gallery {
         project_name
+        project_url
         image {
           url
           mobile{
@@ -194,6 +140,7 @@ export const pageDataResidential = graphql` {
     }
   }
   prismicHospitality {
+    type
     data {
       banner {
         url
@@ -203,6 +150,7 @@ export const pageDataResidential = graphql` {
       }
       gallery {
         project_name
+        project_url
         image {
           url
           mobile{
@@ -216,6 +164,7 @@ export const pageDataResidential = graphql` {
     }
   }
   prismicLeisureClub {
+    type
     data {
       banner {
         url
@@ -225,6 +174,7 @@ export const pageDataResidential = graphql` {
       }
       gallery {
         project_name
+        project_url
         image {
           url
           mobile{

@@ -1,556 +1,534 @@
-
-.career-page{
-    .banner-section{
-        img{
-            width: 100%;
-            height: calc(100vh - 60px);
-        }
+.career-page {
+  .padding-block-60 {
+    padding: 52px 0 24px;
+  }
+  .section-title-wrapper {
+    padding: 64px 0 24px 0;
+  }
+  .section-title {
+    &::after {
+      margin: 0 auto;
     }
-    .padding-block-60{
-        padding: 52px 0 24px;
-    }
-    .section-title-wrapper{
-        padding: 64px 0 24px 0;
-    }
-    .section-title{
-        &::after{
-            margin:0 auto;
-        }
-    }
-    .career-tabs {
-        padding: 0 0 60px 0;
-        .btn-wraper {
-            padding: 24px 0 0 0;
-            .button-tertiary{
-                font-size: 12px;
-                font-weight: normal;
-            }
-        }
-      } 
-      .h-40{
-          height: 40px;
-      }
-}
-.life-at-bramha{
-    .padding-block-60{
-        padding: 84px 0 24px;
-    }
-    .section-title-wrapper{
-        padding-bottom:24px;
-    }
-    .section-title{
-        &::after{
-            display: none;
-        }
-    }
-    .slider-wrapper{
-        background-color: theme-color("bg-color");
-        padding:50px 0;
-        .life-at-bramha-slide{
-            height:80vh;
-            .life-at-bramha-slider-image{
-                width:100%;
-                height:100%;
-                object-fit: cover;  
-            }
-        }
-    }
-}
-.search-bar{
-    position: relative;
-    border: solid 0.5px rgba(153, 153, 153, 0.5);
-    padding-left: 40px;
-    &:focus{
-        outline: 0;
-         box-shadow: none;
-         border-color: #979797;
-    }
-    &::placeholder{
-        opacity: 0.5;
-
-        font-size: 14px;
+  }
+  .career-tabs {
+    padding: 0 0 60px 0;
+    .btn-wraper {
+      padding: 24px 0 0 0;
+      .button-tertiary {
+        font-size: 12px;
         font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.71;
-        letter-spacing: -0.31px;
-        color: #000000;
-    }
-}
-.search-btn{
-    position: absolute;
-    top: 12px;
-    background: transparent;
-    border: 0;
-    left: 30px;
-}
-.career-tabs{
-    .btn-wraper{
-        flex-basis: 23%;
-    }
-    .btn-wraper-big{
-        flex-basis: 29%;
-    }
-    .active{
-        background-color: theme-color("heading-primary");
-        color: #fff;
-    }
-}
-// ------ accordian css ------
-.accordions-sect{
-    .card{
-        border-bottom: 1px solid rgba(0, 0, 0, 0.125) !important;
-    }
-    .card-header{
-        border-bottom: none;
-        padding: 8px 20px;
-        h5{
-            cursor: pointer;
-            opacity: 0.6;
-            font-family: Graphik;
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 1.43;
-            letter-spacing: -0.31px;
-            color:theme-color("text-black");
-        }
-        i{
-            color:#979797;
-        }
-        h5[aria-expanded="true"]{
-            i{
-                transform: rotate(180deg);
-                transition: 0.3s ease-in-out;
-            }
-        }
-        h5[aria-expanded="false"]{
-            i{
-                transition: 0.3s ease-in-out;
-            }
-        }
-    }
-    .card-head{
-        height:90px;
-        opacity: 0.7;
-        line-height: 2.14;
-        letter-spacing: -0.23px;
-    }
-    .accordion{
-        border-top: 1px solid rgba(0, 0, 0, 0.125);
-        // border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-    }
-    .file-area {
-        width: 100%;
-        position: relative;
-        
-        input[type=file] {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          opacity: 0;
-          cursor: pointer;
-        }
-        
-        .resume-upload {
-          width: 100%;
-          padding: 30px;;
-          border: 1px dashed #ced4da !important;
-          text-align: center;
-          .default{
-              font-weight: 300;
-              color: #929292;
-          }
-        }
-        
-        &:hover .resume-upload {
-          background: rgba(255,255,255,0.1);
-        }
-        
-        input[type=file]:focus + .resume-upload {
-          outline: 0;
-        }
       }
-      .modal-dialog{
+    }
+  }
+  .h-40 {
+    height: 40px;
+  }
+}
+.life-at-bramha {
+  .padding-block-60 {
+    padding: 84px 0 24px;
+  }
+  .section-title-wrapper {
+    padding-bottom: 24px;
+  }
+  .section-title {
+    &::after {
+      display: none;
+    }
+  }
+  .slider-wrapper {
+    background-color: theme-color("bg-color");
+    padding: 50px 0;
+    .life-at-bramha-slide {
+      height: 80vh;
+      .life-at-bramha-slider-image {
         width: 100%;
         height: 100%;
-        display: flex;
-        align-items: center;
-        border-radius: 0;
+        object-fit: cover;
       }
-}
-.input-file-btn{
-    display: none;
-}
-  .description {
-      margin-top: 12px;
-      .black-text {
-          opacity: 0.7;
-      }
-      .desc_info {
-          margin-bottom: 32px;
-      }
+    }
   }
-
-  .mb-24 {
-      margin-bottom: 24px;
+}
+.search-bar {
+  position: relative;
+  border: solid 0.5px rgba(153, 153, 153, 0.5);
+  padding-left: 40px;
+  &:focus {
+    outline: 0;
+    box-shadow: none;
+    border-color: #979797;
   }
+  &::placeholder {
+    opacity: 0.5;
 
-  .mt-32 {
-    margin-top:32px;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.71;
+    letter-spacing: -0.31px;
+    color: #000000;
+  }
+}
+.search-btn {
+  position: absolute;
+  top: 12px;
+  background: transparent;
+  border: 0;
+  left: 30px;
+}
+.career-tabs {
+  .btn-wraper {
+    flex-basis: 23%;
+  }
+  .btn-wraper-big {
+    flex-basis: 29%;
+  }
+  .active {
+    background-color: theme-color("heading-primary");
+    color: #fff;
+  }
+}
+// ------ accordian css ------
+.accordions-sect {
+  .card {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125) !important;
+  }
+  .card-header {
+    border-bottom: none;
+    padding: 8px 20px;
+    h5 {
+      cursor: pointer;
+      opacity: 0.6;
+      font-family: Graphik;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.43;
+      letter-spacing: -0.31px;
+      color: theme-color("text-black");
+    }
+    i {
+      color: #979797;
+    }
+    h5[aria-expanded="true"] {
+      i {
+        transform: rotate(180deg);
+        transition: 0.3s ease-in-out;
+      }
+    }
+    h5[aria-expanded="false"] {
+      i {
+        transition: 0.3s ease-in-out;
+      }
+    }
+  }
+  .card-head {
+    height: 90px;
+    opacity: 0.7;
+    line-height: 2.14;
+    letter-spacing: -0.23px;
+  }
+  .accordion {
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+    // border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  }
+  .file-area {
+    width: 100%;
+    position: relative;
+
+    input[type="file"] {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .resume-upload {
+      width: 100%;
+      padding: 30px;
+      border: 1px dashed #ced4da !important;
+      text-align: center;
+      .default {
+        font-weight: 300;
+        color: #929292;
+      }
+    }
+
+    &:hover .resume-upload {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    input[type="file"]:focus + .resume-upload {
+      outline: 0;
+    }
+  }
+  .modal-dialog {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 0;
+  }
+}
+.input-file-btn {
+  display: none;
+}
+.description {
+  margin-top: 12px;
+  .black-text {
+    opacity: 0.7;
+  }
+  .desc_info {
+    margin-bottom: 32px;
+  }
+}
+
+.mb-24 {
+  margin-bottom: 24px;
+}
+
+.mt-32 {
+  margin-top: 32px;
 }
 
 // .accordions-sect {
 //     margin-top: 28px;
 // }
 
-
 .career-page {
-    .section-title::after {
-        content: "";
-        // border-bottom: 2px solid #b82831;
-        padding: 8px 0;
-      
-    }
-    
+  .section-title::after {
+    content: "";
+    // border-bottom: 2px solid #b82831;
+    padding: 8px 0;
+  }
 }
 
 .career-page {
-    .upload-cv-scetion {
-        padding: 68px 15px 60px 15px;
-        p{
-            font-weight: normal;
-            font-stretch: normal;
-            font-style: normal;
-            line-height: 1.71;
-            letter-spacing: -0.31px;
-            padding: 16px 0 50px ;
-        }
+  .upload-cv-scetion {
+    padding: 68px 15px 60px 15px;
+    p {
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.71;
+      letter-spacing: -0.31px;
+      padding: 16px 0 50px;
     }
-    .input-file-btn {
-        padding-left: 0;
+  }
+  .input-file-btn {
+    padding-left: 0;
+  }
+  .accordions-sect {
+    .section-title::after {
+      display: none;
     }
-    .accordions-sect {
-        .section-title::after {
-            display: none;
-
-        }   
-        .btn-secondary{
-            font-size: 14px;
-            font-weight: normal;
-            font-stretch: normal;
-            font-style: normal;
-            line-height: normal;
-            letter-spacing: -0.31px
-        }
-        .card-body{
-            padding: 20px 20px 36px 20px;
-        }
+    .btn-secondary {
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: -0.31px;
     }
-    .button-tertiary {
-        border: solid 0.5px rgba(153, 153, 153, 0.5);
+    .card-body {
+      padding: 20px 20px 36px 20px;
     }
+  }
+  .button-tertiary {
+    border: solid 0.5px rgba(153, 153, 153, 0.5);
+  }
 }
 
 .upload-cv-scetion {
-    .section-title::after {
-        display: none;
-    }
-}
-
-
-
-
-@media (max-width:1200px){
-    .btn-wraper {
-        .button-tertiary {
-            padding:12px;
-        }
-    }
-}
-
-@media (max-width:992px){
-
-    .career-tabs{
-      .button-tertiary {
-          padding: 16px 8px;
-      }
-    }   
-
-}
-
-@media (max-width:768px){
-  .career-center{
-    .slider-img{
-        margin: 0 15px;
-    }
-    .slick-slide{ 
-        text-align: center;
-        margin: 0;
-        -webkit-transform: scale(1);
-            -ms-transform: scale(1);
-            transform: scale(1);  
-          .slider-img div::before{
-            display: none;
-          }
-      }  
+  .section-title::after {
+    display: none;
   }
-  .career-tabs{
+}
+
+@media (max-width: 1200px) {
+  .btn-wraper {
     .button-tertiary {
-        padding: 16px 2px;
-        font-size: 12px;
-
+      padding: 12px;
     }
   }
-  
+}
+
+@media (max-width: 992px) {
+  .career-tabs {
+    .button-tertiary {
+      padding: 16px 8px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .career-center {
+    .slider-img {
+      margin: 0 15px;
+    }
+    .slick-slide {
+      text-align: center;
+      margin: 0;
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1);
+      .slider-img div::before {
+        display: none;
+      }
+    }
+  }
+  .career-tabs {
+    .button-tertiary {
+      padding: 16px 2px;
+      font-size: 12px;
+    }
+  }
+
   .job-opening {
     .career-tabs {
-        .btn-wraper {
-            flex-basis: 24%;
-        }
-      } 
+      .btn-wraper {
+        flex-basis: 24%;
+      }
+    }
   }
-//   .career-page{
-//     .slider-img {
-//         .gatsby-image-wrapper{
-//             padding-bottom: 100%;
-//             margin:18px;
-//         }
-//       }
-//         // .slider-page {
-//         //     .slider-wrapper {
-//         //         // .slick-next{
-//         //         //     right: 30px;
-//         //         // }
-//         //         // .slick-prev{
-//         //         //     left: 30px;
-//         //         // }
-//         //    }
-//         // }
-   
-//   }
-.career-page{
-    .slider-wrapper{
-        .slick-slide{
-            .slider-img {
-                margin: 8px 30px;
-            }
-        }
-    }
-}
+  //   .career-page{
+  //     .slider-img {
+  //         .gatsby-image-wrapper{
+  //             padding-bottom: 100%;
+  //             margin:18px;
+  //         }
+  //       }
+  //         // .slider-page {
+  //         //     .slider-wrapper {
+  //         //         // .slick-next{
+  //         //         //     right: 30px;
+  //         //         // }
+  //         //         // .slick-prev{
+  //         //         //     left: 30px;
+  //         //         // }
+  //         //    }
+  //         // }
 
-}
-
-@media (max-width:580px){
-    .career-page{
-        .slider-page {
-            .slider-wrapper{
-                .pages{
-                    margin: 8px 0 0 10px;
-                    font-size: 14px;
-                }
-                .slick-next,
-                .slick-prev{
-                    bottom: -52px;
-                    right: 15px;
-                }
-                .slick-prev{
-                    right: 70px;
-                }
-                // .slick-prev:before{
-                //     position: absolute;
-                //     top: -29px;
-                //     content: "\2190";
-                //     font-family: "Font Awesome 5 Free";
-                //     font-weight: 900;
-                //     font-size: 44px;
-                //     color: #b2a585;
-                // }
-               
-                // .slick-next:before{
-                //     content: "\2190";
-                //     font-family: "Font Awesome 5 Free";
-                //     font-weight: 900;
-                //     font-size: 44px;
-                //     color: #b2a585;
-                //     position: absolute;
-                //     top: -13px;
-                //     right: 0px;
-                // }
-            }
-        } 
-    }
-    // .career-center .slick-prev {
-    //     &:before{
-    //         content: "";
-    //         background: url('../../images/left.jpg') no-repeat center center;
-    //         padding: 12px 0px 16px 38px;
-    //       }
-    //     left: auto;
-    //     z-index: 1;
-    //     right: 100px;
-    //     top: auto;
-    //     bottom: -36px;
-    // }
-    // .career-center .slick-next {
-    //     transform: rotate(0deg);
-    //     &:before{
-    //         content: "";
-    //         background: url('../../images/right.jpg') no-repeat center center;
-    //         padding: 12px 0px 16px 38px;
-    //       }
-    //     right: 40px;
-    //     bottom: -27px;
-    //     top: auto;
-    // }
-    .life-at-bramha .container{   
-        padding: 0;
-        .slider-wrapper {
-            background-color: transparent;
-            padding: 0px 0 40px;
-        }
-    } 
-    .career-info-row {
-        margin-right: 0;
-    }
-    .padding-block-60 {
-        padding: 0 0 24px;
-    }
-    .career-info {
-        .career-info-row {
-            padding-top: 0 !important;
-        }
-    }
-    .career-page {
+  //   }
+  .career-page {
+    .slider-wrapper {
+      .slick-slide {
         .slider-img {
-            margin: 0 8px;
-            .gatsby-image-wrapper{
-                padding-bottom: 100%;
-                margin:0;
-            }
+          margin: 8px 30px;
         }
-        
+      }
     }
-    .page-count-no {
-        display: none;
-    }
-
-    .career-page {
-        .slider-page {
-            .slider-wrapper {
-                .container-fluid{
-                    padding: 0 4px;
-                }
-                // .slick-next{
-                //     right: 30px;
-                //     bottom: -40px;
-                // }
-                // .slick-prev{
-                //     bottom: -50px;
-                //     left: auto;
-                //     right: 100px;
-                // }
-           }
-        }
-
-        .accordions-sect {
-           padding:0;
-           .card-body{
-             padding: 0 20px 24px 20px;
-           }
-        }
-        .upload-cv-scetion {
-            padding-top: 52px;
-        }
-        .section-title::after{
-            padding: 4px 0;
-        }
-        .section-title-wrapper{
-            padding: 100px 0 24px 0;
-        }
-    }
-   
-    .input-file-btn::before {
-        width: auto;
-    }
-
-    .modal-dialog{
-        .modal-content{
-            width: 100%;
-            margin: 8px;
-        }
-    }
-    .accordions{
-        padding: 0;
-    }
-    .life-at-bramha{
-        .padding-block-60{
-            padding: 32px 0 32px ;
-        }
-    }
-    .career-page{
-        .slider-wrapper{
-            .slick-slide{
-                .slider-img {
-                    margin: 0px 8px;
-                }
-            }
-        }
-    }
+  }
 }
-@media (max-width:470px) {
-    .job-opening .career-tabs .btn-wraper {
-        flex-basis: 48%;
-    }
-    .accordions-sect{
-        .card-head {
-            height: 115px;
+
+@media (max-width: 580px) {
+  .career-page {
+    .slider-page {
+      .slider-wrapper {
+        .pages {
+          margin: 8px 0 0 10px;
+          font-size: 14px;
         }
-        .btn-secondary{
-            width: 100%;
+        .slick-next,
+        .slick-prev {
+          bottom: -52px;
+          right: 15px;
         }
-        // .card-body{
-        //     padding: 0 12px 48px 12px;
+        .slick-prev {
+          right: 70px;
+        }
+        // .slick-prev:before{
+        //     position: absolute;
+        //     top: -29px;
+        //     content: "\2190";
+        //     font-family: "Font Awesome 5 Free";
+        //     font-weight: 900;
+        //     font-size: 44px;
+        //     color: #b2a585;
         // }
-    } 
+
+        // .slick-next:before{
+        //     content: "\2190";
+        //     font-family: "Font Awesome 5 Free";
+        //     font-weight: 900;
+        //     font-size: 44px;
+        //     color: #b2a585;
+        //     position: absolute;
+        //     top: -13px;
+        //     right: 0px;
+        // }
+      }
+    }
+  }
+  // .career-center .slick-prev {
+  //     &:before{
+  //         content: "";
+  //         background: url('../../images/left.jpg') no-repeat center center;
+  //         padding: 12px 0px 16px 38px;
+  //       }
+  //     left: auto;
+  //     z-index: 1;
+  //     right: 100px;
+  //     top: auto;
+  //     bottom: -36px;
+  // }
+  // .career-center .slick-next {
+  //     transform: rotate(0deg);
+  //     &:before{
+  //         content: "";
+  //         background: url('../../images/right.jpg') no-repeat center center;
+  //         padding: 12px 0px 16px 38px;
+  //       }
+  //     right: 40px;
+  //     bottom: -27px;
+  //     top: auto;
+  // }
+  .life-at-bramha .container {
+    padding: 0;
+    .slider-wrapper {
+      background-color: transparent;
+      padding: 0px 0 40px;
+    }
+  }
+  .career-info-row {
+    margin-right: 0;
+  }
+  .padding-block-60 {
+    padding: 0 0 24px;
+  }
+  .career-info {
+    .career-info-row {
+      padding-top: 0 !important;
+    }
+  }
+  .career-page {
+    .slider-img {
+      margin: 0 8px;
+      .gatsby-image-wrapper {
+        padding-bottom: 100%;
+        margin: 0;
+      }
+    }
+  }
+  .page-count-no {
+    display: none;
+  }
+
+  .career-page {
+    .slider-page {
+      .slider-wrapper {
+        .container-fluid {
+          padding: 0 4px;
+        }
+        // .slick-next{
+        //     right: 30px;
+        //     bottom: -40px;
+        // }
+        // .slick-prev{
+        //     bottom: -50px;
+        //     left: auto;
+        //     right: 100px;
+        // }
+      }
+    }
+
+    .accordions-sect {
+      padding: 0;
+      .card-body {
+        padding: 0 20px 24px 20px;
+      }
+    }
     .upload-cv-scetion {
-        padding-top: 52px;
-        .section-title,
-        p{
-            text-align: left!important;
-        }
+      padding-top: 52px;
     }
-    .career-page {
-        .input-file-btn{
-            width: 100%;
-        }
-        .career-tabs{
-            padding-top: 12px;
-            padding-bottom: 40px;
-            .btn-wraper{
-                padding:16px 0 0 0;
-            }
-            .btn-wraper{
-                padding: 12px 0 0 0;
-            }
-         }
+    .section-title::after {
+      padding: 4px 0;
     }
-    .modal-dialog{
-        .btn-secondary{
-            width: 100%;
-        }
+    .section-title-wrapper {
+      padding: 100px 0 24px 0;
     }
+  }
 
+  .input-file-btn::before {
+    width: auto;
+  }
 
+  .modal-dialog {
+    .modal-content {
+      width: 100%;
+      margin: 8px;
+    }
+  }
+  .accordions {
+    padding: 0;
+  }
+  .life-at-bramha {
+    .padding-block-60 {
+      padding: 32px 0 32px;
+    }
+  }
+  .career-page {
+    .slider-wrapper {
+      .slick-slide {
+        .slider-img {
+          margin: 0px 8px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 470px) {
+  .job-opening .career-tabs .btn-wraper {
+    flex-basis: 48%;
+  }
+  .accordions-sect {
+    .card-head {
+      height: 115px;
+    }
+    .btn-secondary {
+      width: 100%;
+    }
+    // .card-body{
+    //     padding: 0 12px 48px 12px;
+    // }
+  }
+  .upload-cv-scetion {
+    padding-top: 52px;
+    .section-title,
+    p {
+      text-align: left !important;
+    }
+  }
+  .career-page {
+    .input-file-btn {
+      width: 100%;
+    }
+    .career-tabs {
+      padding-top: 12px;
+      padding-bottom: 40px;
+      .btn-wraper {
+        padding: 16px 0 0 0;
+      }
+      .btn-wraper {
+        padding: 12px 0 0 0;
+      }
+    }
+  }
+  .modal-dialog {
+    .btn-secondary {
+      width: 100%;
+    }
+  }
 }
 
-
-@media (max-width:340px) {
-    .input-file-btn {
-        width: 90%;
-        padding-left: 0;
-    }
+@media (max-width: 340px) {
+  .input-file-btn {
+    width: 90%;
+    padding-left: 0;
+  }
 }

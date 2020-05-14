@@ -13,9 +13,11 @@ import PhoneInput from 'react-phone-number-input';
 import '../firebase/config';
 import * as firebase from 'firebase';
 import queryString from 'query-string';
+import chevron_down from '../images/chevron_down.svg';
+import Div100vh from 'react-div-100vh/lib/Div100vh';
 
 class VerticalPage extends React.Component {
-  
+
   state = {
     activeSlide:null,
     floorPlanActive:null,
@@ -34,17 +36,17 @@ class VerticalPage extends React.Component {
   };
 
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     const verticalData = this.props.data.prismicOurVerticalsArticle;
     const queryParams = queryString.parseUrl(this.props.location.search);
-    this.setState({ 
+    this.setState({
       floorPlanSelect : verticalData.data.floor_plans,
       utmSource: queryParams && queryParams.query.utm_source,
       utmMedium: queryParams && queryParams.query.utm_medium,
       utmCampaign: queryParams && queryParams.query.utm_campaign
     });
   }
-  
+
   scrollWin() {
     var offsetHeight = document.querySelector('.banner-section').offsetHeight;
     window.scrollBy({
@@ -82,7 +84,7 @@ class VerticalPage extends React.Component {
 
     let showCase = {
       photoIndex: 0,
-      isOpen: false,  
+      isOpen: false,
       centerMode: true,
       centerPadding: '200px',
       slidesToShow: 1,
@@ -127,10 +129,10 @@ class VerticalPage extends React.Component {
         }
       ]
     };
-  
+
     let floorPlan = {
       photoIndex: 0,
-      isOpen: false,  
+      isOpen: false,
       centerMode: true,
       centerPadding: '200px',
       slidesToShow: 1,
@@ -177,7 +179,7 @@ class VerticalPage extends React.Component {
     };
     let siteProcess = {
       photoIndex: 0,
-      isOpen: false,  
+      isOpen: false,
       centerMode: true,
       centerPadding: '200px',
       slidesToShow: 1,
@@ -222,29 +224,26 @@ class VerticalPage extends React.Component {
         }
       ]
     };
-   
+
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title={verticalData.data.title.text}/>
         <main className="detail-page" id="residential-details">
             {/* <!--   ---------------- banner start here ---------------- --> */}
-              <section className="banner-section">
+            <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section" id="banner-section">
               <picture>
                 {
                   verticalData.data.banner[0].image.mobile &&
                   <source media="(max-width: 581px)" srcSet={verticalData.data.banner[0].image.mobile.url}/>
-                  
                 }
-                <img src={verticalData.data.banner[0].image.url} alt="banner image here" className="banner-img"/>
+                <img src={verticalData.data.banner[0].image.url} alt={verticalData.data.title.text} className="banner-img"/>
               </picture>
-            <div className="scroll-downs">
-              <div onClick={this.scrollWin} className="mousey">
-                {/* <div className=""></div> */}
-                <span className="icon-arrow-down d-inline-block scroller"></span>
-              </div>
-            </div>
+              <button className="scroll-downs" onClick={this.scrollWin}>
+                <span>Scroll</span>
+                <div className="mousey"><img src={chevron_down} alt="Scroll to content" /></div>
+              </button>
                 {/* <Img fluid={verticalData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
-              </section>
+              </Div100vh>
             {/* <!--   ---------------- banner end here ---------------- --> */}
             {/* <!--  -------------------- middle section start here ----------------------> */}
             <section className="detail-page-sections pb-0 pt-sm-0 container container-sm-fluid " id={verticalData.uid}>
@@ -266,14 +265,14 @@ class VerticalPage extends React.Component {
                 </div>
               <div className="padding-block-60 page-heading-section">
                   <div className="col-12 padding-sm-0">
-                      <h2 className="page-heading text-uppercase"> 
-                        {verticalData.data.heading.text}   
-                      </h2> 
+                      <h2 className="page-heading text-uppercase">
+                        {verticalData.data.heading.text}
+                      </h2>
                   </div>
               </div>
               <div className="row">
                   <div className="col-12">
-                      <p className="mb-4" dangerouslySetInnerHTML={{__html:verticalData.data.description.html }}/>
+                      <div className="mb-4" dangerouslySetInnerHTML={{__html:verticalData.data.description.html }}/>
                           </div>
                         </div>
                     </section>
@@ -289,8 +288,8 @@ class VerticalPage extends React.Component {
                         verticalData.data.showcase.length > 0 && verticalData.data.showcase.map((item,value) => {
                           return(
                             <div key={value}>
-                              <div  className="slider-img " onClick={() => this.setState({ isOpenOne: true ,photoIndex:value})}>
-                                <Img fluid={item.image1.localFile.childImageSharp.fluid} alt=" Showcase slidwer" className="life-at-bramha-slider-image" />
+                              <div role="link" tabIndex="0" className="slider-img" onClick={() => this.setState({ isOpenOne: true ,photoIndex:value})}>
+                                <Img fluid={item.image1.localFile.childImageSharp.fluid} alt={verticalData.data.title.text} className="life-at-bramha-slider-image" />
                                 <p className="showcase-slide-caption">{item.caption}</p>
                               </div>
                             </div>
@@ -300,7 +299,7 @@ class VerticalPage extends React.Component {
                     </Slider>
                     {
                       isOpenOne &&
-                      
+
                       <Lightbox
                         mainSrc={verticalData.data.showcase[photoIndex].image1.localFile.childImageSharp.fluid.src}
                         nextSrc={verticalData.data.showcase[(photoIndex + 1) % verticalData.data.showcase.length].image1.localFile.childImageSharp.fluid.src}
@@ -331,7 +330,7 @@ class VerticalPage extends React.Component {
             <section className="location-sections">
               <h2 className="section-title text-uppercase text-center">
                   Location
-              </h2> 
+              </h2>
               <div className="map-image map">
                 {
                   verticalData.data.location_url ?
@@ -372,11 +371,10 @@ class VerticalPage extends React.Component {
                               <div className="container">
                                 <div >
                                     <ul className="row">
-                                      {item.description1 && <li dangerouslySetInnerHTML={{__html:item.description1.html }}  className="col-sm-4 mt-2"/>}
-                                      {item.description2 && <li dangerouslySetInnerHTML={{__html:item.description2.html }}  className="col-sm-4 mt-2"/>}
-                                      {item.description3 && <li dangerouslySetInnerHTML={{__html:item.description3.html }}  className="col-sm-4 mt-2"/>}
-                                      {item.description4.length > 0 && <li dangerouslySetInnerHTML={{__html:item.description4.html }}  className="col-sm-4 mt-2"/>}
-                                      
+                                      {item.description1 && <li dangerouslySetInnerHTML={{__html:item.description1.html }}  className="col-sm-4"/>}
+                                      {item.description2 && <li dangerouslySetInnerHTML={{__html:item.description2.html }}  className="col-sm-4"/>}
+                                      {item.description3 && <li dangerouslySetInnerHTML={{__html:item.description3.html }}  className="col-sm-4"/>}
+                                      {item.description4.length > 0 && <li dangerouslySetInnerHTML={{__html:item.description4.html }}  className="col-sm-4"/>}
                                     </ul>
                                 </div>
                               </div>
@@ -386,7 +384,7 @@ class VerticalPage extends React.Component {
                       }
                   </div>
               </div>
-            </section>  
+            </section>
             {/* <!--   ------------------- Proximities section end here ------------------- --> */}
             {/* <!--   ------------------- Floor Plan section start here ------------------- --> */}
             {/* <div className="slider-page d-none d-sm-block floor-plan">
@@ -465,7 +463,7 @@ class VerticalPage extends React.Component {
                           }
                         </Slider>
                     }
-                    
+
                     {
                       isOpenTwo &&
                       <Lightbox
@@ -487,14 +485,14 @@ class VerticalPage extends React.Component {
 
                       />
                     }
-                
+
                     {
                     this.state.floorPlanSelect.length !==1 &&
                       <p className=" text-left text-sm-center pages mb-0">
                       {this.state.floorPlanActive + 1} of {verticalData.data.floor_plans.length}
                     </p>
                     }
-                  
+
                 </div>
                 </div>
                 </div>
@@ -509,9 +507,9 @@ class VerticalPage extends React.Component {
                   </a>
                 </li>
                 <li className="nav-item col-6 p-0">
-                  {/* <a className="nav-link text-center text-uppercase tab-title" id="pills-factfile-tab" data-toggle="pill" href="#fact-file" role="tab" aria-controls="pills-factfile" aria-selected="false">
-                  {verticalData.data.floor_plans1.text}
-                  </a> */}
+                  <a className="nav-link text-center text-uppercase tab-title" id="pills-factfile-tab" data-toggle="pill" href="#fact-file" role="tab" aria-controls="pills-factfile" aria-selected="false">
+                    Floor Plans
+                  </a>
                 </li>
               </ul>
               <div className="tab-content" id="factfiles-tabContent">
@@ -536,8 +534,8 @@ class VerticalPage extends React.Component {
                       <div className="image-wrapper">
                         {
                           this.state.imageUrl ?
-                         <img src={this.state.imageUrl} alt="select image" className="w-100 h-100"/>
-                         :<img src={verticalData.data.amenities[0].image1.url} alt="select image" className="w-100 h-100"/>
+                         <img src={this.state.imageUrl} alt={verticalData.data.title.text} className="w-100 h-100"/>
+                         :<img src={verticalData.data.amenities[0].image1.url} alt={verticalData.data.title.text} className="w-100 h-100"/>
                         }
                       </div>
                     </div>
@@ -574,7 +572,7 @@ class VerticalPage extends React.Component {
                             this.state.floorPlanSelect && this.state.floorPlanSelect.map((item,value) => {
                               return(
                                 <div key={value}>
-                                  <div className="slider-img" onClick={() => this.setState({ isOpenOneSlide: true ,photoIndex:value})}>
+                                  <div role="link" tabIndex="0" className="slider-img" onClick={() => this.setState({ isOpenOneSlide: true ,photoIndex:value})}>
                                     <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt="Floor Plans" className="w-100 h-100" />
                                   </div>
                                 </div>
@@ -605,7 +603,7 @@ class VerticalPage extends React.Component {
                                 this.state.floorPlanSelect.length > 0 && this.state.floorPlanSelect.map((item,value) => {
                                   return(
                                     <div key={value}>
-                                      <div className="slider-img " onClick={() => this.setState({ isOpenTwo: true ,photoIndex:value})}>
+                                      <div role="link" tabIndex="0" className="slider-img " onClick={() => this.setState({ isOpenTwo: true ,photoIndex:value})}>
                                         <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt="Floor Plans" className="w-100 h-100" />
                                       </div>
                                     </div>
@@ -614,7 +612,7 @@ class VerticalPage extends React.Component {
                               }
                             </Slider>
                         }
-                        
+
                         {
                           isOpenTwo &&
                           <Lightbox
@@ -636,14 +634,14 @@ class VerticalPage extends React.Component {
 
                           />
                         }
-                    
+
                         {
                         this.state.floorPlanSelect.length !==1 &&
                           <p className=" text-left text-sm-center pages mb-0">
                           {this.state.floorPlanActive + 1} of {verticalData.data.floor_plans.length}
                         </p>
                         }
-                      
+
                     </div>
                     </div>
                   </div>
@@ -663,7 +661,7 @@ class VerticalPage extends React.Component {
                       verticalData.data.site_progress.length > 0 && verticalData.data.site_progress.map((item,value) => {
                         return(
                           <div key={value}>
-                            <div  className="slider-img " onClick={() => this.setState({ isOpenThree: true ,photoIndex:value})}>
+                            <div role="link" tabIndex="0" className="slider-img " onClick={() => this.setState({ isOpenThree: true ,photoIndex:value})}>
                               <Img fluid={item.images.localFile.childImageSharp.fluid} key={value} alt=" Floor Plans" className="w-100 h-100" />
                             </div>
                           </div>
@@ -719,7 +717,7 @@ class VerticalPage extends React.Component {
                   </span>
                   <span className="d-block text-left text-sm-center">Let us help you in making up your mind.</span>
                 </p>
-                
+
                 <form  className="residentialCustomer" onSubmit={(e) => this.submitResidentialCustomer(e)} name="residential customer" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
                   <div className="contact-form-bg pt-4 pb-4 pt-sm-5 pb-sm-5">
                     <div className="container">
@@ -766,15 +764,15 @@ class VerticalPage extends React.Component {
                             <option>Word of Mouth</option>
                             <option>Others</option>
                           </select>
-                        </div>  
+                        </div>
                         <div className="form-group col-md-12">
                           <textarea className="form-control" rows="4" id="message" placeholder="Message" name="message" required></textarea>
                         </div>
                       </div>
                       <div className="sumbit text-center mt-sm-0 mt-4">
                         <button type="submit" className="btn-secondary btn">Submit</button>
-                      </div>  
-                    </div> 
+                      </div>
+                    </div>
                   </div>
                 </form>
               </div>
@@ -828,7 +826,7 @@ class VerticalPage extends React.Component {
 }
 export default VerticalPage;
 
-export const verticalViewData = graphql` 
+export const verticalViewData = graphql`
   query verticalData($uid: String!) {
   prismicOurVerticalsArticle(uid: { eq: $uid }) {
     uid

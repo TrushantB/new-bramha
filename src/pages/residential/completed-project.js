@@ -54,7 +54,7 @@ export default class Residential extends React.Component {
       project.map((item)=>{
         type.push(item.completed_links.document[0].data.flat_bhk.text);
         address.push(item.completed_links.document[0].data.flat_address.text);
-     }) 
+     })
      address= [...new Set(address)];
      type= [...new Set(type)];
      this.setState({allType: type, allAddress: address})
@@ -78,16 +78,16 @@ export default class Residential extends React.Component {
          item.node.data.ongoing_projects.map((item)=>{
            type.push(item.residential_links.document[0].data.flat_bhk.text);
            address.push(item.residential_links.document[0].data.flat_address.text);
-        }) 
+        })
       })
-      
+
 
       this.state.dataSource.map((item,index) => {
         this.setState({completedProject: item.node.data.completed_project, completedProjectStore:item.node.data.completed_project});
          item.node.data.completed_project.map((item) => {
            type.push(item.completed_links.document[0].data.flat_bhk.text);
            address.push(item.completed_links.document[0].data.flat_address.text);
-          }) 
+          })
           address = [...new Set(address)];
           type = [...new Set(type)];
           this.setState({allType: type, allAddress: address})
@@ -95,7 +95,7 @@ export default class Residential extends React.Component {
     }
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     let type = [];
     let address = [];
     const allData = this.props.data.allPrismicResidential.edges;
@@ -106,7 +106,7 @@ export default class Residential extends React.Component {
          item.node.data.completed_project.map((item) => {
            type.push(item.completed_links.document[0].data.flat_bhk.text);
            address.push(item.completed_links.document[0].data.flat_address.text);
-        }) 
+        })
       })
       let allType = [...new Set(type)];
       let allAddress = [...new Set(address)];
@@ -143,7 +143,7 @@ export default class Residential extends React.Component {
         {
           breakpoint: 580,
           settings: {
-            
+
             centerMode: true,
             infinite: true,
             centerPadding: "60px",
@@ -172,7 +172,7 @@ export default class Residential extends React.Component {
             return(
               <section key={value} className="residential-section page-heading-section container container-sm-fluid bg-color">
                 <div className="padding-block-60">
-                  <h2 className="page-heading">{item.node.data.sub_title.text}</h2> 
+                  <h2 className="page-heading">{item.node.data.sub_title.text}</h2>
                 </div>
                 <div className="row  mr-0">
                   <div className="col-12">
@@ -214,17 +214,17 @@ export default class Residential extends React.Component {
                 </select>
               </div>
             </div>
-              {this.state.completedProject.length > 0 && 
+              {this.state.completedProject.length > 0 &&
                 <section className="complete-project position-relative">
                   <div className="container">
                     <div className="listing-heading d-flex align-items-center">
                       <h4 className="text-uppercase heading mb-0">Completed Projects</h4>
                     </div>
-                    <p className="text-left d-none d-sm-block" dangerouslySetInnerHTML={{__html:residentialData[0].node.data.completed_description.html }}/>
+                    <div className="text-left d-none d-sm-block" dangerouslySetInnerHTML={{__html:residentialData[0].node.data.completed_description.html }}/>
                     <Slider  {...settings}>
                       {this.state.completedProject.map((item, value) => {
                         return(
-                          <div className="row"  key={value}> 
+                          <div className="row"  key={value}>
                           <Link to={`residential/${item.completed_links.uid}`}>
                             <div className="secondary-card position-relative ">
                               <div className="secondary-card-img image-ratio">
@@ -262,16 +262,16 @@ export default class Residential extends React.Component {
             }
             <div className="view-all text-center mt-5 mt-sm-4 mb-5">
               <Link to="residential/completed-projects/" className="btn-secondary">View All</Link>
-            </div> 
+            </div>
             <section className="give-details text-center">
-              <div className="container">    
-                <h4 className="text-uppercase text-center section-title">Looking for more option?</h4>  
+              <div className="container">
+                <h4 className="text-uppercase text-center section-title">Looking for more option?</h4>
                 <p>
                   {lookingForMe.looking_for_more.text}
                 </p>
                 <div className="sumbit text-center mt-sm-0 mt-4">
                   <button type="submit" className="btn-secondary">Give Details</button>
-                </div> 
+                </div>
               </div>
             </section>
           </section>

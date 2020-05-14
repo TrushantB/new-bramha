@@ -9,6 +9,8 @@ import '../firebase/config';
 import * as firebase from 'firebase';
 import FileUploader from "react-firebase-file-uploader";
 import queryString from 'query-string';
+import chevron_down from '../images/chevron_down.svg';
+import Div100vh from 'react-div-100vh/lib/Div100vh';
 
 class Contacts extends React.Component {
   constructor(props){
@@ -154,7 +156,7 @@ class Contacts extends React.Component {
       this.setState({ career : false , constructors : false, channel : false, customer : false , LandOwner : true  })
     }
   }
-    
+
   scrollWin() {
     var offsetHeight = document.querySelector('.banner-section').offsetHeight;
     window.scrollBy({
@@ -174,15 +176,15 @@ class Contacts extends React.Component {
         this.setState({ url: url})
       });
   };
-  
-  componentWillMount() {
+
+  UNSAFE_componentWillMount() {
     const queryParams = queryString.parseUrl(this.props.location.search);
-    this.setState({ 
+    this.setState({
       utmSource: queryParams && queryParams.query.utm_source,
       utmMedium: queryParams && queryParams.query.utm_medium,
       utmCampaign: queryParams && queryParams.query.utm_campaign
     });
-  }  
+  }
 
   render(){
     const contactData = this.props.data.prismicCompanyDetails.data;
@@ -190,27 +192,25 @@ class Contacts extends React.Component {
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title="Contacts"/>
         <section className="contact-section">
-          <div className="contact-page-image banner-section mt-60">
+          <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="contact-page-image banner-section mt-60" id="banner-section">
             <picture>
               <source media="(max-width: 581px)" srcSet={contactData.banner.Mobile.url}/>
               <img src={contactData.banner.url} alt="" width="100%" />
             </picture>
-            <div className="scroll-downs">
-              <div onClick={this.scrollWin} className="mousey">
-                {/* <div className=""></div> */}
-                <span className="icon-arrow-down d-inline-block scroller"></span>
-              </div>
+            <div className="scroll-downs" onClick={this.scrollWin}>
+              <span>Scroll</span>
+              <div className="mousey"><img src={chevron_down} /></div>
             </div>
             {/* <Img fluid={contactData.banner.localFile.childImageSharp.fluid} alt="" width="100%"/> */}
-          </div>
+          </Div100vh>
           <section className="page-heading-section container container-sm-fluid bg-color">
             <div className="contact-us-title padding-block-60">
-              <h2 className="page-heading"> {contactData.contactus.text}</h2> 
+              <h2 className="page-heading"> {contactData.contactus.text}</h2>
             </div>
             <div className="row mr-0">
               <div className="col-12">
                 <div className="main-paragraph">
-                  <p className=" m-0" dangerouslySetInnerHTML={{__html:contactData.description.html }} />
+                  <div className=" m-0" dangerouslySetInnerHTML={{__html:contactData.description.html }} />
                 </div>
               </div>
             </div>
@@ -221,7 +221,7 @@ class Contacts extends React.Component {
                 <div className="col-md-4">
                   <div className="postal-address mb-5 mb-md-0">
                     <div className="d-md-flex align-items-center mb-10">
-                      <h3 className=" section-title mb-md-0 text-center text-capitalize"> <i className="fas fa-map-marker-alt mr-0 mr-md-1"></i> Postal Address </h3>          
+                      <h3 className=" section-title mb-md-0 text-center text-capitalize"> <i className="fas fa-map-marker-alt mr-0 mr-md-1"></i> Postal Address </h3>
                     </div>
                     {
                       contactData.address.map((item,value) => {
@@ -237,7 +237,7 @@ class Contacts extends React.Component {
                   <div className="email-address mb-5 mb-md-0">
                     <div className="d-md-flex align-items-baseline mb-10">
                       <h3 className=" section-title mb-md-0 text-center text-capitalize"><i className="fas fa-envelope-open-text mr-0 mr-md-1"></i> Email Address
-                      </h3>          
+                      </h3>
                     </div>
                     {
                       contactData.email_address.map((item,value)=>{
@@ -251,9 +251,9 @@ class Contacts extends React.Component {
 
                 <div className="col-md-4">
                   <div className="contact-info mb-5 mb-md-0">
-                    <div className="d-md-flex align-items-baseline mb-10">  
+                    <div className="d-md-flex align-items-baseline mb-10">
                       <h3 className=" section-title mb-md-0 text-center text-capitalize"> <i className="fas fa-phone-volume mr-0 mr-md-2"></i>Contact Info
-                      </h3>          
+                      </h3>
                     </div>
                     {
                       contactData.contact_info.map((item,value)=>{
@@ -269,11 +269,11 @@ class Contacts extends React.Component {
             </div>
           </section>
           <section className="contact-form">
-            <div className="container"> 
+            <div className="container">
               <h3 className="text-center text-uppercase section-title">Enquiry Now</h3>
             </div>
             <div>
-              <form > 
+              <form >
                   <div className="form-bg-color ">
                       <div className="container">
                           <div className="d-flex customer justify-content-center align-items-baseline">
@@ -288,9 +288,9 @@ class Contacts extends React.Component {
                           </div>
                       </div>
                   </div>
-              </form>                     
+              </form>
               {
-                this.state.customer && 
+                this.state.customer &&
                 <form className="contactCustomer" onSubmit={(e) => this.submitCustomer(e)} name="customer" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
                   <div className="contact-form-bg pt-4 pb-4 pt-sm-5 pb-sm-5" id="customer">
                     <div className="container">
@@ -302,7 +302,7 @@ class Contacts extends React.Component {
                         <div className="col-sm-6 form-group  ">
                             <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" autoComplete="false" required/>
                         </div>
-                      
+
                         <div className="col-sm-6 form-group  ">
                             <input type="text" className="form-control" id="email" placeholder="Your Email*" autoComplete="false" name="email" required/>
                         </div>
@@ -322,7 +322,7 @@ class Contacts extends React.Component {
                             <option>Boulevard Towers</option>
                             <option>Business Park</option>
                           </select>
-                        </div> 
+                        </div>
 
                         <div className="col-sm-6 form-group ">
                           <select defaultValue="Budget" className="form-control rounded-0" id="budget" name="budget" required >
@@ -331,9 +331,9 @@ class Contacts extends React.Component {
                             <option>50-80 Lakh</option>
                             <option>80 Lakh-1 Crore</option>
                             <option>1 Crore</option>
-                            
+
                           </select>
-                        </div> 
+                        </div>
                         <div className="col-sm-6 form-group  ">
                             <input type="text" className="form-control" id="city" placeholder="City" name="city" required/>
                         </div>
@@ -352,20 +352,20 @@ class Contacts extends React.Component {
                             <option>Word of Mouth</option>
                             <option>Others</option>
                           </select>
-                        </div> 
+                        </div>
                         <div className="form-group col-md-12">
                           <textarea className="form-control" rows="4" id="message" placeholder="Message" name="message" required></textarea>
                         </div>
                       </div>
                       <div className="sumbit text-center mt-sm-0 mt-4">
                         <button type="submit" className="btn-secondary">Submit</button>
-                      </div>  
-                    </div> 
+                      </div>
+                    </div>
                   </div>
               </form>
               }
               {
-                this.state.channel && 
+                this.state.channel &&
                 <form className="contactChannel" onSubmit={(e) => this.submitChannelPartner(e)} name="channel" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
                   <div className="contact-form-bg pt-4 pb-4 pt-sm-5 pb-sm-5" id="channel">
                     <div className="container">
@@ -377,7 +377,7 @@ class Contacts extends React.Component {
                         <div className="col-sm-6 form-group  ">
                             <input type="text" className="form-control" id="name" placeholder="Individual Name*" name="name" autoComplete="false" required/>
                         </div>
-                      
+
                         <div className="col-sm-6 form-group  ">
                             <input type="text" className="form-control" id="email" placeholder="Your Email*" autoComplete="false" name="email" required/>
                         </div>
@@ -386,7 +386,7 @@ class Contacts extends React.Component {
                             value={this.state.value}
                             onChange={(e) => this.setState({value:e})}
                           />
-                        </div> 
+                        </div>
                         <div className="col-sm-6 form-group  ">
                             <input type="text" className="form-control" id="rera" placeholder="RERA Registration Number" name="" required/>
                         </div>
@@ -397,8 +397,8 @@ class Contacts extends React.Component {
                       </div>
                       <div className="sumbit text-center mt-sm-0 mt-4">
                         <button type="submit" className="btn-secondary">Submit</button>
-                      </div>  
-                    </div> 
+                      </div>
+                    </div>
                   </div>
               </form>
               }
@@ -418,7 +418,7 @@ class Contacts extends React.Component {
                         <div className="col-sm-6 form-group  ">
                             <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" autoComplete="false" required/>
                         </div>
-                      
+
                         <div className="col-sm-6 form-group  ">
                             <input type="text" className="form-control" id="email" placeholder="Your Email*" autoComplete="false" name="email" required/>
                         </div>
@@ -431,16 +431,16 @@ class Contacts extends React.Component {
 
                         <div className="col-sm-12 form-group  ">
                             <input type="text" className="form-control" id="city" placeholder="City" name="city" required/>
-                        </div> 
+                        </div>
                         <div className="form-group col-md-12">
                           <textarea className="form-control" rows="4" id="message" placeholder="Message" name="message" required></textarea>
                         </div>
                       </div>
                       <div className="sumbit text-center mt-sm-0 mt-4">
                         <button type="submit" className="btn-secondary">Submit</button>
-                      </div>  
-                    </div> 
-                  </div>  
+                      </div>
+                    </div>
+                  </div>
                 </form>
 
               }
@@ -457,7 +457,7 @@ class Contacts extends React.Component {
                       <div className="col-sm-6 form-group  ">
                           <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" autoComplete="false" required/>
                       </div>
-                    
+
                       <div className="col-sm-6 form-group  ">
                           <input type="text" className="form-control" id="email" placeholder="Your Email*" autoComplete="false" name="email" required/>
                       </div>
@@ -470,7 +470,7 @@ class Contacts extends React.Component {
 
                       <div className="col-sm-6 form-group  ">
                           <input type="text" className="form-control" id="city" placeholder="City" name="city" required/>
-                      </div> 
+                      </div>
                       <div className="col-md-12 form-group file-area">
                           <FileUploader
                             id="file"
@@ -482,7 +482,7 @@ class Contacts extends React.Component {
                           />
                         <div className="file-dummy resume-upload">
                           {
-                            this.state.avatar && this.state.avatar ? this.state.avatar: 
+                            this.state.avatar && this.state.avatar ? this.state.avatar:
                             <div className="default">Resume Upload (PDF/DOC)*</div>
                           }
                         </div>
@@ -501,9 +501,9 @@ class Contacts extends React.Component {
                     </div>
                     <div className="sumbit text-center mt-sm-0 mt-4">
                       <button type="submit" className="btn-secondary">Submit</button>
-                    </div>  
-                  </div> 
-                </div>  
+                    </div>
+                  </div>
+                </div>
               </form>
               }
               {
@@ -522,7 +522,7 @@ class Contacts extends React.Component {
                         <div className="col-sm-6 form-group  ">
                             <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" autoComplete="false" required/>
                         </div>
-                      
+
                         <div className="col-sm-6 form-group  ">
                             <input type="text" className="form-control" id="email" placeholder="Your Email*" autoComplete="false" name="email" required/>
                         </div>
@@ -532,24 +532,24 @@ class Contacts extends React.Component {
                             onChange={(e) => this.setState({value:e})}
                           />
                         </div>
-                        
+
                         <div className="col-sm-12 form-group  ">
                             <input type="text" className="form-control" id="city" placeholder="City" name="city" required/>
-                        </div> 
+                        </div>
                         <div className="form-group col-md-12">
                           <textarea className="form-control" rows="4" id="message" placeholder="Message" name="message" required></textarea>
                         </div>
                       </div>
                       <div className="sumbit text-center mt-sm-0 mt-4">
                         <button type="submit" className="btn-secondary">Submit</button>
-                      </div>  
-                    </div> 
-                  </div>  
+                      </div>
+                    </div>
+                  </div>
                 </form>
               }
             </div>
           </section>
-          <section className="locate-us"> 
+          <section className="locate-us">
             <div className="container p-sm-0">
               <h3 className="text-center text-uppercase mb-4 section-title ">Locate Us</h3>
               <div className="map-image map">
@@ -557,7 +557,7 @@ class Contacts extends React.Component {
               </div>
             </div>
           </section>
-        </section>  
+        </section>
         <Footer/>
       </Layout>
     )

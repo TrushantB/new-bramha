@@ -7,20 +7,20 @@ import Img from 'gatsby-image';
 
 class LeisureClub extends React.Component {
   render(){
-    const leisureData = this.props.data.allPrismicLeisureClub.edges[0].node.data;    
+    const leisureData = this.props.data.allPrismicLeisureClub.edges[0].node.data;
     const verticalsData = this.props.data.prismicOurVerticals.data;
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title={leisureData.sub_title.text}/>
         <section className=" page-heading-section container container-sm-fluid bg-color">
           <div className="padding-block-60">
-            <h2 className="page-heading">{leisureData.sub_title.text}</h2> 
+            <h2 className="page-heading">{leisureData.sub_title.text}</h2>
           </div>
           <div className="row  mr-0">
             <div className="col-12">
-              <div className="main-paragraph"> 
-                <p dangerouslySetInnerHTML={{__html:leisureData.description.html }} />
-              </div>  
+              <div className="main-paragraph">
+                <div dangerouslySetInnerHTML={{__html:leisureData.description.html }} />
+              </div>
             </div>
           </div>
         </section>
@@ -77,15 +77,15 @@ class LeisureClub extends React.Component {
                   <div className="vertical-img-wrapper w-100">
                     <Img fluid={verticalsData.vertical1.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
                   </div>
-                  <div className="vertical-card-body d-flex flex-column justify-content-between"> 
+                  <div className="vertical-card-body d-flex flex-column justify-content-between">
                     <h2 className="inner-section-title">
                       {verticalsData.vertical1.document[0].data.title.text}
                     </h2>
                     <div className="link-text vertical-card-link d-flex justify-content-between align-items-center">
-                      <span> View Projects </span> 
+                      <span> View Projects </span>
                       <i className="fas fa-arrow-right"></i>
                     </div>
-                  </div> 
+                  </div>
                 </Link>
               </div>
 
@@ -94,26 +94,26 @@ class LeisureClub extends React.Component {
                   <div className="vertical-img-wrapper w-100">
                     <Img fluid={verticalsData.vertical2.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
                   </div>
-                  <div className="vertical-card-body d-flex flex-column justify-content-between"> 
+                  <div className="vertical-card-body d-flex flex-column justify-content-between">
                     <h2 className="inner-section-title">
                       {verticalsData.vertical2.document[0].data.title.text}
                     </h2>
                     <div className="link-text vertical-card-link d-flex justify-content-between align-items-center">
-                      <span> View Projects </span> 
+                      <span> View Projects </span>
                       <i className="fas fa-arrow-right"></i>
                     </div>
-                  </div> 
+                  </div>
                 </Link>
               </div>
 
               <div className="col-md-6 mt-5 padding-sm-0 ">
                 <Link to='/hospitality' className="vertical-card d-flex flex-row-reverse flex-md-row text-decoration-none">
-                  <div className="vertical-card-body d-flex flex-column justify-content-between"> 
+                  <div className="vertical-card-body d-flex flex-column justify-content-between">
                     <h2 className="inner-section-title">
                       {verticalsData.vertical3.document[0].data.title.text}
                     </h2>
                     <div className="link-text vertical-card-link d-flex justify-content-between align-items-center">
-                      <span> View Projects </span> 
+                      <span> View Projects </span>
                       <i className="fas fa-arrow-right"></i>
                     </div>
                   </div>
@@ -125,7 +125,7 @@ class LeisureClub extends React.Component {
             </div>
           </section>
         </section>
-        <Footer/>   
+        <Footer/>
       </Layout>
     )
   }

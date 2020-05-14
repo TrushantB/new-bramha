@@ -7,6 +7,8 @@ import Footer from '../components/footer';
 import SEO from '../components/seo';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
+import chevron_down from '../images/chevron_down.svg';
+import Div100vh from 'react-div-100vh/lib/Div100vh';
 
 class Careers extends React.Component {
   constructor(){
@@ -19,7 +21,7 @@ class Careers extends React.Component {
       jobOpeningStore:[],
       activeButton:null,
       photoIndex: 0,
-      isOpen: false,  
+      isOpen: false,
       jobOpenningButtons:[
         {
           id:'sales',
@@ -57,7 +59,7 @@ class Careers extends React.Component {
     }
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     let jobOpening = [];
     const careerData = this.props.data.prismicCareers.data;
     careerData.architect.map((item) => {
@@ -158,26 +160,24 @@ class Careers extends React.Component {
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title="Careers"/>
         <div className="career-page">
-          <section className="banner-section mt-60">
+        <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section mt-60">
             <picture>
               <source media="(max-width: 581px)" srcSet={careerData.banner.mobile.url}/>
               <img src={careerData.banner.url} alt="banner image here" className="banner-img" />
             </picture>
-            <div className="scroll-downs">
-              <div onClick={this.scrollWin} className="mousey">
-                {/* <div className=""></div> */}
-                <span className="icon-arrow-down d-inline-block scroller"></span>
-              </div>
+            <div className="scroll-downs" onClick={this.scrollWin}>
+              <span>Scroll</span>
+              <div className="mousey"><img src={chevron_down} /></div>
             </div>
             {/* <Img fluid={careerData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
-          </section>
+          </Div100vh>
           <section className="career-info container container-sm-fluid bg-color pb-5 pb-sm-0">
             <div className="padding-block-60 career-info-row">
-              <h2 className="page-heading">{careerData.title.text}</h2> 
+              <h2 className="page-heading">{careerData.title.text}</h2>
             </div>
             <div className="row career-info-row">
               <div className="col-12">
-                <p className="text mb-0" dangerouslySetInnerHTML={{__html:careerData.description.html }} />
+                <div className="text mb-0" dangerouslySetInnerHTML={{__html:careerData.description.html }} />
               </div>
             </div>
           </section>
@@ -195,7 +195,7 @@ class Careers extends React.Component {
                     careerData.showcase.map((item,value)=>{
                       return(
                         <div key={value}>
-                          <div  className="slider-img image-ratio" onClick={() => this.setState({ isOpen: true ,photoIndex:value})}>
+                          <div role="link" tabIndex="0" className="slider-img image-ratio" onClick={() => this.setState({ isOpen: true ,photoIndex:value})}>
                             <Img fluid={item.image.localFile.childImageSharp.fluid} alt="slider image" className="life-at-bramha-slider-image" />
                           </div>
                         </div>
@@ -323,7 +323,7 @@ class Careers extends React.Component {
                                         </div>
                                         <div className="sumbit text-center mt-sm-0 mt-4">
                                           <button type="submit" className="btn-secondary ">Submit</button>
-                                        </div>  
+                                        </div>
                                       </div>
                                     </div>
                                   </div>

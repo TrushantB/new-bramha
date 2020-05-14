@@ -1,165 +1,163 @@
-.residential-projects{
-    .projects{
-        margin: 64px 0 80px 0;
-      select{
-          width: 271px;
-          height: 40px;
-          margin-right: 24px;
-          border: solid 0.5px rgba(153, 153, 153, 0.5); 
-          font-weight: normal;
-     
+.residential-projects {
+  .projects {
+    margin: 64px 0 80px 0;
+    select {
+      width: 271px;
+      height: 40px;
+      margin-right: 24px;
+      border: solid 0.5px rgba(153, 153, 153, 0.5);
+      font-weight: normal;
+    }
+  }
+  .residences {
+    padding-top: 20px;
+    // .residences-card{
+    //     margin: 72px  0 100px;
+    // }
+  }
+  .listing-heading {
+    width: 300px;
+    height: 40px;
+    background: #b1a585;
+    margin-top: -40px;
+    .heading {
+      font-size: 18px;
+      font-weight: 300;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: -0.54px;
+      color: #ffffff;
+      margin-left: 20px;
+    }
+  }
+  .ongoing-project {
+    padding: 36px 0 0 0;
+    .residences {
+      padding: 0 0 170px;
+    }
+    .listing-heading {
+      transform: translate(0, -15px);
+    }
+    .residences-card {
+      margin: 56px 0 72px;
+    }
+  }
+  .complete-project {
+    margin-bottom: 52px;
+    .container {
+      text-align: center;
+    }
+    .secondary-card {
+      margin: 0 15px;
+      .secondary-card-rectangle {
+        text-align: left;
       }
     }
-    .residences{
-        padding-top: 20px;
-        // .residences-card{
-        //     margin: 72px  0 100px;
-        // }
+    p {
+      //   opacity: 0.5;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.71;
+      letter-spacing: -0.31px;
+      color: #7f7f7f;
+      margin: 40px 0 48px 0;
     }
-    .listing-heading{
-      width: 300px;
-      height: 40px;
-      background: #b1a585;
-      margin-top: -40px;
-        .heading{
-          font-size: 18px;
-          font-weight: 300;
-          font-stretch: normal;
-          font-style: normal;
-          line-height: normal;
-          letter-spacing: -0.54px;
-          color: #ffffff;
-          margin-left: 20px;
-        
-        }
+    .listing-heading {
+      margin-top: -23px;
     }
-    .ongoing-project{
-        padding: 36px 0 0 0;
-        .residences{
-            padding: 0 0 170px;
-        }
-        .listing-heading{
-            transform: translate(0 ,-15px);
-        }
-        .residences-card{
-            margin: 56px 0 72px;
-        }
+  }
+  .slick-list {
+    .slick-slide > div {
+      padding-bottom: 84px;
     }
-    .complete-project{
-        margin-bottom: 52px;
-        .container{
-            text-align: center;
-        }
-        .secondary-card{
-            margin: 0 15px;
-            .secondary-card-rectangle{
-                text-align: left;
-            }
-        }
-        p{
-          opacity: 0.5;
-          font-weight: normal;
-          font-stretch: normal;
-          font-style: normal;
-          line-height: 1.71;
-          letter-spacing: -0.31px;
-          color: #000000;
-          margin: 40px 0 48px 0;
-        }
-        .listing-heading{
-            margin-top: -23px;
-        }
-    }
-    .slick-list{
-        .slick-slide > div{
-            padding-bottom:84px;
-        }
-    }
-    .slick-prev {
-        left: -50px;
-        top: 37%;
-        &:before{
-            content: "\e900";
-            font-family: 'icomoon' !important;
-            font-size: 44px;
-            cursor: pointer;
-            background: none;
-            color:#979797;
-            padding:0;
+  }
+  .slick-prev {
+    left: -50px;
+    top: 37%;
+    &:before {
+      content: "\e900";
+      font-family: "icomoon" !important;
+      font-size: 44px;
+      cursor: pointer;
+      background: none;
+      color: #979797;
+      padding: 0;
     }
   }
   .slick-next {
     //   transform: rotate(180deg);
-      right: -50px;
-      top: 41%;
-      &:before{
-        content: "\e901";
-        font-family: 'icomoon' !important;
-        font-size: 44px;
-        cursor: pointer;
-        background:none;
-        color:#979797;
-        padding:0;
+    right: -50px;
+    top: 41%;
+    &:before {
+      content: "\e901";
+      font-family: "icomoon" !important;
+      font-size: 44px;
+      cursor: pointer;
+      background: none;
+      color: #979797;
+      padding: 0;
+    }
+  }
+  .give-details {
+    padding: 60px 0 60px;
+    background-color: theme-color("bg-color");
+    .section-title {
+      font-size: 18px;
+      &::after {
+        display: none;
       }
     }
-    .give-details{
-        padding:  60px 0 60px;
-        background-color:theme-color("bg-color");
-        .section-title{
-            font-size: 18px;
-            &::after{
-                display: none;
-            }
-        }
-        .btn-secondary{
-            width: 230px;
-        }
+    .btn-secondary {
+      width: 230px;
     }
-} 
-.view-all{
-    .btn-secondary{
-        width:230px;
-        display: inline-block;
-    }
+  }
 }
-@media (max-width:580px){
-    .residential-section .main-paragraph{
-        padding-bottom: 80px;
+.view-all {
+  .btn-secondary {
+    width: 230px;
+    display: inline-block;
+  }
+}
+@media (max-width: 580px) {
+  .residential-section .main-paragraph {
+    padding-bottom: 80px;
+  }
+  .residences-card {
+    margin-top: 48px;
+  }
+  .residential-projects {
+    .ongoing-project {
+      .residences {
+        padding: 0 0 120px;
+      }
+      .residences-card {
+        margin: 36px 0 100px;
+      }
     }
-    .residences-card{
-        margin-top: 48px;
+  }
+  .residential-projects .complete-project .slick-next {
+    top: auto;
+    right: 40px;
+    bottom: -45px;
+    &::before {
+      content: "\E904";
+      font-family: "icomoon" !important;
+      font-size: 22px;
+      color: #b3b3b3;
     }
-    .residential-projects {
-        .ongoing-project{
-            .residences{
-                padding: 0 0 120px;
-            }
-            .residences-card{
-                margin:36px 0 100px;
-            }
-        }
+  }
+  .residential-projects .complete-project .slick-prev {
+    top: auto;
+    right: 100px;
+    left: auto;
+    bottom: -45px;
+    &::before {
+      content: "\E903";
+      font-family: "icomoon" !important;
+      font-size: 22px;
+      color: #b3b3b3;
     }
-    .residential-projects .complete-project .slick-next{
-        top: auto;
-        right: 40px;
-        bottom: -45px;
-        &::before{
-            content: "\E904";
-            font-family: 'icomoon' !important;
-           font-size: 22px;
-            color:#b3b3b3;
-        }
-    }
-    .residential-projects .complete-project .slick-prev{
-        top: auto;
-        right: 100px;
-        left:auto;
-        bottom: -45px;
-        &::before{
-            content: "\E903";
-            font-family: 'icomoon' !important;
-           font-size: 22px;
-            color:#b3b3b3;
-        }
-    }
+  }
 }
