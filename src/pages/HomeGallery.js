@@ -17,7 +17,9 @@ function HomeGallery(props) {
         {
           (props.verticals && props.verticals.length > 0) && props.verticals.map((item) => {
             return (
+              console.log('item', item.type),
               <div key={item.itemIndex} className="banner-wrapper">
+                {item.type == 'residential' ?
                 <Link to={`/residential/${item.project_url}`}>
                   <picture>
                     <source media="(max-width: 581px)" srcSet={item.image.mobile.url} />
@@ -25,7 +27,33 @@ function HomeGallery(props) {
                       <img src={item.image.url} className="banner-img" style={{ width: '100%' }} />
                     }
                   </picture>
-                </Link>
+                </Link>:
+                item.type == 'commercial'?
+                <Link to={`/commercial/${item.project_url}`}>
+                  <picture>
+                    <source media="(max-width: 581px)" srcSet={item.image.mobile.url} />
+                    {
+                      <img src={item.image.url} className="banner-img" style={{ width: '100%' }} />
+                    }
+                  </picture>
+                </Link>: item.type == 'hospitality'?
+                <Link to={`/hospitality/${item.project_url}`}>
+                  <picture>
+                    <source media="(max-width: 581px)" srcSet={item.image.mobile.url} />
+                    {
+                      <img src={item.image.url} className="banner-img" style={{ width: '100%' }} />
+                    }
+                  </picture>
+                </Link>:item.type == 'leisure-club'?
+                <Link to={`/leisure-club/${item.project_url}`}>
+                  <picture>
+                    <source media="(max-width: 581px)" srcSet={item.image.mobile.url} />
+                    {
+                      <img src={item.image.url} className="banner-img" style={{ width: '100%' }} />
+                    }
+                  </picture>
+                </Link>: ''
+                }
               </div>
             )
           })

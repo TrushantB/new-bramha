@@ -55,6 +55,59 @@
  
       }
 }
+/* Award Css Here */
+.award-title{
+    margin-bottom: 20px;
+    color: #988a63;
+    font-size: 17px;
+    font-family: georgia;
+    // margin-top: 30px;
+  }
+  .award-description{
+    margin-top: 20px;
+    color: #7f7f7f;
+    margin-bottom: 100px;
+  }
+  .page-heading {
+    border-left: 10px solid #b2a585;
+    font-family: Graphik,sans-serif;
+    font-weight: 400;
+    padding: 4px 9px;
+    opacity: .8;
+    font-size: 30px;
+    color: #000;
+    align-items: center;
+    display: flex;
+    margin: 0;
+  }
+  .padding-block-60 {
+    padding: 60px 0 24px;
+  }
+  .main-paragraph{
+    margin-bottom: 60px;
+  }
+  .mb-60{
+    margin-bottom: 60px;
+  }
+  .section-title {
+    font-family: georgia;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -.44px;
+    color: #988a63;
+  }
+  .section-title:after {
+    content: "";
+    border-bottom: 2px solid #a53130;
+    padding: 6px 0;
+    width: 85px;
+    display: block;
+    margin:0 auto;
+  }
+  .text-center {
+    text-align: center!important;
+  }
+
 @media (max-width:768px){
     .my-120{
         margin: 16px 0;

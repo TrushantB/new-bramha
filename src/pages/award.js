@@ -3,6 +3,7 @@ import Layout from '../components/layout';
 import Footer from '../components/footer';
 import SEO from '../components/seo';
 import { graphql } from 'gatsby';
+
 class Award extends React.Component {
     render(){
         const awardData = this.props.data.prismicAwardAndRecognition.data;
@@ -16,43 +17,34 @@ class Award extends React.Component {
                         </div>
                         <div className="row mr-0">
                             <div className="col-12">
-                            <div className="main-paragraph mb-0" dangerouslySetInnerHTML={{__html:awardData.short_description.html }} />
+                            <div className="main-paragraph" dangerouslySetInnerHTML={{__html:awardData.short_description.html }} />
                             </div>
                         </div>
                     </section>
 
-
-                    <section className="award-name">
+                    <section>
                         <div className="container">
                             <div className="row">
-                                {
-                                    awardData.awards.map((item, index) => {
-                                        return(
-                                            <div key={index} className="col-lg-4 col-sm-6 my-120">
-
-                                                <div className="award-details d-flex justify-content-center align-items-center">
-                                                    <p className="inner-section-title text-center">
-                                                        {item.description1.text}
-                                                    </p>
-                                                </div>
-
-                                            <div className="company-name">
-                                                <h5 className="inner-section-title text-center text-uppercase mb-0">
+                                {awardData.awards.map((item,index) => {
+                                    return(
+                                        <div key={index} className="col-md-4 col-lg-4 col-sm-6">
+                                            <div>
+                                                <h5 className="award-title ">
                                                     {item.title1.text}
                                                 </h5>
-                                                <p className="award-by text-center text-uppercase m-0">
-                                                   {item.tagline.text}
-                                                </p>
                                             </div>
-                                            </div>
-                                        )
-                                    })
-                                }
+                                            <img src={item.image.url} alt="" title="Founder" width="100%"/>
+                                            <p className="award-description">
+                                                {item.description1.text}
+                                            </p>
+                                        </div>
+                                    )
+                                })}
                             </div>
                         </div>
                     </section>
                 </section>
-            <Footer />
+                <Footer />
             </Layout>
         )
     }
