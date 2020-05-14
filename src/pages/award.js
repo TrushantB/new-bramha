@@ -64,9 +64,6 @@ export const awardPage = graphql`{
                 title1 {
                     text
                 }
-                tagline {
-                    text
-                }
                 description1 {
                     text
                 }

@@ -146,9 +146,6 @@ export default ManagementTeam;
 export const managementPage = graphql`{
   prismicManagementTeam{
     data{
-      title{
-        text
-      }
       sub_title{
         text
       }
