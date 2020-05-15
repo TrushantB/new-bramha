@@ -362,6 +362,8 @@ class LeisureDetails extends React.Component {
             {/* <!--   ------------------- Proximities section end here ------------------- --> */}
              
           {/* <!--   ------------------- Amenities And Fact Files section start here ------------------- --> */}
+            {
+              leisureData.data.amenities[0].image1.url ? 
             <section className="amenity-sections container"  id={leisureData.uid}>
               <ul className="nav nav-pills row padding-sm-0" id="factfile-tab" role="tablist">
                 <li className="nav-item col-6 p-0">
@@ -519,6 +521,121 @@ class LeisureDetails extends React.Component {
                 }
               </div>
             </section>
+            :null
+            }
+
+            {
+              !leisureData.data.amenities[0].image1.url ?
+              <section className="amenity-sections container">
+              <div className="slider-page d-none d-sm-block floor-plan">
+                  <div className="section-title-wrap d-flex flex-column align-items-center">
+                    <h2 className="section-title text-uppercase text-center">
+                        Floor Plans
+                    </h2>
+                  </div>
+                  <div>
+                  <div className="container">
+                    <div className="section-title-wrap d-flex flex-column align-items-center">
+                      <label className="wrap">
+                        <select className="border-0 layout-select" onChange={(e)=> {
+                          let floor = leisureData.data.floor_plans.filter(value => value.title1.text === e.target.value)
+                          this.setState({floorPlanSelect: floor})
+                          if(e.target.value === "allLayout"){
+                            this.setState({floorPlanSelect: leisureData.data.floor_plans})
+                          }
+                        }}>
+                          <option value="allLayout"> All Layout </option>
+                          {
+                            leisureData.data.floor_plans.map((data, index) => {
+                              return(
+                                <option value={data.title1.text} key={index}>{data.title1.text}</option>
+                              )
+                            })
+                          }
+                        </select>
+                      </label>
+                    </div>
+                    <div className="showcase-slider">
+                      {
+                        this.state.floorPlanSelect && this.state.floorPlanSelect.length == 1 ?
+                        <div>
+                          {
+                          this.state.floorPlanSelect && this.state.floorPlanSelect.map((item,value) => {
+                            return(
+                              <div key={value}>
+                                <div className="slider-img" onClick={() => this.setState({ isOpenOneSlide: true ,photoIndex:value})}>
+                                  <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt="Floor Plans" className="w-100 h-100" />
+                                </div>
+                              </div>
+                            )
+                          })}
+                              {
+                        isOpenOneSlide && leisureData.data.floor_plans &&
+                        <Lightbox
+                          mainSrc={leisureData.data.floor_plans[photoIndex].image1.localFile.childImageSharp.fluid.src}
+                          onCloseRequest={() => this.setState({ isOpenOneSlide: false })}
+                          // onMovePrevRequest={() =>
+                          //   this.setState({
+                          //     photoIndex: (photoIndex + leisureData.data.floor_plans.length - 1) % leisureData.data.floor_plans.length,
+                          //   })
+                          // }
+                          // onMoveNextRequest={() =>
+                          //   this.setState({
+                          //     photoIndex: (photoIndex + 1) % leisureData.data.floor_plans.length,
+                          //   })
+                          // }
+                        animationDuration={800}
+                        />
+                      }
+                          </div>:
+                          <Slider {...floorPlan}>
+                            {
+                              this.state.floorPlanSelect.length > 0 && this.state.floorPlanSelect.map((item,value) => {
+                                return(
+                                  <div key={value}>
+                                    <div className="slider-img " onClick={() => this.setState({ isOpenTwo: true ,photoIndex:value})}>
+                                      <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt="Floor Plans" className="w-100 h-100" />
+                                    </div>
+                                  </div>
+                                )
+                              })
+                            }
+                          </Slider>
+                      }
+                      {
+                        isOpenTwo &&
+                        <Lightbox
+                          mainSrc={leisureData.data.floor_plans[photoIndex].image1.localFile.childImageSharp.fluid.src}
+                          nextSrc={leisureData.data.floor_plans[(photoIndex + 1) % leisureData.data.floor_plans.length].image1.localFile.childImageSharp.fluid.src}
+                          prevSrc={leisureData.data.floor_plans[(photoIndex + leisureData.data.floor_plans.length - 1) % leisureData.data.floor_plans.length].image1.localFile.childImageSharp.fluid.src}
+                          onCloseRequest={() => this.setState({ isOpenTwo: false })}
+                          onMovePrevRequest={() =>
+                            this.setState({
+                              photoIndex: (photoIndex + leisureData.data.floor_plans.length - 1) % leisureData.data.floor_plans.length,
+                            })
+                          }
+                          onMoveNextRequest={() =>
+                            this.setState({
+                              photoIndex: (photoIndex + 1) % leisureData.data.floor_plans.length,
+                            })
+                          }
+                        animationDuration={800}
+  
+                        />
+                      }
+                      {
+                      this.state.floorPlanSelect.length !==1 &&
+                        <p className=" text-left text-sm-center pages mb-0">
+                        {this.state.floorPlanActive + 1} of {leisureData.data.floor_plans.length}
+                      </p>
+                      }
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </section>: null
+            }
+
             {/* <!--   ------------------- Amenity And Fact Files section end here ------------------- --> */}
 
         {/* <!--   ------------------- Site-progress section start here ------------------- --> */}

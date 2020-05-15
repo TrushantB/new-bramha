@@ -364,17 +364,15 @@ class HospitalityDetails extends React.Component {
             {/* <!--   ------------------- Proximities section end here ------------------- --> */}
              
           {/* <!--   ------------------- Amenities And Fact Files section start here ------------------- --> */}
+          {
+              hospitalityData.data.amenities[0].image1.url ? 
             <section className="amenity-sections container"  id={hospitalityData.uid}>
               <ul className="nav nav-pills row padding-sm-0" id="factfile-tab" role="tablist">
-                {
-                  // hospitalityData.data.amenities[0].image1.url ?
-                    <li className="nav-item col-6 p-0">
-                      <a className="nav-link text-center text-uppercase tab-title active" id="pills-amenities-tab" data-toggle="pill" href="#amenities" role="tab" aria-controls="pills-amenities" aria-selected="true">
-                        {hospitalityData.data.amenities1.text}
-                      </a>
-                    </li>
-                    // : null
-                }
+                <li className="nav-item col-6 p-0">
+                  <a className="nav-link text-center text-uppercase tab-title active" id="pills-amenities-tab" data-toggle="pill" href="#amenities" role="tab" aria-controls="pills-amenities" aria-selected="true">
+                    {hospitalityData.data.amenities1.text}
+                  </a>
+                </li>
                 <li className="nav-item col-6 p-0">
                   <a className="nav-link text-center text-uppercase tab-title" id="pills-factfile-tab" data-toggle="pill" href="#fact-file" role="tab" aria-controls="pills-factfile" aria-selected="false">
                     Floor Plans
@@ -525,6 +523,121 @@ class HospitalityDetails extends React.Component {
                 }
               </div>
             </section>
+            :null
+            }
+
+            {
+              !hospitalityData.data.amenities[0].image1.url ?
+              <section className="amenity-sections container">
+              <div className="slider-page d-none d-sm-block floor-plan">
+                  <div className="section-title-wrap d-flex flex-column align-items-center">
+                    <h2 className="section-title text-uppercase text-center">
+                        Floor Plans
+                    </h2>
+                  </div>
+                  <div>
+                  <div className="container">
+                    <div className="section-title-wrap d-flex flex-column align-items-center">
+                      <label className="wrap">
+                        <select className="border-0 layout-select" onChange={(e)=> {
+                          let floor = hospitalityData.data.floor_plans.filter(value => value.title1.text === e.target.value)
+                          this.setState({floorPlanSelect: floor})
+                          if(e.target.value === "allLayout"){
+                            this.setState({floorPlanSelect: hospitalityData.data.floor_plans})
+                          }
+                        }}>
+                          <option value="allLayout"> All Layout </option>
+                          {
+                            hospitalityData.data.floor_plans.map((data, index) => {
+                              return(
+                                <option value={data.title1.text} key={index}>{data.title1.text}</option>
+                              )
+                            })
+                          }
+                        </select>
+                      </label>
+                    </div>
+                    <div className="showcase-slider">
+                      {
+                        this.state.floorPlanSelect && this.state.floorPlanSelect.length == 1 ?
+                        <div>
+                          {
+                          this.state.floorPlanSelect && this.state.floorPlanSelect.map((item,value) => {
+                            return(
+                              <div key={value}>
+                                <div className="slider-img" onClick={() => this.setState({ isOpenOneSlide: true ,photoIndex:value})}>
+                                  <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt="Floor Plans" className="w-100 h-100" />
+                                </div>
+                              </div>
+                            )
+                          })}
+                              {
+                        isOpenOneSlide && hospitalityData.data.floor_plans &&
+                        <Lightbox
+                          mainSrc={hospitalityData.data.floor_plans[photoIndex].image1.localFile.childImageSharp.fluid.src}
+                          onCloseRequest={() => this.setState({ isOpenOneSlide: false })}
+                          // onMovePrevRequest={() =>
+                          //   this.setState({
+                          //     photoIndex: (photoIndex + hospitalityData.data.floor_plans.length - 1) % hospitalityData.data.floor_plans.length,
+                          //   })
+                          // }
+                          // onMoveNextRequest={() =>
+                          //   this.setState({
+                          //     photoIndex: (photoIndex + 1) % hospitalityData.data.floor_plans.length,
+                          //   })
+                          // }
+                        animationDuration={800}
+                        />
+                      }
+                          </div>:
+                          <Slider {...floorPlan}>
+                            {
+                              this.state.floorPlanSelect.length > 0 && this.state.floorPlanSelect.map((item,value) => {
+                                return(
+                                  <div key={value}>
+                                    <div className="slider-img " onClick={() => this.setState({ isOpenTwo: true ,photoIndex:value})}>
+                                      <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt="Floor Plans" className="w-100 h-100" />
+                                    </div>
+                                  </div>
+                                )
+                              })
+                            }
+                          </Slider>
+                      }
+                      {
+                        isOpenTwo &&
+                        <Lightbox
+                          mainSrc={hospitalityData.data.floor_plans[photoIndex].image1.localFile.childImageSharp.fluid.src}
+                          nextSrc={hospitalityData.data.floor_plans[(photoIndex + 1) % hospitalityData.data.floor_plans.length].image1.localFile.childImageSharp.fluid.src}
+                          prevSrc={hospitalityData.data.floor_plans[(photoIndex + hospitalityData.data.floor_plans.length - 1) % hospitalityData.data.floor_plans.length].image1.localFile.childImageSharp.fluid.src}
+                          onCloseRequest={() => this.setState({ isOpenTwo: false })}
+                          onMovePrevRequest={() =>
+                            this.setState({
+                              photoIndex: (photoIndex + hospitalityData.data.floor_plans.length - 1) % hospitalityData.data.floor_plans.length,
+                            })
+                          }
+                          onMoveNextRequest={() =>
+                            this.setState({
+                              photoIndex: (photoIndex + 1) % hospitalityData.data.floor_plans.length,
+                            })
+                          }
+                        animationDuration={800}
+  
+                        />
+                      }
+                      {
+                      this.state.floorPlanSelect.length !==1 &&
+                        <p className=" text-left text-sm-center pages mb-0">
+                        {this.state.floorPlanActive + 1} of {hospitalityData.data.floor_plans.length}
+                      </p>
+                      }
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </section>: null
+            }
+
             {/* <!--   ------------------- Amenity And Fact Files section end here ------------------- --> */}
 
         {/* <!--   ------------------- Site-progress section start here ------------------- --> */}
