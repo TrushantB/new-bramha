@@ -341,7 +341,7 @@ class Careers extends React.Component {
           <section className="upload-cv-scetion text-center ">
             <div>
               <h2 className=" section-title text-center">
-                Cant find what you are looking for?
+                Can't find what you are looking for?
               </h2>
             </div>
             <p className="text m-0 ">

@@ -257,8 +257,8 @@ return(
       <li className={`nav-item ${pathname=='/awards&recognition' ? 'active':''}`}>
         <Link className="nav-link" to="/awards&recognition" onClick={classHandle}>Awards & Recognition</Link>
       </li>
-      <li className={`nav-item ${pathname=='/knoweldge-hub' ? 'active':''}`}>
-        <Link className="nav-link" to="/knoweldge-hub" onClick={classHandle}>Knoweldge Hub</Link>
+      <li className={`nav-item ${pathname=='/knowledge-hub' ? 'active':''}`}>
+        <Link className="nav-link" to="/knowledge-hub" onClick={classHandle}>Knowledge Hub</Link>
       </li>
       {/* <li className="nav-item dropdown">
         <Link className="nav-link dropdown-toggle" to='/knoweldge-hub' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

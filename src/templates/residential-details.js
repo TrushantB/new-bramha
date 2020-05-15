@@ -513,6 +513,8 @@ class VerticalPage extends React.Component {
                 </li>
               </ul>
               <div className="tab-content" id="factfiles-tabContent">
+              { 
+                verticalData.data.amenities[0].image1.url ?
                 <div className="tab-pane fade show active" id="amenities" role="tabpanel" aria-labelledby="pills-amenities-tab">
                   <div className="container p-0">
                     <div className="amenities-inner-wrapper d-flex">
@@ -540,7 +542,10 @@ class VerticalPage extends React.Component {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div>:null
+                }
+                {
+                  verticalData.data.floor_plans ?
                 <div className="tab-pane fade floor-plan" id="fact-file" role="tabpanel" aria-labelledby="pills-factfile-tab">
                   <div className="slider-page">
                     <div className="container">
@@ -645,11 +650,12 @@ class VerticalPage extends React.Component {
                     </div>
                     </div>
                   </div>
-                </div>
+                </div>: null }
               </div>
             </section>
             {/* <!--   ------------------- Antity And Fact Files section end here ------------------- --> */}
             {/* <!--   ------------------- Site-progress section start here ------------------- --> */}
+            { verticalData.data.site_progress.length > 0 ?
             <section className="slider-page site-progress-wrap mb-0">
               <h2 className="section-title text-uppercase text-center">
                 Site Progress
@@ -695,7 +701,7 @@ class VerticalPage extends React.Component {
                 </p>
               </div>
               </div>
-            </section>
+            </section>: null}
             {/* <!--   ------------------- progress section end here ------------------- --> */}
             {/* <!--   ------------------- Download Brouchure section start here ------------------- --> */}
             <div className="container detail-page-sections d-flex justify-content-center download-btn">

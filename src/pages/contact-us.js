@@ -282,7 +282,7 @@ class Contacts extends React.Component {
                                   <option value="customer">Customer</option>
                                   <option value="channel">Channel Partner</option>
                                   <option value="constructors">Contractors & Suppliers</option>
-                                  <option value="career">Career</option>
+                                  <option value="career">I am a Job Seeker</option>
                                   <option value="LandOwner">Land Owner</option>
                               </select>
                           </div>
