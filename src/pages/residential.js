@@ -7,7 +7,7 @@ import SEO from '../components/seo';
 import { navigate } from "gatsby"
 
 export default class Residential extends React.Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
       activeSlide: null,
@@ -19,60 +19,60 @@ export default class Residential extends React.Component {
       completedProjectStore: null,
       activeAddress: '',
       activeType: ''
-      };
-    }
+    };
+  }
 
   addressSelect = (e) => {
-    if(e.target.value === 'all_address'){
-      this.setState({ongoingProject:this.state.ongoingProjectStore, completedProject:this.state.completedProjectStore, activeAddress:e.target.value, activeType:''})
+    if (e.target.value === 'all_address') {
+      this.setState({ ongoingProject: this.state.ongoingProjectStore, completedProject: this.state.completedProjectStore, activeAddress: e.target.value, activeType: '' })
     }
-    else{
+    else {
       let ongoing = this.state.ongoingProject.length > 0 && this.state.ongoingProjectStore.filter(res => res.residential_links.document[0].data.flat_address.text === e.target.value)
-      let completed =  this.state.completedProject.length > 0 && this.state.completedProjectStore.filter(res => res.completed_links.document[0].data.flat_address.text === e.target.value)
-      this.setState({ongoingProject:ongoing, completedProject:completed, activeAddress:e.target.value, activeType:''})
+      let completed = this.state.completedProject.length > 0 && this.state.completedProjectStore.filter(res => res.completed_links.document[0].data.flat_address.text === e.target.value)
+      this.setState({ ongoingProject: ongoing, completedProject: completed, activeAddress: e.target.value, activeType: '' })
     }
   }
 
   typeSelect = (e) => {
-    if(e.target.value === 'all_type'){
-      this.setState({ongoingProject:this.state.ongoingProjectStore,completedProject:this.state.completedProjectStore,activeAddress:'',activeType:e.target.value})
+    if (e.target.value === 'all_type') {
+      this.setState({ ongoingProject: this.state.ongoingProjectStore, completedProject: this.state.completedProjectStore, activeAddress: '', activeType: e.target.value })
     }
-    else{
+    else {
       let ongoing = this.state.ongoingProject.length > 0 && this.state.ongoingProjectStore.filter(res => res.residential_links.document[0].data.flat_bhk.text === e.target.value)
-      let completed =  this.state.completedProject.length > 0 && this.state.completedProjectStore.filter(res => res.completed_links.document[0].data.flat_bhk.text === e.target.value)
-      this.setState({ongoingProject:ongoing,completedProject:completed,activeAddress:'',activeType:e.target.value})
+      let completed = this.state.completedProject.length > 0 && this.state.completedProjectStore.filter(res => res.completed_links.document[0].data.flat_bhk.text === e.target.value)
+      this.setState({ ongoingProject: ongoing, completedProject: completed, activeAddress: '', activeType: e.target.value })
     }
   }
 
   handleProjects = (e) => {
     let type = [];
     let address = [];
-    this.setState({activeAddress:'',activeType:''});
+    this.setState({ activeAddress: '', activeType: '' });
     let project = this.state.dataSource[0].node.data[e.target.value];
-    if(e.target.value === 'ongoing_projects'){
+    if (e.target.value === 'ongoing_projects') {
       navigate("/residential/ongoing-project")
     }
-    else if(e.target.value === 'completed_project'){
+    else if (e.target.value === 'completed_project') {
       navigate("/residential/completed-project")
     }
     else {
-      this.state.dataSource.map((item,index) => {
-        this.setState({ongoingProject: item.node.data.ongoing_projects, ongoingProjectStore:item.node.data.ongoing_projects});
-         item.node.data.ongoing_projects.map((item)=>{
-           type.push(item.residential_links.document[0].data.flat_bhk.text);
-           address.push(item.residential_links.document[0].data.flat_address.text);
+      this.state.dataSource.map((item, index) => {
+        this.setState({ ongoingProject: item.node.data.ongoing_projects, ongoingProjectStore: item.node.data.ongoing_projects });
+        item.node.data.ongoing_projects.map((item) => {
+          type.push(item.residential_links.document[0].data.flat_bhk.text);
+          address.push(item.residential_links.document[0].data.flat_address.text);
         })
       })
 
-      this.state.dataSource.map((item,index) => {
-        this.setState({completedProject: item.node.data.completed_project, completedProjectStore:item.node.data.completed_project});
-         item.node.data.completed_project.map((item) => {
-           type.push(item.completed_links.document[0].data.flat_bhk.text);
-           address.push(item.completed_links.document[0].data.flat_address.text);
-          })
-          address= [...new Set(address)];
-          type= [...new Set(type)];
-          this.setState({allType: type, allAddress: address})
+      this.state.dataSource.map((item, index) => {
+        this.setState({ completedProject: item.node.data.completed_project, completedProjectStore: item.node.data.completed_project });
+        item.node.data.completed_project.map((item) => {
+          type.push(item.completed_links.document[0].data.flat_bhk.text);
+          address.push(item.completed_links.document[0].data.flat_address.text);
+        })
+        address = [...new Set(address)];
+        type = [...new Set(type)];
+        this.setState({ allType: type, allAddress: address })
       })
     }
   }
@@ -81,29 +81,29 @@ export default class Residential extends React.Component {
     let type = [];
     let address = [];
     const allData = this.props.data.allPrismicResidential.edges;
-    this.setState({dataSource: allData});
-      allData.map((item,index) => {
-        this.setState({ongoingProject: item.node.data.ongoing_projects, ongoingProjectStore:item.node.data.ongoing_projects});
-         item.node.data.ongoing_projects.map((item) => {
-           type.push(item.residential_links.document[0].data.flat_bhk.text);
-           address.push(item.residential_links.document[0].data.flat_address.text);
-        })
+    this.setState({ dataSource: allData });
+    allData.map((item, index) => {
+      this.setState({ ongoingProject: item.node.data.ongoing_projects, ongoingProjectStore: item.node.data.ongoing_projects });
+      item.node.data.ongoing_projects.map((item) => {
+        type.push(item.residential_links.document[0].data.flat_bhk.text);
+        address.push(item.residential_links.document[0].data.flat_address.text);
       })
+    })
 
-      allData.map((item,index) => {
-        this.setState({completedProject: item.node.data.completed_project, completedProjectStore:item.node.data.completed_project});
-         item.node.data.completed_project.map((item) => {
-           type.push(item.completed_links.document[0].data.flat_bhk.text);
-           address.push(item.completed_links.document[0].data.flat_address.text);
-        })
+    allData.map((item, index) => {
+      this.setState({ completedProject: item.node.data.completed_project, completedProjectStore: item.node.data.completed_project });
+      item.node.data.completed_project.map((item) => {
+        type.push(item.completed_links.document[0].data.flat_bhk.text);
+        address.push(item.completed_links.document[0].data.flat_address.text);
       })
-      let allType = [...new Set(type)];
-      let allAddress = [...new Set(address)];
-      this.setState({allType});
-      this.setState({allAddress});
+    })
+    let allType = [...new Set(type)];
+    let allAddress = [...new Set(address)];
+    this.setState({ allType });
+    this.setState({ allAddress });
   }
 
-  render(){
+  render() {
     let settings = {
       className: "project-carousel",
       centerPadding: "60px",
@@ -114,7 +114,7 @@ export default class Residential extends React.Component {
       slidesToScroll: 1,
       initialSlide: 0,
       autoplaySpeed: 0,
-      nfinite:true,
+      nfinite: true,
       afterChange: current => this.setState({ activeSlide: current }),
       responsive: [
         {
@@ -154,162 +154,165 @@ export default class Residential extends React.Component {
     const residentialData = this.props.data.allPrismicResidential.edges;
     const lookingForMe = residentialData[0].node.data
 
-    return(
-      <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
-        <SEO title="Residential Project"/>
-          {residentialData.map((item,value) => {
-            return(
-              <section key={value} className="residential-section page-heading-section container container-sm-fluid bg-color">
-                <div className="padding-block-60">
-                  <h2 className="page-heading">{item.node.data.sub_title.text}</h2>
-                </div>
-                <div className="row  mr-0">
-                  <div className="col-12">
-                    <div className="main-paragraph" dangerouslySetInnerHTML={{__html:item.node.data.description.html }}/>
-                  </div>
-                </div>
-              </section>
-            )})
-          }
-          <section className="residential-projects">
-            <div className="container">
-              <div className="projects">
-                <select defaultValue=""  onChange={(e) => {this.handleProjects(e)}}>
-                  <option value="all_projects" >All Projects</option>
-                  <option value="ongoing_projects">Ongoing Project</option>
-                  <option value="completed_project">Completed Project</option>
-                </select>
-                <select className="" value={this.state.activeAddress} onChange={(e) => this.addressSelect(e)}>
-                  <option value="" disabled hidden>Select Address </option>
-                  <option  value="all_address"> All Address </option>
-                    {
-                      this.state.allAddress.map((data, index) => {
-                        return(
-                          <option value={data} key={index}>{data}</option>
-                        );
-                      })
-                    }
-                </select>
-                <select className="" value={this.state.activeType} placeholder="Budget" onChange={(e) => this.typeSelect(e)} >
-                  <option value="" disabled hidden>Select Type </option>
-                  <option value="all_type"> All Type </option>
-                  {
-                    this.state.allType.map((data, index) => {
-                      return(
-                      <option value={data} key={index}>{data}</option>
-                      );
-                    })
-                  }
-                </select>
+    return (
+      <Layout location="/" noHeader="true" pathname={this.props.location.pathname}>
+        <SEO title="Residential Project" />
+        {residentialData.map((item, value) => {
+          return (
+            <section key={value} className="residential-section page-heading-section container container-sm-fluid bg-color">
+              <div className="padding-block-60">
+                <h2 className="page-heading">{item.node.data.sub_title.text}</h2>
               </div>
+              <div className="row  mr-0">
+                <div className="col-12">
+                  <div className="main-paragraph" dangerouslySetInnerHTML={{ __html: item.node.data.description.html }} />
+                </div>
+              </div>
+            </section>
+          )
+        })
+        }
+        <section className="residential-projects">
+          <div className="container">
+            <div className="projects">
+              <select defaultValue="" onChange={(e) => { this.handleProjects(e) }}>
+                <option value="all_projects" >All Projects</option>
+                <option value="ongoing_projects">Ongoing Project</option>
+                <option value="completed_project">Completed Project</option>
+              </select>
+              <select className="" value={this.state.activeAddress} onChange={(e) => this.addressSelect(e)}>
+                <option value="" disabled hidden>Select Address </option>
+                <option value="all_address"> All Address </option>
+                {
+                  this.state.allAddress.map((data, index) => {
+                    return (
+                      <option value={data} key={index}>{data}</option>
+                    );
+                  })
+                }
+              </select>
+              <select className="" value={this.state.activeType} placeholder="Budget" onChange={(e) => this.typeSelect(e)} >
+                <option value="" disabled hidden>Select Type </option>
+                <option value="all_type"> All Type </option>
+                {
+                  this.state.allType.map((data, index) => {
+                    return (
+                      <option value={data} key={index}>{data}</option>
+                    );
+                  })
+                }
+              </select>
             </div>
-            {this.state.ongoingProject.length > 0 &&
-              <section className="ongoing-project">
-                <div className="residences">
-                  <div className="container">
-                    <div className="listing-heading d-flex align-items-center">
-                      <h4 className="text-uppercase heading mb-0">Ongoing Projects</h4>
-                    </div>
-                      <div className="row">
-                        {this.state.ongoingProject.map((item,value) => {
-                          return(
-                            <div key={value} className="col-md-6 col-lg-4 col-sm-12 p-0 pl-sm-3 pr-sm-3">
-                              <Link to={`/residential/${item.residential_links.uid}`} >
-                                <div className="residences-card position-relative">
-                                  <div className="residences-img">
-                                  <picture>
-                                    <source media="(max-width: 581px)" srcSet={item.residential_links.document[0].data.thumbnail.mobile.url}/>
-                                    <img src={item.residential_links.document[0].data.thumbnail.url} alt="" width="100%" />
-                                  </picture>
-                                    {/* <Img fluid={item.residential_links.document[0].data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%"/> */}
-                                  </div>
-                                  <div className="rectangle position-absolute d-flex flex-column justify-content-around">
-                                    <div className="rectangle-title">
-                                        <h4 className="text-uppercase m-0 inner-section-title">{item.residential_links.document[0].data.title.text}</h4>
-                                    </div>
-                                    <div className="apartment-size d-flex justify-content-between align-items-center">
-                                      <span className="text-uppercase">{item.residential_links.document[0].data.flat_bhk.text}</span>
-                                      <div>
-                                        <i className="fas fa-arrow-right"></i>
-                                      </div>
-                                    </div>
-                                    <div className="project-location">
-                                      <i className="fas fa-map-marker-alt"></i>
-                                      <span>{item.residential_links.document[0].data.flat_address.text}</span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </Link>
-                            </div>
-                          )})
-                        }
-                      </div>
-                    </div>
+          </div>
+          {this.state.ongoingProject.length > 0 &&
+            <section className="ongoing-project">
+              <div className="residences">
+                <div className="container">
+                  <div className="listing-heading d-flex align-items-center">
+                    <h4 className="text-uppercase heading mb-0">Ongoing Projects</h4>
                   </div>
-                </section>
-              }
-              {this.state.completedProject.length > 0 &&
-                <section className="complete-project position-relative">
-                  <div className="container">
-                    <div className="listing-heading d-flex align-items-center">
-                      <h4 className="text-uppercase heading mb-0">Completed Projects</h4>
-                    </div>
-                    <div className="text-left d-none d-sm-block" dangerouslySetInnerHTML={{__html:residentialData[0].node.data.completed_description.html }} />
-                    <Slider  {...settings}>
-                      {this.state.completedProject.map((item, value) => {
-                        return(
-                          <div className="row"  key={value}>
-                          <Link to={`/residential/${item.completed_links.uid}`}>
-                            <div className="secondary-card position-relative ">
-                              <div className="secondary-card-img image-ratio">
-                              <picture>
-                                  <source media="(max-width: 581px)" srcSet={item.completed_links.document[0].data.thumbnail.mobile.url}/>
-                                  <img src={item.completed_links.document[0].data.thumbnail.url} alt="" width="100%"/>
+                  <div className="row">
+                    {this.state.ongoingProject.map((item, value) => {
+                      return (
+                        <div key={value} className="col-md-6 col-lg-4 col-sm-12 p-0 pl-sm-3 pr-sm-3">
+                          <Link to={`/residential/${item.residential_links.uid}`} >
+                            <div className="residences-card position-relative">
+                              <div className="residences-img">
+                                <picture>
+                                  <source media="(max-width: 581px)" srcSet={item.residential_links.document[0].data.thumbnail.mobile.url} />
+                                  <img src={item.residential_links.document[0].data.thumbnail.url} alt="" width="100%" />
                                 </picture>
+                                {/* <Img fluid={item.residential_links.document[0].data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%"/> */}
                               </div>
-                              <div className="secondary-card-rectangle position-absolute d-flex flex-column justify-content-around">
-                                <div className="title">
-                                  <h4 className="text-uppercase m-0 inner-section-title">{item.completed_links.document[0].data.title.text}</h4>
+                              <div className="property-meta-card position-absolute d-flex flex-column justify-content-around">
+                                <div className="rectangle-title">
+                                  <h4 className="text-uppercase m-0 inner-section-title">{item.residential_links.document[0].data.title.text}</h4>
                                 </div>
                                 <div className="apartment-size d-flex justify-content-between align-items-center">
-                                  <span className="text-uppercase">{item.completed_links.document[0].data.flat_bhk.text}</span>
+                                  <span className="text-uppercase">{item.residential_links.document[0].data.flat_bhk.text}</span>
                                   <div>
                                     <i className="fas fa-arrow-right"></i>
                                   </div>
                                 </div>
                                 <div className="project-location">
                                   <i className="fas fa-map-marker-alt"></i>
-                                  <span>{item.completed_links.document[0].data.flat_address.text}</span>
+                                  <span>{item.residential_links.document[0].data.flat_address.text}</span>
                                 </div>
                               </div>
                             </div>
                           </Link>
-                          </div>
-                        )})
-                      }
-                    </Slider>
-                    <span className="d-inline-block position-absolute pagination">
-                      {this.state.activeSlide + 1} of {this.state.completedProject.length}
-                    </span>
+                        </div>
+                      )
+                    })
+                    }
                   </div>
-                </section>
-            }
-            <div className="view-all text-center mt-5 mt-sm-4 mb-5">
-              <Link to={`/residential/completed-projects`} className="btn-secondary">View All</Link>
-            </div>
-            <section className="give-details text-center">
-              <div className="container">
-                <h4 className="text-uppercase text-center section-title">Looking for more option?</h4>
-                <p>
-                  {lookingForMe.looking_for_more.text}
-                </p>
-                <div className="sumbit text-center mt-sm-0 mt-4">
-                  <button type="submit" className="btn-secondary">Give Details</button>
                 </div>
               </div>
             </section>
+          }
+          {this.state.completedProject.length > 0 &&
+            <section className="complete-project position-relative">
+              <div className="container">
+                <div className="listing-heading d-flex align-items-center">
+                  <h4 className="text-uppercase heading mb-0">Completed Projects</h4>
+                </div>
+                <div className="text-left d-none d-sm-block" dangerouslySetInnerHTML={{ __html: residentialData[0].node.data.completed_description.html }} />
+                <Slider  {...settings}>
+                  {this.state.completedProject.map((item, value) => {
+                    return (
+                      <div className="row" key={value}>
+                        <Link to={`/residential/${item.completed_links.uid}`}>
+                          <div className="secondary-card position-relative ">
+                            <div className="secondary-card-img image-ratio">
+                              <picture>
+                                <source media="(max-width: 581px)" srcSet={item.completed_links.document[0].data.thumbnail.mobile.url} />
+                                <img src={item.completed_links.document[0].data.thumbnail.url} alt="" width="100%" />
+                              </picture>
+                            </div>
+                            <div className="secondary-card-rectangle position-absolute d-flex flex-column justify-content-around">
+                              <div className="title">
+                                <h4 className="text-uppercase m-0 inner-section-title">{item.completed_links.document[0].data.title.text}</h4>
+                              </div>
+                              <div className="apartment-size d-flex justify-content-between align-items-center">
+                                <span className="text-uppercase">{item.completed_links.document[0].data.flat_bhk.text}</span>
+                                <div>
+                                  <i className="fas fa-arrow-right"></i>
+                                </div>
+                              </div>
+                              <div className="project-location">
+                                <i className="fas fa-map-marker-alt"></i>
+                                <span>{item.completed_links.document[0].data.flat_address.text}</span>
+                              </div>
+                            </div>
+                          </div>
+                        </Link>
+                      </div>
+                    )
+                  })
+                  }
+                </Slider>
+                <span className="d-inline-block position-absolute pagination">
+                  {this.state.activeSlide + 1} of {this.state.completedProject.length}
+                </span>
+              </div>
+            </section>
+          }
+          <div className="view-all text-center mt-5 mt-sm-4 mb-5">
+            <Link to={`/residential/completed-projects`} className="btn-secondary">View All</Link>
+          </div>
+          <section className="give-details text-center">
+            <div className="container">
+              <h4 className="text-uppercase text-center section-title">Looking for more option?</h4>
+              <p>
+                {lookingForMe.looking_for_more.text}
+              </p>
+              <div className="sumbit text-center mt-sm-0 mt-4">
+                <button type="submit" className="btn-secondary">Give Details</button>
+              </div>
+            </div>
           </section>
-        <Footer/>
+        </section>
+        <Footer />
       </Layout>
     )
   }

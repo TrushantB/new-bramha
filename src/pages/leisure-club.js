@@ -6,12 +6,12 @@ import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 
 class LeisureClub extends React.Component {
-  render(){
+  render() {
     const leisureData = this.props.data.allPrismicLeisureClub.edges[0].node.data;
     const verticalsData = this.props.data.prismicOurVerticals.data;
-    return(
-      <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
-        <SEO title={leisureData.sub_title.text}/>
+    return (
+      <Layout location="/" noHeader="true" pathname={this.props.location.pathname}>
+        <SEO title={leisureData.sub_title.text} />
         <section className=" page-heading-section container container-sm-fluid bg-color">
           <div className="padding-block-60">
             <h2 className="page-heading">{leisureData.sub_title.text}</h2>
@@ -19,7 +19,7 @@ class LeisureClub extends React.Component {
           <div className="row  mr-0">
             <div className="col-12">
               <div className="main-paragraph">
-                <div dangerouslySetInnerHTML={{__html:leisureData.description.html }} />
+                <div dangerouslySetInnerHTML={{ __html: leisureData.description.html }} />
               </div>
             </div>
           </div>
@@ -30,18 +30,18 @@ class LeisureClub extends React.Component {
               <div className="row">
                 {
                   leisureData.all_verticals.map((item, index) => {
-                    return(
+                    return (
                       <div className="col-md-6 col-lg-4 p-0 pl-sm-3 pr-sm-3" key={index}>
                         <Link to={`leisure-club/${item.verticals.uid}`}>
                           <div className="residences-card position-relative mt-0 mt-sm-5">
                             <div className="residences-img ">
                               <picture>
-                                <source media="(min-width: 581px)" srcSet={item.verticals.document[0].data.thumbnail.url}/>
+                                <source media="(min-width: 581px)" srcSet={item.verticals.document[0].data.thumbnail.url} />
                                 <img src={item.verticals.document[0].data.thumbnail.url} alt="" width="100%" />
                               </picture>
                               {/* <Img fluid={item.data.thumbnail.localFile.childImageSharp.fluid} alt="" width="100%"/> */}
                             </div>
-                            <div className="rectangle position-absolute d-flex flex-column justify-content-around">
+                            <div className="property-meta-card position-absolute d-flex flex-column justify-content-around">
                               <div className="rectangle-title">
                                 <h4 className="text-uppercase m-0 inner-section-title">{item.verticals.document[0].data.title.text}</h4>
                               </div>
@@ -75,7 +75,7 @@ class LeisureClub extends React.Component {
               <div className="col-md-6 padding-sm-0">
                 <Link to='/residential' className="vertical-card d-flex text-decoration-none">
                   <div className="vertical-img-wrapper w-100">
-                    <Img fluid={verticalsData.vertical1.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
+                    <Img fluid={verticalsData.vertical1.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100" />
                   </div>
                   <div className="vertical-card-body d-flex flex-column justify-content-between">
                     <h2 className="inner-section-title">
@@ -92,7 +92,7 @@ class LeisureClub extends React.Component {
               <div className="col-md-6 mt-5 mt-md-0 padding-sm-0">
                 <Link to='/commercial' className="vertical-card d-flex flex-row-reverse flex-md-row text-decoration-none">
                   <div className="vertical-img-wrapper w-100">
-                    <Img fluid={verticalsData.vertical2.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
+                    <Img fluid={verticalsData.vertical2.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100" />
                   </div>
                   <div className="vertical-card-body d-flex flex-column justify-content-between">
                     <h2 className="inner-section-title">
@@ -118,14 +118,14 @@ class LeisureClub extends React.Component {
                     </div>
                   </div>
                   <div className="vertical-img-wrapper w-100">
-                    <Img fluid={verticalsData.vertical3.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100"/>
+                    <Img fluid={verticalsData.vertical3.document[0].data.banner.localFile.childImageSharp.fluid} alt="verticals image" className="w-100" />
                   </div>
                 </Link>
               </div>
             </div>
           </section>
         </section>
-        <Footer/>
+        <Footer />
       </Layout>
     )
   }

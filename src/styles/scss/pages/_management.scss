@@ -1,30 +1,30 @@
-.management-heading{
-    margin-top: 100px;
+.management-heading {
+  margin-top: 100px;
 }
-   .line {
-    width: 200px;
-  }
-  .member{
-    margin-bottom:50px;
-  }
-  .set-position{
-    transform: translate(-180px, -130px);
-  }
-  .gray-background {
-    width: 800px;
-    height: 200px;
-    background: #FAFAFA;
-    transform: translate(-11px, 10px);
-    margin-top: 50px;
-  }
-.line::before{
+.line {
+  width: 200px;
+}
+.member {
+  margin-bottom: 50px;
+}
+.set-position {
+  transform: translate(-180px, -130px);
+}
+.gray-background {
+  width: 800px;
+  height: 200px;
+  background: #fafafa;
+  transform: translate(-11px, 10px);
+  margin-top: 50px;
+}
+.line::before {
   content: "";
-    border-bottom: 2px solid #a53130;
-    padding: 6px 0;
-    width: 22%;
-    display: block;
-    position: absolute;
-    top: 85px;
+  border-bottom: 2px solid #a53130;
+  padding: 6px 0;
+  width: 22%;
+  display: block;
+  position: absolute;
+  top: 85px;
 }
 .rectangle {
   display: flex;
@@ -34,10 +34,9 @@
 .founder h3 {
   font-size: 36px;
   font-weight: normal;
-  font-family: HankenGrotesk;
 }
 .founder h3 ::after {
-  content: '';
+  content: "";
   width: 180px;
   height: 2px;
   border: solid 2px #a53130;
@@ -49,7 +48,6 @@
 }
 .info-content .heading {
   color: #394247;
-  font-family: HankenGrotesk-bold;
   margin-bottom: 0;
 }
 .info-content {
@@ -57,28 +55,24 @@
   margin-top: 46px;
 }
 .subheading {
-  color: #394247;
-  /* line-height: 28px; */
-  font-family: HankenGrotesk;
   letter-spacing: 0.5px;
-  font-weight: 200;
   font-size: 14px;
 }
 
 .info-box {
-  box-shadow: 6px 6px 15px 0 rgba(221, 221, 221, 0.25),-6px -6px 15px 0 rgba(221, 221, 221, 0.27); 
+  box-shadow: 6px 6px 15px 0 rgba(221, 221, 221, 0.25),
+    -6px -6px 15px 0 rgba(221, 221, 221, 0.27);
   padding: 50px 30px;
   transform: translate(49px, -155px);
   background: #fff;
 }
-.title-heading h4{
+.title-heading h4 {
   font-size: 28px;
   font-weight: 400;
-  font-family: HankenGrotesk-medium;
 }
 .founder-image {
   width: 200px;
-  margin: 0 auto
+  margin: 0 auto;
 }
 .mt-140 {
   margin-top: 140px;
@@ -97,71 +91,71 @@ hr.bottom {
   margin-top: 26px;
 }
 
-
 .mt-0 {
   margin-top: 0;
 }
-@media screen and (max-width:1200px) {
-    /*Management Team*/
-    .gray-background {
-      width:93%;
-    }
-    .line::before{
-      content: "";
-        border-bottom: 2px solid #a53130;
-        padding: 6px 0;
-        width: 16%;
-        display: block;
-        position: absolute;
-        top: 85px;
-    }
-    
-    .line {
-      width: 170px;
-    }
-    .mt-170 {
-      margin-bottom: 120px;
-    }
-    
+@media screen and (max-width: 1200px) {
+  /*Management Team*/
+  .gray-background {
+    width: 93%;
+  }
+  .line::before {
+    content: "";
+    border-bottom: 2px solid #a53130;
+    padding: 6px 0;
+    width: 16%;
+    display: block;
+    position: absolute;
+    top: 85px;
   }
 
-  @media screen and (max-width:992px){
-    /*Management Team*/
-      .gray-background {
-        width:100%;
-        transform: none;
-        margin-bottom: 50px;
-        height: 150px;
-      }
-      .set-position{
-        transform: none;
-      }
-      .line::before {
-        content: "";
-        width: 20%;
-        top: 60px;
-      }
-      .mt-170 {
-        margin-bottom: 70px;
-      }
-      .mt-140 {
-        margin-top: 70px;
-      }
-      
-    }
-
-@media screen and (max-width:769px) {
-    .line{
-        width: 150px;
-    }
+  .line {
+    width: 170px;
+  }
+  .mt-170 {
+    margin-bottom: 120px;
+  }
 }
-@media screen and (max-width:600px) {
-    .line::before {
-        content: "";
-        width: 25%;
-        top: 60px;
-        }
-        .line{
-        width: 100px;
-        }
+
+@media screen and (max-width: 992px) {
+  /*Management Team*/
+  .gray-background {
+    width: 100%;
+    transform: none;
+    margin-bottom: 50px;
+    height: 150px;
+  }
+  .set-position {
+    transform: none;
+  }
+  .line::before {
+    content: "";
+    width: 20%;
+    top: 60px;
+  }
+  .mt-170 {
+    margin-bottom: 70px;
+  }
+  .mt-140 {
+    margin-top: 70px;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .line {
+    width: 150px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .line::before {
+    content: "";
+    width: 25%;
+    top: 60px;
+  }
+  .line {
+    width: 100px;
+  }
+  .founder-image {
+    max-width: 80%;
+  }
 }
