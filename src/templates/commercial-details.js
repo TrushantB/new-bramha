@@ -314,7 +314,7 @@ class CommercialDetails extends React.Component {
           {/* <!-- ------------------- Location section end here ------------------- --> */}
             {/* <!--   ------------------- Proximities section start here ------------------- --> */}
             
-            {commercialData.data.proximites && 
+            {commercialData.data.proximites.length > 1 ?
               <section className="proximities-section">
               <div className=" container">
                   <div className="section-title-wrapper">
@@ -358,7 +358,7 @@ class CommercialDetails extends React.Component {
                         }
                     </div>
                 </div>
-              </section>
+              </section>: null
             }
             {/* <!--   ------------------- Proximities section end here ------------------- --> */}
              
@@ -485,7 +485,6 @@ class CommercialDetails extends React.Component {
                               }
                             </Slider>
                         }
-
                         {
                           isOpenTwo &&
                           <Lightbox

@@ -313,7 +313,7 @@ class LeisureDetails extends React.Component {
 
             {/* <!--   ------------------- Proximities section start here ------------------- --> */}
                         
-            {leisureData.data.proximites && 
+            {leisureData.data.proximites.length > 1 ?
               <section className="proximities-section">
               <div className=" container">
                   <div className="section-title-wrapper">
@@ -357,7 +357,7 @@ class LeisureDetails extends React.Component {
                         }
                     </div>
                 </div>
-              </section>
+              </section>:null
             }
             {/* <!--   ------------------- Proximities section end here ------------------- --> */}
              

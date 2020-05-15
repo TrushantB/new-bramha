@@ -314,8 +314,11 @@ class HospitalityDetails extends React.Component {
 
 
             {/* <!--   ------------------- Proximities section start here ------------------- --> */}
-                        
-            {hospitalityData.data.proximites && 
+                        {
+                          console.log('hospitalityData.data.proximites', hospitalityData.data.proximites)
+                          
+                        }
+            {hospitalityData.data.proximites.length > 1 ?
               <section className="proximities-section">
               <div className=" container">
                   <div className="section-title-wrapper">
@@ -359,7 +362,7 @@ class HospitalityDetails extends React.Component {
                         }
                     </div>
                 </div>
-              </section>
+              </section>:null
             }
             {/* <!--   ------------------- Proximities section end here ------------------- --> */}
              
