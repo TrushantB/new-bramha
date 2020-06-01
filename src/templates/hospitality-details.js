@@ -314,10 +314,6 @@ class HospitalityDetails extends React.Component {
 
 
             {/* <!--   ------------------- Proximities section start here ------------------- --> */}
-                        {
-                          console.log('hospitalityData.data.proximites', hospitalityData.data.proximites)
-                          
-                        }
             {hospitalityData.data.proximites.length > 1 ?
               <section className="proximities-section">
               <div className=" container">
