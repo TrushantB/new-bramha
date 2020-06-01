@@ -38,10 +38,10 @@ class KnoweldgeHub extends React.Component {
                   <h3 className=" text-uppercase m-0 section-title d-none d-md-block">{buyerData.title.text}</h3>
                   <p className=" text-white">{buyerData.short_description.text}</p>
                   <div className="know-more">
-                    <a href="#" className="link-text">
+                    <Link to='buyer-tips' className="link-text">
                       <span className="mr-2">Read More</span>
                       <i className="fas fa-arrow-right"></i>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -51,7 +51,8 @@ class KnoweldgeHub extends React.Component {
             <div className="container">
               <div className="row mt-48">
                 {
-                  knowledgeData.knowledge_topics.map((item,index)=>{
+                  knowledgeData.knowledge_topics.map((item,index) => {
+                    console.log('index', item )
                     return(
                       <div className="col-md-6 px-sm-3" key={index} id={`index${index}`}>
                         {
@@ -71,10 +72,12 @@ class KnoweldgeHub extends React.Component {
                                   <p>{item.topics.document[0].data.short_description.text}</p>
                                   <h3 className="inner-section-title  text-center text-sm-center d-block d-sm-none">Important Notices</h3>
                                   <div className="know-more">
-                                    <a href="#" className="link-text">
+                                    {console.log('item', item.topics.slug)
+                                    }
+                                    <Link to={item.topics.slug} className="link-text">
                                       <span className="mr-3">Know More</span>
                                       <i className="fas fa-arrow-right"></i>
-                                    </a>
+                                    </Link>
                                   </div>
                                 </div>
                               </div>
@@ -154,8 +157,9 @@ export const knowledgePage = graphql` {
       description {
         html
       }
-      knowledge_topics {
+       knowledge_topics {
         topics {
+          slug
           document {
             ...on PrismicAboutLoan {
               data {
