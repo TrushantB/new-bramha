@@ -10,6 +10,8 @@ import queryString from 'query-string';
 import 'react-image-lightbox/style.css';
 import chevron_down from '../images/chevron_down.svg';
 import Div100vh from 'react-div-100vh/lib/Div100vh';
+import PhoneInput from 'react-phone-number-input';
+import * as firebase from 'firebase';
 
 class CommercialDetails extends React.Component {
   state = {
@@ -52,6 +54,29 @@ class CommercialDetails extends React.Component {
       top: offsetHeight,
       behavior: 'smooth'
     });
+  }
+
+  submitCommercialCustomer = (e) => {
+    e.preventDefault();
+    firebase
+      .database()
+      .ref("Commercial Customer")
+      .push()
+      .set({
+        name: e.target.name.value,
+        email: e.target.email.value,
+        phoneNumber: e.target.phoneNumber.value,
+        budget: e.target.budget.value,
+        city: e.target.city.value,
+        source: e.target.source.value,
+        message: e.target.message.value,
+        projectName: e.target.projectName.value,
+        utmSource: e.target.utmSource.value,
+        utmCampaign: e.target.utmCampaign.value,
+        utmMedium: e.target.utmMedium.value
+      })
+      this.setState({ value: '+91'});
+      document.querySelector('.commercialCustomer').reset();
   }
   render(){
     const { isOpen } = this.state;
@@ -693,6 +718,125 @@ class CommercialDetails extends React.Component {
               <a href="#pdf-link" download="Brouchure.pdf" className="btn-secondary text-center">Download Brochure</a>
             </div>
           {/* <!-- ------------------- Download Brouchure section end here ------------------- --> */}
+          {/* <!--   ------------------- Enquiry section start here ------------------- --> */}
+            <section className="detail-page-sections enquiry-form">
+              <h2 className="section-title text-uppercase text-center">
+                ENQUIRE NOW
+              </h2>
+              <div className="slider-wrapper-gray contact-section">
+                <p className="container mb-0">
+                  <span className="d-block text-left text-sm-center">
+                    Its easy to get overwhelmed with the unique propositions of BramhaCorp.
+                  </span>
+                  <span className="d-block text-left text-sm-center">Let us help you in making up your mind.</span>
+                </p>
+
+                <form  className="commercialCustomer" onSubmit={(e) => this.submitCommercialCustomer(e)} name="residential customer" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+                  <div className="contact-form-bg pt-4 pb-4 pt-sm-5 pb-sm-5">
+                    <div className="container">
+                      <div className="form-row">
+                        <input type="hidden" id="projectName" name="form-name" value={commercialData.data.title.text} />
+                        <input type="hidden" id="utmSource" name="utmSource" value={this.state.utmSource} />
+                        <input type="hidden" id="utmMedium" name="utmMedium" value={this.state.utmMedium} />
+                        <input type="hidden" id="utmCampaign" name="utmCampaign" value={this.state.utmCampaign} />
+                        <div className="col-sm-6 form-group  ">
+                          <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" required/>
+                        </div>
+                        <div className="col-sm-6 form-group  ">
+                          <PhoneInput className="form-control" id="phoneNumber"  placeholder="Your Phone Number*" maxLength="15" name="phone-number" required
+                            value={this.state.value}
+                            onChange={(e) => this.setState({value:e})}/>
+                          </div>
+                        <div className="col-sm-6 form-group  ">
+                          <input type="text" className="form-control" id="email" placeholder="Your Email*" name="email" required/>
+                        </div>
+                        <div className="col-sm-6 form-group  ">
+                          <input type="" className="form-control" id="city" placeholder="City" name="city" required/>
+                        </div>
+                        <div className="col-sm-6 form-group  ">
+                          <select defaultValue="" className="form-control rounded-0" id="budget" name="budget" required >
+                            <option value="" disabled>Budget</option>
+                            <option >50 Lakh</option>
+                            <option>50-80 Lakh</option>
+                            <option> 80 Lakh-1Crore</option>
+                            <option>1 Crore</option>
+                          </select>
+                        </div>
+                        <div className="col-sm-6 form-group ">
+                        <select defaultValue="" className="form-control rounded-0" id="source" placeholder="source" name="source" required >
+                            <option value="" disabled >source</option>
+                            <option>Newspaper</option>
+                            <option>Hoarding</option>
+                            <option>Email</option>
+                            <option>SMS</option>
+                            <option>Google</option>
+                            <option>Facebook</option>
+                            <option>Cinema Ad</option>
+                            <option>Broker</option>
+                            <option>Property Portal</option>
+                            <option>Word of Mouth</option>
+                            <option>Others</option>
+                          </select>
+                        </div>
+                        <div className="form-group col-md-12">
+                          <textarea className="form-control" rows="4" id="message" placeholder="Message" name="message" required></textarea>
+                        </div>
+                      </div>
+                      <div className="sumbit text-center mt-sm-0 mt-4">
+                        <button type="submit" className="btn-secondary btn">Submit</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </section>
+
+            {/* <!--   ------------------- Enquiry section end here ------------------- --> */}
+            
+            {/* <!--   ------------------- Maharera section start here ------------------- --> */}
+            {
+              commercialData.data.phase ?
+            <section className="container d-flex flex-column align-items-center detail-maharera-sections">
+              <img src={commercialData.data.maharera.url} alt="maha-rera logo" style={{width:"70px"}}/>
+              <p className="text-left text-sm-center mt-3">
+                {
+                  commercialData.data.phase.map((item,value) => {
+                    console.log(item);
+                    
+                    return(
+                      <span className="d-block" key={value}>
+                        ​{item.title1.text} : {item.description1.text}
+                      </span>
+                    )
+                  })
+                }
+              </p>
+              <p className="text-left text-sm-center">
+                Available at : Website <a href={commercialData.data.tag_line.text} target="_blank">{commercialData.data.tag_line.text} </a>
+              </p>
+              {
+                commercialData.data.maharera_important.text &&
+                  <div>
+                    <p  className={`maharera_important mt-3 mb-1` } style={this.state.styleData}>
+                      {commercialData.data.maharera_important.text}
+                    </p>
+                    <div className="d-none d-md-flex justify-content-center align-items-center w-100">
+                      {
+                        this.state.styleData ?
+                        <div className="maharera_showmore" onClick={() => {
+                          this.setState({styleData:null})
+                          }}>Show Less...</div> :
+                        <div className="maharera_showmore" onClick={() => {
+                          this.setState({styleData:{height: 160, overflow: 'hidden'}})
+                          }}>Show More...</div>
+                      }
+                    </div>
+                  </div>
+              }
+            </section>
+            :null
+            }
+            {/* <!--   ------------------- Maharera section end here ------------------- --> */}
           </main>
         <Footer />
       </Layout>
@@ -734,6 +878,14 @@ export const hospitalityPage = graphql`
       }
       description {
         html
+      }
+      phase {
+        title1 {
+          text
+        }
+        description1 {
+          text
+        }
       }
       flat_bhk {
         text
@@ -838,6 +990,11 @@ export const hospitalityPage = graphql`
           }
         }
       }
+
+      maharera_important{
+        text
+      }
+      location_url
     }
   }
 }`
