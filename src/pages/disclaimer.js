@@ -15,7 +15,7 @@ class Disclaimer extends React.Component {
             <h1 className="text-center mb-5 partners-heading">{disclaimerData.title.text}</h1>
             <div className="row ">
               <div className="col-lg-12">
-              <p dangerouslySetInnerHTML={{__html: disclaimerData.description.html}}/>
+              <div dangerouslySetInnerHTML={{__html: disclaimerData.description.html}}/>
 
               <h2> Coming Soon... </h2>
               <Link to='/' className="link-text font-weight-bold"> Back To Home Page </Link>

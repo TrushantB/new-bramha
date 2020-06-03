@@ -15,7 +15,7 @@ class SiteMap extends React.Component {
             <h1 className="text-center mb-5 partners-heading">{siteMapData.title.text}</h1>
             <div className="row ">
               <div className="col-lg-6">
-              <p dangerouslySetInnerHTML={{__html: siteMapData.description.html}}/>
+              <div dangerouslySetInnerHTML={{__html: siteMapData.description.html}}/>
 
               <h2> Coming Soon... </h2>
               <Link to='/' className="link-text font-weight-bold"> Back To Home Page </Link>
