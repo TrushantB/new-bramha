@@ -15,25 +15,25 @@ const Footer = ({ siteTitle }) => {
           <div className="footer-menu">
             <ul className="d-flex list-unstyled justify-content-center bottom-border flex-wrap ">
               <li className="nav-item  ">
-                <Link to="/"> Real Estate</Link>
+                <Link to="/real-estate"> Real Estate</Link>
               </li>
               <li className="nav-item ">
-                <Link to="/"> Blog</Link>
+                <Link to="/blog"> Blog</Link>
               </li>
               <li className="nav-item ">
-                <Link to="/"> Channel Partners</Link>
+                <Link to="/partners"> Channel Partners</Link>
               </li>
               <li className="nav-item ">
                 <Link to="/careers"> Careers</Link>
               </li>
               <li className="nav-item ">
-                <Link to="/"> Site Map</Link>
+                <Link to="/site-map"> Site Map</Link>
               </li>
               <li className="nav-item ">
-                <Link className=" " to="/">Privacy Policy</Link>
+                <Link className=" " to="/privacy-policy">Privacy Policy</Link>
               </li>
               <li className="nav-item ">
-                <Link to="/">Disclaimer</Link>
+                <Link to="/disclaimer">Disclaimer</Link>
               </li>
             </ul>
           </div>
