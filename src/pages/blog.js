@@ -14,7 +14,7 @@ class Blog extends React.Component {
         {/* <!-- Knowledge Hub Start here --> */}
         <section className="page-heading-section container container-sm-fluid bg-color">
           <div className="padding-block-60">
-            <h2 className="page-heading">Knowledge Hub</h2>
+            <h2 className="page-heading">Blog</h2>
           </div>
               <div className="Knowledge-hub-description">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
