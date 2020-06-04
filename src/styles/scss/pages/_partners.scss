@@ -6,12 +6,14 @@
     align-items: center;
     margin-bottom: 50px;
     .icon{
-        width: 50px;
-        height: 50px;
+        // width: 50px;
+        height: 60px;
     }
     .tab-text{
         margin-bottom: 0;
         margin-left: 25px;
+        font-weight: 500;
+        letter-spacing: .2px;
     }
   }
   .channel-partner-tab:hover{
@@ -29,6 +31,6 @@
         padding: 6px 0;
         width: 85px;
         display: block;
-        margin-bottom: 60px;
+        // margin-bottom: 60px;
   }
 }
