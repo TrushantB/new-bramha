@@ -19,17 +19,17 @@ import Div100vh from 'react-div-100vh/lib/Div100vh';
 class VerticalPage extends React.Component {
 
   state = {
-    activeSlide:null,
-    floorPlanActive:null,
-    showCaseActive:null,
-    siteProcessActive:null,
-    isOpenOne:false,
-    isOpenTwo:false,
-    isOpenTHree:false,
+    activeSlide: null,
+    floorPlanActive: null,
+    showCaseActive: null,
+    siteProcessActive: null,
+    isOpenOne: false,
+    isOpenTwo: false,
+    isOpenTHree: false,
     imageUrl: null,
     floorPlanSelect: null,
-    value:"+91 ",
-    styleData:{height: 20, overflow: 'hidden'},
+    value: "+91 ",
+    styleData: { height: 20, overflow: 'hidden' },
     utmSource: null,
     utmMedium: null,
     utmCampaign: null
@@ -40,7 +40,7 @@ class VerticalPage extends React.Component {
     const verticalData = this.props.data.prismicOurVerticalsArticle;
     const queryParams = queryString.parseUrl(this.props.location.search);
     this.setState({
-      floorPlanSelect : verticalData.data.floor_plans,
+      floorPlanSelect: verticalData.data.floor_plans,
       utmSource: queryParams && queryParams.query.utm_source,
       utmMedium: queryParams && queryParams.query.utm_medium,
       utmCampaign: queryParams && queryParams.query.utm_campaign
@@ -74,12 +74,12 @@ class VerticalPage extends React.Component {
         utmCampaign: e.target.utmCampaign.value,
         utmMedium: e.target.utmMedium.value
       })
-      this.setState({ value: '+91'});
-      document.querySelector('.residentialCustomer').reset();
+    this.setState({ value: '+91' });
+    document.querySelector('.residentialCustomer').reset();
   }
 
-  render(){
-    const { photoIndex, isOpenOne ,isOpenTwo,isOpenThree,isOpenOneSlide} = this.state;
+  render() {
+    const { photoIndex, isOpenOne, isOpenTwo, isOpenThree, isOpenOneSlide } = this.state;
     const verticalData = this.props.data.prismicOurVerticalsArticle;
 
     let showCase = {
@@ -88,7 +88,7 @@ class VerticalPage extends React.Component {
       centerMode: true,
       centerPadding: '200px',
       slidesToShow: 1,
-      speed:400,
+      speed: 400,
       afterChange: current => this.setState({ showCaseActive: current }),
       responsive: [
         {
@@ -136,7 +136,7 @@ class VerticalPage extends React.Component {
       centerMode: true,
       centerPadding: '200px',
       slidesToShow: 1,
-      speed:400,
+      speed: 400,
       afterChange: current => this.setState({ floorPlanActive: current }),
       responsive: [
         {
@@ -183,7 +183,7 @@ class VerticalPage extends React.Component {
       centerMode: true,
       centerPadding: '200px',
       slidesToShow: 1,
-      speed:400,
+      speed: 400,
       afterChange: current => this.setState({ siteProcessActive: current }),
       responsive: [
         {
@@ -225,169 +225,169 @@ class VerticalPage extends React.Component {
       ]
     };
 
-    return(
-      <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
-        <SEO title={verticalData.data.title.text}/>
+    return (
+      <Layout location="/" noHeader="true" pathname={this.props.location.pathname}>
+        <SEO title={verticalData.data.title.text} />
         <main className="detail-page" id="residential-details">
-            {/* <!--   ---------------- banner start here ---------------- --> */}
-            <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section" id="banner-section">
+          {/* <!--   ---------------- banner start here ---------------- --> */}
+          <Div100vh style={{ height: 'calc(100rvh - 60px)' }} className="banner-section" id="banner-section">
+            <picture>
+              {
+                verticalData.data.banner[0].image.mobile &&
+                <source media="(max-width: 581px)" srcSet={verticalData.data.banner[0].image.mobile.url} />
+              }
+              <img src={verticalData.data.banner[0].image.url} alt={verticalData.data.title.text} className="banner-img" />
+            </picture>
+            <button className="scroll-downs" onClick={this.scrollWin}>
+              <span>Scroll</span>
+              <div className="mousey"><img src={chevron_down} alt="Scroll to content" /></div>
+            </button>
+            {/* <Img fluid={verticalData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
+          </Div100vh>
+          {/* <!--   ---------------- banner end here ---------------- --> */}
+          {/* <!--  -------------------- middle section start here ----------------------> */}
+          <section className="detail-page-sections pb-0 pt-sm-0 container container-sm-fluid " id={verticalData.uid}>
+            <div className="logo-card text-center">
               <picture>
-                {
-                  verticalData.data.banner[0].image.mobile &&
-                  <source media="(max-width: 581px)" srcSet={verticalData.data.banner[0].image.mobile.url}/>
-                }
-                <img src={verticalData.data.banner[0].image.url} alt={verticalData.data.title.text} className="banner-img"/>
+                <source media="(min-width: 581px)" srcSet={verticalData.data.logo.url} />
+                <img src={verticalData.data.logo.url} alt="Residency Logo" />
               </picture>
-              <button className="scroll-downs" onClick={this.scrollWin}>
-                <span>Scroll</span>
-                <div className="mousey"><img src={chevron_down} alt="Scroll to content" /></div>
-              </button>
-                {/* <Img fluid={verticalData.data.banner[0].image.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
-              </Div100vh>
-            {/* <!--   ---------------- banner end here ---------------- --> */}
-            {/* <!--  -------------------- middle section start here ----------------------> */}
-            <section className="detail-page-sections pb-0 pt-sm-0 container container-sm-fluid " id={verticalData.uid}>
-                <div className="logo-card text-center">
-                  <picture>
-                    <source media="(min-width: 581px)" srcSet={verticalData.data.logo.url}/>
-                    <img src={verticalData.data.logo.url} alt="Residency Logo" />
-                  </picture>
-                </div>
-                <div className="row mt-0 mt-sm-5">
-                  <div className="col-12">
-                    <nav aria-label="breadcrumb">
-                      <ol className="breadcrumb">
-                        <li className="breadcrumb-item"><Link to="/residential">Residential</Link></li>
-                        <li className="breadcrumb-item active" aria-current="page">{verticalData.data.title.text}</li>
-                      </ol>
-                    </nav>
-                  </div>
-                </div>
-              <div className="padding-block-60 page-heading-section">
-                  <div className="col-12 padding-sm-0">
-                      <h2 className="page-heading text-uppercase">
-                        {verticalData.data.heading.text}
-                      </h2>
-                  </div>
+            </div>
+            <div className="row mt-0 mt-sm-5">
+              <div className="col-12">
+                <nav aria-label="breadcrumb">
+                  <ol className="breadcrumb">
+                    <li className="breadcrumb-item"><Link to="/residential">Residential</Link></li>
+                    <li className="breadcrumb-item active" aria-current="page">{verticalData.data.title.text}</li>
+                  </ol>
+                </nav>
               </div>
-              <div className="row">
-                  <div className="col-12">
-                      <div className="mb-4" dangerouslySetInnerHTML={{__html:verticalData.data.description.html }}/>
+            </div>
+            <div className="padding-block-60 page-heading-section">
+              <div className="col-12 padding-sm-0">
+                <h2 className="page-heading text-uppercase">
+                  {verticalData.data.heading.text}
+                </h2>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-12">
+                <div className="mb-4" dangerouslySetInnerHTML={{ __html: verticalData.data.description.html }} />
+              </div>
+            </div>
+          </section>
+          {/* <!--   ------------------- Showcase section start here ------------------- --> */}
+          <section className="slider-page">
+            <h2 className="section-title text-uppercase text-center centered">
+              Showcase
+              </h2>
+            <div className="slider-wrapper slider-bg">
+              <div className="container">
+                <Slider {...showCase}>
+                  {
+                    verticalData.data.showcase.length > 0 && verticalData.data.showcase.map((item, value) => {
+                      return (
+                        <div key={value}>
+                          <div role="link" tabIndex="0" className="slider-img" onClick={() => this.setState({ isOpenOne: true, photoIndex: value })}>
+                            <Img fluid={item.image1.localFile.childImageSharp.fluid} alt={verticalData.data.title.text} className="life-at-bramha-slider-image" />
+                            <p className="showcase-slide-caption">{item.caption}</p>
                           </div>
                         </div>
-                    </section>
-            {/* <!--   ------------------- Showcase section start here ------------------- --> */}
-            <section className="slider-page">
-              <h2 className="section-title text-uppercase text-center">
-                  Showcase
-              </h2>
-              <div className="slider-wrapper slider-bg">
-                <div className="container">
-                <Slider {...showCase}>
-                      {
-                        verticalData.data.showcase.length > 0 && verticalData.data.showcase.map((item,value) => {
-                          return(
-                            <div key={value}>
-                              <div role="link" tabIndex="0" className="slider-img" onClick={() => this.setState({ isOpenOne: true ,photoIndex:value})}>
-                                <Img fluid={item.image1.localFile.childImageSharp.fluid} alt={verticalData.data.title.text} className="life-at-bramha-slider-image" />
-                                <p className="showcase-slide-caption">{item.caption}</p>
-                              </div>
-                            </div>
-                          )
-                        })
-                      }
-                    </Slider>
-                    {
-                      isOpenOne &&
-
-                      <Lightbox
-                        mainSrc={verticalData.data.showcase[photoIndex].image1.localFile.childImageSharp.fluid.src}
-                        nextSrc={verticalData.data.showcase[(photoIndex + 1) % verticalData.data.showcase.length].image1.localFile.childImageSharp.fluid.src}
-                        prevSrc={verticalData.data.showcase[(photoIndex + verticalData.data.showcase.length - 1) % verticalData.data.showcase.length].image1.localFile.childImageSharp.fluid.src}
-                        onCloseRequest={() => this.setState({ isOpenOne: false })}
-                        onMovePrevRequest={() =>
-                          this.setState({
-                            photoIndex: (photoIndex + verticalData.data.showcase.length - 1) % verticalData.data.showcase.length,
-                          })
-                        }
-                        onMoveNextRequest={() =>
-                          this.setState({
-                            photoIndex: (photoIndex + 1) % verticalData.data.showcase.length,
-                          })
-                        }
-                        imageCaption={verticalData.data.showcase[photoIndex].caption}
-                        animationDuration={800}
-                      />
-                      }
-                    <p className=" text-left text-sm-center pages mb-0">
-                      {this.state.showCaseActive + 1} of {verticalData.data.showcase.length}
-                    </p>
-                </div>
-              </div>
-            </section>
-            {/* <!--   ------------------- Showcase section end here ------------------- --> */}
-            {/* <!--   ------------------- Location section start here ------------------- --> */}
-            <section className="location-sections">
-              <h2 className="section-title text-uppercase text-center">
-                  Location
-              </h2>
-              <div className="map-image map">
+                      )
+                    })
+                  }
+                </Slider>
                 {
-                  verticalData.data.location_url ?
-                  <iframe src={verticalData.data.location_url} style={{ width:"100%", height:"375px", frameborder:"0", border:"0", allowFullScreen:"0"}}></iframe>:
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15130.20482232911!2d73.9169759!3d18.5491723!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfa889adcc4f893bd!2sF-Residences%20by%20BramhaCorp%20at%20New%20Kalyani%20Nagar!5e0!3m2!1sen!2sin!4v1578749234432!5m2!1sen!2sin" style={{ width:"100%", height:"375px", frameborder:"0", border:"0", allowFullScreen:"0"}}></iframe>
-                }
-              </div>
-            </section>
-            {/* <!--   ------------------- Location section end here ------------------- --> */}
-            {/* <!--   ------------------- Proximities section start here ------------------- --> */}
-          <section className="proximities-section">
-            <div className=" container">
-                <div className="section-title-wrapper">
-                  <h2 className="section-title text-uppercase text-center">
-                      Proximities
-                  </h2>
-                  <p className="text-center">{verticalData.data.proximities_description.text}</p>
-                </div>
-                <ul className="nav nav-pills row" id="pills-tab" role="tablist">
-                    {
-                      verticalData.data.proximites.map((item, index) => {
-                        return(
-                        <li className="nav-item col-3 p-0" key={index}>
-                          <a className={ index ? "nav-link d-flex flex-column align-items-center text-center" : "nav-link d-flex flex-column align-items-center text-center active"} id={`tab${index}`} data-toggle="pill" href={`#id${index}`} role="tab" aria-controls="pills-home" aria-selected="true">
-                              <i className={item.icon_name}></i>
-                              <span className="text-capitalize">{item.title1.text}</span>
-                          </a>
-                        </li>
-                        )
+                  isOpenOne &&
+
+                  <Lightbox
+                    mainSrc={verticalData.data.showcase[photoIndex].image1.localFile.childImageSharp.fluid.src}
+                    nextSrc={verticalData.data.showcase[(photoIndex + 1) % verticalData.data.showcase.length].image1.localFile.childImageSharp.fluid.src}
+                    prevSrc={verticalData.data.showcase[(photoIndex + verticalData.data.showcase.length - 1) % verticalData.data.showcase.length].image1.localFile.childImageSharp.fluid.src}
+                    onCloseRequest={() => this.setState({ isOpenOne: false })}
+                    onMovePrevRequest={() =>
+                      this.setState({
+                        photoIndex: (photoIndex + verticalData.data.showcase.length - 1) % verticalData.data.showcase.length,
                       })
                     }
-                  </ul>
-                  <div className="tab-content" id="pills-tabContent">
-                      {
-                        verticalData.data.proximites.map((item, index) => {
-                          return(
-                            <div key={index} className={ index ? "tab-pane fade show" : "tab-pane fade show active"} id={`id${index}`} role="tabpanel" aria-labelledby={`tab${index}`}>
-                              <div className="container">
-                                <div >
-                                    <ul className="row">
-                                      {item.description1 && <li dangerouslySetInnerHTML={{__html:item.description1.html }}  className="col-sm-4"/>}
-                                      {item.description2 && <li dangerouslySetInnerHTML={{__html:item.description2.html }}  className="col-sm-4"/>}
-                                      {item.description3 && <li dangerouslySetInnerHTML={{__html:item.description3.html }}  className="col-sm-4"/>}
-                                      {item.description4.length > 0 && <li dangerouslySetInnerHTML={{__html:item.description4.html }}  className="col-sm-4"/>}
-                                    </ul>
-                                </div>
-                              </div>
-                            </div>
-                          )
-                        })
-                      }
-                  </div>
+                    onMoveNextRequest={() =>
+                      this.setState({
+                        photoIndex: (photoIndex + 1) % verticalData.data.showcase.length,
+                      })
+                    }
+                    imageCaption={verticalData.data.showcase[photoIndex].caption}
+                    animationDuration={800}
+                  />
+                }
+                <p className=" text-left text-sm-center pages mb-0">
+                  {this.state.showCaseActive + 1} of {verticalData.data.showcase.length}
+                </p>
               </div>
-            </section>
-            {/* <!--   ------------------- Proximities section end here ------------------- --> */}
-            {/* <!--   ------------------- Floor Plan section start here ------------------- --> */}
-            {/* <div className="slider-page d-none d-sm-block floor-plan">
+            </div>
+          </section>
+          {/* <!--   ------------------- Showcase section end here ------------------- --> */}
+          {/* <!--   ------------------- Location section start here ------------------- --> */}
+          <section className="location-sections">
+            <h2 className="section-title text-uppercase text-center centered">
+              Location
+              </h2>
+            <div className="map-image map">
+              {
+                verticalData.data.location_url ?
+                  <iframe src={verticalData.data.location_url} style={{ width: "100%", height: "375px", frameborder: "0", border: "0", allowFullScreen: "0" }}></iframe> :
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15130.20482232911!2d73.9169759!3d18.5491723!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfa889adcc4f893bd!2sF-Residences%20by%20BramhaCorp%20at%20New%20Kalyani%20Nagar!5e0!3m2!1sen!2sin!4v1578749234432!5m2!1sen!2sin" style={{ width: "100%", height: "375px", frameborder: "0", border: "0", allowFullScreen: "0" }}></iframe>
+              }
+            </div>
+          </section>
+          {/* <!--   ------------------- Location section end here ------------------- --> */}
+          {/* <!--   ------------------- Proximities section start here ------------------- --> */}
+          <section className="proximities-section">
+            <div className=" container">
+              <div className="section-title-wrapper">
+                <h2 className="section-title text-uppercase text-center centered">
+                  Proximities
+                  </h2>
+                <p className="text-center">{verticalData.data.proximities_description.text}</p>
+              </div>
+              <ul className="nav nav-pills row" id="pills-tab" role="tablist">
+                {
+                  verticalData.data.proximites.map((item, index) => {
+                    return (
+                      <li className="nav-item col-3 p-0" key={index}>
+                        <a className={index ? "nav-link d-flex flex-column align-items-center text-center" : "nav-link d-flex flex-column align-items-center text-center active"} id={`tab${index}`} data-toggle="pill" href={`#id${index}`} role="tab" aria-controls="pills-home" aria-selected="true">
+                          <i className={item.icon_name}></i>
+                          <span className="text-capitalize">{item.title1.text}</span>
+                        </a>
+                      </li>
+                    )
+                  })
+                }
+              </ul>
+              <div className="tab-content" id="pills-tabContent">
+                {
+                  verticalData.data.proximites.map((item, index) => {
+                    return (
+                      <div key={index} className={index ? "tab-pane fade show" : "tab-pane fade show active"} id={`id${index}`} role="tabpanel" aria-labelledby={`tab${index}`}>
+                        <div className="container">
+                          <div >
+                            <ul className="row">
+                              {item.description1 && <li dangerouslySetInnerHTML={{ __html: item.description1.html }} className="col-sm-4" />}
+                              {item.description2 && <li dangerouslySetInnerHTML={{ __html: item.description2.html }} className="col-sm-4" />}
+                              {item.description3 && <li dangerouslySetInnerHTML={{ __html: item.description3.html }} className="col-sm-4" />}
+                              {item.description4.length > 0 && <li dangerouslySetInnerHTML={{ __html: item.description4.html }} className="col-sm-4" />}
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  })
+                }
+              </div>
+            </div>
+          </section>
+          {/* <!--   ------------------- Proximities section end here ------------------- --> */}
+          {/* <!--   ------------------- Floor Plan section start here ------------------- --> */}
+          {/* <div className="slider-page d-none d-sm-block floor-plan">
                 <div className="section-title-wrap d-flex flex-column align-items-center">
                   <h2 className="section-title text-uppercase text-center">
                       {verticalData.data.floor_plans1.text}
@@ -497,179 +497,179 @@ class VerticalPage extends React.Component {
                 </div>
                 </div>
             </div> */}
-            {/* <!--   ------------------- Floor Plan section end here ------------------- --> */}
-            {/* <!--   ------------------- Amenities And Fact Files section start here ------------------- --> */}
-            <section className="amenity-sections container"  id={verticalData.uid}>
-              <ul className="nav nav-pills row padding-sm-0" id="factfile-tab" role="tablist">
-                <li className="nav-item col-6 p-0">
-                  <a className="nav-link text-center text-uppercase tab-title active" id="pills-amenities-tab" data-toggle="pill" href="#amenities" role="tab" aria-controls="pills-amenities" aria-selected="true">
-                    {verticalData.data.amenities1.text}
+          {/* <!--   ------------------- Floor Plan section end here ------------------- --> */}
+          {/* <!--   ------------------- Amenities And Fact Files section start here ------------------- --> */}
+          <section className="amenity-sections container" id={verticalData.uid}>
+            <ul className="nav nav-pills row padding-sm-0" id="factfile-tab" role="tablist">
+              <li className="nav-item col-6 p-0">
+                <a className="nav-link text-center text-uppercase tab-title active" id="pills-amenities-tab" data-toggle="pill" href="#amenities" role="tab" aria-controls="pills-amenities" aria-selected="true">
+                  {verticalData.data.amenities1.text}
+                </a>
+              </li>
+              <li className="nav-item col-6 p-0">
+                <a className="nav-link text-center text-uppercase tab-title" id="pills-factfile-tab" data-toggle="pill" href="#fact-file" role="tab" aria-controls="pills-factfile" aria-selected="false">
+                  Floor Plans
                   </a>
-                </li>
-                <li className="nav-item col-6 p-0">
-                  <a className="nav-link text-center text-uppercase tab-title" id="pills-factfile-tab" data-toggle="pill" href="#fact-file" role="tab" aria-controls="pills-factfile" aria-selected="false">
-                    Floor Plans
-                  </a>
-                </li>
-              </ul>
-              <div className="tab-content" id="factfiles-tabContent">
-                <div className="tab-pane fade show active" id="amenities" role="tabpanel" aria-labelledby="pills-amenities-tab">
-                  <div className="container p-0">
-                    <div className="amenities-inner-wrapper d-flex">
-                      <div className="amenities-icon-wrapper">
-                        <div className="d-flex flex-wrap amenities" id="myTab" role="tablist">
-                          {
-                            verticalData.data.amenities.map((item, index) => {
-                              return(
-                                <button key={index} className={`d-flex align-items-center justify-content-start text-center text-md-left ${this.state.imageUrl===item.image1.url || !index && !this.state.imageUrl ? 'active': ''}`} onClick={() => this.setState({imageUrl:  item.image1.url})} >
-                                  <span className="amenities-icon-wrap"><i className={item.icon}></i></span>
-                                  <span className="amenities-icon-description"><span>{item.title1.text}</span></span>
-                                </button>
-                              )
-                            })
-                          }
-                        </div>
-                        <div className="d-flex"></div>
-                      </div>
-                      <div className="image-wrapper">
+              </li>
+            </ul>
+            <div className="tab-content" id="factfiles-tabContent">
+              <div className="tab-pane fade show active" id="amenities" role="tabpanel" aria-labelledby="pills-amenities-tab">
+                <div className="container p-0">
+                  <div className="amenities-inner-wrapper d-flex">
+                    <div className="amenities-icon-wrapper">
+                      <div className="d-flex flex-wrap amenities" id="myTab" role="tablist">
                         {
-                          this.state.imageUrl ?
-                         <img src={this.state.imageUrl} alt={verticalData.data.title.text} className="w-100 h-100"/>
-                         :<img src={verticalData.data.amenities[0].image1.url} alt={verticalData.data.title.text} className="w-100 h-100"/>
+                          verticalData.data.amenities.map((item, index) => {
+                            return (
+                              <button key={index} className={`d-flex align-items-center justify-content-start text-center text-md-left ${this.state.imageUrl === item.image1.url || !index && !this.state.imageUrl ? 'active' : ''}`} onClick={() => this.setState({ imageUrl: item.image1.url })} >
+                                <span className="amenities-icon-wrap"><i className={item.icon}></i></span>
+                                <span className="amenities-icon-description"><span>{item.title1.text}</span></span>
+                              </button>
+                            )
+                          })
                         }
                       </div>
+                      <div className="d-flex"></div>
                     </div>
-                  </div>
-                </div>
-                <div className="tab-pane fade floor-plan" id="fact-file" role="tabpanel" aria-labelledby="pills-factfile-tab">
-                  <div className="slider-page">
-                    <div className="container">
-                      <div className="section-title-wrap d-flex flex-column align-items-center">
-                        <label className="wrap">
-                          <select className="border-0 layout-select" onChange={(e)=> {
-                            let floor = verticalData.data.floor_plans.filter(value => value.title1.text === e.target.value)
-                            this.setState({floorPlanSelect: floor})
-                            if(e.target.value === "allLayout"){
-                              this.setState({floorPlanSelect: verticalData.data.floor_plans})
-                            }
-                          }}>
-                            <option value="allLayout"> All Layout </option>
-                            {
-                              verticalData.data.floor_plans.map((data, index) => {
-                                return(
-                                  <option value={data.title1.text} key={index}>{data.title1.text}</option>
-                                )
-                              })
-                            }
-                          </select>
-                        </label>
-                      </div>
-                      <div className="slider-wrapper">
-                        {
-                          this.state.floorPlanSelect && this.state.floorPlanSelect.length == 1 ?
-                          <div>
-                            {
-                            this.state.floorPlanSelect && this.state.floorPlanSelect.map((item,value) => {
-                              return(
-                                <div key={value}>
-                                  <div role="link" tabIndex="0" className="slider-img" onClick={() => this.setState({ isOpenOneSlide: true ,photoIndex:value})}>
-                                    <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt="Floor Plans" className="w-100 h-100" />
-                                  </div>
-                                </div>
-                              )
-                            })}
-                                {
-                          isOpenOneSlide && verticalData.data.floor_plans &&
-                          <Lightbox
-                            mainSrc={verticalData.data.floor_plans[photoIndex].image1.localFile.childImageSharp.fluid.src}
-                            onCloseRequest={() => this.setState({ isOpenOneSlide: false })}
-                            // onMovePrevRequest={() =>
-                            //   this.setState({
-                            //     photoIndex: (photoIndex + verticalData.data.floor_plans.length - 1) % verticalData.data.floor_plans.length,
-                            //   })
-                            // }
-                            // onMoveNextRequest={() =>
-                            //   this.setState({
-                            //     photoIndex: (photoIndex + 1) % verticalData.data.floor_plans.length,
-                            //   })
-                            // }
-                          animationDuration={800}
-
-                          />
-                        }
-                            </div>:
-                            <Slider {...floorPlan}>
-                              {
-                                this.state.floorPlanSelect.length > 0 && this.state.floorPlanSelect.map((item,value) => {
-                                  return(
-                                    <div key={value}>
-                                      <div role="link" tabIndex="0" className="slider-img " onClick={() => this.setState({ isOpenTwo: true ,photoIndex:value})}>
-                                        <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt="Floor Plans" className="w-100 h-100" />
-                                      </div>
-                                    </div>
-                                  )
-                                })
-                              }
-                            </Slider>
-                        }
-
-                        {
-                          isOpenTwo &&
-                          <Lightbox
-                            mainSrc={verticalData.data.floor_plans[photoIndex].image1.localFile.childImageSharp.fluid.src}
-                            nextSrc={verticalData.data.floor_plans[(photoIndex + 1) % verticalData.data.floor_plans.length].image1.localFile.childImageSharp.fluid.src}
-                            prevSrc={verticalData.data.floor_plans[(photoIndex + verticalData.data.floor_plans.length - 1) % verticalData.data.floor_plans.length].image1.localFile.childImageSharp.fluid.src}
-                            onCloseRequest={() => this.setState({ isOpenTwo: false })}
-                            onMovePrevRequest={() =>
-                              this.setState({
-                                photoIndex: (photoIndex + verticalData.data.floor_plans.length - 1) % verticalData.data.floor_plans.length,
-                              })
-                            }
-                            onMoveNextRequest={() =>
-                              this.setState({
-                                photoIndex: (photoIndex + 1) % verticalData.data.floor_plans.length,
-                              })
-                            }
-                          animationDuration={800}
-
-                          />
-                        }
-
-                        {
-                        this.state.floorPlanSelect.length !==1 &&
-                          <p className=" text-left text-sm-center pages mb-0">
-                          {this.state.floorPlanActive + 1} of {verticalData.data.floor_plans.length}
-                        </p>
-                        }
-
-                    </div>
+                    <div className="image-wrapper">
+                      {
+                        this.state.imageUrl ?
+                          <img src={this.state.imageUrl} alt={verticalData.data.title.text} className="w-100 h-100" />
+                          : <img src={verticalData.data.amenities[0].image1.url} alt={verticalData.data.title.text} className="w-100 h-100" />
+                      }
                     </div>
                   </div>
                 </div>
               </div>
-            </section>
-            {/* <!--   ------------------- Antity And Fact Files section end here ------------------- --> */}
-            {/* <!--   ------------------- Site-progress section start here ------------------- --> */}
-            <section className="slider-page site-progress-wrap mb-0">
-              <h2 className="section-title text-uppercase text-center">
-                Site Progress
+              <div className="tab-pane fade floor-plan" id="fact-file" role="tabpanel" aria-labelledby="pills-factfile-tab">
+                <div className="slider-page">
+                  <div className="container">
+                    <div className="section-title-wrap d-flex flex-column align-items-center">
+                      <label className="wrap">
+                        <select className="border-0 layout-select" onChange={(e) => {
+                          let floor = verticalData.data.floor_plans.filter(value => value.title1.text === e.target.value)
+                          this.setState({ floorPlanSelect: floor })
+                          if (e.target.value === "allLayout") {
+                            this.setState({ floorPlanSelect: verticalData.data.floor_plans })
+                          }
+                        }}>
+                          <option value="allLayout"> All Layout </option>
+                          {
+                            verticalData.data.floor_plans.map((data, index) => {
+                              return (
+                                <option value={data.title1.text} key={index}>{data.title1.text}</option>
+                              )
+                            })
+                          }
+                        </select>
+                      </label>
+                    </div>
+                    <div className="slider-wrapper">
+                      {
+                        this.state.floorPlanSelect && this.state.floorPlanSelect.length == 1 ?
+                          <div>
+                            {
+                              this.state.floorPlanSelect && this.state.floorPlanSelect.map((item, value) => {
+                                return (
+                                  <div key={value}>
+                                    <div role="link" tabIndex="0" className="slider-img" onClick={() => this.setState({ isOpenOneSlide: true, photoIndex: value })}>
+                                      <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt="Floor Plans" className="w-100 h-100" />
+                                    </div>
+                                  </div>
+                                )
+                              })}
+                            {
+                              isOpenOneSlide && verticalData.data.floor_plans &&
+                              <Lightbox
+                                mainSrc={verticalData.data.floor_plans[photoIndex].image1.localFile.childImageSharp.fluid.src}
+                                onCloseRequest={() => this.setState({ isOpenOneSlide: false })}
+                                // onMovePrevRequest={() =>
+                                //   this.setState({
+                                //     photoIndex: (photoIndex + verticalData.data.floor_plans.length - 1) % verticalData.data.floor_plans.length,
+                                //   })
+                                // }
+                                // onMoveNextRequest={() =>
+                                //   this.setState({
+                                //     photoIndex: (photoIndex + 1) % verticalData.data.floor_plans.length,
+                                //   })
+                                // }
+                                animationDuration={800}
+
+                              />
+                            }
+                          </div> :
+                          <Slider {...floorPlan}>
+                            {
+                              this.state.floorPlanSelect.length > 0 && this.state.floorPlanSelect.map((item, value) => {
+                                return (
+                                  <div key={value}>
+                                    <div role="link" tabIndex="0" className="slider-img " onClick={() => this.setState({ isOpenTwo: true, photoIndex: value })}>
+                                      <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt="Floor Plans" className="w-100 h-100" />
+                                    </div>
+                                  </div>
+                                )
+                              })
+                            }
+                          </Slider>
+                      }
+
+                      {
+                        isOpenTwo &&
+                        <Lightbox
+                          mainSrc={verticalData.data.floor_plans[photoIndex].image1.localFile.childImageSharp.fluid.src}
+                          nextSrc={verticalData.data.floor_plans[(photoIndex + 1) % verticalData.data.floor_plans.length].image1.localFile.childImageSharp.fluid.src}
+                          prevSrc={verticalData.data.floor_plans[(photoIndex + verticalData.data.floor_plans.length - 1) % verticalData.data.floor_plans.length].image1.localFile.childImageSharp.fluid.src}
+                          onCloseRequest={() => this.setState({ isOpenTwo: false })}
+                          onMovePrevRequest={() =>
+                            this.setState({
+                              photoIndex: (photoIndex + verticalData.data.floor_plans.length - 1) % verticalData.data.floor_plans.length,
+                            })
+                          }
+                          onMoveNextRequest={() =>
+                            this.setState({
+                              photoIndex: (photoIndex + 1) % verticalData.data.floor_plans.length,
+                            })
+                          }
+                          animationDuration={800}
+
+                        />
+                      }
+
+                      {
+                        this.state.floorPlanSelect.length !== 1 &&
+                        <p className=" text-left text-sm-center pages mb-0">
+                          {this.state.floorPlanActive + 1} of {verticalData.data.floor_plans.length}
+                        </p>
+                      }
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          {/* <!--   ------------------- Antity And Fact Files section end here ------------------- --> */}
+          {/* <!--   ------------------- Site-progress section start here ------------------- --> */}
+          <section className="slider-page site-progress-wrap mb-0">
+            <h2 className="section-title text-uppercase text-center centered">
+              Site Progress
               </h2>
-              <div className="slider-wrapper-gray slider-bg">
-                <div className="container showcase-slider slider-wrapper">
-                  <Slider {...siteProcess}>
-                    {
-                      verticalData.data.site_progress.length > 0 && verticalData.data.site_progress.map((item,value) => {
-                        return(
-                          <div key={value}>
-                            <div role="link" tabIndex="0" className="slider-img " onClick={() => this.setState({ isOpenThree: true ,photoIndex:value})}>
-                              <Img fluid={item.images.localFile.childImageSharp.fluid} key={value} alt=" Floor Plans" className="w-100 h-100" />
-                            </div>
-                          </div>
-                        )
-                      })
-                    }
-                  </Slider>
+            <div className="slider-wrapper-gray slider-bg">
+              <div className="container showcase-slider slider-wrapper">
+                <Slider {...siteProcess}>
                   {
+                    verticalData.data.site_progress.length > 0 && verticalData.data.site_progress.map((item, value) => {
+                      return (
+                        <div key={value}>
+                          <div role="link" tabIndex="0" className="slider-img " onClick={() => this.setState({ isOpenThree: true, photoIndex: value })}>
+                            <Img fluid={item.images.localFile.childImageSharp.fluid} key={value} alt=" Floor Plans" className="w-100 h-100" />
+                          </div>
+                        </div>
+                      )
+                    })
+                  }
+                </Slider>
+                {
                   isOpenThree &&
                   <Lightbox
                     mainSrc={verticalData.data.site_progress[photoIndex].images.localFile.childImageSharp.fluid.src}
@@ -694,132 +694,132 @@ class VerticalPage extends React.Component {
                   {this.state.siteProcessActive + 1} of {verticalData.data.site_progress.length}
                 </p>
               </div>
-              </div>
-            </section>
-            {/* <!--   ------------------- progress section end here ------------------- --> */}
-            {/* <!--   ------------------- Download Brouchure section start here ------------------- --> */}
-            <div className="container detail-page-sections d-flex justify-content-center download-btn">
-              <a href="#pdf-link" download="Brouchure.pdf" className="btn-secondary text-center">Download Brochure</a>
-              <a href="#pdf-link" download="Brouchure.pdf" className="btn-secondary text-center">Download Rera</a>
-              <a href="#pdf-link" download="Brouchure.pdf" className="btn-secondary text-center">Download OC</a>
-              <a href="#pdf-link" download="Brouchure.pdf" className="btn-secondary text-center">Download EC</a>
             </div>
-            {/* <!--   ------------------- Download Brouchure section end here ------------------- --> */}
-            {/* <!--   ------------------- Enquiry section start here ------------------- --> */}
-            <section className="detail-page-sections enquiry-form">
-              <h2 className="section-title text-uppercase text-center">
-                ENQUIRE NOW
+          </section>
+          {/* <!--   ------------------- progress section end here ------------------- --> */}
+          {/* <!--   ------------------- Download Brouchure section start here ------------------- --> */}
+          <div className="container detail-page-sections d-flex justify-content-center download-btn">
+            <a href="#pdf-link" download="Brouchure.pdf" className="btn-secondary text-center">Download Brochure</a>
+            <a href="#pdf-link" download="Brouchure.pdf" className="btn-secondary text-center">Download Rera</a>
+            <a href="#pdf-link" download="Brouchure.pdf" className="btn-secondary text-center">Download OC</a>
+            <a href="#pdf-link" download="Brouchure.pdf" className="btn-secondary text-center">Download EC</a>
+          </div>
+          {/* <!--   ------------------- Download Brouchure section end here ------------------- --> */}
+          {/* <!--   ------------------- Enquiry section start here ------------------- --> */}
+          <section className="detail-page-sections enquiry-form">
+            <h2 className="section-title text-uppercase text-center centered">
+              ENQUIRE NOW
               </h2>
-              <div className="slider-wrapper-gray contact-section">
-                <p className="container mb-0">
-                  <span className="d-block text-left text-sm-center">
-                    Its easy to get overwhelmed with the unique propositions of BramhaCorp.
+            <div className="slider-wrapper-gray contact-section">
+              <p className="container mb-0">
+                <span className="d-block text-left text-sm-center">
+                  Its easy to get overwhelmed with the unique propositions of BramhaCorp.
                   </span>
-                  <span className="d-block text-left text-sm-center">Let us help you in making up your mind.</span>
-                </p>
+                <span className="d-block text-left text-sm-center">Let us help you in making up your mind.</span>
+              </p>
 
-                <form  className="residentialCustomer" onSubmit={(e) => this.submitResidentialCustomer(e)} name="residential customer" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
-                  <div className="contact-form-bg pt-4 pb-4 pt-sm-5 pb-sm-5">
-                    <div className="container">
-                      <div className="form-row">
-                        <input type="hidden" id="projectName" name="form-name" value={verticalData.data.title.text} />
-                        <input type="hidden" id="utmSource" name="utmSource" value={this.state.utmSource} />
-                        <input type="hidden" id="utmMedium" name="utmMedium" value={this.state.utmMedium} />
-                        <input type="hidden" id="utmCampaign" name="utmCampaign" value={this.state.utmCampaign} />
-                        <div className="col-sm-6 form-group  ">
-                          <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" required/>
-                        </div>
-                        <div className="col-sm-6 form-group  ">
-                          <PhoneInput className="form-control" id="phoneNumber"  placeholder="Your Phone Number*" maxLength="15" name="phone-number" required
-                            value={this.state.value}
-                            onChange={(e) => this.setState({value:e})}/>
-                          </div>
-                        <div className="col-sm-6 form-group  ">
-                          <input type="text" className="form-control" id="email" placeholder="Your Email*" name="email" required/>
-                        </div>
-                        <div className="col-sm-6 form-group  ">
-                          <input type="" className="form-control" id="city" placeholder="City" name="city" required/>
-                        </div>
-                        <div className="col-sm-6 form-group  ">
-                          <select defaultValue="" className="form-control rounded-0" id="budget" name="budget" required >
-                            <option value="" disabled>Budget</option>
-                            <option >50 Lakh</option>
-                            <option>50-80 Lakh</option>
-                            <option> 80 Lakh-1Crore</option>
-                            <option>1 Crore</option>
-                          </select>
-                        </div>
-                        <div className="col-sm-6 form-group ">
+              <form className="residentialCustomer" onSubmit={(e) => this.submitResidentialCustomer(e)} name="residential customer" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+                <div className="contact-form-bg pt-4 pb-4 pt-sm-5 pb-sm-5">
+                  <div className="container">
+                    <div className="form-row">
+                      <input type="hidden" id="projectName" name="form-name" value={verticalData.data.title.text} />
+                      <input type="hidden" id="utmSource" name="utmSource" value={this.state.utmSource} />
+                      <input type="hidden" id="utmMedium" name="utmMedium" value={this.state.utmMedium} />
+                      <input type="hidden" id="utmCampaign" name="utmCampaign" value={this.state.utmCampaign} />
+                      <div className="col-sm-6 form-group  ">
+                        <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" required />
+                      </div>
+                      <div className="col-sm-6 form-group  ">
+                        <PhoneInput className="form-control" id="phoneNumber" placeholder="Your Phone Number*" maxLength="15" name="phone-number" required
+                          value={this.state.value}
+                          onChange={(e) => this.setState({ value: e })} />
+                      </div>
+                      <div className="col-sm-6 form-group  ">
+                        <input type="text" className="form-control" id="email" placeholder="Your Email*" name="email" required />
+                      </div>
+                      <div className="col-sm-6 form-group  ">
+                        <input type="" className="form-control" id="city" placeholder="City" name="city" required />
+                      </div>
+                      <div className="col-sm-6 form-group  ">
+                        <select defaultValue="" className="form-control rounded-0" id="budget" name="budget" required >
+                          <option value="" disabled>Budget</option>
+                          <option >50 Lakh</option>
+                          <option>50-80 Lakh</option>
+                          <option> 80 Lakh-1Crore</option>
+                          <option>1 Crore</option>
+                        </select>
+                      </div>
+                      <div className="col-sm-6 form-group ">
                         <select defaultValue="" className="form-control rounded-0" id="source" placeholder="source" name="source" required >
-                            <option value="" disabled >source</option>
-                            <option>Newspaper</option>
-                            <option>Hoarding</option>
-                            <option>Email</option>
-                            <option>SMS</option>
-                            <option>Google</option>
-                            <option>Facebook</option>
-                            <option>Cinema Ad</option>
-                            <option>Broker</option>
-                            <option>Property Portal</option>
-                            <option>Word of Mouth</option>
-                            <option>Others</option>
-                          </select>
-                        </div>
-                        <div className="form-group col-md-12">
-                          <textarea className="form-control" rows="4" id="message" placeholder="Message" name="message" required></textarea>
-                        </div>
+                          <option value="" disabled >source</option>
+                          <option>Newspaper</option>
+                          <option>Hoarding</option>
+                          <option>Email</option>
+                          <option>SMS</option>
+                          <option>Google</option>
+                          <option>Facebook</option>
+                          <option>Cinema Ad</option>
+                          <option>Broker</option>
+                          <option>Property Portal</option>
+                          <option>Word of Mouth</option>
+                          <option>Others</option>
+                        </select>
                       </div>
-                      <div className="sumbit text-center mt-sm-0 mt-4">
-                        <button type="submit" className="btn-secondary btn">Submit</button>
+                      <div className="form-group col-md-12">
+                        <textarea className="form-control" rows="4" id="message" placeholder="Message" name="message" required></textarea>
                       </div>
                     </div>
+                    <div className="sumbit text-center mt-sm-0 mt-4">
+                      <button type="submit" className="btn-secondary btn">Submit</button>
+                    </div>
                   </div>
-                </form>
-              </div>
-            </section>
+                </div>
+              </form>
+            </div>
+          </section>
 
-            {/* <!--   ------------------- Enquiry section end here ------------------- --> */}
-            {/* <!--   ------------------- Maharera section start here ------------------- --> */}
-            <section className="container d-flex flex-column align-items-center detail-maharera-sections">
-              <img src={verticalData.data.maharera.url} alt="maha-rera logo" style={{width:"70px"}}/>
-              <p className="text-left text-sm-center mt-3">
-                {
-                  verticalData.data.phase.map((item,value)=>{
-                    return(
-                      <span className="d-block" key={value}>
-                        ​{item.title1.text} : {item.description1.text}
-                      </span>
-                    )
-                  })
-                }
-              </p>
-              <p className="text-left text-sm-center">
-                Available at : Website <a href={verticalData.data.tag_line.text} target="_blank">{verticalData.data.tag_line.text} </a>
-              </p>
+          {/* <!--   ------------------- Enquiry section end here ------------------- --> */}
+          {/* <!--   ------------------- Maharera section start here ------------------- --> */}
+          <section className="container d-flex flex-column align-items-center detail-maharera-sections">
+            <img src={verticalData.data.maharera.url} alt="maha-rera logo" style={{ width: "70px" }} />
+            <p className="text-left text-sm-center mt-3">
               {
-                verticalData.data.maharera_important.text &&
-                  <div>
-                    <p  className={`maharera_important mt-3 mb-1` } style={this.state.styleData}>
-                      {verticalData.data.maharera_important.text}
-                    </p>
-                    <div className="d-none d-md-flex justify-content-center align-items-center w-100">
-                      {
-                        this.state.styleData ?
-                        <div className="maharera_showmore" onClick={() => {
-                          this.setState({styleData:null})
-                          }}>Show Less...</div> :
-                        <div className="maharera_showmore" onClick={() => {
-                          this.setState({styleData:{height: 160, overflow: 'hidden'}})
-                          }}>Show More...</div>
-                      }
-                    </div>
-                  </div>
+                verticalData.data.phase.map((item, value) => {
+                  return (
+                    <span className="d-block" key={value}>
+                      {item.title1.text} : {item.description1.text}
+                    </span>
+                  )
+                })
               }
-            </section>
-            {/* <!--   ------------------- Maharera section end here ------------------- --> */}
-            {/* <!--  -------------------- middle section end here ------------------------> */}
-          </main>
-        <Footer/>
+            </p>
+            <p className="text-left text-sm-center">
+              Available at : Website <a href={verticalData.data.tag_line.text} target="_blank">{verticalData.data.tag_line.text} </a>
+            </p>
+            {
+              verticalData.data.maharera_important.text &&
+              <div>
+                <p className={`maharera_important mt-3 mb-1`} style={this.state.styleData}>
+                  {verticalData.data.maharera_important.text}
+                </p>
+                <div className="d-none d-md-flex justify-content-center align-items-center w-100">
+                  {
+                    this.state.styleData ?
+                      <div className="maharera_showmore" onClick={() => {
+                        this.setState({ styleData: null })
+                      }}>Show Less...</div> :
+                      <div className="maharera_showmore" onClick={() => {
+                        this.setState({ styleData: { height: 160, overflow: 'hidden' } })
+                      }}>Show More...</div>
+                  }
+                </div>
+              </div>
+            }
+          </section>
+          {/* <!--   ------------------- Maharera section end here ------------------- --> */}
+          {/* <!--  -------------------- middle section end here ------------------------> */}
+        </main>
+        <Footer />
       </Layout>
     )
   }

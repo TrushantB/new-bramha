@@ -106,7 +106,7 @@
     .section-title {
       font-size: 18px;
       &::after {
-        display: none;
+        display: none !important;
       }
     }
     .btn-secondary {

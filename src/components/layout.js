@@ -5,7 +5,7 @@ import PhoneInput from 'react-phone-number-input';
 import Header from "./header";
 import "./layout.css";
 
-const Layout = ({ children ,pathname}) => {
+const Layout = ({ children, pathname, className }) => {
   // const [contactFlag, setContactFlag] = useState(false);
   // const [mailFlag, setMailFlag] = useState(false);
   // const [chatFlag, setChatFlag] = useState(false);
@@ -29,8 +29,8 @@ const Layout = ({ children ,pathname}) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} pathname={pathname}/>
-      <main>{children}</main>
+      <Header siteTitle={data.site.siteMetadata.title} pathname={pathname} />
+      <main className={className}>{children}</main>
     </>
 
   )

@@ -101,6 +101,11 @@
       transition-delay: 500ms;
     }
   }
+  .site-progress-wrap {
+    .slider-img {
+      padding-bottom: 0;
+    }
+  }
 }
 .slider-img {
   margin: 40px 44px;

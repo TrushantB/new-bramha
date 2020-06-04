@@ -515,7 +515,7 @@
     .section-title {
       margin-bottom: 26px;
       &::after {
-        display: none;
+        display: none !important;
       }
     }
   }
@@ -767,9 +767,9 @@
     }
   }
 }
-.site-main-wrap{
-  .slider-wrapper{
-    .slider-img{
+.site-main-wrap {
+  .slider-wrapper {
+    .slider-img {
       padding-bottom: 0px;
     }
   }
