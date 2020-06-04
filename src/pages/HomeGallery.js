@@ -10,6 +10,7 @@ function HomeGallery(props) {
     loop: true,
     updateOnWindowResize: true
   }
+  console.log('props', props);
 
   return (
     <div className="bramha-swiper">

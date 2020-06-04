@@ -188,9 +188,12 @@ class Contacts extends React.Component {
 
   render(){
     const contactData = this.props.data.prismicCompanyDetails.data;
+    console.log('contactData', contactData.followus);
+    
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title="Contacts"/>
+        {/* <Footer socialMediaLinks={contactData.followus}/> */}
         <section className="contact-section">
           <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="contact-page-image banner-section mt-60" id="banner-section">
             <picture>
@@ -609,6 +612,15 @@ export const contactPage = graphql`{
           text
         }
         number
+      }
+      
+      followus {
+        title1 {
+          text
+        }
+        link {
+          url
+        }
       }
     }
   }

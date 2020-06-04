@@ -32,7 +32,8 @@ function IndexPage(props) {
   const leisure = props.data.prismicLeisureClub.data.gallery.map((item, index) => ({...item, type:'leisure-club', itemIndex:`leisure-club-${index}`}));;
   const verticals = [residential, commercial, hospitality, leisure];
   const reducedVerticals = verticals.reduce((a, b) => [...a, ...b], []);
-
+  const followusData = props.data.prismicCompanyDetails.data.followus.map((item, index) => ({ ...item}));
+  console.log(followusData);
 
   const goNext = () => {
     if (swiper !== null) {
@@ -54,7 +55,7 @@ function IndexPage(props) {
       <SEO title="Home"/>
       <Div100vh className="home-gallery home-slider" style={{ height: 'calc(100rvh - 60px)'}}>
         {(reducedVerticals && reducedVerticals.length > 0) &&
-        <HomeGallery verticals={reducedVerticals} getSwiper={setSwiper} slideKey={currentSlideKey} params={params} goNext={goNext} goPrev={goPrev} />
+        <HomeGallery verticals={reducedVerticals} followusData={followusData} getSwiper={setSwiper} slideKey={currentSlideKey} params={params} goNext={goNext} goPrev={goPrev} />
         }
         <footer className="our-verticals-tabs d-flex">
             <div className="container d-flex">
@@ -184,6 +185,18 @@ export const pageDataResidential = graphql` {
             url
           }
         }
+      }
+    }
+  }
+  prismicCompanyDetails {
+    data { 
+      followus {
+        title1 {
+          text
+        }
+        link {
+          url
+        }	
       }
     }
   }

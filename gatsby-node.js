@@ -8,7 +8,7 @@ exports.createPages=({graphql,actions}) => {
     const hospitality = path.resolve('src/templates/hospitality-details.js');
     const commercial = path.resolve('src/templates/commercial-details.js');
     const leisure = path.resolve('src/templates/leisure-club-details.js');
-
+    const blogPost = path.resolve('src/templates/blogPost-details.js')
     resolve(
       graphql(`
                 {
@@ -19,8 +19,17 @@ exports.createPages=({graphql,actions}) => {
                             }
                         }
                     }
+                    allPrismicBlog {
+                      edges {
+                        node {
+                          uid
+                        }
+                      }
+                    }
                 }
             `).then((result) => {
+              console.log('result', result);
+              
         if(result.errors) {
           reject(result.errors);
         }
@@ -50,6 +59,16 @@ exports.createPages=({graphql,actions}) => {
           createPage({
             path:`/leisure-club/${element.node.uid}`,
             component:leisure,
+            context:{
+              uid:element.node.uid
+            }
+          });
+        });
+
+        result.data.allPrismicBlog.edges.map(element => {
+          createPage({
+            path:`/blog-details/${element.node.uid}`,
+            component:blogPost,
             context:{
               uid:element.node.uid
             }
