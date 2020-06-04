@@ -742,6 +742,7 @@
   .slider-wrapper .slick-active .slider-img .showcase-slide-caption {
     font-size: 12px;
   }
+
   .amenities button:hover,
   .amenities .active,
   .amenities .active i {
@@ -763,6 +764,13 @@
     flex: 1 0 36%;
     .amenities-icon-description {
       font-size: 12px;
+    }
+  }
+}
+.site-main-wrap{
+  .slider-wrapper{
+    .slider-img{
+      padding-bottom: 0px;
     }
   }
 }

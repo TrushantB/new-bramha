@@ -441,7 +441,7 @@ class CommercialDetails extends React.Component {
                   commercialData.data.floor_plans ?
                 <div className="tab-pane fade floor-plan" id="fact-file" role="tabpanel" aria-labelledby="pills-factfile-tab">
                   <div className="slider-page">
-                    <div className="container">
+                    <div className="container site-main-wrap">
                       <div className="section-title-wrap d-flex flex-column align-items-center">
                         <label className="wrap">
                           <select className="border-0 layout-select" onChange={(e)=> {
@@ -664,7 +664,7 @@ class CommercialDetails extends React.Component {
 
         {/* <!--   ------------------- Site-progress section start here ------------------- --> */}
         { commercialData.data.site_progress.length > 0 ?
-          <section className="slider-page site-progress-wrap mb-0">
+          <section className="slider-page site-progress-wrap mb-0 site-main-wrap">
               <h2 className="section-title text-uppercase text-center">
                 Site Progress
               </h2>
