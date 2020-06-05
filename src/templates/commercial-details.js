@@ -416,7 +416,10 @@ class CommercialDetails extends React.Component {
                                 return(
                                   item.image1.url ?
                                     <button key={index} className={`d-flex align-items-center justify-content-start text-center text-md-left ${this.state.imageUrl===item.image1.url || !index && !this.state.imageUrl ? 'active': ''}`} onClick={() => this.setState({imageUrl:  item.image1.url})} >
-                                      <span className="amenities-icon-wrap"><i className={item.icon}></i></span>
+                                      <span className="amenities-icon-wrap">
+                                       <img className="amenities-icon" src={item.icon_image.url} />
+                                        {/* <i className={item.icon}></i> */}
+                                        </span>
                                       <span className="amenities-icon-description"><span>{item.title1.text}</span></span>
                                     </button>: null
                                 )
@@ -954,15 +957,18 @@ export const hospitalityPage = graphql`
       }
       amenities {
         title1 {
-            text
+          text
         }
         description1 {
           text
         }
-        image1{
+        image1 {
           url
         }
         icon
+        icon_image {
+          url
+        }
       }
       fact_file_heading {
           text
