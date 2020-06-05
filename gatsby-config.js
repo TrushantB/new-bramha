@@ -3,6 +3,7 @@ module.exports = {
     title: 'BramhaCorp',
     description: 'BramhaCorp is one of today\'s leading business groups headquartered in Pune. Our businesses encompass real estate development, hospitality, retail and leisure',
     author: 'iVision Web Studio',
+    siteUrl: 'https://www.bramhacorp.in',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -10,6 +11,7 @@ module.exports = {
     'gatsby-prismic-lazy-load',
     'gatsby-remark-embed-video',
     'gatsby-remark-responsive-iframe',
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-source-filesystem',
       options: {

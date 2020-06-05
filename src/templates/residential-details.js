@@ -520,9 +520,14 @@ class VerticalPage extends React.Component {
                       <div className="d-flex flex-wrap amenities" id="myTab" role="tablist">
                         {
                           verticalData.data.amenities.map((item, index) => {
+                            console.log('item', item);
+
                             return (
                               <button key={index} className={`d-flex align-items-center justify-content-start text-center text-md-left ${this.state.imageUrl === item.image1.url || !index && !this.state.imageUrl ? 'active' : ''}`} onClick={() => this.setState({ imageUrl: item.image1.url })} >
-                                <span className="amenities-icon-wrap"><i className={item.icon}></i></span>
+                                <span className="amenities-icon-wrap">
+                                  <img className="amenities-icon" src={item.icon_image.url} />
+                                  {/* <i className={item.icon}></i> */}
+                                </span>
                                 <span className="amenities-icon-description"><span>{item.title1.text}</span></span>
                               </button>
                             )
@@ -533,116 +538,129 @@ class VerticalPage extends React.Component {
                     </div>
                     <div className="image-wrapper">
                       {
-                        this.state.imageUrl ?
-                          <img src={this.state.imageUrl} alt={verticalData.data.title.text} className="w-100 h-100" />
-                          : <img src={verticalData.data.amenities[0].image1.url} alt={verticalData.data.title.text} className="w-100 h-100" />
+                        verticalData.data.amenities.map((item, index) => {
+                          return (
+                            <button key={index} className={`d-flex align-items-center justify-content-start text-center text-md-left ${this.state.imageUrl === item.image1.url || !index && !this.state.imageUrl ? 'active' : ''}`} onClick={() => this.setState({ imageUrl: item.image1.url })} >
+                              <span className="amenities-icon-wrap"><i className={item.icon}></i></span>
+                              <span className="amenities-icon-description"><span>{item.title1.text}</span></span>
+                            </button>
+                          )
+                        })
                       }
                     </div>
+                    <div className="d-flex"></div>
+                  </div>
+                  <div className="image-wrapper">
+                    {
+                      this.state.imageUrl ?
+                        <img src={this.state.imageUrl} alt={verticalData.data.title.text} className="w-100 h-100" />
+                        : <img src={verticalData.data.amenities[0].image1.url} alt={verticalData.data.title.text} className="w-100 h-100" />
+                    }
                   </div>
                 </div>
               </div>
-              <div className="tab-pane fade floor-plan" id="fact-file" role="tabpanel" aria-labelledby="pills-factfile-tab">
-                <div className="slider-page">
-                  <div className="container">
-                    <div className="section-title-wrap d-flex flex-column align-items-center">
-                      <label className="wrap">
-                        <select className="border-0 layout-select" onChange={(e) => {
-                          let floor = verticalData.data.floor_plans.filter(value => value.title1.text === e.target.value)
-                          this.setState({ floorPlanSelect: floor })
-                          if (e.target.value === "allLayout") {
-                            this.setState({ floorPlanSelect: verticalData.data.floor_plans })
-                          }
-                        }}>
-                          <option value="allLayout"> All Layout </option>
+            </div>
+            <div className="tab-pane fade floor-plan" id="fact-file" role="tabpanel" aria-labelledby="pills-factfile-tab">
+              <div className="slider-page">
+                <div className="container">
+                  <div className="section-title-wrap d-flex flex-column align-items-center">
+                    <label className="wrap">
+                      <select className="border-0 layout-select" onChange={(e) => {
+                        let floor = verticalData.data.floor_plans.filter(value => value.title1.text === e.target.value)
+                        this.setState({ floorPlanSelect: floor })
+                        if (e.target.value === "allLayout") {
+                          this.setState({ floorPlanSelect: verticalData.data.floor_plans })
+                        }
+                      }}>
+                        <option value="allLayout"> All Layout </option>
+                        {
+                          verticalData.data.floor_plans.map((data, index) => {
+                            return (
+                              <option value={data.title1.text} key={index}>{data.title1.text}</option>
+                            )
+                          })
+                        }
+                      </select>
+                    </label>
+                  </div>
+                  <div className="slider-wrapper">
+                    {
+                      this.state.floorPlanSelect && this.state.floorPlanSelect.length == 1 ?
+                        <div>
                           {
-                            verticalData.data.floor_plans.map((data, index) => {
+                            this.state.floorPlanSelect && this.state.floorPlanSelect.map((item, value) => {
                               return (
-                                <option value={data.title1.text} key={index}>{data.title1.text}</option>
+                                <div key={value}>
+                                  <div role="link" tabIndex="0" className="slider-img" onClick={() => this.setState({ isOpenOneSlide: true, photoIndex: value })}>
+                                    <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt="Floor Plans" className="w-100 h-100" />
+                                  </div>
+                                </div>
+                              )
+                            })}
+                          {
+                            isOpenOneSlide && verticalData.data.floor_plans &&
+                            <Lightbox
+                              mainSrc={verticalData.data.floor_plans[photoIndex].image1.localFile.childImageSharp.fluid.src}
+                              onCloseRequest={() => this.setState({ isOpenOneSlide: false })}
+                              // onMovePrevRequest={() =>
+                              //   this.setState({
+                              //     photoIndex: (photoIndex + verticalData.data.floor_plans.length - 1) % verticalData.data.floor_plans.length,
+                              //   })
+                              // }
+                              // onMoveNextRequest={() =>
+                              //   this.setState({
+                              //     photoIndex: (photoIndex + 1) % verticalData.data.floor_plans.length,
+                              //   })
+                              // }
+                              animationDuration={800}
+
+                            />
+                          }
+                        </div> :
+                        <Slider {...floorPlan}>
+                          {
+                            this.state.floorPlanSelect.length > 0 && this.state.floorPlanSelect.map((item, value) => {
+                              return (
+                                <div key={value}>
+                                  <div role="link" tabIndex="0" className="slider-img " onClick={() => this.setState({ isOpenTwo: true, photoIndex: value })}>
+                                    <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt="Floor Plans" className="w-100 h-100" />
+                                  </div>
+                                </div>
                               )
                             })
                           }
-                        </select>
-                      </label>
-                    </div>
-                    <div className="slider-wrapper">
-                      {
-                        this.state.floorPlanSelect && this.state.floorPlanSelect.length == 1 ?
-                          <div>
-                            {
-                              this.state.floorPlanSelect && this.state.floorPlanSelect.map((item, value) => {
-                                return (
-                                  <div key={value}>
-                                    <div role="link" tabIndex="0" className="slider-img" onClick={() => this.setState({ isOpenOneSlide: true, photoIndex: value })}>
-                                      <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt="Floor Plans" className="w-100 h-100" />
-                                    </div>
-                                  </div>
-                                )
-                              })}
-                            {
-                              isOpenOneSlide && verticalData.data.floor_plans &&
-                              <Lightbox
-                                mainSrc={verticalData.data.floor_plans[photoIndex].image1.localFile.childImageSharp.fluid.src}
-                                onCloseRequest={() => this.setState({ isOpenOneSlide: false })}
-                                // onMovePrevRequest={() =>
-                                //   this.setState({
-                                //     photoIndex: (photoIndex + verticalData.data.floor_plans.length - 1) % verticalData.data.floor_plans.length,
-                                //   })
-                                // }
-                                // onMoveNextRequest={() =>
-                                //   this.setState({
-                                //     photoIndex: (photoIndex + 1) % verticalData.data.floor_plans.length,
-                                //   })
-                                // }
-                                animationDuration={800}
+                        </Slider>
+                    }
 
-                              />
-                            }
-                          </div> :
-                          <Slider {...floorPlan}>
-                            {
-                              this.state.floorPlanSelect.length > 0 && this.state.floorPlanSelect.map((item, value) => {
-                                return (
-                                  <div key={value}>
-                                    <div role="link" tabIndex="0" className="slider-img " onClick={() => this.setState({ isOpenTwo: true, photoIndex: value })}>
-                                      <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt="Floor Plans" className="w-100 h-100" />
-                                    </div>
-                                  </div>
-                                )
-                              })
-                            }
-                          </Slider>
-                      }
+                    {
+                      isOpenTwo &&
+                      <Lightbox
+                        mainSrc={verticalData.data.floor_plans[photoIndex].image1.localFile.childImageSharp.fluid.src}
+                        nextSrc={verticalData.data.floor_plans[(photoIndex + 1) % verticalData.data.floor_plans.length].image1.localFile.childImageSharp.fluid.src}
+                        prevSrc={verticalData.data.floor_plans[(photoIndex + verticalData.data.floor_plans.length - 1) % verticalData.data.floor_plans.length].image1.localFile.childImageSharp.fluid.src}
+                        onCloseRequest={() => this.setState({ isOpenTwo: false })}
+                        onMovePrevRequest={() =>
+                          this.setState({
+                            photoIndex: (photoIndex + verticalData.data.floor_plans.length - 1) % verticalData.data.floor_plans.length,
+                          })
+                        }
+                        onMoveNextRequest={() =>
+                          this.setState({
+                            photoIndex: (photoIndex + 1) % verticalData.data.floor_plans.length,
+                          })
+                        }
+                        animationDuration={800}
 
-                      {
-                        isOpenTwo &&
-                        <Lightbox
-                          mainSrc={verticalData.data.floor_plans[photoIndex].image1.localFile.childImageSharp.fluid.src}
-                          nextSrc={verticalData.data.floor_plans[(photoIndex + 1) % verticalData.data.floor_plans.length].image1.localFile.childImageSharp.fluid.src}
-                          prevSrc={verticalData.data.floor_plans[(photoIndex + verticalData.data.floor_plans.length - 1) % verticalData.data.floor_plans.length].image1.localFile.childImageSharp.fluid.src}
-                          onCloseRequest={() => this.setState({ isOpenTwo: false })}
-                          onMovePrevRequest={() =>
-                            this.setState({
-                              photoIndex: (photoIndex + verticalData.data.floor_plans.length - 1) % verticalData.data.floor_plans.length,
-                            })
-                          }
-                          onMoveNextRequest={() =>
-                            this.setState({
-                              photoIndex: (photoIndex + 1) % verticalData.data.floor_plans.length,
-                            })
-                          }
-                          animationDuration={800}
+                      />
+                    }
 
-                        />
-                      }
+                    {
+                      this.state.floorPlanSelect.length !== 1 &&
+                      <p className=" text-left text-sm-center pages mb-0">
+                        {this.state.floorPlanActive + 1} of {verticalData.data.floor_plans.length}
+                      </p>
+                    }
 
-                      {
-                        this.state.floorPlanSelect.length !== 1 &&
-                        <p className=" text-left text-sm-center pages mb-0">
-                          {this.state.floorPlanActive + 1} of {verticalData.data.floor_plans.length}
-                        </p>
-                      }
-
-                    </div>
                   </div>
                 </div>
               </div>
@@ -820,7 +838,7 @@ class VerticalPage extends React.Component {
           {/* <!--  -------------------- middle section end here ------------------------> */}
         </main>
         <Footer />
-      </Layout>
+      </Layout >
     )
   }
 }
@@ -943,6 +961,9 @@ export const verticalViewData = graphql`
           url
         }
         icon
+        icon_image{
+          url
+        }
       }
       fact_file_heading {
           text

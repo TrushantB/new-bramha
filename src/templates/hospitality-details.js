@@ -377,6 +377,11 @@ class HospitalityDetails extends React.Component {
                       Floor Plans
                   </a>
                   </li>
+                  <li className="nav-item col-6 p-0">
+                    <a className="nav-link text-center text-uppercase tab-title" id="pills-factfile-tab" data-toggle="pill" href="#fact-file" role="tab" aria-controls="pills-factfile" aria-selected="false">
+                      Floor Plans
+                  </a>
+                  </li>
                 </ul>
                 <div className="tab-content" id="factfiles-tabContent">
                   {
@@ -391,25 +396,21 @@ class HospitalityDetails extends React.Component {
                                     return (
                                       item.image1.url ?
                                         <button key={index} className={`d-flex align-items-center justify-content-start text-center text-md-left ${this.state.imageUrl === item.image1.url || !index && !this.state.imageUrl ? 'active' : ''}`} onClick={() => this.setState({ imageUrl: item.image1.url })} >
-                                          <span className="amenities-icon-wrap"><i className={item.icon}></i></span>
+                                          <span className="amenities-icon-wrap">
+                                            {/* <i className={item.icon}></i> */}
+                                            <img className="amenities-icon" src={item.icon_image.url} />
+                                          </span>
                                           <span className="amenities-icon-description"><span>{item.title1.text}</span></span>
                                         </button> : null
                                     )
                                   })
                                 }
                               </div>
-                              <div className="d-flex"></div>
-                            </div>
-                            <div className="image-wrapper">
-                              {
-                                this.state.imageUrl ?
-                                  <img src={this.state.imageUrl} alt={hospitalityData.data.title.text} className="w-100 h-100" />
-                                  : <img src={hospitalityData.data.amenities[0].image1.url} alt={hospitalityData.data.title.text} className="w-100 h-100" />
-                              }
                             </div>
                           </div>
                         </div>
-                      </div> : null
+                      </div>
+                      : null
                   }
 
                   {
@@ -706,63 +707,63 @@ export default HospitalityDetails;
 
 export const hospitalityPage = graphql`
   query hospitalityData($uid: String!) {
-  prismicOurVerticalsArticle(uid: { eq: $uid }) {
-    data{
-      title {
-        text
-      }
+            prismicOurVerticalsArticle(uid: {eq: $uid }) {
+            data{
+            title {
+            text
+          }
       sub_title {
-        text
-      }
+            text
+          }
       banner {
-        image {
-          url
+            image {
+            url
           mobile{
             url
           }
         }
       }
       logo {
-        url
-      }
+            url
+          }
       maharera {
-        url
-      }
+            url
+          }
       heading {
-        text
-      }
+            text
+          }
       description {
-        html
-      }
+            html
+          }
       phase {
-        title1 {
-          text
-        }
+            title1 {
+            text
+          }
         description1 {
-          text
-        }
+            text
+          }
       }
       flat_bhk {
-        text
-      }
+            text
+          }
       flat_address {
-        text
-      }
+            text
+          }
       tag_line {
-        text
-      }
+            text
+          }
       unique_features {
-        text
-      }
+            text
+          }
       thumbnail {
-        url
-      }
+            url
+          }
       showcase {
-        image1 {
-          localFile {
+            image1 {
+            localFile {
             childImageSharp {
-              fluid(maxWidth: 1150) {
-                ...GatsbyImageSharpFluid
+            fluid(maxWidth: 1150) {
+            ...GatsbyImageSharpFluid
                 presentationWidth
               }
             }
@@ -771,14 +772,14 @@ export const hospitalityPage = graphql`
         caption
       }
       floor_plans {
-        title1 {
-          text
-        }
+            title1 {
+            text
+          }
         image1 {
-          localFile {
+            localFile {
             childImageSharp {
-              fluid(maxWidth: 1150) {
-                ...GatsbyImageSharpFluid
+            fluid(maxWidth: 1150) {
+            ...GatsbyImageSharpFluid
                 presentationWidth
               }
             }
@@ -787,66 +788,69 @@ export const hospitalityPage = graphql`
       }
 
       proximities_description {
-        text
-      }
+            text
+          }
       proximites {
-        icon_name
+            icon_name
         title1 {
-          text
-        }
+            text
+          }
         description1{
-          html
-        }
+            html
+          }
         description2{
-          html
-        }
+            html
+          }
         description3{
-          html
-        }
+            html
+          }
         description4{
-          html
-        }
+            html
+          }
         icon {
-          url
-        }
+            url
+          }
       }
 
 
       amenities1{
-        text
-      }
-      amenities{
-        title1{
             text
-        }
+          }
+      amenities{
+            title1{
+            text
+          }
         description1{
-          text
-        }
+            text
+          }
         image1{
-          url
-        }
+            url
+          }
         icon
+        icon_image {
+            url
+          }
       }
       fact_file_heading {
-        text
-      }
+            text
+          }
       fact_file {
-        title1 {
-          text
-        }
+            title1 {
+            text
+          }
         description1 {
-          text
-        }
+            text
+          }
       }
       site_progress_heading {
-        text
-      }
+            text
+          }
       site_progress {
-        images {
-          localFile {
+            images {
+            localFile {
             childImageSharp {
-              fluid(maxWidth: 1150) {
-                ...GatsbyImageSharpFluid
+            fluid(maxWidth: 1150) {
+            ...GatsbyImageSharpFluid
                 presentationWidth
               }
             }

@@ -416,25 +416,21 @@ class CommercialDetails extends React.Component {
                                     return (
                                       item.image1.url ?
                                         <button key={index} className={`d-flex align-items-center justify-content-start text-center text-md-left ${this.state.imageUrl === item.image1.url || !index && !this.state.imageUrl ? 'active' : ''}`} onClick={() => this.setState({ imageUrl: item.image1.url })} >
-                                          <span className="amenities-icon-wrap"><i className={item.icon}></i></span>
+                                          <span className="amenities-icon-wrap">
+                                            <img className="amenities-icon" src={item.icon_image.url} />
+                                            {/* <i className={item.icon}></i> */}
+                                          </span>
                                           <span className="amenities-icon-description"><span>{item.title1.text}</span></span>
                                         </button> : null
                                     )
                                   })
                                 }
                               </div>
-                              <div className="d-flex"></div>
-                            </div>
-                            <div className="image-wrapper">
-                              {
-                                this.state.imageUrl ?
-                                  <img src={this.state.imageUrl} alt={commercialData.data.title.text} className="w-100 h-100" />
-                                  : <img src={commercialData.data.amenities[0].image1.url} alt={commercialData.data.title.text} className="w-100 h-100" />
-                              }
                             </div>
                           </div>
                         </div>
-                      </div> : null
+                      </div>
+                      : null
                   }
 
                   {
@@ -847,76 +843,76 @@ export default CommercialDetails;
 
 export const hospitalityPage = graphql`
   query commercialData($uid: String!) {
-    prismicOurVerticalsArticle(uid: { eq: $uid }) {
-    uid
+            prismicOurVerticalsArticle(uid: {eq: $uid }) {
+            uid
     data {
-      title {
-        text
-      }
+            title {
+            text
+          }
       sub_title {
-        text
-      }
+            text
+          }
       banner {
-        image {
-          url
+            image {
+            url
           mobile{
             url
           }
         }
       }
       logo {
-        url
+            url
         mobile{
-          url
-        }
+            url
+          }
       }
       maharera {
-        url
-      }
+            url
+          }
       heading {
-        text
-      }
+            text
+          }
       description {
-        html
-      }
+            html
+          }
       phase {
-        title1 {
-          text
-        }
+            title1 {
+            text
+          }
         description1 {
-          text
-        }
+            text
+          }
       }
       flat_bhk {
-        text
-      }
+            text
+          }
       flat_address {
-        text
-      }
+            text
+          }
       tag_line {
-        text
-      }
+            text
+          }
       unique_features {
-          text
-      }
+            text
+          }
       thumbnail {
-        url
-      }
+            url
+          }
       showcase {
-        image1{
-          url
-        }
+            image1{
+            url
+          }
         caption
       }
       floor_plans {
-        title1 {
-          text
-        }
+            title1 {
+            text
+          }
         image1 {
-          localFile {
+            localFile {
             childImageSharp {
-              fluid(maxWidth: 1150, quality: 100) {
-                ...GatsbyImageSharpFluid
+            fluid(maxWidth: 1150, quality: 100) {
+            ...GatsbyImageSharpFluid
                 presentationWidth
               }
             }
@@ -925,65 +921,68 @@ export const hospitalityPage = graphql`
       }
 
       proximities_description {
-        text
-      }
+            text
+          }
       proximites {
-        icon_name
+            icon_name
         title1 {
-          text
-        }
+            text
+          }
         description1{
-          html
-        }
+            html
+          }
         description2{
-          html
-        }
+            html
+          }
         description3{
-          html
-        }
+            html
+          }
         description4{
-          html
-        }
+            html
+          }
         icon {
-          url
-        }
+            url
+          }
       }
 
       amenities1 {
-        text
-      }
-      amenities {
-        title1 {
             text
-        }
+          }
+      amenities {
+            title1 {
+            text
+          }
         description1 {
-          text
-        }
-        image1{
-          url
-        }
+            text
+          }
+        image1 {
+            url
+          }
         icon
+        icon_image {
+            url
+          }
       }
       fact_file_heading {
-          text
-      }
+            text
+          }
       fact_file {
-          title1 {
-          text
-        }
+            title1 {
+            text
+          }
         description1 {
-          text
-        }
+            text
+          }
       }
       site_progress_heading {
-        text
-      }
+            text
+          }
       site_progress {
-        images {
-          localFile {
+            images {
+            localFile {
             childImageSharp {
-              fluid(maxWidth: 1150, quality: 100) {
-                ...GatsbyImageSharpFluid
+            fluid(maxWidth: 1150, quality: 100) {
+            ...GatsbyImageSharpFluid
                 presentationWidth
               }
             }
@@ -992,8 +991,8 @@ export const hospitalityPage = graphql`
       }
 
       maharera_important{
-        text
-      }
+            text
+          }
       location_url
     }
   }
