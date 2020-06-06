@@ -90,12 +90,18 @@ button:focus {
   letter-spacing: -0.44px;
   color: #988a63;
   text-align: left;
+  &.centered {
+    &::after {
+      margin: 0 auto;
+    }
+  }
   &::after {
     content: "";
     border-bottom: 2px solid #a53130;
     padding: 6px 0;
     width: 85px;
     display: block;
+    margin: 0;
   }
 }
 

@@ -302,7 +302,7 @@ export default class Residential extends React.Component {
           </div>
           <section className="give-details text-center">
             <div className="container">
-              <h4 className="text-uppercase text-center section-title">Looking for more option?</h4>
+              <h4 className="text-uppercase text-center section-title centered">Looking for more option?</h4>
               <p>
                 {lookingForMe.looking_for_more.text}
               </p>
