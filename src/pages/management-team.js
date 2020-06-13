@@ -65,7 +65,7 @@ class ManagementTeam extends React.Component {
                       <div key={index} className="col-md-4 col-lg-3 col-sm-6">
                         <div className="member">
                           <div className="founder-image">
-                            <img src={item.image.url} alt="" title="Founder" width="100%"/>
+                            {/* <img src={item.image.url} alt="" title="Founder" width="100%"/> */}
                           </div>
                           <div className="info-content">
                             <h4 className="heading">{item.name.text}</h4>
@@ -93,7 +93,7 @@ class ManagementTeam extends React.Component {
                       <div key={index} className="col-md-4 col-lg-3 col-sm-6">
                         <div className="member">
                           <div className="founder-image">
-                            <img src={item.image.url} alt="" title="Founder" width="100%"/>
+                            {/* <img src={item.image.url} alt="" title="Founder" width="100%"/> */}
                           </div>
                           <div className="info-content">
                             <h4 className="heading">{item.name.text}</h4>
@@ -121,7 +121,7 @@ class ManagementTeam extends React.Component {
                       <div key={index} className="col-md-4 col-lg-3 col-sm-6">
                         <div className="member ">
                           <div className="founder-image">
-                            <img src={item.image.url} alt="" title="Founder" width="100%"/>
+                            {/* <img src={item.image.url} alt="" title="Founder" width="100%"/> */}
                           </div>
                           <div className="info-content">
                             <h4 className="heading">{item.name.text}</h4>
@@ -156,9 +156,6 @@ export const managementPage = graphql`{
         text
       }
       founder{
-        image{
-          url
-        }
         name{
           text
         }
@@ -170,9 +167,6 @@ export const managementPage = graphql`{
         text
       }
       directors{
-        image{
-          url
-        }
         name{
           text
         }
@@ -184,9 +178,6 @@ export const managementPage = graphql`{
         text
       }
       strategy_team{
-       	image{
-        	url
-      	}
         name{
           text
         }
@@ -198,9 +189,6 @@ export const managementPage = graphql`{
         text
       }
       head_of_department{
-        image{
-          url
-        }
         name{
           text
         }

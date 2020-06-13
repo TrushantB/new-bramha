@@ -30,7 +30,7 @@ class PrivacyPolicy extends React.Component {
               <Link to='/' className="link-text font-weight-bold"> Back To Home Page </Link>
               </div>
               <div className="col-lg-6"> 
-              <Img fluid={privacyData.image.localFile.childImageSharp.fluid} className="w-100 h-100"/>
+              {/* <Img fluid={privacyData.image.localFile.childImageSharp.fluid} className="w-100 h-100"/> */}
               </div>
             </div>
           </div>
@@ -49,15 +49,6 @@ export const privacyPolicy = graphql` {
       }
       description {
         text
-      }
-      image {
-        localFile {
-          childImageSharp {
-            fluid{
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
       }
       group {
         title1 {
