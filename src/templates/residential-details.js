@@ -590,15 +590,24 @@ class VerticalPage extends React.Component {
               </div>
             </section>
             {/* <!--   ------------------- progress section end here ------------------- --> */}
-            {/* <!--   ------------------- Download Brouchure section start here ------------------- --> */}
-            <div className="container detail-page-sections d-flex justify-content-center download-btn">
-              <a href="#pdf-link" download="Brouchure.pdf" className="btn-secondary text-center">Download Brochure</a>
-              <a href="#pdf-link" download="Brouchure.pdf" className="btn-secondary text-center">Download Rera</a>
-              <a href="#pdf-link" download="Brouchure.pdf" className="btn-secondary text-center">Download OC</a>
-              <a href="#pdf-link" download="Brouchure.pdf" className="btn-secondary text-center">Download EC</a>
-            </div>
-            {/* <!--   ------------------- Download Brouchure section end here ------------------- --> */}
-            {/* <!--   ------------------- Enquiry section start here ------------------- --> */}
+
+             {/* <!--   ------------------- Download Brouchure section start here ------------------- --> */}
+             {
+              verticalData.data.download_info && verticalData.data.download_info.length > 0 ?
+              <div className="container detail-page-sections d-flex justify-content-center download-btn">
+                {
+                  verticalData.data.download_info.map((item, index) => {
+                    return(
+                    <a key={index} href="#pdf-link" download={item.file.name} className="btn-secondary text-center">Download {item.title_of_info.text}</a>
+                    )
+                  })
+                }
+              </div>: null
+            }
+            
+            {/* <!--   ------------------- Download Brouchure section end here ------------------- --> */}            {/* <!--   ------------------- Enquiry section start here ------------------- --> */}
+            
+            
             <section className="detail-page-sections enquiry-form">
               <h2 className="section-title text-uppercase text-center">
                 ENQUIRE NOW
@@ -866,6 +875,14 @@ export const verticalViewData = graphql`
         text
       }
       location_url
+      download_info {
+        title_of_info {
+          text
+        }
+        file {
+          name
+        }
+      }
     }
   }
 }`

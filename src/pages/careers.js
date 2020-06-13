@@ -9,9 +9,11 @@ import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 import chevron_down from '../images/chevron_down.svg';
 import Div100vh from 'react-div-100vh/lib/Div100vh';
-import FileUploader from "react-firebase-file-uploader";
-import * as firebase from 'firebase';
 import queryString from 'query-string';
+
+import '../firebase/config'
+import * as firebase from 'firebase';
+import FileUploader from "react-firebase-file-uploader";
 
 class Careers extends React.Component {
   constructor() {
@@ -26,6 +28,7 @@ class Careers extends React.Component {
       photoIndex: 0,
       isOpen: false,
       avatar: "",
+      url: '',
       utmSource: null,
       utmMedium: null,
       utmCampaign: null,
@@ -129,6 +132,17 @@ class Careers extends React.Component {
       behavior: 'smooth'
     });
   }
+  handleUploadResumeSuccess = filename => {
+    this.setState({ avatar: filename });
+    firebase
+      .storage()
+      .ref("Resume")
+      .child(filename)
+      .getDownloadURL()
+      .then(url => {
+        this.setState({ url: url})
+      });
+  };
 
   handleUploadSuccess = filename => {
     this.setState({ avatar: filename });
@@ -362,15 +376,15 @@ class Careers extends React.Component {
                                         <div className="col-sm-6 form-group">
                                           <input type="text" className="form-control rounded-0" id="email" placeholder="Your Email*" autoComplete="false" name="email" required />
                                         </div>
-                                        <div className="col-12">
-                                          <div className="form-group file-area">
+                                        {/* <div className="col-12"> */}
+                                          {/* <div className="form-group file-area">
                                             <FileUploader
                                               id="file"
                                               className="w-100 resume-upload-input h-100"
                                               accept="pdf/*"
                                               name="resume-upload"
                                               storageRef={firebase.storage().ref("Resume")}
-                                              onUploadSuccess={this.handleUploadSuccess}
+                                              onUploadSuccess={this.handleUploadResumeSuccess}
                                             />
                                           <div className="file-dummy resume-upload">
                                             {
@@ -378,9 +392,9 @@ class Careers extends React.Component {
                                               <div className="default">Resume Upload (PDF/DOC)*</div>
                                             }
                                           </div>
-                                        </div>
+                                        </div> */}
 
-                                        </div>
+                                        {/* </div> */}
                                       </div>
                                       <div className="sumbit text-center mt-sm-0 mt-4">
                                         <button type="submit" className="btn-secondary">
@@ -441,8 +455,8 @@ class Careers extends React.Component {
                       <div className="col-sm-6 form-group">
                         <input type="text" className="form-control rounded-0" id="email" placeholder="Your Email*" autoComplete="false" name="email" required />
                       </div>
-                      <div className="col-12">
-                        <div className="form-group file-area">
+                      {/* <div className="col-12"> */}
+                        {/* <div className="form-group file-area">
                           <FileUploader
                             id="file"
                             className="w-100 resume-upload-input h-100"
@@ -459,7 +473,7 @@ class Careers extends React.Component {
                         </div>
                       </div>
 
-                      </div>
+                      </div> */}
                     </div>
                     <div className="sumbit text-center mt-sm-0 mt-4">
                       <button type="submit" className="btn-secondary">
