@@ -263,7 +263,7 @@ class CommercialDetails extends React.Component {
               </div>
               {/* ...................Customizable Button.................. */}
               {
-                 commercialData.data.customizable_button && commercialData.data.customizable_button.length > 1 ?
+                 commercialData.data.customizable_button && commercialData.data.customizable_button.length > 0 ?
                   <div className="container detail-page-sections d-flex justify-content-center download-btn">
                     {
                       commercialData.data.customizable_button.map((item, index) => {
