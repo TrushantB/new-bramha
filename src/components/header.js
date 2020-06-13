@@ -7,13 +7,8 @@ import img1 from '../images/logo.png';
 import $ from 'jquery';
 const Header = ({ siteTitle ,pathname}) => {
   const [contactFlag, setContactFlag] = useState(false);
-  // const [mailFlag, setMailFlag] = useState(false);
-  // const [chatFlag, setChatFlag] = useState(false);
-
   const contactFlagTrueFalse = () => setContactFlag(!contactFlag);
-  // const mailFlagTrueFalse = () => setMailFlag(!mailFlag);
-  // const chatFlagTrueFalse = () => setChatFlag(!chatFlag);
-
+ 
 function classHandle() {
   $("body").removeClass("nav-open");
  }

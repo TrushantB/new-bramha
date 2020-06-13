@@ -1,12 +1,13 @@
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 import React from "react"
 import '../styles/css/custom.css';
 import '../styles/scss/main.scss';
 import $ from 'jquery';
 import {TinyButton as ScrollUpButton} from "react-scroll-up-button";
+import { useStaticQuery} from "gatsby"
 
 
-const Footer = ({ siteTitle }) => {
+const Footer = ({ siteTitle, props, footerLinks }) => {
   return(
   <footer className="footer">
     <div className="container">
@@ -42,19 +43,19 @@ const Footer = ({ siteTitle }) => {
           <div className="footer-social-icon">
             <ul className="d-flex list-unstyled justify-content-center">
               <li className="background-circle">
-                <Link to="/"><i className="fab fa-facebook-f"></i></Link>
+                <a href={footerLinks && footerLinks[0].link.url} target="_blank" rel="noopener noreferrer" ><i className="fab fa-facebook-f"></i></a>
               </li>
               <li className="background-circle">
-                <Link to="/"><i className="fab fa-twitter"></i></Link>
+                <a href={footerLinks && footerLinks[1].link.url} target="_blank" rel="noopener noreferrer" ><i className="fab fa-twitter"></i></a>
               </li>
               <li className="background-circle">
-                <Link to="/"><i className="fab fa-instagram"></i></Link>
+                <a href={footerLinks && footerLinks[2].link.url} target="_blank" rel="noopener noreferrer" ><i className="fab fa-instagram"></i></a>
               </li>
               <li className="background-circle" >
-                <Link to="/"><i className="fab fa-linkedin-in"></i></Link>
+                <a href={footerLinks && footerLinks[3].link.url} target="_blank" rel="noopener noreferrer" ><i className="fab fa-linkedin-in"></i></a>
               </li>
               <li className="background-circle" >
-                <Link to="/"><i className="fas fa-caret-right"></i></Link>
+                <a href={footerLinks && footerLinks[4].link.url} target="_blank" rel="noopener noreferrer" ><i className="fas fa-caret-right"></i></a>
               </li>
             </ul>
           </div>
@@ -66,9 +67,7 @@ const Footer = ({ siteTitle }) => {
     </div>
    <ScrollUpButton ContainerClassName="back-to-top" />
   </footer>
-
-
-)
-  }
+  )
+}
 
 export default Footer

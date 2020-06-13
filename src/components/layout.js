@@ -4,6 +4,7 @@ import { useStaticQuery, graphql, Link } from "gatsby";
 import PhoneInput from 'react-phone-number-input';
 import Header from "./header";
 import "./layout.css";
+import Footer from "./footer";
 
 const Layout = ({ children, pathname, className }) => {
   // const [contactFlag, setContactFlag] = useState(false);
@@ -23,6 +24,22 @@ const Layout = ({ children, pathname, className }) => {
           title
         }
       }
+
+      prismicCompanyDetails {
+        data {
+          tagline {
+            html
+          }
+         followus {
+          title1{
+            text
+          }
+          link {
+            url
+          }
+          }
+        }
+      }
     }
   `)
 
@@ -31,6 +48,10 @@ const Layout = ({ children, pathname, className }) => {
     <>
       <Header siteTitle={data.site.siteMetadata.title} pathname={pathname} />
       <main className={className}>{children}</main>
+      {
+        pathname=='/' ? null :
+        <Footer footerLinks={data.prismicCompanyDetails.data.followus}/>
+      }
     </>
 
   )

@@ -1,7 +1,6 @@
 import React from 'react'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
-import Footer from '../../components/footer'
 import { graphql, Link } from 'gatsby'
 
 class CompletedProjects extends React.Component {
@@ -69,7 +68,6 @@ class CompletedProjects extends React.Component {
             </div>
           </div>
         </section>
-        <Footer />
       </Layout>
     )
   }

@@ -1,7 +1,6 @@
 import React from 'react'
 import Layout from '../components/layout'
 import { graphql } from 'gatsby'
-import Footer from '../components/footer';
 import SEO from '../components/seo';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
@@ -193,7 +192,6 @@ class Contacts extends React.Component {
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title="Contacts"/>
-        {/* <Footer socialMediaLinks={contactData.followus}/> */}
         <section className="contact-section">
           <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="contact-page-image banner-section mt-60" id="banner-section">
             <picture>
@@ -561,7 +559,6 @@ class Contacts extends React.Component {
             </div>
           </section>
         </section>
-        <Footer/>
       </Layout>
     )
   }

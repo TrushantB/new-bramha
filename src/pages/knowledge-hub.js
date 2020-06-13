@@ -1,6 +1,5 @@
 import React from 'react'
 import Layout from '../components/layout'
-import Footer from '../components/footer';
 import SEO from "../components/seo";
 import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
@@ -137,7 +136,6 @@ class KnoweldgeHub extends React.Component {
             </div>
           </div>
         </section>
-        <Footer />
       </Layout>
     )
   }

@@ -4,7 +4,6 @@ import Img from 'gatsby-image';
 import 'lazysizes';
 import Slider from 'react-slick';
 import Layout from '../components/layout';
-import Footer from '../components/footer';
 import SEO from '../components/seo';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
@@ -702,7 +701,6 @@ class HospitalityDetails extends React.Component {
             </div>
           {/* <!-- ------------------- Download Brouchure section end here ------------------- --> */}
           </main>
-        <Footer />
       </Layout>
     )
   }

@@ -1,7 +1,6 @@
 import React from 'react';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import Footer from '../components/footer';
 import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 
@@ -125,7 +124,6 @@ class LeisureClub extends React.Component {
             </div>
           </section>
         </section>
-        <Footer />
       </Layout>
     )
   }

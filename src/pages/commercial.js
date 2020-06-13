@@ -3,7 +3,6 @@ import Slider from "react-slick";
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import Footer from '../components/footer';
 import { graphql, Link } from 'gatsby';
 
 class Commercial extends React.Component {
@@ -183,7 +182,6 @@ class Commercial extends React.Component {
             </div>
           </section>
         </section>
-        <Footer />
       </Layout>
     )
   }
