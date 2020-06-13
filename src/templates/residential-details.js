@@ -537,11 +537,13 @@ class VerticalPage extends React.Component {
                         <div className="d-flex"></div>
                       </div>
                       <div className="image-wrapper">
-                        {
-                          this.state.imageUrl ?
+                        {/* {
+                          console.log('verticalData.data.amenities[0].image1.url', verticalData.data.amenities[0].image1.url),
+                          
+                          this.state.imageUrl  ?
                          <img src={this.state.imageUrl} alt={verticalData.data.title.text} className="w-100 h-100"/>
                          :<img src={verticalData.data.amenities[0].image1.url} alt={verticalData.data.title.text} className="w-100 h-100"/>
-                        }
+                        } */}
                       </div>
                     </div>
                   </div>
