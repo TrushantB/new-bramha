@@ -131,6 +131,17 @@ class Careers extends React.Component {
       behavior: 'smooth'
     });
   }
+  handleUploadResumeSuccess = filename => {
+    this.setState({ avatar: filename });
+    firebase
+      .storage()
+      .ref("Resume")
+      .child(filename)
+      .getDownloadURL()
+      .then(url => {
+        this.setState({ url: url})
+      });
+  };
 
   handleUploadSuccess = filename => {
     this.setState({ avatar: filename });
@@ -372,7 +383,7 @@ class Careers extends React.Component {
                                               accept="pdf/*"
                                               name="resume-upload"
                                               storageRef={firebase.storage().ref("Resume")}
-                                              onUploadSuccess={this.handleUploadSuccess}
+                                              onUploadSuccess={this.handleUploadResumeSuccess}
                                             />
                                           <div className="file-dummy resume-upload">
                                             {
