@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '../components/layout';
+import Footer from '../components/footer';
 import SEO from "../components/seo";
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
@@ -10,14 +11,14 @@ class Disclaimer extends React.Component {
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title='Disclaimer'/>
-          <div className="container mt-5 mb-5">
-            <h1 className="text-center mb-5 partners-heading">{disclaimerData.title.text}</h1>
+          <div className="page-heading-section container container-sm-fluid bg-color">
+            <div className="padding-block-60">
+              <h2 className="page-heading">{disclaimerData.title.text}</h2>
+            </div>
             <div className="row ">
               <div className="col-lg-12">
               <div dangerouslySetInnerHTML={{__html: disclaimerData.description.html}}/>
 
-              <h2> Coming Soon... </h2>
-              <Link to='/' className="link-text font-weight-bold"> Back To Home Page </Link>
               </div>
               {/* <div className="col-lg-6"> 
               <Img fluid={disclaimerData.banner.localFile.childImageSharp.fluid} className="w-100 h-100"/>

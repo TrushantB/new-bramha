@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '../components/layout';
+import Footer from '../components/footer';
 import SEO from "../components/seo";
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
@@ -14,9 +15,7 @@ class Maharerra extends React.Component {
             <h1 className="text-center mb-5 partners-heading">{maharerraData.title.text}</h1>
             <div className="row ">
               <div className="col-lg-6">
-              <p>
-              The state’s regulatory authority, MahaRERA was formed to promote the interest of buyers as well as promoters. At BramhaCorp, all our projects are RERA-registered. We abide by the rules and regulations as laid out by the body. For any information regarding the projects, you can visit the MahaRERA website and get the latest update and all the facts pertaining to the project.
-               Our customers can get complete peace of mind as far as the property deal is concerned. </p>
+                <div dangerouslySetInnerHTML={{__html: maharerraData.description.html}}/>
               <h2> Coming Soon... </h2>
               <Link to='/' className="link-text font-weight-bold"> Back To Home Page </Link>
               </div>
@@ -36,6 +35,9 @@ export const maharera = graphql` {
     data {
       title {
         text
+      }
+      description {
+        html
       }
       banner {
         localFile {
