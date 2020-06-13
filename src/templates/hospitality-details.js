@@ -363,9 +363,9 @@ class HospitalityDetails extends React.Component {
              
           {/* <!--   ------------------- Amenities And Fact Files section start here ------------------- --> */}
           {
-            console.log('hospitalityData.data.amenities[0].image1.url', hospitalityData.data.amenities),
             
-            hospitalityData.data.amenities.length > 0 ? 
+            hospitalityData.data.amenities && hospitalityData.data.amenities.length > 0 ? 
+
             <section className="amenity-sections container"  id={hospitalityData.uid}>
               <ul className="nav nav-pills row padding-sm-0" id="factfile-tab" role="tablist">
                 <li className="nav-item col-6 p-0">
@@ -381,7 +381,7 @@ class HospitalityDetails extends React.Component {
               </ul>
               <div className="tab-content" id="factfiles-tabContent">
                 {
-                  hospitalityData.data.amenities.length > 0 ?
+                  hospitalityData.data.amenities && hospitalityData.data.amenities.length > 0 ?
                   <div className="tab-pane fade show active" id="amenities" role="tabpanel" aria-labelledby="pills-amenities-tab">
                     <div className="container p-0">
                       <div className="amenities-inner-wrapper d-flex">
@@ -417,7 +417,7 @@ class HospitalityDetails extends React.Component {
                 }
                 
                 {
-                  hospitalityData.data.floor_plans ?
+                  hospitalityData.data.floor_plans && hospitalityData.data.floor_plans.length ?
                 <div className="tab-pane fade floor-plan" id="fact-file" role="tabpanel" aria-labelledby="pills-factfile-tab">
                   <div className="slider-page">
                     <div className="container">
@@ -460,17 +460,7 @@ class HospitalityDetails extends React.Component {
                           <Lightbox
                             mainSrc={hospitalityData.data.floor_plans[photoIndex].image1.localFile.childImageSharp.fluid.src}
                             onCloseRequest={() => this.setState({ isOpenOneSlide: false })}
-                            // onMovePrevRequest={() =>
-                            //   this.setState({
-                            //     photoIndex: (photoIndex + hospitalityData.data.floor_plans.length - 1) % hospitalityData.data.floor_plans.length,
-                            //   })
-                            // }
-                            // onMoveNextRequest={() =>
-                            //   this.setState({
-                            //     photoIndex: (photoIndex + 1) % hospitalityData.data.floor_plans.length,
-                            //   })
-                            // }
-                          animationDuration={800}
+                            animationDuration={800}
 
                           />
                         }
@@ -530,9 +520,9 @@ class HospitalityDetails extends React.Component {
             }
 
             {
-              !hospitalityData.data.amenities.length > 0 ?
+              !hospitalityData.data.amenities.length > 0 || hospitalityData.data.floor_plans  > 0 ?
               <section className="amenity-sections container">
-              <div className="slider-page d-none d-sm-block floor-plan">
+                <div className="slider-page d-none d-sm-block floor-plan">
                   <div className="section-title-wrap d-flex flex-column align-items-center">
                     <h2 className="section-title text-uppercase text-center">
                         Floor Plans
@@ -644,7 +634,7 @@ class HospitalityDetails extends React.Component {
             {/* <!--   ------------------- Amenity And Fact Files section end here ------------------- --> */}
 
         {/* <!--   ------------------- Site-progress section start here ------------------- --> */}
-        { hospitalityData.data.site_progress.length > 0 ?
+        { hospitalityData.data.site_progress && hospitalityData.data.site_progress.length > 0 ?
           <section className="slider-page site-progress-wrap mb-0">
               <h2 className="section-title text-uppercase text-center">
                 Site Progress
