@@ -364,7 +364,9 @@ class HospitalityDetails extends React.Component {
              
           {/* <!--   ------------------- Amenities And Fact Files section start here ------------------- --> */}
           {
-              hospitalityData.data.amenities[0].image1.url ? 
+            console.log('hospitalityData.data.amenities[0].image1.url', hospitalityData.data.amenities),
+            
+            hospitalityData.data.amenities.length > 0 ? 
             <section className="amenity-sections container"  id={hospitalityData.uid}>
               <ul className="nav nav-pills row padding-sm-0" id="factfile-tab" role="tablist">
                 <li className="nav-item col-6 p-0">
@@ -380,7 +382,7 @@ class HospitalityDetails extends React.Component {
               </ul>
               <div className="tab-content" id="factfiles-tabContent">
                 {
-                  hospitalityData.data.amenities[0].image1.url ?
+                  hospitalityData.data.amenities.length > 0 ?
                   <div className="tab-pane fade show active" id="amenities" role="tabpanel" aria-labelledby="pills-amenities-tab">
                     <div className="container p-0">
                       <div className="amenities-inner-wrapper d-flex">
@@ -529,7 +531,7 @@ class HospitalityDetails extends React.Component {
             }
 
             {
-              !hospitalityData.data.amenities[0].image1.url ?
+              !hospitalityData.data.amenities.length > 0 ?
               <section className="amenity-sections container">
               <div className="slider-page d-none d-sm-block floor-plan">
                   <div className="section-title-wrap d-flex flex-column align-items-center">
