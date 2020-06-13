@@ -113,12 +113,23 @@
       width: 230px;
     }
   }
+  .modal{
+    .btn-secondary {
+      font-size: 14px;
+    }
+    .modal-header{
+      .section-title{
+        font-size: 22px;
+      }
+    }
+  }
 }
 .view-all {
   .btn-secondary {
     width: 230px;
     display: inline-block;
   }
+ 
 }
 @media (max-width: 580px) {
   .residential-section .main-paragraph {
