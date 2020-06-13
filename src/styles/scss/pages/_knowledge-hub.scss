@@ -33,6 +33,9 @@
         line-height: 24px;
         // letter-spacing: 0.31px;
         margin-top: 12px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
   }
@@ -91,7 +94,13 @@
     font-weight: normal;
   }
 }
-
+.text-overflow{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
 .guidelines-nris {
   .gatsby-image-wrapper {
     div {

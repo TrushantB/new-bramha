@@ -10,7 +10,7 @@ class ManagementTeam extends React.Component {
     return(
       <Layout location="/" noHeader="true" pathname={this.props.location.pathname}>
         <SEO title={mgntData.sub_title.text}/>
-          <section className="award-wrapper">
+          <section className="management-wrapper">
             <section className="page-heading-section container container-sm-fluid bg-color">
               <div className="padding-block-60">
                 <h2 className="page-heading">{mgntData.sub_title.text}</h2>

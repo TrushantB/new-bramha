@@ -69,7 +69,7 @@ class KnoweldgeHub extends React.Component {
                               </div>
                               <div className="col-md-12 col-lg-6  col-6 pl-0 pl-md-3 pl-lg-0 pr-0 pr-sm-3">
                                 <div className=" important-notice-section d-flex justify-content-between flex-column bg-light-gray">
-                                  <p>{item.topics.document[0].data.short_description.text}</p>
+                                  <p className='text-overflow'>{item.topics.document[0].data.short_description.text}</p>
                                   <h3 className="inner-section-title  text-center text-sm-center d-block d-sm-none">Important Notices</h3>
                                   <div className="know-more">
                                     {console.log('item', item.topics.slug)
