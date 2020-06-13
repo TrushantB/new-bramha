@@ -376,8 +376,8 @@ class Careers extends React.Component {
                                         <div className="col-sm-6 form-group">
                                           <input type="text" className="form-control rounded-0" id="email" placeholder="Your Email*" autoComplete="false" name="email" required />
                                         </div>
-                                        <div className="col-12">
-                                          <div className="form-group file-area">
+                                        {/* <div className="col-12"> */}
+                                          {/* <div className="form-group file-area">
                                             <FileUploader
                                               id="file"
                                               className="w-100 resume-upload-input h-100"
@@ -392,9 +392,9 @@ class Careers extends React.Component {
                                               <div className="default">Resume Upload (PDF/DOC)*</div>
                                             }
                                           </div>
-                                        </div>
+                                        </div> */}
 
-                                        </div>
+                                        {/* </div> */}
                                       </div>
                                       <div className="sumbit text-center mt-sm-0 mt-4">
                                         <button type="submit" className="btn-secondary">
@@ -455,8 +455,8 @@ class Careers extends React.Component {
                       <div className="col-sm-6 form-group">
                         <input type="text" className="form-control rounded-0" id="email" placeholder="Your Email*" autoComplete="false" name="email" required />
                       </div>
-                      <div className="col-12">
-                        <div className="form-group file-area">
+                      {/* <div className="col-12"> */}
+                        {/* <div className="form-group file-area">
                           <FileUploader
                             id="file"
                             className="w-100 resume-upload-input h-100"
@@ -473,7 +473,7 @@ class Careers extends React.Component {
                         </div>
                       </div>
 
-                      </div>
+                      </div> */}
                     </div>
                     <div className="sumbit text-center mt-sm-0 mt-4">
                       <button type="submit" className="btn-secondary">
