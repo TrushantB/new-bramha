@@ -240,7 +240,7 @@ class HospitalityDetails extends React.Component {
                   hospitalityData.data.customizable_button && hospitalityData.data.customizable_button.length > 0?
                   <div className="container detail-page-sections d-flex justify-content-center download-btn">
                     {
-                      hospitalityData.data.customizable_button.map((item, index) => {
+                      hospitalityData.data.customizable_button && hospitalityData.data.customizable_button.map((item, index) => {
                         return(
                         <a key={index} href={item.link1.url}  target="_blank" className="btn-secondary text-center">{item.title1}</a>
                         )
