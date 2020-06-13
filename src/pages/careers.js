@@ -28,6 +28,7 @@ class Careers extends React.Component {
       photoIndex: 0,
       isOpen: false,
       avatar: "",
+      url: '',
       utmSource: null,
       utmMedium: null,
       utmCampaign: null,
