@@ -235,7 +235,7 @@ class LeisureDetails extends React.Component {
                 </div>
                 {/* ...................Customizable Button.................. */}
               {
-                  leisureData.data.customizable_button.length ?
+                  leisureData.data.customizable_button && leisureData.data.customizable_button.length >1 ?
                   <div className="container detail-page-sections d-flex justify-content-center download-btn">
                     {
                       leisureData.data.customizable_button.map((item, index) => {
