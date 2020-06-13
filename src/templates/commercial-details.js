@@ -715,12 +715,23 @@ class CommercialDetails extends React.Component {
             }
             {/* <!--   ------------------- progress section end here ------------------- --> */}
 
-          {/* <!-- ------------------- Download Brouchure section start here ------------------- --> */}
-            <div className="container detail-page-sections d-flex justify-content-center download-btn">
-              <a href="#pdf-link" download="Brouchure.pdf" className="btn-secondary text-center">Download Brochure</a>
-            </div>
-          {/* <!-- ------------------- Download Brouchure section end here ------------------- --> */}
-          {/* <!--   ------------------- Enquiry section start here ------------------- --> */}
+           {/* <!--   ------------------- Download Brouchure section start here ------------------- --> */}
+           {
+            commercialData.data.download_info && commercialData.data.download_info.length > 0 ?
+              <div className="container detail-page-sections d-flex justify-content-center download-btn">
+                {
+                  commercialData.data.download_info.map((item, index) => {
+                    return(
+                    <a key={index} href="#pdf-link" download={item.file.name} className="btn-secondary text-center">Download {item.title_of_info.text}</a>
+                    )
+                  })
+                }
+              </div>: null
+            } 
+            
+            {/* <!--   ------------------- Download Brouchure section end here ------------------- --> */}            {/* <!--   ------------------- Enquiry section start here ------------------- --> */}
+            
+            {/* <!--   ------------------- Enquiry section start here ------------------- --> */}
             <section className="detail-page-sections enquiry-form">
               <h2 className="section-title text-uppercase text-center">
                 ENQUIRE NOW
