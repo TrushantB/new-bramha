@@ -11,7 +11,7 @@ import chevron_down from '../images/chevron_down.svg';
 import Div100vh from 'react-div-100vh/lib/Div100vh';
 import queryString from 'query-string';
 
-import '../firebase/config';
+import '../firebase/config'
 import * as firebase from 'firebase';
 import FileUploader from "react-firebase-file-uploader";
 
