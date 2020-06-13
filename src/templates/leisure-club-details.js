@@ -692,12 +692,23 @@ class LeisureDetails extends React.Component {
             {/* <!--   ------------------- progress section end here ------------------- --> */}
 
 
-          {/* <!-- ------------------- Download Brouchure section start here ------------------- --> */}
-            <div className="container detail-page-sections d-flex justify-content-center download-btn">
-              <a href="#pdf-link" download="Brouchure.pdf" className="btn-secondary text-center">Download Brochure</a>
-            </div>
-          {/* <!-- ------------------- Download Brouchure section end here ------------------- --> */}
-          </main>
+           {/* <!--   ------------------- Download Brouchure section start here ------------------- --> */}
+            {
+              leisureData.data.download_info && leisureData.data.download_info.length > 0 ?
+              <div className="container detail-page-sections d-flex justify-content-center download-btn">
+                {
+                  leisureData.data.download_info.map((item, index) => {
+                    return(
+                    <a key={index} href="#pdf-link" download={item.file.name} className="btn-secondary text-center">Download {item.title_of_info.text}</a>
+                    )
+                  })
+                }
+              </div>: null
+            }
+            
+            {/* <!--   ------------------- Download Brouchure section end here ------------------- --> */}            {/* <!--   ------------------- Enquiry section start here ------------------- --> */}
+            
+        </main>
       </Layout>
     )
   }
@@ -855,6 +866,14 @@ export const leisurePage = graphql`
                   }
               }
           }
+        }
+      }
+      download_info {
+        title_of_info {
+          text
+        }
+        file {
+          name
         }
       }
     }
