@@ -22,7 +22,7 @@ class Award extends React.Component {
                     </section>
 
                     <section>
-                        <div className="container">
+                        <div className="container mt-5" >
                             <div className="row">
                                 {awardData.awards.map((item,index) => {
                                     return(

@@ -65,6 +65,9 @@
 .about-content {
   margin-bottom: 128px;
 }
+.about-years-img {
+  width: 85%;
+}
 // --------- Our Legacy css start here ----------
 .our-legacy {
   .section-title-wrapper {
@@ -327,6 +330,10 @@
   }
 }
 @media (max-width: 580px) {
+  .about-years-img {
+    width: 40%;
+    margin: 30px;
+  }
   .about-description,
   .about-heading {
     background: #f7f7f7;
