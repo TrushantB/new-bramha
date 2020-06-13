@@ -235,6 +235,21 @@ class HospitalityDetails extends React.Component {
                   </nav>
                 </div>
               </div>
+              {/* ...................Customizable Button.................. */}
+              {
+                  hospitalityData.data.customizable_button && hospitalityData.data.customizable_button.length > 0 ?
+                  <div className="container detail-page-sections d-flex justify-content-center download-btn">
+                    {
+                      hospitalityData.data.customizable_button > 0 && hospitalityData.data.customizable_button.map((item, index) => {
+                        console.log('item', item);
+                        return(
+                            item.link1.url ?
+                        <a key={index} href={item.link1.url}  target="_blank" className="btn-secondary text-center">{item.title1}</a>:null
+                        )
+                      })
+                    }
+                  </div> : null
+                }
               <div className="padding-block-60">
                 <h2 className="page-heading text-uppercase">
                   {hospitalityData.data.heading.text}
@@ -731,10 +746,10 @@ class HospitalityDetails extends React.Component {
 
             {/* <!--   ------------------- Download Brouchure section start here ------------------- --> */}
            {
-            hospitalityData.data.download_info && hospitalityData.data.download_info.length > 0 ?
+            hospitalityData.data.download_info > 0 && hospitalityData.data.download_info ?
               <div className="container detail-page-sections d-flex justify-content-center download-btn">
                 {
-                  hospitalityData.data.download_info.map((item, index) => {
+                   hospitalityData.data.download_info > 0 && hospitalityData.data.download_info.map((item, index) => {
                     return(
                     <a key={index} href="#pdf-link" download={item.file.name} className="btn-secondary text-center">Download {item.title_of_info.text}</a>
                     )
@@ -780,6 +795,12 @@ export const hospitalityPage = graphql`
       }
       description {
         html
+      }
+      customizable_button { 
+        title1
+        link1 {
+          url
+        }
       }
       phase {
         title1 {
