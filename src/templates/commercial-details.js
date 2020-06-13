@@ -388,7 +388,7 @@ class CommercialDetails extends React.Component {
              
           {/* <!--   ------------------- Amenities And Fact Files section start here ------------------- --> */}
           {
-              commercialData.data.amenities.length > 0 ? 
+              commercialData.data.amenities.length && commercialData.data.floor_plans.length ? 
             <section className="amenity-sections container"  id={commercialData.uid}>
               <ul className="nav nav-pills row padding-sm-0" id="factfile-tab" role="tablist">
                 <li className="nav-item col-6 p-0">
@@ -552,7 +552,7 @@ class CommercialDetails extends React.Component {
             }
 
             {
-              !commercialData.data.amenities.length > 0 ?
+              !commercialData.data.amenities.length &&  commercialData.data.floor_plans.length ?
               <section className="amenity-sections container">
               <div className="slider-page d-none d-sm-block floor-plan">
                   <div className="section-title-wrap d-flex flex-column align-items-center">
@@ -662,6 +662,67 @@ class CommercialDetails extends React.Component {
                 </div>
               </section>: null
             }
+             {
+               !commercialData.data.floor_plans.length && commercialData.data.amenities.length > 0 ?
+               <section className="slider-page site-progress-wrap mb-4">
+               <h2 className="section-title text-uppercase text-center">
+               {commercialData.data.amenities1.text}
+                </h2>
+                  <div className="tab-pane fade show active" id="amenities" role="tabpanel" aria-labelledby="pills-amenities-tab">
+                    <div className="container p-0">
+                      <div className="amenities-inner-wrapper d-flex">
+                        <div className="amenities-icon-wrapper">
+                          <div className="d-flex flex-wrap amenities" id="myTab" role="tablist">
+                          {
+                  commercialData.data.amenities.length > 0 ?
+                  <div className="tab-pane fade show active" id="amenities" role="tabpanel" aria-labelledby="pills-amenities-tab">
+                    <div className="container p-0">
+                      <div className="amenities-inner-wrapper d-flex">
+                        <div className="amenities-icon-wrapper">
+                          <div className="d-flex flex-wrap amenities" id="myTab" role="tablist">
+                            {
+                              commercialData.data.amenities.map((item, index) => {
+                                return(
+                                  item.image1.url ?
+                                    <button key={index} className={`d-flex align-items-center justify-content-start text-center text-md-left ${this.state.imageUrl===item.image1.url || !index && !this.state.imageUrl ? 'active': ''}`} onClick={() => this.setState({imageUrl:  item.image1.url})} >
+                                      <span className="amenities-icon-wrap">
+                                       <img className="amenities-icon" src={item.icon_image.url} />
+                                        {/* <i className={item.icon}></i> */}
+                                        </span>
+                                      <span className="amenities-icon-description"><span>{item.title1.text}</span></span>
+                                    </button>: null
+                                )
+                              })
+                            }
+                          </div>
+                          <div className="d-flex"></div>
+                        </div>
+                        <div className="image-wrapper">
+                          {
+                            this.state.imageUrl ?
+                          <img src={this.state.imageUrl} alt={commercialData.data.title.text} className="w-100 h-100"/>
+                          :<img src={commercialData.data.amenities[0].image1.url} alt={commercialData.data.title.text} className="w-100 h-100"/>
+                          }
+                        </div>
+                      </div>
+                    </div>
+                  </div>: null
+                }
+                          </div>
+                          <div className="d-flex"></div>
+                        </div>
+                        <div className="image-wrapper">
+                          {
+                            this.state.imageUrl ?
+                          <img src={this.state.imageUrl} alt={commercialData.data.title.text} className="w-100 h-100"/>
+                          :<img src={commercialData.data.amenities[0].image1.url} alt={commercialData.data.title.text} className="w-100 h-100"/>
+                          }
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </section>: null
+            }
             {/* <!--   ------------------- Amenity And Fact Files section end here ------------------- --> */}
 
         {/* <!--   ------------------- Site-progress section start here ------------------- --> */}
@@ -713,6 +774,7 @@ class CommercialDetails extends React.Component {
               </div>
             </section>: null
             }
+            
             {/* <!--   ------------------- progress section end here ------------------- --> */}
 
            {/* <!--   ------------------- Download Brouchure section start here ------------------- --> */}

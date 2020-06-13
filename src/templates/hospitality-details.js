@@ -636,7 +636,7 @@ class HospitalityDetails extends React.Component {
               </section>: null
             }
             {
-               hospitalityData.data.amenities && hospitalityData.data.amenities.length > 0 ?
+               hospitalityData.data.amenities.length && !hospitalityData.data.amenities.length  ?
                <section className="slider-page site-progress-wrap mb-4">
                <h2 className="section-title text-uppercase text-center">
                {hospitalityData.data.amenities1.text}

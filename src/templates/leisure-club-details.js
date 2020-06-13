@@ -362,7 +362,7 @@ class LeisureDetails extends React.Component {
              
           {/* <!--   ------------------- Amenities And Fact Files section start here ------------------- --> */}
             {
-              leisureData.data.amenities.length > 0 ? 
+              leisureData.data.amenities.length && leisureData.data.floor_plans ? 
             <section className="amenity-sections container"  id={leisureData.uid}>
               <ul className="nav nav-pills row padding-sm-0" id="factfile-tab" role="tablist">
                 <li className="nav-item col-6 p-0">
@@ -378,7 +378,7 @@ class LeisureDetails extends React.Component {
               </ul>
               <div className="tab-content" id="factfiles-tabContent">
                 {
-                  leisureData.data.amenities.length > 0 ?
+                  leisureData.data.amenities.length  ?
                   <div className="tab-pane fade show active" id="amenities" role="tabpanel" aria-labelledby="pills-amenities-tab">
                     <div className="container p-0">
                       <div className="amenities-inner-wrapper d-flex">
@@ -414,7 +414,7 @@ class LeisureDetails extends React.Component {
                 }
                 
                 {
-                  leisureData.data.floor_plans ?
+                  leisureData.data.floor_plans.length ?
                 <div className="tab-pane fade floor-plan" id="fact-file" role="tabpanel" aria-labelledby="pills-factfile-tab">
                   <div className="slider-page">
                     <div className="container">
@@ -527,7 +527,7 @@ class LeisureDetails extends React.Component {
             }
 
             {
-              !leisureData.data.amenities.length > 0 ?
+              leisureData.data.floor_plans.length && !leisureData.data.amenities.length > 0 ?
               <section className="amenity-sections container">
               <div className="slider-page d-none d-sm-block floor-plan">
                   <div className="section-title-wrap d-flex flex-column align-items-center">
@@ -637,6 +637,48 @@ class LeisureDetails extends React.Component {
                 </div>
               </section>: null
             }
+            {
+            leisureData.data.amenities.length && !leisureData.data.floor_plans.length  ?
+               <section className="slider-page site-progress-wrap mb-0">
+               <h2 className="section-title text-uppercase text-center">
+               {leisureData.data.amenities1.text}
+               </h2>
+                  <div className="tab-pane fade show active" id="amenities" role="tabpanel" aria-labelledby="pills-amenities-tab">
+                    <div className="container p-0">
+                      <div className="amenities-inner-wrapper d-flex">
+                        <div className="amenities-icon-wrapper">
+                          <div className="d-flex flex-wrap amenities" id="myTab" role="tablist">
+                            {
+                              leisureData.data.amenities.map((item, index) => {
+                                return(
+                                  item.image1.url ?
+                                    <button key={index} className={`d-flex align-items-center justify-content-start text-center text-md-left ${this.state.imageUrl===item.image1.url || !index && !this.state.imageUrl ? 'active': ''}`} onClick={() => this.setState({imageUrl:  item.image1.url})} >
+                                      <span className="amenities-icon-wrap">
+                                        <img className="amenities-icon" src={item.icon_image.url} />
+                                        {/* <i className={item.icon}></i> */}
+                                        </span>
+                                      <span className="amenities-icon-description"><span>{item.title1.text}</span></span>
+                                    </button>: null
+                                )
+                              })
+                            }
+                          </div>
+                          <div className="d-flex"></div>
+                        </div>
+                        <div className="image-wrapper">
+                          {
+                            this.state.imageUrl ?
+                          <img src={this.state.imageUrl} alt={leisureData.data.title.text} className="w-100 h-100"/>
+                          :<img src={leisureData.data.amenities[0].image1.url} alt={leisureData.data.title.text} className="w-100 h-100"/>
+                          }
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+               </section>: null
+    
+            }
+           
 
             {/* <!--   ------------------- Amenity And Fact Files section end here ------------------- --> */}
 
