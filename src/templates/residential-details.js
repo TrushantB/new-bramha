@@ -262,6 +262,21 @@ class VerticalPage extends React.Component {
                     </nav>
                   </div>
                 </div>
+
+               {/* ...................Customizable Button.................. */}
+                {
+                  verticalData.data.customizable_button.length ?
+                  <div className="container detail-page-sections d-flex justify-content-center download-btn">
+                    {
+                      verticalData.data.customizable_button.map((item, index) => {
+                        return(
+                        <a key={index} href={item.link1.url}  target="_blank" className="btn-secondary text-center">{item.title1}</a>
+                        )
+                      })
+                    }
+                  </div> : null
+                }
+                
               <div className="padding-block-60 page-heading-section">
                   <div className="col-12 padding-sm-0">
                       <h2 className="page-heading text-uppercase">
@@ -757,6 +772,12 @@ export const verticalViewData = graphql`
       }
       description {
         html
+      }
+      customizable_button { 
+        title1
+        link1 {
+          url
+        }
       }
       phase {
         title1 {

@@ -235,6 +235,19 @@ class HospitalityDetails extends React.Component {
                   </nav>
                 </div>
               </div>
+              {/* ...................Customizable Button.................. */}
+              {
+                  hospitalityData.data.customizable_button.length ?
+                  <div className="container detail-page-sections d-flex justify-content-center download-btn">
+                    {
+                      hospitalityData.data.customizable_button.map((item, index) => {
+                        return(
+                        <a key={index} href={item.link1.url}  target="_blank" className="btn-secondary text-center">{item.title1}</a>
+                        )
+                      })
+                    }
+                  </div> : null
+                }
               <div className="padding-block-60">
                 <h2 className="page-heading text-uppercase">
                   {hospitalityData.data.heading.text}
@@ -735,6 +748,12 @@ export const hospitalityPage = graphql`
       }
       description {
         html
+      }
+      customizable_button { 
+        title1
+        link1 {
+          url
+        }
       }
       phase {
         title1 {
