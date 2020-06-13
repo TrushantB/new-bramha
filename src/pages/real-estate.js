@@ -11,16 +11,18 @@ class RealEstate extends React.Component {
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title={realEstateData.title.text}/>
-          <div className="page-heading-section container container-sm-fluid bg-color">
-          <div className="padding-block-60">
-            <h2 className="page-heading">{realEstateData.title.text}</h2>
-          </div>
-            <div className="row ">
-              <div className="col-lg-6">
-                <div dangerouslySetInnerHTML={{__html: realEstateData.description.html}} />
-              </div>
-              <div className="col-lg-6"> 
-              <img src={realEstateData.banner.url} className="w-100 h-100"/>
+          <div className='mb-5 '>
+            <div className="page-heading-section container container-sm-fluid bg-color">
+            <div className="padding-block-60">
+              <h2 className="page-heading">{realEstateData.title.text}</h2>
+            </div>
+              <div className="row ">
+                <div className="col-lg-6">
+                  <div dangerouslySetInnerHTML={{__html: realEstateData.description.html}} />
+                </div>
+                <div className="col-lg-6"> 
+                <img src={realEstateData.banner.url} className="w-100 h-100"/>
+                </div>
               </div>
             </div>
           </div>
