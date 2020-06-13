@@ -265,12 +265,10 @@ class VerticalPage extends React.Component {
 
                {/* ...................Customizable Button.................. */}
                 {
-                  console.log('verticalData.data.customizable_button', verticalData.data.customizable_button),
-                  
-                  verticalData.data.customizable_button && verticalData.data.customizable_button.length > 0 ?
+                  verticalData.data.customizable_button > 0 && verticalData.data.customizable_button ?
                   <div className="container detail-page-sections d-flex justify-content-center download-btn">
                     {
-                      verticalData.data.customizable_button && verticalData.data.customizable_button.map((item, index) => {
+                      verticalData.data.customizable_button > 0 && verticalData.data.customizable_button.map((item, index) => {
                         return(
                         <a key={index} href={item.link1.url}  target="_blank" className="btn-secondary text-center">{item.title1}</a>
                         )

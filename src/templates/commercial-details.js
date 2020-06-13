@@ -263,10 +263,10 @@ class CommercialDetails extends React.Component {
               </div>
               {/* ...................Customizable Button.................. */}
               {
-                 commercialData.data.customizable_button && commercialData.data.customizable_button.length > 0 ?
+                 commercialData.data.customizable_button > 0 && commercialData.data.customizable_button ?
                   <div className="container detail-page-sections d-flex justify-content-center download-btn">
                     {
-                      commercialData.data.customizable_button && commercialData.data.customizable_button.map((item, index) => {
+                      commercialData.data.customizable_button > 0 && commercialData.data.customizable_button.map((item, index) => {
                         return(
                         <a key={index} href={item.link1.url}  target="_blank" className="btn-secondary text-center">{item.title1}</a>
                         )
