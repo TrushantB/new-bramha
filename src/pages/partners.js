@@ -242,11 +242,11 @@ class Partners extends React.Component {
                         <input type="hidden" id="utmMedium" name="utmMedium" value={this.state.utmMedium} />
                         <input type="hidden" id="utmCampaign" name="utmCampaign" value={this.state.utmCampaign} />
                         <div className="col-sm-6 form-group  ">
-                            <input type="text" className="form-control" id="name" placeholder="Individual Name*" name="name" autoComplete="false" required/>
+                            <input type="text" className="form-control" id="name" placeholder="Individual Name*" name="name" autoComplete="off" required/>
                         </div>
 
                         <div className="col-sm-6 form-group  ">
-                            <input type="text" className="form-control" id="email" placeholder="Your Email*" autoComplete="false" name="email" required/>
+                            <input  type="text" className="form-control" id="email" placeholder="Your Email*" autoComplete="off" name="email" required/>
                         </div>
                         <div className="col-sm-6 form-group  ">
                           <PhoneInput className="form-control" id="phoneNumber" maxLength="15" placeholder="Your Phone Number*" name="phone-number" required

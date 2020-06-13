@@ -756,12 +756,12 @@ class CommercialDetails extends React.Component {
                           <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" required/>
                         </div>
                         <div className="col-sm-6 form-group  ">
-                          <PhoneInput className="form-control" id="phoneNumber"  placeholder="Your Phone Number*" maxLength="15" name="phone-number" required
+                          <PhoneInput className="form-control" id="phoneNumber"  placeholder="Your Phone Number*" autoComplete="off" maxLength="15" name="phone-number" required
                             value={this.state.value}
                             onChange={(e) => this.setState({value:e})}/>
                           </div>
                         <div className="col-sm-6 form-group  ">
-                          <input type="text" className="form-control" id="email" placeholder="Your Email*" name="email" required/>
+                          <input type="text" className="form-control" id="email" placeholder="Your Email*" autoComplete="off" name="email" required/>
                         </div>
                         <div className="col-sm-6 form-group  ">
                           <input type="" className="form-control" id="city" placeholder="City" name="city" required/>
