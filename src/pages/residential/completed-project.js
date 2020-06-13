@@ -4,6 +4,8 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../../components/layout';
 import SEO from '../../components/seo';
 import { navigate } from "gatsby"
+import PhoneInput from 'react-phone-number-input';
+import * as firebase from 'firebase';
 
 export default class Residential extends React.Component {
   constructor() {
@@ -113,6 +115,23 @@ export default class Residential extends React.Component {
     this.setState({ allAddress });
   }
 
+  submitCustomer = (e) => {
+    e.preventDefault();
+    firebase
+      .database()
+      .ref("Residential Project")
+      .push()
+      .set({
+        name: e.target.name.value,
+        email: e.target.email.value,
+        phoneNumber: e.target.phoneNumber.value,
+        city: e.target.city.value,
+        message: e.target.message.value,
+        projectName: e.target.projectName.value
+      })
+      this.setState({ value: '+91'});
+      document.querySelector('.formReset').reset();
+  }
   render() {
     let settings = {
       className: "project-carousel",
@@ -271,8 +290,58 @@ export default class Residential extends React.Component {
                 {lookingForMe.looking_for_more.text}
               </p>
               <div className="sumbit text-center mt-sm-0 mt-4">
-                <button type="submit" className="btn-secondary">Give Details</button>
+                <button type="submit" className="btn-secondary" data-toggle="modal" data-target="#exampleModalCenter">Give Details</button>
               </div>
+               {/* ------------- Modal ----------------- */}  
+            
+            <div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div className="modal-dialog modal-dialog-centered" role="document">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h5 className="modal-title section-title text-center w-100 f-s-20"  id="exampleModalLongTitle">Give Details</h5>
+                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div className="modal-body">
+                  <form className="formReset" onSubmit={(e) => this.submitCustomer(e)}>
+                    <div className="container">
+                      <div className="form-row">
+                      <input type="hidden" name="form-name" value="career" />
+                      <input type="hidden" id="projectName" name="form-name" value='Completed residential Customer' />
+                        <div className="col-sm-6 form-group">
+                            <input type="text" className="form-control rounded-0" id="name" placeholder="Your Name*" name="name" autoComplete="false" required/>
+                        </div>
+                        <div className="col-sm-6 form-group">
+                            <input type="text" className="form-control rounded-0" id="email" placeholder="Your Email*" autoComplete="false" name="email" required/>
+                        </div>
+                        <div className="col-sm-6 form-group">
+                          <PhoneInput className="form-control h-38" id="phoneNumber" maxLength="15" placeholder="Your Phone Number*" name="phone-number" required
+                            value={this.state.value}
+                            onChange={(e) => this.setState({value:e})}
+                          />
+                        </div>
+                        <div className="col-sm-6 form-group">
+                           <input type="text" className="form-control  rounded-0" id="city" placeholder="City" name="city" required/>
+                        </div>
+                        <div className="col-sm-12 form-group">
+                          <textarea className="form-control" rows="4" id="message" placeholder="Message" name="message" required></textarea>
+                        </div>
+                      </div>
+                      <div className="sumbit text-center mt-sm-0 mt-4">
+                        <button type="submit" className="btn-secondary ">
+                          <a href="/thank-you" className="btn-secondary-text">
+                            Submit
+                          </a>
+                        </button>
+                      </div>
+                    </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             </div>
           </section>
         </section>
