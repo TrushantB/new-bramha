@@ -11,8 +11,8 @@ import queryString from 'query-string';
 import * as firebase from 'firebase';
 import Slider from "react-slick";
 import Lightbox from 'react-image-lightbox';
-class Partners extends React.Component {
 
+class Partners extends React.Component {
   state = {
     styleData: { height: 20, overflow: 'hidden' },
     value: "+91 ",
@@ -43,7 +43,7 @@ class Partners extends React.Component {
     });
   }
 
-  submitPartner = (e) => {
+  submitChannelPartner = (e) => {
     e.preventDefault();
     firebase
       .database()
@@ -53,17 +53,14 @@ class Partners extends React.Component {
         name: e.target.name.value,
         email: e.target.email.value,
         phoneNumber: e.target.phoneNumber.value,
-        budget: e.target.budget.value,
-        city: e.target.city.value,
-        source: e.target.source.value,
+        rera: e.target.rera.value,
         message: e.target.message.value,
-        // projectName: e.target.projectName.value,
         utmSource: e.target.utmSource.value,
         utmCampaign: e.target.utmCampaign.value,
         utmMedium: e.target.utmMedium.value
       })
-    this.setState({ value: '+91' });
-    document.querySelector('.channelPartner').reset();
+      this.setState({ value: '+91'});
+      document.querySelector('.contactChannel').reset();
   }
 
   render() {
@@ -187,8 +184,6 @@ class Partners extends React.Component {
                 <Slider {...settings}>
                   {
                     partnersData.events.map((item, value) => {
-                      console.log(item);
-
                       return (
                         <div key={value}>
                           <div role="link" tabIndex="0" className="slider-img image-ratio" onClick={() => this.setState({ isOpen: true, photoIndex: value })}>
@@ -238,62 +233,40 @@ class Partners extends React.Component {
                 <span className="d-block text-left text-sm-center">Let us help you in making up your mind.</span>
               </p>
 
-              <form className="channelPartner" onSubmit={(e) => this.submitPartner(e)} name="channel partner" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
-                <div className="contact-form-bg pt-4 pb-4 pt-sm-5 pb-sm-5">
-                  <div className="container">
-                    <div className="form-row">
-                      {/* <input type="hidden" id="projectName" name="form-name" value='Channel Partner' /> */}
-                      <input type="hidden" id="utmSource" name="utmSource" value={this.state.utmSource} />
-                      <input type="hidden" id="utmMedium" name="utmMedium" value={this.state.utmMedium} />
-                      <input type="hidden" id="utmCampaign" name="utmCampaign" value={this.state.utmCampaign} />
-                      <div className="col-sm-6 form-group  ">
-                        <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" required />
+              <form className="contactChannel" onSubmit={(e) => this.submitChannelPartner(e)} name="channel" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+                  <div className="contact-form-bg pt-4 pb-4 pt-sm-5 pb-sm-5" id="channel">
+                    <div className="container">
+                      <div className="form-row">
+                        <input type="hidden" name="form-name" value="channel" />
+                        <input type="hidden" id="utmSource" name="utmSource" value={this.state.utmSource} />
+                        <input type="hidden" id="utmMedium" name="utmMedium" value={this.state.utmMedium} />
+                        <input type="hidden" id="utmCampaign" name="utmCampaign" value={this.state.utmCampaign} />
+                        <div className="col-sm-6 form-group  ">
+                            <input type="text" className="form-control" id="name" placeholder="Individual Name*" name="name" autoComplete="false" required/>
+                        </div>
+
+                        <div className="col-sm-6 form-group  ">
+                            <input type="text" className="form-control" id="email" placeholder="Your Email*" autoComplete="false" name="email" required/>
+                        </div>
+                        <div className="col-sm-6 form-group  ">
+                          <PhoneInput className="form-control" id="phoneNumber" maxLength="15" placeholder="Your Phone Number*" name="phone-number" required
+                            value={this.state.value}
+                            onChange={(e) => this.setState({value:e})}
+                          />
+                        </div>
+                        <div className="col-sm-6 form-group  ">
+                            <input type="text" className="form-control" id="rera" placeholder="RERA Registration Number" name="" required/>
+                        </div>
+
+                        <div className="form-group col-md-12">
+                          <textarea className="form-control" rows="4" id="message" placeholder="Message" name="message" required></textarea>
+                        </div>
                       </div>
-                      <div className="col-sm-6 form-group  ">
-                        <PhoneInput className="form-control" id="phoneNumber" placeholder="Your Phone Number*" maxLength="15" name="phone-number" required
-                          value={this.state.value}
-                          onChange={(e) => this.setState({ value: e })} />
+                      <div className="sumbit text-center mt-sm-0 mt-4">
+                        <button type="submit" className="btn-secondary">Submit</button>
                       </div>
-                      <div className="col-sm-6 form-group  ">
-                        <input type="text" className="form-control" id="email" placeholder="Your Email*" name="email" required />
-                      </div>
-                      <div className="col-sm-6 form-group  ">
-                        <input type="" className="form-control" id="city" placeholder="City" name="city" required />
-                      </div>
-                      <div className="col-sm-6 form-group  ">
-                        <select defaultValue="" className="form-control rounded-0" id="budget" name="budget" required >
-                          <option value="" disabled>Budget</option>
-                          <option >50 Lakh</option>
-                          <option>50-80 Lakh</option>
-                          <option> 80 Lakh-1Crore</option>
-                          <option>1 Crore</option>
-                        </select>
-                      </div>
-                      <div className="col-sm-6 form-group ">
-                        <select defaultValue="" className="form-control rounded-0" id="source" placeholder="source" name="source" required >
-                          <option value="" disabled >source</option>
-                          <option>Newspaper</option>
-                          <option>Hoarding</option>
-                          <option>Email</option>
-                          <option>SMS</option>
-                          <option>Google</option>
-                          <option>Facebook</option>
-                          <option>Cinema Ad</option>
-                          <option>Broker</option>
-                          <option>Property Portal</option>
-                          <option>Word of Mouth</option>
-                          <option>Others</option>
-                        </select>
-                      </div>
-                      <div className="form-group col-md-12">
-                        <textarea className="form-control" rows="4" id="message" placeholder="Message" name="message" required></textarea>
-                      </div>
-                    </div>
-                    <div className="sumbit text-center mt-sm-0 mt-4">
-                      <button type="submit" className="btn-secondary btn">Submit</button>
                     </div>
                   </div>
-                </div>
               </form>
             </div>
           </section>
