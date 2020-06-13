@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import Footer from '../components/footer';
 import Img from 'gatsby-image';
 import Slider from 'react-slick';
 import Lightbox from 'react-image-lightbox';
@@ -699,7 +698,6 @@ class LeisureDetails extends React.Component {
             </div>
           {/* <!-- ------------------- Download Brouchure section end here ------------------- --> */}
           </main>
-        <Footer />
       </Layout>
     )
   }

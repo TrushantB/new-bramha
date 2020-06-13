@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from '../components/layout';
-import Footer from '../components/footer';
 import SEO from "../components/seo";
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
@@ -30,7 +29,6 @@ class AboutLoan extends React.Component {
               </div>
             </div>
           </div>
-        <Footer/>
       </Layout>
     )
   } 

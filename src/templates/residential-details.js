@@ -4,7 +4,6 @@ import 'lazysizes';
 import Img from 'gatsby-image';
 import Slider from 'react-slick';
 import Layout from '../components/layout';
-import Footer from '../components/footer';
 import SEO from '../components/seo';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
@@ -385,119 +384,6 @@ class VerticalPage extends React.Component {
                   </div>
               </div>
             </section>
-            {/* <!--   ------------------- Proximities section end here ------------------- --> */}
-            {/* <!--   ------------------- Floor Plan section start here ------------------- --> */}
-            {/* <div className="slider-page d-none d-sm-block floor-plan">
-                <div className="section-title-wrap d-flex flex-column align-items-center">
-                  <h2 className="section-title text-uppercase text-center">
-                      {verticalData.data.floor_plans1.text}
-                  </h2>
-                </div>
-                <div className="slider-wrapper-gray">
-                <div className="container">
-                  <div className="section-title-wrap d-flex flex-column align-items-center">
-                    <label className="wrap">
-                      <select className="border-0 layout-select" onChange={(e)=> {
-                        let floor = verticalData.data.floor_plans.filter(value => value.title1.text === e.target.value)
-                        this.setState({floorPlanSelect: floor})
-                        if(e.target.value === "allLayout"){
-                          this.setState({floorPlanSelect: verticalData.data.floor_plans})
-                        }
-                      }}>
-                        <option value="allLayout"> All Layout </option>
-                        {
-                          verticalData.data.floor_plans.map((data, index) => {
-                            return(
-                              <option value={data.title1.text} key={index}>{data.title1.text}</option>
-                            )
-                          })
-                        }
-                      </select>
-                    </label>
-                  </div>
-                  <div className="showcase-slider">
-                    {
-                      this.state.floorPlanSelect && this.state.floorPlanSelect.length == 1 ?
-                      <div>
-                        {
-                        this.state.floorPlanSelect && this.state.floorPlanSelect.map((item,value) => {
-                          return(
-                            <div key={value}>
-                              <div className="slider-img" onClick={() => this.setState({ isOpenOneSlide: true ,photoIndex:value})}>
-                                <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt="Floor Plans" className="w-100 h-100" />
-                              </div>
-                            </div>
-                          )
-                        })}
-                            {
-                      isOpenOneSlide && verticalData.data.floor_plans &&
-                      <Lightbox
-                        mainSrc={verticalData.data.floor_plans[photoIndex].image1.localFile.childImageSharp.fluid.src}
-                        onCloseRequest={() => this.setState({ isOpenOneSlide: false })}
-                        // onMovePrevRequest={() =>
-                        //   this.setState({
-                        //     photoIndex: (photoIndex + verticalData.data.floor_plans.length - 1) % verticalData.data.floor_plans.length,
-                        //   })
-                        // }
-                        // onMoveNextRequest={() =>
-                        //   this.setState({
-                        //     photoIndex: (photoIndex + 1) % verticalData.data.floor_plans.length,
-                        //   })
-                        // }
-                      animationDuration={800}
-
-                      />
-                    }
-                        </div>:
-                        <Slider {...floorPlan}>
-                          {
-                            this.state.floorPlanSelect.length > 0 && this.state.floorPlanSelect.map((item,value) => {
-                              return(
-                                <div key={value}>
-                                  <div className="slider-img " onClick={() => this.setState({ isOpenTwo: true ,photoIndex:value})}>
-                                    <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt="Floor Plans" className="w-100 h-100" />
-                                  </div>
-                                </div>
-                              )
-                            })
-                          }
-                        </Slider>
-                    }
-
-                    {
-                      isOpenTwo &&
-                      <Lightbox
-                        mainSrc={verticalData.data.floor_plans[photoIndex].image1.localFile.childImageSharp.fluid.src}
-                        nextSrc={verticalData.data.floor_plans[(photoIndex + 1) % verticalData.data.floor_plans.length].image1.localFile.childImageSharp.fluid.src}
-                        prevSrc={verticalData.data.floor_plans[(photoIndex + verticalData.data.floor_plans.length - 1) % verticalData.data.floor_plans.length].image1.localFile.childImageSharp.fluid.src}
-                        onCloseRequest={() => this.setState({ isOpenTwo: false })}
-                        onMovePrevRequest={() =>
-                          this.setState({
-                            photoIndex: (photoIndex + verticalData.data.floor_plans.length - 1) % verticalData.data.floor_plans.length,
-                          })
-                        }
-                        onMoveNextRequest={() =>
-                          this.setState({
-                            photoIndex: (photoIndex + 1) % verticalData.data.floor_plans.length,
-                          })
-                        }
-                      animationDuration={800}
-
-                      />
-                    }
-
-                    {
-                    this.state.floorPlanSelect.length !==1 &&
-                      <p className=" text-left text-sm-center pages mb-0">
-                      {this.state.floorPlanActive + 1} of {verticalData.data.floor_plans.length}
-                    </p>
-                    }
-
-                </div>
-                </div>
-                </div>
-            </div> */}
-            {/* <!--   ------------------- Floor Plan section end here ------------------- --> */}
             {/* <!--   ------------------- Amenities And Fact Files section start here ------------------- --> */}
             <section className="amenity-sections container"  id={verticalData.uid}>
               <ul className="nav nav-pills row padding-sm-0" id="factfile-tab" role="tablist">
@@ -826,7 +712,6 @@ class VerticalPage extends React.Component {
             {/* <!--   ------------------- Maharera section end here ------------------- --> */}
             {/* <!--  -------------------- middle section end here ------------------------> */}
           </main>
-        <Footer/>
       </Layout>
     )
   }

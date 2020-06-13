@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import Layout from '../components/layout';
-import Footer from '../components/footer';
 import SEO from '../components/seo';
 import chevron_down from '../images/chevron_down.svg';
 import Div100vh from 'react-div-100vh/lib/Div100vh';
@@ -107,7 +106,6 @@ class NRI extends React.Component {
             </div>
           </section>
         </div>
-        <Footer />
       </Layout>
     )
   }

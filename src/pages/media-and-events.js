@@ -2,7 +2,6 @@ import React from 'react';
 import Layout from '../components/layout';
 import Slider from "react-slick";
 import { graphql } from 'gatsby';
-import Footer from '../components/footer';
 import SEO from '../components/seo';
 import Img from 'gatsby-image';
 import Lightbox from 'react-image-lightbox';
@@ -144,7 +143,6 @@ class MediaAndEvents extends React.Component {
             })
           }
         </section>
-        <Footer/>
       </Layout>
     )
   }

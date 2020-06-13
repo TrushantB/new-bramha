@@ -3,7 +3,6 @@ import Layout from '../components/layout';
 import { graphql } from 'gatsby';
 import Slider from "react-slick";
 import Img from "gatsby-image";
-import Footer from '../components/footer';
 import SEO from '../components/seo';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
@@ -350,7 +349,6 @@ class Careers extends React.Component {
             <label htmlFor="choose-file" className="btn-secondary">Upload your CV</label>
           </section>
         </div>
-        <Footer />
       </Layout>
     )
   }

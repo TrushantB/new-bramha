@@ -5,7 +5,6 @@ import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import chevron_down from '../images/chevron_down.svg';
 import Div100vh from 'react-div-100vh/lib/Div100vh';
-import Footer from '../components/footer';
 import '../firebase/config';
 import PhoneInput from 'react-phone-number-input';
 import queryString from 'query-string';
@@ -300,7 +299,6 @@ class Partners extends React.Component {
           </section>
           {/* <!--   ------------------- Enquiry section end here ------------------- --> */}
         </main>
-        <Footer />
       </Layout>
     )
   }

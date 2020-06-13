@@ -4,7 +4,6 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import chevron_down from '../images/chevron_down.svg';
 import Div100vh from 'react-div-100vh/lib/Div100vh';
-import Footer from '../components/footer';
 
 export default class BlogPost extends React.Component {
     
@@ -54,7 +53,6 @@ export default class BlogPost extends React.Component {
                         </div>
                     </section>
                 </main>
-            <Footer/>
             </Layout>
         )
     }

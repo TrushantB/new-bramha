@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import Layout from '../components/layout';
-import Footer from '../components/footer';
 import SEO from '../components/seo';
 
 class Hospitality extends React.Component {
@@ -132,8 +131,6 @@ class Hospitality extends React.Component {
             </div>
           </section>
         </section>
-
-        <Footer />
       </Layout>
     )
   }

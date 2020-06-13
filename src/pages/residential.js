@@ -2,7 +2,6 @@ import React from 'react';
 import Slider from "react-slick";
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/layout';
-import Footer from '../components/footer';
 import SEO from '../components/seo';
 import { navigate } from "gatsby"
 
@@ -312,7 +311,6 @@ export default class Residential extends React.Component {
             </div>
           </section>
         </section>
-        <Footer />
       </Layout>
     )
   }

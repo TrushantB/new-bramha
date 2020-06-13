@@ -1,7 +1,6 @@
 import React from 'react';
-import Layout from '../components/layout';
-import Footer from '../components/footer';
 import SEO from "../components/seo";
+import Layout from '../components/layout'
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
@@ -25,7 +24,6 @@ class SiteMap extends React.Component {
               </div>
             </div>
           </div>
-        <Footer/>
       </Layout>
     )
   } 
