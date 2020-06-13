@@ -47,12 +47,20 @@
         &:before{
             transform: scaleY(1);
         }
+        .btn-secondary-text{
+            color:theme-color("tertiary");   
+            text-decoration: none;
+        }
     }
     &:active ,&:focus{
         background:theme-color("tertiary")!important;
         border-color:theme-color("tertiary")!important;
         color:#fff!important; 
         box-shadow: none!important;
+    }
+    .btn-secondary-text{
+        color:#fff ;
+        font-size: 14px;
     }
 }
 .btn-tertiary{

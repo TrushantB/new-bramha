@@ -157,15 +157,15 @@
       }
     }
     .amenities-icon-description {
-      flex-basis: 75%;
-      margin-left: 10%;
+      // flex-basis: 75%;
+      margin-left: 15%;
       font-size: 14px;
       font-family: Graphik;
       font-weight: normal;
       font-stretch: normal;
       font-style: normal;
       line-height: 1.71;
-      letter-spacing: -0.31px;
+      letter-spacing: 0;
       color: rgba(00, 00, 00, 0.5);
     }
     &:last-child {
@@ -608,6 +608,9 @@
   .amenities-inner-wrapper {
     width: 900px;
     margin-bottom: 12px;
+    .amenities-icon-wrapper{
+      flex: 2 1;
+    }
   }
 }
 @media (max-width: 768px) {
