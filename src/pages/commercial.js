@@ -79,8 +79,8 @@ class Commercial extends React.Component {
             </div>
           </div>
         </section>
-        <section className="residential-projects">
-          <div className="residences">
+        <section className="residential-projects commercial">
+          <div className="residences commercial-project">
             <div className="container">
               <div className="row">
                 {
