@@ -9,9 +9,11 @@ import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 import chevron_down from '../images/chevron_down.svg';
 import Div100vh from 'react-div-100vh/lib/Div100vh';
-import FileUploader from "react-firebase-file-uploader";
-import * as firebase from 'firebase';
 import queryString from 'query-string';
+
+import '../firebase/config';
+import * as firebase from 'firebase';
+import FileUploader from "react-firebase-file-uploader";
 
 class Careers extends React.Component {
   constructor() {
