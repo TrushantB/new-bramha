@@ -157,7 +157,7 @@ class Partners extends React.Component {
                 Channel Partner Advantages
               </h2>
             </div>
-            <div className="container">
+            <div className="container mt-5">
               <div className="row">
                 {
                   partnersData.channel_partner_adv.map((item, index) => {
