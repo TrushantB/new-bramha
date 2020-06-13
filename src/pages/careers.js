@@ -3,11 +3,15 @@ import Layout from '../components/layout';
 import { graphql } from 'gatsby';
 import Slider from "react-slick";
 import Img from "gatsby-image";
+import Footer from '../components/footer';
 import SEO from '../components/seo';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 import chevron_down from '../images/chevron_down.svg';
 import Div100vh from 'react-div-100vh/lib/Div100vh';
+import FileUploader from "react-firebase-file-uploader";
+import * as firebase from 'firebase';
+import queryString from 'query-string';
 
 class Careers extends React.Component {
   constructor() {
@@ -21,10 +25,14 @@ class Careers extends React.Component {
       activeButton: null,
       photoIndex: 0,
       isOpen: false,
+      avatar: "",
+      utmSource: null,
+      utmMedium: null,
+      utmCampaign: null,
       jobOpenningButtons: [
         {
           id: 'sales',
-          name: 'Sales'
+          name: 'Sales',
         },
         {
           id: 'human_resources',
@@ -86,6 +94,12 @@ class Careers extends React.Component {
       jobOpening.push(item)
     })
     this.setState({ jobOpening, jobOpeningStore: jobOpening, dataSource: careerData })
+    const queryParams = queryString.parseUrl(this.props.location.search); 
+    this.setState({
+      utmSource: queryParams && queryParams.query.utm_source,
+      utmMedium: queryParams && queryParams.query.utm_medium,
+      utmCampaign: queryParams && queryParams.query.utm_campaign
+    });
   }
 
   handleJobOpening(event) {
@@ -115,6 +129,38 @@ class Careers extends React.Component {
       behavior: 'smooth'
     });
   }
+
+  handleUploadSuccess = filename => {
+    this.setState({ avatar: filename });
+    firebase
+      .storage()
+      .ref("Resume")
+      .child(filename)
+      .getDownloadURL()
+      .then(url => {
+        this.setState({ url: url})
+      });
+  };
+
+  submitCareer = (e) => {
+    e.preventDefault();
+    firebase
+      .database()
+      .ref("Careers")
+      .push()
+      .set({
+        name: e.target.name.value,
+        email: e.target.email.value,
+        applyFor: e.target.applyFor.value,
+        resumeUrl: this.state.url,
+        utmSource: e.target.utmSource.value,
+        utmCampaign: e.target.utmCampaign.value,
+        utmMedium: e.target.utmMedium.value
+      })
+      this.setState({avatar: ''});
+      document.querySelector('.careerResetForm').reset();
+  }
+
   render() {
     const { photoIndex, isOpen } = this.state;
     const careerData = this.props.data.prismicCareers.data;
@@ -248,9 +294,10 @@ class Careers extends React.Component {
                 </form>
                 <div className="career-tabs  d-flex flex-wrap justify-content-between align-content-between">
                   {this.state.jobOpenningButtons.map((item) => {
+                    console.log('item', item);
                     return (
                       <div className="btn-wraper" key={item.id}>
-                        <button onClick={() => this.handleJobOpening(item)} className={`button-tertiary w-100  ${item.class}`}>
+                        <button onClick={() => this.handleJobOpening(item)} className={`button-tertiary w-100  ${item.className}`}>
                           {item.name}
                         </button>
                       </div>
@@ -300,28 +347,48 @@ class Careers extends React.Component {
                                     </button>
                                   </div>
                                   <div className="modal-body">
-                                    <div className="container">
+                                    <form className="careerResetForm" onSubmit={(e) => this.submitCareer(e)}>
+                                      <div className="container">
                                       <div className="form-row">
-                                        <input type="hidden" name="form-name" value="career" />
-                                        <div className="col-sm-6 form-group  ">
+                                        <input type="hidden" name="form-name" value="career"/>
+                                        <input type="hidden" id="applyFor" name="form-name" value={item.position.text} />
+                                        <input type="hidden" id="utmSource" name="utmSource" value={this.state.utmSource} />
+                                        <input type="hidden" id="utmMedium" name="utmMedium" value={this.state.utmMedium} />
+                                        <input type="hidden" id="utmCampaign" name="utmCampaign" value={this.state.utmCampaign} />
+
+                                        <div className="col-sm-6 form-group">
                                           <input type="text" className="form-control rounded-0" id="name" placeholder="Your Name*" name="name" autoComplete="false" required />
                                         </div>
-                                        <div className="col-sm-6 form-group  ">
+                                        <div className="col-sm-6 form-group">
                                           <input type="text" className="form-control rounded-0" id="email" placeholder="Your Email*" autoComplete="false" name="email" required />
                                         </div>
                                         <div className="col-12">
                                           <div className="form-group file-area">
-                                            <input type="file" name="" id="" required="required" multiple="multiple" className="h-100" />
-                                            <div className="file-dummy resume-upload">
+                                            <FileUploader
+                                              id="file"
+                                              className="w-100 resume-upload-input h-100"
+                                              accept="pdf/*"
+                                              name="resume-upload"
+                                              storageRef={firebase.storage().ref("Resume")}
+                                              onUploadSuccess={this.handleUploadSuccess}
+                                            />
+                                          <div className="file-dummy resume-upload">
+                                            {
+                                              this.state.avatar && this.state.avatar ? this.state.avatar:
                                               <div className="default">Resume Upload (PDF/DOC)*</div>
-                                            </div>
+                                            }
                                           </div>
+                                        </div>
+
                                         </div>
                                       </div>
                                       <div className="sumbit text-center mt-sm-0 mt-4">
-                                        <button type="submit" className="btn-secondary ">Submit</button>
+                                        <button type="submit" className="btn-secondary">
+                                            Submit
+                                          </button>
                                       </div>
-                                    </div>
+                                      </div>
+                                    </form>
                                   </div>
                                 </div>
                               </div>
@@ -346,8 +413,66 @@ class Careers extends React.Component {
               <span className="d-block">We will get back to you once suitable position is open</span>
             </p>
             <input type="file" className="border-0 input-file-btn" id="choose-file" placeholder="Upload your CV" />
-            <label htmlFor="choose-file" className="btn-secondary">Upload your CV</label>
+              <label className="btn-secondary"  data-toggle="modal" data-target="#exampleModalCenter" >Upload your CV</label>
           </section>
+       
+          <div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div className="modal-dialog modal-dialog-centered" role="document">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h5 className="modal-title section-title text-center w-100 f-s-20"  id="exampleModalLongTitle">Upload your CV</h5>
+                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div className="modal-body">
+                  <form className="careerResetForm" onSubmit={(e) => this.submitCareer(e)}>
+                    <div className="container">
+                    <div className="form-row">
+                      <input type="hidden" name="form-name" value="career"/>
+                      <input type="hidden" id="applyFor" name="form-name" value="Careers" />
+                      <input type="hidden" id="utmSource" name="utmSource" value={this.state.utmSource} />
+                      <input type="hidden" id="utmMedium" name="utmMedium" value={this.state.utmMedium} />
+                      <input type="hidden" id="utmCampaign" name="utmCampaign" value={this.state.utmCampaign} />
+
+                      <div className="col-sm-6 form-group">
+                        <input type="text" className="form-control rounded-0" id="name" placeholder="Your Name*" name="name" autoComplete="false" required />
+                      </div>
+                      <div className="col-sm-6 form-group">
+                        <input type="text" className="form-control rounded-0" id="email" placeholder="Your Email*" autoComplete="false" name="email" required />
+                      </div>
+                      <div className="col-12">
+                        <div className="form-group file-area">
+                          <FileUploader
+                            id="file"
+                            className="w-100 resume-upload-input h-100"
+                            accept="pdf/*"
+                            name="resume-upload"
+                            storageRef={firebase.storage().ref("Resume")}
+                            onUploadSuccess={this.handleUploadSuccess}
+                          />
+                        <div className="file-dummy resume-upload">
+                          {
+                            this.state.avatar && this.state.avatar ? this.state.avatar:
+                            <div className="default">Resume Upload (PDF/DOC)*</div>
+                          }
+                        </div>
+                      </div>
+
+                      </div>
+                    </div>
+                    <div className="sumbit text-center mt-sm-0 mt-4">
+                      <button type="submit" className="btn-secondary">
+                            Submit
+                        </button>
+                    </div>
+                    </div>
+                  </form>
+
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
       </Layout>
     )
