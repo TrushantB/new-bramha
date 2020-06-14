@@ -196,6 +196,7 @@ class HospitalityDetails extends React.Component {
         }
       ]
     };
+    console.log("hospitalityData.data.amenities.length",hospitalityData.data.amenities.length)
 
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
@@ -388,13 +389,12 @@ class HospitalityDetails extends React.Component {
                     {hospitalityData.data.amenities1.text}
                   </a>
                 </li>
-                
+
                 <li className="nav-item col-6 p-0">
                   <a className="nav-link text-center text-uppercase tab-title" id="pills-factfile-tab" data-toggle="pill" href="#fact-file" role="tab" aria-controls="pills-factfile" aria-selected="false">
                     Floor Plans
                   </a>
                 </li> 
-                }
               </ul>
               <div className="tab-content" id="factfiles-tabContent">
                 {
@@ -406,6 +406,7 @@ class HospitalityDetails extends React.Component {
                           <div className="d-flex flex-wrap amenities" id="myTab" role="tablist">
                             {
                               hospitalityData.data.amenities.map((item, index) => {
+                                console.log(item)
                                 return(
                                   item.image1.url ?
                                     <button key={index} className={`d-flex align-items-center justify-content-start text-center text-md-left ${this.state.imageUrl===item.image1.url || !index && !this.state.imageUrl ? 'active': ''}`} onClick={() => this.setState({imageUrl:  item.image1.url})} >
@@ -651,11 +652,12 @@ class HospitalityDetails extends React.Component {
               </section>: null
             }
             {
-               hospitalityData.data.amenities.length && !hospitalityData.data.amenities.length  ?
+               hospitalityData.data.amenities.length && !hospitalityData.data.floor_plans.length  ?
                <section className="slider-page site-progress-wrap mb-4">
                <h2 className="section-title text-uppercase text-center">
                {hospitalityData.data.amenities1.text}
                </h2>
+               
                   <div className="tab-pane fade show active" id="amenities" role="tabpanel" aria-labelledby="pills-amenities-tab">
                     <div className="container p-0">
                       <div className="amenities-inner-wrapper d-flex">
@@ -663,6 +665,7 @@ class HospitalityDetails extends React.Component {
                           <div className="d-flex flex-wrap amenities" id="myTab" role="tablist">
                             {
                               hospitalityData.data.amenities.map((item, index) => {
+                              
                                 return(
                                   item.image1.url ?
                                     <button key={index} className={`d-flex align-items-center justify-content-start text-center text-md-left ${this.state.imageUrl===item.image1.url || !index && !this.state.imageUrl ? 'active': ''}`} onClick={() => this.setState({imageUrl:  item.image1.url})} >
@@ -887,9 +890,7 @@ export const hospitalityPage = graphql`
         title1{
             text
         }
-        description1{
-          text
-        }
+       
         image1{
           url
         }

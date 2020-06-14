@@ -892,9 +892,7 @@ export const leisurePage = graphql`
         title1 {
             text
         }
-        description1 {
-          text
-        }
+        
         image1{
           url
         }
