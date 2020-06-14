@@ -263,7 +263,7 @@ class VerticalPage extends React.Component {
                   </div>
                 </div>
 
-               {/* ...................Customizable Button.................. */}
+               {/* ...................Customizable Button..................
                 {
                   verticalData.data.customizable_button[0].link1 && verticalData.data.customizable_button[0].link1.url ?
                   <div className="container detail-page-sections d-flex justify-content-center download-btn">
@@ -275,7 +275,7 @@ class VerticalPage extends React.Component {
                       })
                     }
                   </div> : null
-                }
+                } */}
                 
               <div className="padding-block-60 page-heading-section">
                   <div className="col-12 padding-sm-0">

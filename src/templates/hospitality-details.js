@@ -234,7 +234,7 @@ class HospitalityDetails extends React.Component {
                   </nav>
                 </div>
               </div>
-              {/* ...................Customizable Button.................. */}
+              {/* ...................Customizable Button..................
               {
                   hospitalityData.data.customizable_button[0].link1 && hospitalityData.data.customizable_button[0].link1.url ?
                   <div className="container detail-page-sections d-flex justify-content-center download-btn">
@@ -247,7 +247,7 @@ class HospitalityDetails extends React.Component {
                       })
                     }
                   </div> : null
-                }
+                } */}
               <div className="padding-block-60">
                 <h2 className="page-heading text-uppercase">
                   {hospitalityData.data.heading.text}
