@@ -265,9 +265,8 @@ class VerticalPage extends React.Component {
 
                {/* ...................Customizable Button.................. */}
                 {
-                  console.log('verticalData.data.customizable_button', verticalData.data.customizable_button),
                   
-                  verticalData.data.customizable_button && verticalData.data.customizable_button.length > 0 ?
+                  verticalData.data.customizable_button[0].link1 ?
                   <div className="container detail-page-sections d-flex justify-content-center download-btn">
                     {
                       verticalData.data.customizable_button && verticalData.data.customizable_button.map((item, index) => {
@@ -859,9 +858,6 @@ export const verticalViewData = graphql`
       amenities {
         title1 {
             text
-        }
-        description1 {
-          text
         }
         image1{
           url
