@@ -187,8 +187,6 @@ class Contacts extends React.Component {
 
   render(){
     const contactData = this.props.data.prismicCompanyDetails.data;
-    console.log('contactData', contactData.followus);
-    
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title="Contacts"/>

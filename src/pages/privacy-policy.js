@@ -8,7 +8,6 @@ import Img from 'gatsby-image';
 class PrivacyPolicy extends React.Component {
   render(){
     const privacyData = this.props.data.prismicPrivacyPolicy.data;
-    console.log('privacyData', privacyData);
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title={privacyData.title.text} />

@@ -6,7 +6,6 @@ import { graphql, Link } from 'gatsby'
 class CompletedProjects extends React.Component {
   render() {
     const completedData = this.props.data.allPrismicCommercial.edges[0].node.data;
-    console.log('completedData', completedData);
     return (
       <Layout location="/" noHeader="true" pathname={this.props.location.pathname}>
         <SEO title="Completed Projects" />

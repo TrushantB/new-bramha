@@ -265,8 +265,7 @@ class VerticalPage extends React.Component {
 
                {/* ...................Customizable Button.................. */}
                 {
-                  
-                  verticalData.data.customizable_button[0].link1 ?
+                  verticalData.data.customizable_button[0].link1 && verticalData.data.customizable_button[0].link1.url ?
                   <div className="container detail-page-sections d-flex justify-content-center download-btn">
                     {
                       verticalData.data.customizable_button && verticalData.data.customizable_button.map((item, index) => {
@@ -422,8 +421,6 @@ class VerticalPage extends React.Component {
                         <div className="d-flex flex-wrap amenities" id="myTab" role="tablist">
                           {
                             verticalData.data.amenities.map((item, index) => {
-                              console.log('item', item);
-                              
                               return(
                                 <button key={index} className={`d-flex align-items-center justify-content-start text-center text-md-left ${this.state.imageUrl===item.image1.url || !index && !this.state.imageUrl ? 'active': ''}`} onClick={() => this.setState({imageUrl:  item.image1.url})} >
                                   <span className="amenities-icon-wrap">

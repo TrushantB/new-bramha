@@ -196,8 +196,6 @@ class HospitalityDetails extends React.Component {
         }
       ]
     };
-    console.log("hospitalityData.data.amenities.length",hospitalityData.data.amenities.length)
-
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title={hospitalityData.data.title.text} />
@@ -238,11 +236,10 @@ class HospitalityDetails extends React.Component {
               </div>
               {/* ...................Customizable Button.................. */}
               {
-                  hospitalityData.data.customizable_button[0].link1 ?
+                  hospitalityData.data.customizable_button[0].link1 && hospitalityData.data.customizable_button[0].link1.url ?
                   <div className="container detail-page-sections d-flex justify-content-center download-btn">
                     {
                       hospitalityData.data.customizable_button  && hospitalityData.data.customizable_button.map((item, index) => {
-                        console.log('item', item);
                         return(
                             item.link1.url ?
                         <a key={index} href={item.link1.url}  target="_blank" className="btn-secondary text-center">{item.title1}</a>:null
@@ -406,7 +403,6 @@ class HospitalityDetails extends React.Component {
                           <div className="d-flex flex-wrap amenities" id="myTab" role="tablist">
                             {
                               hospitalityData.data.amenities.map((item, index) => {
-                                console.log(item)
                                 return(
                                   item.image1.url ?
                                     <button key={index} className={`d-flex align-items-center justify-content-start text-center text-md-left ${this.state.imageUrl===item.image1.url || !index && !this.state.imageUrl ? 'active': ''}`} onClick={() => this.setState({imageUrl:  item.image1.url})} >

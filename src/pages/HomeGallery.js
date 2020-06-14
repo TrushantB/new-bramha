@@ -10,15 +10,12 @@ function HomeGallery(props) {
     loop: true,
     updateOnWindowResize: true
   }
-  console.log('props', props);
-
   return (
     <div className="bramha-swiper">
       <Swiper getSwiper={props.getSwiper} {...params} activeSlideKey={props.slideKey}>
         {
           (props.verticals && props.verticals.length > 0) && props.verticals.map((item) => {
             return (
-              console.log('item', item.type),
               <div key={item.itemIndex} className="banner-wrapper">
                 {item.type == 'residential' ?
                 <Link to={`/residential/${item.project_url}`}>

@@ -51,7 +51,6 @@ class KnoweldgeHub extends React.Component {
               <div className="row mt-48">
                 {
                   knowledgeData.knowledge_topics.map((item,index) => {
-                    console.log('index', item )
                     return(
                       <div className="col-md-6 px-sm-3" key={index} id={`index${index}`}>
                         {
@@ -71,8 +70,6 @@ class KnoweldgeHub extends React.Component {
                                   <p className='text-overflow'>{item.topics.document[0].data.short_description.text}</p>
                                   <h3 className="inner-section-title  text-center text-sm-center d-block d-sm-none">Important Notices</h3>
                                   <div className="know-more">
-                                    {console.log('item', item.topics.slug)
-                                    }
                                     <Link to={item.topics.slug} className="link-text">
                                       <span className="mr-3">Know More</span>
                                       <i className="fas fa-arrow-right"></i>

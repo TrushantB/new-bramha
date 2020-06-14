@@ -28,7 +28,6 @@ exports.createPages=({graphql,actions}) => {
                     }
                 }
             `).then((result) => {
-              console.log('result', result);
               
         if(result.errors) {
           reject(result.errors);

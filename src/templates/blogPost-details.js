@@ -17,7 +17,6 @@ export default class BlogPost extends React.Component {
 
     render(){
         const blogData = this.props.data.prismicBlog.data
-        console.log('blogData', blogData);
         return(
             <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
                 <SEO title='Blog Post'/>

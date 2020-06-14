@@ -37,8 +37,6 @@ class CommercialDetails extends React.Component {
 
   UNSAFE_componentWillMount() {
     const commercialData = this.props.data.prismicOurVerticalsArticle;
-    console.log(commercialData);
-    
     const queryParams = queryString.parseUrl(this.props.location.search);
     this.setState({
       floorPlanSelect : commercialData.data.floor_plans,
@@ -227,7 +225,6 @@ class CommercialDetails extends React.Component {
         <main className="detail-page commercial-detail-page">
           {/* <!-- ---------------- banner start here ---------------- --> */}
           <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section" id="banner-section">
-          {console.log(commercialData.data.banner[0].image)}
           <picture>
                 {
                   commercialData.data.banner[0].image.mobile &&
@@ -263,7 +260,7 @@ class CommercialDetails extends React.Component {
               </div>
               {/* ...................Customizable Button.................. */}
               {
-                 commercialData.data.customizable_button[0].link1 ?
+                 commercialData.data.customizable_button[0].link1 && commercialData.data.customizable_button[0].link1.url ?
                   <div className="container detail-page-sections d-flex justify-content-center download-btn">
                     {
                       commercialData.data.customizable_button && commercialData.data.customizable_button.map((item, index) => {
@@ -869,8 +866,6 @@ class CommercialDetails extends React.Component {
               <p className="text-left text-sm-center mt-3">
                 {
                   commercialData.data.phase.map((item,value) => {
-                    console.log(item);
-                    
                     return(
                       <span className="d-block" key={value}>
                         ​{item.title1.text} : {item.description1.text}

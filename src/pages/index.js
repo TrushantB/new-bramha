@@ -33,8 +33,6 @@ function IndexPage(props) {
   const verticals = [residential, commercial, hospitality, leisure];
   const reducedVerticals = verticals.reduce((a, b) => [...a, ...b], []);
   const followusData = props.data.prismicCompanyDetails.data.followus.map((item, index) => ({ ...item}));
-  console.log(followusData);
-
   const goNext = () => {
     if (swiper !== null) {
       swiper.slideNext();
