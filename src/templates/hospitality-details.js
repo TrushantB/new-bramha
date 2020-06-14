@@ -692,7 +692,7 @@ class HospitalityDetails extends React.Component {
                     </div>
                   </div>
                   </section>: null
-                }
+            }
 
             {/* <!--   ------------------- Amenity And Fact Files section end here ------------------- --> */}
 

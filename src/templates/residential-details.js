@@ -80,7 +80,6 @@ class VerticalPage extends React.Component {
   render(){
     const { photoIndex, isOpenOne ,isOpenTwo,isOpenThree,isOpenOneSlide} = this.state;
     const verticalData = this.props.data.prismicOurVerticalsArticle;
-
     let showCase = {
       photoIndex: 0,
       isOpen: false,
@@ -401,7 +400,7 @@ class VerticalPage extends React.Component {
             </section>
             {/* <!--   ------------------- Amenities And Fact Files section start here ------------------- --> */}
             
-            { verticalData.data.amenities.length && this.state.floorPlanSelect.length &&
+            { verticalData.data.amenities.length && verticalData.data.floor_plans.length &&
               <section className="amenity-sections container"  id={verticalData.uid}>
               <ul className="nav nav-pills row padding-sm-0" id="factfile-tab" role="tablist">
                 <li className="nav-item col-6 p-0">
@@ -560,13 +559,12 @@ class VerticalPage extends React.Component {
             </section>
             }
             {
-              !verticalData.data.amenities.length && this.state.floorPlanSelect.length &&
+              !verticalData.data.amenities.length && verticalData.data.floor_plans.length &&
               <section className="slider-page site-progress-wrap mb-0">
               <h2 className="section-title text-uppercase text-center">
                 Floor Plans
               </h2>
-              <div className="tab-pane fade floor-plan" id="fact-file" role="tabpanel" aria-labelledby="pills-factfile-tab">
-                  <div className="slider-page">
+              
                     <div className="container">
                       <div className="section-title-wrap d-flex flex-column align-items-center">
                         <label className="wrap">
@@ -668,17 +666,14 @@ class VerticalPage extends React.Component {
 
                     </div>
                     </div>
-                  </div>
-                </div>
             </section>
             }
              {
-               verticalData.data.amenities.length && !this.state.floorPlanSelect.length &&
+               verticalData.data.amenities.length && !verticalData.data.floor_plans.length &&
               <section className="slider-page site-progress-wrap mb-0">
               <h2 className="section-title text-uppercase text-center">
               {verticalData.data.amenities1.text}
               </h2>
-              <div className="tab-pane fade show active" id="amenities" role="tabpanel" aria-labelledby="pills-amenities-tab">
                   <div className="container p-0">
                     <div className="amenities-inner-wrapper d-flex">
                       <div className="amenities-icon-wrapper">
@@ -712,7 +707,6 @@ class VerticalPage extends React.Component {
                       </div>
                     </div>
                   </div>
-                </div>
            </section>
             }
             {/* <!--   ------------------- Antity And Fact Files section end here ------------------- --> */}

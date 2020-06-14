@@ -375,7 +375,7 @@ class LeisureDetails extends React.Component {
              
           {/* <!--   ------------------- Amenities And Fact Files section start here ------------------- --> */}
             {
-              leisureData.data.amenities.length && leisureData.data.floor_plans ? 
+              leisureData.data.amenities.length && leisureData.data.floor_plans.length ? 
             <section className="amenity-sections container"  id={leisureData.uid}>
               <ul className="nav nav-pills row padding-sm-0" id="factfile-tab" role="tablist">
                 <li className="nav-item col-6 p-0">
@@ -540,7 +540,7 @@ class LeisureDetails extends React.Component {
             }
 
             {
-              leisureData.data.floor_plans.length && !leisureData.data.amenities.length > 0 ?
+              leisureData.data.floor_plans.length && !leisureData.data.amenities.length  ?
               <section className="amenity-sections container">
               <div className="slider-page d-none d-sm-block floor-plan">
                   <div className="section-title-wrap d-flex flex-column align-items-center">
@@ -656,7 +656,6 @@ class LeisureDetails extends React.Component {
                <h2 className="section-title text-uppercase text-center">
                {leisureData.data.amenities1.text}
                </h2>
-                  <div className="tab-pane fade show active" id="amenities" role="tabpanel" aria-labelledby="pills-amenities-tab">
                     <div className="container p-0">
                       <div className="amenities-inner-wrapper d-flex">
                         <div className="amenities-icon-wrapper">
@@ -687,16 +686,16 @@ class LeisureDetails extends React.Component {
                         </div>
                       </div>
                     </div>
-                  </div>
-               </section>: null
-    
+               </section>: 
+               null
             }
            
 
             {/* <!--   ------------------- Amenity And Fact Files section end here ------------------- --> */}
 
         {/* <!--   ------------------- Site-progress section start here ------------------- --> */}
-        { leisureData.data.site_progress.length > 0 ?
+     { 
+        leisureData.data.site_progress.length > 0 ?
           <section className="slider-page site-progress-wrap mb-0">
               <h2 className="section-title text-uppercase text-center">
                 Site Progress
