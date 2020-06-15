@@ -82,6 +82,7 @@
       list-style: none;
       p {
         position: relative;
+        color: #7f7f7f;
         &:before {
           content: "";
           font-size: 10px;
@@ -148,6 +149,7 @@
     background: transparent;
     color: theme-color(text-tertiary);
     outline: 0;
+    text-align: left;
     padding: 0;
     .amenities-icon-wrap {
       width: 30px;
@@ -476,7 +478,7 @@
         -moz-appearance: none;
         appearance: none;
         background-image: url("../../images/drop.png");
-        background-size: 0.4em;
+        background-size: 0.5em;
         background-position: calc(100% - 1.1em) center;
         background-repeat: no-repeat;
       }
@@ -570,8 +572,22 @@
     transition: 0.3s ease-in-out;
   }
 }
-.maharera_important {
+.maharera_important { 
   font-size: 10px;
+}
+
+
+.detail-page {
+  .download-btn {
+    .btn-secondary{
+      &:active{
+        color: #b2a585 !important;
+      }
+      &:hover{
+        color: #b2a585 !important;
+      }
+    }
+  }
 }
 @media (max-width: 1200px) {
   .contact-section {
@@ -728,6 +744,7 @@
     flex: 0 1 45%;
     margin: 14px 8px;
     flex-direction: column;
+    text-align: center;
     .amenities-icon-description {
       margin-left: 0;
     }

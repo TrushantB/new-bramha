@@ -401,7 +401,7 @@ class LeisureDetails extends React.Component {
                               leisureData.data.amenities.map((item, index) => {
                                 return(
                                   item.image1.url ?
-                                    <button key={index} className={`d-flex align-items-center justify-content-start text-center text-md-left ${this.state.imageUrl===item.image1.url || !index && !this.state.imageUrl ? 'active': ''}`} onClick={() => this.setState({imageUrl:  item.image1.url})} >
+                                    <button key={index} className={`d-flex align-items-center justify-content-start  ${this.state.imageUrl===item.image1.url || !index && !this.state.imageUrl ? 'active': ''}`} onClick={() => this.setState({imageUrl:  item.image1.url})} >
                                       <span className="amenities-icon-wrap">
                                         <img className="amenities-icon" src={item.icon_image.url} />
                                         {/* <i className={item.icon}></i> */}
@@ -664,7 +664,7 @@ class LeisureDetails extends React.Component {
                               leisureData.data.amenities.map((item, index) => {
                                 return(
                                   item.image1.url ?
-                                    <button key={index} className={`d-flex align-items-center justify-content-start text-center text-md-left ${this.state.imageUrl===item.image1.url || !index && !this.state.imageUrl ? 'active': ''}`} onClick={() => this.setState({imageUrl:  item.image1.url})} >
+                                    <button key={index} className={`d-flex align-items-center justify-content-start  ${this.state.imageUrl===item.image1.url || !index && !this.state.imageUrl ? 'active': ''}`} onClick={() => this.setState({imageUrl:  item.image1.url})} >
                                       <span className="amenities-icon-wrap">
                                         <img className="amenities-icon" src={item.icon_image.url} />
                                         {/* <i className={item.icon}></i> */}

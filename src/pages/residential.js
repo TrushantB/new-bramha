@@ -222,6 +222,7 @@ export default class Residential extends React.Component {
                   })
                 }
               </select>
+             
             </div>
           </div>
           {this.state.ongoingProject.length > 0 &&

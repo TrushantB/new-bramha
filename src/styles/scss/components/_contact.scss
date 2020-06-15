@@ -51,16 +51,16 @@
         color: #fff;
         border: solid 0.5px rgba(255, 255, 255, 0.5);
         border-radius: 0;
-        padding: 4px;
+        padding: 4px 8px;
         font-weight: normal;
         font-size: 14px;
         height: 30px;
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
-        background-image: url("../../images/drop.png");
-        background-size: 0.4em;
-        background-position: calc(100% - 1.1em) center;
+        background-image:url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+        background-size: 2em;
+        background-position: calc(100% - 0.1em) 50%;
         background-repeat: no-repeat;
 
         option {

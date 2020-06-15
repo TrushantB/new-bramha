@@ -11,7 +11,7 @@ class Disclaimer extends React.Component {
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title='Disclaimer'/>
-          <div className="page-heading-section container container-sm-fluid bg-color">
+          <div className="page-heading-section container container-sm-fluid bg-color mb-4">
             <div className="padding-block-60">
               <h2 className="page-heading">{disclaimerData.title.text}</h2>
             </div>

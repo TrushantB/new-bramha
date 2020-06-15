@@ -33,7 +33,7 @@ class KnoweldgeHub extends React.Component {
                 <div className="buyer-tips-image">
                   <Img fluid={buyerData.banner.localFile.childImageSharp.fluid} alt="" width="100%"/>
                 </div>
-                <div className="buyer-tips-box position-absolute  d-flex justify-content-between flex-column">
+                <div className="buyer-tips-box d-flex justify-content-between flex-column">
                   <h3 className=" text-uppercase m-0 section-title d-none d-md-block">{buyerData.title.text}</h3>
                   <p className=" text-white">{buyerData.short_description.text}</p>
                   <div className="know-more">

@@ -1,25 +1,15 @@
-
-.management-wrapper{
-  .title-heading{
-    margin-bottom: 34px;
-  }
-  .management-heading {
-    margin-top: 100px;
-  }
-  .line {
-    width: 200px;
-  }
-  .member {
-    margin-bottom: 50px;
-  }
-  .set-position {
-    transform: translate(-180px, -130px);
-  }
-  .section-title::after {
-    margin: 0 auto;
-  }
+.management-heading {
+  margin-top: 100px;
 }
-
+.line {
+  width: 200px;
+}
+.member {
+  margin-bottom: 50px;
+}
+.set-position {
+  transform: translate(-180px, -130px);
+}
 .gray-background {
   width: 800px;
   height: 200px;
@@ -59,11 +49,10 @@
 .info-content .heading {
   color: #394247;
   margin-bottom: 0;
-  font-size: 20px;
 }
 .info-content {
   text-align: center;
-  margin-top: 38px;
+  margin-top: 46px;
 }
 .subheading {
   letter-spacing: 0.5px;
@@ -105,6 +94,16 @@ hr.bottom {
 .mt-0 {
   margin-top: 0;
 }
+
+
+.management-wrapper{
+  .section-title{
+    &::after{
+      margin: auto;
+    }
+  }
+}
+
 @media screen and (max-width: 1200px) {
   /*Management Team*/
   .gray-background {
@@ -136,18 +135,14 @@ hr.bottom {
     margin-bottom: 50px;
     height: 150px;
   }
-  .management-wrapper{
-    .set-position {
-      transform: none;
-    }
-    .line::before {
-      content: "";
-      width: 20%;
-      top: 60px;
-    }
+  .set-position {
+    transform: none;
   }
-
-  
+  .line::before {
+    content: "";
+    width: 20%;
+    top: 60px;
+  }
   .mt-170 {
     margin-bottom: 70px;
   }
@@ -157,32 +152,20 @@ hr.bottom {
 }
 
 @media screen and (max-width: 769px) {
-  .management-wrapper{
-    .line {
-      width: 150px;
-    }
+  .line {
+    width: 150px;
   }
-  }
-
+}
 @media screen and (max-width: 600px) {
-  .management-wrapper{
-    .line::before {
-      content: "";
-      width: 25%;
-      top: 60px;
-    }
-    .line {
-      width: 100px;
-    }
-    .founder-image {
-      max-width: 80%;
-    }
-    .foundertitle{
-      margin-left: 40px;
-    }
- 
+  .line::before {
+    content: "";
+    width: 25%;
+    top: 60px;
   }
-  .info-content{
-    margin-top: 16px;
+  .line {
+    width: 100px;
+  }
+  .founder-image {
+    max-width: 80%;
   }
 }

@@ -11,7 +11,7 @@ class BuyersTips extends React.Component {
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title={buyersData.title.text}/>
-          <div className="page-heading-section container container-sm-fluid bg-color">
+          <div className="page-heading-section container container-sm-fluid bg-color mb-5">
             <div className="padding-block-60">
               <h2 className="page-heading">{buyersData.title.text}</h2>
             </div>

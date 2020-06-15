@@ -424,7 +424,7 @@ class CommercialDetails extends React.Component {
                               commercialData.data.amenities.map((item, index) => {
                                 return(
                                   item.image1.url ?
-                                    <button key={index} className={`d-flex align-items-center justify-content-start text-center text-md-left ${this.state.imageUrl===item.image1.url || !index && !this.state.imageUrl ? 'active': ''}`} onClick={() => this.setState({imageUrl:  item.image1.url})} >
+                                    <button key={index} className={`d-flex align-items-center justify-content-start ${this.state.imageUrl===item.image1.url || !index && !this.state.imageUrl ? 'active': ''}`} onClick={() => this.setState({imageUrl:  item.image1.url})} >
                                       <span className="amenities-icon-wrap">
                                        <img className="amenities-icon" src={item.icon_image.url} />
                                         {/* <i className={item.icon}></i> */}
@@ -689,7 +689,7 @@ class CommercialDetails extends React.Component {
                               commercialData.data.amenities.map((item, index) => {
                                 return(
                                   item.image1.url ?
-                                    <button key={index} className={`d-flex align-items-center justify-content-start text-center text-md-left ${this.state.imageUrl===item.image1.url || !index && !this.state.imageUrl ? 'active': ''}`} onClick={() => this.setState({imageUrl:  item.image1.url})} >
+                                    <button key={index} className={`d-flex align-items-center justify-content-start  ${this.state.imageUrl===item.image1.url || !index && !this.state.imageUrl ? 'active': ''}`} onClick={() => this.setState({imageUrl:  item.image1.url})} >
                                       <span className="amenities-icon-wrap">
                                        <img className="amenities-icon" src={item.icon_image.url} />
                                         {/* <i className={item.icon}></i> */}
@@ -784,6 +784,7 @@ class CommercialDetails extends React.Component {
             {/* <!--   ------------------- Download Brouchure section end here ------------------- --> */}            {/* <!--   ------------------- Enquiry section start here ------------------- --> */}
             
             {/* <!--   ------------------- Enquiry section start here ------------------- --> */}
+            
             <section className="detail-page-sections enquiry-form">
               <h2 className="section-title text-uppercase text-center">
                 ENQUIRE NOW

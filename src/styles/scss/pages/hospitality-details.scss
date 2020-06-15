@@ -120,6 +120,18 @@
     }
   }
 }
+.detail-page {
+  .download-btn {
+    .btn-secondary{
+      &:hover{
+        color:#b2a585 !important;
+      }
+      &:active{
+        color:#b2a585 !important;
+      }
+    }
+  }
+}
 
 @media (max-width: 1200px) {
   .slider-img {

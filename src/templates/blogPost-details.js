@@ -47,7 +47,7 @@ export default class BlogPost extends React.Component {
                         </div>
                         <div className="row">
                             <div className="col-12">
-                                <div className="mb-4" dangerouslySetInnerHTML={{__html:blogData.description.html }}/>
+                                <div className="mb-5" dangerouslySetInnerHTML={{__html:blogData.description.html }}/>
                             </div>
                         </div>
                     </section>

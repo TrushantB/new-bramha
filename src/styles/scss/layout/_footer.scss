@@ -12,6 +12,9 @@
             background: #b2a585!important;
             fill: #fff !important;
         }
+        &:focus{
+            outline: -webkit-focus-ring-color auto 0;
+        }
 
     }
     .container{

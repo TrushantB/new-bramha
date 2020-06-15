@@ -1,12 +1,13 @@
 .residential-projects {
   .projects {
-    margin: 64px 0 80px 0;
+    margin: 0 0 80px 0;
     select {
       width: 271px;
       height: 40px;
       margin-right: 24px;
       border: solid 0.5px rgba(153, 153, 153, 0.5);
       font-weight: normal;
+      padding: 6px 18px;
     }
   }
   .residences {
@@ -79,7 +80,7 @@
     &:before {
       content: "\e900";
       font-family: "icomoon" !important;
-      font-size: 44px;
+      font-size: 38px;
       cursor: pointer;
       background: none;
       color: #979797;
@@ -93,7 +94,7 @@
     &:before {
       content: "\e901";
       font-family: "icomoon" !important;
-      font-size: 44px;
+      font-size: 38px;
       cursor: pointer;
       background: none;
       color: #979797;
@@ -120,6 +121,18 @@
     .modal-header{
       .section-title{
         font-size: 22px;
+      }
+    }
+  }
+}
+.residential-projects {
+  .give-details {
+    .btn-secondary{
+      &:hover{
+        color: #b2a585 !important;
+      }
+      &:active{
+        color: #b2a585 !important;
       }
     }
   }

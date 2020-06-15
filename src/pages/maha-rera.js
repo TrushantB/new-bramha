@@ -11,8 +11,11 @@ class Maharerra extends React.Component {
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title={maharerraData.title.text}/>
-          <div className="container mt-5 mb-5">
-            <h1 className="text-center mb-5 partners-heading">{maharerraData.title.text}</h1>
+        <div class="bg-color">
+          <div class="page-heading-section container container-sm-fluid mb-5">
+            <div class="padding-block-60">
+              <h2 class="partners-heading  page-heading">{maharerraData.title.text}</h2>
+            </div>
             <div className="row ">
               <div className="col-lg-6">
                 <div dangerouslySetInnerHTML={{__html: maharerraData.description.html}}/>
@@ -24,6 +27,8 @@ class Maharerra extends React.Component {
               </div>
             </div>
           </div>
+        </div> 
+          
       </Layout>
     )
   } 
