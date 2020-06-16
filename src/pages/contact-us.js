@@ -240,7 +240,7 @@ class Contacts extends React.Component {
                       </h3>
                     </div>
                     {
-                      contactData.email_address.map((item,value)=>{
+                     contactData.email_address &&  contactData.email_address.map((item,value)=>{
                         return(
                           <p className=" mb-0 mt-0 " key={value}> <a href={`mailto:${item.email_add.text}`}> {item.email_add.text} </a> </p>
                         )
@@ -595,14 +595,7 @@ export const contactPage = graphql`{
       email {
         text
       }
-      email_address {
-        email1 {
-          text
-        }
-        email_add {
-          text
-        }
-      }
+    
       contact_info {
         title1 {
           text
