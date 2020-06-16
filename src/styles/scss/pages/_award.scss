@@ -108,11 +108,21 @@
   .text-center {
     text-align: center!important;
   }
+  
+@media (max-width:992px){
+  .award-title{
+    min-height: 60px;
+  }
+}
 
 @media (max-width:768px){
-    .my-120{
-        margin: 16px 0;
-    }
+  .my-120{
+      margin: 16px 0;
+  }
+  .award-title{
+    min-height: 40px;
+  }
+
 }
 @media (max-width:580px){
     .award-wrapper{

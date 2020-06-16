@@ -89,3 +89,9 @@
     margin: 0 -15px;
   }
 }
+
+@media (max-width: 580px) {
+  .slider-page .slick-list{
+    padding: 0 40px !important;
+  }
+}

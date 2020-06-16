@@ -128,9 +128,7 @@
 .residential-projects {
   .give-details {
     .btn-secondary{
-      &:hover{
-        color: #b2a585 !important;
-      }
+      &:hover,
       &:active{
         color: #b2a585 !important;
       }
@@ -141,6 +139,10 @@
   .btn-secondary {
     width: 230px;
     display: inline-block;
+      &:hover,
+      &:active{
+        color: #b2a585 !important;
+      }
   }
  
 }
