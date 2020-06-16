@@ -15,14 +15,16 @@ class Disclaimer extends React.Component {
             <div className="padding-block-60">
               <h2 className="page-heading">{disclaimerData.title.text}</h2>
             </div>
-            <div className="row ">
-              <div className="col-lg-12">
-              <div dangerouslySetInnerHTML={{__html: disclaimerData.description.html}}/>
+            <div class="content">
+              <div className="row ">
+                <div className="col-lg-12">
+                <div dangerouslySetInnerHTML={{__html: disclaimerData.description.html}}/>
 
+                </div>
+                {/* <div className="col-lg-6"> 
+                <Img fluid={disclaimerData.banner.localFile.childImageSharp.fluid} className="w-100 h-100"/>
+                </div> */}
               </div>
-              {/* <div className="col-lg-6"> 
-              <Img fluid={disclaimerData.banner.localFile.childImageSharp.fluid} className="w-100 h-100"/>
-              </div> */}
             </div>
           </div>
       </Layout>

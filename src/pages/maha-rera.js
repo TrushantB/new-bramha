@@ -11,23 +11,23 @@ class Maharerra extends React.Component {
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title={maharerraData.title.text}/>
-        <div class="bg-color">
-          <div class="page-heading-section container container-sm-fluid mb-5">
+          <div class="page-heading-section container container-sm-fluid bg-color mb-4 mb-sm-5">
             <div class="padding-block-60">
               <h2 class="partners-heading  page-heading">{maharerraData.title.text}</h2>
             </div>
-            <div className="row ">
-              <div className="col-lg-6">
-                <div dangerouslySetInnerHTML={{__html: maharerraData.description.html}}/>
-              <h2> Coming Soon... </h2>
-              <Link to='/' className="link-text font-weight-bold"> Back To Home Page </Link>
-              </div>
-              <div className="col-lg-6"> 
-              <Img fluid={maharerraData.banner.localFile.childImageSharp.fluid} className="w-100 h-100"/>
+            <div className="content">
+              <div className="row ">
+                <div className="col-lg-6">
+                  <div dangerouslySetInnerHTML={{__html: maharerraData.description.html}}/>
+                <h2> Coming Soon... </h2>
+                <Link to='/' className="link-text font-weight-bold"> Back To Home Page </Link>
+                </div>
+                <div className="col-lg-6"> 
+                <Img fluid={maharerraData.banner.localFile.childImageSharp.fluid} className="w-100 h-100"/>
+                </div>
               </div>
             </div>
           </div>
-        </div> 
           
       </Layout>
     )

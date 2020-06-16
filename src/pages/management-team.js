@@ -30,12 +30,12 @@ class ManagementTeam extends React.Component {
           </section>
           <section>
             <div className="container">
-              <div className="row no-gutters justify-content-end set-position">
+              <div className="row no-gutters  set-position">
                 {
                   mgntData.founder.map((item, index) => {
                     return(
                       <div key={index} className="col-md-4 col-lg-3 col-sm-6">
-                        <div className="member">
+                        <div className="member founder-image-wrapper">
                           <div className="founder-image">
                             {/* <img src={item.image.url} alt="" title="Founder" width="100%"/> */}
                           </div>

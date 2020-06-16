@@ -9,9 +9,10 @@
 }
 .set-position {
   transform: translate(-180px, -130px);
+  justify-content: flex-end;
 }
 .gray-background {
-  width: 800px;
+  // width: 800px;
   height: 200px;
   background: #fafafa;
   transform: translate(-11px, 10px);
@@ -21,7 +22,7 @@
   content: "";
   border-bottom: 2px solid #a53130;
   padding: 6px 0;
-  width: 22%;
+  width: 16%;
   display: block;
   position: absolute;
   top: 85px;
@@ -104,11 +105,19 @@ hr.bottom {
   }
 }
 
+.management-wrapper .founder-image-wrapper{
+  .info-content{
+    margin-top: 20px;
+  }
+}
+
 @media screen and (max-width: 1200px) {
   /*Management Team*/
-  .gray-background {
-    width: 93%;
-  }
+  
+  // .gray-background {
+  //   width: 93%;
+  // }
+  
   .line::before {
     content: "";
     border-bottom: 2px solid #a53130;
@@ -136,7 +145,8 @@ hr.bottom {
     height: 150px;
   }
   .set-position {
-    transform: none;
+    transform: translate(0px, -10px);
+    justify-content: center;
   }
   .line::before {
     content: "";
@@ -156,14 +166,21 @@ hr.bottom {
     width: 150px;
   }
 }
-@media screen and (max-width: 600px) {
+
+
+@media screen and (max-width: 580px) {
   .line::before {
     content: "";
-    width: 25%;
-    top: 60px;
+    width: 20%;
+    top: 33px;
+  }
+  .management-wrapper{
+    .gray-background{
+      height: 100px;
+    }
   }
   .line {
-    width: 100px;
+    width: 120px;
   }
   .founder-image {
     max-width: 80%;

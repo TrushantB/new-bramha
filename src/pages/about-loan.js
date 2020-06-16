@@ -12,11 +12,11 @@ class AboutLoan extends React.Component {
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title={aboutData.title.text}/>
           <div class="about-loan-page-wrapper">
-            <div class="bg-color">
-              <div className="page-heading-section container container-sm-fluid  mb-5">
-                <div className="padding-block-60">
-                  <h2 className="page-heading">{aboutData.title.text}</h2>
-                </div>
+            <div className="page-heading-section container container-sm-fluid bg-color mb-4 mb-sm-5">
+              <div className="padding-block-60">
+                <h2 className="page-heading">{aboutData.title.text}</h2>
+              </div>
+              <div className="content">
                 <div className="row ">
                   <div className="col-lg-6">
                     <div dangerouslySetInnerHTML={{__html:aboutData.description.html }}/>
@@ -30,6 +30,7 @@ class AboutLoan extends React.Component {
               </div>
             </div>
           </div>
+        
       </Layout>
     )
   } 
