@@ -232,22 +232,24 @@ class Contacts extends React.Component {
                     }
                   </div>
                 </div>
-
-                <div className="col-md-4">
-                  <div className="email-address mb-5 mb-md-0">
-                    <div className="d-md-flex align-items-baseline mb-10">
-                      <h3 className=" section-title mb-md-0 text-center text-capitalize"><i className="fas fa-envelope-open-text mr-0 mr-md-1"></i> Email Address
-                      </h3>
+                    <div className="col-md-4">
+                  {
+                    contactData.email_address && 
+                    <div className="email-address mb-5 mb-md-0">
+                      <div className="d-md-flex align-items-baseline mb-10">
+                        <h3 className=" section-title mb-md-0 text-center text-capitalize"><i className="fas fa-envelope-open-text mr-0 mr-md-1"></i> Email Address
+                        </h3>
+                      </div>
+                      {
+                        contactData.email_address.map((item,value)=>{
+                          return(
+                            <p className=" mb-0 mt-0 " key={value}> <a href={`mailto:${item.email_add.text}`}> {item.email_add.text} </a> </p>
+                          )
+                        })
+                      }
                     </div>
-                    {
-                     contactData.email_address &&  contactData.email_address.map((item,value)=>{
-                        return(
-                          <p className=" mb-0 mt-0 " key={value}> <a href={`mailto:${item.email_add.text}`}> {item.email_add.text} </a> </p>
-                        )
-                      })
-                    }
+                  }
                   </div>
-                </div>
 
                 <div className="col-md-4">
                   <div className="contact-info mb-5 mb-md-0">
