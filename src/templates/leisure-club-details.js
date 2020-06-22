@@ -233,9 +233,9 @@ class LeisureDetails extends React.Component {
                     </nav>
                   </div>
                 </div>
-                {/* ...................Customizable Button..................
+                {/* ...................Customizable Button.................. */}
               {
-                  leisureData.data.customizable_button[0].link1 && leisureData.data.customizable_button[0].link1.url ?
+                 leisureData.data.customizable_button &&  leisureData.data.customizable_button[0].link1 && leisureData.data.customizable_button[0].link1.url ?
                   <div className="container detail-page-sections d-flex justify-content-center download-btn">
                     {
                       leisureData.data.customizable_button && leisureData.data.customizable_button.map((item, index) => {
@@ -245,7 +245,7 @@ class LeisureDetails extends React.Component {
                       })
                     }
                   </div> : null
-                } */}
+                }
               <div className="padding-block-60">
                 <h2 className="page-heading text-uppercase">
                   {leisureData.data.heading.text}
@@ -492,6 +492,7 @@ class LeisureDetails extends React.Component {
                                     <div key={value}>
                                       <div role="link" tabIndex="0" className="slider-img " onClick={() => this.setState({ isOpenTwo: true ,photoIndex:value})}>
                                         <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt="Floor Plans" className="w-100 h-100" />
+                                        <p className="showcase-slide-caption">{item.caption}</p>
                                       </div>
                                     </div>
                                   )
@@ -518,7 +519,7 @@ class LeisureDetails extends React.Component {
                               })
                             }
                           animationDuration={800}
-
+                          imageCaption={leisureData.data.floor_plans[photoIndex].caption}
                           />
                         }
 
@@ -610,6 +611,7 @@ class LeisureDetails extends React.Component {
                                   <div key={value}>
                                     <div className="slider-img " onClick={() => this.setState({ isOpenTwo: true ,photoIndex:value})}>
                                       <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt="Floor Plans" className="w-100 h-100" />
+                                      <p className="showcase-slide-caption">{item.caption}</p>
                                     </div>
                                   </div>
                                 )
@@ -635,7 +637,7 @@ class LeisureDetails extends React.Component {
                             })
                           }
                         animationDuration={800}
-  
+                        imageCaption={leisureData.data.floor_plans[photoIndex].caption}
                         />
                       }
                       {
@@ -843,6 +845,7 @@ export const leisurePage = graphql`
         caption
       }
       floor_plans {
+        caption
         title1 {
           text
         }
