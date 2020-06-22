@@ -926,14 +926,14 @@ export const leisurePage = graphql`
           }
         }
       }
-      download_info {
-        title_of_info {
-          text
-        }
-        file {
-          name
-        }
-      }
+    #  download_info {
+    #    title_of_info {
+    #      text
+    #    }
+    #    file {
+    #      name
+    #    }
+    #  }
     }
   }
 }`

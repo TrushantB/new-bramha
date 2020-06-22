@@ -891,14 +891,14 @@ export const verticalViewData = graphql`
         text
       }
       location_url
-      download_info {
-        title_of_info {
-          text
-        }
-        file {
-          name
-        }
-      }
+      # download_info {
+      #  title_of_info {
+      #   text
+      #  }
+      #  file {
+      #   name
+      #  }
+      # }
     }
   }
 }`

@@ -37,26 +37,26 @@ class Careers extends React.Component {
           id: 'sales',
           name: 'Sales',
         },
-        {
-          id: 'human_resources',
-          name: 'Human Resources'
-        },
-        {
-          id: 'management',
-          name: 'Management'
-        },
-        {
-          id: 'engineers',
-          name: 'Engineers'
-        },
-        {
-          id: 'accounts',
-          name: 'Accounts'
-        },
-        {
-          id: 'project_manager',
-          name: 'Project Manager'
-        },
+        // {
+        //   id: 'human_resources',
+        //   name: 'Human Resources'
+        // },
+        // {
+        //   id: 'management',
+        //   name: 'Management'
+        // },
+        // {
+        //   id: 'engineers',
+        //   name: 'Engineers'
+        // },
+        // {
+        //   id: 'accounts',
+        //   name: 'Accounts'
+        // },
+        // {
+        //   id: 'project_manager',
+        //   name: 'Project Manager'
+        // },
         {
           id: 'admin',
           name: 'Administration'
@@ -78,19 +78,19 @@ class Careers extends React.Component {
     careerData.admin.map((item) => {
       jobOpening.push(item)
     })
-    careerData.project_manager.map((item) => {
+    careerData.project_manager && careerData.project_manager.map((item) => {
       jobOpening.push(item)
     })
-    careerData.accounts.map((item) => {
+    careerData.accounts &&  careerData.accounts.map((item) => {
       jobOpening.push(item)
     })
-    careerData.engineers.map((item) => {
+    careerData.engineers && careerData.engineers.map((item) => {
       jobOpening.push(item)
     })
-    careerData.management.map((item) => {
+    careerData.management && careerData.management.map((item) => {
       jobOpening.push(item)
     })
-    careerData.human_resources.map((item) => {
+    careerData.human_resources && careerData.human_resources.map((item) => {
       jobOpening.push(item)
     })
     careerData.sales.map((item) => {
@@ -588,91 +588,92 @@ export const careerPage = graphql` {
           text
         }
       }
-      project_manager {
-        position {
-          text
-        }
-        qualification {
-          text
-        }
-        total_experience {
-          text
-        }
-        description2 {
-          text
-        }
-        location {
-          text
-        }
-      }
-      accounts {
-        position {
-          text
-        }
-        qualification {
-          text
-        }
-        total_experience {
-          text
-        }
-        description2 {
-          text
-        }
-        location {
-          text
-        }
-      }
-      engineers {
-        position {
-          text
-        }
-        qualification {
-          text
-        }
-        total_experience {
-          text
-        }
-        description2 {
-          text
-        }
-        location {
-          text
-        }
-      }
-      management {
-        position {
-          text
-        }
-        qualification {
-          text
-        }
-        total_experience {
-          text
-        }
-        description2 {
-          text
-        }
-        location {
-          text
-        }
-      }
-      human_resources {
-        position {
-          text
-        }
-        qualification {
-          text
-        }
-        total_experience {
-          text
-        }
-        description2 {
-          text
-        }
-        location {
-          text
-        }
-      }
+        #  project_manager {
+        #    position {
+        #      text
+        #    }
+        #    qualification {
+        #      text
+        #    }
+        #    total_experience {
+        #      text
+        #    }
+        #    description2 {
+        #      text
+        #    }
+        #    location {
+        #      text
+        #    }
+        #  }
+        #  accounts {
+        #    position {
+        #      text
+        #    }
+        #    qualification {
+        #      text
+        #    }
+        #    total_experience {
+        #      text
+        #    }
+        #    description2 {
+        #      text
+        #    }
+        #    location {
+        #      text
+        #    }
+        #  }
+        #  engineers {
+        #    position {
+        #      text
+        #    }
+        #    qualification {
+        #      text
+        #    }
+        #    total_experience {
+        #      text
+        #    }
+        #    description2 {
+        #      text
+        #    }
+        #    location {
+        #      text
+        #    }
+        #  }
+        #  management {
+        #    position {
+        #      text
+        #    }
+        #    qualification {
+        #      text
+        #    }
+        #    total_experience {
+        #      text
+        #    }
+        #    description2 {
+        #      text
+        #    }
+        #    location {
+        #      text
+        #    }
+        #  }
+        #  human_resources {
+        #    position {
+        #      text
+        #    }
+        #    qualification {
+        #      text
+        #    }
+        #    total_experience {
+        #      text
+        #    }
+        #    description2 {
+        #      text
+        #    }
+        #    location {
+        #      text
+        #    }
+        #  }
+
       sales {
         position {
           text
