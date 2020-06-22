@@ -240,7 +240,7 @@ class Careers extends React.Component {
               </div>
             </div>
           </section>
-          <section className=" slider-page mt-5 m-sm-0">
+          <section className=" slider-page careers-slider-wrapper mt-5 m-sm-0">
             <div className="padding-block-60 d-flex justify-content-center flex-column w-100 ">
               <h3 className="section-title text-center text-uppercase mb-0" >
                 {careerData.life_at_bramha.text}
