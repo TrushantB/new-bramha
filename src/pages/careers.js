@@ -59,7 +59,7 @@ class Careers extends React.Component {
         },
         {
           id: 'admin',
-          name: 'Admin'
+          name: 'Administration'
         },
         {
           id: 'architect',
