@@ -978,7 +978,9 @@ export const verticalViewData = graphql`
         title1 {
           text
         }
-        
+        floor_plans_image:image1 {
+          url
+        }
         image1 {
           localFile {
             childImageSharp {
