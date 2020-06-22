@@ -234,9 +234,9 @@ class HospitalityDetails extends React.Component {
                   </nav>
                 </div>
               </div>
-              {/* ...................Customizable Button..................
+              {/* ...................Customizable Button.................. */}
               {
-                  hospitalityData.data.customizable_button[0].link1 && hospitalityData.data.customizable_button[0].link1.url ?
+                hospitalityData.data.customizable_button &&  hospitalityData.data.customizable_button[0].link1 ?
                   <div className="container detail-page-sections d-flex justify-content-center download-btn">
                     {
                       hospitalityData.data.customizable_button  && hospitalityData.data.customizable_button.map((item, index) => {
@@ -247,7 +247,7 @@ class HospitalityDetails extends React.Component {
                       })
                     }
                   </div> : null
-                } */}
+                }
               <div className="padding-block-60">
                 <h2 className="page-heading text-uppercase">
                   {hospitalityData.data.heading.text}
@@ -783,6 +783,11 @@ export const hospitalityPage = graphql`
           }
         }
       }
+      customizable_button {
+        link1 {
+          url
+        }
+      }
       logo {
         url
       }
@@ -800,6 +805,7 @@ export const hospitalityPage = graphql`
         link1 {
           url
         }
+        title1
       }
       phase {
         title1 {
