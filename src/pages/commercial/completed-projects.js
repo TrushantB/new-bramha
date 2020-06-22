@@ -27,7 +27,8 @@ class CompletedProjects extends React.Component {
               <div className="row">
                 {
                  completedData.completed_projects && completedData.completed_projects.map((item) => {
-                    return (
+                  console.log(item) 
+                  return (
                       item.completed_links.document.map((datas, value) => {
                         return (
                           <div className="col-md-6 col-lg-4 p-0 pl-sm-3 pr-sm-3" key={value}>
