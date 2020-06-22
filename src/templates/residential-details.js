@@ -732,7 +732,7 @@ class VerticalPage extends React.Component {
                                item.images.localFile && 
                              <Img fluid={item.images.localFile.childImageSharp.fluid} key={value} alt=" Floor Plans" className="w-100 h-100" />
                              } 
-                            </div>
+                            </div> 
                           </div>
                         )
                       })
