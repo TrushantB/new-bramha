@@ -26,7 +26,7 @@ class CompletedProjects extends React.Component {
             <div className="container">
               <div className="row">
                 {
-                  completedData.completed_projects.map((item) => {
+                 completedData.completed_projects && completedData.completed_projects.map((item) => {
                     return (
                       item.completed_links.document.map((datas, value) => {
                         return (
@@ -82,30 +82,30 @@ export const completedProjects = graphql`{
               completed_project_description{
                 html
               }
-              completed_projects{
-                completed_links{
-                  uid
-                  document{
-                    data{
-                      title{
-                        text
-                      }
-                      flat_bhk{
-                        text
-                      }
-                      flat_address{
-                        text
-                      }
-                      thumbnail{
-                        url
-                        mobile{
-                          url
-                        }
-                      }
-                    }
-                  }
-                }
-              }
+            #  completed_projects{
+            #    completed_links{
+            #      uid
+            #      document{
+            #        data{
+            #          title{
+            #            text
+            #          }
+            #          flat_bhk{
+            #            text
+            #          }
+            #          flat_address{
+            #            text
+            #          }
+            #          thumbnail{
+            #            url
+            #            mobile{
+            #              url
+            #            }
+            #          }
+            #        }
+            #      }
+            #    }
+            #  }
             }
           }
         }
