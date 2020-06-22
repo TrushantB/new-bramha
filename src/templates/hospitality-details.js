@@ -236,7 +236,9 @@ class HospitalityDetails extends React.Component {
               </div>
               {/* ...................Customizable Button.................. */}
               {
-                hospitalityData.data.customizable_button &&  hospitalityData.data.customizable_button[0].link1 ?
+                hospitalityData.data.customizable_button &&
+                 hospitalityData.data.customizable_button.length &&
+                  hospitalityData.data.customizable_button[0].link1 ?
                   <div className="container detail-page-sections d-flex justify-content-center download-btn">
                     {
                       hospitalityData.data.customizable_button  && hospitalityData.data.customizable_button.map((item, index) => {
@@ -783,11 +785,6 @@ export const hospitalityPage = graphql`
           }
         }
       }
-      customizable_button {
-        link1 {
-          url
-        }
-      }
       logo {
         url
       }
@@ -805,7 +802,6 @@ export const hospitalityPage = graphql`
         link1 {
           url
         }
-        title1
       }
       phase {
         title1 {
