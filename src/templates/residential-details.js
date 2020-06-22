@@ -290,9 +290,8 @@ class VerticalPage extends React.Component {
                           </div>
                         </div>
                     </section>
-           
-           {/* <!--   ------------------- Showcase section start here ------------------- --> */}
-           <section className="slider-page">
+            {/* <!--   ------------------- Showcase section start here ------------------- --> */}
+            <section className="slider-page">
               <h2 className="section-title text-uppercase text-center">
                   Showcase
               </h2>
@@ -305,7 +304,7 @@ class VerticalPage extends React.Component {
                             <div key={value}>
                               <div role="link" tabIndex="0" className="slider-img" onClick={() => this.setState({ isOpenOne: true ,photoIndex:value})}>
                                 {
-                                  item.image1.localFile.childImageSharp.fluid &&
+                                  item.image1.localFile && 
                                 <Img fluid={item.image1.localFile.childImageSharp.fluid} alt={verticalData.data.title.text} className="life-at-bramha-slider-image" />
                                 }
                                 <p className="showcase-slide-caption">{item.caption}</p>
@@ -342,7 +341,7 @@ class VerticalPage extends React.Component {
                     </p>
                 </div>
               </div>
-            </section>           {/* <!--  -------------------- middle section end here ------------------------> */}
+            </section>
             {/* <!--   ------------------- Showcase section end here ------------------- --> */}
             {/* <!--   ------------------- Location section start here ------------------- --> */}
             <section className="location-sections">
@@ -357,7 +356,7 @@ class VerticalPage extends React.Component {
                 }
               </div>
             </section>
-                       {/* <!--   ------------------- Location section end here ------------------- --> */}
+            {/* <!--   ------------------- Location section end here ------------------- --> */}
             {/* <!--   ------------------- Proximities section start here ------------------- --> */}
           <section className="proximities-section">
             <div className=" container">
@@ -403,7 +402,7 @@ class VerticalPage extends React.Component {
                   </div>
               </div>
             </section>
-              {/* <!--   ------------------- Amenities And Fact Files section start here ------------------- --> */}
+            {/* <!--   ------------------- Amenities And Fact Files section start here ------------------- --> */}
            { verticalData.data.amenities.length && verticalData.data.floor_plans.length &&
               <section className="amenity-sections container"  id={verticalData.uid}>
               <ul className="nav nav-pills row padding-sm-0" id="factfile-tab" role="tablist">
@@ -441,13 +440,13 @@ class VerticalPage extends React.Component {
                         <div className="d-flex"></div>
                       </div>
                       <div className="image-wrapper">
-                        {
+                        {/* {
                           console.log('verticalData.data.amenities[0].image1.url', verticalData.data.amenities[0].image1.url),
                           
                           this.state.imageUrl  ?
                          <img src={this.state.imageUrl} alt={verticalData.data.title.text} className="w-100 h-100"/>
                          :<img src={verticalData.data.amenities[0].image1.url} alt={verticalData.data.title.text} className="w-100 h-100"/>
-                        }
+                        } */}
                       </div>
                     </div>
                   </div>
@@ -475,10 +474,161 @@ class VerticalPage extends React.Component {
                           </select>
                         </label>
                       </div>
-                      {
-                        console.log("verticalData.data.floor_plans",verticalData.data.floor_plans)
-                      }
-                      {/* <div className="slider-wrapper">
+                      <div className="slider-wrapper">
+                        {
+                          this.state.floorPlanSelect && this.state.floorPlanSelect.length == 1 ?
+                          <div>
+                            {
+                            this.state.floorPlanSelect && this.state.floorPlanSelect.map((item,value) => {
+                              return(
+                                <div key={value}>
+                                  <div role="link" tabIndex="0" className="slider-img" onClick={() => this.setState({ isOpenOneSlide: true ,photoIndex:value})}>
+                                    <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt="Floor Plans" className="w-100 h-100" />
+                                  </div>
+                                </div>
+                              )
+                            })}
+                                {
+                          isOpenOneSlide && verticalData.data.floor_plans &&
+                          <Lightbox
+                            mainSrc={verticalData.data.floor_plans[photoIndex].image1.localFile.childImageSharp.fluid.src}
+                            onCloseRequest={() => this.setState({ isOpenOneSlide: false })}
+                            // onMovePrevRequest={() =>
+                            //   this.setState({
+                            //     photoIndex: (photoIndex + verticalData.data.floor_plans.length - 1) % verticalData.data.floor_plans.length,
+                            //   })
+                            // }
+                            // onMoveNextRequest={() =>
+                            //   this.setState({
+                            //     photoIndex: (photoIndex + 1) % verticalData.data.floor_plans.length,
+                            //   })
+                            // }
+                          animationDuration={800}
+
+                          />
+                        }
+                            </div>:
+                            <Slider {...floorPlan}>
+                              {
+                                this.state.floorPlanSelect.length > 0 && this.state.floorPlanSelect.map((item,value) => {
+                                  return(
+                                    <div key={value}>
+                                      <div role="link" tabIndex="0" className="slider-img " onClick={() => this.setState({ isOpenTwo: true ,photoIndex:value})}>
+                                       {
+                                         item.image1.localFile && 
+                                        <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt="Floor Plans" className="w-100 h-100" />
+                                       }
+                                        <p className="showcase-slide-caption">{item.caption}</p>
+                                     </div>
+                                    </div>
+                                  )
+                                })
+                              }
+                            </Slider>
+                        }
+
+                        {
+                          isOpenTwo &&
+                          <Lightbox
+                            mainSrc={verticalData.data.floor_plans[photoIndex].image1.localFile.childImageSharp.fluid.src}
+                            nextSrc={verticalData.data.floor_plans[(photoIndex + 1) % verticalData.data.floor_plans.length].image1.localFile.childImageSharp.fluid.src}
+                            prevSrc={verticalData.data.floor_plans[(photoIndex + verticalData.data.floor_plans.length - 1) % verticalData.data.floor_plans.length].image1.localFile.childImageSharp.fluid.src}
+                            onCloseRequest={() => this.setState({ isOpenTwo: false })}
+                            onMovePrevRequest={() =>
+                              this.setState({
+                                photoIndex: (photoIndex + verticalData.data.floor_plans.length - 1) % verticalData.data.floor_plans.length,
+                              })
+                            }
+                            onMoveNextRequest={() =>
+                              this.setState({
+                                photoIndex: (photoIndex + 1) % verticalData.data.floor_plans.length,
+                              })
+                            }
+                            imageCaption={verticalData.data.floor_plans[photoIndex].caption}
+
+                          animationDuration={800}
+
+                          />
+                        }
+
+                        {
+                        this.state.floorPlanSelect.length !==1 && 
+                          <p className=" text-left text-sm-center pages mb-0">
+                          {this.state.floorPlanActive + 1} of {verticalData.data.floor_plans.length}
+                        </p>
+                        }
+
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+           }
+           { verticalData.data.amenities.length && !verticalData.data.floor_plans.length && 
+                 <section className="slider-page site-progress-wrap mb-0">
+                 <h2 className="section-title text-uppercase text-center">
+                 {verticalData.data.amenities1.text}
+                 </h2>
+                 <div className="container p-0">
+                    <div className="amenities-inner-wrapper d-flex">
+                      <div className="amenities-icon-wrapper">
+                        <div className="d-flex flex-wrap amenities" id="myTab" role="tablist">
+                          {
+                            verticalData.data.amenities.map((item, index) => {
+                              return(
+                                <button key={index} className={`d-flex align-items-center justify-content-start  ${this.state.imageUrl===item.image1.url || !index && !this.state.imageUrl ? 'active': ''}`} onClick={() => this.setState({imageUrl:  item.image1.url})} >
+                                  <span className="amenities-icon-wrap">
+                                    <img className="amenities-icon" src={item.icon_image.url} />
+                                    {/* <i className={item.icon}></i> */}
+                                  </span>
+                                  <span className="amenities-icon-description"><span>{item.title1.text}</span></span>
+                                </button>
+                              )
+                            })
+                          }
+                        </div>
+                        <div className="d-flex"></div>
+                      </div>
+                      <div className="image-wrapper">
+                        {
+                          this.state.imageUrl  ?
+                         <img src={this.state.imageUrl} alt={verticalData.data.title.text} className="w-100 h-100"/>
+                         :<img src={verticalData.data.amenities[0].image1.url} alt={verticalData.data.title.text} className="w-100 h-100"/>
+                        }
+                      </div>
+                    </div>
+                  </div>
+               </section>
+           }
+
+          { !verticalData.data.amenities.length && verticalData.data.floor_plans.length && 
+                 <section className="slider-page site-progress-wrap mb-0">
+                 <h2 className="section-title text-uppercase text-center">
+                 Floor Plans
+                 </h2>
+                 <div className="container">
+                      <div className="section-title-wrap d-flex flex-column align-items-center">
+                        <label className="wrap">
+                          <select className="border-0 layout-select" onChange={(e)=> {
+                            let floor = verticalData.data.floor_plans.filter(value => value.title1.text === e.target.value)
+                            this.setState({floorPlanSelect: floor})
+                            if(e.target.value === "allLayout"){
+                              this.setState({floorPlanSelect: verticalData.data.floor_plans})
+                            }
+                          }}>
+                            <option value="allLayout"> All Layout </option>
+                            {
+                              verticalData.data.floor_plans.map((data, index) => {
+                                return(
+                                  <option value={data.title1.text} key={index}>{data.title1.text}</option>
+                                )
+                              })
+                            }
+                          </select>
+                        </label>
+                      </div>
+                      <div className="slider-wrapper">
                         {
                           this.state.floorPlanSelect && this.state.floorPlanSelect.length == 1 ?
                           <div>
@@ -520,7 +670,7 @@ class VerticalPage extends React.Component {
                                       <div role="link" tabIndex="0" className="slider-img " onClick={() => this.setState({ isOpenTwo: true ,photoIndex:value})}>
                                         <Img fluid={item.image1.localFile.childImageSharp.fluid} key={value} alt="Floor Plans" className="w-100 h-100" />
                                         <p className="showcase-slide-caption">{item.caption}</p>
-                                     </div>
+                                      </div>
                                     </div>
                                   )
                                 })
@@ -559,13 +709,193 @@ class VerticalPage extends React.Component {
                         </p>
                         }
 
-                    </div> */}
                     </div>
-                  </div>
-                </div>
+                    </div>
+               </section>
+           }
+            {/* <!--   ------------------- Antity And Fact Files section end here ------------------- --> */}
+            {/* <!--   ------------------- Site-progress section start here ------------------- --> */}
+            <section className="slider-page site-progress-wrap mb-0">
+              <h2 className="section-title text-uppercase text-center">
+                Site Progress
+              </h2>
+              <div className="slider-wrapper-gray slider-bg">
+                <div className="container showcase-slider slider-wrapper">
+                  <Slider {...siteProcess}>
+                    {
+                      verticalData.data.site_progress.length > 0 && verticalData.data.site_progress.map((item,value) => {
+                        return(
+                          <div key={value}>
+                            <div role="link" tabIndex="0" className="slider-img " onClick={() => this.setState({ isOpenThree: true ,photoIndex:value})}>
+                             
+                             {
+                               item.images.localFile && 
+                             <Img fluid={item.images.localFile.childImageSharp.fluid} key={value} alt=" Floor Plans" className="w-100 h-100" />
+                             } 
+                            </div> 
+                          </div>
+                        )
+                      })
+                    }
+                  </Slider>
+                  {
+                  isOpenThree &&
+                  <Lightbox
+                    mainSrc={verticalData.data.site_progress[photoIndex].images.localFile.childImageSharp.fluid.src}
+                    nextSrc={verticalData.data.site_progress[(photoIndex + 1) % verticalData.data.site_progress.length].images.localFile.childImageSharp.fluid.src}
+                    prevSrc={verticalData.data.site_progress[(photoIndex + verticalData.data.site_progress.length - 1) % verticalData.data.site_progress.length].images.localFile.childImageSharp.fluid.src}
+                    onCloseRequest={() => this.setState({ isOpenThree: false })}
+                    onMovePrevRequest={() =>
+                      this.setState({
+                        photoIndex: (photoIndex + verticalData.data.site_progress.length - 1) % verticalData.data.site_progress.length,
+                      })
+                    }
+                    onMoveNextRequest={() =>
+                      this.setState({
+                        photoIndex: (photoIndex + 1) % verticalData.data.site_progress.length,
+                      })
+                    }
+                    animationDuration={800}
+
+                  />
+                }
+                <p className=" text-left text-sm-center pages mb-0">
+                  {this.state.siteProcessActive + 1} of {verticalData.data.site_progress.length}
+                </p>
+              </div>
               </div>
             </section>
-           }
+            {/* <!--   ------------------- progress section end here ------------------- --> */}
+
+             {/* <!--   ------------------- Download Brouchure section start here ------------------- --> */}
+             {
+              verticalData.data.download_info && verticalData.data.download_info.length > 0 ?
+              <div className="container detail-page-sections d-flex justify-content-center download-btn">
+                {
+                  verticalData.data.download_info.map((item, index) => {
+                    return(
+                    <a key={index} href="#pdf-link" download={item.file.name} className="btn-secondary text-center">Download {item.title_of_info.text}</a>
+                    )
+                  })
+                }
+              </div>: null
+            }
+            
+            {/* <!--   ------------------- Download Brouchure section end here ------------------- --> */}            {/* <!--   ------------------- Enquiry section start here ------------------- --> */}
+            
+            
+            <section className="detail-page-sections enquiry-form">
+              <h2 className="section-title text-uppercase text-center">
+                ENQUIRE NOW
+              </h2>
+              <div className="slider-wrapper-gray contact-section">
+                <p className="container mb-0">
+                  <span className="d-block text-left text-sm-center">
+                    Its easy to get overwhelmed with the unique propositions of BramhaCorp.
+                  </span>
+                  <span className="d-block text-left text-sm-center">Let us help you in making up your mind.</span>
+                </p>
+
+                <form  className="residentialCustomer" onSubmit={(e) => this.submitResidentialCustomer(e)} name="residential customer" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+                  <div className="contact-form-bg pt-4 pb-4 pt-sm-5 pb-sm-5">
+                    <div className="container">
+                      <div className="form-row">
+                        <input type="hidden" id="projectName" name="form-name" value={verticalData.data.title.text} />
+                        <input type="hidden" id="utmSource" name="utmSource" value={this.state.utmSource} />
+                        <input type="hidden" id="utmMedium" name="utmMedium" value={this.state.utmMedium} />
+                        <input type="hidden" id="utmCampaign" name="utmCampaign" value={this.state.utmCampaign} />
+                        <div className="col-sm-6 form-group  ">
+                          <input type="text" className="form-control" id="name" placeholder="Your Name*" name="name" required/>
+                        </div>
+                        <div className="col-sm-6 form-group  ">
+                          <PhoneInput className="form-control" id="phoneNumber"  placeholder="Your Phone Number*" maxLength="15"  autoComplete="off" name="phone-number" required
+                            value={this.state.value}
+                            onChange={(e) => this.setState({value:e})}/>
+                          </div>
+                        <div className="col-sm-6 form-group  ">
+                          <input type="text" className="form-control" id="email" placeholder="Your Email*" autoComplete="off"  name="email" required/>
+                        </div>
+                        <div className="col-sm-6 form-group  ">
+                          <input type="" className="form-control" id="city" placeholder="City" autoComplete="off" name="city" required/>
+                        </div>
+                        <div className="col-sm-6 form-group  ">
+                          <select defaultValue="" className="form-control rounded-0" id="budget" name="budget" required >
+                            <option value="" disabled>Budget</option>
+                            <option >50 Lakh</option>
+                            <option>50-80 Lakh</option>
+                            <option> 80 Lakh-1Crore</option>
+                            <option>1 Crore</option>
+                          </select>
+                        </div>
+                        <div className="col-sm-6 form-group ">
+                        <select defaultValue="" className="form-control rounded-0" id="source" placeholder="source" name="source" required >
+                            <option value="" disabled >source</option>
+                            <option>Newspaper</option>
+                            <option>Hoarding</option>
+                            <option>Email</option>
+                            <option>SMS</option>
+                            <option>Google</option>
+                            <option>Facebook</option>
+                            <option>Cinema Ad</option>
+                            <option>Broker</option>
+                            <option>Property Portal</option>
+                            <option>Word of Mouth</option>
+                            <option>Others</option>
+                          </select>
+                        </div>
+                        <div className="form-group col-md-12">
+                          <textarea className="form-control" rows="4" id="message" placeholder="Message" name="message" required></textarea>
+                        </div>
+                      </div>
+                      <div className="sumbit text-center mt-sm-0 mt-4">
+                        <button type="submit" className="btn-secondary btn">Submit</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </section>
+
+            {/* <!--   ------------------- Enquiry section end here ------------------- --> */}
+            {/* <!--   ------------------- Maharera section start here ------------------- --> */}
+            <section className="container d-flex flex-column align-items-center detail-maharera-sections">
+              <img src={verticalData.data.maharera.url} alt="maha-rera logo" style={{width:"70px"}}/>
+              <p className="text-left text-sm-center mt-3">
+                {
+                  verticalData.data.phase.map((item,value)=>{
+                    return(
+                      <span className="d-block" key={value}>
+                        ​{item.title1.text} : {item.description1.text}
+                      </span>
+                    )
+                  })
+                }
+              </p>
+              <p className="text-left text-sm-center">
+                Available at : Website <a href={verticalData.data.tag_line.text} target="_blank">{verticalData.data.tag_line.text} </a>
+              </p>
+              {
+                verticalData.data.maharera_important.text &&
+                  <div>
+                    <p  className={`maharera_important mt-3 mb-1` } style={this.state.styleData}>
+                      {verticalData.data.maharera_important.text}
+                    </p>
+                    <div className="d-none d-md-flex justify-content-center align-items-center w-100">
+                      {
+                        this.state.styleData ?
+                        <div className="maharera_showmore" onClick={() => {
+                          this.setState({styleData:null})
+                          }}>Show Less...</div> :
+                        <div className="maharera_showmore" onClick={() => {
+                          this.setState({styleData:{height: 160, overflow: 'hidden'}})
+                          }}>Show More...</div>
+                      }
+                    </div>
+                  </div>
+              }
+            </section>
+            {/* <!--   ------------------- Maharera section end here ------------------- --> */}
+            {/* <!--  -------------------- middle section end here ------------------------> */}
           </main>
       </Layout>
     )

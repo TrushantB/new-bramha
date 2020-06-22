@@ -311,30 +311,30 @@ export const commercialPageData = graphql` {
         completed_project_description{
           html
         }
-        completed_projects{
-          completed_links{
-            uid
-            document{
-              data{
-                title{
-                  text
-                }
-                flat_bhk{
-                  text
-                }
-                flat_address{
-                  text
-                }
-                thumbnail{
-                  url
-                  mobile{
-                    url
-                  }
-                }
-              }
-            }
-          }
-        }
+        #  completed_projects{
+          #    completed_links{
+          #      uid
+          #      document{
+          #        data{
+          #          title{
+          #            text
+          #          }
+          #          flat_bhk{
+          #            text
+          #          }
+          #          flat_address{
+          #            text
+          #          }
+          #          thumbnail{
+          #            url
+          #            mobile{
+          #              url
+          #            }
+          #          }
+          #        }
+          #      }
+          #    }
+          #  }
       }
       }
     }
