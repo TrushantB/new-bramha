@@ -489,6 +489,16 @@
       }
     }
   }
+  .career-page{
+    .slider-page.careers-slider-wrapper{
+      .slick-list{
+        padding: 0 !important;
+        .slick-center{
+          transform: none;
+        }
+      }
+    }
+  }
 }
 @media (max-width: 470px) {
   .job-opening .career-tabs .btn-wraper {

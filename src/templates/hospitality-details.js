@@ -239,7 +239,7 @@ class HospitalityDetails extends React.Component {
                 hospitalityData.data.customizable_button &&
                  hospitalityData.data.customizable_button.length &&
                   hospitalityData.data.customizable_button[0].link1 ?
-                  <div className="container detail-page-sections d-flex justify-content-center download-btn">
+                  <div className="container detail-page-sections d-flex justify-content-center download-btn mb-3 mb-sm-5">
                     {
                       hospitalityData.data.customizable_button  && hospitalityData.data.customizable_button.map((item, index) => {
                         return(
