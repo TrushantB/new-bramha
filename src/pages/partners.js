@@ -265,16 +265,6 @@ class Partners extends React.Component {
               Join Us Today
             </h2>
             <div className="slider-wrapper-gray contact-section">
-              <p className="container mb-0">
-                <span className="d-block text-left text-sm-center">
-                  Its easy to get overwhelmed with the unique propositions of
-                  BramhaCorp.
-                </span>
-                <span className="d-block text-left text-sm-center">
-                  Let us help you in making up your mind.
-                </span>
-              </p>
-
               <form
                 className="contactChannel"
                 onSubmit={e => this.submitChannelPartner(e)}
