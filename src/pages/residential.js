@@ -47,63 +47,63 @@ export default class Residential extends React.Component {
   }
 
   handleProjects = (e) => {
-    let type = [];
-    let address = [];
-    this.setState({ activeAddress: '', activeType: '' });
-    let project = this.state.dataSource[0].node.data[e.target.value];
-    if (e.target.value === 'ongoing_projects') {
-      navigate("/residential/ongoing-project")
-    }
-    else if (e.target.value === 'completed_project') {
-      navigate("/residential/completed-project")
-    }
-    else {
-      this.state.dataSource.map((item, index) => {
-        this.setState({ ongoingProject: item.node.data.ongoing_projects, ongoingProjectStore: item.node.data.ongoing_projects });
-        item.node.data.ongoing_projects && item.node.data.ongoing_projects.map((item) => {
-          item.residential_links.document &&  type.push(item.residential_links.document[0].data.flat_bhk.text);
-          address.push(item.residential_links.document[0].data.flat_address.text);
-        })
-      })
+    // let type = [];
+    // let address = [];
+    // this.setState({ activeAddress: '', activeType: '' });
+    // let project = this.state.dataSource[0].node.data[e.target.value];
+    // if (e.target.value === 'ongoing_projects') {
+    //   navigate("/residential/ongoing-project")
+    // }
+    // else if (e.target.value === 'completed_project') {
+    //   navigate("/residential/completed-project")
+    // }
+    // else {
+    //   this.state.dataSource.map((item, index) => {
+    //     this.setState({ ongoingProject: item.node.data.ongoing_projects, ongoingProjectStore: item.node.data.ongoing_projects });
+    //     item.node.data.ongoing_projects.map((item) => {
+    //       type.push(item.residential_links.document[0].data.flat_bhk.text);
+    //       address.push(item.residential_links.document[0].data.flat_address.text);
+    //     })
+    //   })
 
-      this.state.dataSource.map((item, index) => {
-        this.setState({ completedProject: item.node.data.completed_project, completedProjectStore: item.node.data.completed_project });
-        item.node.data.completed_project && item.node.data.completed_project.map((item) => {
-          item.completed_links.document &&  type.push(item.completed_links.document[0].data.flat_bhk.text);
-          address.push(item.completed_links.document[0].data.flat_address.text);
-        })
-        address = [...new Set(address)];
-        type = [...new Set(type)];
-        this.setState({ allType: type, allAddress: address })
-      })
-    }
+    //   this.state.dataSource.map((item, index) => {
+    //     this.setState({ completedProject: item.node.data.completed_project, completedProjectStore: item.node.data.completed_project });
+    //     item.node.data.completed_project.map((item) => {
+    //       type.push(item.completed_links.document[0].data.flat_bhk.text);
+    //       address.push(item.completed_links.document[0].data.flat_address.text);
+    //     })
+    //     address = [...new Set(address)];
+    //     type = [...new Set(type)];
+    //     this.setState({ allType: type, allAddress: address })
+    //   })
+    // }
   }
 
-  UNSAFE_componentWillMount() {
-    let type = [];
-    let address = [];
-    const allData = this.props.data.allPrismicResidential.edges;
-    this.setState({ dataSource: allData });
-    allData.map((item, index) => {
-      this.setState({ ongoingProject: item.node.data.ongoing_projects, ongoingProjectStore: item.node.data.ongoing_projects });
-      item.node.data.ongoing_projects.map((item) => {
-        item.residential_links.document &&  type.push(item.residential_links.document[0].data.flat_bhk.text);
-        address.push(item.residential_links.document[0].data.flat_address.text);
-      })
-    })
+  // UNSAFE_componentWillMount() {
+  //   let type = [];
+  //   let address = [];
+  //   const allData = this.props.data.allPrismicResidential.edges;
+  //   this.setState({ dataSource: allData });
+  //   allData.map((item, index) => {
+  //     this.setState({ ongoingProject: item.node.data.ongoing_projects, ongoingProjectStore: item.node.data.ongoing_projects });
+  //     item.node.data.ongoing_projects.map((item) => {
+  //       type.push(item.residential_links.document[0].data.flat_bhk.text);
+  //       address.push(item.residential_links.document[0].data.flat_address.text);
+  //     })
+  //   })
 
-    allData.map((item, index) => {
-      this.setState({ completedProject: item.node.data.completed_project, completedProjectStore: item.node.data.completed_project });
-      item.node.data.completed_project &&  item.node.data.completed_project.map((item) => {
-        item.residential_links.document && type.push(item.completed_links.document[0].data.flat_bhk.text);
-        address.push(item.completed_links.document[0].data.flat_address.text);
-      })
-    })
-    let allType = [...new Set(type)];
-    let allAddress = [...new Set(address)];
-    this.setState({ allType });
-    this.setState({ allAddress });
-  }
+  //   allData.map((item, index) => {
+  //     this.setState({ completedProject: item.node.data.completed_project, completedProjectStore: item.node.data.completed_project });
+  //     item.node.data.completed_project.map((item) => {
+  //       type.push(item.completed_links.document[0].data.flat_bhk.text);
+  //       address.push(item.completed_links.document[0].data.flat_address.text);
+  //     })
+  //   })
+  //   let allType = [...new Set(type)];
+  //   let allAddress = [...new Set(address)];
+  //   this.setState({ allType });
+  //   this.setState({ allAddress });
+  // }
 
   submitCustomer = (e) => {
     e.preventDefault();
@@ -204,7 +204,7 @@ export default class Residential extends React.Component {
                 <option value="" disabled hidden>Select Address </option>
                 <option value="all_address"> All Address </option>
                 {
-                this.state.allAddress.length &&  this.state.allAddress.map((data, index) => {
+                 this.state.allAddress.length &&  this.state.allAddress.map((data, index) => {
                     return (
                       <option value={data} key={index}>{data}</option>
                     );
@@ -215,7 +215,7 @@ export default class Residential extends React.Component {
                 <option value="" disabled hidden>Select Type </option>
                 <option value="all_type"> All Type </option>
                 {
-                  this.state.allType.map((data, index) => {
+                  this.state.allType.length && this.state.allType.map((data, index) => {
                     return (
                       <option value={data} key={index}>{data}</option>
                     );
