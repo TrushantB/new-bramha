@@ -745,7 +745,7 @@ class HospitalityDetails extends React.Component {
 
             {/* <!--   ------------------- Download Brouchure section start here ------------------- --> */}
            {
-            hospitalityData.data.download_info > 0 && hospitalityData.data.download_info ?
+            hospitalityData.data.download_info && hospitalityData.data.download_info > 0 && hospitalityData.data.download_info ?
               <div className="container detail-page-sections d-flex justify-content-center download-btn">
                 {
                    hospitalityData.data.download_info > 0 && hospitalityData.data.download_info.map((item, index) => {
