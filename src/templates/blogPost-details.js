@@ -17,6 +17,7 @@ export default class BlogPost extends React.Component {
 
     render(){
         const blogData = this.props.data.prismicBlog.data
+        console.log(blogData.group)
         return(
             <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
                 <SEO title='Blog Post'/>
@@ -51,6 +52,27 @@ export default class BlogPost extends React.Component {
                             </div>
                         </div>
                     </section>
+                    {
+                     blogData.group &&   blogData.group.map((item) => {
+                            return(
+                                <section className="detail-page-sections pb-0 pt-sm-0 container container-sm-fluid " >
+                                    <div className="padding-block-60 page-heading-section">
+                                        <div className="col-12 padding-sm-0">
+                                            <h2 className="page-heading text-uppercase">
+                                                {item.title1.text}
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-12">
+                                            <div className="mb-5" dangerouslySetInnerHTML={{__html:item.description1.html }}/>
+                                        </div>
+                                    </div>
+                               </section>
+                            )
+                        })
+                    }
+               
                 </main>
             </Layout>
         )
@@ -70,6 +92,14 @@ export const blogPost = graphql`
         banner{
         url
         }
+        group {
+            title1 {
+              text
+            }
+            description1 {
+              html
+            }
+          }
       }
     }
 }
