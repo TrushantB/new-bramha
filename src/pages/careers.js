@@ -315,7 +315,7 @@ console.log(jobOpenningButtons);
                 <div className="career-tabs  d-flex flex-wrap justify-content-between align-content-between">
                   {
                   this.state.jobOpenningButtons.map((item) => {
-                    if(item.name) {
+                    if(item.name != 'none') {
                       return (
                         <div className="btn-wraper" key={item.id}>
                           <button onClick={() => this.handleJobOpening(item)} className={`button-tertiary w-100  ${item.className}`}>
