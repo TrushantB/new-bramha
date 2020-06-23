@@ -263,19 +263,14 @@ class VerticalPage extends React.Component {
                   </div>
                 </div>
 
-               {/* ...................Customizable Button..................
-                {
-                  verticalData.data.customizable_button[0].link1 && verticalData.data.customizable_button[0].link1.url ?
+               {/* ...................Customizable Button.................. */}
+               {
+                  verticalData.data.customizable_button_link && verticalData.data.customizable_button_title ?
                   <div className="container detail-page-sections d-flex justify-content-center download-btn">
-                    {
-                      verticalData.data.customizable_button && verticalData.data.customizable_button.map((item, index) => {
-                        return(
-                        <a key={index} href={item.link1.url}  target="_blank" className="btn-secondary text-center">{item.title1}</a>
-                        )
-                      })
-                    }
+                    <a href={verticalData.data.customizable_button_link.url}  target="_blank" className="btn-secondary text-center">{verticalData.data.customizable_button_title}</a>
                   </div> : null
-                } */}
+                } 
+
                 
               <div className="padding-block-60 page-heading-section">
                   <div className="col-12 padding-sm-0">
@@ -934,12 +929,12 @@ export const verticalViewData = graphql`
       description {
         html
       }
-      customizable_button { 
-        title1
-        link1 {
-          url
-        }
+
+      customizable_button_title
+      customizable_button_link{
+        url
       }
+
       phase {
         title1 {
           text
@@ -977,6 +972,9 @@ export const verticalViewData = graphql`
         caption
         title1 {
           text
+        }
+        floor_plans_image:image1 {
+          url
         }
         image1 {
           localFile {

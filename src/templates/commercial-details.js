@@ -258,19 +258,15 @@ class CommercialDetails extends React.Component {
                   </nav>
                 </div>
               </div>
-              {/* ...................Customizable Button..................
-              {
-                 commercialData.data.customizable_button[0].link1.url && commercialData.data.customizable_button[0].link1.url ?
+
+               {/* ...................Customizable Button.................. */}
+               {
+                  commercialData.data.customizable_button_link && commercialData.data.customizable_button_title ?
                   <div className="container detail-page-sections d-flex justify-content-center download-btn">
-                    {
-                      commercialData.data.customizable_button && commercialData.data.customizable_button.map((item, index) => {
-                        return(
-                        <a key={index} href={item.link1.url}  target="_blank" className="btn-secondary text-center">{item.title1}</a>
-                        )
-                      })
-                    }
+                    <a href={commercialData.data.customizable_button_link.url}  target="_blank" className="btn-secondary text-center">{commercialData.data.customizable_button_title}</a>
                   </div> : null
-                } */}
+                } 
+
               <div className=" padding-block-60">
                 <h2 className="page-heading text-uppercase">
                   {commercialData.data.heading.text}
@@ -949,12 +945,12 @@ export const hospitalityPage = graphql`
       description {
         html
       }
-      customizable_button { 
-        title1
-        link1 {
-          url
-        }
+      
+      customizable_button_title
+      customizable_button_link{
+        url
       }
+
       phase {
         title1 {
           text

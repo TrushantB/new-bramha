@@ -234,22 +234,15 @@ class HospitalityDetails extends React.Component {
                   </nav>
                 </div>
               </div>
-              {/* ...................Customizable Button.................. */}
-              {
-                hospitalityData.data.customizable_button &&
-                 hospitalityData.data.customizable_button.length &&
-                  hospitalityData.data.customizable_button[0].link1 ?
-                  <div className="container detail-page-sections d-flex justify-content-center download-btn mb-3 mb-sm-5">
-                    {
-                      hospitalityData.data.customizable_button  && hospitalityData.data.customizable_button.map((item, index) => {
-                        return(
-                            item.link1.url ?
-                        <a key={index} href={item.link1.url}  target="_blank" className="btn-secondary text-center">{item.title1}</a>:null
-                        )
-                      })
-                    }
+
+               {/* ...................Customizable Button.................. */}
+               {
+                  hospitalityData.data.customizable_button_link && hospitalityData.data.customizable_button_title ?
+                  <div className="container detail-page-sections d-flex justify-content-center download-btn">
+                    <a href={hospitalityData.data.customizable_button_link.url}  target="_blank" className="btn-secondary text-center">{hospitalityData.data.customizable_button_title}</a>
                   </div> : null
-                }
+                } 
+
               <div className="padding-block-60">
                 <h2 className="page-heading text-uppercase">
                   {hospitalityData.data.heading.text}
@@ -803,12 +796,11 @@ export const hospitalityPage = graphql`
       description {
         html
       }
-      customizable_button { 
-        title1
-        link1 {
-          url
-        }
+      customizable_button_title
+      customizable_button_link{
+        url
       }
+
       phase {
         title1 {
           text

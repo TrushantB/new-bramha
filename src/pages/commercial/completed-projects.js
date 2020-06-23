@@ -27,13 +27,12 @@ class CompletedProjects extends React.Component {
               <div className="row">
                 {
                  completedData.completed_projects && completedData.completed_projects.map((item) => {
-                    return (
+                  return (
                       item.completed_links.document.map((datas, value) => {
                         return (
                           <div className="col-md-6 col-lg-4 p-0 pl-sm-3 pr-sm-3" key={value}>
                             <Link to={`commercial/${item.completed_links.uid}`} >
                               <div className="residences-card position-relative mt-0 mt-sm-5" key={value}>
-
                                 <div className="residences-img ">
                                   <picture>
                                     <source media="(max-width: 581px)" srcSet={datas.data.thumbnail.mobile.url} />
@@ -82,30 +81,30 @@ export const completedProjects = graphql`{
               completed_project_description{
                 html
               }
-            #  completed_projects{
-            #    completed_links{
-            #      uid
-            #      document{
-            #        data{
-            #          title{
-            #            text
-            #          }
-            #          flat_bhk{
-            #            text
-            #          }
-            #          flat_address{
-            #            text
-            #          }
-            #          thumbnail{
-            #            url
-            #            mobile{
-            #              url
-            #            }
-            #          }
-            #        }
-            #      }
-            #    }
-            #  }
+              completed_projects{
+                completed_links{
+                  uid
+                  document{
+                    data{
+                      title{
+                        text
+                      }
+                      flat_bhk{
+                        text
+                      }
+                      flat_address{
+                        text
+                      }
+                      thumbnail{
+                        url
+                        mobile{
+                          url
+                        }
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         }

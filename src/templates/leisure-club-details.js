@@ -233,19 +233,15 @@ class LeisureDetails extends React.Component {
                     </nav>
                   </div>
                 </div>
-                {/* ...................Customizable Button.................. */}
-              {
-                 leisureData.data.customizable_button &&  leisureData.data.customizable_button[0].link1 && leisureData.data.customizable_button[0].link1.url ?
+               
+               {/* ...................Customizable Button.................. */}
+               {
+                  leisureData.data.customizable_button_link && leisureData.data.customizable_button_title ?
                   <div className="container detail-page-sections d-flex justify-content-center download-btn">
-                    {
-                      leisureData.data.customizable_button && leisureData.data.customizable_button.map((item, index) => {
-                        return(
-                        <a key={index} href={item.link1.url}  target="_blank" className="btn-secondary text-center">{item.title1}</a>
-                        )
-                      })
-                    }
+                    <a href={leisureData.data.customizable_button_link.url}  target="_blank" className="btn-secondary text-center">{leisureData.data.customizable_button_title}</a>
                   </div> : null
-                }
+                } 
+
               <div className="padding-block-60">
                 <h2 className="page-heading text-uppercase">
                   {leisureData.data.heading.text}
@@ -802,12 +798,12 @@ export const leisurePage = graphql`
       description {
         html
       }
-      customizable_button { 
-        title1
-        link1 {
-          url
-        }
+
+      customizable_button_title
+      customizable_button_link{
+        url
       }
+
       phase {
         title1 {
           text
