@@ -798,12 +798,6 @@ export const leisurePage = graphql`
       description {
         html
       }
-      customizable_button { 
-        title1
-        link1 {
-          url
-        }
-      }
 
       customizable_button_title
       customizable_button_link{
