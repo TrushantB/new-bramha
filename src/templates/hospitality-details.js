@@ -235,7 +235,7 @@ class HospitalityDetails extends React.Component {
                 </div>
               </div>
               {/* ...................Customizable Button.................. */}
-              {
+              {/* {
                 hospitalityData.data.customizable_button &&
                  hospitalityData.data.customizable_button.length &&
                   hospitalityData.data.customizable_button[0].link1 ?
@@ -249,7 +249,7 @@ class HospitalityDetails extends React.Component {
                       })
                     }
                   </div> : null
-                }
+                } */}
               <div className="padding-block-60">
                 <h2 className="page-heading text-uppercase">
                   {hospitalityData.data.heading.text}
