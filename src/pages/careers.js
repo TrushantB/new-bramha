@@ -32,46 +32,50 @@ class Careers extends React.Component {
       utmSource: null,
       utmMedium: null,
       utmCampaign: null,
-      jobOpenningButtons: [
-        {
-          id: 'sales',
-          name: 'Sales',
-        },
-        // {
-        //   id: 'human_resources',
-        //   name: 'Human Resources'
-        // },
-        // {
-        //   id: 'management',
-        //   name: 'Management'
-        // },
-        // {
-        //   id: 'engineers',
-        //   name: 'Engineers'
-        // },
-        // {
-        //   id: 'accounts',
-        //   name: 'Accounts'
-        // },
-        // {
-        //   id: 'project_manager',
-        //   name: 'Project Manager'
-        // },
-        {
-          id: 'admin',
-          name: 'Administration'
-        },
-        {
-          id: 'architect',
-          name: 'Architect'
-        }
-      ]
+      jobOpenningButtons: []
     }
   }
 
   UNSAFE_componentWillMount() {
+  
     let jobOpening = [];
     const careerData = this.props.data.prismicCareers.data;
+    let jobOpenningButtons = [
+      {
+        id: careerData.sale_key,
+        name: careerData.sale_button_name,
+      },
+      {
+        id: careerData.human_resources_key,
+        name: careerData.human_resources_button_name
+      },
+      {
+        id: careerData.management_key,
+        name: careerData.management_button_name
+      },
+      {
+        id: careerData.engineer_key,
+        name: careerData.engineer_button_name
+      },
+      {
+        id: careerData.account_key,
+        name: careerData.account_button_name
+      },
+      {
+        id: careerData.project_manager_key,
+        name: careerData.project_manager_button_name
+      },
+      {
+        id: careerData.admin_key,
+        name: careerData.admin_button_name
+      },
+      {
+        id: careerData.architect_key,
+        name: careerData.architect_button_name
+      }
+    ]
+console.log(jobOpenningButtons);
+
     careerData.architect.map((item) => {
       jobOpening.push(item)
     })
@@ -96,13 +100,15 @@ class Careers extends React.Component {
     careerData.sales.map((item) => {
       jobOpening.push(item)
     })
-    this.setState({ jobOpening, jobOpeningStore: jobOpening, dataSource: careerData })
+    this.setState({ jobOpening, jobOpeningStore: jobOpening, dataSource: careerData,jobOpenningButtons })
     const queryParams = queryString.parseUrl(this.props.location.search); 
     this.setState({
       utmSource: queryParams && queryParams.query.utm_source,
       utmMedium: queryParams && queryParams.query.utm_medium,
       utmCampaign: queryParams && queryParams.query.utm_campaign
     });
+
+   
   }
 
   handleJobOpening(event) {
@@ -307,15 +313,19 @@ class Careers extends React.Component {
                   <i className="fas fa-search search-btn"></i>
                 </form>
                 <div className="career-tabs  d-flex flex-wrap justify-content-between align-content-between">
-                  {this.state.jobOpenningButtons.map((item) => {
-                    return (
-                      <div className="btn-wraper" key={item.id}>
-                        <button onClick={() => this.handleJobOpening(item)} className={`button-tertiary w-100  ${item.className}`}>
-                          {item.name}
-                        </button>
-                      </div>
-                    )
-                  })}
+                  {
+                  this.state.jobOpenningButtons.map((item) => {
+                    if(item.name) {
+                      return (
+                        <div className="btn-wraper" key={item.id}>
+                          <button onClick={() => this.handleJobOpening(item)} className={`button-tertiary w-100  ${item.className}`}>
+                            {item.name}
+                          </button>
+                        </div>
+                      )
+                    }
+                  })
+                  }
                 </div>
               </div>
             </div>
@@ -429,7 +439,7 @@ class Careers extends React.Component {
               <label className="btn-secondary"  data-toggle="modal" data-target="#exampleModalCenter" >Upload your CV</label>
           </section>
        
-          <div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
               <div className="modal-dialog modal-dialog-centered" role="document">
                 <div className="modal-content">
                   <div className="modal-header">
@@ -496,6 +506,22 @@ export default Careers;
 export const careerPage = graphql` {
   prismicCareers {
     data {
+      architect_button_name
+      admin_button_name
+      admin_key
+      architect_key
+      engineer_key
+      human_resources_key
+      management_key
+      sale_button_name
+      project_manager_key
+      sale_key
+      account_key
+      engineer_button_name
+      management_button_name
+      project_manager_button_name
+      human_resources_button_name
+      account_button_name
       title {
         text
       }
