@@ -880,7 +880,7 @@ class VerticalPage extends React.Component {
                     <p  className={`maharera_important mt-3 mb-1` } style={this.state.styleData}>
                       {verticalData.data.maharera_important.text}
                     </p>
-                    <div className="d-none d-md-flex justify-content-center align-items-center w-100">
+                    <div className=" d-md-flex text-center justify-content-center align-items-center w-100">
                       {
                         this.state.styleData ?
                         <div className="maharera_showmore" onClick={() => {
