@@ -54,22 +54,24 @@ export default class BlogPost extends React.Component {
                     </section>
                     {
                      blogData.group &&   blogData.group.map((item) => {
-                            return(
-                                <section className="detail-page-sections pb-0 pt-sm-0 container container-sm-fluid " >
-                                    <div className="padding-block-60 page-heading-section">
-                                        <div className="col-12 padding-sm-0">
-                                            <h2 className="page-heading text-uppercase">
-                                                {item.title1.text}
-                                            </h2>
-                                        </div>
-                                    </div>
-                                    <div className="row">
-                                        <div className="col-12">
-                                            <div className="mb-5" dangerouslySetInnerHTML={{__html:item.description1.html }}/>
-                                        </div>
-                                    </div>
-                               </section>
-                            )
+                         if(item.title1.text != 'none' && item.description1.html != 'none') {
+                             return(
+                                 <section className="detail-page-sections pb-0 pt-sm-0 container container-sm-fluid " >
+                                     <div className="padding-block-60 page-heading-section">
+                                         <div className="col-12 padding-sm-0">
+                                             <h2 className="page-heading text-uppercase">
+                                                 {item.title1.text}
+                                             </h2>
+                                         </div>
+                                     </div>
+                                     <div className="row">
+                                         <div className="col-12">
+                                             <div className="mb-5" dangerouslySetInnerHTML={{__html:item.description1.html }}/>
+                                         </div>
+                                     </div>
+                                </section>
+                             )
+                         }
                         })
                     }
                
