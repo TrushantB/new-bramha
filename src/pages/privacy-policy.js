@@ -28,7 +28,7 @@ class PrivacyPolicy extends React.Component {
           </div>
           {
             privacyData.group &&   privacyData.group.map((item) => {
-              if(item.title1.text != 'none' && item.description1.html != 'none') {
+              if(item.title1.text != 'null' && item.description1.html != 'null') {
                   return(
                       <section className="detail-page-sections pb-0 pt-sm-0 container container-sm-fluid " >
                           <div className="padding-block-60 page-heading-section">
