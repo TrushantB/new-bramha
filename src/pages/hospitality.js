@@ -9,6 +9,7 @@ class Hospitality extends React.Component {
     const hospitalityData = this.props.data.allPrismicHospitality.edges;
     const data = hospitalityData[0].node.data;
     const verticalsData = this.props.data.prismicOurVerticals.data;
+    
     return (
       <Layout location="/" noHeader="true" pathname={this.props.location.pathname}>
         <SEO title={data.sub_title.text} />
