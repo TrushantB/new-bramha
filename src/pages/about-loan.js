@@ -1,39 +1,110 @@
 import React from 'react';
-import Layout from '../components/layout';
-import Footer from '../components/footer';
-import SEO from "../components/seo";
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import chevron_down from '../images/chevron_down.svg';
+import Div100vh from 'react-div-100vh/lib/Div100vh';
 
 class AboutLoan extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      collapseDescription: null
+    }
+  }
+
+  UNSAFE_componentWillMount() {
+    const aboutLoanData = this.props.data.prismicAboutLoan.data;
+    if(aboutLoanData.group[0].heading.text != 'null' ) {
+      this.setState({collapseDescription: aboutLoanData.group})
+    }
+  }
+
+  scrollWin() {
+    var offsetHeight = document.querySelector('.banner-section').offsetHeight;
+    window.scrollBy({
+      top: offsetHeight,
+      behavior: 'smooth'
+    });
+  }
   render(){
-    const aboutData = this.props.data.prismicAboutLoan.data;
+    const aboutLoanData = this.props.data.prismicAboutLoan.data;
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
-        <SEO title={aboutData.title.text}/>
-          <div class="about-loan-page-wrapper">
-            <div className="page-heading-section container container-sm-fluid bg-color mb-4 mb-sm-5">
-              <div className="padding-block-60">
-                <h2 className="page-heading">{aboutData.title.text}</h2>
+        <SEO title={aboutLoanData.title.text}/>
+        <div  className="guideline-nri-detail">
+          <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section" id="banner-section">
+            <picture>
+              <source media="(min-width: 581px)" srcSet={aboutLoanData.banner.localFile.childImageSharp.url}/>
+              <Img fluid={aboutLoanData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
+            </picture>
+            <div className="scroll-downs" onClick={this.scrollWin}>
+              <span>Scroll</span>
+              <div className="mousey"><img src={chevron_down} /></div>
+            </div>
+            {/* <Img fluid={aboutLoanData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" /> */}
+          </Div100vh>
+
+          <section className="page-heading-section container container-sm-fluid bg-color">
+          <div className="padding-block-60">
+            <h2 className="page-heading">{aboutLoanData.title.text}</h2>
+          </div>
+         <div className="row mr-0">
+          <div className="col-12 ">
+            <div className="main-paragraph ">
+              <div className="m-0" dangerouslySetInnerHTML={{__html:aboutLoanData.description.html }} />
+            </div>
+          </div>
+         </div>
+        </section>
+        {
+          this.state.collapseDescription &&
+          <section className="container">
+            <div className="row ">
+              <div className="col-sm-12 col-md-6 search-box">
+                <form action="">
+                 <input type="search" onChange={(e) => {
+                   let data =  aboutLoanData.group.filter(res => {
+                      return res.heading.text.toLocaleLowerCase().match(e.target.value.toLocaleLowerCase())
+                    })
+                    this.setState({collapseDescription : data })
+                    }}
+                    placeholder="Search by title" className="form-control search-bar rounded-0 "/>
+                   <i className="fas fa-search search-btn"></i>
+                </form>
               </div>
-              <div className="content">
-                <div className="row ">
-                  <div className="col-lg-6">
-                    <div dangerouslySetInnerHTML={{__html:aboutData.description.html }}/>
-                    <h2> Coming Soon... </h2>
-                    <Link to='/' className="link-text font-weight-bold"> Back To Home Page </Link>
-                  </div>
-                  <div className="col-lg-6"> 
-                  <Img fluid={aboutData.banner.localFile.childImageSharp.fluid} className="w-100 h-100"/>
-                  </div>
+              <div className="col-12 accordions-sect pt-0">
+                <div className="accordion" id="accordionExample">
+                  {
+                    this.state.collapseDescription && this.state.collapseDescription.map((item,value)=>{
+                      return(
+                        <div key={value} className="card border-0">
+                          <div className="card-header" id="headingOne">
+                            <h5 className="mb-0 d-flex justify-content-between align-items-center section-title-secondary border-0" data-toggle="collapse" data-target={`#collapseOne${value}`} aria-expanded="false" aria-controls="collapseOne">
+                              {item.heading.text}
+                              <button className="btn btn-link">
+                                <i className="fas fa-chevron-down"></i>
+                              </button>
+                            </h5>
+                          </div>
+
+                          <div id={`collapseOne${value}`} className="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div className="card-body" dangerouslySetInnerHTML={{__html: item.description1.html}} />
+                          </div>
+                        </div>
+                      )
+                    })
+                  }
                 </div>
               </div>
             </div>
-          </div>
-        
+          </section>
+        }
+        </div>
       </Layout>
     )
-  } 
+  }
 }
 export default AboutLoan;
 
@@ -53,6 +124,14 @@ export const aboutLoan = graphql` {
               ...GatsbyImageSharpFluid
             }
           }
+        }
+      }
+      group {
+        description1 {
+          html
+        }
+        heading {
+          text
         }
       }
     }

@@ -16,7 +16,9 @@ class Maharerra extends React.Component {
 
   UNSAFE_componentWillMount() {
     const mahareraData = this.props.data.prismicMaharera.data;
-    this.setState({collapseDescription: mahareraData.group})
+    if(mahareraData.group[0].heading.text != 'null' ) {
+      this.setState({collapseDescription: mahareraData.group})
+    }
   }
 
   scrollWin() {
