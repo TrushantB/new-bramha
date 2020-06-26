@@ -116,26 +116,7 @@ class MediaAndEvents extends React.Component {
                               })
                               }
                           </Slider>
-                          {
-                            isOpen &&
-                            <Lightbox
-                              mainSrc={this.state.showCase[photoIndex].image.localFile.childImageSharp.fluid.src}
-                              nextSrc={this.state.showCase[(photoIndex + 1) % this.state.showCase.length].image.localFile.childImageSharp.fluid.src}
-                              prevSrc={this.state.showCase[(photoIndex + this.state.showCase.length - 1) % this.state.showCase.length].image.localFile.childImageSharp.fluid.src}
-                              onCloseRequest={() => this.setState({ isOpen: false })}
-                              onMovePrevRequest={() =>
-                                this.setState({
-                                  photoIndex: (photoIndex + this.state.showCase.length - 1) % this.state.showCase.length,
-                                })
-                              }
-                              onMoveNextRequest={() =>
-                                this.setState({
-                                  photoIndex: (photoIndex + 1) % this.state.showCase.length,
-                                })
-                              }
-                              animationDuration={800}
-                              />
-                            }
+                         
                           <p className="text-left text-sm-center pages mb-0">
                             {this.state.activeSlide + 1} of {item.events.document[0].data.showcase.length}
                           </p>
@@ -147,6 +128,26 @@ class MediaAndEvents extends React.Component {
               // )
             })
           }
+           {
+              isOpen &&
+              <Lightbox
+                mainSrc={this.state.showCase[photoIndex].image.localFile.childImageSharp.fluid.src}
+                nextSrc={this.state.showCase[(photoIndex + 1) % this.state.showCase.length].image.localFile.childImageSharp.fluid.src}
+                prevSrc={this.state.showCase[(photoIndex + this.state.showCase.length - 1) % this.state.showCase.length].image.localFile.childImageSharp.fluid.src}
+                onCloseRequest={() => this.setState({ isOpen: false })}
+                onMovePrevRequest={() =>
+                  this.setState({
+                    photoIndex: (photoIndex + this.state.showCase.length - 1) % this.state.showCase.length,
+                  })
+                }
+                onMoveNextRequest={() =>
+                  this.setState({
+                    photoIndex: (photoIndex + 1) % this.state.showCase.length,
+                  })
+                }
+                animationDuration={800}
+                />
+              }
         </section>
       </Layout>
     )
