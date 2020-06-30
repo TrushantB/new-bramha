@@ -144,7 +144,7 @@ console.log(jobOpenningButtons);
     this.setState({ avatar: filename });
     firebase
       .storage()
-      .ref("Careers Resume")
+      .ref("Resume")
       .child(filename)
       .getDownloadURL()
       .then(url => {
@@ -165,8 +165,6 @@ console.log(jobOpenningButtons);
   };
 
   submitCareer = (e) => {
-    alert('called')
-    
     e.preventDefault();
     firebase
       .database()
@@ -401,7 +399,7 @@ console.log(jobOpenningButtons);
                                               className="w-100 resume-upload-input h-100"
                                               accept="pdf/*"
                                               name="resume-upload"
-                                              storageRef={firebase.storage().ref("Careers Resume")}
+                                              storageRef={firebase.storage().ref("Resume")}
                                               onUploadSuccess={this.handleUploadResumeSuccess}
                                             />
                                           <div className="file-dummy resume-upload">
