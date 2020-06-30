@@ -14,7 +14,7 @@ import queryString from 'query-string';
 import '../firebase/config'
 import * as firebase from 'firebase';
 import FileUploader from "react-firebase-file-uploader";
-
+import $ from 'jquery'
 class Careers extends React.Component {
   constructor() {
     super();
@@ -33,7 +33,9 @@ class Careers extends React.Component {
       utmMedium: null,
       utmCampaign: null,
       jobTitle:'',
-      jobOpenningButtons: []
+      jobOpenningButtons: [],
+      jobApplyFlag:false,
+      applySuccess:false
     }
   }
 
@@ -164,8 +166,6 @@ console.log(jobOpenningButtons);
   };
 
   submitCareer = (e) => {
-    alert('called')
-    
     e.preventDefault();
     firebase
       .database()
@@ -184,8 +184,17 @@ console.log(jobOpenningButtons);
       this.setState({avatar: ''});
       document.querySelector('.careerResetForm').reset();
 
+      $(function () {
+        $('#exampleModalCenter').modal('toggle');
+     });
 
+    this.setState({applySuccess:true})
+
+    setTimeout(() => {
+      this.setState({applySuccess:false})
+    }, 4000);
   }
+
 
   render() {
     const { photoIndex, isOpen } = this.state;
@@ -227,7 +236,6 @@ console.log(jobOpenningButtons);
         }
       ]
     };
-    console.log(this.state.jobTitle);
     
     return (
       <Layout location="/" noHeader="true" pathname={this.props.location.pathname}>
@@ -364,66 +372,10 @@ console.log(jobOpenningButtons);
                                 {item.description2.text}
                               </p>
                             </div>
-                            <button className="btn-secondary " data-toggle="modal" data-target={`#exampleModal${value}`} onClick={() => this.setState({jobTitle:item.position.text})}>
+                            <button className="btn-secondary " data-toggle="modal" data-target="#exampleModalCenter" 
+                              onClick={() => this.setState({jobTitle:item.position.text,jobApplyFlag:true})}>
                               Apply For Job
                               </button>
-                            {/* ------------- Modal ----------------- */}
-                            <div className="modal fade" id={`exampleModal${value}`} tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                              <div className="modal-dialog" role="document">
-                                <div className="modal-content">
-                                  <div className="modal-header">
-                                    <h2 className="modal-title section-title text-center w-100" id="exampleModalLabel">Apply For Job</h2>
-                                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
-                                    </button>
-                                  </div>
-                                  <div className="modal-body">
-                                    <form className="careerResetForm" onSubmit={(e) => this.submitCareer(e)}>
-                                      <div className="container">
-                                      <div className="form-row">
-                                        <input type="hidden" name="form-name" value="career"/>
-                                        <input type="hidden" id="applyFor" name="form-name" value={item.position.text} />
-                                        <input type="hidden" id="utmSource" name="utmSource" value={this.state.utmSource} />
-                                        <input type="hidden" id="utmMedium" name="utmMedium" value={this.state.utmMedium} />
-                                        <input type="hidden" id="utmCampaign" name="utmCampaign" value={this.state.utmCampaign} />
-
-                                        <div className="col-sm-6 form-group">
-                                          <input type="text" className="form-control rounded-0" id="name" placeholder="Your Name*" name="name" autoComplete="false" required />
-                                        </div>
-                                        <div className="col-sm-6 form-group">
-                                          <input type="text" className="form-control rounded-0" id="email" placeholder="Your Email*" autoComplete="false" name="email" required />
-                                        </div>
-                                        <div className="col-12">
-                                          <div className="form-group file-area">
-                                            <FileUploader
-                                              id="file"
-                                              className="w-100 resume-upload-input h-100"
-                                              accept="pdf/*"
-                                              name="resume-upload"
-                                              storageRef={firebase.storage().ref("Resume")}
-                                              onUploadSuccess={this.handleUploadResumeSuccess}
-                                            />
-                                          <div className="file-dummy resume-upload">
-                                            {
-                                              this.state.avatar && this.state.avatar ? this.state.avatar:
-                                              <div className="default">Resume Upload (PDF/DOC)*</div>
-                                            }
-                                          </div>
-                                        </div>
-
-                                        </div>
-                                      </div>
-                                      <div className="sumbit text-center mt-sm-0 mt-4">
-                                        <button type="submit" className="btn-secondary" data-dismiss="modal">
-                                            Submit
-                                          </button>
-                                      </div>
-                                      </div>
-                                    </form>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
                           </div>
                         </div>
                       </div>
@@ -443,13 +395,13 @@ console.log(jobOpenningButtons);
               <span className="d-block">Upload your CV to our portal.</span>
               <span className="d-block">We will get back to you once suitable position is open</span>
             </p>
-            <div onClick={() => this.setState({jobTitle:'any'})}>
+            <div onClick={() => this.setState({jobTitle:'any',jobApplyFlag:true})}>
             <input type="file" className="border-0 input-file-btn" id="choose-file" placeholder="Upload your CV" />
               <label className="btn-secondary"  data-toggle="modal" data-target="#exampleModalCenter" >Upload your CV</label>
             </div>
           </section>
-       
-          <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+          <div className="modal fade"  id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
               <div className="modal-dialog modal-dialog-centered" role="document">
                 <div className="modal-content">
                   <div className="modal-header">
@@ -495,7 +447,7 @@ console.log(jobOpenningButtons);
                       </div>
                     </div>
                     <div className="sumbit text-center mt-sm-0 mt-4">
-                      <button type="submit" className="btn-secondary" data-dismiss="modal">
+                      <button type="submit" className="btn-secondary">
                             Submit
                         </button>
                     </div>
@@ -507,6 +459,13 @@ console.log(jobOpenningButtons);
               </div>
             </div>
         </div>
+        {
+          this.state.applySuccess &&
+        <div class="alert alert-success" role="alert">
+           <h4 class="alert-heading">Well done!</h4>
+        <p>You are successfully applied for job.</p>
+       </div>
+        }
       </Layout>
     )
   }

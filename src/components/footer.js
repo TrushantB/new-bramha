@@ -34,7 +34,7 @@ const Footer = ({ siteTitle, props, footerLinks }) => {
                 <Link to="/disclaimer">Disclaimer</Link>
               </li>
               <li className="nav-item">
-                <Link to="/site-map"> Site Map</Link>
+                <Link to="/sitemap.xml"> Site Map</Link>
               </li>
             </ul>
           </div>

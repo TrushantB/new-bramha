@@ -339,7 +339,11 @@ class CommercialDetails extends React.Component {
                 Location
               </h2>
               <div className="map-image">
-                <iframe className="map" src={commercialData.data.location_url} style={{ width:"100%", height:"372px", frameborder:"0", border:"0", allowFullScreen:"0"}}></iframe>
+                {
+                  commercialData.data.location_url ? 
+                  <iframe className="map" src={commercialData.data.location_url} style={{ width:"100%", height:"372px", frameborder:"0", border:"0", allowFullScreen:"0"}}></iframe>
+                 : null
+                }
               </div>
             </section>
           {/* <!-- ------------------- Location section end here ------------------- --> */}

@@ -319,7 +319,11 @@ class HospitalityDetails extends React.Component {
                 Location
               </h2>
               <div className="map-image">
-                <iframe className="map" src={hospitalityData.data.location_url} style={{ width:"100%", height:"372px", frameborder:"0", border:"0", allowFullScreen:"0"}}></iframe>
+                {
+                  hospitalityData.data.location_url ? 
+                  <iframe className="map" src={hospitalityData.data.location_url} style={{ width:"100%", height:"372px", frameborder:"0", border:"0", allowFullScreen:"0"}}></iframe>
+                 : null
+                }
               </div>
             </section>
           {/* <!-- ------------------- Location section end here ------------------- --> */}
