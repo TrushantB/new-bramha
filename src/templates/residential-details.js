@@ -262,15 +262,7 @@ class VerticalPage extends React.Component {
                     </nav>
                   </div>
                 </div>
-
-               {/* ...................Customizable Button.................. */}
-               {
-                  verticalData.data.customizable_button_link && verticalData.data.customizable_button_title ?
-                  <div className="container detail-page-sections d-flex justify-content-center download-btn">
-                    <a href={verticalData.data.customizable_button_link.url}  target="_blank" className="btn-secondary text-center">{verticalData.data.customizable_button_title}</a>
-                  </div> : null
-                } 
-
+      
                 
               <div className="padding-block-60 page-heading-section">
                   <div className="col-12 padding-sm-0">
@@ -280,11 +272,22 @@ class VerticalPage extends React.Component {
                   </div>
               </div>
               <div className="row">
-                  <div className="col-12">
-                      <div className="mb-4" dangerouslySetInnerHTML={{__html:verticalData.data.description.html }}/>
-                          </div>
-                        </div>
-                    </section>
+                <div className="col-12">
+                  <div className="mb-4" dangerouslySetInnerHTML={{__html:verticalData.data.description.html }}/>
+                 </div>
+              </div>
+
+              {/* ...................Customizable Button.................. */}
+              {
+                  verticalData.data.customizable_button_link && verticalData.data.customizable_button_title ?
+                  <div className="detail-page-sections d-flex justify-content-start align-items-start download-btn mt-80">
+                    <a href={verticalData.data.customizable_button_link.url}  target="_blank" className="btn-secondary m-0 text-center">{verticalData.data.customizable_button_title}</a>
+                  </div> : null
+                } 
+
+
+
+            </section>
             {/* <!--   ------------------- Showcase section start here ------------------- --> */}
             <section className="slider-page">
               <h2 className="section-title text-uppercase text-center">

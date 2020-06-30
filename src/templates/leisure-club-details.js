@@ -234,13 +234,7 @@ class LeisureDetails extends React.Component {
                   </div>
                 </div>
                
-               {/* ...................Customizable Button.................. */}
-               {
-                  leisureData.data.customizable_button_link && leisureData.data.customizable_button_title ?
-                  <div className="container detail-page-sections d-flex justify-content-center download-btn">
-                    <a href={leisureData.data.customizable_button_link.url}  target="_blank" className="btn-secondary text-center">{leisureData.data.customizable_button_title}</a>
-                  </div> : null
-                } 
+              
 
               <div className="padding-block-60">
                 <h2 className="page-heading text-uppercase">
@@ -256,6 +250,13 @@ class LeisureDetails extends React.Component {
                   </a> */}
                 </div>
               </div>
+              {/* ...................Customizable Button.................. */}
+                {
+                  leisureData.data.customizable_button_link && leisureData.data.customizable_button_title ?
+                  <div className="detail-page-sections d-flex justify-content-start align-items-start download-btn mt-80">
+                    <a href={leisureData.data.customizable_button_link.url}  target="_blank" className="btn-secondary m-0 text-center">{leisureData.data.customizable_button_title}</a>
+                  </div> : null
+                } 
             </section>
           {/*  {/* <!------------------ middle section end here ------------------------> */}
           {/* <!-- ------------------- Showcase section start here ------------------- --> */}
