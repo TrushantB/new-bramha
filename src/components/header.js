@@ -78,15 +78,16 @@ return(
                 <div className="contact-feild">
                   <i className="far fa-user-circle"></i>
                   <h4 className="text-center mb-3 section-title">  Direct call to our consultant</h4>
-                  <p>
-                    Project Inquiry :<Link to="tel:91204142330"  className="link-text"> 91204142330</Link>
-                  </p>
-                  <p>
-                    Head Office : <Link to="tel:912041442333" className="link-text"> 912041442333</Link>
-                  </p>
-                  <p>
-                    Fax Number : <Link to="tel:912041442333"  className="link-text"> 912026353333</Link>
-                  </p>
+                  {
+                    data.contact_info && data.contact_info.map((item) => {
+                      return (
+                        <p>
+                          {item.title1.text} : <Link to={`tel:${item.number}`}  className="link-text"> {item.number}</Link>
+                        </p>
+                      )
+                    })
+                  }
+                  
                 </div>
             </div>
             <div className="tab-pane fade" id="mail" role="tabpanel" aria-labelledby="mail-tab">

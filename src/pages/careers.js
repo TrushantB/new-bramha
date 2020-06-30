@@ -32,6 +32,7 @@ class Careers extends React.Component {
       utmSource: null,
       utmMedium: null,
       utmCampaign: null,
+      jobTitle:'',
       jobOpenningButtons: []
     }
   }
@@ -163,12 +164,15 @@ console.log(jobOpenningButtons);
   };
 
   submitCareer = (e) => {
+    alert('called')
+    
     e.preventDefault();
     firebase
       .database()
       .ref("Careers")
       .push()
       .set({
+        jobTitle:this.state.jobTitle,
         name: e.target.name.value,
         email: e.target.email.value,
         applyFor: e.target.applyFor.value,
@@ -179,6 +183,8 @@ console.log(jobOpenningButtons);
       })
       this.setState({avatar: ''});
       document.querySelector('.careerResetForm').reset();
+
+
   }
 
   render() {
@@ -221,6 +227,8 @@ console.log(jobOpenningButtons);
         }
       ]
     };
+    console.log(this.state.jobTitle);
+    
     return (
       <Layout location="/" noHeader="true" pathname={this.props.location.pathname}>
         <SEO title="Careers" />
@@ -356,7 +364,7 @@ console.log(jobOpenningButtons);
                                 {item.description2.text}
                               </p>
                             </div>
-                            <button className="btn-secondary " data-toggle="modal" data-target={`#exampleModal${value}`}>
+                            <button className="btn-secondary " data-toggle="modal" data-target={`#exampleModal${value}`} onClick={() => this.setState({jobTitle:item.position.text})}>
                               Apply For Job
                               </button>
                             {/* ------------- Modal ----------------- */}
@@ -385,8 +393,8 @@ console.log(jobOpenningButtons);
                                         <div className="col-sm-6 form-group">
                                           <input type="text" className="form-control rounded-0" id="email" placeholder="Your Email*" autoComplete="false" name="email" required />
                                         </div>
-                                        {/* <div className="col-12"> */}
-                                          {/* <div className="form-group file-area">
+                                        <div className="col-12">
+                                          <div className="form-group file-area">
                                             <FileUploader
                                               id="file"
                                               className="w-100 resume-upload-input h-100"
@@ -401,12 +409,12 @@ console.log(jobOpenningButtons);
                                               <div className="default">Resume Upload (PDF/DOC)*</div>
                                             }
                                           </div>
-                                        </div> */}
+                                        </div>
 
-                                        {/* </div> */}
+                                        </div>
                                       </div>
                                       <div className="sumbit text-center mt-sm-0 mt-4">
-                                        <button type="submit" className="btn-secondary">
+                                        <button type="submit" className="btn-secondary" data-dismiss="modal">
                                             Submit
                                           </button>
                                       </div>
@@ -435,8 +443,10 @@ console.log(jobOpenningButtons);
               <span className="d-block">Upload your CV to our portal.</span>
               <span className="d-block">We will get back to you once suitable position is open</span>
             </p>
+            <div onClick={() => this.setState({jobTitle:'any'})}>
             <input type="file" className="border-0 input-file-btn" id="choose-file" placeholder="Upload your CV" />
               <label className="btn-secondary"  data-toggle="modal" data-target="#exampleModalCenter" >Upload your CV</label>
+            </div>
           </section>
        
           <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -464,8 +474,8 @@ console.log(jobOpenningButtons);
                       <div className="col-sm-6 form-group">
                         <input type="text" className="form-control rounded-0" id="email" placeholder="Your Email*" autoComplete="off" name="email" required />
                       </div>
-                      {/* <div className="col-12"> */}
-                        {/* <div className="form-group file-area">
+                      <div className="col-12">
+                        <div className="form-group file-area">
                           <FileUploader
                             id="file"
                             className="w-100 resume-upload-input h-100"
@@ -482,10 +492,10 @@ console.log(jobOpenningButtons);
                         </div>
                       </div>
 
-                      </div> */}
+                      </div>
                     </div>
                     <div className="sumbit text-center mt-sm-0 mt-4">
-                      <button type="submit" className="btn-secondary">
+                      <button type="submit" className="btn-secondary" data-dismiss="modal">
                             Submit
                         </button>
                     </div>

@@ -33,14 +33,21 @@ const Layout = ({ children, pathname, className }) => {
           whatsapp {
             url
           }
+          contact_info {
+            number
+            title1 {
+              text
+            }
+          }
          followus {
           title1{
             text
           }
           link {
-            url
+            url 
           }
           }
+
         }
       }
     }
