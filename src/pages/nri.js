@@ -16,7 +16,9 @@ class NRI extends React.Component {
 
   UNSAFE_componentWillMount() {
     const nriData = this.props.data.prismicNri.data;
-    this.setState({collapseDescription: nriData.group})
+    if(nriData.group[0].heading1.text != 'null' ) {
+      this.setState({collapseDescription: nriData.group})
+    }
   }
 
   scrollWin() {
@@ -46,7 +48,7 @@ class NRI extends React.Component {
 
           <section className="page-heading-section container container-sm-fluid bg-color">
           <div className="padding-block-60">
-            <h2 className="page-heading">Guidlines for NRI's</h2>
+            <h2 className="page-heading">{nriData.title.text}</h2>
           </div>
          <div className="row mr-0">
           <div className="col-12 ">
@@ -57,6 +59,8 @@ class NRI extends React.Component {
          </div>
         </section>
 
+        {
+          this.state.collapseDescription && 
           <section className="container">
             <div className="row ">
               <div className="col-sm-12 col-md-6 search-box">
@@ -105,6 +109,7 @@ class NRI extends React.Component {
               </div>
             </div>
           </section>
+        }
         </div>
       </Layout>
     )

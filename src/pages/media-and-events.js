@@ -12,7 +12,8 @@ class MediaAndEvents extends React.Component {
     activeSlide: null,
     photoIndex: 0,
     isOpen: false,
-    locateMatch: ''
+    locateMatch: '',
+    showCase:[]
   };
 
   render(){
@@ -83,65 +84,70 @@ class MediaAndEvents extends React.Component {
             </div>
           </section>
           {
-            eventwiseData.all_events.map((item) => {
-              return(
-                item.events.document.map((datas, index) => {
+            eventwiseData.all_events.map((item,index) => {
+              // return(
+              //   item.events.document.map((item.events.document[0], index) => {
                   return(
                     <section className="event-slider slider-page" key={index}>
                       <div className="padding-block-60 d-flex justify-content-center flex-column w-100 ">
                         <h3 className="section-title text-center text-uppercase">
-                          {datas.data.title.text}
+                          {item.events.document[0].data.title.text}
                         </h3>
                       </div>
                       <div className="slider-wrapper slider-bg">
                         <div className="container-fluid container-sm p-0 px-sm-3">
                           <p className="location text-center mb-0">
-                            <span className="mr-32  text-capitalize">Location: {datas.data.location.text}</span> | <span className="ml-32">Date: {datas.data.date}</span>
+                            <span className="mr-32  text-capitalize">Location: {item.events.document[0].data.location.text}</span> | <span className="ml-32">Date: {item.events.document[0].data.date}</span>
                           </p>
                           <Slider {...settings}>
                             {
-                              datas.data.showcase.map((item,value) => {
+                              item.events.document[0].data.showcase.map((element,value) => {
                                 return(
                                   <div key={value}>
-                                    <div role="link" tabIndex="0" className="slider-img image-ratio" onClick={() => this.setState({ isOpen: true ,photoIndex:value, locateMatch: datas.data.locate_match})}>
-                                      <Img fluid={item.image.localFile.childImageSharp.fluid} width="100%"/>
+                                    <div role="link" tabIndex="0" className="slider-img image-ratio" onClick={() =>{
+                                      console.log("showCase",this.state.showCase);
+                                     this.setState({ isOpen: true ,photoIndex:value,showCase:item.events.document[0].data.showcase})
+                                    }
+                                    } >
+                                      <Img fluid={element.image.localFile.childImageSharp.fluid} width="100%"/>
                                     </div>
                                   </div>
                                 )
                               })
                               }
                           </Slider>
-                          {
-                            isOpen && this.state.locateMatch==datas.data.locate_match &&
-                            <Lightbox
-                              mainSrc={datas.data.showcase[photoIndex].image.localFile.childImageSharp.fluid.src}
-                              nextSrc={datas.data.showcase[(photoIndex + 1) % datas.data.showcase.length].image.localFile.childImageSharp.fluid.src}
-                              prevSrc={datas.data.showcase[(photoIndex + datas.data.showcase.length - 1) % datas.data.showcase.length].image.localFile.childImageSharp.fluid.src}
-                              onCloseRequest={() => this.setState({ isOpen: false })}
-                              onMovePrevRequest={() =>
-                                this.setState({
-                                  photoIndex: (photoIndex + datas.data.showcase.length - 1) % datas.data.showcase.length,
-                                })
-                              }
-                              onMoveNextRequest={() =>
-                                this.setState({
-                                  photoIndex: (photoIndex + 1) % datas.data.showcase.length,
-                                })
-                              }
-                              animationDuration={800}
-                              />
-                            }
+                         
                           <p className="text-left text-sm-center pages mb-0">
-                            {this.state.activeSlide + 1} of {datas.data.showcase.length}
+                            {this.state.activeSlide + 1} of {item.events.document[0].data.showcase.length}
                           </p>
                         </div>
                       </div>
                     </section>
                   )
-                })
-              )
+              //   })
+              // )
             })
           }
+           {
+              isOpen &&
+              <Lightbox
+                mainSrc={this.state.showCase[photoIndex].image.localFile.childImageSharp.fluid.src}
+                nextSrc={this.state.showCase[(photoIndex + 1) % this.state.showCase.length].image.localFile.childImageSharp.fluid.src}
+                prevSrc={this.state.showCase[(photoIndex + this.state.showCase.length - 1) % this.state.showCase.length].image.localFile.childImageSharp.fluid.src}
+                onCloseRequest={() => this.setState({ isOpen: false })}
+                onMovePrevRequest={() =>
+                  this.setState({
+                    photoIndex: (photoIndex + this.state.showCase.length - 1) % this.state.showCase.length,
+                  })
+                }
+                onMoveNextRequest={() =>
+                  this.setState({
+                    photoIndex: (photoIndex + 1) % this.state.showCase.length,
+                  })
+                }
+                animationDuration={800}
+                />
+              }
         </section>
       </Layout>
     )

@@ -7,7 +7,7 @@ import Img from 'gatsby-image';
 
 class PrivacyPolicy extends React.Component {
   render(){
-    const privacyData = this.props.data.prismicPrivacyPolicy.data;
+    const privacyData = this.props.data.prismicPrivacyPolicy.data; 
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title={privacyData.title.text} />
@@ -26,6 +26,28 @@ class PrivacyPolicy extends React.Component {
               </div>
             </div>
           </div>
+          {
+            privacyData.group &&   privacyData.group.map((item) => {
+              if(item.title1.text != 'null' && item.description1.html != 'null') {
+                  return(
+                      <section className="detail-page-sections pb-0 pt-sm-0 container container-sm-fluid " >
+                          <div className="padding-block-60 page-heading-section">
+                              <div className="col-12 padding-sm-0">
+                                  <h2 className="page-heading text-uppercase">
+                                      {item.title1.text}
+                                  </h2>
+                              </div>
+                          </div>
+                          <div className="row">
+                              <div className="col-12">
+                                  <div className="mb-5" dangerouslySetInnerHTML={{__html:item.description1.html }}/>
+                              </div>
+                          </div>
+                      </section>
+                  )
+              }
+              })
+          }
       </Layout>
     )
   } 
