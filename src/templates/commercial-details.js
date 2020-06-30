@@ -259,14 +259,6 @@ class CommercialDetails extends React.Component {
                 </div>
               </div>
 
-               {/* ...................Customizable Button.................. */}
-               {
-                  commercialData.data.customizable_button_link && commercialData.data.customizable_button_title ?
-                  <div className="container detail-page-sections d-flex justify-content-center download-btn">
-                    <a href={commercialData.data.customizable_button_link.url}  target="_blank" className="btn-secondary text-center">{commercialData.data.customizable_button_title}</a>
-                  </div> : null
-                } 
-
               <div className=" padding-block-60">
                 <h2 className="page-heading text-uppercase">
                   {commercialData.data.heading.text}
@@ -281,6 +273,15 @@ class CommercialDetails extends React.Component {
                   </a> */}
                 </div>
               </div>
+
+              {/* ...................Customizable Button.................. */}
+              {
+                  commercialData.data.customizable_button_link && commercialData.data.customizable_button_title ?
+                  <div className="detail-page-sections d-flex justify-content-center align-items-start download-btn mt-80">
+                    <a href={commercialData.data.customizable_button_link.url}  target="_blank" className="btn-secondary m-0 text-center">{commercialData.data.customizable_button_title}</a>
+                  </div> : null
+                } 
+
             </section>
           {/*  {/* <!------------------ middle section end here ------------------------> */}
           {/* <!-- ------------------- Showcase section start here ------------------- --> */}
@@ -887,7 +888,7 @@ class CommercialDetails extends React.Component {
                     <p  className={`maharera_important mt-3 mb-1` } style={this.state.styleData}>
                       {commercialData.data.maharera_important.text}
                     </p>
-                    <div className="d-none d-md-flex justify-content-center align-items-center w-100">
+                    <div className=" d-md-flex text-center justify-content-center align-items-center w-100">
                       {
                         this.state.styleData ?
                         <div className="maharera_showmore" onClick={() => {

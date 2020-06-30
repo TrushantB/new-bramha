@@ -25,6 +25,12 @@
   }
 }
 
+.detail-page {
+  .mt-80{
+    margin-top: 80px;
+  }
+}
+
 .btn-secondary {
   color: #fff;
   background: theme-color("tertiary");
@@ -146,6 +152,11 @@
       right: 18px;
     }
   }
+  .detail-page {
+    .mt-80{
+      margin-top: 60px;
+    }
+  }
   // .detail-page .floor-plan .slider-img {
   //     margin: 40px 36px;
   // }
@@ -153,6 +164,11 @@
 @media (max-width: 767px) {
   .slider-img {
     margin: 8px 20px;
+  }
+  .detail-page {
+    .mt-80{
+      margin-top: 30px;
+    }
   }
 }
 @media (max-width: 580px) {
