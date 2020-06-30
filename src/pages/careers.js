@@ -14,6 +14,7 @@ import queryString from 'query-string';
 import '../firebase/config'
 import * as firebase from 'firebase';
 import FileUploader from "react-firebase-file-uploader";
+import 'firebase/storage';
 
 class Careers extends React.Component {
   constructor() {
