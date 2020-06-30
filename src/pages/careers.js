@@ -15,6 +15,8 @@ import '../firebase/config'
 import * as firebase from 'firebase';
 import FileUploader from "react-firebase-file-uploader";
 import $ from 'jquery'
+import 'firebase/storage';
+
 class Careers extends React.Component {
   constructor() {
     super();
