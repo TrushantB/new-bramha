@@ -356,6 +356,8 @@ class VerticalPage extends React.Component {
             </section>
             {/* <!--   ------------------- Location section end here ------------------- --> */}
             {/* <!--   ------------------- Proximities section start here ------------------- --> */}
+         {
+           verticalData.data.proximites.length &&
           <section className="proximities-section">
             <div className=" container">
                 <div className="section-title-wrapper">
@@ -400,6 +402,7 @@ class VerticalPage extends React.Component {
                   </div>
               </div>
             </section>
+         }
             {/* <!--   ------------------- Amenities And Fact Files section start here ------------------- --> */}
            { verticalData.data.amenities.length && verticalData.data.floor_plans.length &&
               <section className="amenity-sections container"  id={verticalData.uid}>
@@ -713,6 +716,8 @@ class VerticalPage extends React.Component {
            }
             {/* <!--   ------------------- Antity And Fact Files section end here ------------------- --> */}
             {/* <!--   ------------------- Site-progress section start here ------------------- --> */}
+            {
+              verticalData.data.site_progress.length && 
             <section className="slider-page site-progress-wrap mb-0">
               <h2 className="section-title text-uppercase text-center">
                 Site Progress
@@ -763,6 +768,7 @@ class VerticalPage extends React.Component {
               </div>
               </div>
             </section>
+            }
             {/* <!--   ------------------- progress section end here ------------------- --> */}
 
              {/* <!--   ------------------- Download Brouchure section start here ------------------- --> */}
@@ -856,7 +862,9 @@ class VerticalPage extends React.Component {
 
             {/* <!--   ------------------- Enquiry section end here ------------------- --> */}
             {/* <!--   ------------------- Maharera section start here ------------------- --> */}
-            <section className="container d-flex flex-column align-items-center detail-maharera-sections">
+            {
+              verticalData.data.phase && verticalData.data.maharera.url && verticalData.data.maharera_important.text ?
+              <section className="container d-flex flex-column align-items-center detail-maharera-sections">
               <img src={verticalData.data.maharera.url} alt="maha-rera logo" style={{width:"70px"}}/>
               <p className="text-left text-sm-center mt-3">
                 {
@@ -892,6 +900,8 @@ class VerticalPage extends React.Component {
                   </div>
               }
             </section>
+            : null  
+          }
             {/* <!--   ------------------- Maharera section end here ------------------- --> */}
             {/* <!--  -------------------- middle section end here ------------------------> */}
           </main>
