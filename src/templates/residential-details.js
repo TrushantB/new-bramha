@@ -342,20 +342,21 @@ class VerticalPage extends React.Component {
             </section>
             {/* <!--   ------------------- Showcase section end here ------------------- --> */}
             {/* <!--   ------------------- Location section start here ------------------- --> */}
+            {
+              verticalData.data.location_url ?
             <section className="location-sections">
               <h2 className="section-title text-uppercase text-center">
                   Location
               </h2>
               <div className="map-image map">
-                {
-                  verticalData.data.location_url ?
-                  <iframe src={verticalData.data.location_url} style={{ width:"100%", height:"375px", frameborder:"0", border:"0", allowFullScreen:"0"}}></iframe>:
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15130.20482232911!2d73.9169759!3d18.5491723!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfa889adcc4f893bd!2sF-Residences%20by%20BramhaCorp%20at%20New%20Kalyani%20Nagar!5e0!3m2!1sen!2sin!4v1578749234432!5m2!1sen!2sin" style={{ width:"100%", height:"375px", frameborder:"0", border:"0", allowFullScreen:"0"}}></iframe>
-                }
+                  <iframe src={verticalData.data.location_url} style={{ width:"100%", height:"375px", frameborder:"0", border:"0", allowFullScreen:"0"}}></iframe>
               </div>
-            </section>
+            </section>: null                
+            }
             {/* <!--   ------------------- Location section end here ------------------- --> */}
             {/* <!--   ------------------- Proximities section start here ------------------- --> */}
+         {
+           verticalData.data.proximites.length &&
           <section className="proximities-section">
             <div className=" container">
                 <div className="section-title-wrapper">
@@ -400,6 +401,7 @@ class VerticalPage extends React.Component {
                   </div>
               </div>
             </section>
+         }
             {/* <!--   ------------------- Amenities And Fact Files section start here ------------------- --> */}
            { verticalData.data.amenities.length && verticalData.data.floor_plans.length &&
               <section className="amenity-sections container"  id={verticalData.uid}>
@@ -713,6 +715,8 @@ class VerticalPage extends React.Component {
            }
             {/* <!--   ------------------- Antity And Fact Files section end here ------------------- --> */}
             {/* <!--   ------------------- Site-progress section start here ------------------- --> */}
+            {
+              verticalData.data.site_progress.length && 
             <section className="slider-page site-progress-wrap mb-0">
               <h2 className="section-title text-uppercase text-center">
                 Site Progress
@@ -763,6 +767,7 @@ class VerticalPage extends React.Component {
               </div>
               </div>
             </section>
+            }
             {/* <!--   ------------------- progress section end here ------------------- --> */}
 
              {/* <!--   ------------------- Download Brouchure section start here ------------------- --> */}
@@ -856,7 +861,9 @@ class VerticalPage extends React.Component {
 
             {/* <!--   ------------------- Enquiry section end here ------------------- --> */}
             {/* <!--   ------------------- Maharera section start here ------------------- --> */}
-            <section className="container d-flex flex-column align-items-center detail-maharera-sections">
+            {
+              verticalData.data.phase && verticalData.data.maharera.url && verticalData.data.maharera_important.text ?
+              <section className="container d-flex flex-column align-items-center detail-maharera-sections">
               <img src={verticalData.data.maharera.url} alt="maha-rera logo" style={{width:"70px"}}/>
               <p className="text-left text-sm-center mt-3">
                 {
@@ -892,6 +899,8 @@ class VerticalPage extends React.Component {
                   </div>
               }
             </section>
+            : null  
+          }
             {/* <!--   ------------------- Maharera section end here ------------------- --> */}
             {/* <!--  -------------------- middle section end here ------------------------> */}
           </main>
