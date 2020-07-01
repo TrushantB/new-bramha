@@ -105,7 +105,6 @@ class MediaAndEvents extends React.Component {
                                 return(
                                   <div key={value}>
                                     <div role="link" tabIndex="0" className="slider-img image-ratio" onClick={() =>{
-                                      console.log("showCase",this.state.showCase);
                                      this.setState({ isOpen: true ,photoIndex:value,showCase:item.events.document[0].data.showcase})
                                     }
                                     } >
@@ -116,7 +115,6 @@ class MediaAndEvents extends React.Component {
                               })
                               }
                           </Slider>
-                         
                           <p className="text-left text-sm-center pages mb-0">
                             {this.state.activeSlide + 1} of {item.events.document[0].data.showcase.length}
                           </p>

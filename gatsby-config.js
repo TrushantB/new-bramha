@@ -1,5 +1,6 @@
 module.exports = {
   siteMetadata: {
+    pathPrefix: `/bramhaCorp`,
     title: 'BramhaCorp',
     description: 'BramhaCorp is one of today\'s leading business groups headquartered in Pune. Our businesses encompass real estate development, hospitality, retail and leisure',
     author: 'iVision Web Studio',
