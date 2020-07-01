@@ -121,7 +121,7 @@ class Partners extends React.Component {
         noHeader="true"
         pathname={this.props.location.pathname}
       >
-        <SEO title="Channel Partner" />
+        <SEO title={partnersData.seo_title} description={partnersData.seo_description}/>
         <main className="detail-page partner-page" id="residential-details">
           {/* <!--   ---------------- banner start here ---------------- --> */}
           <Div100vh

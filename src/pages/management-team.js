@@ -8,7 +8,7 @@ class ManagementTeam extends React.Component {
     const mgntData = this.props.data.prismicManagementTeam.data;
     return(
       <Layout location="/" noHeader="true" pathname={this.props.location.pathname}>
-        <SEO title={mgntData.sub_title.text}/>
+        <SEO title={mgntData.seo_title} description={mgntData.seo_description}/>
           <section className="management-wrapper">
             <section className="page-heading-section container container-sm-fluid bg-color">
               <div className="padding-block-60">

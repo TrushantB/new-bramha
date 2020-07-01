@@ -47,7 +47,7 @@ class AboutUs extends React.Component {
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         {/* <p>This won't work at all {alert(this.props.location.pathname)}</p> */}
-        <SEO title="About Us"/>
+        <SEO title={data.seo_title} description={data.seo_description}/>
         <div className="about-page">
           <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section mt-60" id="banner-section">
             <picture>

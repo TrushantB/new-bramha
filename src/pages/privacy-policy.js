@@ -10,7 +10,7 @@ class PrivacyPolicy extends React.Component {
     const privacyData = this.props.data.prismicPrivacyPolicy.data; 
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
-        <SEO title={privacyData.title.text} />
+        <SEO title={privacyData.seo_title} description={privacyData.seo_description}/>
           <div className="page-heading-section container container-sm-fluid bg-color mb-4 mb-sm-5">
             <div className="padding-block-60">
               <h2 className="page-heading">{privacyData.title.text}</h2>

@@ -31,7 +31,7 @@ class FAQ extends React.Component {
     const faqData = this.props.data.prismicFaqPage.data;
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
-        <SEO title="FAQ"/>
+        <SEO title={faqData.seo_title} description={faqData.seo_description}/>
         <div  className="guideline-nri-detail">
           <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section" id="banner-section">
             <picture>

@@ -33,7 +33,7 @@ class BuyersTips extends React.Component {
     const buyersData = this.props.data.prismicBuyersTips.data;
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
-        <SEO title={buyersData.title.text}/>
+        <SEO title={buyersData.seo_title} description={buyersData.seo_description}/>
         <div  className="guideline-nri-detail">
           <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section" id="banner-section">
             <picture>

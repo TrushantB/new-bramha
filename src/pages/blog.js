@@ -9,7 +9,7 @@ class Blog extends React.Component {
     const blogPostData = this.props.data.allPrismicBlog.edges;
     return (
       <Layout location="/" noHeader="true" pathname={this.props.location.pathname} className="blog-container pb-4">
-        <SEO title='Blog' />
+        <SEO title={blogPostData.seo_title} description={blogPostData.seo_description}/>
         {/* <!-- Knowledge Hub Start here --> */}
         <section className="page-heading-section container container-sm-fluid">
           <div className="padding-block-60">
