@@ -84,6 +84,8 @@ export const blogPost = graphql`
     query blogQyery($uid: String!) {
     prismicBlog(uid: { eq: $uid })  {
       data {
+        seo_title,
+        seo_description,
         title {
           text
         }

@@ -99,6 +99,8 @@ export const pageDataResidential = graphql` {
   prismicResidential {
     type
     data {
+      seo_title,
+      seo_description,
       gallery {
         project_url
         image {

@@ -136,6 +136,8 @@ export const leisurePage = graphql` {
       node {
         uid
         data {
+          seo_title,
+          seo_description,
           title {
             text
           }

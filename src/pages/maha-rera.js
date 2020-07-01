@@ -109,6 +109,8 @@ export default Maharerra;
 export const maharera = graphql` {
   prismicMaharera {
     data {
+      seo_title,
+      seo_description,
       title {
         text
       }

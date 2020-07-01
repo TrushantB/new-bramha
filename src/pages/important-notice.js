@@ -111,6 +111,8 @@ export default ImportantNotice;
 export const importantNotice = graphql` {
     prismicImportantNotice {
     data {
+      seo_title,
+      seo_description,
       title {
         text
       }

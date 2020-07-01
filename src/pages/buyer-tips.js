@@ -113,6 +113,8 @@ export default BuyersTips;
 export const AboutLoan = graphql` {
     prismicBuyersTips {
     data {
+      seo_title,
+      seo_description,
       title {
         text
       }

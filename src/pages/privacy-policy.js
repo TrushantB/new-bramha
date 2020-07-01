@@ -57,6 +57,8 @@ export default PrivacyPolicy;
 export const privacyPolicy = graphql` {
   prismicPrivacyPolicy {
     data {
+      seo_title,
+      seo_description,
       title {
         text
       }

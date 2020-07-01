@@ -78,6 +78,8 @@ export const completedProjects = graphql`{
         edges{
           node{
             data{
+              seo_title,
+              seo_description,
               completed_project_description{
                 html
               }

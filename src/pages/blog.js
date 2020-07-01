@@ -50,6 +50,8 @@ export const blogPost = graphql` {
       node {
         uid
         data {
+          seo_title,
+          seo_description,
           title {
             text
           }

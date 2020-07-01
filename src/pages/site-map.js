@@ -37,6 +37,8 @@ export default SiteMap;
 export const aboutLoan = graphql` {
   prismicSiteMap{
     data{
+      seo_title,
+      seo_description,
       title{
         text
       }

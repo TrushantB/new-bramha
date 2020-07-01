@@ -477,6 +477,8 @@ export default Careers;
 export const careerPage = graphql` {
   prismicCareers {
     data {
+      seo_title,
+      seo_description,
       architect_button_name
       admin_button_name
       admin_key

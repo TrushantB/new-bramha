@@ -570,6 +570,8 @@ export default Contacts;
 export const contactPage = graphql`{
   prismicCompanyDetails {
     data {
+      seo_title,
+      seo_description,
       title {
         text
       }

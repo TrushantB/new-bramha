@@ -143,6 +143,8 @@ export const knowledgePage = graphql` {
   prismicKnowledgehub {
     uid
     data {
+      seo_title,
+      seo_description,
       title {
         text
       }

@@ -120,6 +120,8 @@ export default FAQ;
 export const nriPage = graphql` {
   prismicFaqPage {
     data {
+      seo_title,
+      seo_description,
       title {
         text
       }

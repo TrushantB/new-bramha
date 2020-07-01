@@ -248,6 +248,8 @@ export default AboutUs;
 export const AboutPage = graphql` {
   prismicAboutus {
     data {
+      seo_title,
+      seo_description,
       sub_title {
         text
       }

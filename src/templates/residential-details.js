@@ -915,6 +915,8 @@ export const verticalViewData = graphql`
   prismicOurVerticalsArticle(uid: { eq: $uid }) {
     uid
     data {
+      seo_title,
+      seo_description,
       title {
         text
       }

@@ -158,6 +158,8 @@ export default MediaAndEvents;
 export const eventPage = graphql` {
   prismicEvents {
     data {
+      seo_title,
+      seo_description,
       title {
         text
       }

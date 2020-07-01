@@ -52,6 +52,8 @@ export default Award;
 export const awardPage = graphql`{
     prismicAwardAndRecognition{
         data {
+            seo_title,
+            seo_description,
             title {
                 text
             }
