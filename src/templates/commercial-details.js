@@ -221,7 +221,7 @@ class CommercialDetails extends React.Component {
     };
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
-        <SEO title={commercialData.data.title.text} />
+        <SEO title={commercialData.seo_title} description={commercialData.seo_description}/>
         <main className="detail-page commercial-detail-page">
           {/* <!-- ---------------- banner start here ---------------- --> */}
           <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section" id="banner-section">
