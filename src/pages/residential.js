@@ -193,7 +193,7 @@ export default class Residential extends React.Component {
         })
         }
         <section className="residential-projects">
-          <div className="container">
+          {/* <div className="container">
             <div className="projects">
               <select defaultValue="" onChange={(e) => { this.handleProjects(e) }}>
                 <option value="all_projects" >All Projects</option>
@@ -224,8 +224,8 @@ export default class Residential extends React.Component {
               </select>
              
             </div>
-          </div>
-          {this.state.ongoingProject.length > 0 &&
+          </div> */}
+          { this.state.ongoingProject.length > 0 &&
             <section className="ongoing-project">
               <div className="residences">
                 <div className="container">
@@ -271,7 +271,7 @@ export default class Residential extends React.Component {
               </div>
             </section>
           }
-          {this.state.completedProject.length > 0 &&
+          { this.state.completedProject.length > 0 &&
             <section className="complete-project position-relative">
               <div className="container">
                 <div className="listing-heading d-flex align-items-center">

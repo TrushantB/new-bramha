@@ -342,18 +342,17 @@ class VerticalPage extends React.Component {
             </section>
             {/* <!--   ------------------- Showcase section end here ------------------- --> */}
             {/* <!--   ------------------- Location section start here ------------------- --> */}
+            {
+              verticalData.data.location_url ?
             <section className="location-sections">
               <h2 className="section-title text-uppercase text-center">
                   Location
               </h2>
               <div className="map-image map">
-                {
-                  verticalData.data.location_url ?
-                  <iframe src={verticalData.data.location_url} style={{ width:"100%", height:"375px", frameborder:"0", border:"0", allowFullScreen:"0"}}></iframe>:
-                   null                
-                   }
+                  <iframe src={verticalData.data.location_url} style={{ width:"100%", height:"375px", frameborder:"0", border:"0", allowFullScreen:"0"}}></iframe>
               </div>
-            </section>
+            </section>: null                
+            }
             {/* <!--   ------------------- Location section end here ------------------- --> */}
             {/* <!--   ------------------- Proximities section start here ------------------- --> */}
          {
