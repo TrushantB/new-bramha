@@ -32,7 +32,7 @@ class NRI extends React.Component {
     const nriData = this.props.data.prismicNri.data;
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
-        <SEO title="NRI"/>
+        <SEO title={nriData.seo_title} description={nriData.seo_description}/>
         <div  className="guideline-nri-detail">
           <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section" id="banner-section">
             <picture>
@@ -120,6 +120,8 @@ export default NRI;
 export const nriPage = graphql`{
   prismicNri {
  		data {
+      seo_title,
+      seo_description,
       title {
         text
       }

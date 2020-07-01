@@ -20,7 +20,7 @@ export default class BlogPost extends React.Component {
         console.log(blogData.group)
         return(
             <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
-                <SEO title='Blog Post'/>
+                <SEO title={blogData.seo_title} description={blogData.seo_description}/>
                 <main className="detail-page" id="residential-details">
                     {/* <!--   ---------------- banner start here ---------------- --> */}
                     <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section" id="banner-section">
@@ -84,6 +84,8 @@ export const blogPost = graphql`
     query blogQyery($uid: String!) {
     prismicBlog(uid: { eq: $uid })  {
       data {
+        seo_title,
+        seo_description,
         title {
           text
         }

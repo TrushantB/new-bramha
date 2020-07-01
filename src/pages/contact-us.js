@@ -189,7 +189,7 @@ class Contacts extends React.Component {
     const contactData = this.props.data.prismicCompanyDetails.data;
     return(
       <Layout location="/" noHeader="true" pathname={this.props.location.pathname}>
-        <SEO title="Contacts"/>
+        <SEO title={contactData.seo_title} description={contactData.seo_description}/>
         {/* <Footer socialMediaLinks={contactData.followus}/> */}
         <section className="contact-section">
           <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="contact-page-image banner-section mt-60" id="banner-section">
@@ -570,6 +570,8 @@ export default Contacts;
 export const contactPage = graphql`{
   prismicCompanyDetails {
     data {
+      seo_title,
+      seo_description,
       title {
         text
       }

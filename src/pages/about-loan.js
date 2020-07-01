@@ -32,7 +32,7 @@ class AboutLoan extends React.Component {
     const aboutLoanData = this.props.data.prismicAboutLoan.data;
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
-        <SEO title={aboutLoanData.title.text}/>
+        <SEO title={aboutLoanData.seo_title} description={aboutLoanData.seo_description}/>
         <div  className="guideline-nri-detail">
           <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section" id="banner-section">
             <picture>
@@ -111,6 +111,8 @@ export default AboutLoan;
 export const aboutLoan = graphql` {
     prismicAboutLoan {
     data {
+      seo_title,
+      seo_description,
       title {
         text
       }

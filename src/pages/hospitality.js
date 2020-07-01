@@ -12,7 +12,7 @@ class Hospitality extends React.Component {
     
     return (
       <Layout location="/" noHeader="true" pathname={this.props.location.pathname}>
-        <SEO title={data.sub_title.text} />
+        <SEO title={hospitalityData.seo_title} description={hospitalityData.seo_description}/>
         <section className=" page-heading-section container container-sm-fluid bg-color">
           <div className="padding-block-60">
             <h2 className="page-heading">{data.sub_title.text}</h2>
@@ -145,6 +145,8 @@ export const hospitalityPage = graphql`{
       node{
         uid
         data{
+          seo_title,
+          seo_description,
           title{
             text
           }

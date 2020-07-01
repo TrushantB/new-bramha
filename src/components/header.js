@@ -82,7 +82,7 @@ return(
                     data.contact_info && data.contact_info.map((item) => {
                       return (
                         <p>
-                          {item.title1.text} : <Link to={`tel:${item.number}`}  className="link-text"> {item.number}</Link>
+                          {item.title1.text} : <a href={`tel:${item.number}`}  className="link-text"> {item.number}</a>
                         </p>
                       )
                     })

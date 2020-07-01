@@ -32,7 +32,7 @@ class ImportantNotice extends React.Component {
     const importantNoticeData = this.props.data.prismicImportantNotice.data;
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
-        <SEO title={importantNoticeData.title.text}/>
+        <SEO title={importantNoticeData.seo_title} description={importantNoticeData.seo_description}/>
         <div  className="guideline-nri-detail">
           <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section" id="banner-section">
             <picture>
@@ -111,6 +111,8 @@ export default ImportantNotice;
 export const importantNotice = graphql` {
     prismicImportantNotice {
     data {
+      seo_title,
+      seo_description,
       title {
         text
       }

@@ -32,7 +32,7 @@ class Maharerra extends React.Component {
     const mahareraData = this.props.data.prismicMaharera.data;
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
-        <SEO title={mahareraData.title.text}/>
+        <SEO title={mahareraData.seo_title} description={mahareraData.seo_description}/>
         <div  className="guideline-nri-detail">
           <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section" id="banner-section">
             <picture>
@@ -109,6 +109,8 @@ export default Maharerra;
 export const maharera = graphql` {
   prismicMaharera {
     data {
+      seo_title,
+      seo_description,
       title {
         text
       }

@@ -779,6 +779,8 @@ export const hospitalityPage = graphql`
   query hospitalityData($uid: String!) {
   prismicOurVerticalsArticle(uid: { eq: $uid }) {
     data{
+      seo_title,
+      seo_description,
       location_url
       title {
         text

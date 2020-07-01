@@ -80,6 +80,8 @@ export const completedProjects = graphql`{
             node {
                 uid
                 data {
+                  seo_title,
+                  seo_description,
                     completed_description {
                         html
                     }

@@ -241,7 +241,7 @@ console.log(jobOpenningButtons);
     
     return (
       <Layout location="/" noHeader="true" pathname={this.props.location.pathname}>
-        <SEO title="Careers" />
+        <SEO title={careerData.seo_title} description={careerData.seo_description}/>
         <div className="career-page">
           <Div100vh style={{ height: 'calc(100rvh - 60px)' }} className="banner-section mt-60">
             <picture>
@@ -477,6 +477,8 @@ export default Careers;
 export const careerPage = graphql` {
   prismicCareers {
     data {
+      seo_title,
+      seo_description,
       architect_button_name
       admin_button_name
       admin_key

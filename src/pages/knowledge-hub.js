@@ -10,7 +10,7 @@ class KnoweldgeHub extends React.Component {
     const buyerData = this.props.data.prismicBuyersTips.data;
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
-        <SEO title={knowledgeData.title.text}/>
+        <SEO title={knowledgeData.seo_title} description={knowledgeData.seo_description}/>
         <section className="page-heading-section container container-sm-fluid bg-color">
           <div className="padding-block-60">
             <h2 className="page-heading">{knowledgeData.title.text}</h2>
@@ -143,6 +143,8 @@ export const knowledgePage = graphql` {
   prismicKnowledgehub {
     uid
     data {
+      seo_title,
+      seo_description,
       title {
         text
       }

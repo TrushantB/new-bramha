@@ -10,7 +10,7 @@ class RealEstate extends React.Component {
     const realEstateData = this.props.data.prismicRealEstate.data;
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
-        <SEO title={realEstateData.title.text}/>
+        <SEO title={realEstateData.seo_title} description={realEstateData.seo_description}/>
           <div className='mb-5 '>
             <div className="page-heading-section container container-sm-fluid bg-color">
             <div className="padding-block-60">
@@ -35,6 +35,8 @@ export default RealEstate;
 export const aboutLoan = graphql` {
   prismicRealEstate{
     data{
+      seo_title,
+      seo_description,
       title{
         text
       }

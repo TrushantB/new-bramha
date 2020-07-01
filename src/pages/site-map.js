@@ -10,7 +10,7 @@ class SiteMap extends React.Component {
     const siteMapData = this.props.data.prismicSiteMap.data;
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
-        <SEO title={siteMapData.title.text}/>
+        <SEO title={siteMapData.seo_title} description={siteMapData.seo_description}/>
           <div className="page-heading-section container container-sm-fluid bg-color mb-4 mb-sm-5 ">
             <div className="padding-block-60">
               <h2 className="page-heading">{siteMapData.title.text}</h2>
@@ -37,6 +37,8 @@ export default SiteMap;
 export const aboutLoan = graphql` {
   prismicSiteMap{
     data{
+      seo_title,
+      seo_description,
       title{
         text
       }
