@@ -21,6 +21,10 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
+    with:
+          access-token: ${{ secrets.test }}
+          deploy-branch: gh-pages
+          gatsby-args: --prefix-paths
 
     # Runs a single command using the runners shell
     - name: Run a one-line script
