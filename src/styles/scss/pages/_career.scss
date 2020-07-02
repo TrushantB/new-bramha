@@ -338,12 +338,12 @@
     .slider-page {
       .slider-wrapper {
         .pages {
-          margin: 8px 0 0 10px;
+          margin: 19px 0 0 10px;
           font-size: 14px;
         }
         .slick-next,
         .slick-prev {
-          bottom: -52px;
+          bottom: -62px;
           right: 15px;
         }
         .slick-prev {
@@ -492,13 +492,19 @@
   .career-page{
     .slider-page.careers-slider-wrapper{
       .slick-list{
-        padding: 0 !important;
-        .slick-center{
-          transform: none;
+        padding: 0 96px !important;
+        .slick-slide.slick-active.slick-current{
+          transform: scale(1.2);
+          transition: transform 0.5s ease;   
+            
         }
+        .slider-img.image-ratio{
+          margin: 15px 15px;
+        }     
       }
     }
   }
+
 }
 @media (max-width: 470px) {
   .job-opening .career-tabs .btn-wraper {
