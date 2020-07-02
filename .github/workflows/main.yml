@@ -19,5 +19,4 @@ jobs:
       - uses: enriikke/gatsby-gh-pages-action@v2
         with:
           access-token: ${{ secrets.test }}
-          deploy-branch: master
           gatsby-args: --prefix-paths
