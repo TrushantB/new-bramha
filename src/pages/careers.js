@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/layout';
-import { graphql } from 'gatsby';
+import { graphql,navigate } from 'gatsby';
 import Slider from "react-slick";
 import Img from "gatsby-image";
 import Footer from '../components/footer';
@@ -190,11 +190,7 @@ console.log(jobOpenningButtons);
         $('#exampleModalCenter').modal('toggle');
      });
 
-    this.setState({applySuccess:true})
-
-    setTimeout(() => {
-      this.setState({applySuccess:false})
-    }, 4000);
+     navigate('/thank-you')
   }
 
 
