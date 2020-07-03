@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql, Link, navigate } from 'gatsby';
 import 'lazysizes';
 import Img from 'gatsby-image';
 import Slider from 'react-slick';
@@ -75,6 +75,7 @@ class VerticalPage extends React.Component {
       })
       this.setState({ value: '+91'});
       document.querySelector('.residentialCustomer').reset();
+      navigate('enquiry/customer/thank-you');
   }
 
   render(){

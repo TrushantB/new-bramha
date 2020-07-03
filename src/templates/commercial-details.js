@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql, Link, navigate } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Img from 'gatsby-image';
@@ -74,6 +74,7 @@ class CommercialDetails extends React.Component {
       })
       this.setState({ value: '+91'});
       document.querySelector('.commercialCustomer').reset();
+      navigate('enquiry/customer/thank-you');
   }
   render(){
     const { isOpen } = this.state;
