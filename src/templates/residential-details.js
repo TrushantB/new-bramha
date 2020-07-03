@@ -226,7 +226,7 @@ class VerticalPage extends React.Component {
 
     return(
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
-        <SEO title={verticalData.seo_title} description={verticalData.seo_description}/>
+        <SEO title={verticalData.data.seo_title} description={verticalData.data.seo_description}/>
         <main className="detail-page" id="residential-details">
             {/* <!--   ---------------- banner start here ---------------- --> */}
             <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section" id="banner-section">

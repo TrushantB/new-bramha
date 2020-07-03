@@ -176,7 +176,7 @@ export default class Residential extends React.Component {
 
     return (
       <Layout location="/" noHeader="true" pathname={this.props.location.pathname}>
-        <SEO title={residentialData.seo_title} description={residentialData.seo_description}/>
+        <SEO title={lookingForMe.seo_title} description={lookingForMe.seo_description}/>
         {residentialData.map((item, value) => {
           return (
             <section key={value} className="residential-section page-heading-section container container-sm-fluid bg-color">

@@ -8,7 +8,8 @@ class CompletedProjects extends React.Component {
     const completedData = this.props.data.allPrismicResidential.edges[0].node.data;
     return (
       <Layout location="/" noHeader="true" pathname={this.props.location.pathname}>
-        <SEO title="Completed Projects" />
+        {/* <SEO title="Completed Projects" /> */}
+        <SEO title={`${completedData.seo_title} Completed Projects`} description={completedData.seo_description} />
         <section className=" page-heading-section container container-sm-fluid bg-color">
           <div className="padding-block-60">
             <h2 className="page-heading">Completed Projects</h2>

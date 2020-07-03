@@ -129,7 +129,8 @@ export default class OngoingResidential extends React.Component {
     const lookingForMe = residentialData[0].node.data
     return (
       <Layout location="/" noHeader="true" pathname={this.props.location.pathname}>
-        <SEO title="Residential Project" />
+        {/* <SEO title="Residential Project" /> */}
+        <SEO title={`${residentialData.data.seo_title} Ongoing Projects`} description={residentialData.data.seo_description} />
         {residentialData.map((item, value) => {
           return (
             <section key={value} className="residential-section page-heading-section container container-sm-fluid bg-color">

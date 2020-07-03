@@ -12,7 +12,7 @@ class Hospitality extends React.Component {
     
     return (
       <Layout location="/" noHeader="true" pathname={this.props.location.pathname}>
-        <SEO title={hospitalityData.seo_title} description={hospitalityData.seo_description}/>
+        <SEO title={data.seo_title} description={data.seo_description}/>
         <section className=" page-heading-section container container-sm-fluid bg-color">
           <div className="padding-block-60">
             <h2 className="page-heading">{data.sub_title.text}</h2>
