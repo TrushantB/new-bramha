@@ -78,7 +78,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public -r https://bd4791a7bbc0cdb5f4ea737dc91b4d93c5760889@github.com/TrushantB/bramhaCorp.git"  },
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public -r https://bd4791a7bbc0cdb5f4ea737dc91b4d93c5760889@github.com/TrushantB/bramhaCorp.git"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/gatsbyjs/gatsby-starter-default"
