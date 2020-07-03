@@ -190,7 +190,7 @@ console.log(jobOpenningButtons);
         $('#exampleModalCenter').modal('toggle');
      });
 
-     navigate('/thank-you')
+     navigate('job-opening/thank-you')
   }
 
 

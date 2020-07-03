@@ -9,6 +9,7 @@ exports.createPages=({graphql,actions}) => {
     const commercial = path.resolve('src/templates/commercial-details.js');
     const leisure = path.resolve('src/templates/leisure-club-details.js');
     const blogPost = path.resolve('src/templates/blogPost-details.js')
+    const thankYou = path.resolve('src/templates/thank-you.js')
     resolve(
       graphql(`
                 {
@@ -19,6 +20,14 @@ exports.createPages=({graphql,actions}) => {
                             }
                         }
                     }
+                    prismicThankYou {
+                      data {
+                        group {
+                          slug
+                        }
+                      }
+                    }
+                  
                     allPrismicBlog {
                       edges {
                         node {
@@ -70,6 +79,16 @@ exports.createPages=({graphql,actions}) => {
             component:blogPost,
             context:{
               uid:element.node.uid
+            }
+          });
+        });
+
+        result.data.prismicThankYou.data.group.map(element => {
+          createPage({
+            path:`${element.slug}`,
+            component:thankYou,
+            context:{
+              slug:element.slug
             }
           });
         });

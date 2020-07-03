@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/layout'
-import { graphql } from 'gatsby'
+import { graphql, navigate } from 'gatsby'
 import SEO from '../components/seo';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
@@ -51,6 +51,7 @@ class Contacts extends React.Component {
       })
       this.setState({ value: '+91'});
       document.querySelector('.contactCustomer').reset();
+      navigate('enquiry/customer/thank-you')
   }
 
   submitChannelPartner = (e) => {
@@ -71,6 +72,7 @@ class Contacts extends React.Component {
       })
       this.setState({ value: '+91'});
       document.querySelector('.contactChannel').reset();
+      navigate('enquiry/channel-partner/thank-you')
   }
 
   submitConstructors = (e) => {
@@ -92,6 +94,7 @@ class Contacts extends React.Component {
       })
       this.setState({ value: '+91'});
       document.querySelector('.contactConstructors').reset();
+      navigate('enquiry/constructor-suppliers/thank-you')
   }
 
   submitCareer = (e) => {
@@ -104,6 +107,7 @@ class Contacts extends React.Component {
         name: e.target.name.value,
         email: e.target.email.value,
         phoneNumber: e.target.phoneNumber.value,
+        jobTitle:'any',
         message: e.target.message.value,
         city: e.target.city.value,
         resumeUrl: this.state.url,
@@ -114,6 +118,7 @@ class Contacts extends React.Component {
       this.setState({avatar: ''});
       this.setState({ value: '+91'});
       document.querySelector('.contactCareer').reset();
+      navigate('job-opening/thank-you')
   }
 
   submitLandOwner = (e) => {
@@ -135,6 +140,7 @@ class Contacts extends React.Component {
       })
       this.setState({ value: '+91'});
       document.querySelector('.contactLandOwner').reset();
+      navigate('enquiry/land-owner/thank-you')
   }
 
   optionSelect = (e) => {
