@@ -871,12 +871,12 @@ class CommercialDetails extends React.Component {
             
             {/* <!--   ------------------- Maharera section start here ------------------- --> */}
             {
-              commercialData.data.phase && commercialData.data.maharera.url && commercialData.data.maharera_important.text ?
+              commercialData.data.phase.length || commercialData.data.maharera.url || commercialData.data.maharera_important.text ?
             <section className="container d-flex flex-column align-items-center detail-maharera-sections">
               <img src={commercialData.data.maharera.url} alt="maha-rera logo" style={{width:"70px"}}/>
               <p className="text-left text-sm-center mt-3">
                 {
-                  commercialData.data.phase.map((item,value) => {
+                  commercialData.data.phase.length && commercialData.data.phase.map((item,value) => {
                     return(
                       <span className="d-block" key={value}>
                         ​{item.title1.text} : {item.description1.text}
@@ -885,9 +885,12 @@ class CommercialDetails extends React.Component {
                   })
                 }
               </p>
+              {
+                commercialData.data.tag_line.text && 
               <p className="text-left text-sm-center">
                 Available at : Website <a href={commercialData.data.tag_line.text} target="_blank">{commercialData.data.tag_line.text} </a>
               </p>
+              }
               {
                 commercialData.data.maharera_important.text &&
                   <div>

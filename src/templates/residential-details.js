@@ -863,12 +863,12 @@ class VerticalPage extends React.Component {
             {/* <!--   ------------------- Enquiry section end here ------------------- --> */}
             {/* <!--   ------------------- Maharera section start here ------------------- --> */}
             {
-              verticalData.data.phase && verticalData.data.maharera.url && verticalData.data.maharera_important.text ?
+              verticalData.data.phase.length || verticalData.data.maharera.url || verticalData.data.maharera_important.text ?
               <section className="container d-flex flex-column align-items-center detail-maharera-sections">
               <img src={verticalData.data.maharera.url} alt="maha-rera logo" style={{width:"70px"}}/>
               <p className="text-left text-sm-center mt-3">
                 {
-                  verticalData.data.phase.map((item,value)=>{
+                  verticalData.data.phase.length  && verticalData.data.phase.map((item,value)=>{
                     return(
                       <span className="d-block" key={value}>
                         ​{item.title1.text} : {item.description1.text}
@@ -877,9 +877,12 @@ class VerticalPage extends React.Component {
                   })
                 }
               </p>
+              {
+                verticalData.data.tag_line.text && 
               <p className="text-left text-sm-center">
                 Available at : Website <a href={verticalData.data.tag_line.text} target="_blank">{verticalData.data.tag_line.text} </a>
               </p>
+              }
               {
                 verticalData.data.maharera_important.text &&
                   <div>

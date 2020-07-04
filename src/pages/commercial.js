@@ -185,6 +185,9 @@ class Commercial extends React.Component {
                 })
                 }
               </Slider>
+              <span className="d-inline-block position-absolute pagination">
+                  {this.state.activeSlide + 1} of {commercialData.completed_projects.length}
+                </span>
             </div>
           </section>
           <div className="view-all text-center mt-5 mt-sm-4 mb-5">
@@ -201,7 +204,7 @@ class Commercial extends React.Component {
               </div>
                {/* ------------- Modal ----------------- */}  
             
-            <div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
               <div className="modal-dialog modal-dialog-centered" role="document">
                 <div className="modal-content">
                   <div className="modal-header">
