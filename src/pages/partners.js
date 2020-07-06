@@ -58,6 +58,7 @@ class Partners extends React.Component {
         utmSource: e.target.utmSource.value,
         utmCampaign: e.target.utmCampaign.value,
         utmMedium: e.target.utmMedium.value,
+        createdDt: new Date().toString()
       })
     this.setState({ value: "+91" })
     document.querySelector(".contactChannel").reset()

@@ -70,7 +70,8 @@ class CommercialDetails extends React.Component {
         projectName: e.target.projectName.value,
         utmSource: e.target.utmSource.value,
         utmCampaign: e.target.utmCampaign.value,
-        utmMedium: e.target.utmMedium.value
+        utmMedium: e.target.utmMedium.value,
+        createdDt: new Date().toString()
       })
       this.setState({ value: '+91'});
       document.querySelector('.commercialCustomer').reset();

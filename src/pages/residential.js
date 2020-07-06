@@ -6,7 +6,7 @@ import SEO from '../components/seo';
 import { navigate } from "gatsby"
 import PhoneInput from 'react-phone-number-input';
 import * as firebase from 'firebase';
-
+import $ from 'jquery'
 export default class Residential extends React.Component {
   constructor() {
     super();
@@ -117,10 +117,15 @@ export default class Residential extends React.Component {
         phoneNumber: e.target.phoneNumber.value,
         city: e.target.city.value,
         message: e.target.message.value,
-        projectName: e.target.projectName.value
+        projectName: e.target.projectName.value,
+        createdDt: new Date().toString()
       })
       this.setState({ value: '+91'});
       document.querySelector('.formReset').reset();
+      $(function () {
+        $('#exampleModalCenter').modal('toggle');
+     });
+      navigate('enquiry/customer/thank-you');
   }
 
   render() {
@@ -368,7 +373,7 @@ export default class Residential extends React.Component {
                       </div>
                       <div className="sumbit text-center mt-sm-0 mt-4">
                         <button type="submit" className="btn-secondary ">
-                          <a href="/thank-you" className="btn-secondary-text">
+                          <a  className="btn-secondary-text">
                             Submit
                           </a>
                         </button>

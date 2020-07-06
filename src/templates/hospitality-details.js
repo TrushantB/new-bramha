@@ -196,7 +196,7 @@ class HospitalityDetails extends React.Component {
         }
       ]
     };
-    return(
+    return (
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title={hospitalityData.data.seo_title} description={hospitalityData.data.seo_description}/>
         <main className="detail-page">

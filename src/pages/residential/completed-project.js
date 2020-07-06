@@ -127,7 +127,8 @@ export default class Residential extends React.Component {
         phoneNumber: e.target.phoneNumber.value,
         city: e.target.city.value,
         message: e.target.message.value,
-        projectName: e.target.projectName.value
+        projectName: e.target.projectName.value,
+        createdDt: new Date().toString()
       })
       this.setState({ value: '+91'});
       document.querySelector('.formReset').reset();

@@ -1,17 +1,36 @@
-import { Link } from "gatsby"
+import { Link,navigate} from "gatsby"
 import PropTypes from "prop-types"
 import React,{ useState } from "react"
 import '../styles/css/custom.css';
 import '../styles/scss/main.scss';
 import img1 from '../images/logo.png';
 import $ from 'jquery';
-const Header = ({ siteTitle ,pathname,data}) => {
+import * as firebase from 'firebase';
+const Header = ({ siteTitle ,pathname,data,location}) => {
   const [contactFlag, setContactFlag] = useState(false);
   const contactFlagTrueFalse = () => setContactFlag(!contactFlag);
  
 function classHandle() {
   $("body").removeClass("nav-open");
  }
+
+ function submitOpenEnquiry(e){
+  e.preventDefault();
+  firebase
+    .database()
+    .ref("Open Customer")
+    .push()
+    .set({
+      name: e.target.name.value,
+      email: e.target.email.value,
+      budget: e.target.budget.value,
+      city: e.target.city.value,
+      createdDt: new Date().toString(),
+      message: e.target.message.value,
+    })
+    document.querySelector('.openCustomer').reset();
+    navigate('enquiry/customer/thank-you');
+}
 
 return(
 <header className="header">
@@ -93,7 +112,7 @@ return(
             <div className="tab-pane fade" id="mail" role="tabpanel" aria-labelledby="mail-tab">
             <div className="mail">
               <h4 className="text-center mb-3 section-title mt-3"> BramhaCorp Enquiry</h4>
-                <form name="customer" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+                <form className="openCustomer" name="customer"  onSubmit={(e) => submitOpenEnquiry(e)}>
                   <div className="contact-form-bg" id="customer">
                       <div className="container">
                         <div className="form-row">
@@ -104,7 +123,7 @@ return(
                             <input type="text"  id="email" placeholder="Your Email*" autoComplete="false" name="email" required/>
                           </div>
                           <div className="col-sm-12 form-group">
-                            <select defaultValue="" className="w-100" id="" name="source" required >
+                            <select defaultValue="" className="w-100" id="budget" name="source" required >
                               <option value="" disabled>Budget</option>
                               <option >50 Lakh</option>
                               <option>50-80 Lakh</option>
