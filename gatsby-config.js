@@ -11,6 +11,18 @@ module.exports = {
     'gatsby-prismic-lazy-load',
     'gatsby-remark-embed-video',
     'gatsby-remark-responsive-iframe',
+    'gatsby-plugin-robots-txt',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.bramhacorp.in',
+        sitemap: 'https://www.bramhacorp.in/sitemap.xml',
+        policy: [{
+          userAgent: '*',
+          allow: '/'
+        }]
+      }
+    },
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-source-filesystem',
@@ -53,7 +65,11 @@ module.exports = {
       options: {
         repositoryName: 'Bramhacorp',
         accessToken: 'MC5YVG1lQlJFQUFDTUF4Tjd5.77-9Tu-_vUlBICVMQ07vv70LMGhG77-977-977-9du-_vQLvv73vv73vv71da--_vVcaIjrvv70',
-        linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
+        linkResolver: ({
+          node,
+          key,
+          value
+        }) => post => `/${post.uid}`,
       },
     },
     {
@@ -73,18 +89,16 @@ module.exports = {
     {
       resolve: 'gatsby-transformer-remark',
       options: {
-        plugins: [
-          {
-            resolve: 'gatsby-remark-embed-video',
-            options: {
-              width: 800,
-              ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
-              height: 400, // Optional: Overrides optional.ratio
-              related: false, //Optional: Will remove related videos from the end of an embedded YouTube video.
-              noIframeBorder: true //Optional: Disable insertion of <style> border: 0
-            }
+        plugins: [{
+          resolve: 'gatsby-remark-embed-video',
+          options: {
+            width: 800,
+            ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
+            height: 400, // Optional: Overrides optional.ratio
+            related: false, //Optional: Will remove related videos from the end of an embedded YouTube video.
+            noIframeBorder: true //Optional: Disable insertion of <style> border: 0
           }
-        ]
+        }]
       }
     },
   ],
