@@ -226,7 +226,7 @@ class CommercialDetails extends React.Component {
         <SEO title={commercialData.data.seo_title} description={commercialData.data.seo_description}/>
         <main className="detail-page commercial-detail-page">
           {/* <!-- ---------------- banner start here ---------------- --> */}
-          <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section" id="banner-section">
+          <Div100vh style={{ height: 'calc(100rvh - 57px)'}} className="banner-section" id="banner-section">
           <picture>
                 {
                   commercialData.data.banner[0].image.mobile &&

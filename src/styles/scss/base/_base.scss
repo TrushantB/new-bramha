@@ -5,22 +5,25 @@
 /**
  * Set up a decent box model on the root element
  */
-body{
-    font-family: 'Graphik', sans-serif;
+body {
+    font-family: 'noto sans', sans-serif;
     font-weight: 400;
     font-size: 14px;
-    line-height: 1.86;
-    letter-spacing: -0.31px;
+    line-height: 1.65;
     color: theme-color("text-tertiary");
 }
-img{
+
+img {
     object-fit: cover;
 }
 
 
-input,textarea,select,.PhoneInput{
+input,
+textarea,
+select,
+.PhoneInput {
     font-weight: 300;
-    padding:4px 8px;
+    padding: 4px 8px;
     font-size: 14px;
     background: transparent;
     border: solid 0.5px rgba(153, 153, 153, 0.5);
@@ -29,35 +32,40 @@ input,textarea,select,.PhoneInput{
     height: 30px;
     -moz-appearance: none;
     -webkit-appearance: none;
-      
-        &::placeholder{
-            color: #929292;
-            font-weight: 300;
-            font-size: 14px;
-           
-     }
-     &:focus{
+
+    &::placeholder {
+        color: #929292;
+        font-weight: 300;
+        font-size: 14px;
+
+    }
+
+    &:focus {
         box-shadow: none;
         outline: none;
         border-color: rgba(153, 153, 153, 0.5);
     }
 }
-select{ 
+
+select {
     /* needed */
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-image: url('../../images/drop.png');
-  background-size: 0.5em;
-  background-position: calc(100% - 1.1em) center;
-  background-repeat: no-repeat;     
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('../../images/drop.png');
+    background-size: 0.5em;
+    background-position: calc(100% - 1.1em) center;
+    background-repeat: no-repeat;
 }
-.PhoneInputCountryIconImg{
+
+.PhoneInputCountryIconImg {
     display: block;
 }
-textarea{
+
+textarea {
     resize: none;
 }
-input[type=tel]{
-    border: 0!important;
+
+input[type=tel] {
+    border: 0 !important;
 }

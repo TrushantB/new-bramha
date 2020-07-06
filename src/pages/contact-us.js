@@ -203,7 +203,7 @@ class Contacts extends React.Component {
         <SEO title={contactData.seo_title} description={contactData.seo_description}/>
         {/* <Footer socialMediaLinks={contactData.followus}/> */}
         <section className="contact-section">
-          <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="contact-page-image banner-section mt-60" id="banner-section">
+          <Div100vh style={{ height: 'calc(100rvh - 57px)'}} className="contact-page-image banner-section mt-60" id="banner-section">
             <picture>
               <source media="(max-width: 581px)" srcSet={contactData.banner.Mobile.url}/>
               <img src={contactData.banner.url} alt="" width="100%" />

@@ -126,7 +126,7 @@ class Partners extends React.Component {
         <main className="detail-page partner-page" id="residential-details">
           {/* <!--   ---------------- banner start here ---------------- --> */}
           <Div100vh
-            style={{ height: "calc(100rvh - 60px)" }}
+            style={{ height: "calc(100rvh - 57px)" }}
             className="banner-section"
             id="banner-section"
           >

@@ -33,7 +33,7 @@ class FAQ extends React.Component {
       <Layout location="/" noHeader="true"  pathname={this.props.location.pathname}>
         <SEO title={faqData.seo_title} description={faqData.seo_description}/>
         <div  className="guideline-nri-detail">
-          <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section" id="banner-section">
+          <Div100vh style={{ height: 'calc(100rvh - 57px)'}} className="banner-section" id="banner-section">
             <picture>
               <source media="(min-width: 581px)" srcSet={faqData.banner.localFile.childImageSharp.url}/>
               <Img fluid={faqData.banner.localFile.childImageSharp.fluid} alt="banner image here" className="banner-img" />
