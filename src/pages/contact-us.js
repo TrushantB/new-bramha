@@ -295,7 +295,7 @@ class Contacts extends React.Component {
                                   <option value="customer">Customer</option>
                                   <option value="channel">Channel Partner</option>
                                   <option value="constructors">Contractors & Suppliers</option>
-                                  <option value="career">I am a Job Seeker</option>
+                                  <option value="career">Job Seeker</option>
                                   <option value="LandOwner">Land Owner</option>
                               </select>
                           </div>
@@ -352,7 +352,7 @@ class Contacts extends React.Component {
                         </div>
                         <div className="col-sm-12 form-group ">
                           <select defaultValue="source" className="form-control rounded-0" id="source" placeholder="source" name="source" required >
-                            <option value="source" disabled >source</option>
+                            <option value="source" disabled >Source</option>
                             <option>Newspaper</option>
                             <option>Hoarding</option>
                             <option>Email</option>
