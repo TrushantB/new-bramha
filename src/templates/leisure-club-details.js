@@ -199,7 +199,7 @@ class LeisureDetails extends React.Component {
         <SEO title={leisureData.data.seo_title} description={leisureData.data.seo_description}/>
         <main className="detail-page">
           {/* <!-- ---------------- banner start here ---------------- --> */}
-          <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section" id="banner-section">
+          <Div100vh style={{ height: 'calc(100rvh - 57px)'}} className="banner-section" id="banner-section">
             <picture>
                 {
                   leisureData.data.banner[0].image.mobile &&

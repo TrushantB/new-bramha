@@ -240,7 +240,7 @@ console.log(jobOpenningButtons);
       <Layout location="/" noHeader="true" pathname={this.props.location.pathname}>
         <SEO title={careerData.seo_title} description={careerData.seo_description}/>
         <div className="career-page">
-          <Div100vh style={{ height: 'calc(100rvh - 60px)' }} className="banner-section mt-60">
+          <Div100vh style={{ height: 'calc(100rvh - 57px)' }} className="banner-section mt-60">
             <picture>
               <source media="(max-width: 581px)" srcSet={careerData.banner.mobile.url} />
               <img src={careerData.banner.url} alt="banner image here" className="banner-img" />

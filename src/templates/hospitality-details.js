@@ -201,7 +201,7 @@ class HospitalityDetails extends React.Component {
         <SEO title={hospitalityData.data.seo_title} description={hospitalityData.data.seo_description}/>
         <main className="detail-page">
           {/* <!-- ---------------- banner start here ---------------- --> */}
-          <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section">
+          <Div100vh style={{ height: 'calc(100rvh - 57px)'}} className="banner-section">
               <picture>
                 {
                   hospitalityData.data.banner[0].image.mobile &&

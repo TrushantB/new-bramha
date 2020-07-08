@@ -22,7 +22,7 @@ export default class BlogPost extends React.Component {
                 <SEO title={blogData.seo_title} description={blogData.seo_description}/>
                 <main className="detail-page" id="residential-details">
                     {/* <!--   ---------------- banner start here ---------------- --> */}
-                    <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section" id="banner-section">
+                    <Div100vh style={{ height: 'calc(100rvh - 57px)'}} className="banner-section" id="banner-section">
                     <picture>
                         {/* {
                         verticalData.data.banner[0].image.mobile &&

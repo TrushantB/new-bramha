@@ -14,13 +14,15 @@
   align-items: center;
   display: flex;
 }
+
 .section-title {
-  font-family: georgia;
+  font-family: 'noto serif';
   font-size: 20px;
   font-weight: 500;
   letter-spacing: -0.44px;
   color: theme-color("tertiary");
   text-align: left;
+
   &::after {
     content: "";
     border-bottom: 2px solid theme-color("primary");
@@ -29,9 +31,11 @@
     display: block;
   }
 }
+
 .section-title-wrapper {
   padding-bottom: 48px;
 }
+
 .inner-section-title {
   font-family: georgia;
   font-size: 20px;
@@ -42,6 +46,7 @@
   color: #333;
   text-transform: capitalize;
 }
+
 .section-title-secondary {
   font-family: "Graphik", sans-serif;
   font-size: 14px;
@@ -59,6 +64,7 @@
     padding: 0 16px 32px;
   }
 }
+
 .pages {
   margin-top: 28px;
 }
@@ -90,11 +96,13 @@
 
 // ------------- Media Query Start Here ----------------
 @media (max-width: 1200px) {
+
   // slider
   .slider-img {
     margin: 42px 44px 32px;
     cursor: pointer;
   }
+
   // Hospitality project
   .hospitality-projects {
     margin-bottom: 0;
@@ -106,6 +114,7 @@
       width: 90%;
     }
   }
+
   .residential-projects {
     .projects {
       select {
@@ -113,39 +122,48 @@
       }
     }
   }
+
   .career-tabs {
     .btn-tertiary {
       padding: 16px 8px;
     }
   }
+
   .residential-projects {
     .complete-project {
       margin-bottom: 100px;
     }
+
     .slick-prev {
       left: -31px;
     }
+
     .slick-next {
       right: -31px;
     }
   }
+
   //slider
   .center {
     .slick-next {
       right: 28%;
       bottom: -51px;
     }
+
     .slick-prev {
       bottom: -66px;
       right: 19%;
     }
   }
 }
+
 @media (max-width: 992px) {
+
   //------- about us ----
   .management-card .management-card-body {
     padding: 20px 38px;
   }
+
   // slider
   // .slider-img{
   //     margin: 42px 43px 32px;
@@ -164,9 +182,11 @@
     .mt-100 {
       margin-top: 0;
     }
+
     .heading {
       margin-top: 80px;
     }
+
     .buyer-tips-banner-img {
       .buyer-tips-box {
         width: 535px;
@@ -177,6 +197,7 @@
       }
     }
   }
+
   .guidelines-nris {
     .guidelines-nris-img {
       img {
@@ -185,6 +206,7 @@
       }
     }
   }
+
   // Hospitality project
   .hospitality-projects {
     margin-bottom: 0;
@@ -196,31 +218,38 @@
       width: 90%;
     }
   }
+
   //------------- Residencial detail page ---------------
   #amenities {
     .container {
       overflow-x: scroll;
+
       &::-webkit-scrollbar {
         height: 6px;
       }
+
       &::-webkit-scrollbar-thumb {
         background: theme-color(border-color);
         border-radius: 30px;
       }
+
       &::-webkit-scrollbar-thumb:hover {
         background: theme-color(text-secondary);
       }
     }
   }
+
   .amenities-inner-wrapper {
     width: 160%;
   }
+
   //slider
   .center {
     .slick-next {
       right: 22%;
       bottom: -51px;
     }
+
     .slick-prev {
       bottom: -64px;
       right: 12%;
@@ -229,20 +258,25 @@
 }
 
 @media (max-width: 767px) {
+
   // slider
   .slider-img {
     margin: 20px 28px 16px;
   }
+
   .pages {
     margin-top: 12px;
   }
+
   .our-verticals-tabs .nav-item {
     padding: 16px 8px;
   }
+
   .contact-section {
     .locate-us {
       margin-bottom: 50px;
     }
+
     form {
       .customer {
         select {
@@ -250,18 +284,23 @@
         }
       }
     }
+
     .contact-details {
       text-align: center;
+
       .sub-heading {
         display: block;
         margin-bottom: 16px;
       }
+
       .description {
         margin: 16px 0 40px 0;
       }
     }
+
     .contact-details {
       text-align: center;
+
       .section-title::after {
         content: "";
         margin: 0 auto;
@@ -274,33 +313,41 @@
       margin-top: 12px;
     }
   }
+
   // Knowledge Hub
   .knowledge-hub {
     .mt-92 {
       margin-top: 0;
     }
+
     .heading {
       margin-top: 60px;
     }
+
     .section-title {
       margin-top: 0;
     }
+
     .knowledge-hub-heading {
       .title {
         padding-top: 24px;
       }
     }
+
     .buyer-tips-banner {
       margin-bottom: 32px;
+
       .container {
         padding: 0;
       }
+
       .buyer-tips-box {
         width: 100%;
         height: auto;
         left: 0;
         bottom: 0;
         padding: 20px 20px;
+
         .section-title,
         .know-more {
           align-self: flex-end;
@@ -309,8 +356,10 @@
         }
       }
     }
+
     .guidelines-nris {
       margin-top: 0;
+
       .guidelines-nris-img {
         img {
           height: auto;
@@ -318,38 +367,47 @@
         }
       }
     }
+
     .buyer-tips-info {
       .about-loan {
         margin-top: 24px;
       }
     }
   }
+
   // Hospitality Project
   .hospitality-projects {
     .residences {
       padding-bottom: 0;
     }
+
     .residences-card {
       margin-bottom: 140px;
     }
   }
+
   .career-tabs {
     .btn-wraper {
       flex-basis: 23%;
     }
+
     .btn-wraper-big {
       flex-basis: 30%;
     }
+
     .btn-tertiary {
       padding: 16px 0;
     }
   }
+
   .about-sect-4 {
     height: auto !important;
   }
+
   .management-card {
     height: 200px;
   }
+
   // Residence Card
   .residences-card {
     .property-meta-card {
@@ -363,87 +421,108 @@
   .nav-pills .nav-link.active {
     padding: 10px 0;
   }
+
   .amenities-inner-wrapper {
     width: 200%;
+
     .image-wrapper {
       width: 100%;
       display: flex;
       align-items: center;
     }
   }
+
   .amenities button {
     flex: 1 140px;
     margin: 8px 4px;
   }
+
   .residential-projects {
     .complete-project {
       .slick-slider {
         margin-top: 28px;
       }
+
       .secondary-card {
         margin: 0 15px;
+
         .secondary-card-rectangle {
           width: 90%;
         }
       }
+
       .slick-next,
       .slick-prev {
         top: 180px;
       }
     }
   }
+
   .image-ratio {
     .gatsby-image-wrapper {
       padding-bottom: 133.33%;
     }
   }
+
   //slider
   .center {
     .slick-next {
       right: 26%;
       bottom: -31px;
     }
+
     .slick-prev {
       bottom: -40px;
       right: 17%;
     }
   }
 }
+
 @media (max-width: 580px) {
   .padding-sm-0 {
     padding: 0 !important;
   }
+
   .navbar-collapse {
     width: 96%;
   }
+
   .bg-color {
     margin-top: 0;
     background: theme-color("bg-color");
+
     .padding-block-60 {
       padding: 25px 0 25px 0;
     }
+
     .page-heading {
       font-size: 24px;
       margin: 0;
     }
+
     .text {
       padding: 0 15px;
     }
   }
+
   .career-tabs {
     .btn-wraper {
       flex-basis: 23%;
     }
+
     .btn-wraper-big {
       flex-basis: 30%;
     }
+
     .btn-tertiary {
       padding: 16px 0;
     }
   }
+
   .about-sect-4 {
     height: auto !important;
   }
+
   .management-card {
     height: 200px;
   }
@@ -453,106 +532,133 @@
   .navbar-collapse {
     width: 96%;
   }
+
   .bg-color {
     margin-top: 0;
     background: theme-color("bg-color");
+
     .padding-block-60 {
       padding: 25px 0 25px 0;
     }
+
     .page-heading {
       font-size: 24px;
       margin: 0;
     }
+
     .text {
       padding: 0 15px;
     }
   }
+
   .our-verticals-tabs {
     .nav-item {
       padding: 15px 0;
     }
   }
+
   .tab {
     font-size: 12px;
+
     i {
       display: none;
     }
+
     &::before {
       content: "\f111";
     }
   }
+
   .contact-section {
     .bg-color {
       .form-control {
         flex: 75%;
       }
     }
+
     .contact-form-bg {
       button {
         width: 100%;
         padding: 15px 0;
       }
+
       .form-row {
         .form-group {
           padding: 0;
         }
       }
     }
+
     .contact-details {
       .section-title::after {
         content: "";
         margin: 0 auto;
       }
+
       i {
         display: block;
         margin-bottom: 12px;
       }
     }
   }
+
   //Knowledge Hub
   .knowledge-hub {
     margin-bottom: 124px;
+
     .section-title::after {
       content: "";
       margin: 0 auto;
       width: 40px;
       padding: 4px 0;
     }
+
     .col-6 {
       padding: 0;
     }
+
     .important-notices {
       margin-top: 60px;
+
       .section-title,
       p {
         display: none;
       }
+
       .inner-section-title {
         display: block;
       }
+
       .card-primary-img {
         img {
           height: 115px;
         }
       }
+
       .bg-light-gray {
         padding: 24px 24px;
+
         .know-more {
           align-self: flex-end;
         }
       }
     }
+
     .buyer-tips-banner {
       margin: 80px 0 80px 0;
+
       .container {
         padding: 0;
       }
     }
+
     .guidelines-nris {
       margin: 92px 0 80px 0;
+
       .heading {
         display: none;
       }
+
       .guidelines-nris-info {
         width: 100%;
         height: auto;
@@ -567,49 +673,59 @@
         }
       }
     }
+
     .maha-rera {
       margin: 0;
     }
+
     .maha-rera-mb {
       img {
         height: 115px;
       }
     }
   }
+
   //card-primary
   .card-primary {
     .bg-light-gray {
       padding: 16px 26px;
     }
+
     .section-title {
       margin-top: 0;
       text-align: center;
     }
+
     .heading {
       margin-top: 0;
     }
   }
+
   //Hospitality Project
   .hospitality-projects {
     margin-bottom: 0;
+
     .residences {
       background-color: #fff;
       padding: 0;
     }
   }
+
   .bg-color {
     margin-top: 0;
     padding: 0;
     background: theme-color("bg-color");
+
     .padding-block-60 {
       padding: 24px 0 24px 0;
     }
+
     .page-heading {
       font-size: 24px;
       margin: 0;
     }
   }
-  
+
   // // about loan page 
   // .about-loan-page-wrapper{
   //   .bg-color{
@@ -623,6 +739,7 @@
       padding: 0 16px 32px;
     }
   }
+
   .year-img-wrap {
     width: 60% !important;
     display: flex;
@@ -631,57 +748,70 @@
     padding: 12px 0;
     margin: 0 auto 28px;
   }
+
   //residential projects
   .residential-section {
     .main-paragraph {
       padding: 0 16px 60px;
     }
   }
+
   .residential-projects {
     .projects {
       display: none;
     }
+
     .residences {
       background: #fff;
     }
+
     .complete-project {
       .container {
         background-color: theme-color("bg-color");
         padding: 0;
       }
+
       .listing-heading {
         transform: translate(0px, -18px);
       }
+
       .secondary-card {
         margin: 40px 24px;
       }
+
       .slick-list {
         padding-bottom: 124px !important;
       }
+
       .slick-next {
         bottom: -35px;
         right: 16px;
         top: auto;
+
         &:before {
           background: url("../images/left.jpg") no-repeat center center;
           padding: 0 0 0 36px;
         }
       }
+
       .slick-prev {
         top: auto;
         bottom: -45px;
         right: 90px;
         left: auto;
+
         &:before {
           background: url("../images/left.jpg") no-repeat center center;
           padding: 0 0 0 36px;
         }
       }
+
       .pagination {
         bottom: -40px;
         left: 70px;
       }
     }
+
     .slick-center {
       transform: scale(1.2);
       transition: transform 0.5s ease;
@@ -693,17 +823,21 @@
     box-shadow: none;
     margin-top: 28px;
     width: 280px;
+
     img {
       width: 70% !important;
     }
   }
+
   .detail-page-sections {
     padding-top: 36px;
     padding-bottom: 36px;
   }
+
   .residencial-details .page-heading-section div {
     padding-top: 36px;
     padding-bottom: 32px;
+
     .page-heading {
       border: 0;
       padding: 0;
@@ -711,14 +845,17 @@
       line-height: 32px;
     }
   }
+
   #pills-tab,
   #factfile-tab {
     padding: 0 15px;
   }
+
   .nav-pills .nav-link {
     padding: 10px 5px 0;
     height: 100%;
   }
+
   #pills-tabContent,
   #pills-tab {
     border-bottom: 0;
@@ -727,16 +864,20 @@
   .contact-section .contact-form-bg button {
     width: 265px;
   }
+
   #pills-tabContent ul {
     padding-top: 8px;
     padding-bottom: 8px;
   }
+
   .contact-section .contact-form-bg .form-row .form-group {
     padding: 0;
   }
+
   .center .slick-prev {
     right: 12%;
   }
+
   .center .slick-next {
     right: 22%;
     bottom: -30px;
@@ -753,25 +894,31 @@
   .residential-projects .listing-heading {
     width: 90%;
   }
+
   .slider-img {
     margin: 20px 24px 16px;
   }
+
   .pages {
     margin-top: 0;
   }
+
   .bg-light-gray {
     margin-top: 0;
     padding: 36px 0 36px 0;
   }
+
   .navbar-collapse {
     width: 95%;
   }
+
   .contact-section {
     .bg-color {
       select {
         flex: 100%;
       }
     }
+
     //knowledge Hub
     .knowledge-hub {
       .important-notices {
@@ -780,16 +927,19 @@
         }
       }
     }
+
     //Card Primary
     .card-primary {
       .card-primary-img {
         height: 100%;
+
         img {
           height: 100%;
         }
       }
     }
   }
+
   // Residence Card
   // .residences-card {
   //     .rectangle{
@@ -803,6 +953,7 @@
         margin: 16px 20px;
       }
     }
+
     // .listing-heading{
     //     width: 100%;
     // }
@@ -812,27 +963,33 @@
       }
     }
   }
+
   .center .slick-prev {
     right: 8%;
     bottom: -29px;
   }
+
   .center .slick-next {
     right: 18%;
     bottom: -21px;
   }
+
   .btn-secondary {
     width: 280px;
   }
 }
+
 @media (max-width: 350px) {
   .slider-img {
     margin: 20px 16px 16px;
   }
+
   .center {
     .slick-next {
       right: 20%;
       bottom: -15px;
     }
+
     .slick-prev {
       right: 9%;
       bottom: -22px;

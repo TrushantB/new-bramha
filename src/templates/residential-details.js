@@ -231,7 +231,7 @@ class VerticalPage extends React.Component {
         <SEO title={verticalData.data.seo_title} description={verticalData.data.seo_description}/>
         <main className="detail-page" id="residential-details">
             {/* <!--   ---------------- banner start here ---------------- --> */}
-            <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section" id="banner-section">
+            <Div100vh style={{ height: 'calc(100rvh - 57px)'}} className="banner-section" id="banner-section">
               <picture>
                 {
                   verticalData.data.banner[0].image.mobile &&
@@ -834,7 +834,7 @@ class VerticalPage extends React.Component {
                         </div>
                         <div className="col-sm-6 form-group ">
                         <select defaultValue="" className="form-control rounded-0" id="source" placeholder="source" name="source" required >
-                            <option value="" disabled >source</option>
+                            <option value="" disabled >Source</option>
                             <option>Newspaper</option>
                             <option>Hoarding</option>
                             <option>Email</option>

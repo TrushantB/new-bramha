@@ -226,7 +226,7 @@ class CommercialDetails extends React.Component {
         <SEO title={commercialData.data.seo_title} description={commercialData.data.seo_description}/>
         <main className="detail-page commercial-detail-page">
           {/* <!-- ---------------- banner start here ---------------- --> */}
-          <Div100vh style={{ height: 'calc(100rvh - 60px)'}} className="banner-section" id="banner-section">
+          <Div100vh style={{ height: 'calc(100rvh - 57px)'}} className="banner-section" id="banner-section">
           <picture>
                 {
                   commercialData.data.banner[0].image.mobile &&
@@ -841,7 +841,7 @@ class CommercialDetails extends React.Component {
                         </div>
                         <div className="col-sm-6 form-group ">
                         <select defaultValue="" className="form-control rounded-0" id="source" placeholder="source" name="source" required >
-                            <option value="" disabled >source</option>
+                            <option value="" disabled >Source</option>
                             <option>Newspaper</option>
                             <option>Hoarding</option>
                             <option>Email</option>
