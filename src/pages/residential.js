@@ -1,9 +1,8 @@
 import React from 'react';
 import Slider from "react-slick";
-import { graphql, Link } from 'gatsby';
+import { graphql, Link,navigate } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import { navigate } from "gatsby"
 import PhoneInput from 'react-phone-number-input';
 import * as firebase from 'firebase';
 import $ from 'jquery'
@@ -122,6 +121,7 @@ export default class Residential extends React.Component {
       })
       this.setState({ value: '+91'});
       document.querySelector('.formReset').reset();
+
       $(function () {
         $('#exampleModalCenter').modal('toggle');
      });

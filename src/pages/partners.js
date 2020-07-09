@@ -1,8 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { Link, graphql,navigate } from "gatsby"
 import chevron_down from "../images/chevron_down.svg"
 import Div100vh from "react-div-100vh/lib/Div100vh"
 import "../firebase/config"
@@ -43,7 +42,7 @@ class Partners extends React.Component {
     })
   }
 
-  submitChannelPartner = e => {
+  submitChannelPartner = e => { 
     e.preventDefault()
     firebase
       .database()
@@ -62,6 +61,8 @@ class Partners extends React.Component {
       })
     this.setState({ value: "+91" })
     document.querySelector(".contactChannel").reset()
+    
+    navigate('enquiry/channel-partner/thank-you')
   }
 
   render() {
