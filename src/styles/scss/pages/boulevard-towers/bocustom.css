@@ -1,0 +1,472 @@
+body
+{
+	font-family: century gothic ! important;
+}
+h1, h2, h3, h4, h5, h6
+{
+	font-family: century gothic ! important;
+}
+p
+{
+	letter-spacing: 0.4px;
+    line-height: 24px;
+    color: #909090;
+}
+
+canvas{
+    position: absolute !important; 
+}
+.particles-js-canvas-el{
+	height:105vh !important;
+}
+.mrg{
+	margin-left: 65px !important;
+}
+.pl15{
+	padding-left: 15px;
+}
+	
+.pt25
+{
+	padding-top: 25px;
+}
+.project-details h5
+{
+	font-weight: 100;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	letter-spacing: 0.7px;
+	color: #FFCC99;
+}
+.project-details h2
+{
+	font-weight: 100 ! important;
+	letter-spacing: 0.7px;
+}
+.key-project h2
+{
+	font-weight: 100 ! important;
+	letter-spacing: 0.7px;
+}
+.pt60
+{
+	padding-top: 60px;
+}
+.pb60
+{
+	padding-bottom: 60px;
+}
+.pt30
+{
+	padding-top: 30px;
+}
+.pb30
+{
+	padding-bottom: 30px;
+}
+.pb15
+{
+	padding-bottom: 15px;
+}
+.pt20
+{
+	padding-top: 20px;
+}
+.key-project img
+{
+	height: 75px;
+}
+.key-project h5
+{
+	font-weight: 100;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 0.7px;
+    color: #909090;
+    font-weight: 600;
+    font-size: 14px;
+}
+.offering-list li
+{
+	list-style-type: none;
+	text-align: right;
+}
+.content-style
+{
+	width: 50%;
+	margin: auto;
+}
+.cd-timeline__container::before
+{
+	display: none;
+}
+.col-padding .col-sm-4
+{
+	padding: 0 40px;
+}
+.pr20
+{
+	padding-right: 20px;
+}
+.form-group
+{
+	margin-bottom: 10px ! important;
+}
+.cd-is-hidden
+{
+    visibility: visible ! important;
+}
+.cd-timeline__content p
+{
+   text-align: justify;
+}
+.pl68
+{
+   padding-left: 68px;
+}
+.pt50
+{
+	padding-top: 50px;
+}
+input[type='text'], input[type='email'], input[type='password'], input[type='datetime'], input[type='date'], input[type='month'], input[type='time'], input[type='week'], input[type='search'], input[type='tel']
+{
+	height: 40px ! important;
+	padding-left: 17px ! important;
+	background-color: #ccc ! important;
+}
+.top li a:hover::before, .top li a:focus::before
+{
+	width: 100% ! important;
+}
+.top li a::before
+{
+	left: 0px ! important;
+}
+.top li a:hover, .top li a:focus
+{
+	color: #fff ! important;
+}
+.btn::before, .btn::after
+{
+	left: 0px ! important;
+}
+.btn
+{
+	padding: 4px 10px ! important;  
+}
+input[type='text'], input[type='email'], input[type='password'], input[type='datetime'], input[type='date'], input[type='month'], input[type='time'], input[type='week'], input[type='search'], input[type='tel'], textarea, textarea.form-control
+{
+	color: #000 ! important;
+}
+.top li a
+{
+	padding: 7px 10px !important;
+}
+.cd-timeline__content
+{
+   opacity:1;
+}
+.brain
+{
+	opacity: 1 ! important;
+	color: #000 ! important;
+}
+.contact-form
+{
+	width: 85%; 
+	float: right;
+}
+.ul-list-color li
+{
+	color: #909090;
+}
+.cd-timeline__img
+{
+   opacity: 0.7;
+}
+/*.top.affix {
+    padding: 0px 25px;
+    position: fixed;
+    z-index: 1003;
+    background-color: #fff;
+    opacity: 0.9; 
+    height: 80px;
+}*/
+.hide-logo
+{
+	display: none;
+}
+.affix .hide-logo
+{
+	display: block;
+}
+.affix .main-logo
+{
+	display: none;
+}
+.enqiury-btn
+{
+	position: fixed;
+	right: -45px;
+	top: 200px;
+	letter-spacing: .12rem;
+	font-size: 16px;
+	background-color: #b93a3e;
+	color: #fff;
+	border:none;
+	border-radius: 5px;
+	z-index: 9999;
+	transform: rotate(270deg);
+}
+.ml19
+{
+	margin-left: 19px;
+}
+.list1
+{
+	float: left;
+	width: 50%;
+	color: #909090;
+}
+.list2
+{
+	width: 89%;
+	color: #909090;
+}
+.blink
+{
+	position: relative;
+    left: 90px;
+    bottom: 25px;
+    color: #c0c0c0;
+    text-decoration: none;
+}
+.red
+{
+	color: red;
+}
+.whatsapp-icon a
+{
+	float: right;
+    position: fixed;
+    right: 90px;
+    bottom: 26px;
+}
+.whatsapp-icon a>i:hover
+{
+	background-color: #ccc;
+	float: right;
+    position: fixed;
+    right: 90px;
+    bottom: 26px;
+}
+::placeholder
+{
+	color:#a9a9a9 ! important;
+	font-size: 12px;
+	opacity: 0.3;
+}
+textarea, textarea.form-control
+{
+	padding-top: 15px ! important;
+	padding-left: 17px ! important;
+}
+
+:-ms-input-placeholder {
+	color:#a9a9a9 ! important;
+}
+.ml13 b
+{
+	margin-left: 13%;
+}
+.modal-content
+{color: #000;}
+.top
+{
+	background-color: #fff;
+    opacity: 0.9;
+}
+.header-no
+{
+	background-color: #b93a3e;
+    border: none;
+    border-radius: 10px;
+    margin-left: 22px;
+    color: #fff;
+    padding: 3px 8px;
+    width: 130px;
+}
+.btn::before
+{
+	background-color: #b93a3e ! important;
+}
+.cust-hero
+{
+	height:105vh; opacity: 0.9;
+}
+input[type='text'], input[type='email'], input[type='password'], input[type='datetime'], input[type='date'], input[type='month'], input[type='time'], input[type='week'], input[type='search'], input[type='tel'], textarea, textarea.form-control
+{
+	z-index: unset ! important;
+}
+.mb30
+{
+	margin-bottom: 30px ! important;
+}
+.cust-modal
+{
+	width: 80%;
+	margin: auto;
+}
+.cust-form input
+{
+	height: 40px ! important;
+	margin: 25px 0 ! important;
+}
+.promoters {
+    background: #b93a3e;
+    margin-top: 40px;
+    border: 4px solid #b93a3e;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.66) inset;
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.collection__description {
+   
+    text-align: center;
+}
+.showcase__title, .amenities__title, .fact-file__title, .proximites__title {
+    
+    font-size: 2.625rem;
+   
+    margin-bottom: 0;
+}
+.showcase__text, .amenities__text, .fact-file__title-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.promoters img {
+    max-height: 160px;
+}
+.promoters div {
+    padding: 0 10px;
+    width: 20%;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+div {
+    display: block;
+}
+
+@media(max-width: 768px)
+{
+	.contact-form
+	{
+		width: 100%;
+	}
+	.mpb0
+	{
+		padding-bottom: 0px;
+	}
+	.hero
+	{
+		background-size: contain;
+	}
+	.cust-hero
+{
+	height:36vh ! important; opacity: 0.9;
+}
+	.mpt0
+	{
+		padding-top: 0px;
+	}
+	.hide-block
+	{
+		display: none;
+	}
+	.key-style
+	{
+		margin: 30px 0;
+	}
+	.mml15 b
+	{
+		margin-left: 0px;
+	}
+	.whatsapp-icon a
+	{
+		right: 25px;
+	}
+	.mmb30
+	{
+		margin-bottom: 30px;
+	}
+	.mmb60
+	{
+		margin-bottom: 60px;
+	}
+	.mml15
+	{
+		margin-left: 15px;
+	}
+	.enqiury-btn
+	{
+		position: fixed;
+		top: 210px;
+	}
+	.list1
+{
+	float: left;
+	width: 50%;
+}
+.list2
+{
+	width: 50%;
+	float: right;
+}
+	.mmauto
+{
+   margin: auto;
+   float: none ! important;
+   padding: 0 ! important;
+}
+	.offering-list li
+		{
+			list-style-type: disc;
+			text-align: left;
+		}
+	#wave
+		{
+		    display: block ! important;
+		}
+		.mpl68
+		{
+		   padding-left: 15px;
+		   padding-right: 15px;
+		}
+}
+
+@media only screen and (max-width: 767px) {
+	.hero {
+		background-size: contain !important;
+	}
+	#Logo{
+		width: 50% !important;
+	}
+   
+	 .main-logo{
+			 margin-left: -36px !important;
+	 }
+	 .new{
+		 margin-top: 0px !important;
+	 }
+	  }
+
+
+
+
+

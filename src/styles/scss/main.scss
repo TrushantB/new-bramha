@@ -7,23 +7,26 @@
 // @import
 //   'vendors/normalize';
 
-// 3. Base stuff
+// 4. Base stuff
 @import "base/base", "base/fonts", "base/typography", "base/helpers";
 
-// 4. Layout-related sections
+// 5. Layout-related sections
 @import "layout/header", "layout/footer";
 
-// 5. Components
+// 6. Components
 @import "components/button", "components/carousel", "components/cards",
   "components/contact";
 
-// 6. Page-specific styles
+// 7. Page-specific styles
 @import "pages/home", "pages/about", "pages/knowledge-hub",
   "pages/residentials-details", "pages/residential-listing", "pages/events",
   "pages/career", "pages/hospitality-projects", "pages/hospitality-details",
   "pages/leisure-club", "pages/nri", "pages/partners", "pages/management",
   "pages/award", "pages/blog", "pages/thank-you";
 
+
+
+  
 /*================================
 -------- Common Basic css start
 ================================*/
