@@ -31,7 +31,7 @@
     "gatsby-source-filesystem": "^2.1.39",
     "gatsby-source-prismic": "^2.3.0-alpha.3",
     "gatsby-source-prismic-graphql": "^3.6.2",
-    "gatsby-transformer-remark": "^2.6.50",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.3.6",
     "ios-inner-height": "^1.1.1",
     "jquery": "^3.4.1",
